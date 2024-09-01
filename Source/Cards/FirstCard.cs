@@ -2,6 +2,7 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -9,6 +10,7 @@ using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StanceApplier;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -36,7 +38,7 @@ namespace LBoLMod.Cards
         {
             var cardConfig = new CardConfig(
                Index: BepinexPlugin.sequenceTable.Next(typeof(CardConfig)),
-               Id: "FirstCardDef",
+               Id: "",
                Order: 10,
                AutoPerform: true,
                Perform: new string[0][],
@@ -52,7 +54,7 @@ namespace LBoLMod.Cards
                IsUpgradable: true,
                Rarity: Rarity.Common,
                Type: CardType.Attack,
-               TargetType: TargetType.SingleEnemy,
+               TargetType: TargetType.Self,
                Colors: new List<ManaColor>() { ManaColor.Blue },
                IsXCost: false,
                Cost: new ManaGroup() { Red = 1 },

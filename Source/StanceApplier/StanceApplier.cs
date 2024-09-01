@@ -15,7 +15,14 @@ namespace LBoLMod.StanceApplier
     {
         public static BattleAction ApplyPowerStance(Card card)
         {
-            return card.BuffAction<PowerStance>();
+            if (!card.Battle.Player.HasStatusEffect<PowerStance>())
+                return card.BuffAction<PowerStance>();
+            return null;
+        }
+
+        public static BattleAction RemovePowerStance(Card card)
+        {
+            return new RemoveStatusEffectAction(card.Battle.Player.GetStatusEffect<PowerStance>());
         }
     }
 }

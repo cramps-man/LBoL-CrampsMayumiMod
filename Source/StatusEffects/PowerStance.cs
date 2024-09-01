@@ -67,5 +67,10 @@ namespace LBoLMod.StatusEffects
         {
             this.React(new ApplyStatusEffectAction<Firepower>(unit, 1));
         }
+
+        protected override void OnRemoved(Unit unit)
+        {
+            this.React(new ApplyStatusEffectAction<FirepowerNegative>(unit, 1));
+        }
     }
 }
