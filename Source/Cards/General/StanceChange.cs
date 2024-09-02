@@ -2,7 +2,9 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
+using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
@@ -12,18 +14,16 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class FirstCardDef : CardTemplate
+    public sealed class StanceChangeDef : CardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(FirstCard);
+            return nameof(StanceChange);
         }
 
         public override CardImages LoadCardImages()
         {
-            var imgs = new CardImages(BepinexPlugin.embeddedSource);
-            imgs.AutoLoad(this, extension: ".png");
-            return imgs;
+            return null;
         }
 
         public override LocalizationOption LoadLocalization()
@@ -37,7 +37,7 @@ namespace LBoLMod.Cards
                Index: BepinexPlugin.sequenceTable.Next(typeof(CardConfig)),
                Id: "",
                Order: 10,
-               AutoPerform: true,
+               AutoPerform: false,
                Perform: new string[0][],
                GunName: "simple1",
                GunNameBurst: "simple2",
@@ -83,7 +83,7 @@ namespace LBoLMod.Cards
                UltimateCost: null,
                UpgradedUltimateCost: null,
 
-               Keywords: Keyword.Accuracy,
+               Keywords: Keyword.None,
                UpgradedKeywords: Keyword.None,
                EmptyDescription: false,
                RelativeKeyword: Keyword.None,
@@ -91,8 +91,8 @@ namespace LBoLMod.Cards
 
                RelativeEffects: new List<string>() { },
                UpgradedRelativeEffects: new List<string>() { },
-               RelativeCards: new List<string>() { },
-               UpgradedRelativeCards: new List<string>() { },
+               RelativeCards: new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeRelaxing) },
+               UpgradedRelativeCards: new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeRelaxing) },
 
                Owner: new PlayerDef().UniqueId,
                ImageId: "",
@@ -106,13 +106,33 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(FirstCardDef))]
-    public sealed class FirstCard : Card
+    [EntityLogic(typeof(StanceChangeDef))]
+    public sealed class StanceChange:Card
     {
+        public override Interaction Precondition()
+        {
+            var selectList = new List<Card> { Library.CreateCard<StanceChangePower>(), Library.CreateCard<StanceChangeFocus>(), Library.CreateCard<StanceChangeRelaxing>() };
+            return new SelectCardInteraction(1, 1, selectList);
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return StanceApplier.StanceApplier.ApplyPowerStance(this);
-            yield break;
+            if (!(precondition is SelectCardInteraction interaction))
+            {
+                yield break;
+            }
+
+            foreach (Card card in interaction.SelectedCards)
+            {
+                OptionCard optionCard = card as OptionCard;
+                if (optionCard != null)
+                {
+                    optionCard.SetBattle(base.Battle);
+                    foreach (BattleAction battleAction in optionCard.TakeEffectActions())
+                    {
+                        yield return battleAction;
+                    }
+                }
+            }
         }
     }
 }

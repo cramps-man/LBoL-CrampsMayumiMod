@@ -1,8 +1,7 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
+using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
@@ -12,18 +11,16 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class FirstCardDef : CardTemplate
+    public sealed class StanceChangeRelaxingDef : CardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(FirstCard);
+            return nameof(StanceChangeRelaxing);
         }
 
         public override CardImages LoadCardImages()
         {
-            var imgs = new CardImages(BepinexPlugin.embeddedSource);
-            imgs.AutoLoad(this, extension: ".png");
-            return imgs;
+            return null;
         }
 
         public override LocalizationOption LoadLocalization()
@@ -44,7 +41,7 @@ namespace LBoLMod.Cards
                DebugLevel: 0,
                Revealable: false,
 
-               IsPooled: true,
+               IsPooled: false,
                FindInBattle: true,
 
                HideMesuem: false,
@@ -106,10 +103,10 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(FirstCardDef))]
-    public sealed class FirstCard : Card
+    [EntityLogic(typeof(StanceChangeRelaxingDef))]
+    public sealed class StanceChangeRelaxing:OptionCard
     {
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        public override IEnumerable<BattleAction> TakeEffectActions()
         {
             yield return StanceApplier.StanceApplier.ApplyPowerStance(this);
             yield break;

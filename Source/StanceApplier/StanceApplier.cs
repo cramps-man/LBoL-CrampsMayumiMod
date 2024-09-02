@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using LBoL.ConfigData;
-using LBoL.Core.Battle;
+﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
-using LBoL.Core.StatusEffects;
-using LBoL.Core.Units;
 using LBoLMod.StatusEffects;
 
 namespace LBoLMod.StanceApplier

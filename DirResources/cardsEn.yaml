@@ -1,3 +1,19 @@
 FirstCard:
   Name: "First card is like"
   Description: Gain 99 {Damage} |Damage|. Also eat your own aoiaheargoinaeoi aoeirgaeoirgjoiejrgoijaerig
+
+StanceChange:
+  Name: Stance Change
+  Description: Choose |1| of 3 stances to change into
+
+StanceChangePower:
+  Name: Stance Change Power
+  Description: Take on Power Stance
+
+StanceChangeFocus:
+  Name: Stance Change Focus
+  Description: Take on Focus Stance
+
+StanceChangeRelaxing:
+  Name: Stance Change Relaxing
+  Description: Take on Relaxing Stance
