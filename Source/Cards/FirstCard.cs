@@ -8,6 +8,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -111,7 +112,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return StanceApplier.StanceApplier.ApplyPowerStance(this);
+            yield return StanceApplier.StanceApplier.ApplyStance<PowerStance>(this);
             yield break;
         }
     }

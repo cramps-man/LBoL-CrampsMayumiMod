@@ -14,6 +14,6 @@ StanceChangeFocus:
   Name: Stance Change Focus
   Description: Take on Focus Stance
 
-StanceChangeRelaxing:
-  Name: Stance Change Relaxing
-  Description: Take on Relaxing Stance
+StanceChangeCalm:
+  Name: Stance Change Calm
+  Description: Take on Calm Stance

@@ -7,15 +7,16 @@ using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
+using LBoLMod.Source.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class StanceChangeRelaxingDef : CardTemplate
+    public sealed class StanceChangeCalmDef : CardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(StanceChangeRelaxing);
+            return nameof(StanceChangeCalm);
         }
 
         public override CardImages LoadCardImages()
@@ -103,12 +104,12 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(StanceChangeRelaxingDef))]
-    public sealed class StanceChangeRelaxing:OptionCard
+    [EntityLogic(typeof(StanceChangeCalmDef))]
+    public sealed class StanceChangeCalm:OptionCard
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            yield return StanceApplier.StanceApplier.ApplyPowerStance(this);
+            yield return StanceApplier.StanceApplier.ApplyStance<CalmStance>(this);
             yield break;
         }
     }

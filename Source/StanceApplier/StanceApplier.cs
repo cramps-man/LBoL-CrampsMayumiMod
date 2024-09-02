@@ -1,22 +1,25 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
-using LBoLMod.StatusEffects;
+using LBoL.Core.StatusEffects;
+using LBoL.Core.Units;
 
 namespace LBoLMod.StanceApplier
 {
     public static class StanceApplier
     {
-        public static BattleAction ApplyPowerStance(Card card)
+        public static BattleAction ApplyStance<T>(Card card) where T : StatusEffect
         {
-            if (!card.Battle.Player.HasStatusEffect<PowerStance>())
-                return card.BuffAction<PowerStance>();
+            if (!card.Battle.Player.HasStatusEffect<T>())
+                return card.BuffAction<T>();
             return null;
         }
 
-        public static BattleAction RemovePowerStance(Card card)
+        public static BattleAction RemoveStance<T>(Unit unit) where T : StatusEffect
         {
-            return new RemoveStatusEffectAction(card.Battle.Player.GetStatusEffect<PowerStance>());
+            if (unit.HasStatusEffect<T>())
+                return new RemoveStatusEffectAction(unit.GetStatusEffect<T>());
+            return null;
         }
     }
 }

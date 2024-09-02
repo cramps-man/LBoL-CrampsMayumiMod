@@ -1,22 +1,21 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using LBoLMod.Source.StatusEffects;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LBoLMod.StatusEffects
+namespace LBoLMod.Source.StatusEffects
 {
-    public sealed class PowerStanceDef : StatusEffectTemplate
+    public sealed class FocusStanceDef : StatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(PowerStance);
+            return nameof(FocusStance);
         }
 
         public override LocalizationOption LoadLocalization()
@@ -57,18 +56,12 @@ namespace LBoLMod.StatusEffects
         }
     }
 
-    public sealed class PowerStance: StatusEffect
+    public sealed class FocusStance: StatusEffect
     {
         protected override void OnAdded(Unit unit)
         {
-            this.React(new ApplyStatusEffectAction<Firepower>(unit, 1));
-            this.React(StanceApplier.StanceApplier.RemoveStance<FocusStance>(unit));
+            this.React(StanceApplier.StanceApplier.RemoveStance<PowerStance>(unit));
             this.React(StanceApplier.StanceApplier.RemoveStance<CalmStance>(unit));
-        }
-
-        protected override void OnRemoved(Unit unit)
-        {
-            this.React(new ApplyStatusEffectAction<FirepowerNegative>(unit, 1));
         }
     }
 }
