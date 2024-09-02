@@ -1,25 +1,14 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core;
-using LBoL.Core.Battle;
-using LBoL.Core.Cards;
-using LBoLEntitySideloader;
-using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
-using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class FirstCardDef : CardTemplate
+    public abstract class ModCardTemplate : CardTemplate
     {
-        public override IdContainer GetId()
-        {
-            return nameof(FirstCard);
-        }
-
         public override CardImages LoadCardImages()
         {
             var imgs = new CardImages(BepinexPlugin.embeddedSource);
@@ -34,14 +23,14 @@ namespace LBoLMod.Cards
 
         public override CardConfig MakeConfig()
         {
-            var cardConfig = new CardConfig(
-               Index: BepinexPlugin.sequenceTable.Next(typeof(CardConfig)),
+            return new CardConfig(
+               Index: 0,
                Id: "",
                Order: 10,
                AutoPerform: true,
                Perform: new string[0][],
-               GunName: "simple1",
-               GunNameBurst: "simple2",
+               GunName: "",
+               GunNameBurst: "",
                DebugLevel: 0,
                Revealable: false,
 
@@ -51,14 +40,14 @@ namespace LBoLMod.Cards
                HideMesuem: false,
                IsUpgradable: true,
                Rarity: Rarity.Common,
-               Type: CardType.Attack,
-               TargetType: TargetType.Self,
-               Colors: new List<ManaColor>() { ManaColor.Blue },
+               Type: CardType.Unknown,
+               TargetType: null,
+               Colors: new List<ManaColor>() { },
                IsXCost: false,
-               Cost: new ManaGroup() { Red = 1 },
+               Cost: new ManaGroup() { },
                UpgradedCost: null,
                MoneyCost: null,
-               Damage: 2,
+               Damage: null,
                UpgradedDamage: null,
                Block: null,
                UpgradedBlock: null,
@@ -84,7 +73,7 @@ namespace LBoLMod.Cards
                UltimateCost: null,
                UpgradedUltimateCost: null,
 
-               Keywords: Keyword.Accuracy,
+               Keywords: Keyword.None,
                UpgradedKeywords: Keyword.None,
                EmptyDescription: false,
                RelativeKeyword: Keyword.None,
@@ -103,17 +92,6 @@ namespace LBoLMod.Cards
                Illustrator: null,
                SubIllustrator: new List<string>() { }
             );
-            return cardConfig;
-        }
-    }
-
-    [EntityLogic(typeof(FirstCardDef))]
-    public sealed class FirstCard : Card
-    {
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
-        {
-            yield return StanceApplier.StanceApplier.ApplyStance<PowerStance>(this);
-            yield break;
         }
     }
 }

@@ -7,103 +7,28 @@ using LBoL.Core.Cards;
 using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLEntitySideloader.Entities;
-using LBoLEntitySideloader.Resource;
-using LBoLMod.PlayerUnits;
 using LBoLMod.Source.StatusEffects;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class StanceChangeDef : CardTemplate
+    public sealed class StanceChangeDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
             return nameof(StanceChange);
         }
 
-        public override CardImages LoadCardImages()
-        {
-            return null;
-        }
-
-        public override LocalizationOption LoadLocalization()
-        {
-            return BepinexPlugin.cardBatchLoc.AddEntity(this);
-        }
-
         public override CardConfig MakeConfig()
         {
-            var cardConfig = new CardConfig(
-               Index: BepinexPlugin.sequenceTable.Next(typeof(CardConfig)),
-               Id: "",
-               Order: 10,
-               AutoPerform: false,
-               Perform: new string[0][],
-               GunName: "simple1",
-               GunNameBurst: "simple2",
-               DebugLevel: 0,
-               Revealable: false,
-
-               IsPooled: true,
-               FindInBattle: true,
-
-               HideMesuem: false,
-               IsUpgradable: true,
-               Rarity: Rarity.Common,
-               Type: CardType.Skill,
-               TargetType: TargetType.Self,
-               Colors: new List<ManaColor>() { ManaColor.Red, ManaColor.Green },
-               IsXCost: false,
-               Cost: new ManaGroup() { Any = 1 },
-               UpgradedCost: null,
-               MoneyCost: null,
-               Damage: null,
-               UpgradedDamage: null,
-               Block: null,
-               UpgradedBlock: null,
-               Shield: null,
-               UpgradedShield: null,
-               Value1: null,
-               UpgradedValue1: null,
-               Value2: null,
-               UpgradedValue2: null,
-               Mana: null,
-               UpgradedMana: null,
-               Scry: null,
-               UpgradedScry: null,
-
-               ToolPlayableTimes: null,
-
-               Loyalty: null,
-               UpgradedLoyalty: null,
-               PassiveCost: null,
-               UpgradedPassiveCost: null,
-               ActiveCost: null,
-               UpgradedActiveCost: null,
-               UltimateCost: null,
-               UpgradedUltimateCost: null,
-
-               Keywords: Keyword.None,
-               UpgradedKeywords: Keyword.None,
-               EmptyDescription: false,
-               RelativeKeyword: Keyword.None,
-               UpgradedRelativeKeyword: Keyword.None,
-
-               RelativeEffects: new List<string>() { },
-               UpgradedRelativeEffects: new List<string>() { },
-               RelativeCards: new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) },
-               UpgradedRelativeCards: new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) },
-
-               Owner: new PlayerDef().UniqueId,
-               ImageId: "",
-               UpgradeImageId: "",
-
-               Unfinished: false,
-               Illustrator: null,
-               SubIllustrator: new List<string>() { }
-            );
+            var cardConfig = base.MakeConfig();
+            cardConfig.Type = CardType.Skill;
+            cardConfig.Cost = new ManaGroup() { Any = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
+            cardConfig.UpgradedKeywords = Keyword.Initial;
+            cardConfig.RelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
             return cardConfig;
         }
     }
