@@ -1,5 +1,8 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
+using LBoL.Core;
+using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
@@ -43,7 +46,7 @@ namespace LBoLMod.Source.StatusEffects
                 HasDuration: false,
                 DurationStackType: StackType.Add,
                 DurationDecreaseTiming: DurationDecreaseTiming.Custom,
-                HasCount: false,
+                HasCount: true,
                 CountStackType: StackType.Keep,
                 LimitStackType: StackType.Keep,
                 ShowPlusByLimit: false,
@@ -62,6 +65,20 @@ namespace LBoLMod.Source.StatusEffects
         {
             this.React(StanceApplier.StanceApplier.RemoveStance<PowerStance>(unit));
             this.React(StanceApplier.StanceApplier.RemoveStance<CalmStance>(unit));
+            this.Count = 3;
+            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
+        }
+
+        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        {
+            this.Count--;
+            if (this.Count == 0)
+            {
+                base.NotifyActivating();
+                this.Count = 3;
+                yield return new DrawManyCardAction(1);
+            }
+            yield break;
         }
     }
 }
