@@ -10,6 +10,8 @@ using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
+using LBoLMod.Source.StatusEffects;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -111,7 +113,19 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            var selectList = new List<Card> { Library.CreateCard<StanceChangePower>(), Library.CreateCard<StanceChangeFocus>(), Library.CreateCard<StanceChangeCalm>() };
+            var selectList = new List<Card> {};
+            if (!base.Battle.Player.HasStatusEffect<PowerStance>())
+            {
+                selectList.Add(Library.CreateCard<StanceChangePower>());
+            }
+            if (!base.Battle.Player.HasStatusEffect<FocusStance>())
+            {
+                selectList.Add(Library.CreateCard<StanceChangeFocus>());
+            }
+            if (!base.Battle.Player.HasStatusEffect<CalmStance>())
+            {
+                selectList.Add(Library.CreateCard<StanceChangeCalm>());
+            }
             return new SelectCardInteraction(1, 1, selectList);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
