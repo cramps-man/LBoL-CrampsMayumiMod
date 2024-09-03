@@ -8,7 +8,6 @@ using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -24,6 +23,7 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
+            cardConfig.TargetType = TargetType.Self;
             cardConfig.Cost = new ManaGroup() { Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.UpgradedKeywords = Keyword.Initial;
@@ -38,7 +38,6 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            Console.WriteLine("ASSSSS");
             var selectList = new List<Card> {};
             if (!base.Battle.Player.HasStatusEffect<PowerStance>())
             {
@@ -52,7 +51,6 @@ namespace LBoLMod.Cards
             {
                 selectList.Add(Library.CreateCard<StanceChangeCalm>());
             }
-            Console.WriteLine(selectList.Count);
             return new SelectCardInteraction(1, 1, selectList);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

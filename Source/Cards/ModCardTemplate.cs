@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
                IsUpgradable: true,
                Rarity: Rarity.Common,
                Type: CardType.Unknown,
-               TargetType: null,
+               TargetType: TargetType.Self,
                Colors: new List<ManaColor>() { },
                IsXCost: false,
                Cost: new ManaGroup() { },
