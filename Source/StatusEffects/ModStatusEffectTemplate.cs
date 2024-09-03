@@ -1,24 +1,14 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.StatusEffects;
-using LBoL.Core.Units;
-using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using LBoLMod.Source.StatusEffects;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace LBoLMod.StatusEffects
 {
-    public sealed class PowerStanceDef : StatusEffectTemplate
+    public abstract class ModStatusEffectTemplate: StatusEffectTemplate
     {
-        public override IdContainer GetId()
-        {
-            return nameof(PowerStance);
-        }
-
         public override LocalizationOption LoadLocalization()
         {
             return BepinexPlugin.StatusEffectsBatchLoc.AddEntity(this);
@@ -37,9 +27,9 @@ namespace LBoLMod.StatusEffects
                 Order: 10,
                 Type: StatusEffectType.Positive,
                 IsVerbose: false,
-                IsStackable: false,
+                IsStackable: true,
                 StackActionTriggerLevel: null,
-                HasLevel: false,
+                HasLevel: true,
                 LevelStackType: StackType.Add,
                 HasDuration: false,
                 DurationStackType: StackType.Add,
@@ -54,21 +44,7 @@ namespace LBoLMod.StatusEffects
                 VFXloop: "Default",
                 SFX: "Default"
             );
-        }
-    }
 
-    public sealed class PowerStance: StatusEffect
-    {
-        protected override void OnAdded(Unit unit)
-        {
-            this.React(new ApplyStatusEffectAction<Firepower>(unit, 1));
-            this.React(StanceApplier.StanceApplier.RemoveStance<FocusStance>(unit));
-            this.React(StanceApplier.StanceApplier.RemoveStance<CalmStance>(unit));
-        }
-
-        protected override void OnRemoved(Unit unit)
-        {
-            this.React(new ApplyStatusEffectAction<FirepowerNegative>(unit, 1));
         }
     }
 }

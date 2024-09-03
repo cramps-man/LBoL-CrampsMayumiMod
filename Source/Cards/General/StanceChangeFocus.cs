@@ -4,10 +4,7 @@ using LBoL.Core.Battle;
 using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLEntitySideloader.Entities;
-using LBoLEntitySideloader.Resource;
-using LBoLMod.PlayerUnits;
-using LBoLMod.Source.StatusEffects;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
