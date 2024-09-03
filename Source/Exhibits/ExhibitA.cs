@@ -1,14 +1,17 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
+using LBoL.Core;
+using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.EntityLib.Exhibits;
+using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
-using System;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LBoLMod.Exhibits
 {
@@ -46,9 +49,9 @@ namespace LBoLMod.Exhibits
                 Value1: null,
                 Value2: null,
                 Value3: null,
-                Mana: new ManaGroup() { },
+                Mana: new ManaGroup() { Red = 1 },
                 BaseManaRequirement: null,
-                BaseManaColor: ManaColor.White,
+                BaseManaColor: ManaColor.Red,
                 BaseManaAmount: 1,
                 HasCounter: false,
                 InitialCounter: null,
@@ -62,6 +65,35 @@ namespace LBoLMod.Exhibits
 
     [EntityLogic(typeof(ExhibitADef))]
     public sealed class ExhibitA : ShiningExhibit
-    { 
+    {
+        protected override void OnEnterBattle()
+        {
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
+        }
+
+        private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
+        {
+            if (base.Battle.Player.HasStatusEffect<PowerStance>())
+            {
+                base.NotifyActivating();
+                yield return new ApplyStatusEffectAction<NextAttackUp>(base.Battle.Player, 4);
+            }
+            if (base.Battle.Player.HasStatusEffect<FocusStance>())
+            {
+                base.NotifyActivating();
+                yield return new DrawManyCardAction(2);
+            }
+            if (base.Battle.Player.HasStatusEffect<CalmStance>())
+            {
+                base.NotifyActivating();
+                yield return new GainManaAction(new ManaGroup { Red = 2 });
+            }
+            if (base.Battle.Player.TurnCounter == 1)
+            {
+                base.NotifyActivating();
+                yield return new ApplyStatusEffectAction<PowerStance>(base.Battle.Player);
+            }
+            yield break;
+        }
     }
 }
