@@ -30,8 +30,8 @@ namespace LBoLMod.StatusEffects
     {
         protected override void OnAdding(Unit unit)
         {
-            this.React(StanceApplier.StanceApplier.RemoveStance<PowerStance>(unit));
-            this.React(StanceApplier.StanceApplier.RemoveStance<CalmStance>(unit));
+            this.React(StanceUtils.RemoveStance<PowerStance>(unit));
+            this.React(StanceUtils.RemoveStance<CalmStance>(unit));
             this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
             this.Count = 3;
         }

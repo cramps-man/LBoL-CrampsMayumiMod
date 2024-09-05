@@ -1,5 +1,4 @@
 ﻿using LBoL.ConfigData;
-using LBoL.Core;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -7,9 +6,7 @@ using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLEntitySideloader.Utils;
 using LBoLMod.Exhibits;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using LBoLMod.UltimateSkills;
 
 
 namespace LBoLMod.PlayerUnits
@@ -47,7 +44,7 @@ namespace LBoLMod.PlayerUnits
             InitialMoney: 3,
             InitialPower: 30,
             //temp
-            UltimateSkillA: reimuConfig.UltimateSkillA,
+            UltimateSkillA: nameof(UltimateSkillA),
             UltimateSkillB: reimuConfig.UltimateSkillB,
             ExhibitA: new ExhibitADef().UniqueId,
             ExhibitB: new ExhibitBDef().UniqueId,

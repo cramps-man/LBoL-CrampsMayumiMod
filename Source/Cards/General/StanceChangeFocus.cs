@@ -31,7 +31,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            yield return StanceApplier.StanceApplier.ApplyStance<FocusStance>(this);
+            yield return StanceUtils.ApplyStance<FocusStance>(this);
             yield break;
         }
     }

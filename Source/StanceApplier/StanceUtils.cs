@@ -4,9 +4,9 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 
-namespace LBoLMod.StanceApplier
+namespace LBoLMod
 {
-    public static class StanceApplier
+    public static class StanceUtils
     {
         public static BattleAction ApplyStance<T>(Card card) where T : StatusEffect
         {

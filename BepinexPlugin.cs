@@ -30,6 +30,7 @@ namespace LBoLMod
         internal static BatchLocalization unitModelBatchLoc = new BatchLocalization(directorySource, typeof(UnitModelTemplate), "unitModel");
         internal static BatchLocalization exhibitBatchLoc = new BatchLocalization(directorySource, typeof(ExhibitTemplate), "exhibit");
         internal static BatchLocalization StatusEffectsBatchLoc = new BatchLocalization(directorySource, typeof(StatusEffectTemplate), "statusEffect");
+        internal static BatchLocalization ultimateSkillBatchLoc = new BatchLocalization(directorySource, typeof(UltimateSkillTemplate), "ultimateSkill");
 
         private void Awake()
         {

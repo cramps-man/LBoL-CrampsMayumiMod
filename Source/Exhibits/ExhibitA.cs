@@ -75,25 +75,41 @@ namespace LBoLMod.Exhibits
 
         private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
         {
-            if (base.Battle.Player.HasStatusEffect<PowerStance>())
+            var player = base.Battle.Player;
+            if (player.HasStatusEffect<PowerStance>())
             {
                 base.NotifyActivating();
-                yield return new ApplyStatusEffectAction<NextAttackUp>(base.Battle.Player, 4);
+                yield return new ApplyStatusEffectAction<NextAttackUp>(player, 4);
             }
-            if (base.Battle.Player.HasStatusEffect<FocusStance>())
+            if (player.HasStatusEffect<FocusStance>())
             {
                 base.NotifyActivating();
                 yield return new DrawManyCardAction(2);
             }
-            if (base.Battle.Player.HasStatusEffect<CalmStance>())
+            if (player.HasStatusEffect<CalmStance>())
             {
                 base.NotifyActivating();
                 yield return new GainManaAction(new ManaGroup { Red = 2 });
             }
-            if (base.Battle.Player.TurnCounter == 1)
+            if (player.HasStatusEffect<BoostedPowerStance>())
             {
                 base.NotifyActivating();
-                yield return new ApplyStatusEffectAction<PowerStance>(base.Battle.Player);
+                yield return new ApplyStatusEffectAction<NextAttackUp>(player, 8);
+            }
+            if (player.HasStatusEffect<BoostedFocusStance>())
+            {
+                base.NotifyActivating();
+                yield return new DrawManyCardAction(5);
+            }
+            if (player.HasStatusEffect<BoostedCalmStance>())
+            {
+                base.NotifyActivating();
+                yield return new GainManaAction(new ManaGroup { Red = 2, Green = 2 });
+            }
+            if (player.TurnCounter == 1)
+            {
+                base.NotifyActivating();
+                yield return new ApplyStatusEffectAction<PowerStance>(player);
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
             }
             yield break;

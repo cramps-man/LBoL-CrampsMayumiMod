@@ -9,11 +9,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
-    public sealed class CalmStanceDef : ModStatusEffectTemplate
+    public sealed class BoostedCalmStanceDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(CalmStance);
+            return nameof(BoostedCalmStance);
         }
 
         public override StatusEffectConfig MakeConfig()
@@ -21,31 +21,23 @@ namespace LBoLMod.StatusEffects
             var statusConfig = base.MakeConfig();
             statusConfig.IsStackable = false;
             statusConfig.HasLevel = false;
-            statusConfig.HasCount = true;
+            statusConfig.HasDuration = true;
+            statusConfig.DurationDecreaseTiming = LBoL.Base.DurationDecreaseTiming.TurnStart;
             return statusConfig;
         }
     }
 
-    public sealed class CalmStance: StatusEffect
+    public sealed class BoostedCalmStance: StatusEffect
     {
         protected override void OnAdding(Unit unit)
         {
-            this.React(StanceUtils.RemoveStance<FocusStance>(unit));
-            this.React(StanceUtils.RemoveStance<PowerStance>(unit));
             this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
-            this.Count = 4;
         }
 
         private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
         {
-            this.Count--;
-            if (this.Count == 0)
-            {
-                base.NotifyActivating();
-                this.Count = 4;
-                yield return new GainManaAction(args.ConsumingMana);
-            }
-            yield break;
+            base.NotifyActivating();
+            yield return new GainManaAction(args.ConsumingMana);
         }
     }
 }

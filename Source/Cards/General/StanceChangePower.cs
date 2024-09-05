@@ -4,9 +4,6 @@ using LBoL.Core.Battle;
 using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLEntitySideloader.Entities;
-using LBoLEntitySideloader.Resource;
-using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
@@ -34,7 +31,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            yield return StanceApplier.StanceApplier.ApplyStance<PowerStance>(this);
+            yield return StanceUtils.ApplyStance<PowerStance>(this);
             yield break;
         }
     }
