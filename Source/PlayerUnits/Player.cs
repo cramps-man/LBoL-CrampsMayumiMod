@@ -45,7 +45,7 @@ namespace LBoLMod.PlayerUnits
             InitialPower: 30,
             //temp
             UltimateSkillA: nameof(UltimateSkillA),
-            UltimateSkillB: reimuConfig.UltimateSkillB,
+            UltimateSkillB: nameof(UltimateSkillB),
             ExhibitA: new ExhibitADef().UniqueId,
             ExhibitB: new ExhibitBDef().UniqueId,
             DeckA: reimuConfig.DeckA,

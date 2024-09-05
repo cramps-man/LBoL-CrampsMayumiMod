@@ -94,6 +94,7 @@ namespace LBoLMod.Exhibits
             if (player.HasStatusEffect<BoostedPowerStance>())
             {
                 base.NotifyActivating();
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
                 yield return new ApplyStatusEffectAction<NextAttackUp>(player, 8);
             }
             if (player.HasStatusEffect<BoostedFocusStance>())
