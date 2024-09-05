@@ -3,12 +3,14 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.EntityLib.Exhibits;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
+using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
@@ -69,20 +71,42 @@ namespace LBoLMod.Exhibits
         protected override void OnEnterBattle()
         {
             base.ReactBattleEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
+        }
+
+        private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
+        {
+            var stanceChangeCount = 0;
+            foreach(Card card in base.Battle.HandZone)
+            {
+                if (card is StanceChange)
+                {
+                    stanceChangeCount++;
+                }
+            }
+            if (stanceChangeCount < 2)
+            {
+                base.NotifyActivating();
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
+            }
+            yield break;
         }
 
         private IEnumerable<BattleAction> onStatusApplied(StatusEffectApplyEventArgs args)
         {
             if (args.Effect is PowerStance)
             {
+                base.NotifyActivating();
                 yield return new ApplyStatusEffectAction<TempFirepower>(base.Battle.Player, 1);
             }
             if (args.Effect is FocusStance)
             {
+                base.NotifyActivating();
                 yield return new DrawCardAction();
             }
             if (args.Effect is CalmStance)
             {
+                base.NotifyActivating();
                 yield return new CastBlockShieldAction(base.Battle.Player, base.Battle.Player, 4, 0);
             }
             yield break;

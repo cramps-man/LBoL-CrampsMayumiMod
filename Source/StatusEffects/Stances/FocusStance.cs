@@ -28,15 +28,15 @@ namespace LBoLMod.StatusEffects
 
     public sealed class FocusStance: StatusEffect
     {
-        protected override void OnAdded(Unit unit)
+        protected override void OnAdding(Unit unit)
         {
             this.React(StanceApplier.StanceApplier.RemoveStance<PowerStance>(unit));
             this.React(StanceApplier.StanceApplier.RemoveStance<CalmStance>(unit));
+            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
             this.Count = 3;
-            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
         }
 
-        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
         {
             this.Count--;
             if (this.Count == 0)

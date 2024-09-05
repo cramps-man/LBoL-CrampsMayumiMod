@@ -26,7 +26,8 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.Self;
             cardConfig.Cost = new ManaGroup() { Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
-            cardConfig.UpgradedKeywords = Keyword.Initial;
+            cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Initial;
             cardConfig.RelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
             return cardConfig;
@@ -51,25 +52,22 @@ namespace LBoLMod.Cards
             {
                 selectList.Add(Library.CreateCard<StanceChangeCalm>());
             }
-            return new SelectCardInteraction(1, 1, selectList);
+            return new MiniSelectCardInteraction(selectList);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (!(precondition is SelectCardInteraction interaction))
+            if (!(precondition is MiniSelectCardInteraction interaction))
             {
                 yield break;
             }
 
-            foreach (Card card in interaction.SelectedCards)
+            OptionCard optionCard = interaction.SelectedCard as OptionCard;
+            if (optionCard != null)
             {
-                OptionCard optionCard = card as OptionCard;
-                if (optionCard != null)
+                optionCard.SetBattle(base.Battle);
+                foreach (BattleAction battleAction in optionCard.TakeEffectActions())
                 {
-                    optionCard.SetBattle(base.Battle);
-                    foreach (BattleAction battleAction in optionCard.TakeEffectActions())
-                    {
-                        yield return battleAction;
-                    }
+                    yield return battleAction;
                 }
             }
         }

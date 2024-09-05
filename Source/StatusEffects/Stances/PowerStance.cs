@@ -24,14 +24,14 @@ namespace LBoLMod.StatusEffects
 
     public sealed class PowerStance: StatusEffect
     {
-        protected override void OnAdded(Unit unit)
+        protected override void OnAdding(Unit unit)
         {
             this.React(new ApplyStatusEffectAction<Firepower>(unit, 1));
             this.React(StanceApplier.StanceApplier.RemoveStance<FocusStance>(unit));
             this.React(StanceApplier.StanceApplier.RemoveStance<CalmStance>(unit));
         }
 
-        protected override void OnRemoved(Unit unit)
+        protected override void OnRemoving(Unit unit)
         {
             this.React(new ApplyStatusEffectAction<FirepowerNegative>(unit, 1));
         }

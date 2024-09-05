@@ -3,12 +3,14 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.EntityLib.Exhibits;
 using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
+using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
@@ -68,7 +70,7 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
@@ -92,6 +94,7 @@ namespace LBoLMod.Exhibits
             {
                 base.NotifyActivating();
                 yield return new ApplyStatusEffectAction<PowerStance>(base.Battle.Player);
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
             }
             yield break;
         }
