@@ -40,7 +40,7 @@ namespace LBoLMod.PlayerUnits
             NarrativeColor: "#e58c27",
             IsSelectable: true,
             MaxHp: 90,
-            InitialMana: new LBoL.Base.ManaGroup() { Red = 2, Blue = 1, White = 1 },
+            InitialMana: new LBoL.Base.ManaGroup() { Red = 2, Green = 2 },
             InitialMoney: 3,
             InitialPower: 30,
             //temp

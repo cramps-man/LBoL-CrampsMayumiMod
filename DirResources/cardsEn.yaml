@@ -2,16 +2,22 @@ StanceChange:
   Name: Change Stance
   Description: |-
     Choose 1 of 3 |stances| to enter.
-    If already in a |stance|, it won't be selectable
+    If already in a |stance|, it won't be selectable.
 
 StanceChangePower:
   Name: Power Stance
-  Description: Enter |Power| stance
+  Description: Enter |Power| stance.
 
 StanceChangeFocus:
   Name: Focus Stance
-  Description: Enter |Focus| stance
+  Description: Enter |Focus| stance.
 
 StanceChangeCalm:
   Name: Calm Stance
-  Description: Enter |Calm| stance
+  Description: Enter |Calm| stance.
+
+PowerHit:
+  Name: Power Hit
+  Description: |-
+    Deal {Damage} damage.
+    |Power.S|: Deal {StanceDamage} damage instead.
