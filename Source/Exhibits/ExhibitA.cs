@@ -107,6 +107,11 @@ namespace LBoLMod.Exhibits
                 base.NotifyActivating();
                 yield return new GainManaAction(new ManaGroup { Red = 2, Green = 2 });
             }
+
+            if (StanceUtils.DoesPlayerHavePreservedStance(player))
+            {
+                StanceUtils.RemoveNonPreservedStance(player);
+            }
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();

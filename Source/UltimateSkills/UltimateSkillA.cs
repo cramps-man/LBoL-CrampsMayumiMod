@@ -62,9 +62,9 @@ namespace LBoLMod.UltimateSkills
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
             var unit = base.Battle.Player;
-            yield return StanceUtils.RemoveStance<PowerStance>(unit);
-            yield return StanceUtils.RemoveStance<FocusStance>(unit);
-            yield return StanceUtils.RemoveStance<CalmStance>(unit);
+            yield return StanceUtils.ForceRemoveStance<PowerStance>(unit);
+            yield return StanceUtils.ForceRemoveStance<FocusStance>(unit);
+            yield return StanceUtils.ForceRemoveStance<CalmStance>(unit);
             yield return new ApplyStatusEffectAction<BoostedPowerStance>(unit, 0, 1);
             yield return new ApplyStatusEffectAction<BoostedFocusStance>(unit, 0, 1);
             yield return new ApplyStatusEffectAction<BoostedCalmStance>(unit, 0, 1);

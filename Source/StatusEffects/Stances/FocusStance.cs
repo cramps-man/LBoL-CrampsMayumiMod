@@ -2,7 +2,6 @@
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using System.Collections.Generic;
@@ -26,11 +25,12 @@ namespace LBoLMod.StatusEffects
         }
     }
 
-    public sealed class FocusStance: StatusEffect
+    public sealed class FocusStance: ModStanceStatusEffect
     {
         private const int usesRequired = 3;
         protected override void OnAdding(Unit unit)
         {
+            base.OnAdding(unit);
             this.React(StanceUtils.RemoveStance<PowerStance>(unit));
             this.React(StanceUtils.RemoveStance<CalmStance>(unit));
             this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));

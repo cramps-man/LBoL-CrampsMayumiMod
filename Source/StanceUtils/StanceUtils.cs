@@ -1,27 +1,89 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
-using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLMod.StatusEffects;
+using Unit = LBoL.Core.Units.Unit;
 
 namespace LBoLMod
 {
     public static class StanceUtils
     {
-        public static BattleAction ApplyStance<T>(Card card) where T : StatusEffect
+        public static BattleAction ApplyStance<T>(Card card) where T : ModStanceStatusEffect
         {
             if (!card.Battle.Player.HasStatusEffect<T>())
                 return card.BuffAction<T>();
             return null;
         }
 
-        public static BattleAction RemoveStance<T>(Unit unit) where T : StatusEffect
+        public static BattleAction RemoveStance<T>(Unit unit) where T : ModStanceStatusEffect
         {
-            if (unit.HasStatusEffect<T>())
-                return new RemoveStatusEffectAction(unit.GetStatusEffect<T>());
-            return null;
+            if (!unit.HasStatusEffect<T>())
+            {
+                return null;
+            }
+            var se = unit.GetStatusEffect<T>();
+            if (se.Preserved) {
+                return null;
+            }
+            return new RemoveStatusEffectAction(se);
         }
+
+        public static BattleAction ForceRemoveStance<T>(Unit unit) where T : ModStanceStatusEffect
+        {
+            if (!unit.HasStatusEffect<T>())
+            {
+                return null;
+            }
+            var se = unit.GetStatusEffect<T>();
+            return new RemoveStatusEffectAction(se);
+        }
+
+        public static bool DoesPlayerHavePreservedStance(PlayerUnit player)
+        {
+            if (player.HasStatusEffect<PowerStance>())
+            {
+                var se = player.GetStatusEffect<PowerStance>();
+                if (se.Preserved)
+                    return true;
+            }
+            if (player.HasStatusEffect<FocusStance>())
+            {
+                var se = player.GetStatusEffect<FocusStance>();
+                if (se.Preserved)
+                    return true;
+            }
+            if (player.HasStatusEffect<CalmStance>())
+            {
+                var se = player.GetStatusEffect<CalmStance>();
+                if (se.Preserved)
+                    return true;
+            }
+            return false;
+        }
+
+        public static BattleAction RemoveNonPreservedStance(Unit unit)
+        {
+            if (unit.HasStatusEffect<PowerStance>())
+            {
+                var se = unit.GetStatusEffect<PowerStance>();
+                if (!se.Preserved)
+                    return new RemoveStatusEffectAction(se);
+            }
+            if (unit.HasStatusEffect<FocusStance>())
+            {
+                var se = unit.GetStatusEffect<FocusStance>();
+                if (!se.Preserved)
+                    return new RemoveStatusEffectAction(se);
+            }
+            if (unit.HasStatusEffect<CalmStance>())
+            {
+                var se = unit.GetStatusEffect<CalmStance>();
+                if (!se.Preserved)
+                    return new RemoveStatusEffectAction(se);
+            }
+            return null;
+        } 
 
         public static bool IsPowerStanceConditionFulfilled(PlayerUnit player)
         {

@@ -89,6 +89,11 @@ namespace LBoLMod.Exhibits
                 base.NotifyActivating();
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
             }
+
+            if (StanceUtils.DoesPlayerHavePreservedStance(base.Battle.Player))
+            {
+                StanceUtils.RemoveNonPreservedStance(base.Battle.Player);
+            }
             yield break;
         }
 

@@ -1,14 +1,35 @@
 PowerStance:
   Name: Power
-  Description: The power
+  Description: |-
+    The power
+    preserved = {Preserved}
   Brief: Is very stronk
 
 FocusStance:
   Name: Focus
-  Description: The focus
+  Description: |-
+    The focus
+    preserved = {Preserved}
   Brief: Pinpointing
 
 CalmStance:
   Name: Calm
+  Description: |-
+    The calm
+    preserved = {Preserved}
+  Brief: phewwww
+
+BoostedPowerStance:
+  Name: Boosted Power
+  Description: The power
+  Brief: Is very stronk
+
+BoostedFocusStance:
+  Name: Boosted Focus
+  Description: The focus
+  Brief: Pinpointing
+
+BoostedCalmStance:
+  Name: Boosted Calm
   Description: The calm
   Brief: phewwww
