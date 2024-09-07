@@ -31,10 +31,10 @@ namespace LBoLMod.StatusEffects
     {
         protected override void OnAdding(Unit unit)
         {
-            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
+            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
         }
 
-        private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
+        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             base.NotifyActivating();
             yield return new GainManaAction(args.ConsumingMana);
