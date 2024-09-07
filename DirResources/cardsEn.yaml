@@ -21,3 +21,9 @@ PowerHit:
   Description: |-
     Deal {Damage} damage.
     |Power.S|: Deal {StanceDamage} damage instead.
+
+PreserveStance:
+  Name: Preserve Stance
+  Description: |-
+    |Preserve| the current stance.
+    If there is already a |Preserved| stance, nothing happens. 

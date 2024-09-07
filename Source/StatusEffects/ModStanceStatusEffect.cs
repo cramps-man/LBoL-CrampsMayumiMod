@@ -15,6 +15,10 @@ namespace LBoLMod.StatusEffects
             {
                 return preserved;
             }
+            set
+            {
+                preserved = value;
+            }
         }
 
         protected override void OnAdding(Unit unit)

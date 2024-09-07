@@ -83,7 +83,41 @@ namespace LBoLMod
                     return new RemoveStatusEffectAction(se);
             }
             return null;
-        } 
+        }
+
+        public static void PreserveCurrentStance(PlayerUnit player)
+        {
+            if (player.HasStatusEffect<PowerStance>())
+            {
+                var se = player.GetStatusEffect<PowerStance>();
+                if (!se.Preserved)
+                {
+                    se.Preserved = true;
+                    se.NotifyActivating();
+                }
+                return;
+            }
+            if (player.HasStatusEffect<FocusStance>())
+            {
+                var se = player.GetStatusEffect<FocusStance>();
+                if (!se.Preserved)
+                {
+                    se.Preserved = true;
+                    se.NotifyActivating();
+                }
+                return;
+            }
+            if (player.HasStatusEffect<CalmStance>())
+            {
+                var se = player.GetStatusEffect<CalmStance>();
+                if (!se.Preserved)
+                {
+                    se.Preserved = true;
+                    se.NotifyActivating();
+                }
+                return;
+            }
+        }
 
         public static bool IsPowerStanceConditionFulfilled(PlayerUnit player)
         {

@@ -13,6 +13,7 @@ using LBoLEntitySideloader.Resource;
 using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Exhibits
@@ -92,7 +93,7 @@ namespace LBoLMod.Exhibits
 
             if (StanceUtils.DoesPlayerHavePreservedStance(base.Battle.Player))
             {
-                StanceUtils.RemoveNonPreservedStance(base.Battle.Player);
+                yield return StanceUtils.RemoveNonPreservedStance(base.Battle.Player);
             }
             yield break;
         }

@@ -110,7 +110,7 @@ namespace LBoLMod.Exhibits
 
             if (StanceUtils.DoesPlayerHavePreservedStance(player))
             {
-                StanceUtils.RemoveNonPreservedStance(player);
+                yield return StanceUtils.RemoveNonPreservedStance(player);
             }
             if (player.TurnCounter == 1)
             {
