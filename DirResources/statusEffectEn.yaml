@@ -1,35 +1,37 @@
 PowerStance:
-  Name: Power
+  Name: Power Stance
   Description: |-
-    The power
-    preserved = {Preserved}
-  Brief: Is very stronk
+    Every 3 cards played, deal 6 damage to a random enemy. 
+  Brief: Every 3 cards played, deal 6 damage to a random enemy. 
 
 FocusStance:
-  Name: Focus
+  Name: Focus Stance
   Description: |-
-    The focus
-    preserved = {Preserved}
-  Brief: Pinpointing
+    Every 3 cards played, draw 1 card. 
+  Brief: Every 3 cards played, draw 1 card. 
 
 CalmStance:
-  Name: Calm
+  Name: Calm Stance
   Description: |-
-    The calm
-    preserved = {Preserved}
-  Brief: phewwww
+    Every 3 cards played, refund 1 random mana that was spent on that card. 
+  Brief: Every 3 cards played, refund 1 random mana that was spent on that card. 
 
 BoostedPowerStance:
-  Name: Boosted Power
-  Description: The power
-  Brief: Is very stronk
+  Name: Boosted Power Stance
+  Description: After every card played, deal 6 damage to a random enemy. 
+  Brief: After every card played, deal 6 damage to a random enemy. 
 
 BoostedFocusStance:
-  Name: Boosted Focus
-  Description: The focus
-  Brief: Pinpointing
+  Name: Boosted Focus Stance
+  Description: After every card played, draw 1 card. 
+  Brief: After every card played, draw 1 card. 
 
 BoostedCalmStance:
-  Name: Boosted Calm
-  Description: The calm
-  Brief: phewwww
+  Name: Boosted Calm Stance
+  Description: After every card played, refund 1 random mana that was spent on that card. 
+  Brief: After every card played, refund 1 random mana that was spent on that card. 
+
+Downtime:
+  Name: Downtime
+  Description: Prevents gaining new |Stances|. 
+  Brief: Prevents gaining new |Stances|. 
