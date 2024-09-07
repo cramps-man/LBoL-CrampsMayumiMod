@@ -40,15 +40,15 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             var selectList = new List<Card> {};
-            if (!base.Battle.Player.HasStatusEffect<PowerStance>())
+            if (!StanceUtils.IsPowerStanceConditionFulfilled(base.Battle.Player))
             {
                 selectList.Add(Library.CreateCard<StanceChangePower>());
             }
-            if (!base.Battle.Player.HasStatusEffect<FocusStance>())
+            if (!StanceUtils.IsFocusStanceConditionFulfilled(base.Battle.Player))
             {
                 selectList.Add(Library.CreateCard<StanceChangeFocus>());
             }
-            if (!base.Battle.Player.HasStatusEffect<CalmStance>())
+            if (!StanceUtils.IsCalmStanceConditionFulfilled(base.Battle.Player))
             {
                 selectList.Add(Library.CreateCard<StanceChangeCalm>());
             }
