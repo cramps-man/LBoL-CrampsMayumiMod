@@ -1,8 +1,11 @@
 ﻿using LBoL.ConfigData;
+using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
+using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
@@ -18,6 +21,7 @@ namespace LBoLMod.StatusEffects
             var statusConfig = base.MakeConfig();
             statusConfig.IsStackable = false;
             statusConfig.HasLevel = false;
+            statusConfig.HasCount = true;
             return statusConfig;
         }
     }
@@ -26,14 +30,22 @@ namespace LBoLMod.StatusEffects
     {
         protected override void OnAdding(Unit unit)
         {
-            this.React(new ApplyStatusEffectAction<Firepower>(unit, 1));
             this.React(StanceUtils.RemoveStance<FocusStance>(unit));
             this.React(StanceUtils.RemoveStance<CalmStance>(unit));
+            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
+            this.Count = 3;
         }
 
-        protected override void OnRemoving(Unit unit)
+        private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
         {
-            this.React(new ApplyStatusEffectAction<FirepowerNegative>(unit, 1));
+            this.Count--;
+            if (this.Count == 0)
+            {
+                base.NotifyActivating();
+                this.Count = 3;
+                yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(6));
+            }
+            yield break;
         }
     }
 }

@@ -1,8 +1,11 @@
 ﻿using LBoL.ConfigData;
+using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
+using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
@@ -28,12 +31,13 @@ namespace LBoLMod.StatusEffects
     {
         protected override void OnAdding(Unit unit)
         {
-            this.React(new ApplyStatusEffectAction<Firepower>(unit, 3));
+            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
         }
 
-        protected override void OnRemoving(Unit unit)
+        private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
         {
-            this.React(new ApplyStatusEffectAction<FirepowerNegative>(unit, 3));
+            base.NotifyActivating();
+            yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(6));
         }
     }
 }
