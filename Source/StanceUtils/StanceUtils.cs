@@ -11,7 +11,7 @@ namespace LBoLMod
     {
         public static BattleAction ApplyStance<T>(Card card) where T : ModStanceStatusEffect
         {
-            if (!card.Battle.Player.HasStatusEffect<T>())
+            if (!card.Battle.Player.HasStatusEffect<T>() && !card.Battle.Player.HasStatusEffect<Downtime>())
                 return card.BuffAction<T>();
             return null;
         }
@@ -36,6 +36,16 @@ namespace LBoLMod
                 return null;
             }
             var se = unit.GetStatusEffect<T>();
+            return new RemoveStatusEffectAction(se);
+        }
+
+        public static BattleAction RemoveDowntime(Unit unit)
+        {
+            if (!unit.HasStatusEffect<Downtime>())
+            {
+                return null;
+            }
+            var se = unit.GetStatusEffect<Downtime>();
             return new RemoveStatusEffectAction(se);
         }
 

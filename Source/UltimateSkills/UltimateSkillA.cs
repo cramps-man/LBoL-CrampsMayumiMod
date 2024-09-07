@@ -65,6 +65,7 @@ namespace LBoLMod.UltimateSkills
             yield return StanceUtils.ForceRemoveStance<PowerStance>(unit);
             yield return StanceUtils.ForceRemoveStance<FocusStance>(unit);
             yield return StanceUtils.ForceRemoveStance<CalmStance>(unit);
+            yield return StanceUtils.RemoveDowntime(unit);
             yield return new ApplyStatusEffectAction<BoostedPowerStance>(unit, 0, 1);
             yield return new ApplyStatusEffectAction<BoostedFocusStance>(unit, 0, 1);
             yield return new ApplyStatusEffectAction<BoostedCalmStance>(unit, 0, 1);
