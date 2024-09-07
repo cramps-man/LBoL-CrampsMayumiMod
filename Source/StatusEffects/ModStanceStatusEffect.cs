@@ -30,6 +30,7 @@ namespace LBoLMod.StatusEffects
         {
             if (Preserved)
             {
+                base.NotifyChanged();
                 preserved = false;
             }
             yield break;
