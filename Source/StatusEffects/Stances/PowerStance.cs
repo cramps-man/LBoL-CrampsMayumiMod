@@ -28,21 +28,22 @@ namespace LBoLMod.StatusEffects
 
     public sealed class PowerStance: StatusEffect
     {
+        private const int usesRequired = 3;
         protected override void OnAdding(Unit unit)
         {
             this.React(StanceUtils.RemoveStance<FocusStance>(unit));
             this.React(StanceUtils.RemoveStance<CalmStance>(unit));
-            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
-            this.Count = 3;
+            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
+            this.Count = usesRequired;
         }
 
-        private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
+        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             this.Count--;
             if (this.Count == 0)
             {
                 base.NotifyActivating();
-                this.Count = 3;
+                this.Count = usesRequired;
                 yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(6));
             }
             yield break;
