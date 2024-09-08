@@ -1,12 +1,14 @@
 ﻿using LBoL.ConfigData;
 using LBoL.Core.Units;
+using LBoL.EntityLib.Cards.Neutral.NoColor;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using LBoLEntitySideloader.Utils;
+using LBoLMod.Cards;
 using LBoLMod.Exhibits;
 using LBoLMod.UltimateSkills;
+using System.Collections.Generic;
 
 
 namespace LBoLMod.PlayerUnits
@@ -30,7 +32,6 @@ namespace LBoLMod.PlayerUnits
 
         public override PlayerUnitConfig MakeConfig()
         {
-            var reimuConfig = PlayerUnitConfig.FromId("Reimu").Copy();
             var config = new PlayerUnitConfig(
             Id: nameof(ThePlayer),
             ShowOrder: 6,
@@ -43,17 +44,46 @@ namespace LBoLMod.PlayerUnits
             InitialMana: new LBoL.Base.ManaGroup() { Red = 2, Green = 2 },
             InitialMoney: 3,
             InitialPower: 30,
-            //temp
             UltimateSkillA: nameof(UltimateSkillA),
             UltimateSkillB: nameof(UltimateSkillB),
             ExhibitA: new ExhibitADef().UniqueId,
             ExhibitB: new ExhibitBDef().UniqueId,
-            DeckA: reimuConfig.DeckA,
-            DeckB: reimuConfig.DeckB,
+            DeckA: GetDeckA(),
+            DeckB: GetDeckB(),
             DifficultyA: 1,
             DifficultyB: 1
             );
             return config;
+        }
+        private static List<string> GetDeckA()
+        {
+            return new List<string> {
+                nameof(Shoot),
+                nameof(Shoot),
+                nameof(Boundary),
+                nameof(Boundary),
+                nameof(BasicAttackR),
+                nameof(BasicAttackR),
+                nameof(BasicBlockG),
+                nameof(BasicBlockG),
+                nameof(BasicBlockG),
+                nameof(PowerHit)
+            };
+        }
+        private static List<string> GetDeckB()
+        {
+            return new List<string> {
+                nameof(Shoot),
+                nameof(Shoot),
+                nameof(Boundary),
+                nameof(Boundary),
+                nameof(BasicAttackG),
+                nameof(BasicAttackG),
+                nameof(BasicBlockR),
+                nameof(BasicBlockR),
+                nameof(BasicBlockR),
+                nameof(PowerHit)
+            };
         }
     }
 

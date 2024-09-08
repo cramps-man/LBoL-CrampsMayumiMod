@@ -1,3 +1,19 @@
+BasicAttackR:
+  Name: Basic Attack
+  Description: Deal {Damage} damage.
+
+BasicAttackG:
+  Name: Basic Attack
+  Description: Deal {Damage} damage.
+
+BasicBlockR:
+  Name: Basic Block
+  Description: Gain {Block} block.
+
+BasicBlockG:
+  Name: Basic Block
+  Description: Gain {Block} block.
+
 StanceChange:
   Name: Change Stance
   Description: |-
