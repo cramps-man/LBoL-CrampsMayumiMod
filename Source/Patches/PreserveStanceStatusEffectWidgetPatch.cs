@@ -1,5 +1,6 @@
 ﻿using LBoL.Presentation.UI.Widgets;
 using LBoLMod.StatusEffects;
+using UnityEngine;
 
 namespace LBoLMod.Source.Patches
 {
@@ -13,7 +14,12 @@ namespace LBoLMod.Source.Patches
             {
                 if (modStanceStatusEffect.Preserved)
                 {
-                    __instance.downText.text = "P";
+                    var textTransform = __instance.CenterWorldPosition;
+                    __instance.downText.text = "KEEP";
+                    __instance.downText.fontSize = 30;
+                    __instance.downText.transform.localPosition = new Vector3 (textTransform.x + 38, textTransform.y - 89, textTransform.z);
+                    __instance.downText.autoSizeTextContainer = true;
+                    __instance.downText.enableAutoSizing = false;
                 }
                 else
                 {
