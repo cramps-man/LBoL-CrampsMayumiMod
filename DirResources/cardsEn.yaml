@@ -22,15 +22,15 @@ StanceChange:
 
 StanceChangePower:
   Name: Power Stance
-  Description: Enter |Power| stance.
+  Description: Enter |Power Stance|.
 
 StanceChangeFocus:
   Name: Focus Stance
-  Description: Enter |Focus| stance.
+  Description: Enter |Focus Stance|.
 
 StanceChangeCalm:
   Name: Calm Stance
-  Description: Enter |Calm| stance.
+  Description: Enter |Calm Stance|.
 
 PowerHit:
   Name: Power Hit
@@ -43,3 +43,9 @@ PreserveStance:
   Description: |-
     |Preserve| the current stance.
     If there is already a |Preserved| stance, nothing happens. 
+
+EnterPower:
+  Name: Enter Power
+  Description: |-
+    Deal {Damage} damage.
+    Enter |Power Stance|.
