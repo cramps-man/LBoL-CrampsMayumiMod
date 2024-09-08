@@ -17,8 +17,8 @@ BasicBlockG:
 StanceChange:
   Name: Change Stance
   Description: |-
-    Choose 1 of 3 |stances| to enter.
-    If already in a |stance|, it won't be selectable.
+    Choose 1 of 3 |Stances| to enter.
+    If already in a |Stance|, it won't be selectable.
 
 StanceChangePower:
   Name: Power Stance
@@ -36,13 +36,13 @@ PowerHit:
   Name: Power Hit
   Description: |-
     Deal {Damage} damage.
-    |Power.S|: Deal {StanceDamage} damage instead.
+    |P.Stance|: Deal {StanceDamage} damage instead.
 
 PreserveStance:
   Name: Preserve Stance
   Description: |-
-    |Preserve| the current stance.
-    If there is already a |Preserved| stance, nothing happens. 
+    |Preserve| the current |Stance|.
+    If a |Stance| is already |Preserved|, do nothing. 
 
 EnterPower:
   Name: Enter Power

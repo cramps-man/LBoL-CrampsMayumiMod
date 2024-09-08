@@ -7,7 +7,6 @@ using LBoL.Core.Cards;
 using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -22,12 +21,13 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.Self;
-            cardConfig.Cost = new ManaGroup() { Any = 1 };
+            cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
-            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Initial;
+            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
             cardConfig.RelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
             return cardConfig;
