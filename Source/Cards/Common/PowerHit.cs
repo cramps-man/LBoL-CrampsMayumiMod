@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -24,10 +23,10 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 12;
-            cardConfig.UpgradedDamage = 14;
+            cardConfig.Damage = 10;
+            cardConfig.UpgradedDamage = 12;
             cardConfig.Value1 = 4;
-            cardConfig.UpgradedValue1 = 6;
+            cardConfig.UpgradedValue1 = 8;
             cardConfig.Cost = new ManaGroup() { Any = 1, Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Red = 1 };
             return cardConfig;
@@ -49,7 +48,8 @@ namespace LBoLMod.Cards
         {
             if (StanceUtils.isStanceFulfilled<PowerStance>(base.Battle.Player))
             {
-                yield return new DamageAction(base.Battle.Player, selector.GetEnemy(base.Battle), StanceDamage);
+                yield return base.AttackAction(selector, StanceDamage);
+                yield return StanceUtils.RemoveDexterityIfNeeded<PowerStance>(base.Battle.Player);
             }
             else
             {

@@ -2,7 +2,6 @@ PowerStance:
   Name: Power Stance
   Description: |-
     Every 3 cards played, deal 6 damage to a random enemy. 
-    {Preserved}
   Brief: Every 3 cards played, deal 6 damage to a random enemy. 
 
 FocusStance:
@@ -21,3 +20,8 @@ Downtime:
   Name: Downtime
   Description: Prevents gaining new |Stances|. 
   Brief: Prevents gaining new |Stances|. 
+
+Dexterity:
+  Name: Dexterity
+  Description: Bypass the |Stance| requirement.
+  Brief: Bypass the |Stance| requirement.

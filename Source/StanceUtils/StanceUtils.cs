@@ -1,6 +1,7 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
+using LBoLMod.Source.StatusEffects.Stances;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 using Unit = LBoL.Core.Units.Unit;
@@ -159,7 +160,23 @@ namespace LBoLMod
         {
             if (player.HasStatusEffect<T>())
                 return true;
+            if (player.HasStatusEffect<Dexterity>())
+                return true;
             return false;
+        }
+
+        public static BattleAction RemoveDexterityIfNeeded<T>(PlayerUnit player, int requiredLevel = 1) where T : ModStanceStatusEffect
+        {
+            if (!player.HasStatusEffect<Dexterity>())
+                return null;
+            if (player.HasStatusEffect<T>())
+            {
+                var se = player.GetStatusEffect<T>();
+                if (se.Level >= requiredLevel)
+                    return null;
+            }
+            var dex = player.GetStatusEffect<Dexterity>();
+            return new RemoveStatusEffectAction(dex);
         }
     }
 }
