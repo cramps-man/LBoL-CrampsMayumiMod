@@ -127,6 +127,7 @@ namespace LBoLMod
                 {
                     se.Preserved = true;
                     se.NotifyActivating();
+                    se.NotifyChanged();
                 }
                 return;
             }
@@ -137,6 +138,7 @@ namespace LBoLMod
                 {
                     se.Preserved = true;
                     se.NotifyActivating();
+                    se.NotifyChanged();
                 }
                 return;
             }
@@ -147,6 +149,7 @@ namespace LBoLMod
                 {
                     se.Preserved = true;
                     se.NotifyActivating();
+                    se.NotifyChanged();
                 }
                 return;
             }
