@@ -176,6 +176,11 @@ namespace LBoLMod
                     return null;
             }
             var dex = player.GetStatusEffect<Dexterity>();
+            if (dex.Level > 1)
+            {
+                dex.Level -= 1;
+                return null;
+            }
             return new RemoveStatusEffectAction(dex);
         }
     }

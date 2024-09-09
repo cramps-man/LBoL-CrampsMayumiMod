@@ -49,3 +49,9 @@ EnterPower:
   Description: |-
     Deal {Damage} damage.
     Enter |Power Stance|.
+
+GrantDexterity:
+  Name: Grant Dexterity
+  Description: |-
+    Gain {Block} |Block|.
+    Gain {Value1} |Dexterity|.
