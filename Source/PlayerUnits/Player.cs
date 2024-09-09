@@ -90,6 +90,5 @@ namespace LBoLMod.PlayerUnits
     [EntityLogic(typeof(PlayerDef))]
     public sealed class ThePlayer: PlayerUnit
     {
-
     }
 }

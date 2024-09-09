@@ -6,6 +6,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -46,7 +47,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (StanceUtils.IsPowerStanceConditionFulfilled(base.Battle.Player))
+            if (StanceUtils.isStanceFulfilled<PowerStance>(base.Battle.Player))
             {
                 yield return new DamageAction(base.Battle.Player, selector.GetEnemy(base.Battle), StanceDamage);
             }

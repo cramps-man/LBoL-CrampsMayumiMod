@@ -7,6 +7,7 @@ using LBoL.Core.Cards;
 using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -40,15 +41,15 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             var selectList = new List<Card> {};
-            if (!StanceUtils.IsPowerStanceConditionFulfilled(base.Battle.Player))
+            if (!StanceUtils.isStanceFulfilled<PowerStance>(base.Battle.Player))
             {
                 selectList.Add(Library.CreateCard<StanceChangePower>());
             }
-            if (!StanceUtils.IsFocusStanceConditionFulfilled(base.Battle.Player))
+            if (!StanceUtils.isStanceFulfilled<FocusStance>(base.Battle.Player))
             {
                 selectList.Add(Library.CreateCard<StanceChangeFocus>());
             }
-            if (!StanceUtils.IsCalmStanceConditionFulfilled(base.Battle.Player))
+            if (!StanceUtils.isStanceFulfilled<CalmStance>(base.Battle.Player))
             {
                 selectList.Add(Library.CreateCard<StanceChangeCalm>());
             }

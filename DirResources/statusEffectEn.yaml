@@ -2,6 +2,7 @@ PowerStance:
   Name: Power Stance
   Description: |-
     Every 3 cards played, deal 6 damage to a random enemy. 
+    {Preserved}
   Brief: Every 3 cards played, deal 6 damage to a random enemy. 
 
 FocusStance:
@@ -15,21 +16,6 @@ CalmStance:
   Description: |-
     Every 3 cards played, refund 1 random mana that was spent on that card. 
   Brief: Every 3 cards played, refund 1 random mana that was spent on that card. 
-
-BoostedPowerStance:
-  Name: Boosted Power Stance
-  Description: After every card played, deal 6 damage to a random enemy. 
-  Brief: After every card played, deal 6 damage to a random enemy. 
-
-BoostedFocusStance:
-  Name: Boosted Focus Stance
-  Description: After every card played, draw 1 card. 
-  Brief: After every card played, draw 1 card. 
-
-BoostedCalmStance:
-  Name: Boosted Calm Stance
-  Description: After every card played, refund 1 random mana that was spent on that card. 
-  Brief: After every card played, refund 1 random mana that was spent on that card. 
 
 Downtime:
   Name: Downtime

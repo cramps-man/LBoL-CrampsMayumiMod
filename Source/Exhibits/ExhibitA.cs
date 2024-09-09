@@ -91,22 +91,6 @@ namespace LBoLMod.Exhibits
                 base.NotifyActivating();
                 yield return new GainManaAction(new ManaGroup { Red = 2 });
             }
-            if (player.HasStatusEffect<BoostedPowerStance>())
-            {
-                base.NotifyActivating();
-                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
-                yield return new ApplyStatusEffectAction<NextAttackUp>(player, 8);
-            }
-            if (player.HasStatusEffect<BoostedFocusStance>())
-            {
-                base.NotifyActivating();
-                yield return new DrawManyCardAction(5);
-            }
-            if (player.HasStatusEffect<BoostedCalmStance>())
-            {
-                base.NotifyActivating();
-                yield return new GainManaAction(new ManaGroup { Red = 2, Green = 2 });
-            }
 
             if (StanceUtils.DoesPlayerHavePreservedStance(player))
             {
@@ -115,7 +99,7 @@ namespace LBoLMod.Exhibits
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();
-                yield return new ApplyStatusEffectAction<PowerStance>(player);
+                yield return StanceUtils.ApplyStance<PowerStance>(player);
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
             }
             yield break;

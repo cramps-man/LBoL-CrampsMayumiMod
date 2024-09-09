@@ -40,7 +40,7 @@ namespace LBoLMod.Cards
             yield return base.AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
             {
-                yield return StanceUtils.ApplyStance<PowerStance>(this);
+                yield return StanceUtils.ApplyStance<PowerStance>(base.Battle.Player);
             }
         }
     }

@@ -1,6 +1,5 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLMod.StatusEffects;
 using Unit = LBoL.Core.Units.Unit;
@@ -9,11 +8,11 @@ namespace LBoLMod
 {
     public static class StanceUtils
     {
-        public static BattleAction ApplyStance<T>(Card card) where T : ModStanceStatusEffect
+        public static BattleAction ApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
         {
-            if (!card.Battle.Player.HasStatusEffect<T>() && !card.Battle.Player.HasStatusEffect<Downtime>())
-                return card.BuffAction<T>();
-            return null;
+            if (player.HasStatusEffect<Downtime>())
+                return null;
+            return new ApplyStatusEffectAction<T>(player, level);
         }
 
         public static BattleAction RemoveStance<T>(Unit unit) where T : ModStanceStatusEffect
@@ -129,30 +128,10 @@ namespace LBoLMod
             }
         }
 
-        public static bool IsPowerStanceConditionFulfilled(PlayerUnit player)
+        public static bool isStanceFulfilled<T>(PlayerUnit player) where T : ModStanceStatusEffect
         {
-            if (player.HasStatusEffect<PowerStance>() || player.HasStatusEffect<BoostedPowerStance>())
-            {
+            if (player.HasStatusEffect<T>())
                 return true;
-            }
-            return false;
-        }
-
-        public static bool IsFocusStanceConditionFulfilled(PlayerUnit player)
-        {
-            if (player.HasStatusEffect<FocusStance>() || player.HasStatusEffect<BoostedFocusStance>())
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public static bool IsCalmStanceConditionFulfilled(PlayerUnit player)
-        {
-            if (player.HasStatusEffect<CalmStance>() || player.HasStatusEffect<BoostedCalmStance>())
-            {
-                return true;
-            }
             return false;
         }
     }

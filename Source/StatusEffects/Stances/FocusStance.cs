@@ -18,35 +18,24 @@ namespace LBoLMod.StatusEffects
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
-            statusConfig.IsStackable = false;
-            statusConfig.HasLevel = false;
-            statusConfig.HasCount = true;
             return statusConfig;
         }
     }
 
     public sealed class FocusStance: ModStanceStatusEffect
     {
-        private const int usesRequired = 3;
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
             this.React(StanceUtils.RemoveStance<PowerStance>(unit));
             this.React(StanceUtils.RemoveStance<CalmStance>(unit));
             this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
-            this.Count = usesRequired;
         }
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
-            this.Count--;
-            if (this.Count == 0)
-            {
-                base.NotifyActivating();
-                this.Count = usesRequired;
-                yield return new DrawManyCardAction(1);
-            }
-            yield break;
+            base.NotifyActivating();
+            yield return new DrawManyCardAction(1);
         }
     }
 }

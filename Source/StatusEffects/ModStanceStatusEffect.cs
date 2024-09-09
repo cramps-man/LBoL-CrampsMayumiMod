@@ -23,6 +23,8 @@ namespace LBoLMod.StatusEffects
 
         protected override void OnAdding(Unit unit)
         {
+            if (Level > 3)
+                Level = 3;
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
         }
 
@@ -34,6 +36,14 @@ namespace LBoLMod.StatusEffects
                 preserved = false;
             }
             yield break;
+        }
+
+        public override bool Stack(StatusEffect other)
+        {
+            base.Stack(other);
+            if (Level > 3)
+                Level = 3;
+            return true;
         }
     }
 }
