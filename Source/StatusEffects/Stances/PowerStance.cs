@@ -35,7 +35,7 @@ namespace LBoLMod.StatusEffects
             if (args.Card.CardType == LBoL.Base.CardType.Attack)
             {
                 base.NotifyActivating();
-                yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(6));
+                yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(2 + Level * 2));
             }
             yield break;
         }

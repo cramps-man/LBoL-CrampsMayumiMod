@@ -1,12 +1,10 @@
-﻿using LBoL.Base;
-using LBoL.ConfigData;
+﻿using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.StatusEffects
 {
@@ -29,15 +27,17 @@ namespace LBoLMod.StatusEffects
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
-            this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
+            this.ReactOwnerEvent<ManaEventArgs>(Battle.ManaGained, new EventSequencedReactor<ManaEventArgs>(this.OnManaGained));
         }
 
-        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        private IEnumerable<BattleAction> OnManaGained(ManaEventArgs args)
         {
             base.NotifyActivating();
-            var list = args.ConsumingMana.EnumerateComponents().ToList();
+            yield return new CastBlockShieldAction(base.Battle.Player, (1 + Level) * args.Value.Total, 0);
+            //keep this refund mana code for another status effect
+            /*var list = args.ConsumingMana.EnumerateComponents().ToList();
             var randomManaSpent = list[base.Battle.GameRun.BattleRng.NextInt(0, list.Count - 1)];
-            yield return new GainManaAction(ManaGroup.Single(randomManaSpent));
+            yield return new GainManaAction(ManaGroup.Single(randomManaSpent));*/
         }
     }
 }

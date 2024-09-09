@@ -4,8 +4,8 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
+using LBoL.Core.StatusEffects;
 using LBoL.EntityLib.Exhibits;
-using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
@@ -70,7 +70,7 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
@@ -79,19 +79,22 @@ namespace LBoLMod.Exhibits
             if (player.HasStatusEffect<PowerStance>())
             {
                 base.NotifyActivating();
-                yield return new ApplyStatusEffectAction<NextAttackUp>(player, 4);
+                var se = player.GetStatusEffect<PowerStance>();
+                yield return new ApplyStatusEffectAction<TempFirepower>(player, 1 + se.Level);
                 yield return StanceUtils.ForceRemoveStance<PowerStance>(player);
             }
             if (player.HasStatusEffect<FocusStance>())
             {
                 base.NotifyActivating();
-                yield return new DrawManyCardAction(2);
+                var se = player.GetStatusEffect<FocusStance>();
+                yield return new DrawManyCardAction(1 + se.Level);
                 yield return StanceUtils.ForceRemoveStance<FocusStance>(player);
             }
             if (player.HasStatusEffect<CalmStance>())
             {
                 base.NotifyActivating();
-                yield return new GainManaAction(new ManaGroup { Red = 2 });
+                var se = player.GetStatusEffect<CalmStance>();
+                yield return new GainManaAction(new ManaGroup { Red = se.Level });
                 yield return StanceUtils.ForceRemoveStance<CalmStance>(player);
             }
             if (StanceUtils.DoesPlayerHavePreservedStance(player))
