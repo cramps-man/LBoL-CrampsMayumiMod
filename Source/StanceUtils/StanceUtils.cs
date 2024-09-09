@@ -2,16 +2,40 @@
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLMod.StatusEffects;
+using System.Collections.Generic;
 using Unit = LBoL.Core.Units.Unit;
 
 namespace LBoLMod
 {
     public static class StanceUtils
     {
-        public static BattleAction ApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
+        public static IEnumerable<BattleAction> ApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
         {
             if (player.HasStatusEffect<Downtime>())
-                return null;
+                yield break;
+            //during ultimate skill A, dont add or remove anything
+            if (player.HasStatusEffect<PowerStance>() && player.HasStatusEffect<FocusStance>() && player.HasStatusEffect<CalmStance>())
+                yield break;
+            if (typeof(T) == typeof(PowerStance))
+            {
+                yield return RemoveStance<FocusStance>(player);
+                yield return RemoveStance<CalmStance>(player);
+            }
+            else if (typeof(T) == typeof(FocusStance))
+            {
+                yield return RemoveStance<PowerStance>(player);
+                yield return RemoveStance<CalmStance>(player);
+            }
+            else if (typeof(T) == typeof(CalmStance))
+            {
+                yield return RemoveStance<FocusStance>(player);
+                yield return RemoveStance<PowerStance>(player);
+            }
+            yield return new ApplyStatusEffectAction<T>(player, level);
+        }
+
+        public static BattleAction ForceApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
+        {
             return new ApplyStatusEffectAction<T>(player, level);
         }
 

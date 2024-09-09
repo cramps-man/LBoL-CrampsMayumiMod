@@ -80,18 +80,20 @@ namespace LBoLMod.Exhibits
             {
                 base.NotifyActivating();
                 yield return new ApplyStatusEffectAction<NextAttackUp>(player, 4);
+                yield return StanceUtils.ForceRemoveStance<PowerStance>(player);
             }
             if (player.HasStatusEffect<FocusStance>())
             {
                 base.NotifyActivating();
                 yield return new DrawManyCardAction(2);
+                yield return StanceUtils.ForceRemoveStance<FocusStance>(player);
             }
             if (player.HasStatusEffect<CalmStance>())
             {
                 base.NotifyActivating();
                 yield return new GainManaAction(new ManaGroup { Red = 2 });
+                yield return StanceUtils.ForceRemoveStance<CalmStance>(player);
             }
-
             if (StanceUtils.DoesPlayerHavePreservedStance(player))
             {
                 yield return StanceUtils.RemoveNonPreservedStance(player);
@@ -99,7 +101,10 @@ namespace LBoLMod.Exhibits
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();
-                yield return StanceUtils.ApplyStance<PowerStance>(player);
+                foreach (var item in StanceUtils.ApplyStance<PowerStance>(player))
+                {
+                    yield return item;
+                }
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
             }
             yield break;

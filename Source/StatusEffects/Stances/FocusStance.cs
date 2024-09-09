@@ -27,8 +27,6 @@ namespace LBoLMod.StatusEffects
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
-            this.React(StanceUtils.RemoveStance<PowerStance>(unit));
-            this.React(StanceUtils.RemoveStance<CalmStance>(unit));
             this.ReactOwnerEvent<CardUsingEventArgs>(Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
         }
 

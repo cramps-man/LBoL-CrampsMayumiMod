@@ -31,8 +31,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            yield return StanceUtils.ApplyStance<CalmStance>(base.Battle.Player);
-            yield break;
+            return StanceUtils.ApplyStance<CalmStance>(Battle.Player);
         }
     }
 }

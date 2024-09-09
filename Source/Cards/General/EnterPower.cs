@@ -36,11 +36,13 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            
             yield return base.AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
             {
-                yield return StanceUtils.ApplyStance<PowerStance>(base.Battle.Player);
+                foreach (var item in StanceUtils.ApplyStance<PowerStance>(base.Battle.Player))
+                {
+                    yield return item;
+                }
             }
         }
     }
