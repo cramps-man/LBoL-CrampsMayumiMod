@@ -35,7 +35,7 @@ PowerHit:
   Name: Power Hit
   Description: |-
     Deal {Damage} damage.
-    |P.Stance|: Deal {StanceDamage} damage instead.
+    |Power Lvl1|: Deal {StanceDamage} damage instead.
 
 PreserveStance:
   Name: Preserve Stance
@@ -67,3 +67,15 @@ EnterCalm:
   Description: |-
     Enter |Calm Stance|.
     Gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="G">.
+
+ScryFocus:
+  Name: Scry Focus
+  Description: |-
+    |Focus Lvl1|: Scry {Scry}.
+    Draw {Value1} cards.
+
+BlockCalm:
+  Name: Block Calm
+  Description: |-
+    Gain {Block} |Block|.
+    |Calm Lvl1|: Also gain {Shield} |Barrier|.

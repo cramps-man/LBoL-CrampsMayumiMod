@@ -14,5 +14,5 @@ ExhibitB:
     When entering or leveling a |Stance|, gain extra effects. 
     |Power|: Gain 1 |Temporary Firepower|.
     |Focus|: Draw 1 card. 
-    |Calm|: Gain 1 <sprite="ManaSprite" name="G">. 
+    |Calm|: Gain <sprite="ManaSprite" name="G">. 
   FlavorText: Dont read
