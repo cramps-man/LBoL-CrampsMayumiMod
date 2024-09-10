@@ -5,7 +5,7 @@ ExhibitA:
     Gain extra benefits at the start of next turn depending on what stances are active. 
     |Power|: Gain 2/3/4 |Temporary Firepower|. 
     |Focus|: Draw 2/3/4 extra cards. 
-    |Calm|: Gain 1/2/3 <sprite=\"ManaSprite\" name=\"R\">. 
+    |Calm|: Gain 1/2/3 <sprite="ManaSprite" name="R">. 
   FlavorText: Some text
 
 ExhibitB:
@@ -14,5 +14,5 @@ ExhibitB:
     When entering or leveling a |Stance|, gain extra effects. 
     |Power|: Gain 1 |Temporary Firepower|.
     |Focus|: Draw 1 card. 
-    |Calm|: Gain 1 <sprite=\"ManaSprite\" name=\"G\">. 
+    |Calm|: Gain 1 <sprite="ManaSprite" name="G">. 
   FlavorText: Dont read

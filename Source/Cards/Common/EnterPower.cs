@@ -22,11 +22,11 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
             cardConfig.Damage = 10;
             cardConfig.UpgradedDamage = 12;
-            cardConfig.Cost = new ManaGroup() { Any = 1, Red = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
+            cardConfig.Cost = new ManaGroup() { Green = 1, Red = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
             return cardConfig;
         }
     }

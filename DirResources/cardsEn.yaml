@@ -55,3 +55,15 @@ GrantDexterity:
   Description: |-
     Gain {Block} |Block|.
     Gain {Value1} |Dexterity|.
+
+EnterFocus:
+  Name: Enter Focus
+  Description: |-
+    Enter |Focus Stance|.
+    Draw 1 card.
+
+EnterCalm:
+  Name: Enter Calm
+  Description: |-
+    Enter |Calm Stance|.
+    Gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="G">.
