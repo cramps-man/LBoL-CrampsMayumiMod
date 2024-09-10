@@ -32,8 +32,14 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (!StanceUtils.DoesPlayerHavePreservedStance(base.Battle.Player))
-                StanceUtils.PreserveCurrentStance(base.Battle.Player);
+            if (this.IsUpgraded) 
+            {
+                StanceUtils.PreserveAllCurrentStances(base.Battle.Player);
+            }
+            else
+            {
+                StanceUtils.PreserveOldestStance(base.Battle.Player);
+            }
             yield break;
         }
     }

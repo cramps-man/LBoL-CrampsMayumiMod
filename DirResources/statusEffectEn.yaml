@@ -2,18 +2,21 @@ PowerStance:
   Name: Power Stance
   Description: |-
     Every 3 cards played, deal 6 damage to a random enemy. 
+    {AgeCounter}
   Brief: Every 3 cards played, deal 6 damage to a random enemy. 
 
 FocusStance:
   Name: Focus Stance
   Description: |-
     Every 3 cards played, draw 1 card. 
+    {AgeCounter}
   Brief: Every 3 cards played, draw 1 card. 
 
 CalmStance:
   Name: Calm Stance
   Description: |-
     Every 3 cards played, refund 1 random mana that was spent on that card. 
+    {AgeCounter}
   Brief: Every 3 cards played, refund 1 random mana that was spent on that card. 
 
 Downtime:

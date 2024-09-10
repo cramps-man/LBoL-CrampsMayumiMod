@@ -5,6 +5,7 @@ using LBoLMod.Exhibits;
 using LBoLMod.Source.StatusEffects.Stances;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
+using System.Linq;
 using Unit = LBoL.Core.Units.Unit;
 
 namespace LBoLMod
@@ -120,7 +121,7 @@ namespace LBoLMod
             return null;
         }
 
-        public static void PreserveCurrentStance(PlayerUnit player)
+        public static void PreserveAllCurrentStances(PlayerUnit player)
         {
             if (player.HasStatusEffect<PowerStance>())
             {
@@ -131,7 +132,6 @@ namespace LBoLMod
                     se.NotifyActivating();
                     se.NotifyChanged();
                 }
-                return;
             }
             if (player.HasStatusEffect<FocusStance>())
             {
@@ -142,7 +142,6 @@ namespace LBoLMod
                     se.NotifyActivating();
                     se.NotifyChanged();
                 }
-                return;
             }
             if (player.HasStatusEffect<CalmStance>())
             {
@@ -153,7 +152,45 @@ namespace LBoLMod
                     se.NotifyActivating();
                     se.NotifyChanged();
                 }
-                return;
+            }
+        }
+
+        public static void PreserveOldestStance(PlayerUnit player)
+        {
+            var stances = new List<ModStanceStatusEffect>();
+            if (player.HasStatusEffect<PowerStance>())
+            {
+                var se = player.GetStatusEffect<PowerStance>();
+                if (!se.Preserved)
+                {
+                    stances.Add(se);
+                }
+            }
+            if (player.HasStatusEffect<FocusStance>())
+            {
+                var se = player.GetStatusEffect<FocusStance>();
+                if (!se.Preserved)
+                {
+                    stances.Add(se);
+                }
+            }
+            if (player.HasStatusEffect<CalmStance>())
+            {
+                var se = player.GetStatusEffect<CalmStance>();
+                if (!se.Preserved)
+                {
+                    stances.Add(se);
+                }
+            }
+            if (stances.Count > 0)
+            {
+                var oldestAge = stances.Max(s => s.AgeCounter);
+                foreach (var s in stances.Where(s => s.AgeCounter == oldestAge))
+                {
+                    s.Preserved = true;
+                    s.NotifyActivating();
+                    s.NotifyChanged();
+                }
             }
         }
 

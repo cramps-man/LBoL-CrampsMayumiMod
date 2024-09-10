@@ -32,7 +32,7 @@ namespace LBoLMod.StatusEffects
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
-            if (args.Card.CardType == LBoL.Base.CardType.Attack)
+            if (!base.Battle.BattleShouldEnd && args.Card.CardType == LBoL.Base.CardType.Attack)
             {
                 base.NotifyActivating();
                 yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(2 + Level * 2));

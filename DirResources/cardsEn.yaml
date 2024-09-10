@@ -18,7 +18,6 @@ StanceChange:
   Name: Change Stance
   Description: |-
     Choose 1 of 3 |Stances| to enter.
-    If already in a |Stance|, it won't be selectable.
 
 StanceChangePower:
   Name: Power Stance
@@ -41,8 +40,9 @@ PowerHit:
 PreserveStance:
   Name: Preserve Stance
   Description: |-
-    |Preserve| the current |Stance|.
-    If a |Stance| is already |Preserved|, do nothing. 
+    |Preserve| the oldest |Stance|.
+  UpgradedDescription: |-
+    |Preserve| all current |Stances|. 
 
 EnterPower:
   Name: Enter Power

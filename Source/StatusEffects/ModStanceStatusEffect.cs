@@ -20,12 +20,30 @@ namespace LBoLMod.StatusEffects
                 preserved = value;
             }
         }
+        protected int ageCounter = 0;
+        public int AgeCounter
+        {
+            get
+            {
+                return ageCounter;
+            }
+        }
 
         protected override void OnAdding(Unit unit)
         {
             if (Level > 3)
                 Level = 3;
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
+            base.ReactOwnerEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
+        }
+
+        private IEnumerable<BattleAction> onStatusApplied(StatusEffectApplyEventArgs args)
+        {
+            if (args.Effect is ModStanceStatusEffect)
+            {
+                ageCounter++;
+            }
+            yield break;
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
