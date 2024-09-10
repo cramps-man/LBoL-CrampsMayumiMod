@@ -1,6 +1,7 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
+using LBoLMod.Exhibits;
 using LBoLMod.Source.StatusEffects.Stances;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace LBoLMod
         {
             if (player.HasStatusEffect<Downtime>())
                 yield break;
-            //during ultimate skill A, dont add or remove anything
-            if (player.HasStatusEffect<PowerStance>() && player.HasStatusEffect<FocusStance>() && player.HasStatusEffect<CalmStance>())
+            yield return new ApplyStatusEffectAction<T>(player, level);
+            //exhibit A's specialty is to not have stances be removed when applying others
+            if (player.HasExhibit<ExhibitA>())
                 yield break;
             if (typeof(T) == typeof(PowerStance))
             {
@@ -32,7 +34,6 @@ namespace LBoLMod
                 yield return RemoveStance<FocusStance>(player);
                 yield return RemoveStance<PowerStance>(player);
             }
-            yield return new ApplyStatusEffectAction<T>(player, level);
         }
 
         public static BattleAction ForceApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect

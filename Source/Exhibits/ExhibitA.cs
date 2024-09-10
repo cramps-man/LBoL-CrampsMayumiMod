@@ -70,10 +70,21 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
-        private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
+        private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
+        {
+            var player = base.Battle.Player;
+            if (player.TurnCounter == 1)
+            {
+                base.NotifyActivating();
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
+            }
+        }
+
+        private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
         {
             var player = base.Battle.Player;
             if (player.HasStatusEffect<PowerStance>())
@@ -81,36 +92,22 @@ namespace LBoLMod.Exhibits
                 base.NotifyActivating();
                 var se = player.GetStatusEffect<PowerStance>();
                 yield return new ApplyStatusEffectAction<TempFirepower>(player, 1 + se.Level);
-                yield return StanceUtils.ForceRemoveStance<PowerStance>(player);
             }
             if (player.HasStatusEffect<FocusStance>())
             {
                 base.NotifyActivating();
                 var se = player.GetStatusEffect<FocusStance>();
                 yield return new DrawManyCardAction(1 + se.Level);
-                yield return StanceUtils.ForceRemoveStance<FocusStance>(player);
             }
             if (player.HasStatusEffect<CalmStance>())
             {
                 base.NotifyActivating();
                 var se = player.GetStatusEffect<CalmStance>();
                 yield return new GainManaAction(new ManaGroup { Red = se.Level });
-                yield return StanceUtils.ForceRemoveStance<CalmStance>(player);
             }
-            if (StanceUtils.DoesPlayerHavePreservedStance(player))
-            {
-                yield return StanceUtils.RemoveNonPreservedStance(player);
-            }
-            if (player.TurnCounter == 1)
-            {
-                base.NotifyActivating();
-                foreach (var item in StanceUtils.ApplyStance<PowerStance>(player))
-                {
-                    yield return item;
-                }
-                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
-            }
-            yield break;
+            yield return StanceUtils.RemoveStance<PowerStance>(player);
+            yield return StanceUtils.RemoveStance<FocusStance>(player);
+            yield return StanceUtils.RemoveStance<CalmStance>(player);
         }
     }
 }

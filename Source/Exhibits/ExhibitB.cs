@@ -13,7 +13,6 @@ using LBoLEntitySideloader.Resource;
 using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Exhibits
@@ -72,10 +71,19 @@ namespace LBoLMod.Exhibits
         protected override void OnEnterBattle()
         {
             base.ReactBattleEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
-        private IEnumerable<BattleAction> onPlayerTurnStart(UnitEventArgs args)
+        private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
+        {
+            var player = base.Battle.Player;
+            yield return StanceUtils.RemoveStance<PowerStance>(player);
+            yield return StanceUtils.RemoveStance<FocusStance>(player);
+            yield return StanceUtils.RemoveStance<CalmStance>(player);
+        }
+
+        private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
         {
             var stanceChangeCount = 0;
             foreach(Card card in base.Battle.HandZone)
@@ -90,12 +98,6 @@ namespace LBoLMod.Exhibits
                 base.NotifyActivating();
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
             }
-
-            if (StanceUtils.DoesPlayerHavePreservedStance(base.Battle.Player))
-            {
-                yield return StanceUtils.RemoveNonPreservedStance(base.Battle.Player);
-            }
-            yield break;
         }
 
         private IEnumerable<BattleAction> onStatusApplied(StatusEffectApplyEventArgs args)
@@ -115,7 +117,6 @@ namespace LBoLMod.Exhibits
                 base.NotifyActivating();
                 yield return new CastBlockShieldAction(base.Battle.Player, base.Battle.Player, 4, 0);
             }
-            yield break;
         }
     }
 }

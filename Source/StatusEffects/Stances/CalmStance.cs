@@ -32,6 +32,8 @@ namespace LBoLMod.StatusEffects
 
         private IEnumerable<BattleAction> OnManaGained(ManaEventArgs args)
         {
+            if (args.Cause == ActionCause.TurnStart)
+                yield break;
             base.NotifyActivating();
             yield return new CastBlockShieldAction(base.Battle.Player, (1 + Level) * args.Value.Total, 0);
             //keep this refund mana code for another status effect
