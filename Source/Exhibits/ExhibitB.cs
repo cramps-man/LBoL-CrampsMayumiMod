@@ -115,7 +115,7 @@ namespace LBoLMod.Exhibits
             if (args.Effect is CalmStance)
             {
                 base.NotifyActivating();
-                yield return new CastBlockShieldAction(base.Battle.Player, base.Battle.Player, 4, 0);
+                yield return new GainManaAction(ManaGroup.Greens(1));
             }
         }
     }

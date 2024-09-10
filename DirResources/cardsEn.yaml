@@ -8,11 +8,11 @@ BasicAttackG:
 
 BasicBlockR:
   Name: Basic Block
-  Description: Gain {Block} block.
+  Description: Gain {Block} |Block|.
 
 BasicBlockG:
   Name: Basic Block
-  Description: Gain {Block} block.
+  Description: Gain {Block} |Block|.
 
 StanceChange:
   Name: Change Stance
