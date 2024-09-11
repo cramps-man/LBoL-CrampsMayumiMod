@@ -22,14 +22,17 @@ StanceChange:
 StanceChangePower:
   Name: Power Stance
   Description: Enter |Power Stance|.
+  UpgradedDescription: Enter |Power Stance| {Value1} times.
 
 StanceChangeFocus:
   Name: Focus Stance
   Description: Enter |Focus Stance|.
+  UpgradedDescription: Enter |Focus Stance| {Value1} times.
 
 StanceChangeCalm:
   Name: Calm Stance
   Description: Enter |Calm Stance|.
+  UpgradedDescription: Enter |Calm Stance| {Value1} times.
 
 PowerHit:
   Name: Power Hit
@@ -79,3 +82,12 @@ BlockCalm:
   Description: |-
     Gain {Block} |Block|.
     |Calm Lvl1|: Also gain {Shield} |Barrier|.
+
+BlockChange:
+  Name: Block Change
+  Description: |-
+    Gain {Block} |Block|.
+    Add a |Change Stance| to the hand. 
+  UpgradedDescription: |-
+    Gain {Block} |Block|.
+    Add an |Upgraded| |Change Stance| to the hand. 

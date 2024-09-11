@@ -32,7 +32,7 @@ namespace LBoLMod.Cards
             cardConfig.RelativeEffects = new List<string>() { nameof(Stance) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Stance) };
             cardConfig.RelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChangePower)+"+", nameof(StanceChangeFocus)+"+", nameof(StanceChangeCalm)+"+" };
             return cardConfig;
         }
     }
@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            var selectList = new List<Card> { Library.CreateCard<StanceChangePower>(), Library.CreateCard<StanceChangeFocus>(), Library.CreateCard<StanceChangeCalm>() };
+            var selectList = new List<Card> { Library.CreateCard<StanceChangePower>(IsUpgraded), Library.CreateCard<StanceChangeFocus>(IsUpgraded), Library.CreateCard<StanceChangeCalm>(IsUpgraded) };
             return new MiniSelectCardInteraction(selectList);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

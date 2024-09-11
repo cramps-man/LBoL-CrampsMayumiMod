@@ -22,6 +22,8 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
+            cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.RelativeEffects = new List<string>() { nameof(CalmStance) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CalmStance) };
             return cardConfig;
@@ -33,7 +35,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            return StanceUtils.ApplyStance<CalmStance>(Battle.Player);
+            return StanceUtils.ApplyStance<CalmStance>(Battle.Player, Value1);
         }
     }
 }
