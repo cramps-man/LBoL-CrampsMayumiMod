@@ -2,6 +2,7 @@
 using LBoL.Core.Battle;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
+using LBoLMod.Exhibits;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
@@ -28,11 +29,21 @@ namespace LBoLMod.StatusEffects
                 return ageCounter;
             }
         }
+        private int MaxLevel
+        {
+            get
+            {
+                if (base.Battle.Player.HasExhibit<ExhibitB>())
+                    return 5;
+                else
+                    return 3;
+            }
+        }
 
         protected override void OnAdding(Unit unit)
         {
-            if (Level > 3)
-                Level = 3;
+            if (Level > MaxLevel)
+                Level = MaxLevel;
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStart));
             base.ReactOwnerEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
         }
@@ -59,8 +70,8 @@ namespace LBoLMod.StatusEffects
         public override bool Stack(StatusEffect other)
         {
             base.Stack(other);
-            if (Level > 3)
-                Level = 3;
+            if (Level > MaxLevel)
+                Level = MaxLevel;
             return true;
         }
     }

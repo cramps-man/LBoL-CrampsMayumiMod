@@ -24,6 +24,13 @@ namespace LBoLMod.StatusEffects
 
     public sealed class PowerStance: ModStanceStatusEffect
     {
+        public int EffectDamage
+        {
+            get 
+            {
+                return 2 + Level * 2;
+            }
+        }
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
@@ -35,7 +42,7 @@ namespace LBoLMod.StatusEffects
             if (!base.Battle.BattleShouldEnd && args.Card.CardType == LBoL.Base.CardType.Attack)
             {
                 base.NotifyActivating();
-                yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(2 + Level * 2));
+                yield return new DamageAction(base.Battle.Player, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(EffectDamage));
             }
             yield break;
         }

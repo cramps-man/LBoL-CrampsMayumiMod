@@ -1,26 +1,28 @@
 PowerStance:
   Name: Power Stance
   Description: |-
-    After every attack card played, deal 4/6/8 damage to a random enemy. 
-    Age-{AgeCounter}
-  Brief: After every attack card played, deal 4/6/8 damage to a random enemy. 
+    After every attack card played, deal {EffectDamage} damage to a random enemy. 
+    Age = {AgeCounter}
+  Brief: After every attack card played, deal damage to a random enemy. 
 
 FocusStance:
   Name: Focus Stance
   Description: |-
-    After every card drawn, gain a buff based on the type of card. 
-    |Attack|: 2/3/4 extra damage on your next attack. 
-    |Defence|: gain 2/3/4 |Block|.
-    |Skill|: draw 1 card. 
-    Age-{AgeCounter}
-  Brief: After every card drawn, gain a buff based on the type of card. 
+    After every attack or defence card drawn, gain a buff based on the type of card. 
+    |Attack|: Gain {EffectValue} extra damage on your next attack. 
+    |Defence|: Gain {EffectValue} |Block|.
+    Age = {AgeCounter}
+  Brief: |-
+    After every attack or defence card drawn, gain a buff based on the type of card. 
+    |Attack|: Gain extra damage on your next attack. 
+    |Defence|: Gain |Block|.
 
 CalmStance:
   Name: Calm Stance
   Description: |-
-    After gaining mana, gain 2/3/4 |Block| based on how many mana was gained. 
-    Age-{AgeCounter}
-  Brief: After gaining mana, gain 2/3/4 |Block| based on how many mana was gained. 
+    After gaining mana, gain {EffectValue} |Block| multiplied by the number of mana. 
+    Age = {AgeCounter}
+  Brief: After gaining mana, gain |Block| multiplied by the number of mana. 
 
 Downtime:
   Name: Downtime

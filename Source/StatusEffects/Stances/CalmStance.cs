@@ -24,6 +24,13 @@ namespace LBoLMod.StatusEffects
 
     public sealed class CalmStance: ModStanceStatusEffect
     {
+        public int EffectValue
+        {
+            get
+            {
+                return 1 + Level;
+            }
+        }
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
@@ -35,7 +42,7 @@ namespace LBoLMod.StatusEffects
             if (args.Cause == ActionCause.TurnStart)
                 yield break;
             base.NotifyActivating();
-            yield return new CastBlockShieldAction(base.Battle.Player, (1 + Level) * args.Value.Total, 0);
+            yield return new CastBlockShieldAction(base.Battle.Player, EffectValue * args.Value.Total, 0);
             //keep this refund mana code for another status effect
             /*var list = args.ConsumingMana.EnumerateComponents().ToList();
             var randomManaSpent = list[base.Battle.GameRun.BattleRng.NextInt(0, list.Count - 1)];

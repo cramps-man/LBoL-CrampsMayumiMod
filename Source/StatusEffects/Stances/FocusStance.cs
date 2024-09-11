@@ -25,6 +25,13 @@ namespace LBoLMod.StatusEffects
 
     public sealed class FocusStance: ModStanceStatusEffect
     {
+        public int EffectValue
+        {
+            get
+            {
+                return 1 + Level;
+            }
+        }
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
@@ -40,16 +47,17 @@ namespace LBoLMod.StatusEffects
             base.NotifyActivating();
             if (args.Card.CardType == LBoL.Base.CardType.Attack)
             {
-                yield return BuffAction<NextAttackUp>(1 + Level);
+                yield return BuffAction<NextAttackUp>(EffectValue);
             }
             else if (args.Card.CardType == LBoL.Base.CardType.Defense)
             {
-                yield return new CastBlockShieldAction(base.Battle.Player, 1 + Level, 0);
+                yield return new CastBlockShieldAction(base.Battle.Player, EffectValue, 0);
             }
-            else if (args.Card.CardType == LBoL.Base.CardType.Skill)
+            //bit too op for base stance, maybe after ability used?
+            /*else if (args.Card.CardType == LBoL.Base.CardType.Skill)
             {
                 yield return new DrawManyCardAction(1);
-            }
+            }*/
         }
     }
 }
