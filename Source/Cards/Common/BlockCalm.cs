@@ -21,8 +21,8 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Defense;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
-            cardConfig.Cost = new ManaGroup() { Any = 1, Green = 1 };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
+            cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
             cardConfig.Block = 8;
             cardConfig.UpgradedBlock = 12;
             cardConfig.Shield = 8;

@@ -35,7 +35,7 @@ PowerHit:
   Name: Power Hit
   Description: |-
     Deal {Damage} damage.
-    |Power Lvl1|: Deal {StanceDamage} damage instead.
+    |Power Lvl1|: Deal {StanceDamage} damage instead and apply {Value2} |Weak|.
 
 PreserveStance:
   Name: Preserve Stance

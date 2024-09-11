@@ -21,11 +21,11 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
             cardConfig.Block = 6;
             cardConfig.UpgradedBlock = 9;
             cardConfig.Value1 = 1;
-            cardConfig.Cost = new ManaGroup() { Red = 1 };
+            cardConfig.Cost = new ManaGroup() { Green = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Dexterity) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Dexterity) };

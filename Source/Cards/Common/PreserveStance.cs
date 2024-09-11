@@ -22,8 +22,8 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.Self;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
-            cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Preserve) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Preserve) };
             return cardConfig;
