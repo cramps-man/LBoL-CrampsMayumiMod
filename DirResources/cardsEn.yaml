@@ -71,7 +71,7 @@ EnterCalm:
 ScryFocus:
   Name: Scry Focus
   Description: |-
-    |Focus Lvl1|: Scry {Scry}.
+    |Focus Lvl1|: |Scry| {Scry}.
     Draw {Value1} cards.
 
 BlockCalm:

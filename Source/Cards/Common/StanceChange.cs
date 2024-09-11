@@ -7,6 +7,7 @@ using LBoL.Core.Cards;
 using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -28,6 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Stance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Stance) };
             cardConfig.RelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
             return cardConfig;

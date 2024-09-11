@@ -29,6 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 8;
             cardConfig.Cost = new ManaGroup() { Any = 1, Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Red = 1 };
+            cardConfig.RelativeEffects = new List<string>() { nameof(PowerStance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(PowerStance) };
             return cardConfig;
         }
     }

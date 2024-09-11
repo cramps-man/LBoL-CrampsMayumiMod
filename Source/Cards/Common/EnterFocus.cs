@@ -25,6 +25,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
+            cardConfig.RelativeEffects = new List<string>() { nameof(FocusStance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FocusStance) };
             return cardConfig;
         }
     }

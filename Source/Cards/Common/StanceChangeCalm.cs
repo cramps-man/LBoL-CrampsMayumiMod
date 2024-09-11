@@ -22,6 +22,8 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
+            cardConfig.RelativeEffects = new List<string>() { nameof(CalmStance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CalmStance) };
             return cardConfig;
         }
     }

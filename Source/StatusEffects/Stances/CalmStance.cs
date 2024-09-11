@@ -4,6 +4,8 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
+using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
@@ -18,10 +20,12 @@ namespace LBoLMod.StatusEffects
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
+            statusConfig.RelativeEffects = new List<string>() { nameof(Stance) };
             return statusConfig;
         }
     }
 
+    [EntityLogic(typeof(CalmStanceDef))]
     public sealed class CalmStance: ModStanceStatusEffect
     {
         public int EffectValue

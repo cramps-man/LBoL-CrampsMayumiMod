@@ -22,6 +22,8 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.RelativeEffects = new List<string>() { nameof(PowerStance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(PowerStance) };
             return cardConfig;
         }
     }

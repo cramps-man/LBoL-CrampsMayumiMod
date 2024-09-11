@@ -5,6 +5,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -23,6 +24,8 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.Self;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Preserve) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Preserve) };
             return cardConfig;
         }
     }

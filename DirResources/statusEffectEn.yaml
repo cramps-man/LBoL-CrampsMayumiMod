@@ -1,28 +1,46 @@
+Stance:
+  Name: Stance
+  Description:  |-
+    A |Stance| is a buff grants extra effects that can be triggered while active. 
+    You can enter a |Stance| more than once to level it up, default max Lvl 3. 
+    By default, at the start of next turn |Stances| will be removed. 
+    Some cards may require a |Stance| to be played or for extra effects. 
+  Brief: |-
+    A |Stance| is a buff grants extra effects that can be triggered while active. 
+    You can enter a |Stance| more than once to level it up, default max Lvl 3. 
+    By default, at the start of next turn |Stances| will be removed. 
+    Some cards may require a |Stance| to be played or for extra effects. 
+
 PowerStance:
   Name: Power Stance
   Description: |-
-    After every attack card played, deal {EffectDamage} damage to a random enemy. 
+    After an attack card is played, deal {EffectDamage} damage to a random enemy. 
     Age = {AgeCounter}
-  Brief: After every attack card played, deal damage to a random enemy. 
+  Brief: |-
+    After an attack card is played, deal damage to a random enemy. 
+    Higher level increases damage. 
 
 FocusStance:
   Name: Focus Stance
   Description: |-
-    After every attack or defence card drawn, gain a buff based on the type of card. 
+    After an attack or defence card is drawn, gain a buff based on the type of card. 
     |Attack|: Gain {EffectValue} extra damage on your next attack. 
     |Defence|: Gain {EffectValue} |Block|.
     Age = {AgeCounter}
   Brief: |-
-    After every attack or defence card drawn, gain a buff based on the type of card. 
+    After an attack or defence card is drawn, gain a buff based on the type of card. 
     |Attack|: Gain extra damage on your next attack. 
-    |Defence|: Gain |Block|.
+    |Defence|: Gain |Block|. 
+    Higher level increases extra damage and |Block|. 
 
 CalmStance:
   Name: Calm Stance
   Description: |-
     After gaining mana, gain {EffectValue} |Block| multiplied by the number of mana. 
     Age = {AgeCounter}
-  Brief: After gaining mana, gain |Block| multiplied by the number of mana. 
+  Brief: |-
+    After gaining mana, gain |Block| multiplied by the number of mana. 
+    Higher level increases |Block|. 
 
 Downtime:
   Name: Downtime
@@ -33,3 +51,12 @@ Dexterity:
   Name: Dexterity
   Description: Bypass the next few |Stance| requirements.
   Brief: Bypass the next few |Stance| requirements.
+
+Preserve:
+  Name: Preserve Stance
+  Description: |-
+    When a |Stance| is |preserved|, it will not be removed at the start of the turn, instead it will lose |Preserve|. 
+    Marked on the status icon with "KEEP". 
+  Brief: |-
+    When a |Stance| is |preserved|, it will not be removed at the start of the turn, instead it will lose |Preserve|. 
+    Marked on the status icon with "KEEP". 

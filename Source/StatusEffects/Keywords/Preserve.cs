@@ -2,17 +2,16 @@
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
-namespace LBoLMod.Source.StatusEffects.Stances
+namespace LBoLMod.Source.StatusEffects.Keywords
 {
-    public sealed class DexterityDef : ModStatusEffectTemplate
+    public sealed class PreserveDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(Dexterity);
+            return nameof(Preserve);
         }
         public override StatusEffectConfig MakeConfig()
         {
@@ -21,9 +20,8 @@ namespace LBoLMod.Source.StatusEffects.Stances
             return statusConfig;
         }
     }
-
-    [EntityLogic(typeof(DexterityDef))]
-    public sealed class Dexterity: StatusEffect
+    [EntityLogic(typeof(PreserveDef))]
+    public sealed class Preserve : StatusEffect
     {
     }
 }

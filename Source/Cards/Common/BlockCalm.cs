@@ -27,6 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedBlock = 12;
             cardConfig.Shield = 8;
             cardConfig.UpgradedShield = 12;
+            cardConfig.RelativeEffects = new List<string>() { nameof(CalmStance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CalmStance) };
             return cardConfig;
         }
     }

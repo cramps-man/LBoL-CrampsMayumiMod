@@ -43,7 +43,7 @@ namespace LBoLMod.UltimateSkills
                 Value1: 0,
                 Value2: 0,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { },
+                RelativeEffects: new List<string>() { nameof(PowerStance), nameof(FocusStance), nameof(CalmStance) },
                 RelativeCards: new List<string>() { }
                 );
 

@@ -12,6 +12,7 @@ using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
+using LBoLMod.Source.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
@@ -58,7 +59,7 @@ namespace LBoLMod.Exhibits
                 HasCounter: false,
                 InitialCounter: null,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { },
+                RelativeEffects: new List<string>() { nameof(Stance) },
                 RelativeCards: new List<string>() { }
             );
 

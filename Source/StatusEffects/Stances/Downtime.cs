@@ -2,6 +2,9 @@
 using LBoL.ConfigData;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
+using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.StatusEffects.Keywords;
+using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
@@ -20,10 +23,12 @@ namespace LBoLMod.StatusEffects
             statusConfig.HasLevel = false;
             statusConfig.HasDuration = true;
             statusConfig.DurationDecreaseTiming = DurationDecreaseTiming.TurnStart;
+            statusConfig.RelativeEffects = new List<string>() { nameof(Stance) };
             return statusConfig;
         }
     }
 
+    [EntityLogic(typeof(DowntimeDef))]
     public sealed class Downtime: StatusEffect
     {
     }

@@ -26,6 +26,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedDamage = 14;
             cardConfig.Cost = new ManaGroup() { Any = 1, Green = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
+            cardConfig.Keywords = Keyword.Basic;
+            cardConfig.UpgradedKeywords = Keyword.Basic;
             return cardConfig;
         }
     }

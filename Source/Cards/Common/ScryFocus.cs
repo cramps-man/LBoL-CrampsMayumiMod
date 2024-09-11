@@ -28,6 +28,10 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 4;
             cardConfig.Scry = 3;
             cardConfig.UpgradedScry = 5;
+            cardConfig.Keywords = Keyword.Scry;
+            cardConfig.UpgradedKeywords = Keyword.Scry;
+            cardConfig.RelativeEffects = new List<string>() { nameof(FocusStance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FocusStance) };
             return cardConfig;
         }
     }

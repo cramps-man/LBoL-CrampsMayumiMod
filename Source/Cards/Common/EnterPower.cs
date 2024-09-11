@@ -27,6 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedDamage = 12;
             cardConfig.Cost = new ManaGroup() { Green = 1, Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
+            cardConfig.RelativeEffects = new List<string>() { nameof(PowerStance) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(PowerStance) };
             return cardConfig;
         }
     }

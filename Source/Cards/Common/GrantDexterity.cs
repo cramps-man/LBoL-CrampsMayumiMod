@@ -27,6 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Dexterity) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Dexterity) };
             return cardConfig;
         }
     }
