@@ -91,3 +91,18 @@ BlockChange:
   UpgradedDescription: |-
     Gain {Block} |Block|.
     Add an |Upgraded| |Change Stance| to the hand. 
+
+RandomStance:
+  Name: Random Stance
+  Description: |-
+    Deal {Damage} damage. 
+    Enter a random |Stance| and |Preserve| it. 
+
+MoreStanceHits:
+  Name: More Stance Hits
+  Description: |-
+    Deal {Damage} to a random enemy. 
+    Deal additional hits for each |Stance|({StanceCount}) on {PlayerName}. 
+  NonbattleDescription: |-
+    Deal {Damage} to a random enemy. 
+    Deal additional hits for each |Stance| on {PlayerName}. 

@@ -123,36 +123,9 @@ namespace LBoLMod
 
         public static void PreserveAllCurrentStances(PlayerUnit player)
         {
-            if (player.HasStatusEffect<PowerStance>())
-            {
-                var se = player.GetStatusEffect<PowerStance>();
-                if (!se.Preserved)
-                {
-                    se.Preserved = true;
-                    se.NotifyActivating();
-                    se.NotifyChanged();
-                }
-            }
-            if (player.HasStatusEffect<FocusStance>())
-            {
-                var se = player.GetStatusEffect<FocusStance>();
-                if (!se.Preserved)
-                {
-                    se.Preserved = true;
-                    se.NotifyActivating();
-                    se.NotifyChanged();
-                }
-            }
-            if (player.HasStatusEffect<CalmStance>())
-            {
-                var se = player.GetStatusEffect<CalmStance>();
-                if (!se.Preserved)
-                {
-                    se.Preserved = true;
-                    se.NotifyActivating();
-                    se.NotifyChanged();
-                }
-            }
+            PreserveSpecifiedStance<PowerStance>(player);
+            PreserveSpecifiedStance<FocusStance>(player);
+            PreserveSpecifiedStance<CalmStance>(player);
         }
 
         public static void PreserveOldestStance(PlayerUnit player)
@@ -190,6 +163,20 @@ namespace LBoLMod
                     s.Preserved = true;
                     s.NotifyActivating();
                     s.NotifyChanged();
+                }
+            }
+        }
+
+        public static void PreserveSpecifiedStance<T>(PlayerUnit player) where T : ModStanceStatusEffect
+        {
+            if (player.HasStatusEffect<T>())
+            {
+                var se = player.GetStatusEffect<T>();
+                if (!se.Preserved)
+                {
+                    se.Preserved = true;
+                    se.NotifyActivating();
+                    se.NotifyChanged();
                 }
             }
         }
