@@ -67,7 +67,8 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockG),
                 nameof(BasicBlockG),
                 nameof(BasicBlockG),
-                nameof(PowerHit)
+                nameof(RandomStance),
+                nameof(MoreStanceHits)
             };
         }
         private static List<string> GetDeckB()
@@ -82,7 +83,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
-                nameof(PowerHit)
+                nameof(BlockChange)
             };
         }
     }

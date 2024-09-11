@@ -10,7 +10,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.Cards;
-using LBoLMod.StatusEffects;
+using LBoLMod.Source.StatusEffects.Keywords;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,7 +46,7 @@ namespace LBoLMod.UltimateSkills
                 Value1: 0,
                 Value2: 0,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(PowerStance), nameof(FocusStance), nameof(CalmStance) },
+                RelativeEffects: new List<string>() { nameof(Stance) },
                 RelativeCards: new List<string>() { }
                 );
 
