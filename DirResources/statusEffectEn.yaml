@@ -1,15 +1,13 @@
 Stance:
   Name: Stance
   Description:  |-
-    A |Stance| is a buff grants extra effects that can be triggered while active. 
-    You can enter a |Stance| more than once to level it up, default max Lvl 3. 
-    By default, at the start of next turn |Stances| will be removed. 
-    Some cards may require a |Stance| to be played or for extra effects. 
+    A buff that grants extra effects while active. 
+    Enter a |Stance| more than once to level it up, default max Lvl 3. 
+    At the start of next turn |Stances| will lose 1 level. 
   Brief: |-
-    A |Stance| is a buff grants extra effects that can be triggered while active. 
-    You can enter a |Stance| more than once to level it up, default max Lvl 3. 
-    By default, at the start of next turn |Stances| will be removed. 
-    Some cards may require a |Stance| to be played or for extra effects. 
+    A buff that grants extra effects while active. 
+    Enter a |Stance| more than once to level it up, default max Lvl 3. 
+    At the start of next turn |Stances| will lose 1 level. 
 
 PowerStance:
   Name: Power Stance
@@ -55,8 +53,8 @@ Dexterity:
 Preserve:
   Name: Preserve Stance
   Description: |-
-    When a |Stance| is |preserved|, it will not be removed at the start of the turn, instead it will lose |Preserve|. 
+    When a |Stance| is |Preserved|, it can't be removed or lose level. At start of turn lose |Preserve|. 
     Marked on the status icon with "KEEP". 
   Brief: |-
-    When a |Stance| is |preserved|, it will not be removed at the start of the turn, instead it will lose |Preserve|. 
+    When a |Stance| is |Preserved|, it can't be removed or lose level. At start of turn lose |Preserve|. 
     Marked on the status icon with "KEEP". 
