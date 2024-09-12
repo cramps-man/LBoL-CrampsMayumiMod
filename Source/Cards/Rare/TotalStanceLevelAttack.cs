@@ -25,7 +25,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
-            cardConfig.Cost = new ManaGroup() { Green = 2 };
+            cardConfig.Cost = new ManaGroup() { Green = 1, Red = 1, Any = 1 };
             cardConfig.Damage = 10;
             cardConfig.UpgradedDamage = 10;
             cardConfig.Value1 = 7;
@@ -58,7 +58,6 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            var player = base.Battle.Player;
             yield return AttackAction(selector, Damage.IncreaseBy(TotalStanceDamage));
         }
     }

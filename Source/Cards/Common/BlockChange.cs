@@ -24,7 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
             cardConfig.Block = 12;
             cardConfig.UpgradedBlock = 16;
-            cardConfig.Cost = new ManaGroup() { Green = 2 };
+            cardConfig.Cost = new ManaGroup() { Any = 1, Green = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Green = 1 };
             cardConfig.RelativeCards = new List<string>() { nameof(StanceChange) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChange)+"+" };
