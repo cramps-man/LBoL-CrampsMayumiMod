@@ -79,9 +79,9 @@ namespace LBoLMod.Exhibits
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
         {
             var player = base.Battle.Player;
-            yield return StanceUtils.RemoveStance<PowerStance>(player);
-            yield return StanceUtils.RemoveStance<FocusStance>(player);
-            yield return StanceUtils.RemoveStance<CalmStance>(player);
+            yield return StanceUtils.TickdownStance<PowerStance>(player);
+            yield return StanceUtils.TickdownStance<FocusStance>(player);
+            yield return StanceUtils.TickdownStance<CalmStance>(player);
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)

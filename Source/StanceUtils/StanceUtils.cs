@@ -234,5 +234,25 @@ namespace LBoLMod
             }
             return total;
         }
+
+        public static BattleAction TickdownStance<T>(PlayerUnit player) where T : ModStanceStatusEffect
+        {
+            if (!player.HasStatusEffect<T>())
+            {
+                return null;
+            }
+            var se = player.GetStatusEffect<T>();
+            if (se.Preserved)
+                return null;
+            if (se.Level > 1)
+            {
+                se.Level -= 1;
+                return null;
+            }
+            else
+            {
+                return RemoveStance<T>(player);
+            }
+        }
     }
 }

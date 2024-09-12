@@ -106,9 +106,9 @@ namespace LBoLMod.Exhibits
                 var se = player.GetStatusEffect<CalmStance>();
                 yield return new GainManaAction(new ManaGroup { Red = se.Level });
             }
-            yield return StanceUtils.RemoveStance<PowerStance>(player);
-            yield return StanceUtils.RemoveStance<FocusStance>(player);
-            yield return StanceUtils.RemoveStance<CalmStance>(player);
+            yield return StanceUtils.TickdownStance<PowerStance>(player);
+            yield return StanceUtils.TickdownStance<FocusStance>(player);
+            yield return StanceUtils.TickdownStance<CalmStance>(player);
         }
     }
 }
