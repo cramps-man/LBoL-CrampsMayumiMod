@@ -121,9 +121,9 @@ TotalStanceLevelAttack:
   Name: Total Stance Attack
   Description: |-
     |Requires| a |Stance| to play. 
-    Deal {Damage} damage.
-    Value is multiplied by the total level of all |Stances|({TotalStanceLevel}).
+    Deal {Damage} + |X|({TotalStanceDamage}) damage.
+    |X| is {Value1} multiplied by the total level of all |Stances|.
   NonbattleDescription: |-
     |Requires| a |Stance| to play. 
-    Deal {Damage} damage.
-    Value is multiplied by the total level of all |Stances|.
+    Deal {Damage} + |X| damage.
+    |X| is {Value1} multiplied by the total level of all |Stances|.

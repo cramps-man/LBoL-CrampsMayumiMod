@@ -26,8 +26,10 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
             cardConfig.Cost = new ManaGroup() { Green = 2 };
-            cardConfig.Damage = 5;
-            cardConfig.UpgradedDamage = 7;
+            cardConfig.Damage = 10;
+            cardConfig.UpgradedDamage = 10;
+            cardConfig.Value1 = 7;
+            cardConfig.UpgradedValue1 = 10;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Stance) };
@@ -47,17 +49,17 @@ namespace LBoLMod.Cards
                 return player.HasStatusEffect<PowerStance>() || player.HasStatusEffect<FocusStance>() || player.HasStatusEffect<CalmStance>();
             }
         }
-        public int TotalStanceLevel
+        public int TotalStanceDamage
         {
             get
             {
-                return StanceUtils.TotalStanceLevel(base.Battle.Player);
+                return StanceUtils.TotalStanceLevel(base.Battle.Player) * Value1;
             }
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             var player = base.Battle.Player;
-            yield return AttackAction(selector, Damage.MultiplyBy(TotalStanceLevel));
+            yield return AttackAction(selector, Damage.IncreaseBy(TotalStanceDamage));
         }
     }
 }
