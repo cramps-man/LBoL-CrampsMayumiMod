@@ -43,8 +43,10 @@ PowerHit:
 PreserveStance:
   Name: Preserve Stance
   Description: |-
+    |Requires| any |Stance| to play. 
     |Preserve| the oldest |Stance|.
   UpgradedDescription: |-
+    |Requires| any |Stance| to play. 
     |Preserve| all current |Stances|. 
 
 EnterPower:
@@ -106,3 +108,11 @@ MoreStanceHits:
   NonbattleDescription: |-
     Deal {Damage} to a random enemy. 
     Deal additional hits for each |Stance| on {PlayerName}. 
+
+HealFirepower:
+  Name: Heal Firepower
+  Description: |-
+    Gain {Value1} life.
+    Gain {Value2} |Firepower|.
+    |Calm Lvl2|: Gain {FullHeal} life instead.
+    |Power Lvl2|: Gain {FullFirepower} |Firepower| instead.

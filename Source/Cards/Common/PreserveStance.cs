@@ -6,6 +6,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -33,6 +34,14 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(PreserveStanceDef))]
     public sealed class PreserveStance:Card
     {
+        public override bool CanUse
+        {
+            get
+            {
+                var player = base.Battle.Player;
+                return player.HasStatusEffect<PowerStance>() || player.HasStatusEffect<FocusStance>() || player.HasStatusEffect<CalmStance>();
+            }
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (this.IsUpgraded) 

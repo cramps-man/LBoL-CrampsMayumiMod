@@ -11,8 +11,5 @@ ExhibitA:
 ExhibitB:
   Name: BBBBBB
   Description: |-
-    When entering or leveling a |Stance|, gain extra effects. 
-    |Power|: Gain 1 |Temporary Firepower|.
-    |Focus|: Draw 1 card. 
-    |Calm|: Gain <sprite="ManaSprite" name="G">. 
+    |Stances| have a new max of Lvl5. 
   FlavorText: Dont read
