@@ -43,10 +43,10 @@ PowerHit:
 PreserveStance:
   Name: Preserve Stance
   Description: |-
-    |Requires| any |Stance| to play. 
+    |Requires| a |Stance| to play. 
     |Preserve| the oldest |Stance|.
   UpgradedDescription: |-
-    |Requires| any |Stance| to play. 
+    |Requires| a |Stance| to play. 
     |Preserve| all current |Stances|. 
 
 EnterPower:
@@ -116,3 +116,14 @@ HealFirepower:
     Gain {Value2} |Firepower|.
     |Calm Lvl2|: Gain {FullHeal} life instead.
     |Power Lvl2|: Gain {FullFirepower} |Firepower| instead.
+
+TotalStanceLevelAttack:
+  Name: Total Stance Attack
+  Description: |-
+    |Requires| a |Stance| to play. 
+    Deal {Damage} damage.
+    Value is multiplied by the total level of all |Stances|({TotalStanceLevel}).
+  NonbattleDescription: |-
+    |Requires| a |Stance| to play. 
+    Deal {Damage} damage.
+    Value is multiplied by the total level of all |Stances|.

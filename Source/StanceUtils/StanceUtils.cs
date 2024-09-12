@@ -2,6 +2,7 @@
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLMod.Exhibits;
+using LBoLMod.Source.StatusEffects.Keywords;
 using LBoLMod.Source.StatusEffects.Stances;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
@@ -15,7 +16,11 @@ namespace LBoLMod
         public static IEnumerable<BattleAction> ApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
         {
             if (player.HasStatusEffect<Downtime>())
+            {
+                var se = player.GetStatusEffect<Downtime>();
+                se.NotifyActivating();
                 yield break;
+            }
             yield return new ApplyStatusEffectAction<T>(player, level);
             //exhibit A's specialty is to not have stances be removed when applying others
             if (player.HasExhibit<ExhibitA>())
@@ -207,6 +212,27 @@ namespace LBoLMod
                 return null;
             }
             return new RemoveStatusEffectAction(dex);
+        }
+
+        public static int TotalStanceLevel(PlayerUnit player)
+        {
+            int total = 0;
+            if (player.HasStatusEffect<PowerStance>())
+            {
+                var se = player.GetStatusEffect<PowerStance>();
+                total += se.Level;
+            }
+            if (player.HasStatusEffect<FocusStance>())
+            {
+                var se = player.GetStatusEffect<FocusStance>();
+                total += se.Level;
+            }
+            if (player.HasStatusEffect<CalmStance>())
+            {
+                var se = player.GetStatusEffect<CalmStance>();
+                total += se.Level;
+            }
+            return total;
         }
     }
 }
