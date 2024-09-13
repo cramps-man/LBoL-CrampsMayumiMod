@@ -38,22 +38,22 @@ PowerHit:
   Name: Power Hit
   Description: |-
     Deal {Damage} damage.
-    |Power Lvl1|: Deal {StanceDamage} damage instead and apply {Value2} |Weak|.
+    |Power 1|: Deal {StanceDamage} damage instead and apply {Value2} |Weak|.
 
 PreserveStance:
   Name: Preserve Stance
   Description: |-
-    |Requires| a |Stance| to play. 
+    |Requires a Stance| to play. 
     |Preserve| the oldest |Stance|.
   UpgradedDescription: |-
-    |Requires| a |Stance| to play. 
+    |Requires a Stance| to play. 
     |Preserve| all current |Stances|. 
 
 EnterPower:
   Name: Enter Power
   Description: |-
     Deal {Damage} damage.
-    Enter |Power Stance|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Power|.
 
 GrantDexterity:
   Name: Grant Dexterity
@@ -64,26 +64,26 @@ GrantDexterity:
 EnterFocus:
   Name: Enter Focus
   Description: |-
-    Enter |Focus Stance|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Focus|.
     Draw 1 card.
 
 EnterCalm:
   Name: Enter Calm
   Description: |-
-    Enter |Calm Stance|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Calm|.
     Gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="G">.
 
 ScryFocus:
   Name: Scry Focus
   Description: |-
-    |Focus Lvl1|: |Scry| {Scry}.
+    |Focus 1|: |Scry| {Scry}.
     Draw {Value1} cards.
 
 BlockCalm:
   Name: Block Calm
   Description: |-
     Gain {Block} |Block|.
-    |Calm Lvl1|: Also gain {Shield} |Barrier|.
+    |Calm 1|: Also gain {Shield} |Barrier|.
 
 BlockChange:
   Name: Block Change
@@ -98,7 +98,7 @@ RandomStance:
   Name: Random Stance
   Description: |-
     Deal {Damage} damage. 
-    Enter a random |Stance| and |Preserve| it. 
+    Gain {Value1} level{Value1:plural one='' other='s'} of a random |Stance| and |Preserve| it. 
 
 MoreStanceHits:
   Name: More Stance Hits
@@ -114,16 +114,16 @@ HealFirepower:
   Description: |-
     Gain {Value1} life.
     Gain {Value2} |Firepower|.
-    |Calm Lvl2|: Gain {FullHeal} life instead.
-    |Power Lvl2|: Gain {FullFirepower} |Firepower| instead.
+    |Calm 2|: Gain {FullHeal} life instead.
+    |Power 2|: Gain {FullFirepower} |Firepower| instead.
 
 TotalStanceLevelAttack:
   Name: Total Stance Attack
   Description: |-
-    |Requires| a |Stance| to play. 
+    |Requires a Stance| to play. 
     Deal {Damage} + |X|({TotalStanceDamage}) damage.
-    |X| is {Value1} multiplied by the total level of all |Stances|.
+    |X| is {Value1} multiplied by the |total level| of all |Stances|.
   NonbattleDescription: |-
-    |Requires| a |Stance| to play. 
+    |Requires a Stance| to play. 
     Deal {Damage} + |X| damage.
-    |X| is {Value1} multiplied by the total level of all |Stances|.
+    |X| is {Value1} multiplied by the |total level| of all |Stances|.

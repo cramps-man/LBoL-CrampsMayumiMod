@@ -26,6 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Damage = 14;
             cardConfig.UpgradedDamage = 19;
+            cardConfig.Value1 = 1;
             cardConfig.Cost = new ManaGroup() { Red = 1, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Stance), nameof(Preserve) };
@@ -47,7 +48,7 @@ namespace LBoLMod.Cards
             var player = base.Battle.Player;
             if (randomPick == 1)
             {
-                foreach (var item in StanceUtils.ApplyStance<PowerStance>(player))
+                foreach (var item in StanceUtils.ApplyStance<PowerStance>(player, Value1))
                 {
                     yield return item;
                 };
@@ -55,7 +56,7 @@ namespace LBoLMod.Cards
             }
             else if (randomPick == 2)
             {
-                foreach (var item in StanceUtils.ApplyStance<FocusStance>(player))
+                foreach (var item in StanceUtils.ApplyStance<FocusStance>(player, Value1))
                 {
                     yield return item;
                 };
@@ -63,7 +64,7 @@ namespace LBoLMod.Cards
             }
             else if (randomPick == 3)
             {
-                foreach (var item in StanceUtils.ApplyStance<CalmStance>(player))
+                foreach (var item in StanceUtils.ApplyStance<CalmStance>(player, Value1))
                 {
                     yield return item;
                 };
