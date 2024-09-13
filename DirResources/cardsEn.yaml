@@ -17,22 +17,19 @@ BasicBlockG:
 StanceChange:
   Name: Change Stance
   Description: |-
-    Choose 1 of 3 |Stances| to enter.
+    Choose 1 of 3 |Stances| to gain.
 
 StanceChangePower:
   Name: Power Stance
-  Description: Enter |Power Stance|.
-  UpgradedDescription: Enter |Power Stance| {Value1} times.
+  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Power|.
 
 StanceChangeFocus:
   Name: Focus Stance
-  Description: Enter |Focus Stance|.
-  UpgradedDescription: Enter |Focus Stance| {Value1} times.
+  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Focus|.
 
 StanceChangeCalm:
   Name: Calm Stance
-  Description: Enter |Calm Stance|.
-  UpgradedDescription: Enter |Calm Stance| {Value1} times.
+  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Calm|.
 
 PowerHit:
   Name: Power Hit
