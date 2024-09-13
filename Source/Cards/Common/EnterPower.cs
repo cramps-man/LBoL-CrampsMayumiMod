@@ -25,6 +25,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
             cardConfig.Damage = 7;
             cardConfig.UpgradedDamage = 10;
+            cardConfig.Value1 = 2;
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(PowerStance) };
@@ -41,7 +42,7 @@ namespace LBoLMod.Cards
             yield return base.AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
             {
-                foreach (var item in StanceUtils.ApplyStance<PowerStance>(base.Battle.Player))
+                foreach (var item in StanceUtils.ApplyStance<PowerStance>(base.Battle.Player, Value1))
                 {
                     yield return item;
                 }

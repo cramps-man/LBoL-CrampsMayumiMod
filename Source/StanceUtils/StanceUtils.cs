@@ -22,8 +22,9 @@ namespace LBoLMod
                 yield break;
             }
             yield return new ApplyStatusEffectAction<T>(player, level);
+            //test without removing stances at all
             //exhibit A's specialty is to not have stances be removed when applying others
-            if (player.HasExhibit<ExhibitA>())
+            /*if (player.HasExhibit<ExhibitA>())
                 yield break;
             if (typeof(T) == typeof(PowerStance))
             {
@@ -39,7 +40,7 @@ namespace LBoLMod
             {
                 yield return RemoveStance<FocusStance>(player);
                 yield return RemoveStance<PowerStance>(player);
-            }
+            }*/
         }
 
         public static BattleAction ForceApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
@@ -103,29 +104,6 @@ namespace LBoLMod
             return false;
         }
 
-        public static BattleAction RemoveNonPreservedStance(Unit unit)
-        {
-            if (unit.HasStatusEffect<PowerStance>())
-            {
-                var se = unit.GetStatusEffect<PowerStance>();
-                if (!se.Preserved)
-                    return new RemoveStatusEffectAction(se);
-            }
-            if (unit.HasStatusEffect<FocusStance>())
-            {
-                var se = unit.GetStatusEffect<FocusStance>();
-                if (!se.Preserved)
-                    return new RemoveStatusEffectAction(se);
-            }
-            if (unit.HasStatusEffect<CalmStance>())
-            {
-                var se = unit.GetStatusEffect<CalmStance>();
-                if (!se.Preserved)
-                    return new RemoveStatusEffectAction(se);
-            }
-            return null;
-        }
-
         public static void PreserveAllCurrentStances(PlayerUnit player)
         {
             PreserveSpecifiedStance<PowerStance>(player);
@@ -133,41 +111,33 @@ namespace LBoLMod
             PreserveSpecifiedStance<CalmStance>(player);
         }
 
-        public static void PreserveOldestStance(PlayerUnit player)
+        public static List<ModStanceStatusEffect> GetAllStances(PlayerUnit player)
         {
             var stances = new List<ModStanceStatusEffect>();
             if (player.HasStatusEffect<PowerStance>())
             {
-                var se = player.GetStatusEffect<PowerStance>();
-                if (!se.Preserved)
-                {
-                    stances.Add(se);
-                }
+                stances.Add(player.GetStatusEffect<PowerStance>());
             }
             if (player.HasStatusEffect<FocusStance>())
             {
-                var se = player.GetStatusEffect<FocusStance>();
-                if (!se.Preserved)
-                {
-                    stances.Add(se);
-                }
+                stances.Add(player.GetStatusEffect<FocusStance>());
             }
             if (player.HasStatusEffect<CalmStance>())
             {
-                var se = player.GetStatusEffect<CalmStance>();
-                if (!se.Preserved)
-                {
-                    stances.Add(se);
-                }
+                stances.Add(player.GetStatusEffect<CalmStance>());
             }
+            return stances;
+        }
+
+        public static void PreserveOldestStance(PlayerUnit player)
+        {
+            var stances = GetAllStances(player);
             if (stances.Count > 0)
             {
-                var oldestAge = stances.Max(s => s.AgeCounter);
+                var oldestAge = stances.Where(s => !s.Preserved).Max(s => s.AgeCounter);
                 foreach (var s in stances.Where(s => s.AgeCounter == oldestAge))
                 {
                     s.Preserved = true;
-                    s.NotifyActivating();
-                    s.NotifyChanged();
                 }
             }
         }
@@ -180,8 +150,6 @@ namespace LBoLMod
                 if (!se.Preserved)
                 {
                     se.Preserved = true;
-                    se.NotifyActivating();
-                    se.NotifyChanged();
                 }
             }
         }
@@ -217,42 +185,9 @@ namespace LBoLMod
         public static int TotalStanceLevel(PlayerUnit player)
         {
             int total = 0;
-            if (player.HasStatusEffect<PowerStance>())
-            {
-                var se = player.GetStatusEffect<PowerStance>();
-                total += se.Level;
-            }
-            if (player.HasStatusEffect<FocusStance>())
-            {
-                var se = player.GetStatusEffect<FocusStance>();
-                total += se.Level;
-            }
-            if (player.HasStatusEffect<CalmStance>())
-            {
-                var se = player.GetStatusEffect<CalmStance>();
-                total += se.Level;
-            }
+            var stances = GetAllStances(player);
+            stances.ForEach(st => total += st.Level);
             return total;
-        }
-
-        public static BattleAction TickdownStance<T>(PlayerUnit player) where T : ModStanceStatusEffect
-        {
-            if (!player.HasStatusEffect<T>())
-            {
-                return null;
-            }
-            var se = player.GetStatusEffect<T>();
-            if (se.Preserved)
-                return null;
-            if (se.Level > 1)
-            {
-                se.Level -= 1;
-                return null;
-            }
-            else
-            {
-                return RemoveStance<T>(player);
-            }
         }
     }
 }

@@ -39,7 +39,7 @@ namespace LBoLMod.StatusEffects
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
-            this.ReactOwnerEvent<CardEventArgs>(Battle.CardDrawn, new EventSequencedReactor<CardEventArgs>(this.OnCardDrawn));
+            //this.ReactOwnerEvent<CardEventArgs>(Battle.CardDrawn, new EventSequencedReactor<CardEventArgs>(this.OnCardDrawn));
         }
 
         private IEnumerable<BattleAction> OnCardDrawn(CardEventArgs args)

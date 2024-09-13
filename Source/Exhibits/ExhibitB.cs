@@ -71,17 +71,18 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            base.ReactBattleEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
+            //base.ReactBattleEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
+            //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
             base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
         {
             var player = base.Battle.Player;
-            yield return StanceUtils.TickdownStance<PowerStance>(player);
-            yield return StanceUtils.TickdownStance<FocusStance>(player);
-            yield return StanceUtils.TickdownStance<CalmStance>(player);
+            foreach (var item in StanceUtils.GetAllStances(player))
+            {
+                yield return item.TickdownOrRemove();
+            };
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)

@@ -38,7 +38,7 @@ namespace LBoLMod.StatusEffects
         protected override void OnAdding(Unit unit)
         {
             base.OnAdding(unit);
-            this.ReactOwnerEvent<ManaEventArgs>(Battle.ManaGained, new EventSequencedReactor<ManaEventArgs>(this.OnManaGained));
+            //this.ReactOwnerEvent<ManaEventArgs>(Battle.ManaGained, new EventSequencedReactor<ManaEventArgs>(this.OnManaGained));
         }
 
         private IEnumerable<BattleAction> OnManaGained(ManaEventArgs args)

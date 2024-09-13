@@ -1,5 +1,6 @@
 ﻿using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLMod.Exhibits;
@@ -19,6 +20,8 @@ namespace LBoLMod.StatusEffects
             set
             {
                 preserved = value;
+                NotifyActivating();
+                NotifyChanged();
             }
         }
         protected int ageCounter = 0;
@@ -33,10 +36,12 @@ namespace LBoLMod.StatusEffects
         {
             get
             {
-                if (base.Battle.Player.HasExhibit<ExhibitB>())
+                return 5;
+                //dont have exhibit specific level, maybe an ability
+                /*if (base.Battle.Player.HasExhibit<ExhibitB>())
                     return 5;
                 else
-                    return 3;
+                    return 3;*/
             }
         }
 
@@ -73,6 +78,18 @@ namespace LBoLMod.StatusEffects
             if (Level > MaxLevel)
                 Level = MaxLevel;
             return true;
+        }
+
+        public BattleAction TickdownOrRemove()
+        {
+            if (Preserved)
+                return null;
+            if (Level > 1)
+            {
+                Level -= 1;
+                return null;
+            }
+            return new RemoveStatusEffectAction(this);
         }
     }
 }

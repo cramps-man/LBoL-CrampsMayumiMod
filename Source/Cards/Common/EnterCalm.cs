@@ -25,6 +25,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
+            cardConfig.Value1 = 2;
             cardConfig.Mana = new ManaGroup() { Red = 1, Green = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(CalmStance) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CalmStance) };
@@ -37,7 +38,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in StanceUtils.ApplyStance<CalmStance>(Battle.Player))
+            foreach (var item in StanceUtils.ApplyStance<CalmStance>(base.Battle.Player, Value1))
             {
                 yield return item;
             };

@@ -15,6 +15,7 @@ using LBoLMod.PlayerUnits;
 using LBoLMod.Source.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Exhibits
 {
@@ -88,7 +89,7 @@ namespace LBoLMod.Exhibits
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
         {
             var player = base.Battle.Player;
-            if (player.HasStatusEffect<PowerStance>())
+            /*if (player.HasStatusEffect<PowerStance>())
             {
                 base.NotifyActivating();
                 var se = player.GetStatusEffect<PowerStance>();
@@ -105,10 +106,16 @@ namespace LBoLMod.Exhibits
                 base.NotifyActivating();
                 var se = player.GetStatusEffect<CalmStance>();
                 yield return new GainManaAction(new ManaGroup { Red = se.Level });
-            }
-            yield return StanceUtils.TickdownStance<PowerStance>(player);
+            }*/
+            /*yield return StanceUtils.TickdownStance<PowerStance>(player);
             yield return StanceUtils.TickdownStance<FocusStance>(player);
-            yield return StanceUtils.TickdownStance<CalmStance>(player);
+            yield return StanceUtils.TickdownStance<CalmStance>(player);*/
+            var stances = StanceUtils.GetAllStances(player);
+            var maxLevel = stances.Max(s => s.Level);
+            foreach (var item in stances.Where(s => s.Level == maxLevel))
+            {
+                yield return item.TickdownOrRemove();
+            }
         }
     }
 }
