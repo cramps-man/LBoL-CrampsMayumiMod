@@ -90,7 +90,7 @@ namespace LBoLMod.Exhibits
             var stanceChangeCount = 0;
             foreach(Card card in base.Battle.HandZone)
             {
-                if (card is StanceChange)
+                if (card is CreateHaniwa)
                 {
                     stanceChangeCount++;
                 }
@@ -98,7 +98,7 @@ namespace LBoLMod.Exhibits
             if (stanceChangeCount < 1)
             {
                 base.NotifyActivating();
-                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<CreateHaniwa>() });
             }
         }
 

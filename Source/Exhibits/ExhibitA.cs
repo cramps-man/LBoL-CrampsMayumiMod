@@ -82,7 +82,7 @@ namespace LBoLMod.Exhibits
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();
-                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>() });
+                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<CreateHaniwa>() });
             }
         }
 

@@ -9,11 +9,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class StanceChangeCalmDef : ModCardTemplate
+    public sealed class CreateHaniwaFencerDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(StanceChangeCalm);
+            return nameof(CreateHaniwaFencer);
         }
 
         public override CardConfig MakeConfig()
@@ -22,16 +22,16 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(FencerHaniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FencerHaniwa) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(StanceChangeCalmDef))]
-    public sealed class StanceChangeCalm:OptionCard
+    [EntityLogic(typeof(CreateHaniwaFencerDef))]
+    public sealed class CreateHaniwaFencer:OptionCard
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {

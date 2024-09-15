@@ -9,11 +9,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class StanceChangeFocusDef : ModCardTemplate
+    public sealed class CreateHaniwaCavalryDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(StanceChangeFocus);
+            return nameof(CreateHaniwaCavalry);
         }
 
         public override CardConfig MakeConfig()
@@ -22,16 +22,16 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(StanceChangeFocusDef))]
-    public sealed class StanceChangeFocus:OptionCard
+    [EntityLogic(typeof(CreateHaniwaCavalryDef))]
+    public sealed class CreateHaniwaCavalry:OptionCard
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {

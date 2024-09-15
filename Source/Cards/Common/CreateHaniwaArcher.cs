@@ -9,11 +9,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class StanceChangePowerDef : ModCardTemplate
+    public sealed class CreateHaniwaArcherDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(StanceChangePower);
+            return nameof(CreateHaniwaArcher);
         }
 
         public override CardConfig MakeConfig()
@@ -22,16 +22,16 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(ArcherHaniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(ArcherHaniwa) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(StanceChangePowerDef))]
-    public sealed class StanceChangePower:OptionCard
+    [EntityLogic(typeof(CreateHaniwaArcherDef))]
+    public sealed class CreateHaniwaArcher:OptionCard
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {

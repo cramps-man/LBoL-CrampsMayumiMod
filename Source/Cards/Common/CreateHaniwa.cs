@@ -12,11 +12,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class StanceChangeDef : ModCardTemplate
+    public sealed class CreateHaniwaDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(StanceChange);
+            return nameof(CreateHaniwa);
         }
 
         public override CardConfig MakeConfig()
@@ -31,18 +31,18 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
-            cardConfig.RelativeCards = new List<string>() { nameof(StanceChangePower), nameof(StanceChangeFocus), nameof(StanceChangeCalm) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(StanceChangePower)+"+", nameof(StanceChangeFocus)+"+", nameof(StanceChangeCalm)+"+" };
+            cardConfig.RelativeCards = new List<string>() { nameof(CreateHaniwaArcher), nameof(CreateHaniwaCavalry), nameof(CreateHaniwaFencer) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CreateHaniwaArcher)+"+", nameof(CreateHaniwaCavalry)+"+", nameof(CreateHaniwaFencer)+"+" };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(StanceChangeDef))]
-    public sealed class StanceChange:Card
+    [EntityLogic(typeof(CreateHaniwaDef))]
+    public sealed class CreateHaniwa:Card
     {
         public override Interaction Precondition()
         {
-            var selectList = new List<Card> { Library.CreateCard<StanceChangePower>(IsUpgraded), Library.CreateCard<StanceChangeFocus>(IsUpgraded), Library.CreateCard<StanceChangeCalm>(IsUpgraded) };
+            var selectList = new List<Card> { Library.CreateCard<CreateHaniwaArcher>(IsUpgraded), Library.CreateCard<CreateHaniwaCavalry>(IsUpgraded), Library.CreateCard<CreateHaniwaFencer>(IsUpgraded) };
             return new MiniSelectCardInteraction(selectList);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

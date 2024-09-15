@@ -64,7 +64,7 @@ namespace LBoLMod.UltimateSkills
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
             var unit = base.Battle.Player;
-            yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<StanceChange>(), Library.CreateCard<StanceChange>() });
+            yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<CreateHaniwa>(), Library.CreateCard<CreateHaniwa>() });
         }
     }
 }

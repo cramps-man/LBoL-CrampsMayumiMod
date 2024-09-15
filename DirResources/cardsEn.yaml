@@ -14,22 +14,22 @@ BasicBlockG:
   Name: Basic Block
   Description: Gain {Block} |Block|.
 
-StanceChange:
-  Name: Change Stance
+CreateHaniwa:
+  Name: Create Haniwa
   Description: |-
-    Choose 1 of 3 |Stances| to gain.
+    Choose 1 of 3 |Haniwa| to gain.
 
-StanceChangePower:
-  Name: Power Stance
-  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Power|.
+CreateHaniwaArcher:
+  Name: Create Haniwa (Archer)
+  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|.
 
-StanceChangeFocus:
-  Name: Focus Stance
-  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Focus|.
+CreateHaniwaCavalry:
+  Name: Create Haniwa (Cavalry)
+  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|.
 
-StanceChangeCalm:
-  Name: Calm Stance
-  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Calm|.
+CreateHaniwaFencer:
+  Name: Create Haniwa (Fencer)
+  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
 
 PowerHit:
   Name: Power Hit
