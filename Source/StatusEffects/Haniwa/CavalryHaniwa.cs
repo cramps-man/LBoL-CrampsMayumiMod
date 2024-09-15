@@ -6,28 +6,28 @@ using LBoL.Core.Units;
 using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
-    public sealed class FocusStanceDef : ModStatusEffectTemplate
+    public sealed class CavalryHaniwaDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(FocusStance);
+            return nameof(CavalryHaniwa);
         }
 
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
-            statusConfig.RelativeEffects = new List<string>() { nameof(Stance) };
+            statusConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             return statusConfig;
         }
     }
 
-    [EntityLogic(typeof(FocusStanceDef))]
-    public sealed class FocusStance: ModStanceStatusEffect
+    [EntityLogic(typeof(CavalryHaniwaDef))]
+    public sealed class CavalryHaniwa: ModHaniwaStatusEffect
     {
         public int EffectValue
         {

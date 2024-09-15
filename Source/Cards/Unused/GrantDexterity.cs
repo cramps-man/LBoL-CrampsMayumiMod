@@ -7,7 +7,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Source.StatusEffects.Stances;
 using System.Collections.Generic;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class GrantDexterityDef : ModCardTemplate
@@ -43,3 +43,4 @@ namespace LBoLMod.Cards
         }
     }
 }
+*/

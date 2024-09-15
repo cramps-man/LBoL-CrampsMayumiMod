@@ -3,11 +3,8 @@ using LBoL.ConfigData;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using UnityEngine;
 using LBoLMod.PlayerUnits;
+using UnityEngine;
 
 namespace LBoLMod.UnitModel
 {

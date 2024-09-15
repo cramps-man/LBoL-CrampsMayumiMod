@@ -12,7 +12,7 @@ using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
@@ -59,7 +59,7 @@ namespace LBoLMod.Exhibits
                 HasCounter: false,
                 InitialCounter: null,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(Stance) },
+                RelativeEffects: new List<string>() { nameof(Haniwa) },
                 RelativeCards: new List<string>() { }
             );
 
@@ -73,13 +73,13 @@ namespace LBoLMod.Exhibits
         {
             //base.ReactBattleEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
             //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
+            //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
         {
             var player = base.Battle.Player;
-            foreach (var item in StanceUtils.GetAllStances(player))
+            foreach (var item in HaniwaUtils.GetAllStances(player))
             {
                 yield return item.TickdownOrRemove();
             };
@@ -104,17 +104,17 @@ namespace LBoLMod.Exhibits
 
         private IEnumerable<BattleAction> onStatusApplied(StatusEffectApplyEventArgs args)
         {
-            if (args.Effect is PowerStance)
+            if (args.Effect is ArcherHaniwa)
             {
                 base.NotifyActivating();
                 yield return new ApplyStatusEffectAction<TempFirepower>(base.Battle.Player, 1);
             }
-            if (args.Effect is FocusStance)
+            if (args.Effect is CavalryHaniwa)
             {
                 base.NotifyActivating();
                 yield return new DrawCardAction();
             }
-            if (args.Effect is CalmStance)
+            if (args.Effect is FencerHaniwa)
             {
                 base.NotifyActivating();
                 yield return new GainManaAction(ManaGroup.Greens(1));

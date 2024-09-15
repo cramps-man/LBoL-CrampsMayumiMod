@@ -12,7 +12,7 @@ using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +60,7 @@ namespace LBoLMod.Exhibits
                 HasCounter: false,
                 InitialCounter: null,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(Stance) },
+                RelativeEffects: new List<string>() { nameof(Haniwa) },
                 RelativeCards: new List<string>() { }
             );
 
@@ -73,7 +73,7 @@ namespace LBoLMod.Exhibits
         protected override void OnEnterBattle()
         {
             //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
+            //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
@@ -110,7 +110,7 @@ namespace LBoLMod.Exhibits
             /*yield return StanceUtils.TickdownStance<PowerStance>(player);
             yield return StanceUtils.TickdownStance<FocusStance>(player);
             yield return StanceUtils.TickdownStance<CalmStance>(player);*/
-            var stances = StanceUtils.GetAllStances(player);
+            var stances = HaniwaUtils.GetAllStances(player);
             var maxLevel = stances.Max(s => s.Level);
             foreach (var item in stances.Where(s => s.Level == maxLevel))
             {

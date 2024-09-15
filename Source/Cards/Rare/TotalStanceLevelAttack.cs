@@ -5,7 +5,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
@@ -32,8 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 10;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Stance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Stance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;
         }
     }
@@ -46,14 +46,14 @@ namespace LBoLMod.Cards
             get
             {
                 var player = base.Battle.Player;
-                return player.HasStatusEffect<PowerStance>() || player.HasStatusEffect<FocusStance>() || player.HasStatusEffect<CalmStance>();
+                return player.HasStatusEffect<ArcherHaniwa>() || player.HasStatusEffect<CavalryHaniwa>() || player.HasStatusEffect<FencerHaniwa>();
             }
         }
         public int TotalStanceDamage
         {
             get
             {
-                return StanceUtils.TotalStanceLevel(base.Battle.Player) * Value1;
+                return HaniwaUtils.TotalStanceLevel(base.Battle.Player) * Value1;
             }
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

@@ -7,7 +7,7 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
@@ -33,8 +33,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue2 = 2;
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Stance), nameof(Firepower) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Stance), nameof(Firepower) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Firepower) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Firepower) };
             return cardConfig;
         }
     }
@@ -59,20 +59,20 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             var player = base.Battle.Player;
-            if (StanceUtils.isStanceFulfilled<CalmStance>(player))
+            if (HaniwaUtils.isStanceFulfilled<FencerHaniwa>(player))
             {
                 yield return new HealAction(player, player, FullHeal);
-                yield return StanceUtils.RemoveDexterityIfNeeded<CalmStance>(player);
+                yield return HaniwaUtils.RemoveDexterityIfNeeded<FencerHaniwa>(player);
             }
             else
             {
                 yield return new HealAction(player, player, Value1);
             }
 
-            if (StanceUtils.isStanceFulfilled<PowerStance>(player))
+            if (HaniwaUtils.isStanceFulfilled<ArcherHaniwa>(player))
             {
                 yield return new ApplyStatusEffectAction<Firepower>(player, FullFirepower);
-                yield return StanceUtils.RemoveDexterityIfNeeded<PowerStance>(player);
+                yield return HaniwaUtils.RemoveDexterityIfNeeded<ArcherHaniwa>(player);
             }
             else
             {

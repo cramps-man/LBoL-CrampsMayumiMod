@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 2;
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(PowerStance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(PowerStance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(ArcherHaniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(ArcherHaniwa) };
             return cardConfig;
         }
     }
@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
             yield return base.AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
             {
-                foreach (var item in StanceUtils.ApplyStance<PowerStance>(base.Battle.Player, Value1))
+                foreach (var item in HaniwaUtils.ApplyStance<ArcherHaniwa>(base.Battle.Player, Value1))
                 {
                     yield return item;
                 }

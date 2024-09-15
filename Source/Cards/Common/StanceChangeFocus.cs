@@ -24,8 +24,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(FocusStance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FocusStance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             return cardConfig;
         }
     }
@@ -35,7 +35,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            return StanceUtils.ApplyStance<FocusStance>(base.Battle.Player, Value1);
+            return HaniwaUtils.ApplyStance<CavalryHaniwa>(base.Battle.Player, Value1);
         }
     }
 }

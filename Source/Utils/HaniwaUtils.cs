@@ -1,8 +1,6 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
-using LBoLMod.Exhibits;
-using LBoLMod.Source.StatusEffects.Keywords;
 using LBoLMod.Source.StatusEffects.Stances;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
@@ -11,9 +9,9 @@ using Unit = LBoL.Core.Units.Unit;
 
 namespace LBoLMod
 {
-    public static class StanceUtils
+    public static class HaniwaUtils
     {
-        public static IEnumerable<BattleAction> ApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
+        public static IEnumerable<BattleAction> ApplyStance<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
         {
             if (player.HasStatusEffect<Downtime>())
             {
@@ -43,12 +41,12 @@ namespace LBoLMod
             }*/
         }
 
-        public static BattleAction ForceApplyStance<T>(PlayerUnit player, int level = 1) where T : ModStanceStatusEffect
+        public static BattleAction ForceApplyStance<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
         {
             return new ApplyStatusEffectAction<T>(player, level);
         }
 
-        public static BattleAction RemoveStance<T>(Unit unit) where T : ModStanceStatusEffect
+        public static BattleAction RemoveStance<T>(Unit unit) where T : ModHaniwaStatusEffect
         {
             if (!unit.HasStatusEffect<T>())
             {
@@ -61,7 +59,7 @@ namespace LBoLMod
             return new RemoveStatusEffectAction(se);
         }
 
-        public static BattleAction ForceRemoveStance<T>(Unit unit) where T : ModStanceStatusEffect
+        public static BattleAction ForceRemoveStance<T>(Unit unit) where T : ModHaniwaStatusEffect
         {
             if (!unit.HasStatusEffect<T>())
             {
@@ -83,21 +81,21 @@ namespace LBoLMod
 
         public static bool DoesPlayerHavePreservedStance(PlayerUnit player)
         {
-            if (player.HasStatusEffect<PowerStance>())
+            if (player.HasStatusEffect<ArcherHaniwa>())
             {
-                var se = player.GetStatusEffect<PowerStance>();
+                var se = player.GetStatusEffect<ArcherHaniwa>();
                 if (se.Preserved)
                     return true;
             }
-            if (player.HasStatusEffect<FocusStance>())
+            if (player.HasStatusEffect<CavalryHaniwa>())
             {
-                var se = player.GetStatusEffect<FocusStance>();
+                var se = player.GetStatusEffect<CavalryHaniwa>();
                 if (se.Preserved)
                     return true;
             }
-            if (player.HasStatusEffect<CalmStance>())
+            if (player.HasStatusEffect<FencerHaniwa>())
             {
-                var se = player.GetStatusEffect<CalmStance>();
+                var se = player.GetStatusEffect<FencerHaniwa>();
                 if (se.Preserved)
                     return true;
             }
@@ -106,25 +104,25 @@ namespace LBoLMod
 
         public static void PreserveAllCurrentStances(PlayerUnit player)
         {
-            PreserveSpecifiedStance<PowerStance>(player);
-            PreserveSpecifiedStance<FocusStance>(player);
-            PreserveSpecifiedStance<CalmStance>(player);
+            PreserveSpecifiedStance<ArcherHaniwa>(player);
+            PreserveSpecifiedStance<CavalryHaniwa>(player);
+            PreserveSpecifiedStance<FencerHaniwa>(player);
         }
 
-        public static List<ModStanceStatusEffect> GetAllStances(PlayerUnit player)
+        public static List<ModHaniwaStatusEffect> GetAllStances(PlayerUnit player)
         {
-            var stances = new List<ModStanceStatusEffect>();
-            if (player.HasStatusEffect<PowerStance>())
+            var stances = new List<ModHaniwaStatusEffect>();
+            if (player.HasStatusEffect<ArcherHaniwa>())
             {
-                stances.Add(player.GetStatusEffect<PowerStance>());
+                stances.Add(player.GetStatusEffect<ArcherHaniwa>());
             }
-            if (player.HasStatusEffect<FocusStance>())
+            if (player.HasStatusEffect<CavalryHaniwa>())
             {
-                stances.Add(player.GetStatusEffect<FocusStance>());
+                stances.Add(player.GetStatusEffect<CavalryHaniwa>());
             }
-            if (player.HasStatusEffect<CalmStance>())
+            if (player.HasStatusEffect<FencerHaniwa>())
             {
-                stances.Add(player.GetStatusEffect<CalmStance>());
+                stances.Add(player.GetStatusEffect<FencerHaniwa>());
             }
             return stances;
         }
@@ -142,7 +140,7 @@ namespace LBoLMod
             }
         }
 
-        public static void PreserveSpecifiedStance<T>(PlayerUnit player) where T : ModStanceStatusEffect
+        public static void PreserveSpecifiedStance<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
         {
             if (player.HasStatusEffect<T>())
             {
@@ -154,7 +152,7 @@ namespace LBoLMod
             }
         }
 
-        public static bool isStanceFulfilled<T>(PlayerUnit player) where T : ModStanceStatusEffect
+        public static bool isStanceFulfilled<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
         {
             if (player.HasStatusEffect<T>())
                 return true;
@@ -163,7 +161,7 @@ namespace LBoLMod
             return false;
         }
 
-        public static BattleAction RemoveDexterityIfNeeded<T>(PlayerUnit player, int requiredLevel = 1) where T : ModStanceStatusEffect
+        public static BattleAction RemoveDexterityIfNeeded<T>(PlayerUnit player, int requiredLevel = 1) where T : ModHaniwaStatusEffect
         {
             if (!player.HasStatusEffect<Dexterity>())
                 return null;

@@ -5,28 +5,28 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
-    public sealed class CalmStanceDef : ModStatusEffectTemplate
+    public sealed class FencerHaniwaDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(CalmStance);
+            return nameof(FencerHaniwa);
         }
 
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
-            statusConfig.RelativeEffects = new List<string>() { nameof(Stance) };
+            statusConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             return statusConfig;
         }
     }
 
-    [EntityLogic(typeof(CalmStanceDef))]
-    public sealed class CalmStance: ModStanceStatusEffect
+    [EntityLogic(typeof(FencerHaniwaDef))]
+    public sealed class FencerHaniwa: ModHaniwaStatusEffect
     {
         public int EffectValue
         {

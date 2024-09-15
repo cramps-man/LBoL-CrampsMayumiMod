@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 2;
             cardConfig.Mana = new ManaGroup() { Red = 1, Green = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(CalmStance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CalmStance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(FencerHaniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FencerHaniwa) };
             return cardConfig;
         }
     }
@@ -38,7 +38,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in StanceUtils.ApplyStance<CalmStance>(base.Battle.Player, Value1))
+            foreach (var item in HaniwaUtils.ApplyStance<FencerHaniwa>(base.Battle.Player, Value1))
             {
                 yield return item;
             };

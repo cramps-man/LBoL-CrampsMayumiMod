@@ -5,10 +5,10 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class PreserveStanceDef : ModCardTemplate
@@ -40,20 +40,21 @@ namespace LBoLMod.Cards
             get
             {
                 var player = base.Battle.Player;
-                return player.HasStatusEffect<PowerStance>() || player.HasStatusEffect<FocusStance>() || player.HasStatusEffect<CalmStance>();
+                return player.HasStatusEffect<ArcherHaniwa>() || player.HasStatusEffect<CavalryHaniwa>() || player.HasStatusEffect<FencerHaniwa>();
             }
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (this.IsUpgraded) 
             {
-                StanceUtils.PreserveAllCurrentStances(base.Battle.Player);
+                HaniwaUtils.PreserveAllCurrentStances(base.Battle.Player);
             }
             else
             {
-                StanceUtils.PreserveOldestStance(base.Battle.Player);
+                HaniwaUtils.PreserveOldestStance(base.Battle.Player);
             }
             yield break;
         }
     }
 }
+*/

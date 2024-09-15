@@ -7,7 +7,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +44,7 @@ namespace LBoLMod.UltimateSkills
                 Value1: 0,
                 Value2: 0,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(Stance) },
+                RelativeEffects: new List<string>() { nameof(Haniwa) },
                 RelativeCards: new List<string>() { }
                 );
 
@@ -62,10 +62,10 @@ namespace LBoLMod.UltimateSkills
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
             var unit = base.Battle.Player;
-            yield return StanceUtils.RemoveDowntime(unit);
-            yield return StanceUtils.ForceApplyStance<PowerStance>(unit, 3);
-            yield return StanceUtils.ForceApplyStance<FocusStance>(unit, 3);
-            yield return StanceUtils.ForceApplyStance<CalmStance>(unit, 3);
+            yield return HaniwaUtils.RemoveDowntime(unit);
+            yield return HaniwaUtils.ForceApplyStance<ArcherHaniwa>(unit, 3);
+            yield return HaniwaUtils.ForceApplyStance<CavalryHaniwa>(unit, 3);
+            yield return HaniwaUtils.ForceApplyStance<FencerHaniwa>(unit, 3);
         }
     }
 }

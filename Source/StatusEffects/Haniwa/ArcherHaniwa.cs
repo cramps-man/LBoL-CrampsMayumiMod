@@ -5,28 +5,28 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
-    public sealed class PowerStanceDef : ModStatusEffectTemplate
+    public sealed class ArcherHaniwaDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(PowerStance);
+            return nameof(ArcherHaniwa);
         }
 
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
-            statusConfig.RelativeEffects = new List<string>() { nameof(Stance) };
+            statusConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             return statusConfig;
         }
     }
 
-    [EntityLogic(typeof(PowerStanceDef))]
-    public sealed class PowerStance: ModStanceStatusEffect
+    [EntityLogic(typeof(ArcherHaniwaDef))]
+    public sealed class ArcherHaniwa: ModHaniwaStatusEffect
     {
         public int EffectDamage
         {

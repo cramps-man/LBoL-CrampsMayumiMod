@@ -5,10 +5,10 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class RandomStanceDef : ModCardTemplate
@@ -29,8 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.Cost = new ManaGroup() { Red = 1, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Stance), nameof(Preserve) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Stance), nameof(Preserve) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Preserve) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Preserve) };
             return cardConfig;
         }
     }
@@ -48,28 +48,28 @@ namespace LBoLMod.Cards
             var player = base.Battle.Player;
             if (randomPick == 1)
             {
-                foreach (var item in StanceUtils.ApplyStance<PowerStance>(player, Value1))
+                foreach (var item in HaniwaUtils.ApplyStance<ArcherHaniwa>(player, Value1))
                 {
                     yield return item;
                 };
-                StanceUtils.PreserveSpecifiedStance<PowerStance>(player);
+                HaniwaUtils.PreserveSpecifiedStance<ArcherHaniwa>(player);
             }
             else if (randomPick == 2)
             {
-                foreach (var item in StanceUtils.ApplyStance<FocusStance>(player, Value1))
+                foreach (var item in HaniwaUtils.ApplyStance<CavalryHaniwa>(player, Value1))
                 {
                     yield return item;
                 };
-                StanceUtils.PreserveSpecifiedStance<FocusStance>(player);
+                HaniwaUtils.PreserveSpecifiedStance<CavalryHaniwa>(player);
             }
             else if (randomPick == 3)
             {
-                foreach (var item in StanceUtils.ApplyStance<CalmStance>(player, Value1))
+                foreach (var item in HaniwaUtils.ApplyStance<FencerHaniwa>(player, Value1))
                 {
                     yield return item;
                 };
-                StanceUtils.PreserveSpecifiedStance<CalmStance>(player);
+                HaniwaUtils.PreserveSpecifiedStance<FencerHaniwa>(player);
             }
         }
     }
-}
+}*/

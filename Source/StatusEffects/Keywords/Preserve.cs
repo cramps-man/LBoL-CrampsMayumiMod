@@ -2,10 +2,9 @@
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
-namespace LBoLMod.Source.StatusEffects.Keywords
+namespace LBoLMod.StatusEffects.Keywords
 {
     public sealed class PreserveDef : ModStatusEffectTemplate
     {
@@ -16,7 +15,7 @@ namespace LBoLMod.Source.StatusEffects.Keywords
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
-            statusConfig.RelativeEffects = new List<string>() { nameof(Stance) };
+            statusConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             return statusConfig;
         }
     }

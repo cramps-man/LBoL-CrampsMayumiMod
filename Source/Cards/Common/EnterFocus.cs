@@ -26,8 +26,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.Value1 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(FocusStance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FocusStance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             return cardConfig;
         }
     }
@@ -37,7 +37,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in StanceUtils.ApplyStance<FocusStance>(base.Battle.Player, Value1))
+            foreach (var item in HaniwaUtils.ApplyStance<CavalryHaniwa>(base.Battle.Player, Value1))
             {
                 yield return item;
             };

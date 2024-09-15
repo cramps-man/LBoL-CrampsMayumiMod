@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedBlock = 12;
             cardConfig.Shield = 8;
             cardConfig.UpgradedShield = 12;
-            cardConfig.RelativeEffects = new List<string>() { nameof(CalmStance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CalmStance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(FencerHaniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FencerHaniwa) };
             return cardConfig;
         }
     }
@@ -38,10 +38,10 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (StanceUtils.isStanceFulfilled<CalmStance>(base.Battle.Player))
+            if (HaniwaUtils.isStanceFulfilled<FencerHaniwa>(base.Battle.Player))
             {
                 yield return base.DefenseAction(RawBlock, RawShield);
-                yield return StanceUtils.RemoveDexterityIfNeeded<CalmStance>(base.Battle.Player);
+                yield return HaniwaUtils.RemoveDexterityIfNeeded<FencerHaniwa>(base.Battle.Player);
             }
             yield return base.DefenseAction(RawBlock, 0);
         }

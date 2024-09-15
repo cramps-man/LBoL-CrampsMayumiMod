@@ -5,12 +5,12 @@ using UnityEngine;
 namespace LBoLMod.Source.Patches
 {
     [HarmonyLib.HarmonyPatch]
-    internal class PreserveStanceStatusEffectWidgetPatch
+    internal class StatusEffectWidgetPatch
     {
         [HarmonyLib.HarmonyPatch(typeof(StatusEffectWidget), nameof(StatusEffectWidget.TextRefresh))]
         private static void Postfix(StatusEffectWidget __instance)
         {
-            if (__instance._statusEffect is ModStanceStatusEffect modStanceStatusEffect)
+            if (__instance._statusEffect is ModHaniwaStatusEffect modStanceStatusEffect)
             {
                 var textTransform = __instance.CenterWorldPosition;
                 if (modStanceStatusEffect.Preserved)

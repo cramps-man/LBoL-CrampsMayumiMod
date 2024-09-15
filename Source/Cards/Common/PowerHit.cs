@@ -32,8 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.Value2 = 1;
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(PowerStance), nameof(Weak) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(PowerStance), nameof(Weak) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(ArcherHaniwa), nameof(Weak) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(ArcherHaniwa), nameof(Weak) };
             return cardConfig;
         }
     }
@@ -51,11 +51,11 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (StanceUtils.isStanceFulfilled<PowerStance>(base.Battle.Player))
+            if (HaniwaUtils.isStanceFulfilled<ArcherHaniwa>(base.Battle.Player))
             {
                 yield return base.AttackAction(selector, StanceDamage);
                 yield return new ApplyStatusEffectAction<Weak>(selector.SelectedEnemy, 0, Value2);
-                yield return StanceUtils.RemoveDexterityIfNeeded<PowerStance>(base.Battle.Player);
+                yield return HaniwaUtils.RemoveDexterityIfNeeded<ArcherHaniwa>(base.Battle.Player);
             }
             else
             {

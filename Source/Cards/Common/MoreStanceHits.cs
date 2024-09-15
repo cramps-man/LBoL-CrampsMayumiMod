@@ -5,7 +5,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 2 };
             cardConfig.Damage = 8;
             cardConfig.UpgradedDamage = 10;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Stance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Stance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;
         }
     }
@@ -42,11 +42,11 @@ namespace LBoLMod.Cards
             {
                 var count = 0;
                 var player = base.Battle.Player;
-                if (player.HasStatusEffect<PowerStance>())
+                if (player.HasStatusEffect<ArcherHaniwa>())
                     count++;
-                if (player.HasStatusEffect<FocusStance>())
+                if (player.HasStatusEffect<CavalryHaniwa>())
                     count++;
-                if (player.HasStatusEffect<CalmStance>())
+                if (player.HasStatusEffect<FencerHaniwa>())
                     count++;
                 return count;
             }

@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedScry = 5;
             cardConfig.Keywords = Keyword.Scry;
             cardConfig.UpgradedKeywords = Keyword.Scry;
-            cardConfig.RelativeEffects = new List<string>() { nameof(FocusStance) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FocusStance) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             return cardConfig;
         }
     }
@@ -42,10 +42,10 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (StanceUtils.isStanceFulfilled<FocusStance>(base.Battle.Player))
+            if (HaniwaUtils.isStanceFulfilled<CavalryHaniwa>(base.Battle.Player))
             {
                 yield return new ScryAction(Scry);
-                yield return StanceUtils.RemoveDexterityIfNeeded<FocusStance>(base.Battle.Player);
+                yield return HaniwaUtils.RemoveDexterityIfNeeded<CavalryHaniwa>(base.Battle.Player);
             }
             yield return new DrawManyCardAction(Value1);
         }

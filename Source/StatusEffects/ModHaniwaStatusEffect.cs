@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
 {
-    public abstract class ModStanceStatusEffect: StatusEffect
+    public abstract class ModHaniwaStatusEffect: StatusEffect
     {
         protected bool preserved = false;
         public bool Preserved
@@ -55,7 +55,7 @@ namespace LBoLMod.StatusEffects
 
         private IEnumerable<BattleAction> onStatusApplied(StatusEffectApplyEventArgs args)
         {
-            if (args.Effect is ModStanceStatusEffect)
+            if (args.Effect is ModHaniwaStatusEffect)
             {
                 ageCounter++;
             }
