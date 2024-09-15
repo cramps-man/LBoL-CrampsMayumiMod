@@ -10,11 +10,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class EnterPowerDef : ModCardTemplate
+    public sealed class CreateArcherDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(EnterPower);
+            return nameof(CreateArcher);
         }
 
         public override CardConfig MakeConfig()
@@ -26,6 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Damage = 7;
             cardConfig.UpgradedDamage = 10;
             cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(ArcherHaniwa) };
@@ -34,8 +35,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(EnterPowerDef))]
-    public sealed class EnterPower : Card
+    [EntityLogic(typeof(CreateArcherDef))]
+    public sealed class CreateArcher : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

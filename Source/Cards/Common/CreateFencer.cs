@@ -2,46 +2,49 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class EnterFocusDef : ModCardTemplate
+    public sealed class CreateFencerDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(EnterFocus);
+            return nameof(CreateFencer);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            cardConfig.Type = CardType.Skill;
+            cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
+            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Block = 6;
+            cardConfig.UpgradedBlock = 9;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(EnterFocusDef))]
-    public sealed class EnterFocus : Card
+    [EntityLogic(typeof(CreateFencerDef))]
+    public sealed class CreateFencer : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in HaniwaUtils.ApplyStance<CavalryHaniwa>(base.Battle.Player, Value1))
+            foreach (var item in HaniwaUtils.ApplyStance<FencerHaniwa>(base.Battle.Player, Value1))
             {
                 yield return item;
             };
-            yield return new DrawCardAction();
+            yield return DefenseAction();
         }
     }
 }

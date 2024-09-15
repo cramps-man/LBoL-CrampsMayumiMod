@@ -11,11 +11,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class EnterCalmDef : ModCardTemplate
+    public sealed class CreateCavalryDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(EnterCalm);
+            return nameof(CreateCavalry);
         }
 
         public override CardConfig MakeConfig()
@@ -23,26 +23,26 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
-            cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
+            cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.Value1 = 2;
-            cardConfig.Mana = new ManaGroup() { Red = 1, Green = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(FencerHaniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FencerHaniwa) };
+            cardConfig.UpgradedValue1 = 3;
+            cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(EnterCalmDef))]
-    public sealed class EnterCalm : Card
+    [EntityLogic(typeof(CreateCavalryDef))]
+    public sealed class CreateCavalry : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in HaniwaUtils.ApplyStance<FencerHaniwa>(base.Battle.Player, Value1))
+            foreach (var item in HaniwaUtils.ApplyStance<CavalryHaniwa>(base.Battle.Player, Value1))
             {
                 yield return item;
             };
-            yield return new GainManaAction(Mana);
+            yield return new DrawCardAction();
         }
     }
 }

@@ -40,6 +40,33 @@ FencerHaniwa:
     After gaining mana, gain |Block| multiplied by the number of mana. 
     Higher level increases |Block|. 
 
+Require:
+  Name: Require X
+  Description: |-
+    Requires X level of the specific Haniwa. 
+  Brief: |-
+    Requires X level of the specific Haniwa. 
+
+Sacrifice:
+  Name: Sacrifice X
+  Description: |-
+    Requires X level of the specific Haniwa. 
+    Lose X level of the specific Haniwa. 
+  Brief: |-
+    Requires X level of the specific Haniwa. 
+    Lose X level of the specific Haniwa. 
+
+Assign:
+  Name: Assign X
+  Description: |-
+    Requires X level of the specific Haniwa. 
+    Lose X level of the specific Haniwa for a number of turns. 
+    When the turns are over, gain back X level of specific Haniwa. 
+  Brief: |-
+    Requires X level of the specific Haniwa. 
+    Lose X level of the specific Haniwa for a number of turns. 
+    When the turns are over, gain back X level of specific Haniwa. 
+
 Downtime:
   Name: Downtime
   Description: Prevents gaining new |Stances| or leveling existing ones. 

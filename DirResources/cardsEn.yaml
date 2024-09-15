@@ -46,11 +46,11 @@ PreserveStance:
     |Requires a Stance| to play. 
     |Preserve| all current |Stances|. 
 
-EnterPower:
-  Name: Enter Power
+CreateArcher:
+  Name: Create Archer
   Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|.
     Deal {Damage} damage.
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Power|.
 
 GrantDexterity:
   Name: Grant Dexterity
@@ -58,17 +58,17 @@ GrantDexterity:
     Gain {Block} |Block|.
     Gain {Value1} |Dexterity|.
 
-EnterFocus:
-  Name: Enter Focus
+CreateCavalry:
+  Name: Create Cavalry
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Focus|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|.
     Draw 1 card.
 
-EnterCalm:
-  Name: Enter Calm
+CreateFencer:
+  Name: Create Fencer
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Calm|.
-    Gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="G">.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
+    Gain {Block} |Block|.
 
 ScryFocus:
   Name: Scry Focus
