@@ -7,11 +7,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class BasicAttackGDef : ModCardTemplate
+    public sealed class BasicBlockGDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(BasicAttackG);
+            return nameof(BasicBlockW);
         }
 
         public override CardConfig MakeConfig()
@@ -19,12 +19,12 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
             cardConfig.FindInBattle = false;
-            cardConfig.Type = CardType.Attack;
-            cardConfig.TargetType = TargetType.SingleEnemy;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
-            cardConfig.Damage = 10;
-            cardConfig.UpgradedDamage = 14;
-            cardConfig.Cost = new ManaGroup() { Any = 1, Green = 1 };
+            cardConfig.Type = CardType.Defense;
+            cardConfig.TargetType = TargetType.Self;
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
+            cardConfig.Block = 10;
+            cardConfig.UpgradedBlock = 13;
+            cardConfig.Cost = new ManaGroup() { Any = 1, White = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
             cardConfig.Keywords = Keyword.Basic;
             cardConfig.UpgradedKeywords = Keyword.Basic;
@@ -32,8 +32,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(BasicAttackGDef))]
-    public sealed class BasicAttackG : Card
+    [EntityLogic(typeof(BasicBlockGDef))]
+    public sealed class BasicBlockW : Card
     {
     }
 }

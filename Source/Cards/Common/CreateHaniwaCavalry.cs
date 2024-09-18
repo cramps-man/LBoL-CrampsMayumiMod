@@ -21,7 +21,6 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };

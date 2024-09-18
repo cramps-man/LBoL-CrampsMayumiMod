@@ -52,7 +52,7 @@ namespace LBoLMod.Exhibits
                 Value1: null,
                 Value2: null,
                 Value3: null,
-                Mana: new ManaGroup() { Green = 1 },
+                Mana: new ManaGroup() { White = 1 },
                 BaseManaRequirement: null,
                 BaseManaColor: ManaColor.Green,
                 BaseManaAmount: 1,

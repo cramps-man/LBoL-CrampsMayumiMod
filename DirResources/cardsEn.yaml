@@ -2,7 +2,7 @@ BasicAttackR:
   Name: Basic Attack
   Description: Deal {Damage} damage.
 
-BasicAttackG:
+BasicAttackW:
   Name: Basic Attack
   Description: Deal {Damage} damage.
 
@@ -10,7 +10,7 @@ BasicBlockR:
   Name: Basic Block
   Description: Gain {Block} |Block|.
 
-BasicBlockG:
+BasicBlockW:
   Name: Basic Block
   Description: Gain {Block} |Block|.
 

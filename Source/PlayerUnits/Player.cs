@@ -41,7 +41,7 @@ namespace LBoLMod.PlayerUnits
             NarrativeColor: "#e58c27",
             IsSelectable: true,
             MaxHp: 85,
-            InitialMana: new LBoL.Base.ManaGroup() { Red = 2, Green = 2 },
+            InitialMana: new LBoL.Base.ManaGroup() { Red = 2, White = 2 },
             InitialMoney: 50,
             InitialPower: 30,
             UltimateSkillA: nameof(UltimateSkillA),
@@ -64,9 +64,9 @@ namespace LBoLMod.PlayerUnits
                 nameof(Boundary),
                 nameof(BasicAttackR),
                 nameof(BasicAttackR),
-                nameof(BasicBlockG),
-                nameof(BasicBlockG),
-                nameof(BasicBlockG)
+                nameof(BasicBlockW),
+                nameof(BasicBlockW),
+                nameof(BasicBlockW)
             };
         }
         private static List<string> GetDeckB()
@@ -76,8 +76,8 @@ namespace LBoLMod.PlayerUnits
                 nameof(Shoot),
                 nameof(Boundary),
                 nameof(Boundary),
-                nameof(BasicAttackG),
-                nameof(BasicAttackG),
+                nameof(BasicAttackW),
+                nameof(BasicAttackW),
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),

@@ -24,14 +24,14 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Damage = 10;
             cardConfig.UpgradedDamage = 12;
             cardConfig.Value1 = 4;
             cardConfig.UpgradedValue1 = 8;
             cardConfig.Value2 = 1;
-            cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
+            cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.RelativeEffects = new List<string>() { nameof(ArcherHaniwa), nameof(Weak) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(ArcherHaniwa), nameof(Weak) };
             return cardConfig;
