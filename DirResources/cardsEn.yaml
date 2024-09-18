@@ -36,7 +36,7 @@ WeakenFoe:
   Name: Weaken Foe
   Description: |-
     Deal {Damage} damage.
-    |Require 1 Archer|: Deal {HaniwaDamage} damage instead and apply {Value2} |Weak|.
+    |Require {ArcherRequired} Archer|: Deal {HaniwaDamage} damage instead and apply {Value2} |Weak|.
 
 CreateArcher:
   Name: Create Archer
@@ -60,7 +60,7 @@ FencerGuard:
   Name: Fencer Guard
   Description: |-
     Gain {Block} |Block|.
-    |Require Fencer 1|: Also gain {Shield} |Barrier|.
+    |Require {FencerRequired} Fencer|: Also gain {Shield} |Barrier|.
 
 CreateReserves:
   Name: Create Reserves

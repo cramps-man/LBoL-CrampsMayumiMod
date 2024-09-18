@@ -37,6 +37,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FencerGuardDef))]
     public sealed class FencerGuard : Card
     {
+        public int FencerRequired => 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (HaniwaUtils.IsHaniwaFulfilled<FencerHaniwa>(base.Battle.Player))

@@ -42,6 +42,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(WeakenFoeDef))]
     public sealed class WeakenFoe : Card
     {
+        public int ArcherRequired => 1;
         public DamageInfo HaniwaDamage
         {
             get

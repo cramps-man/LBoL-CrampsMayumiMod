@@ -60,12 +60,10 @@ Assign:
   Name: Assign X
   Description: |-
     Requires X level of the specific Haniwa. 
-    Lose X level of the specific Haniwa for a number of turns. 
-    When the turns are over, gain back X level of specific Haniwa. 
+    For a duration, lose X level of Haniwa, then gain them back after. 
   Brief: |-
     Requires X level of the specific Haniwa. 
-    Lose X level of the specific Haniwa for a number of turns. 
-    When the turns are over, gain back X level of specific Haniwa. 
+    For a duration, lose X level of Haniwa, then gain them back after. 
 
 Downtime:
   Name: Downtime
