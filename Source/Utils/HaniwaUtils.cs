@@ -11,7 +11,7 @@ namespace LBoLMod
 {
     public static class HaniwaUtils
     {
-        public static IEnumerable<BattleAction> ApplyStance<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
+        public static IEnumerable<BattleAction> GainHaniwa<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
         {
             if (player.HasStatusEffect<Downtime>())
             {
@@ -41,12 +41,12 @@ namespace LBoLMod
             }*/
         }
 
-        public static BattleAction ForceApplyStance<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
+        public static BattleAction ForceGainHaniwa<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
         {
             return new ApplyStatusEffectAction<T>(player, level);
         }
 
-        public static BattleAction RemoveStance<T>(Unit unit) where T : ModHaniwaStatusEffect
+        public static BattleAction RemoveHaniwa<T>(Unit unit) where T : ModHaniwaStatusEffect
         {
             if (!unit.HasStatusEffect<T>())
             {
@@ -59,7 +59,7 @@ namespace LBoLMod
             return new RemoveStatusEffectAction(se);
         }
 
-        public static BattleAction ForceRemoveStance<T>(Unit unit) where T : ModHaniwaStatusEffect
+        public static BattleAction ForceRemoveHaniwa<T>(Unit unit) where T : ModHaniwaStatusEffect
         {
             if (!unit.HasStatusEffect<T>())
             {
@@ -79,7 +79,7 @@ namespace LBoLMod
             return new RemoveStatusEffectAction(se);
         }
 
-        public static bool DoesPlayerHavePreservedStance(PlayerUnit player)
+        public static bool DoesPlayerHavePreservedHaniwa(PlayerUnit player)
         {
             if (player.HasStatusEffect<ArcherHaniwa>())
             {
@@ -102,45 +102,45 @@ namespace LBoLMod
             return false;
         }
 
-        public static void PreserveAllCurrentStances(PlayerUnit player)
+        public static void PreserveAllCurrentHaniwa(PlayerUnit player)
         {
-            PreserveSpecifiedStance<ArcherHaniwa>(player);
-            PreserveSpecifiedStance<CavalryHaniwa>(player);
-            PreserveSpecifiedStance<FencerHaniwa>(player);
+            PreserveSpecifiedHaniwa<ArcherHaniwa>(player);
+            PreserveSpecifiedHaniwa<CavalryHaniwa>(player);
+            PreserveSpecifiedHaniwa<FencerHaniwa>(player);
         }
 
-        public static List<ModHaniwaStatusEffect> GetAllStances(PlayerUnit player)
+        public static List<ModHaniwaStatusEffect> GetAllHaniwa(PlayerUnit player)
         {
-            var stances = new List<ModHaniwaStatusEffect>();
+            var haniwas = new List<ModHaniwaStatusEffect>();
             if (player.HasStatusEffect<ArcherHaniwa>())
             {
-                stances.Add(player.GetStatusEffect<ArcherHaniwa>());
+                haniwas.Add(player.GetStatusEffect<ArcherHaniwa>());
             }
             if (player.HasStatusEffect<CavalryHaniwa>())
             {
-                stances.Add(player.GetStatusEffect<CavalryHaniwa>());
+                haniwas.Add(player.GetStatusEffect<CavalryHaniwa>());
             }
             if (player.HasStatusEffect<FencerHaniwa>())
             {
-                stances.Add(player.GetStatusEffect<FencerHaniwa>());
+                haniwas.Add(player.GetStatusEffect<FencerHaniwa>());
             }
-            return stances;
+            return haniwas;
         }
 
-        public static void PreserveOldestStance(PlayerUnit player)
+        public static void PreserveOldestHaniwa(PlayerUnit player)
         {
-            var stances = GetAllStances(player);
-            if (stances.Count > 0)
+            var haniwa = GetAllHaniwa(player);
+            if (haniwa.Count > 0)
             {
-                var oldestAge = stances.Where(s => !s.Preserved).Max(s => s.AgeCounter);
-                foreach (var s in stances.Where(s => s.AgeCounter == oldestAge))
+                var oldestAge = haniwa.Where(s => !s.Preserved).Max(s => s.AgeCounter);
+                foreach (var s in haniwa.Where(s => s.AgeCounter == oldestAge))
                 {
                     s.Preserved = true;
                 }
             }
         }
 
-        public static void PreserveSpecifiedStance<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
+        public static void PreserveSpecifiedHaniwa<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
         {
             if (player.HasStatusEffect<T>())
             {
@@ -152,7 +152,7 @@ namespace LBoLMod
             }
         }
 
-        public static bool isStanceFulfilled<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
+        public static bool IsHaniwaFulfilled<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
         {
             if (player.HasStatusEffect<T>())
                 return true;
@@ -180,10 +180,10 @@ namespace LBoLMod
             return new RemoveStatusEffectAction(dex);
         }
 
-        public static int TotalStanceLevel(PlayerUnit player)
+        public static int TotalHaniwaLevel(PlayerUnit player)
         {
             int total = 0;
-            var stances = GetAllStances(player);
+            var stances = GetAllHaniwa(player);
             stances.ForEach(st => total += st.Level);
             return total;
         }

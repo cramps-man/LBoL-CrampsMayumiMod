@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.isStanceFulfilled<CavalryHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsHaniwaFulfilled<CavalryHaniwa>(base.Battle.Player))
             {
                 yield return new ScryAction(Scry);
                 yield return HaniwaUtils.RemoveDexterityIfNeeded<CavalryHaniwa>(base.Battle.Player);

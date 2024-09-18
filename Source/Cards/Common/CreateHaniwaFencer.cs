@@ -34,7 +34,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            return HaniwaUtils.ApplyStance<FencerHaniwa>(Battle.Player, Value1);
+            return HaniwaUtils.GainHaniwa<FencerHaniwa>(Battle.Player, Value1);
         }
     }
 }

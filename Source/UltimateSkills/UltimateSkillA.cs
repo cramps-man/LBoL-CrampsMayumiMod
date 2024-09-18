@@ -63,9 +63,9 @@ namespace LBoLMod.UltimateSkills
         {
             var unit = base.Battle.Player;
             yield return HaniwaUtils.RemoveDowntime(unit);
-            yield return HaniwaUtils.ForceApplyStance<ArcherHaniwa>(unit, 3);
-            yield return HaniwaUtils.ForceApplyStance<CavalryHaniwa>(unit, 3);
-            yield return HaniwaUtils.ForceApplyStance<FencerHaniwa>(unit, 3);
+            yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(unit, 3);
+            yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(unit, 3);
+            yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(unit, 3);
         }
     }
 }

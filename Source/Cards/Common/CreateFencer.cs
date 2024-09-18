@@ -40,7 +40,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in HaniwaUtils.ApplyStance<FencerHaniwa>(base.Battle.Player, Value1))
+            foreach (var item in HaniwaUtils.GainHaniwa<FencerHaniwa>(base.Battle.Player, Value1))
             {
                 yield return item;
             };

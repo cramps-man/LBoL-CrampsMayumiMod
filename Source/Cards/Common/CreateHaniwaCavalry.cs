@@ -34,7 +34,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            return HaniwaUtils.ApplyStance<CavalryHaniwa>(base.Battle.Player, Value1);
+            return HaniwaUtils.GainHaniwa<CavalryHaniwa>(base.Battle.Player, Value1);
         }
     }
 }

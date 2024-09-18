@@ -59,7 +59,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             var player = base.Battle.Player;
-            if (HaniwaUtils.isStanceFulfilled<FencerHaniwa>(player))
+            if (HaniwaUtils.IsHaniwaFulfilled<FencerHaniwa>(player))
             {
                 yield return new HealAction(player, player, FullHeal);
                 yield return HaniwaUtils.RemoveDexterityIfNeeded<FencerHaniwa>(player);
@@ -69,7 +69,7 @@ namespace LBoLMod.Cards
                 yield return new HealAction(player, player, Value1);
             }
 
-            if (HaniwaUtils.isStanceFulfilled<ArcherHaniwa>(player))
+            if (HaniwaUtils.IsHaniwaFulfilled<ArcherHaniwa>(player))
             {
                 yield return new ApplyStatusEffectAction<Firepower>(player, FullFirepower);
                 yield return HaniwaUtils.RemoveDexterityIfNeeded<ArcherHaniwa>(player);

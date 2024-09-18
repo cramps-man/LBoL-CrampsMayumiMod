@@ -79,7 +79,7 @@ namespace LBoLMod.Exhibits
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
         {
             var player = base.Battle.Player;
-            foreach (var item in HaniwaUtils.GetAllStances(player))
+            foreach (var item in HaniwaUtils.GetAllHaniwa(player))
             {
                 yield return item.TickdownOrRemove();
             };
@@ -104,9 +104,9 @@ namespace LBoLMod.Exhibits
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();
-                yield return HaniwaUtils.ForceApplyStance<FencerHaniwa>(player, 3);
-                yield return HaniwaUtils.ForceApplyStance<ArcherHaniwa>(player, 3);
-                yield return HaniwaUtils.ForceApplyStance<CavalryHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(player, 3);
             }
         }
 

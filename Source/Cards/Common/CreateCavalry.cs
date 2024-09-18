@@ -38,7 +38,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in HaniwaUtils.ApplyStance<CavalryHaniwa>(base.Battle.Player, Value1))
+            foreach (var item in HaniwaUtils.GainHaniwa<CavalryHaniwa>(base.Battle.Player, Value1))
             {
                 yield return item;
             };

@@ -82,9 +82,9 @@ namespace LBoLMod.Exhibits
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();
-                yield return HaniwaUtils.ForceApplyStance<FencerHaniwa>(player, 3);
-                yield return HaniwaUtils.ForceApplyStance<ArcherHaniwa>(player, 3);
-                yield return HaniwaUtils.ForceApplyStance<CavalryHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(player, 3);
             }
         }
 
@@ -112,7 +112,7 @@ namespace LBoLMod.Exhibits
             /*yield return StanceUtils.TickdownStance<PowerStance>(player);
             yield return StanceUtils.TickdownStance<FocusStance>(player);
             yield return StanceUtils.TickdownStance<CalmStance>(player);*/
-            var stances = HaniwaUtils.GetAllStances(player);
+            var stances = HaniwaUtils.GetAllHaniwa(player);
             var maxLevel = stances.Max(s => s.Level);
             foreach (var item in stances.Where(s => s.Level == maxLevel))
             {

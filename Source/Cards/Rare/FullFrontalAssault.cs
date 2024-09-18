@@ -54,7 +54,7 @@ namespace LBoLMod.Cards
         {
             get
             {
-                return HaniwaUtils.TotalStanceLevel(base.Battle.Player) * Value1;
+                return HaniwaUtils.TotalHaniwaLevel(base.Battle.Player) * Value1;
             }
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

@@ -52,7 +52,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.isStanceFulfilled<ArcherHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsHaniwaFulfilled<ArcherHaniwa>(base.Battle.Player))
             {
                 yield return base.AttackAction(selector, HaniwaDamage);
                 if (base.Battle.BattleShouldEnd)

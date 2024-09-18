@@ -39,7 +39,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.isStanceFulfilled<FencerHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsHaniwaFulfilled<FencerHaniwa>(base.Battle.Player))
             {
                 yield return base.DefenseAction(RawBlock, RawShield);
                 yield return HaniwaUtils.RemoveDexterityIfNeeded<FencerHaniwa>(base.Battle.Player);

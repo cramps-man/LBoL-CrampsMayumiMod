@@ -43,7 +43,7 @@ namespace LBoLMod.Cards
             yield return base.AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
             {
-                foreach (var item in HaniwaUtils.ApplyStance<ArcherHaniwa>(base.Battle.Player, Value1))
+                foreach (var item in HaniwaUtils.GainHaniwa<ArcherHaniwa>(base.Battle.Player, Value1))
                 {
                     yield return item;
                 }
