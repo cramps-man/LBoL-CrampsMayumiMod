@@ -10,19 +10,19 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class BlockCalmDef : ModCardTemplate
+    public sealed class FencerGuardDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(BlockCalm);
+            return nameof(FencerGuard);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Defense;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
-            cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
+            cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.Block = 8;
             cardConfig.UpgradedBlock = 12;
             cardConfig.Shield = 8;
@@ -33,8 +33,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(BlockCalmDef))]
-    public sealed class BlockCalm : Card
+    [EntityLogic(typeof(FencerGuardDef))]
+    public sealed class FencerGuard : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

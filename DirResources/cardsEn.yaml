@@ -31,11 +31,11 @@ CreateHaniwaFencer:
   Name: Create Haniwa (Fencer)
   Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
 
-PowerHit:
-  Name: Power Hit
+WeakenFoe:
+  Name: Weaken Foe
   Description: |-
     Deal {Damage} damage.
-    |Power 1|: Deal {StanceDamage} damage instead and apply {Value2} |Weak|.
+    |Require 1 Archer|: Deal {HaniwaDamage} damage instead and apply {Value2} |Weak|.
 
 PreserveStance:
   Name: Preserve Stance
@@ -76,20 +76,18 @@ ScryFocus:
     |Focus 1|: |Scry| {Scry}.
     Draw {Value1} cards.
 
-BlockCalm:
-  Name: Block Calm
+FencerGuard:
+  Name: Fencer Guard
   Description: |-
     Gain {Block} |Block|.
-    |Calm 1|: Also gain {Shield} |Barrier|.
+    |Require Fencer 1|: Also gain {Shield} |Barrier|.
 
-BlockChange:
-  Name: Block Change
+CreateReserves:
+  Name: Create Reserves
   Description: |-
-    Gain {Block} |Block|.
-    Add a |Change Stance| to the hand. 
+    Add a |Create Haniwa| to the hand. 
   UpgradedDescription: |-
-    Gain {Block} |Block|.
-    Add an |Upgraded| |Change Stance| to the hand. 
+    Add an |Upgraded| |Create Haniwa| to the hand. 
 
 RandomStance:
   Name: Random Stance
@@ -114,13 +112,13 @@ HealFirepower:
     |Calm 2|: Gain {FullHeal} life instead.
     |Power 2|: Gain {FullFirepower} |Firepower| instead.
 
-TotalStanceLevelAttack:
-  Name: Total Stance Attack
+FullFrontalAssault:
+  Name: Full Frontal Assault
   Description: |-
-    |Requires a Stance| to play. 
-    Deal {Damage} + |X|({TotalStanceDamage}) damage.
-    |X| is {Value1} multiplied by the |total level| of all |Stances|.
+    |Requires Haniwa| to play. 
+    Deal {Damage} + |X|({TotalHaniwaDamage}) damage.
+    |X| is {Value1} multiplied by the |total level| of all |Haniwa|.
   NonbattleDescription: |-
-    |Requires a Stance| to play. 
+    |Requires Haniwa| to play. 
     Deal {Damage} + |X| damage.
-    |X| is {Value1} multiplied by the |total level| of all |Stances|.
+    |X| is {Value1} multiplied by the |total level| of all |Haniwa|.

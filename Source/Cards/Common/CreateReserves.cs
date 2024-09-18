@@ -10,34 +10,31 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class BlockChangeDef : ModCardTemplate
+    public sealed class CreateReservesDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(BlockChange);
+            return nameof(CreateReserves);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            cardConfig.Type = CardType.Defense;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
-            cardConfig.Block = 12;
-            cardConfig.UpgradedBlock = 16;
-            cardConfig.Cost = new ManaGroup() { Any = 1, Green = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Green = 1 };
+            cardConfig.Type = CardType.Skill;
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
+            cardConfig.Cost = new ManaGroup() { Any = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.RelativeCards = new List<string>() { nameof(CreateHaniwa) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CreateHaniwa)+"+" };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(BlockChangeDef))]
-    public sealed class BlockChange : Card
+    [EntityLogic(typeof(CreateReservesDef))]
+    public sealed class CreateReserves : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return DefenseAction();
             yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<CreateHaniwa>(IsUpgraded) });
         }
     }

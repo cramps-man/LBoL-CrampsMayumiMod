@@ -8,15 +8,16 @@ using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class PowerHitDef : ModCardTemplate
+    public sealed class WeakenFoeDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(PowerHit);
+            return nameof(WeakenFoe);
         }
 
         public override CardConfig MakeConfig()
@@ -32,16 +33,16 @@ namespace LBoLMod.Cards
             cardConfig.Value2 = 1;
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(ArcherHaniwa), nameof(Weak) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(ArcherHaniwa), nameof(Weak) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(PowerHitDef))]
-    public sealed class PowerHit : Card
+    [EntityLogic(typeof(WeakenFoeDef))]
+    public sealed class WeakenFoe : Card
     {
-        public DamageInfo StanceDamage
+        public DamageInfo HaniwaDamage
         {
             get
             {
@@ -53,7 +54,9 @@ namespace LBoLMod.Cards
         {
             if (HaniwaUtils.isStanceFulfilled<ArcherHaniwa>(base.Battle.Player))
             {
-                yield return base.AttackAction(selector, StanceDamage);
+                yield return base.AttackAction(selector, HaniwaDamage);
+                if (base.Battle.BattleShouldEnd)
+                    yield break;
                 yield return new ApplyStatusEffectAction<Weak>(selector.SelectedEnemy, 0, Value2);
                 yield return HaniwaUtils.RemoveDexterityIfNeeded<ArcherHaniwa>(base.Battle.Player);
             }

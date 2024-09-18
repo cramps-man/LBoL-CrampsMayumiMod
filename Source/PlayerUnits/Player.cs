@@ -38,7 +38,7 @@ namespace LBoLMod.PlayerUnits
             Order: 0,
             UnlockLevel: 0,
             ModleName: "",
-            NarrativeColor: "#e58c27",
+            NarrativeColor: "#f4cd39",
             IsSelectable: true,
             MaxHp: 85,
             InitialMana: new LBoL.Base.ManaGroup() { Red = 2, White = 2 },
@@ -81,7 +81,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
-                nameof(BlockChange)
+                nameof(CreateReserves)
             };
         }
     }

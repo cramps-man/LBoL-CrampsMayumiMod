@@ -11,11 +11,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class TotalStanceLevelAttackDef : ModCardTemplate
+    public sealed class FullFrontalAssaultDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(TotalStanceLevelAttack);
+            return nameof(FullFrontalAssault);
         }
 
         public override CardConfig MakeConfig()
@@ -26,6 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 1, Red = 1, Any = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 2, Hybrid = 1, HybridColor = 2 };
             cardConfig.Damage = 10;
             cardConfig.UpgradedDamage = 10;
             cardConfig.Value1 = 7;
@@ -38,8 +39,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(TotalStanceLevelAttackDef))]
-    public sealed class TotalStanceLevelAttack : Card
+    [EntityLogic(typeof(FullFrontalAssaultDef))]
+    public sealed class FullFrontalAssault : Card
     {
         public override bool CanUse
         {
@@ -49,7 +50,7 @@ namespace LBoLMod.Cards
                 return player.HasStatusEffect<ArcherHaniwa>() || player.HasStatusEffect<CavalryHaniwa>() || player.HasStatusEffect<FencerHaniwa>();
             }
         }
-        public int TotalStanceDamage
+        public int TotalHaniwaDamage
         {
             get
             {
@@ -58,7 +59,7 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return AttackAction(selector, Damage.IncreaseBy(TotalStanceDamage));
+            yield return AttackAction(selector, Damage.IncreaseBy(TotalHaniwaDamage));
         }
     }
 }
