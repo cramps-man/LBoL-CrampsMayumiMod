@@ -14,6 +14,7 @@ BasicBlockW:
   Name: Basic Block
   Description: Gain {Block} |Block|.
 
+#COMMONS
 CreateHaniwa:
   Name: Create Haniwa
   Description: |-
@@ -37,26 +38,11 @@ WeakenFoe:
     Deal {Damage} damage.
     |Require 1 Archer|: Deal {HaniwaDamage} damage instead and apply {Value2} |Weak|.
 
-PreserveStance:
-  Name: Preserve Stance
-  Description: |-
-    |Requires a Stance| to play. 
-    |Preserve| the oldest |Stance|.
-  UpgradedDescription: |-
-    |Requires a Stance| to play. 
-    |Preserve| all current |Stances|. 
-
 CreateArcher:
   Name: Create Archer
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|.
     Deal {Damage} damage.
-
-GrantDexterity:
-  Name: Grant Dexterity
-  Description: |-
-    Gain {Block} |Block|.
-    Gain {Value1} |Dexterity|.
 
 CreateCavalry:
   Name: Create Cavalry
@@ -69,12 +55,6 @@ CreateFencer:
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
     Gain {Block} |Block|.
-
-ScryFocus:
-  Name: Scry Focus
-  Description: |-
-    |Focus 1|: |Scry| {Scry}.
-    Draw {Value1} cards.
 
 FencerGuard:
   Name: Fencer Guard
@@ -89,12 +69,13 @@ CreateReserves:
   UpgradedDescription: |-
     Add an |Upgraded| |Create Haniwa| to the hand. 
 
-RandomStance:
-  Name: Random Stance
+FencerKamikaze:
+  Name: Fencer Kamikaze
   Description: |-
-    Deal {Damage} damage. 
-    Gain {Value1} level{Value1:plural one='' other='s'} of a random |Stance| and |Preserve| it. 
+    |Sacrifice| {Value1} |Fencer|. 
+    Deal {Damage} damage to all enemies. 
 
+#UNCOMMONS
 MoreStanceHits:
   Name: More Stance Hits
   Description: |-
@@ -104,6 +85,12 @@ MoreStanceHits:
     Deal {Damage} to a random enemy. 
     Deal additional hits for each |Stance| on {PlayerName}. 
 
+ScryFocus:
+  Name: Scry Focus
+  Description: |-
+    |Focus 1|: |Scry| {Scry}.
+    Draw {Value1} cards.
+
 HealFirepower:
   Name: Heal Firepower
   Description: |-
@@ -112,6 +99,7 @@ HealFirepower:
     |Calm 2|: Gain {FullHeal} life instead.
     |Power 2|: Gain {FullFirepower} |Firepower| instead.
 
+#RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
   Description: |-
@@ -122,3 +110,27 @@ FullFrontalAssault:
     |Requires Haniwa| to play. 
     Deal {Damage} + |X| damage.
     |X| is {Value1} multiplied by the |total level| of all |Haniwa|.
+
+#ABILITIES
+#OFFCOLOURS
+#UNUSED
+RandomStance:
+  Name: Random Stance
+  Description: |-
+    Deal {Damage} damage. 
+    Gain {Value1} level{Value1:plural one='' other='s'} of a random |Stance| and |Preserve| it. 
+
+PreserveStance:
+  Name: Preserve Stance
+  Description: |-
+    |Requires a Stance| to play. 
+    |Preserve| the oldest |Stance|.
+  UpgradedDescription: |-
+    |Requires a Stance| to play. 
+    |Preserve| all current |Stances|. 
+
+GrantDexterity:
+  Name: Grant Dexterity
+  Description: |-
+    Gain {Block} |Block|.
+    Gain {Value1} |Dexterity|.

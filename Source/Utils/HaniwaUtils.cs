@@ -187,5 +187,28 @@ namespace LBoLMod
             stances.ForEach(st => total += st.Level);
             return total;
         }
+
+        public static BattleAction SacrificeHaniwa<T>(PlayerUnit player, int levelToLose) where T : ModHaniwaStatusEffect
+        {
+            if (!player.HasStatusEffect<T>())
+                return null;
+
+            var se = player.GetStatusEffect<T>();
+            if (se.Level > levelToLose)
+            {
+                se.Level -= levelToLose;
+                return null;
+            }
+            return new RemoveStatusEffectAction(se);
+        }
+        
+        public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel) where T : ModHaniwaStatusEffect
+        {
+            if (!player.HasStatusEffect<T>())
+                return false;
+
+            var se = player.GetStatusEffect<T>();
+            return se.Level >= requiredLevel;
+        }
     }
 }

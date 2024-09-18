@@ -6,6 +6,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -27,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedBlock = 12;
             cardConfig.Shield = 8;
             cardConfig.UpgradedShield = 12;
-            cardConfig.RelativeEffects = new List<string>() { nameof(FencerHaniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FencerHaniwa) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;
         }
     }

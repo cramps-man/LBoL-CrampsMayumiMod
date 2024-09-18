@@ -66,7 +66,8 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicAttackR),
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
-                nameof(BasicBlockW)
+                nameof(BasicBlockW),
+                nameof(FencerKamikaze),
             };
         }
         private static List<string> GetDeckB()

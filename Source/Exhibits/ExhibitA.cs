@@ -72,7 +72,7 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
             //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
@@ -82,7 +82,9 @@ namespace LBoLMod.Exhibits
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();
-                yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<CreateHaniwa>() });
+                yield return HaniwaUtils.ForceApplyStance<FencerHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceApplyStance<ArcherHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceApplyStance<CavalryHaniwa>(player, 3);
             }
         }
 

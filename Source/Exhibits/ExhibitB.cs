@@ -54,7 +54,7 @@ namespace LBoLMod.Exhibits
                 Value3: null,
                 Mana: new ManaGroup() { White = 1 },
                 BaseManaRequirement: null,
-                BaseManaColor: ManaColor.Green,
+                BaseManaColor: ManaColor.White,
                 BaseManaAmount: 1,
                 HasCounter: false,
                 InitialCounter: null,
@@ -72,7 +72,7 @@ namespace LBoLMod.Exhibits
         protected override void OnEnterBattle()
         {
             //base.ReactBattleEvent<StatusEffectApplyEventArgs>(base.Battle.Player.StatusEffectAdded, new EventSequencedReactor<StatusEffectApplyEventArgs>(this.onStatusApplied));
-            //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
+            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
             //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
@@ -87,7 +87,7 @@ namespace LBoLMod.Exhibits
 
         private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
         {
-            var stanceChangeCount = 0;
+            /*var stanceChangeCount = 0;
             foreach(Card card in base.Battle.HandZone)
             {
                 if (card is CreateHaniwa)
@@ -99,6 +99,14 @@ namespace LBoLMod.Exhibits
             {
                 base.NotifyActivating();
                 yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<CreateHaniwa>() });
+            }*/
+            var player = base.Battle.Player;
+            if (player.TurnCounter == 1)
+            {
+                base.NotifyActivating();
+                yield return HaniwaUtils.ForceApplyStance<FencerHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceApplyStance<ArcherHaniwa>(player, 3);
+                yield return HaniwaUtils.ForceApplyStance<CavalryHaniwa>(player, 3);
             }
         }
 
