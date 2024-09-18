@@ -75,6 +75,12 @@ FencerKamikaze:
     |Sacrifice| {Value1} |Fencer|. 
     Deal {Damage} damage to all enemies. 
 
+ArcherPrepVolley:
+  Name: Archer Prep Volley
+  Description: |-
+    |Assign| {ArcherRequired} |Archer|.
+    After {Value2} cards are played, deal {StatusDamage} damage {Value1} times to random enemies. 
+
 #UNCOMMONS
 MoreStanceHits:
   Name: More Stance Hits

@@ -85,3 +85,11 @@ Preserve:
   Brief: |-
     When a |Stance| is |Preserved|, it can't be removed or lose level. At start of turn lose |Preserve|. 
     Marked on the status icon with "KEEP". 
+
+AssignArcherPrepVolley:
+  Name: Archer Prep Volley
+  Description: |-
+    After {Count} card{Count:plural one='' other='s'} are played, deal {Damage} damage {Level} times to random enemies. 
+    {HaniwaAssigned} |Archer| assigned. 
+  Brief: |-
+    After X cards are played, deal damage to random enemies. 

@@ -202,7 +202,7 @@ namespace LBoLMod
             return new RemoveStatusEffectAction(se);
         }
         
-        public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel) where T : ModHaniwaStatusEffect
+        public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel = 1) where T : ModHaniwaStatusEffect
         {
             if (!player.HasStatusEffect<T>())
                 return false;
