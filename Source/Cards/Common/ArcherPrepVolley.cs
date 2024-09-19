@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 4;
-            cardConfig.Value2 = 6;
+            cardConfig.Value2 = 5;
             cardConfig.UpgradedValue2 = 4;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     {
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherRequired);
         public int ArcherRequired => 2;
-        public int StatusDamage => 6;
+        public int StatusDamage => 5;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return HaniwaUtils.SacrificeHaniwa<ArcherHaniwa>(base.Battle.Player, ArcherRequired);

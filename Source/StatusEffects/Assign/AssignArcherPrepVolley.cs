@@ -15,12 +15,12 @@ namespace LBoLMod.StatusEffects.Assign
     }
     public sealed class AssignArcherPrepVolley : ModAssignStatusEffect
     {
-        public int Damage => 6;
+        public int Damage => 5;
         protected override IEnumerable<BattleAction> OnAssignmentDone()
         {
             for (int i = 0; i < Level; i++)
             {
-                yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, DamageInfo.Reaction(Damage));
+                yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, DamageInfo.Attack(Damage));
             }
             yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(base.Battle.Player, HaniwaAssigned);
         }

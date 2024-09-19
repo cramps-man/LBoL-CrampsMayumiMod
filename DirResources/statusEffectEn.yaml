@@ -61,9 +61,11 @@ Assign:
   Description: |-
     Requires X level of the specific Haniwa. 
     For a duration, lose X level of Haniwa, then gain them back after. 
+    Note: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
   Brief: |-
     Requires X level of the specific Haniwa. 
     For a duration, lose X level of Haniwa, then gain them back after. 
+    Note: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
 
 Downtime:
   Name: Downtime
