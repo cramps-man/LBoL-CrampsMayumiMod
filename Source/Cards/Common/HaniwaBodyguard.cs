@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Value1 = 5;
             cardConfig.UpgradedValue1 = 8;
-            cardConfig.Keywords = Keyword.Retain;
-            cardConfig.UpgradedKeywords = Keyword.Retain;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Forbidden;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Forbidden;
             return cardConfig;
         }
     }
@@ -53,8 +53,11 @@ namespace LBoLMod.Cards
         {
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingDamage == 0) 
+            if (RemainingDamage == 0)
+            {
+                yield return PerformAction.Wait(0.3f);
                 yield return new DiscardAction(this);
+            }
         }
 
         private void OnPlayerDamageTaking(DamageEventArgs args)

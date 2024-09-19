@@ -103,6 +103,16 @@ HaniwaBodyguard:
     |While in hand|: Reduce unblocked damage up to a threshold of {Value1}. 
     Once threshold is reached, discard {SelfName}. 
 
+SupportFront:
+  Name: Frontal Support
+  Description: |-
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
+    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName}. 
+    {RemainingDraw} draw{RemainingDraw:plural one='' other='s'} remaining. 
+  NonbattleDescription: |-
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
+    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName}. 
+
 #UNCOMMONS
 MoreStanceHits:
   Name: More Stance Hits
