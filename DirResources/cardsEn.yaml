@@ -93,6 +93,16 @@ CavalrySupplies:
     |Assign {CavalryRequired} Cavalry|. 
     After {Value1} cards are played, gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="W">. 
 
+HaniwaBodyguard:
+  Name: Haniwa Bodyguard
+  Description: |-
+    |While in hand|: Reduce unblocked damage up to a threshold. 
+    Once threshold is reached, discard {SelfName}. 
+    {RemainingDamage} reduction remaining. 
+  NonbattleDescription: |-
+    |While in hand|: Reduce unblocked damage up to a threshold of {Value1}. 
+    Once threshold is reached, discard {SelfName}. 
+
 #UNCOMMONS
 MoreStanceHits:
   Name: More Stance Hits
