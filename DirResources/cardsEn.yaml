@@ -48,7 +48,7 @@ CreateCavalry:
   Name: Create Cavalry
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|.
-    Draw 1 card.
+    Draw {Value2} card.
 
 CreateFencer:
   Name: Create Fencer

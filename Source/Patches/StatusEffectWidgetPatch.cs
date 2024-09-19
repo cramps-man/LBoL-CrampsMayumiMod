@@ -26,6 +26,10 @@ namespace LBoLMod.Source.Patches
                 __instance.downText.autoSizeTextContainer = true;
                 __instance.downText.enableAutoSizing = false;
             }
+            else if (__instance._statusEffect is ModAssignStatusEffect modAssignStatusEffect)
+            {
+                __instance.downText.text = "";
+            }
         }
     }
 }

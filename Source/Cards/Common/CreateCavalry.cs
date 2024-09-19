@@ -27,6 +27,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             return cardConfig;

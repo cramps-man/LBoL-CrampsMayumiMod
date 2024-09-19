@@ -67,7 +67,7 @@ namespace LBoLMod.Cards
 
             var damageInfo = args.DamageInfo;
             int damageTaken = damageInfo.Damage.RoundToInt();
-            if (damageTaken >= 1 && damageInfo.DamageType == DamageType.Attack)
+            if (damageTaken >= 1 && (damageInfo.DamageType == DamageType.Attack || damageInfo.DamageType == DamageType.Reaction))
             {
                 base.NotifyActivating();
                 int reduceDamageBy = Math.Min(damageTaken, RemainingDamage);
@@ -83,6 +83,13 @@ namespace LBoLMod.Cards
                 }
                 base.NotifyChanged();
             }
+        }
+
+        public override void Upgrade()
+        {
+            base.Upgrade();
+            RemainingDamage += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
+            base.NotifyChanged();
         }
     }
 }
