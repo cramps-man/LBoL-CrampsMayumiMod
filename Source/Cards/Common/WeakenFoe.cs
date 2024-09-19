@@ -53,13 +53,12 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.IsHaniwaFulfilled<ArcherHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player))
             {
                 yield return base.AttackAction(selector, HaniwaDamage);
                 if (base.Battle.BattleShouldEnd)
                     yield break;
                 yield return new ApplyStatusEffectAction<Weak>(selector.SelectedEnemy, 0, Value2);
-                yield return HaniwaUtils.RemoveDexterityIfNeeded<ArcherHaniwa>(base.Battle.Player);
             }
             else
             {

@@ -40,12 +40,12 @@ namespace LBoLMod.Cards
         public int FencerRequired => 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.IsHaniwaFulfilled<FencerHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player))
             {
                 yield return base.DefenseAction(RawBlock, RawShield);
-                yield return HaniwaUtils.RemoveDexterityIfNeeded<FencerHaniwa>(base.Battle.Player);
             }
-            yield return base.DefenseAction(RawBlock, 0);
+            else
+                yield return base.DefenseAction(RawBlock, 0);
         }
     }
 }

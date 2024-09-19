@@ -81,6 +81,12 @@ ArcherPrepVolley:
     |Assign| {ArcherRequired} |Archer|.
     After {Value2} cards are played, deal {StatusDamage} damage {Value1} times to random enemies. 
 
+CavalrySwift:
+  Name: Cavalry Swift
+  Description: |-
+    Draw {Value1} cards. 
+    |Require {CavalryRequired} Cavalry|: Gain {Value2} |Graze|. 
+
 #UNCOMMONS
 MoreStanceHits:
   Name: More Stance Hits
