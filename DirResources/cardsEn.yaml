@@ -78,7 +78,7 @@ FencerKamikaze:
 ArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    |Assign| {ArcherRequired} |Archer|.
+    |Assign {ArcherRequired} Archer|.
     After {Value2} cards are played, deal {StatusDamage} damage {Value1} times to random enemies. 
 
 CavalrySwift:
@@ -86,6 +86,12 @@ CavalrySwift:
   Description: |-
     Draw {Value1} cards. 
     |Require {CavalryRequired} Cavalry|: Gain {Value2} |Graze|. 
+
+CavalrySupplies:
+  Name: Cavalry Supplies
+  Description: |-
+    |Assign {CavalryRequired} Cavalry|. 
+    After {Value1} cards are played, gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="W">. 
 
 #UNCOMMONS
 MoreStanceHits:

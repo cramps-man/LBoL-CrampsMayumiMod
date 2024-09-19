@@ -89,7 +89,15 @@ Preserve:
 AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    After {Count} card{Count:plural one='' other='s'} are played, deal {Damage} damage {Level} times to random enemies. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {Damage} damage {Level} times to random enemies. 
     {HaniwaAssigned} |Archer| assigned. 
   Brief: |-
     After X cards are played, deal damage to random enemies. 
+
+AssignCavalrySupplies:
+  Name: Cavalry Supplies
+  Description: |-
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="W">. 
+    {HaniwaAssigned} |Cavalry| assigned. 
+  Brief: |-
+    After X cards are played, gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="W">. 

@@ -39,6 +39,7 @@ namespace LBoLMod.Cards
     public sealed class FencerKamikaze : Card
     {
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, Value1);
+        public override string CantUseMessage => "Need more Fencer";
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return HaniwaUtils.SacrificeHaniwa<FencerHaniwa>(base.Battle.Player, Value1);

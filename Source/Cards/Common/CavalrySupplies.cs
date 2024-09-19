@@ -13,41 +13,37 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ArcherPrepVolleyDef : ModCardTemplate
+    public sealed class CavalrySuppliesDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ArcherPrepVolley);
+            return nameof(CavalrySupplies);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            cardConfig.Type = CardType.Attack;
-            cardConfig.TargetType = TargetType.Nobody;
+            cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 4;
-            cardConfig.Value2 = 5;
-            cardConfig.UpgradedValue2 = 4;
+            cardConfig.Value1 = 8;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(ArcherPrepVolleyDef))]
-    public sealed class ArcherPrepVolley : Card
+    [EntityLogic(typeof(CavalrySuppliesDef))]
+    public sealed class CavalrySupplies : Card
     {
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherRequired);
-        public override string CantUseMessage => "Need more Archer";
-        public int ArcherRequired => 2;
-        public int StatusDamage => 5;
+        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<CavalryHaniwa>(base.Battle.Player, CavalryRequired);
+        public override string CantUseMessage => "Need more Cavalry";
+        public int CavalryRequired => 2;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return HaniwaUtils.SacrificeHaniwa<ArcherHaniwa>(base.Battle.Player, ArcherRequired);
-            yield return new ApplyStatusEffectAction<AssignArcherPrepVolley>(base.Battle.Player, Value1, ArcherRequired, Value2);
+            yield return HaniwaUtils.SacrificeHaniwa<CavalryHaniwa>(base.Battle.Player, CavalryRequired);
+            yield return new ApplyStatusEffectAction<AssignCavalrySupplies>(base.Battle.Player, 0, CavalryRequired, Value1);
         }
     }
 }
