@@ -96,12 +96,17 @@ CavalrySupplies:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce unblocked damage up to a threshold. 
-    Once threshold is reached, discard {SelfName}. 
+    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
     {RemainingDamage} reduction remaining. 
   NonbattleDescription: |-
-    |While in hand|: Reduce unblocked damage up to a threshold of {Value1}. 
-    Once threshold is reached, discard {SelfName}. 
+    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
+  UpgradedDescription: |-
+    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
+    {RemainingDamage} reduction remaining. 
+    |When played|: Apply 1 |Weak|. 
+  UpgradedNonbattleDescription: |-
+    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
+    |When played|: Apply 1 |Weak|. 
 
 SupportFront:
   Name: Frontal Support

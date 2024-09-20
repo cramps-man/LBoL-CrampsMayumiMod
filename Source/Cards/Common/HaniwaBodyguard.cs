@@ -5,8 +5,10 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
+using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects;
 using System;
 using System.Collections.Generic;
 
@@ -23,12 +25,14 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
-            cardConfig.TargetType = TargetType.Nobody;
+            cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Value1 = 5;
             cardConfig.UpgradedValue1 = 8;
+            cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Forbidden;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Forbidden;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Weak) };
             return cardConfig;
         }
     }
@@ -53,10 +57,17 @@ namespace LBoLMod.Cards
         {
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingDamage == 0)
+            if (RemainingDamage != 0)
+                yield break;
+            if (HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player))
             {
                 yield return PerformAction.Wait(0.3f);
+                yield return HaniwaUtils.SacrificeHaniwa<FencerHaniwa>(base.Battle.Player, 1);
                 yield return new DiscardAction(this);
+            }
+            else
+            {
+                yield return new ExileCardAction(this);
             }
         }
 
@@ -90,6 +101,11 @@ namespace LBoLMod.Cards
             base.Upgrade();
             RemainingDamage += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
             base.NotifyChanged();
+        }
+
+        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        {
+            yield return new ApplyStatusEffectAction<Weak>(selector.GetEnemy(base.Battle), duration: 1);
         }
     }
 }
