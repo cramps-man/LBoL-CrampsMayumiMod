@@ -9,6 +9,7 @@ using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
 
@@ -32,7 +33,8 @@ namespace LBoLMod.Cards
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Forbidden;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Weak) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Sacrifice) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Weak), nameof(Sacrifice) };
             return cardConfig;
         }
     }
@@ -57,12 +59,12 @@ namespace LBoLMod.Cards
         {
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingDamage != 0)
+            if (RemainingDamage > 0)
                 yield break;
-            if (HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, Value2))
             {
                 yield return PerformAction.Wait(0.3f);
-                yield return HaniwaUtils.SacrificeHaniwa<FencerHaniwa>(base.Battle.Player, 1);
+                yield return HaniwaUtils.SacrificeHaniwa<FencerHaniwa>(base.Battle.Player, Value2);
                 yield return new DiscardAction(this);
             }
             else

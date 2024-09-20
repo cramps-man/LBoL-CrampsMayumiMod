@@ -112,11 +112,20 @@ SupportFront:
   Name: Frontal Support
   Description: |-
     |While in hand|: Whenever an attack card is played, draw {Value2} card. 
-    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName}. 
+    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
     {RemainingDraw} draw{RemainingDraw:plural one='' other='s'} remaining. 
   NonbattleDescription: |-
     |While in hand|: Whenever an attack card is played, draw {Value2} card. 
-    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName}. 
+    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
+  UpgradedDescription: |-
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
+    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
+    {RemainingDraw} draw{RemainingDraw:plural one='' other='s'} remaining. 
+    |When played|: Gain {Mana}. 
+  UpgradedNonbattleDescription: |-
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
+    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
+    |When played|: Gain {Mana}. 
 
 #UNCOMMONS
 MoreStanceHits:
