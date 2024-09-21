@@ -42,6 +42,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaBodyguardDef))]
     public sealed class HaniwaBodyguard : Card
     {
+        public int DamageTaken { get; set; } = 0;
         public int RemainingDamage { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -69,32 +70,39 @@ namespace LBoLMod.Cards
         {
             if (base.Zone != CardZone.Hand)
                 return;
-
+            
             var damageInfo = args.DamageInfo;
             if (damageInfo.DamageType == DamageType.Attack || damageInfo.DamageType == DamageType.Reaction)
             {
-                base.NotifyActivating();
-                args.AddModifier(this);
+                DamageTaken = 0;
                 if (damageInfo.Damage > 0)
                 {
                     int reduceDamageBy = Math.Min(damageInfo.Damage.RoundToInt(), RemainingDamage);
                     damageInfo = damageInfo.ReduceActualDamageBy(reduceDamageBy);
                     RemainingDamage -= reduceDamageBy;
+                    DamageTaken += reduceDamageBy;
                 }
                 if (damageInfo.DamageShielded > 0)
                 {
                     int reduction = Math.Min(damageInfo.DamageShielded.RoundToInt(), RemainingDamage);
                     damageInfo.DamageShielded -= reduction;
                     RemainingDamage -= reduction;
+                    DamageTaken += reduction;
                 }
                 if (damageInfo.DamageBlocked > 0) 
                 {
                     int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), RemainingDamage);
                     damageInfo.DamageBlocked -= reduction;
                     RemainingDamage -= reduction;
+                    DamageTaken += reduction;
                 }
-                args.DamageInfo = damageInfo;
-                base.NotifyChanged();
+                if (DamageTaken != 0)
+                {
+                    base.NotifyActivating();
+                    args.AddModifier(this);
+                    args.DamageInfo = damageInfo;
+                    base.NotifyChanged();
+                }
             }
         }
 
