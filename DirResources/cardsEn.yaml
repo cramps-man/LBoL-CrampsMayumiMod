@@ -96,10 +96,10 @@ CavalrySupplies:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce up to {Value1} damage recieved per turn. Damage counter is refreshed at the start of every turn. {RemainingDamage} reduction remaining. 
+    |While in hand|: Reduce up to {Value1} damage recieved per turn. {RemainingDamage} reduction remaining. 
     |When played|: Apply {Value2} |Weak|. 
   NonbattleDescription: |-
-    |While in hand|: Reduce up to {Value1} damage recieved per turn. Damage counter is refreshed at the start of every turn. 
+    |While in hand|: Reduce up to {Value1} damage recieved per turn. 
     |When played|: Apply {Value2} |Weak|. 
 
 SupportFront:
