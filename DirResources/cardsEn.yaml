@@ -105,20 +105,11 @@ HaniwaBodyguard:
 SupportFront:
   Name: Frontal Support
   Description: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
-    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
-    {RemainingDraw} draw{RemainingDraw:plural one='' other='s'} remaining. 
-  NonbattleDescription: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
-    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
-  UpgradedDescription: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
-    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     {RemainingDraw} draw{RemainingDraw:plural one='' other='s'} remaining. 
     |When played|: Gain {Mana}. 
-  UpgradedNonbattleDescription: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. 
-    After {Value1} card{Value1:plural one='' other='s'} are drawn, discard {SelfName} and |Sacrifice| {CavalrySacrifice} |Cavalry|. If there are no |Cavalry|, |Exile| instead. 
+  NonbattleDescription: |-
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     |When played|: Gain {Mana}. 
 
 #UNCOMMONS

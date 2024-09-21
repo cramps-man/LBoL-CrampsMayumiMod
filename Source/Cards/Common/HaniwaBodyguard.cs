@@ -58,6 +58,12 @@ namespace LBoLMod.Cards
                 base.NotifyChanged();
             }
         }
+        public override IEnumerable<BattleAction> OnDraw()
+        {
+            RemainingDamage = Value1;
+            base.NotifyChanged();
+            return null;
+        }
 
         public override IEnumerable<BattleAction> OnTurnStartedInHand()
         {
