@@ -8,10 +8,10 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -28,12 +28,12 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
-            cardConfig.Value1 = 5;
-            cardConfig.UpgradedValue1 = 8;
+            cardConfig.Value1 = 4;
+            cardConfig.UpgradedValue1 = 6;
             cardConfig.Value2 = 1;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Forbidden;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Sacrifice) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Weak), nameof(Sacrifice) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Weak), nameof(Sacrifice) };
             return cardConfig;
         }
@@ -46,31 +46,23 @@ namespace LBoLMod.Cards
         protected override void OnEnterBattle(BattleController battle)
         {
             base.HandleBattleEvent<DamageEventArgs>(base.Battle.Player.DamageTaking, new GameEventHandler<DamageEventArgs>(this.OnPlayerDamageTaking));
-            base.ReactBattleEvent<DamageEventArgs>(base.Battle.Player.DamageReceived, new EventSequencedReactor<DamageEventArgs>(this.OnPlayerDamageReceived));
+            base.HandleBattleEvent<CardsEventArgs>(base.Battle.CardsAddedToHand, new GameEventHandler<CardsEventArgs>(this.OnCardsAddedToHand));
         }
 
-        public override IEnumerable<BattleAction> OnDraw()
+        private void OnCardsAddedToHand(CardsEventArgs args)
+        {
+            if (args.Cards.Contains(this))
+            {
+                RemainingDamage = Value1;
+                base.NotifyChanged();
+            }
+        }
+
+        public override IEnumerable<BattleAction> OnTurnStartedInHand()
         {
             RemainingDamage = Value1;
+            base.NotifyChanged();
             return null;
-        }
-
-        private IEnumerable<BattleAction> OnPlayerDamageReceived(DamageEventArgs args)
-        {
-            if (base.Zone != CardZone.Hand)
-                yield break;
-            if (RemainingDamage > 0)
-                yield break;
-            if (HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, Value2))
-            {
-                yield return PerformAction.Wait(0.3f);
-                yield return HaniwaUtils.SacrificeHaniwa<FencerHaniwa>(base.Battle.Player, Value2);
-                yield return new DiscardAction(this);
-            }
-            else
-            {
-                yield return new ExileCardAction(this);
-            }
         }
 
         private void OnPlayerDamageTaking(DamageEventArgs args)
@@ -79,21 +71,29 @@ namespace LBoLMod.Cards
                 return;
 
             var damageInfo = args.DamageInfo;
-            int damageTaken = damageInfo.Damage.RoundToInt();
-            if (damageTaken >= 1 && (damageInfo.DamageType == DamageType.Attack || damageInfo.DamageType == DamageType.Reaction))
+            if (damageInfo.DamageType == DamageType.Attack || damageInfo.DamageType == DamageType.Reaction)
             {
                 base.NotifyActivating();
-                int reduceDamageBy = Math.Min(damageTaken, RemainingDamage);
-                args.DamageInfo = damageInfo.ReduceActualDamageBy(reduceDamageBy);
                 args.AddModifier(this);
-                if (RemainingDamage > damageTaken)
+                if (damageInfo.Damage > 0)
                 {
-                    RemainingDamage -= damageTaken;
+                    int reduceDamageBy = Math.Min(damageInfo.Damage.RoundToInt(), RemainingDamage);
+                    damageInfo = damageInfo.ReduceActualDamageBy(reduceDamageBy);
+                    RemainingDamage -= reduceDamageBy;
                 }
-                else
+                if (damageInfo.DamageShielded > 0)
                 {
-                    RemainingDamage = 0;
+                    int reduction = Math.Min(damageInfo.DamageShielded.RoundToInt(), RemainingDamage);
+                    damageInfo.DamageShielded -= reduction;
+                    RemainingDamage -= reduction;
                 }
+                if (damageInfo.DamageBlocked > 0) 
+                {
+                    int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), RemainingDamage);
+                    damageInfo.DamageBlocked -= reduction;
+                    RemainingDamage -= reduction;
+                }
+                args.DamageInfo = damageInfo;
                 base.NotifyChanged();
             }
         }

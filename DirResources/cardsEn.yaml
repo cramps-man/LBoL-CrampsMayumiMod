@@ -96,17 +96,11 @@ CavalrySupplies:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
-    {RemainingDamage} reduction remaining. 
+    |While in hand|: Reduce up to {Value1} damage recieved per turn. Damage counter is refreshed at the start of every turn. {RemainingDamage} reduction remaining. 
+    |When played|: Apply {Value2} |Weak|. 
   NonbattleDescription: |-
-    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
-  UpgradedDescription: |-
-    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
-    {RemainingDamage} reduction remaining. 
-    |When played|: Apply 1 |Weak|. 
-  UpgradedNonbattleDescription: |-
-    |While in hand|: Reduce unblocked damage. After reducing {Value1} damage, discard {SelfName} and |Sacrifice| {Value2} |Fencer|. If there are no |Fencer|, |Exile| instead. 
-    |When played|: Apply 1 |Weak|. 
+    |While in hand|: Reduce up to {Value1} damage recieved per turn. Damage counter is refreshed at the start of every turn. 
+    |When played|: Apply {Value2} |Weak|. 
 
 SupportFront:
   Name: Frontal Support
