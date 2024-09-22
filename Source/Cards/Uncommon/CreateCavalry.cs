@@ -21,13 +21,15 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.Value2 = 1;
+            cardConfig.Value2 = 2;
             cardConfig.RelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(CavalryHaniwa) };
             return cardConfig;
@@ -43,7 +45,7 @@ namespace LBoLMod.Cards
             {
                 yield return item;
             };
-            yield return new DrawCardAction();
+            yield return new DrawManyCardAction(Value2);
         }
     }
 }
