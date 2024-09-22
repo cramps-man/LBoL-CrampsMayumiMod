@@ -117,6 +117,13 @@ FencerBuildBarricade:
     |Assign {FencerRequired} Fencer|.
     After {Value2} cards are played, gain {Shield} |Barrier|. 
 
+CavalryRush:
+  Name: Cavalry Rush
+  Description: |-
+    |Sacrifice {Value2} Cavalry|.
+    Deal {Damage} damage. 
+    If defeating an enemy with {SelfName}, gain {Mana} and draw {Value1} card{Value1:plural one='' other='s'}. 
+
 #UNCOMMONS
 MoreStanceHits:
   Name: More Stance Hits
