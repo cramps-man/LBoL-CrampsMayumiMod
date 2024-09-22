@@ -101,3 +101,11 @@ AssignCavalrySupplies:
     {HaniwaAssigned} |Cavalry| assigned. 
   Brief: |-
     After X cards are played, gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="W">. 
+
+AssignFencerBuildBarricade:
+  Name: Fencer Build Barricade
+  Description: |-
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {Level} |Barrier|. 
+    {HaniwaAssigned} |Fencer| assigned. 
+  Brief: |-
+    After X cards are played, gain |Barrier|. 

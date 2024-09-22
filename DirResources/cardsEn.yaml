@@ -111,6 +111,12 @@ SupportFront:
     |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     |When played|: Gain {Mana}. 
 
+FencerBuildBarricade:
+  Name: Fencer Build Barricade
+  Description: |-
+    |Assign {FencerRequired} Fencer|.
+    After {Value2} cards are played, gain {Shield} |Barrier|. 
+
 #UNCOMMONS
 MoreStanceHits:
   Name: More Stance Hits
