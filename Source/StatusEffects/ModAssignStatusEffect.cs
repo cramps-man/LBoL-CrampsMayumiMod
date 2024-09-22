@@ -4,6 +4,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLMod.Exhibits;
+using LBoLMod.UltimateSkills;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
@@ -17,6 +18,26 @@ namespace LBoLMod.StatusEffects
             this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnEnded, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnEnded));
+            base.ReactOwnerEvent(base.Battle.UsUsed, this.OnUltimateSkillUsed);
+        }
+
+        private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
+        {
+            if (args.Us is UltimateSkillB)
+            {
+                this.NotifyActivating();
+                foreach (var item in OnAssignmentDone())
+                {
+                    yield return item;
+                    if (base.Battle.BattleShouldEnd)
+                        yield break;
+                };
+                if (base.Battle.Player.HasExhibit<ExhibitB>())
+                {
+                    yield return new DrawCardAction();
+                }
+                yield return new RemoveStatusEffectAction(this);
+            }
         }
 
         private IEnumerable<BattleAction> onPlayerTurnEnded(UnitEventArgs args)

@@ -3,13 +3,11 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using LBoLMod.Cards;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,11 +40,11 @@ namespace LBoLMod.UltimateSkills
                 PowerPerLevel: 100,
                 MaxPowerLevel: 2,
                 RepeatableType: UsRepeatableType.OncePerTurn,
-                Damage: 0,
+                Damage: 40,
                 Value1: 0,
                 Value2: 0,
-                Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(Haniwa) },
+                Keywords: Keyword.Accuracy,
+                RelativeEffects: new List<string>() { nameof(Haniwa), nameof(Assign) },
                 RelativeCards: new List<string>() { }
                 );
 
@@ -59,12 +57,12 @@ namespace LBoLMod.UltimateSkills
     public sealed class UltimateSkillB : UltimateSkill
     {
         public UltimateSkillB() {
-            base.TargetType = TargetType.Self;
+            base.TargetType = TargetType.SingleEnemy;
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
-            var unit = base.Battle.Player;
-            yield return new AddCardsToHandAction(new Card[] { Library.CreateCard<CreateHaniwa>(), Library.CreateCard<CreateHaniwa>() });
+            var player = base.Battle.Player;
+            yield return new DamageAction(player, selector.GetEnemy(base.Battle), Damage);
         }
     }
 }

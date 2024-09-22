@@ -11,6 +11,7 @@ using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 using UnityEngine;
+using LBoL.Core.Battle.BattleActions;
 
 namespace LBoLMod.UltimateSkills
 {
@@ -40,10 +41,10 @@ namespace LBoLMod.UltimateSkills
                 PowerPerLevel: 100,
                 MaxPowerLevel: 2,
                 RepeatableType: UsRepeatableType.OncePerTurn,
-                Damage: 0,
-                Value1: 0,
+                Damage: 25,
+                Value1: 5,
                 Value2: 0,
-                Keywords: Keyword.None,
+                Keywords: Keyword.Accuracy,
                 RelativeEffects: new List<string>() { nameof(Haniwa) },
                 RelativeCards: new List<string>() { }
                 );
@@ -57,15 +58,16 @@ namespace LBoLMod.UltimateSkills
     public sealed class UltimateSkillA : UltimateSkill
     {
         public UltimateSkillA() {
-            base.TargetType = TargetType.Self;
+            base.TargetType = TargetType.AllEnemies;
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
             var unit = base.Battle.Player;
             yield return HaniwaUtils.RemoveDowntime(unit);
-            yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(unit, 3);
-            yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(unit, 3);
-            yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(unit, 3);
+            yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(unit, Value1);
+            yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(unit, Value1);
+            yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(unit, Value1);
+            yield return new DamageAction(base.Owner, selector.GetEnemies(base.Battle), Damage);
         }
     }
 }
