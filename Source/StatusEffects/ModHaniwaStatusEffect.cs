@@ -36,12 +36,7 @@ namespace LBoLMod.StatusEffects
         {
             get
             {
-                return 5;
-                //dont have exhibit specific level, maybe an ability
-                /*if (base.Battle.Player.HasExhibit<ExhibitB>())
-                    return 5;
-                else
-                    return 3;*/
+                return 10;
             }
         }
 

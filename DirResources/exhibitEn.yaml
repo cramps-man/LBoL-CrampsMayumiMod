@@ -1,15 +1,11 @@
 ExhibitA:
   Name: AAAAAA
   Description: |-
-    |Stances| are not overridden when applying new ones. 
-    Gain extra benefits at the start of next turn depending on what stances are active. 
-    |Power|: Gain 2/3/4 |Temporary Firepower|. 
-    |Focus|: Draw 2/3/4 extra cards. 
-    |Calm|: Gain 1/2/3 <sprite="ManaSprite" name="R">. 
-  FlavorText: Some text
+    At start of combat, gain {Value1} of each |Haniwa|. 
+    At start of every other turn, gain {Value2} of each. 
 
 ExhibitB:
   Name: BBBBBB
   Description: |-
-    |Stances| have a new max of Lvl5. 
-  FlavorText: Dont read
+    At start of combat, gain {Value1} of each |Haniwa|.
+    When an |Assign| effect triggers during the turn (not start of), draw {Value2} card. 

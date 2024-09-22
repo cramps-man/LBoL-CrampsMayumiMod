@@ -3,6 +3,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
+using LBoLMod.Exhibits;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
@@ -59,6 +60,10 @@ namespace LBoLMod.StatusEffects
                     if (base.Battle.BattleShouldEnd)
                         yield break;
                 };
+                if (base.Battle.Player.HasExhibit<ExhibitB>())
+                {
+                    yield return new DrawCardAction();
+                }
                 yield return new RemoveStatusEffectAction(this);
             }
         }

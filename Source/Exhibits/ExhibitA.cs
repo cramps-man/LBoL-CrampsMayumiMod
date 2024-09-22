@@ -2,20 +2,15 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
-using LBoL.Core.StatusEffects;
 using LBoL.EntityLib.Exhibits;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
-using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.Exhibits
 {
@@ -50,8 +45,8 @@ namespace LBoLMod.Exhibits
                 Owner: new PlayerDef().UniqueId,
                 LosableType: ExhibitLosableType.DebutLosable,
                 Rarity: Rarity.Shining,
-                Value1: null,
-                Value2: null,
+                Value1: 3,
+                Value2: 1,
                 Value3: null,
                 Mana: new ManaGroup() { Red = 1 },
                 BaseManaRequirement: null,
@@ -73,7 +68,6 @@ namespace LBoLMod.Exhibits
         protected override void OnEnterBattle()
         {
             base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
-            //base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
@@ -86,37 +80,12 @@ namespace LBoLMod.Exhibits
                 yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(player, 3);
                 yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(player, 3);
             }
-        }
-
-        private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
-        {
-            var player = base.Battle.Player;
-            /*if (player.HasStatusEffect<PowerStance>())
+            else if (player.TurnCounter > 1)
             {
                 base.NotifyActivating();
-                var se = player.GetStatusEffect<PowerStance>();
-                yield return new ApplyStatusEffectAction<TempFirepower>(player, 1 + se.Level);
-            }
-            if (player.HasStatusEffect<FocusStance>())
-            {
-                base.NotifyActivating();
-                var se = player.GetStatusEffect<FocusStance>();
-                yield return new DrawManyCardAction(1 + se.Level);
-            }
-            if (player.HasStatusEffect<CalmStance>())
-            {
-                base.NotifyActivating();
-                var se = player.GetStatusEffect<CalmStance>();
-                yield return new GainManaAction(new ManaGroup { Red = se.Level });
-            }*/
-            /*yield return StanceUtils.TickdownStance<PowerStance>(player);
-            yield return StanceUtils.TickdownStance<FocusStance>(player);
-            yield return StanceUtils.TickdownStance<CalmStance>(player);*/
-            var stances = HaniwaUtils.GetAllHaniwa(player);
-            var maxLevel = stances.Max(s => s.Level);
-            foreach (var item in stances.Where(s => s.Level == maxLevel))
-            {
-                yield return item.TickdownOrRemove();
+                yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(player, 1);
+                yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(player, 1);
+                yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(player, 1);
             }
         }
     }
