@@ -1,6 +1,7 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign

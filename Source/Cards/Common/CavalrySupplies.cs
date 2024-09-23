@@ -9,6 +9,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -37,12 +38,12 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CavalrySuppliesDef))]
     public sealed class CavalrySupplies : Card
     {
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<CavalryHaniwa>(base.Battle.Player, CavalryRequired);
+        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<CavalryHaniwa>(base.Battle.Player, CavalryRequired, HaniwaActionType.Assign);
         public override string CantUseMessage => "Need more Cavalry";
         public int CavalryRequired => 2;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return HaniwaUtils.SacrificeHaniwa<CavalryHaniwa>(base.Battle.Player, CavalryRequired);
+            yield return HaniwaUtils.LoseHaniwa<CavalryHaniwa>(base.Battle.Player, CavalryRequired, HaniwaActionType.Assign);
             yield return new ApplyStatusEffectAction<AssignCavalrySupplies>(base.Battle.Player, 0, CavalryRequired, Value1);
         }
     }

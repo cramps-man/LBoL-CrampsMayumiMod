@@ -9,6 +9,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -40,13 +41,13 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ArcherPrepVolleyDef))]
     public sealed class ArcherPrepVolley : Card
     {
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherRequired);
+        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherRequired, HaniwaActionType.Assign);
         public override string CantUseMessage => "Need more Archer";
         public int ArcherRequired => 2;
         public int StatusDamage => 5;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return HaniwaUtils.SacrificeHaniwa<ArcherHaniwa>(base.Battle.Player, ArcherRequired);
+            yield return HaniwaUtils.LoseHaniwa<ArcherHaniwa>(base.Battle.Player, ArcherRequired, HaniwaActionType.Assign);
             yield return new ApplyStatusEffectAction<AssignArcherPrepVolley>(base.Battle.Player, Value1, ArcherRequired, Value2);
         }
     }

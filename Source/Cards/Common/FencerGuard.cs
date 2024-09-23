@@ -7,6 +7,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -40,7 +41,7 @@ namespace LBoLMod.Cards
         public int FencerRequired => 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, FencerRequired, HaniwaActionType.Require))
             {
                 yield return base.DefenseAction(RawBlock, RawShield);
             }

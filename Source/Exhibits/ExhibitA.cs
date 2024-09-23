@@ -10,6 +10,7 @@ using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Exhibits

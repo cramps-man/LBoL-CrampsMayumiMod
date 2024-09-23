@@ -10,6 +10,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
+using LBoLMod.Utils;
 
 namespace LBoLMod.Cards
 {

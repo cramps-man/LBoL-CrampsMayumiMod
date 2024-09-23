@@ -9,6 +9,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -41,7 +42,7 @@ namespace LBoLMod.Cards
         public int CavalryRequired => 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.IsLevelFulfilled<CavalryHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsLevelFulfilled<CavalryHaniwa>(base.Battle.Player, CavalryRequired, HaniwaActionType.Require))
             {
                 yield return new ApplyStatusEffectAction<Graze>(base.Battle.Player, Value2);
             }

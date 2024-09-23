@@ -9,6 +9,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -40,12 +41,12 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FencerBuildBarricadeDef))]
     public sealed class FencerBuildBarricade : Card
     {
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, FencerRequired);
+        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, FencerRequired, HaniwaActionType.Assign);
         public override string CantUseMessage => "Need more Fencer";
         public int FencerRequired => 2;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return HaniwaUtils.SacrificeHaniwa<FencerHaniwa>(base.Battle.Player, FencerRequired);
+            yield return HaniwaUtils.LoseHaniwa<FencerHaniwa>(base.Battle.Player, FencerRequired, HaniwaActionType.Assign);
             yield return new ApplyStatusEffectAction<AssignFencerBuildBarricade>(base.Battle.Player, Shield.Shield, FencerRequired, Value2);
         }
     }

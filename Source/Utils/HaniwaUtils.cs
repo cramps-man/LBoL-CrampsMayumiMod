@@ -1,13 +1,15 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
+using LBoLMod.Exhibits;
 using LBoLMod.Source.StatusEffects.Stances;
 using LBoLMod.StatusEffects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unit = LBoL.Core.Units.Unit;
 
-namespace LBoLMod
+namespace LBoLMod.Utils
 {
     public static class HaniwaUtils
     {
@@ -188,10 +190,12 @@ namespace LBoLMod
             return total;
         }
 
-        public static BattleAction SacrificeHaniwa<T>(PlayerUnit player, int levelToLose) where T : ModHaniwaStatusEffect
+        public static BattleAction LoseHaniwa<T>(PlayerUnit player, int levelToLose, HaniwaActionType type) where T : ModHaniwaStatusEffect
         {
             if (!player.HasStatusEffect<T>())
                 return null;
+            if (type == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
+                levelToLose = Math.Max(levelToLose - 1, 0);
 
             var se = player.GetStatusEffect<T>();
             if (se.Level > levelToLose)
@@ -201,11 +205,13 @@ namespace LBoLMod
             }
             return new RemoveStatusEffectAction(se);
         }
-        
-        public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel = 1) where T : ModHaniwaStatusEffect
+
+        public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel, HaniwaActionType type) where T : ModHaniwaStatusEffect
         {
             if (!player.HasStatusEffect<T>())
                 return false;
+            if (type == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
+                requiredLevel = Math.Max(requiredLevel - 1, 0);
 
             var se = player.GetStatusEffect<T>();
             return se.Level >= requiredLevel;

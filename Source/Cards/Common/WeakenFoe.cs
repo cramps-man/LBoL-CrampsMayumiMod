@@ -9,6 +9,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -53,7 +54,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player))
+            if (HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherRequired, HaniwaActionType.Require))
             {
                 yield return base.AttackAction(selector, HaniwaDamage);
                 if (base.Battle.BattleShouldEnd)
