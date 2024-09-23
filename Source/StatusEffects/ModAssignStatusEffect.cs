@@ -23,7 +23,7 @@ namespace LBoLMod.StatusEffects
 
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
         {
-            if (args.Us is UltimateSkillB)
+            if (args.Us is UltimateSkillA)
             {
                 this.NotifyActivating();
                 foreach (var item in OnAssignmentDone())
@@ -32,7 +32,7 @@ namespace LBoLMod.StatusEffects
                     if (base.Battle.BattleShouldEnd)
                         yield break;
                 };
-                if (base.Battle.Player.HasExhibit<ExhibitB>())
+                if (base.Battle.Player.HasExhibit<ExhibitA>())
                 {
                     yield return new DrawCardAction();
                 }
@@ -81,7 +81,7 @@ namespace LBoLMod.StatusEffects
                     if (base.Battle.BattleShouldEnd)
                         yield break;
                 };
-                if (base.Battle.Player.HasExhibit<ExhibitB>())
+                if (base.Battle.Player.HasExhibit<ExhibitA>())
                 {
                     yield return new DrawCardAction();
                 }

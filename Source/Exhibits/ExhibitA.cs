@@ -80,13 +80,6 @@ namespace LBoLMod.Exhibits
                 yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(player, 3);
                 yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(player, 3);
             }
-            else if (player.TurnCounter > 1)
-            {
-                base.NotifyActivating();
-                yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(player, 1);
-                yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(player, 1);
-                yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(player, 1);
-            }
         }
     }
 }

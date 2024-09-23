@@ -67,7 +67,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
-                nameof(FencerKamikaze),
+                nameof(ArcherPrepVolley)
             };
         }
         private static List<string> GetDeckB()
@@ -82,7 +82,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
-                nameof(ArcherPrepVolley)
+                nameof(FencerKamikaze),
             };
         }
     }

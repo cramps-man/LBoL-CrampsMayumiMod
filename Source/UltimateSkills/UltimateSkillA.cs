@@ -2,16 +2,15 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 using UnityEngine;
-using LBoL.Core.Battle.BattleActions;
 
 namespace LBoLMod.UltimateSkills
 {
@@ -42,7 +41,7 @@ namespace LBoLMod.UltimateSkills
                 MaxPowerLevel: 2,
                 RepeatableType: UsRepeatableType.OncePerTurn,
                 Damage: 25,
-                Value1: 5,
+                Value1: 0,
                 Value2: 0,
                 Keywords: Keyword.Accuracy,
                 RelativeEffects: new List<string>() { nameof(Haniwa) },
@@ -62,12 +61,8 @@ namespace LBoLMod.UltimateSkills
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
-            var unit = base.Battle.Player;
-            yield return HaniwaUtils.RemoveDowntime(unit);
-            yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(unit, Value1);
-            yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(unit, Value1);
-            yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(unit, Value1);
-            yield return new DamageAction(base.Owner, selector.GetEnemies(base.Battle), Damage);
+            var player = base.Battle.Player;
+            yield return new DamageAction(player, selector.GetEnemies(base.Battle), Damage);
         }
     }
 }

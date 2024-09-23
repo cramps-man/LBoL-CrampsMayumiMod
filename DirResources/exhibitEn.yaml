@@ -1,11 +1,10 @@
 ExhibitA:
   Name: AAAAAA
   Description: |-
-    At start of combat, gain {Value1} of each |Haniwa|. 
-    At start of every other turn, gain {Value2} of each. 
+    At start of combat, gain {Value1} of each |Haniwa|.
+    When an |Assign| effect triggers during the turn (not start of), draw {Value2} card. 
 
 ExhibitB:
   Name: BBBBBB
   Description: |-
-    At start of combat, gain {Value1} of each |Haniwa|.
-    When an |Assign| effect triggers during the turn (not start of), draw {Value2} card. 
+    At start of combat, gain {Value1} of each |Haniwa|. 
