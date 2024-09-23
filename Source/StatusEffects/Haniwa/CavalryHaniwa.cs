@@ -21,6 +21,7 @@ namespace LBoLMod.StatusEffects
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
+            statusConfig.Order = 13;
             statusConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             return statusConfig;
         }

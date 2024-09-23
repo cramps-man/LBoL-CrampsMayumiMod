@@ -11,7 +11,7 @@ namespace LBoLMod.StatusEffects
             return new StatusEffectConfig(
                 Id: "",
                 Index: 0,
-                Order: 10,
+                Order: 15,
                 Type: StatusEffectType.Positive,
                 IsVerbose: false,
                 IsStackable: false,
