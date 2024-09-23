@@ -23,9 +23,9 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.AllEnemies;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
+            cardConfig.Cost = new ManaGroup() { White = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.Damage = 16;
             cardConfig.UpgradedDamage = 21;
             cardConfig.Value1 = 2;
