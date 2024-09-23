@@ -46,7 +46,7 @@ namespace LBoLMod.UltimateSkills
                 Value1: 5,
                 Value2: 0,
                 Keywords: Keyword.Accuracy,
-                RelativeEffects: new List<string>() { nameof(Haniwa), nameof(Assign) },
+                RelativeEffects: new List<string>() { nameof(Haniwa) },
                 RelativeCards: new List<string>() { }
                 );
 

@@ -56,7 +56,7 @@ namespace LBoLMod.Exhibits
                 HasCounter: false,
                 InitialCounter: null,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(Haniwa) },
+                RelativeEffects: new List<string>() { nameof(Haniwa), nameof(Assign) },
                 RelativeCards: new List<string>() { }
             );
 

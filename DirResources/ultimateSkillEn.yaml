@@ -2,7 +2,7 @@ UltimateSkillA:
   Title: Aa
   Content: What
   Description: |-
-    Deal {Damage} damage to all enemies. 
+    Deal {Damage} damage to all enemies. |Accurate|
     Trigger all current |Assign| status effects. 
 
 UltimateSkillB:
@@ -10,4 +10,4 @@ UltimateSkillB:
   Content: What
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of all |Haniwa|. 
-    Deal {Damage} damage. 
+    Deal {Damage} damage. |Accurate|
