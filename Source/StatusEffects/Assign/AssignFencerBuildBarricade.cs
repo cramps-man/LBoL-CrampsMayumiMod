@@ -1,6 +1,7 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
+using LBoLEntitySideloader.Attributes;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -13,6 +14,8 @@ namespace LBoLMod.StatusEffects.Assign
             return nameof(AssignFencerBuildBarricade);
         }
     }
+
+    [EntityLogic(typeof(AssignFencerBuildBarricadeDef))]
     public sealed class AssignFencerBuildBarricade : ModAssignStatusEffect
     {
         protected override IEnumerable<BattleAction> OnAssignmentDone()

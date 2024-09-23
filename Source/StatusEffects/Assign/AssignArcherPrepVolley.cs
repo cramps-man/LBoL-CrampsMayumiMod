@@ -2,6 +2,7 @@
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
+using LBoLEntitySideloader.Attributes;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -14,6 +15,8 @@ namespace LBoLMod.StatusEffects.Assign
             return nameof(AssignArcherPrepVolley);
         }
     }
+
+    [EntityLogic(typeof(AssignArcherPrepVolleyDef))]
     public sealed class AssignArcherPrepVolley : ModAssignStatusEffect
     {
         public int Damage => 5;
