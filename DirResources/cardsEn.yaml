@@ -62,8 +62,8 @@ FencerGuard:
     Gain {Block} |Block|.
     |Require {FencerRequired} Fencer|: Also gain {Shield} |Barrier|.
 
-CreateReserves:
-  Name: Create Reserves
+ExileCreateReserves:
+  Name: Exile Create Reserves
   Description: |-
     Exile up to {Value1} card{Value1:plural one='' other='s'} from the hand. 
     Add that many |Create Haniwa| to the hand. 
@@ -123,6 +123,12 @@ CavalryRush:
     |Sacrifice {Value2} Cavalry|.
     Deal {Damage} damage. 
     If defeating an enemy with {SelfName}, gain {Mana} and draw {Value1} card{Value1:plural one='' other='s'}. 
+
+AttackCreateReserves:
+  Name: Attack Create Reserves
+  Description: |-
+    Deal {Damage} damage. 
+    Add {Value1} |Create Haniwa| to the hand. 
 
 #UNCOMMONS
 MoreStanceHits:

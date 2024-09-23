@@ -12,11 +12,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class CreateReservesDef : ModCardTemplate
+    public sealed class ExileCreateReservesDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(CreateReserves);
+            return nameof(ExileCreateReserves);
         }
 
         public override CardConfig MakeConfig()
@@ -36,8 +36,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(CreateReservesDef))]
-    public sealed class CreateReserves : Card
+    [EntityLogic(typeof(ExileCreateReservesDef))]
+    public sealed class ExileCreateReserves : Card
     {
         public override Interaction Precondition()
         {
