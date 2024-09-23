@@ -32,8 +32,8 @@ CreateHaniwaFencer:
   Name: Create Haniwa (Fencer)
   Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
 
-WeakenFoe:
-  Name: Weaken Foe
+WeakeningShot:
+  Name: Weakening Shot
   Description: |-
     Deal {Damage} damage.
     |Require {ArcherRequired} Archer|: Deal {HaniwaDamage} damage instead and apply {Value2} |Weak|.

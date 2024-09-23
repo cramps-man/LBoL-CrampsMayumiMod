@@ -14,11 +14,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class WeakenFoeDef : ModCardTemplate
+    public sealed class WeakeningShotDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(WeakenFoe);
+            return nameof(WeakeningShot);
         }
 
         public override CardConfig MakeConfig()
@@ -30,7 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Damage = 10;
             cardConfig.UpgradedDamage = 12;
             cardConfig.Value1 = 4;
-            cardConfig.UpgradedValue1 = 8;
+            cardConfig.UpgradedValue1 = 7;
             cardConfig.Value2 = 1;
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
@@ -40,8 +40,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(WeakenFoeDef))]
-    public sealed class WeakenFoe : Card
+    [EntityLogic(typeof(WeakeningShotDef))]
+    public sealed class WeakeningShot : Card
     {
         public int ArcherRequired => 1;
         public DamageInfo HaniwaDamage
