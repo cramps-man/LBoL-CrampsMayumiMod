@@ -1,15 +1,12 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core;
-using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.Cards;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -29,6 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.Value1 = 8;
             cardConfig.UpgradedValue1 = 3;
+            cardConfig.Mana = new ManaGroup() { Red = 1, White = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
@@ -36,15 +34,11 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(CavalrySuppliesDef))]
-    public sealed class CavalrySupplies : Card
+    public sealed class CavalrySupplies : ModAssignCard
     {
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<CavalryHaniwa>(base.Battle.Player, CavalryRequired, HaniwaActionType.Assign);
-        public override string CantUseMessage => "Need more Cavalry";
-        public int CavalryRequired => 2;
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
-        {
-            yield return HaniwaUtils.LoseHaniwa<CavalryHaniwa>(base.Battle.Player, CavalryRequired, HaniwaActionType.Assign);
-            yield return new ApplyStatusEffectAction<AssignCavalrySupplies>(base.Battle.Player, 0, CavalryRequired, Value1);
-        }
+        public override int HaniwaRequired => 2;
+        public override Type HaniwaType => typeof(CavalryHaniwa);
+        public override int CardsToPlay => Value1;
+        public override Type AssignStatusType => typeof(AssignCavalrySupplies);
     }
 }

@@ -1,15 +1,12 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core;
-using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.Cards;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -39,15 +36,11 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FencerBuildBarricadeDef))]
-    public sealed class FencerBuildBarricade : Card
+    public sealed class FencerBuildBarricade : ModAssignCard
     {
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, FencerRequired, HaniwaActionType.Assign);
-        public override string CantUseMessage => "Need more Fencer";
-        public int FencerRequired => 2;
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
-        {
-            yield return HaniwaUtils.LoseHaniwa<FencerHaniwa>(base.Battle.Player, FencerRequired, HaniwaActionType.Assign);
-            yield return new ApplyStatusEffectAction<AssignFencerBuildBarricade>(base.Battle.Player, Shield.Shield, FencerRequired, Value2);
-        }
+        public override int HaniwaRequired => 2;
+        public override Type HaniwaType => typeof(FencerHaniwa);
+        public override int CardsToPlay => Value2;
+        public override Type AssignStatusType => typeof(AssignFencerBuildBarricade);
     }
 }

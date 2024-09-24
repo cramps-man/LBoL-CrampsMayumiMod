@@ -1,15 +1,12 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core;
-using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.Cards;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -28,6 +25,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.Nobody;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
+            cardConfig.Damage = 5;
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 4;
             cardConfig.Value2 = 5;
@@ -39,16 +37,11 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(ArcherPrepVolleyDef))]
-    public sealed class ArcherPrepVolley : Card
+    public sealed class ArcherPrepVolley : ModAssignCard
     {
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherRequired, HaniwaActionType.Assign);
-        public override string CantUseMessage => "Need more Archer";
-        public int ArcherRequired => 2;
-        public int StatusDamage => 5;
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
-        {
-            yield return HaniwaUtils.LoseHaniwa<ArcherHaniwa>(base.Battle.Player, ArcherRequired, HaniwaActionType.Assign);
-            yield return new ApplyStatusEffectAction<AssignArcherPrepVolley>(base.Battle.Player, Value1, ArcherRequired, Value2);
-        }
+        public override int HaniwaRequired => 2;
+        public override Type HaniwaType => typeof(ArcherHaniwa);
+        public override int CardsToPlay => Value2;
+        public override Type AssignStatusType => typeof(AssignArcherPrepVolley);
     }
 }

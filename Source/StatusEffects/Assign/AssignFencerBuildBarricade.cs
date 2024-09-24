@@ -2,7 +2,6 @@
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign
@@ -20,8 +19,7 @@ namespace LBoLMod.StatusEffects.Assign
     {
         protected override IEnumerable<BattleAction> OnAssignmentDone()
         {
-            yield return new CastBlockShieldAction(base.Battle.Player, 0, Level);
-            yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(base.Battle.Player, HaniwaAssigned);
+            yield return new CastBlockShieldAction(base.Battle.Player, base.Battle.Player, AssignSourceCard.Shield);
         }
     }
 }

@@ -190,14 +190,19 @@ namespace LBoLMod.Utils
             return total;
         }
 
-        public static BattleAction LoseHaniwa<T>(PlayerUnit player, int levelToLose, HaniwaActionType type) where T : ModHaniwaStatusEffect
+        public static BattleAction LoseHaniwa<T>(PlayerUnit player, int levelToLose, HaniwaActionType actionType) where T : ModHaniwaStatusEffect
         {
-            if (!player.HasStatusEffect<T>())
+            return LoseHaniwa(player, typeof(T), levelToLose, actionType);
+        }
+
+        public static BattleAction LoseHaniwa(PlayerUnit player, Type haniwaType, int levelToLose, HaniwaActionType actionType)
+        {
+            if (!player.HasStatusEffect(haniwaType))
                 return null;
-            if (type == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
+            if (actionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
                 levelToLose = Math.Max(levelToLose - 1, 0);
 
-            var se = player.GetStatusEffect<T>();
+            var se = player.GetStatusEffect(haniwaType);
             if (se.Level > levelToLose)
             {
                 se.Level -= levelToLose;
@@ -206,14 +211,19 @@ namespace LBoLMod.Utils
             return new RemoveStatusEffectAction(se);
         }
 
-        public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel, HaniwaActionType type) where T : ModHaniwaStatusEffect
+        public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel, HaniwaActionType actionType) where T : ModHaniwaStatusEffect
         {
-            if (!player.HasStatusEffect<T>())
+            return IsLevelFulfilled(player, typeof(T), requiredLevel, actionType);
+        }
+
+        public static bool IsLevelFulfilled(PlayerUnit player, Type haniwaType, int requiredLevel, HaniwaActionType actionType)
+        {
+            if (!player.HasStatusEffect(haniwaType))
                 return false;
-            if (type == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
+            if (actionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
                 requiredLevel = Math.Max(requiredLevel - 1, 0);
 
-            var se = player.GetStatusEffect<T>();
+            var se = player.GetStatusEffect(haniwaType);
             return se.Level >= requiredLevel;
         }
     }

@@ -18,7 +18,7 @@ namespace LBoLMod.StatusEffects
                 StackActionTriggerLevel: null,
                 HasLevel: true,
                 LevelStackType: StackType.Add,
-                HasDuration: true,
+                HasDuration: false,
                 DurationStackType: StackType.Add,
                 DurationDecreaseTiming: DurationDecreaseTiming.Custom,
                 HasCount: true,

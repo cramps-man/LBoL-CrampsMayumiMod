@@ -4,6 +4,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLMod.Exhibits;
+using LBoLMod.Source.Cards;
 using LBoLMod.UltimateSkills;
 using System.Collections.Generic;
 
@@ -11,9 +12,12 @@ namespace LBoLMod.StatusEffects
 {
     public abstract class ModAssignStatusEffect: StatusEffect
     {
-        public int HaniwaAssigned => Duration;
+        protected ModAssignCard AssignSourceCard { get; set; }
+        private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
         protected override void OnAdded(Unit unit)
         {
+            if (SourceCard is ModAssignCard c)
+                AssignSourceCard = c;
             this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
             this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
@@ -25,19 +29,9 @@ namespace LBoLMod.StatusEffects
         {
             if (args.Us is UltimateSkillA)
             {
-                this.NotifyActivating();
-                foreach (var item in OnAssignmentDone())
-                {
-                    yield return item;
-                    if (base.Battle.BattleShouldEnd)
-                        yield break;
-                };
-                if (base.Battle.Player.HasExhibit<ExhibitA>())
-                {
-                    yield return new DrawCardAction();
-                }
-                yield return new RemoveStatusEffectAction(this);
+                return TickDown(PlayerHasExhibitA);
             }
+            return null;
         }
 
         private IEnumerable<BattleAction> onPlayerTurnEnded(UnitEventArgs args)
@@ -53,15 +47,9 @@ namespace LBoLMod.StatusEffects
         {
             if (Count == 0)
             {
-                this.NotifyActivating();
-                foreach (var item in OnAssignmentDone())
-                {
-                    yield return item;
-                    if (base.Battle.BattleShouldEnd)
-                        yield break;
-                };
-                yield return new RemoveStatusEffectAction(this);
+                return TickDown(false);
             }
+            return null;
         }
 
         private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
@@ -74,19 +62,26 @@ namespace LBoLMod.StatusEffects
         {
             if (Count == 0)
             {
-                this.NotifyActivating();
-                foreach (var item in OnAssignmentDone())
-                {
-                    yield return item;
-                    if (base.Battle.BattleShouldEnd)
-                        yield break;
-                };
-                if (base.Battle.Player.HasExhibit<ExhibitA>())
-                {
-                    yield return new DrawCardAction();
-                }
-                yield return new RemoveStatusEffectAction(this);
+                return TickDown(PlayerHasExhibitA);
             }
+            return null;
+        }
+
+        private IEnumerable<BattleAction> TickDown(bool hasExhibitA)
+        {
+            this.NotifyActivating();
+            foreach (var item in OnAssignmentDone())
+            {
+                yield return item;
+                if (base.Battle.BattleShouldEnd)
+                    yield break;
+            };
+            if (hasExhibitA)
+            {
+                yield return new DrawCardAction();
+            }
+            yield return new ApplyStatusEffectAction(AssignSourceCard.HaniwaType, base.Battle.Player, AssignSourceCard.HaniwaRequired);
+            yield return new RemoveStatusEffectAction(this);
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone();
     }

@@ -1,9 +1,7 @@
-﻿using LBoL.Core;
-using LBoL.Core.Battle;
+﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign
@@ -19,14 +17,12 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignArcherPrepVolleyDef))]
     public sealed class AssignArcherPrepVolley : ModAssignStatusEffect
     {
-        public int Damage => 5;
         protected override IEnumerable<BattleAction> OnAssignmentDone()
         {
-            for (int i = 0; i < Level; i++)
+            for (int i = 0; i < AssignSourceCard.Value1; i++)
             {
-                yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, DamageInfo.Attack(Damage));
+                yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
             }
-            yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(base.Battle.Player, HaniwaAssigned);
         }
     }
 }

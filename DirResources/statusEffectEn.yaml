@@ -89,23 +89,23 @@ Preserve:
 AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {Damage} damage {Level} times to random enemies. 
-    {HaniwaAssigned} |Archer| assigned. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {AssignSourceCard} damage {AssignSourceCard.Value1} times to random enemies. 
+    {{AssignSourceCard.HaniwaRequired}} |Archer| assigned. 
   Brief: |-
     After X cards are played, deal damage to random enemies. 
 
 AssignCavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="W">. 
-    {HaniwaAssigned} |Cavalry| assigned. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {AssignSourceCard.Mana}. 
+    {AssignSourceCard.HaniwaRequired} |Cavalry| assigned. 
   Brief: |-
     After X cards are played, gain <sprite="ManaSprite" name="R"><sprite="ManaSprite" name="W">. 
 
 AssignFencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain {Level} |Barrier|. 
-    {HaniwaAssigned} |Fencer| assigned. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {AssignSourceCard.Shield} |Barrier|. 
+    {AssignSourceCard.HaniwaRequired} |Fencer| assigned. 
   Brief: |-
     After X cards are played, gain |Barrier|. 
