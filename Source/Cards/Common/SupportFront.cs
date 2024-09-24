@@ -6,9 +6,9 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.Cards;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -38,56 +38,26 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(SupportFrontDef))]
-    public sealed class SupportFront : Card
+    public sealed class SupportFront : ModFrontlineCard
     {
-        public int RemainingDraw { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.ReactBattleEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
-            base.HandleBattleEvent<CardsEventArgs>(base.Battle.CardsAddedToHand, new GameEventHandler<CardsEventArgs>(this.OnCardsAddedToHand));
         }
 
-        private void OnCardsAddedToHand(CardsEventArgs args)
-        {
-            if (args.Cards.Contains(this))
-            {
-                RemainingDraw = Value1;
-                base.NotifyChanged();
-            }
-        }
-
-        public override IEnumerable<BattleAction> OnDraw()
-        {
-            RemainingDraw = Value1;
-            base.NotifyChanged();
-            return null;
-        }
-
-        public override IEnumerable<BattleAction> OnTurnStartedInHand()
-        {
-            RemainingDraw = Value1;
-            base.NotifyChanged();
-            return null;
-        }
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (base.Zone != CardZone.Hand)
                 yield break;
             if (args.Card.CardType != CardType.Attack)
                 yield break;
-            if (RemainingDraw <= 0)
+            if (RemainingValue <= 0)
                 yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
             yield return new DrawManyCardAction(Value2);
-            RemainingDraw -= 1;
-            base.NotifyChanged();
-        }
-        public override void Upgrade()
-        {
-            base.Upgrade();
-            RemainingDraw += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
+            RemainingValue -= 1;
             base.NotifyChanged();
         }
 

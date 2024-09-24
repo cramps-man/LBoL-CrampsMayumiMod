@@ -8,10 +8,10 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.Cards;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -40,36 +40,13 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(HaniwaBodyguardDef))]
-    public sealed class HaniwaBodyguard : Card
+    public sealed class HaniwaBodyguard : ModFrontlineCard
     {
         public int DamageTaken { get; set; } = 0;
-        public int RemainingDamage { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
         {
+            base.OnEnterBattle(battle);
             base.HandleBattleEvent<DamageEventArgs>(base.Battle.Player.DamageTaking, new GameEventHandler<DamageEventArgs>(this.OnPlayerDamageTaking));
-            base.HandleBattleEvent<CardsEventArgs>(base.Battle.CardsAddedToHand, new GameEventHandler<CardsEventArgs>(this.OnCardsAddedToHand));
-        }
-
-        private void OnCardsAddedToHand(CardsEventArgs args)
-        {
-            if (args.Cards.Contains(this))
-            {
-                RemainingDamage = Value1;
-                base.NotifyChanged();
-            }
-        }
-        public override IEnumerable<BattleAction> OnDraw()
-        {
-            RemainingDamage = Value1;
-            base.NotifyChanged();
-            return null;
-        }
-
-        public override IEnumerable<BattleAction> OnTurnStartedInHand()
-        {
-            RemainingDamage = Value1;
-            base.NotifyChanged();
-            return null;
         }
 
         private void OnPlayerDamageTaking(DamageEventArgs args)
@@ -83,23 +60,23 @@ namespace LBoLMod.Cards
                 DamageTaken = 0;
                 if (damageInfo.Damage > 0)
                 {
-                    int reduceDamageBy = Math.Min(damageInfo.Damage.RoundToInt(), RemainingDamage);
+                    int reduceDamageBy = Math.Min(damageInfo.Damage.RoundToInt(), RemainingValue);
                     damageInfo = damageInfo.ReduceActualDamageBy(reduceDamageBy);
-                    RemainingDamage -= reduceDamageBy;
+                    RemainingValue -= reduceDamageBy;
                     DamageTaken += reduceDamageBy;
                 }
                 if (damageInfo.DamageShielded > 0)
                 {
-                    int reduction = Math.Min(damageInfo.DamageShielded.RoundToInt(), RemainingDamage);
+                    int reduction = Math.Min(damageInfo.DamageShielded.RoundToInt(), RemainingValue);
                     damageInfo.DamageShielded -= reduction;
-                    RemainingDamage -= reduction;
+                    RemainingValue -= reduction;
                     DamageTaken += reduction;
                 }
                 if (damageInfo.DamageBlocked > 0) 
                 {
-                    int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), RemainingDamage);
+                    int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), RemainingValue);
                     damageInfo.DamageBlocked -= reduction;
-                    RemainingDamage -= reduction;
+                    RemainingValue -= reduction;
                     DamageTaken += reduction;
                 }
                 if (DamageTaken != 0)
@@ -110,13 +87,6 @@ namespace LBoLMod.Cards
                     base.NotifyChanged();
                 }
             }
-        }
-
-        public override void Upgrade()
-        {
-            base.Upgrade();
-            RemainingDamage += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
-            base.NotifyChanged();
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

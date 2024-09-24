@@ -95,7 +95,7 @@ CavalrySupplies:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce up to {Value1} damage recieved per turn. {RemainingDamage} reduction remaining. 
+    |While in hand|: Reduce up to {Value1} damage recieved per turn. {RemainingValue} reduction remaining. 
     |When played|: Apply {Value2} |Weak|. 
   NonbattleDescription: |-
     |While in hand|: Reduce up to {Value1} damage recieved per turn. 
@@ -105,7 +105,7 @@ SupportFront:
   Name: Frontal Support
   Description: |-
     |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    {RemainingDraw} draw{RemainingDraw:plural one='' other='s'} remaining. 
+    {RemainingValue} draw{RemainingValue:plural one='' other='s'} remaining. 
     |When played|: Gain {Mana}. 
   NonbattleDescription: |-
     |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
