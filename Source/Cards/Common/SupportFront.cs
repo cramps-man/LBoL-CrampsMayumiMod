@@ -42,6 +42,7 @@ namespace LBoLMod.Cards
     {
         protected override void OnEnterBattle(BattleController battle)
         {
+            base.OnEnterBattle(battle);
             base.ReactBattleEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
         }
 
