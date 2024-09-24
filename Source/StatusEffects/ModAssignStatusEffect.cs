@@ -1,4 +1,5 @@
-﻿using LBoL.Core;
+﻿using LBoL.Base;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
@@ -13,6 +14,12 @@ namespace LBoLMod.StatusEffects
     public abstract class ModAssignStatusEffect: StatusEffect
     {
         protected ModAssignCard AssignSourceCard { get; set; }
+        protected int CardHaniwaRequired => AssignSourceCard.HaniwaRequired;
+        protected int StartingCardCounter => AssignSourceCard.StartingCardCounter;
+        protected DamageInfo CardDamage => AssignSourceCard.Damage;
+        protected int CardShield => AssignSourceCard.RawShield;
+        protected ManaGroup CardMana => AssignSourceCard.Mana;
+        protected int CardValue1 => AssignSourceCard.Value1;
         private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
         protected override void OnAdded(Unit unit)
         {

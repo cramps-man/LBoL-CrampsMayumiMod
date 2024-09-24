@@ -38,7 +38,7 @@ namespace LBoLMod.Cards
     {
         public override int HaniwaRequired => 2;
         public override Type HaniwaType => typeof(CavalryHaniwa);
-        public override int CardsToPlay => Value1;
+        public override int StartingCardCounter => Value1;
         public override Type AssignStatusType => typeof(AssignCavalrySupplies);
     }
 }

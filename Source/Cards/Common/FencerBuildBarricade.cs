@@ -40,7 +40,7 @@ namespace LBoLMod.Cards
     {
         public override int HaniwaRequired => 2;
         public override Type HaniwaType => typeof(FencerHaniwa);
-        public override int CardsToPlay => Value2;
+        public override int StartingCardCounter => Value2;
         public override Type AssignStatusType => typeof(AssignFencerBuildBarricade);
     }
 }

@@ -13,7 +13,7 @@ namespace LBoLMod.Source.Cards
     {
         public virtual int HaniwaRequired => 0;
         public virtual Type HaniwaType => null;
-        public virtual int CardsToPlay => 0;
+        public virtual int StartingCardCounter => 0;
         public virtual Type AssignStatusType => null;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaType, HaniwaRequired, HaniwaActionType.Assign);
         public override string CantUseMessage => "Need more " + HaniwaNameFromType(HaniwaType);
@@ -21,7 +21,7 @@ namespace LBoLMod.Source.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return HaniwaUtils.LoseHaniwa(base.Battle.Player, HaniwaType, HaniwaRequired, HaniwaActionType.Assign);
-            yield return BuffAction(AssignStatusType, count: CardsToPlay);
+            yield return BuffAction(AssignStatusType, count: StartingCardCounter);
         }
 
         private static string HaniwaNameFromType(Type haniwaType)
