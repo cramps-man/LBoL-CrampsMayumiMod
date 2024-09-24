@@ -12,33 +12,23 @@ Haniwa:
 ArcherHaniwa:
   Name: Archer Haniwa
   Description: |-
-    After an attack card is played, deal {EffectDamage} damage to a random enemy. 
-    Age = {AgeCounter}
+    Archer Haniwa Level {Level}. 
   Brief: |-
-    After an attack card is played, deal damage to a random enemy. 
-    Higher level increases damage. 
+    Archer Haniwa Level {Level}. 
 
 CavalryHaniwa:
   Name: Cavalry Haniwa
   Description: |-
-    After an attack or defence card is drawn, gain a buff based on the type of card. 
-    |Attack|: Gain {EffectValue} extra damage on your next attack. 
-    |Defence|: Gain {EffectValue} |Block|.
-    Age = {AgeCounter}
+    Cavalry Haniwa Level {Level}. 
   Brief: |-
-    After an attack or defence card is drawn, gain a buff based on the type of card. 
-    |Attack|: Gain extra damage on your next attack. 
-    |Defence|: Gain |Block|. 
-    Higher level increases extra damage and |Block|. 
+    Cavlary Haniwa Level {Level}.  
 
 FencerHaniwa:
   Name: Fencer Haniwa
   Description: |-
-    After gaining mana, gain {EffectValue} |Block| multiplied by the number of mana. 
-    Age = {AgeCounter}
+    Fencer Haniwa Level {Level}. 
   Brief: |-
-    After gaining mana, gain |Block| multiplied by the number of mana. 
-    Higher level increases |Block|. 
+    Fencer Haniwa Level {Level}. 
 
 Require:
   Name: Require X

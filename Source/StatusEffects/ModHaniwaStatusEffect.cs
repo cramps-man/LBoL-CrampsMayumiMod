@@ -3,7 +3,6 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
-using LBoLMod.Exhibits;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
