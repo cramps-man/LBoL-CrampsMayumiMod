@@ -91,7 +91,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new ApplyStatusEffectAction<Weak>(selector.GetEnemy(base.Battle), duration: 1);
+            yield return new ApplyStatusEffectAction<Weak>(selector.GetEnemy(base.Battle), duration: Value2);
         }
     }
 }

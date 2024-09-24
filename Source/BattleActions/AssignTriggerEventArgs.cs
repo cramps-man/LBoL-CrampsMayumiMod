@@ -1,0 +1,11 @@
+﻿using LBoL.Core;
+using LBoL.Core.Battle;
+using System.Collections.Generic;
+
+namespace LBoLMod.BattleActions
+{
+    public class AssignTriggerEventArgs: GameEventArgs
+    {
+        public IEnumerable<BattleAction> BattleActions { get; internal set; }
+    }
+}

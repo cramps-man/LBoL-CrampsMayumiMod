@@ -4,6 +4,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
+using LBoLMod.BattleActions;
 using LBoLMod.Exhibits;
 using LBoLMod.Source.Cards;
 using LBoLMod.UltimateSkills;
@@ -36,7 +37,7 @@ namespace LBoLMod.StatusEffects
         {
             if (args.Us is UltimateSkillA)
             {
-                return TickDown(PlayerHasExhibitA);
+                return AssignTriggering(PlayerHasExhibitA);
             }
             return null;
         }
@@ -54,7 +55,7 @@ namespace LBoLMod.StatusEffects
         {
             if (Count == 0)
             {
-                return TickDown(false);
+                return AssignTriggering(false);
             }
             return null;
         }
@@ -69,20 +70,17 @@ namespace LBoLMod.StatusEffects
         {
             if (Count == 0)
             {
-                return TickDown(PlayerHasExhibitA);
+                return AssignTriggering(PlayerHasExhibitA);
             }
             return null;
         }
 
-        private IEnumerable<BattleAction> TickDown(bool hasExhibitA)
+        private IEnumerable<BattleAction> AssignTriggering(bool hasExhibitA)
         {
             this.NotifyActivating();
-            foreach (var item in OnAssignmentDone())
-            {
-                yield return item;
-                if (base.Battle.BattleShouldEnd)
-                    yield break;
-            };
+            yield return new AssignTriggerAction(OnAssignmentDone());
+            if (base.Battle.BattleShouldEnd)
+                yield break;
             if (hasExhibitA)
             {
                 yield return new DrawCardAction();
