@@ -13,41 +13,6 @@ namespace LBoLMod.Utils
 {
     public static class HaniwaUtils
     {
-        public static IEnumerable<BattleAction> GainHaniwa<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
-        {
-            if (player.HasStatusEffect<Downtime>())
-            {
-                var se = player.GetStatusEffect<Downtime>();
-                se.NotifyActivating();
-                yield break;
-            }
-            yield return new ApplyStatusEffectAction<T>(player, level);
-            //test without removing stances at all
-            //exhibit A's specialty is to not have stances be removed when applying others
-            /*if (player.HasExhibit<ExhibitA>())
-                yield break;
-            if (typeof(T) == typeof(PowerStance))
-            {
-                yield return RemoveStance<FocusStance>(player);
-                yield return RemoveStance<CalmStance>(player);
-            }
-            else if (typeof(T) == typeof(FocusStance))
-            {
-                yield return RemoveStance<PowerStance>(player);
-                yield return RemoveStance<CalmStance>(player);
-            }
-            else if (typeof(T) == typeof(CalmStance))
-            {
-                yield return RemoveStance<FocusStance>(player);
-                yield return RemoveStance<PowerStance>(player);
-            }*/
-        }
-
-        public static BattleAction ForceGainHaniwa<T>(PlayerUnit player, int level = 1) where T : ModHaniwaStatusEffect
-        {
-            return new ApplyStatusEffectAction<T>(player, level);
-        }
-
         public static BattleAction RemoveHaniwa<T>(Unit unit) where T : ModHaniwaStatusEffect
         {
             if (!unit.HasStatusEffect<T>())

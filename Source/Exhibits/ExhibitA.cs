@@ -7,10 +7,10 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
+using LBoLMod.BattleActions;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Exhibits
@@ -77,9 +77,9 @@ namespace LBoLMod.Exhibits
             if (player.TurnCounter == 1)
             {
                 base.NotifyActivating();
-                yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(player, 3);
-                yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(player, 3);
-                yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(player, 3);
+                yield return new GainHaniwaAction(typeof(FencerHaniwa), Value1);
+                yield return new GainHaniwaAction(typeof(ArcherHaniwa), Value1);
+                yield return new GainHaniwaAction(typeof(CavalryHaniwa), Value1);
             }
         }
     }

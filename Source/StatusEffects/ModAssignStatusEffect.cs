@@ -85,7 +85,7 @@ namespace LBoLMod.StatusEffects
             {
                 yield return new DrawCardAction();
             }
-            yield return new ApplyStatusEffectAction(AssignSourceCard.HaniwaType, base.Battle.Player, AssignSourceCard.HaniwaRequired);
+            yield return new GainHaniwaAction(AssignSourceCard.HaniwaType, AssignSourceCard.HaniwaRequired, true);
             yield return new RemoveStatusEffectAction(this);
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone();

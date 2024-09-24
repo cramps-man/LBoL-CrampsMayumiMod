@@ -4,8 +4,8 @@ using LBoL.Core.Battle;
 using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -35,7 +35,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            return HaniwaUtils.GainHaniwa<FencerHaniwa>(Battle.Player, Value1);
+            yield return new GainHaniwaAction(typeof(FencerHaniwa), Value1);
         }
     }
 }

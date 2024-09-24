@@ -8,9 +8,9 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -64,10 +64,9 @@ namespace LBoLMod.UltimateSkills
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)
         {
             var unit = base.Battle.Player;
-            yield return HaniwaUtils.RemoveDowntime(unit);
-            yield return HaniwaUtils.ForceGainHaniwa<ArcherHaniwa>(unit, Value1);
-            yield return HaniwaUtils.ForceGainHaniwa<CavalryHaniwa>(unit, Value1);
-            yield return HaniwaUtils.ForceGainHaniwa<FencerHaniwa>(unit, Value1);
+            yield return new GainHaniwaAction(typeof(FencerHaniwa), Value1);
+            yield return new GainHaniwaAction(typeof(ArcherHaniwa), Value1);
+            yield return new GainHaniwaAction(typeof(CavalryHaniwa), Value1);
             yield return new DamageAction(base.Owner, selector.GetEnemy(base.Battle), Damage);
         }
     }

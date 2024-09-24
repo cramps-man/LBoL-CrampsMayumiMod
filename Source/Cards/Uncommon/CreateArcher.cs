@@ -5,8 +5,8 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -45,10 +45,7 @@ namespace LBoLMod.Cards
             yield return base.AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
             {
-                foreach (var item in HaniwaUtils.GainHaniwa<ArcherHaniwa>(base.Battle.Player, Value1))
-                {
-                    yield return item;
-                }
+                yield return new GainHaniwaAction(typeof(ArcherHaniwa), Value1);
             }
         }
     }

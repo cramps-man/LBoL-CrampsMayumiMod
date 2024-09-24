@@ -13,5 +13,9 @@ namespace LBoLMod.GameEvents
         public static GameEvent<LoseHaniwaEventArgs> SacrificedHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
         public static GameEvent<LoseHaniwaEventArgs> AssigningHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
         public static GameEvent<LoseHaniwaEventArgs> AssignedHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainingHaniwa { get; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainedHaniwa { get; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainingHaniwaFromAssign { get; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainedHaniwaFromAssign { get; } = new GameEvent<GainHaniwaEventArgs>();
     }
 }

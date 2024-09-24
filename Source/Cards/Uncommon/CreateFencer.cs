@@ -5,9 +5,9 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -42,10 +42,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var item in HaniwaUtils.GainHaniwa<FencerHaniwa>(base.Battle.Player, Value1))
-            {
-                yield return item;
-            };
+            yield return new GainHaniwaAction(typeof(FencerHaniwa), Value1);
             yield return DefenseAction();
         }
     }
