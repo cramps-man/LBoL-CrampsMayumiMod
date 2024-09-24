@@ -5,6 +5,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
@@ -44,7 +45,7 @@ namespace LBoLMod.Cards
         public override string CantUseMessage => "Need more Fencer";
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return HaniwaUtils.LoseHaniwa<FencerHaniwa>(base.Battle.Player, Value1, HaniwaActionType.Sacrifice);
+            yield return new LoseHaniwaAction(typeof(FencerHaniwa), Value1, HaniwaActionType.Sacrifice);
             yield return AttackAction(selector);
         }
     }

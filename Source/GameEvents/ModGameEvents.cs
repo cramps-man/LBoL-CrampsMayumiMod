@@ -7,5 +7,11 @@ namespace LBoLMod.GameEvents
     {
         public static GameEvent<AssignTriggerEventArgs> AssignEffectTriggering { get; } = new GameEvent<AssignTriggerEventArgs>();
         public static GameEvent<AssignTriggerEventArgs> AssignEffectTriggered { get; } = new GameEvent<AssignTriggerEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> LosingHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> LostHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> SacrificingHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> SacrificedHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> AssigningHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> AssignedHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
     }
 }

@@ -190,27 +190,6 @@ namespace LBoLMod.Utils
             return total;
         }
 
-        public static BattleAction LoseHaniwa<T>(PlayerUnit player, int levelToLose, HaniwaActionType actionType) where T : ModHaniwaStatusEffect
-        {
-            return LoseHaniwa(player, typeof(T), levelToLose, actionType);
-        }
-
-        public static BattleAction LoseHaniwa(PlayerUnit player, Type haniwaType, int levelToLose, HaniwaActionType actionType)
-        {
-            if (!player.HasStatusEffect(haniwaType))
-                return null;
-            if (actionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
-                levelToLose = Math.Max(levelToLose - 1, 0);
-
-            var se = player.GetStatusEffect(haniwaType);
-            if (se.Level > levelToLose)
-            {
-                se.Level -= levelToLose;
-                return null;
-            }
-            return new RemoveStatusEffectAction(se);
-        }
-
         public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel, HaniwaActionType actionType) where T : ModHaniwaStatusEffect
         {
             return IsLevelFulfilled(player, typeof(T), requiredLevel, actionType);

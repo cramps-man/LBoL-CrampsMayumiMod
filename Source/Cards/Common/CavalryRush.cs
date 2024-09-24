@@ -6,6 +6,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
@@ -63,7 +64,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return HaniwaUtils.LoseHaniwa<CavalryHaniwa>(base.Battle.Player, Value2, HaniwaActionType.Sacrifice);
+            yield return new LoseHaniwaAction(typeof(CavalryHaniwa), Value2, HaniwaActionType.Sacrifice);
             yield return AttackAction(selector);
         }
     }

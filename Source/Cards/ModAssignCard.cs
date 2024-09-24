@@ -2,6 +2,7 @@
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.Utils;
 using System;
@@ -20,7 +21,7 @@ namespace LBoLMod.Source.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return HaniwaUtils.LoseHaniwa(base.Battle.Player, HaniwaType, HaniwaRequired, HaniwaActionType.Assign);
+            yield return new LoseHaniwaAction(HaniwaType, HaniwaRequired, HaniwaActionType.Assign);
             yield return BuffAction(AssignStatusType, count: StartingCardCounter);
         }
 
