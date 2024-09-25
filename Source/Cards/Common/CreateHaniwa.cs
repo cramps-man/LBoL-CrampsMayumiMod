@@ -23,6 +23,7 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
+            cardConfig.HideMesuem = true;
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.Self;
             cardConfig.Cost = new ManaGroup() { Any = 0 };

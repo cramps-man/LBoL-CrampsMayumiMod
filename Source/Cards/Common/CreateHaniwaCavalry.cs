@@ -21,6 +21,7 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
+            cardConfig.HideMesuem = true;
             cardConfig.Type = CardType.Skill;
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;

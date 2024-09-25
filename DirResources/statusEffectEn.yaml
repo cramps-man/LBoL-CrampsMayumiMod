@@ -14,21 +14,21 @@ ArcherHaniwa:
   Description: |-
     Archer Haniwa Level {Level}. 
   Brief: |-
-    Archer Haniwa Level {Level}. 
+    Archer Haniwa Level. 
 
 CavalryHaniwa:
   Name: Cavalry Haniwa
   Description: |-
     Cavalry Haniwa Level {Level}. 
   Brief: |-
-    Cavlary Haniwa Level {Level}.  
+    Cavlary Haniwa Level.  
 
 FencerHaniwa:
   Name: Fencer Haniwa
   Description: |-
     Fencer Haniwa Level {Level}. 
   Brief: |-
-    Fencer Haniwa Level {Level}. 
+    Fencer Haniwa Level. 
 
 Require:
   Name: Require X
@@ -90,7 +90,7 @@ AssignCavalrySupplies:
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardMana}. 
     {CardHaniwaRequired} |Cavalry| assigned. 
   Brief: |-
-    After X cards are played, gain {CardMana}. 
+    After X cards are played, gain mana. 
 
 AssignFencerBuildBarricade:
   Name: Fencer Build Barricade

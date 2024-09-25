@@ -26,10 +26,10 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.Damage = 5;
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 4;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 5;
-            cardConfig.UpgradedValue2 = 4;
+            cardConfig.UpgradedValue2 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;

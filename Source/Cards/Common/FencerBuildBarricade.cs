@@ -25,8 +25,8 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.Nobody;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.Shield = 12;
-            cardConfig.UpgradedShield = 16;
+            cardConfig.Shield = 10;
+            cardConfig.UpgradedShield = 14;
             cardConfig.Value2 = 9;
             cardConfig.UpgradedValue2 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
