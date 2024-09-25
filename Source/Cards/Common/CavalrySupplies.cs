@@ -22,7 +22,7 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.Value1 = 8;
             cardConfig.UpgradedValue1 = 3;

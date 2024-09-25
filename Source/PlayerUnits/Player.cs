@@ -62,11 +62,11 @@ namespace LBoLMod.PlayerUnits
                 nameof(Shoot),
                 nameof(Boundary),
                 nameof(Boundary),
-                nameof(BasicAttackR),
-                nameof(BasicAttackR),
-                nameof(BasicBlockW),
-                nameof(BasicBlockW),
-                nameof(BasicBlockW),
+                nameof(BasicAttackW),
+                nameof(BasicAttackW),
+                nameof(BasicBlockR),
+                nameof(BasicBlockR),
+                nameof(BasicBlockR),
                 nameof(ArcherPrepVolley)
             };
         }
@@ -77,11 +77,11 @@ namespace LBoLMod.PlayerUnits
                 nameof(Shoot),
                 nameof(Boundary),
                 nameof(Boundary),
-                nameof(BasicAttackW),
-                nameof(BasicAttackW),
-                nameof(BasicBlockR),
-                nameof(BasicBlockR),
-                nameof(BasicBlockR),
+                nameof(BasicAttackR),
+                nameof(BasicAttackR),
+                nameof(BasicBlockW),
+                nameof(BasicBlockW),
+                nameof(BasicBlockW),
                 nameof(FencerKamikaze),
             };
         }
