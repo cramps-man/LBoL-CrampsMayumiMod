@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Source.Cards;
-using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
 using System;
@@ -39,8 +38,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ArcherPrepVolleyDef))]
     public sealed class ArcherPrepVolley : ModAssignCard
     {
-        public override int HaniwaRequired => 2;
-        public override Type HaniwaType => typeof(ArcherHaniwa);
+        public override int ArcherRequired => 2;
         public override int StartingCardCounter => Value2;
         public override Type AssignStatusType => typeof(AssignArcherPrepVolley);
     }

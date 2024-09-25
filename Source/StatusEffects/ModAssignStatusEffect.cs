@@ -15,7 +15,9 @@ namespace LBoLMod.StatusEffects
     public abstract class ModAssignStatusEffect: StatusEffect
     {
         protected ModAssignCard AssignSourceCard { get; set; }
-        protected int CardHaniwaRequired => AssignSourceCard.HaniwaRequired;
+        protected int CardFencerRequired => AssignSourceCard.FencerRequired;
+        protected int CardArcherRequired => AssignSourceCard.ArcherRequired;
+        protected int CardCavalryRequired => AssignSourceCard.CavalryRequired;
         protected int StartingCardCounter => AssignSourceCard.StartingCardCounter;
         protected DamageInfo CardDamage => AssignSourceCard.Damage;
         protected int CardShield => AssignSourceCard.RawShield;
@@ -85,7 +87,7 @@ namespace LBoLMod.StatusEffects
             {
                 yield return new DrawCardAction();
             }
-            yield return new GainHaniwaAction(AssignSourceCard.HaniwaType, AssignSourceCard.HaniwaRequired, true);
+            yield return new GainHaniwaAction(CardFencerRequired, CardArcherRequired, CardCavalryRequired, true);
             yield return new RemoveStatusEffectAction(this);
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone();

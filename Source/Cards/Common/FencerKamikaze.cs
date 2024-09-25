@@ -45,7 +45,7 @@ namespace LBoLMod.Cards
         public override string CantUseMessage => "Need more Fencer";
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new LoseHaniwaAction(typeof(FencerHaniwa), Value1, HaniwaActionType.Sacrifice);
+            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, fencerToLose: Value1);
             yield return AttackAction(selector);
         }
     }

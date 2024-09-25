@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new GainHaniwaAction(typeof(CavalryHaniwa), Value1);
+            yield return new GainHaniwaAction(cavalryToGain: Value1);
             yield return new DrawManyCardAction(Value2);
         }
     }

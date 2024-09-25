@@ -36,7 +36,7 @@ namespace LBoLMod.Cards
     {
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
-            yield return new GainHaniwaAction(typeof(ArcherHaniwa), Value1);
+            yield return new GainHaniwaAction(archerToGain: Value1);
         }
     }
 }

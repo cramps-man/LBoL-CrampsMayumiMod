@@ -1,7 +1,7 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLMod.GameEvents;
-using System;
+using LBoLMod.StatusEffects;
 using System.Collections.Generic;
 
 namespace LBoLMod.BattleActions
@@ -10,12 +10,13 @@ namespace LBoLMod.BattleActions
     {
         private readonly GainHaniwaEventArgs args;
 
-        internal GainHaniwaAction(Type haniwaType, int amountToGain, bool isFromAssign = false)
+        internal GainHaniwaAction(int fencerToGain = 0, int archerToGain = 0, int cavalryToGain = 0, bool isFromAssign = false)
         {
             this.args = new GainHaniwaEventArgs
             {
-                HaniwaType = haniwaType,
-                AmountToGain = amountToGain,
+                FencerToGain = fencerToGain,
+                ArcherToGain = archerToGain,
+                CavalryToGain = cavalryToGain,
                 IsFromAssign = isFromAssign
             };
         }
@@ -27,7 +28,12 @@ namespace LBoLMod.BattleActions
                 yield return base.CreateEventPhase<GainHaniwaEventArgs>("GainingHaniwaFromAssign", this.args, ModGameEvents.GainingHaniwaFromAssign);
             yield return base.CreatePhase("Main", delegate
             {
-                base.React(new ApplyStatusEffectAction(args.HaniwaType, base.Battle.Player, args.AmountToGain));
+                if (args.FencerToGain > 0)
+                    base.React(new ApplyStatusEffectAction<FencerHaniwa>(base.Battle.Player, args.FencerToGain));
+                if (args.ArcherToGain > 0)
+                    base.React(new ApplyStatusEffectAction<ArcherHaniwa>(base.Battle.Player, args.ArcherToGain));
+                if (args.CavalryToGain > 0)
+                    base.React(new ApplyStatusEffectAction<CavalryHaniwa>(base.Battle.Player, args.CavalryToGain));
             });
             yield return base.CreateEventPhase<GainHaniwaEventArgs>("GainedHaniwa", this.args, ModGameEvents.GainedHaniwa);
             if (this.args.IsFromAssign)

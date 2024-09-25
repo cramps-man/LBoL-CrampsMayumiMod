@@ -155,6 +155,13 @@ namespace LBoLMod.Utils
             return total;
         }
 
+        public static bool IsLevelFulfilled(PlayerUnit player, HaniwaActionType actionType, int fencerRequired = 0, int archerRequired = 0, int cavalryRequired = 0)
+        {
+            return IsLevelFulfilled<FencerHaniwa>(player, fencerRequired, actionType)
+                && IsLevelFulfilled<ArcherHaniwa>(player, archerRequired, actionType)
+                && IsLevelFulfilled<CavalryHaniwa>(player, cavalryRequired, actionType);
+        }
+
         public static bool IsLevelFulfilled<T>(PlayerUnit player, int requiredLevel, HaniwaActionType actionType) where T : ModHaniwaStatusEffect
         {
             return IsLevelFulfilled(player, typeof(T), requiredLevel, actionType);
@@ -162,6 +169,8 @@ namespace LBoLMod.Utils
 
         public static bool IsLevelFulfilled(PlayerUnit player, Type haniwaType, int requiredLevel, HaniwaActionType actionType)
         {
+            if (requiredLevel == 0)
+                return true;
             if (!player.HasStatusEffect(haniwaType))
                 return false;
             if (actionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())

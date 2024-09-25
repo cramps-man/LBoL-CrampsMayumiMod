@@ -3,7 +3,6 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLMod.BattleActions;
-using LBoLMod.StatusEffects;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
@@ -12,30 +11,17 @@ namespace LBoLMod.Source.Cards
 {
     public abstract class ModAssignCard: Card
     {
-        public virtual int HaniwaRequired => 0;
-        public virtual Type HaniwaType => null;
+        public virtual int FencerRequired => 0;
+        public virtual int ArcherRequired => 0;
+        public virtual int CavalryRequired => 0;
         public virtual int StartingCardCounter => 0;
         public virtual Type AssignStatusType => null;
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaType, HaniwaRequired, HaniwaActionType.Assign);
-        public override string CantUseMessage => "Need more " + HaniwaNameFromType(HaniwaType);
+        public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new LoseHaniwaAction(HaniwaType, HaniwaRequired, HaniwaActionType.Assign);
+            yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
             yield return BuffAction(AssignStatusType, count: StartingCardCounter);
-        }
-
-        private static string HaniwaNameFromType(Type haniwaType)
-        {
-            if (haniwaType == null)
-                return "";
-            if (haniwaType == typeof(ArcherHaniwa))
-                return "Archer";
-            if (haniwaType == typeof(CavalryHaniwa))
-                return "Cavalry";
-            if (haniwaType == typeof(FencerHaniwa))
-                return "Fencer";
-            return "";
         }
     }
 }

@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Source.Cards;
-using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
 using System;
@@ -37,8 +36,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CavalrySuppliesDef))]
     public sealed class CavalrySupplies : ModAssignCard
     {
-        public override int HaniwaRequired => 2;
-        public override Type HaniwaType => typeof(CavalryHaniwa);
+        public override int CavalryRequired => 2;
         public override int StartingCardCounter => Value1;
         public override Type AssignStatusType => typeof(AssignCavalrySupplies);
     }

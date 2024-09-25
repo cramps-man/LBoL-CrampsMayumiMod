@@ -64,7 +64,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new LoseHaniwaAction(typeof(CavalryHaniwa), Value2, HaniwaActionType.Sacrifice);
+            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, cavalryToLose: Value2);
             yield return AttackAction(selector);
         }
     }

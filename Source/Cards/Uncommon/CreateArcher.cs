@@ -45,7 +45,7 @@ namespace LBoLMod.Cards
             yield return base.AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
             {
-                yield return new GainHaniwaAction(typeof(ArcherHaniwa), Value1);
+                yield return new GainHaniwaAction(archerToGain: Value1);
             }
         }
     }

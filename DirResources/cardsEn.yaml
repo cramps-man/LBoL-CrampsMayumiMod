@@ -77,7 +77,7 @@ FencerKamikaze:
 ArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    |Assign {HaniwaRequired} Archer|.
+    |Assign {ArcherRequired} Archer|.
     After {Value2} cards are played, deal {Damage} damage {Value1} times to random enemies. 
 
 CavalrySwift:
@@ -89,7 +89,7 @@ CavalrySwift:
 CavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
-    |Assign {HaniwaRequired} Cavalry|. 
+    |Assign {CavalryRequired} Cavalry|. 
     After {Value1} cards are played, gain {Mana}. 
 
 HaniwaBodyguard:
@@ -114,7 +114,7 @@ SupportFront:
 FencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
-    |Assign {HaniwaRequired} Fencer|.
+    |Assign {FencerRequired} Fencer|.
     After {Value2} cards are played, gain {Shield} |Barrier|. 
 
 CavalryRush:
