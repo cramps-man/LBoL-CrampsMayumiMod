@@ -7,7 +7,7 @@ using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
 
-namespace LBoLMod.Source.Cards
+namespace LBoLMod.Cards
 {
     public abstract class ModAssignCard: Card
     {

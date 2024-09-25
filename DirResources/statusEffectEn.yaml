@@ -99,3 +99,18 @@ AssignFencerBuildBarricade:
     {CardFencerRequired} |Fencer| assigned. 
   Brief: |-
     After X cards are played, gain |Barrier|. 
+
+AssignBuildWatchtower:
+  Name: Build Watchtower
+  Description: |-
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain |Watchtower| {CardValue1}. 
+    {CardFencerRequired} |Fencer| assigned. 
+  Brief: |-
+    After X cards are played, gain |Watchtower|. 
+
+Watchtower:
+  Name: Watchtower
+  Description: |-
+    After an attack card is played, deal {Level} + {ArcherLevel} damage to a random enemy. 
+  Brief: |-
+    After an attack card is played, deal |Watchtower Level| + |Archer Level| damage to a random enemy. 

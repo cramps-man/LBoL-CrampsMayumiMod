@@ -131,28 +131,12 @@ AttackCreateReserves:
     Add {Value1} |Create Haniwa| to the hand. 
 
 #UNCOMMONS
-MoreStanceHits:
-  Name: More Stance Hits
+BuildWatchtower:
+  Name: Build Watchtower
   Description: |-
-    Deal {Damage} to a random enemy. 
-    Deal additional hits for each |Stance|({StanceCount}) on {PlayerName}. 
-  NonbattleDescription: |-
-    Deal {Damage} to a random enemy. 
-    Deal additional hits for each |Stance| on {PlayerName}. 
-
-ScryFocus:
-  Name: Scry Focus
-  Description: |-
-    |Focus 1|: |Scry| {Scry}.
-    Draw {Value1} cards.
-
-HealFirepower:
-  Name: Heal Firepower
-  Description: |-
-    Gain {Value1} life.
-    Gain {Value2} |Firepower|.
-    |Calm 2|: Gain {FullHeal} life instead.
-    |Power 2|: Gain {FullFirepower} |Firepower| instead.
+    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. Unusable if a |Watchtower| is building. 
+    After {Value2} cards are played, gain |Watchtower| {Value1}. 
+    If a |Watchtower| is already built, instead no |Haniwa| are required and add a |Garrison Archer| to the hand. 
 
 #RARES
 FullFrontalAssault:
@@ -189,3 +173,26 @@ GrantDexterity:
   Description: |-
     Gain {Block} |Block|.
     Gain {Value1} |Dexterity|.
+
+MoreStanceHits:
+  Name: More Stance Hits
+  Description: |-
+    Deal {Damage} to a random enemy. 
+    Deal additional hits for each |Stance|({StanceCount}) on {PlayerName}. 
+  NonbattleDescription: |-
+    Deal {Damage} to a random enemy. 
+    Deal additional hits for each |Stance| on {PlayerName}. 
+
+ScryFocus:
+  Name: Scry Focus
+  Description: |-
+    |Focus 1|: |Scry| {Scry}.
+    Draw {Value1} cards.
+
+HealFirepower:
+  Name: Heal Firepower
+  Description: |-
+    Gain {Value1} life.
+    Gain {Value2} |Firepower|.
+    |Calm 2|: Gain {FullHeal} life instead.
+    |Power 2|: Gain {FullFirepower} |Firepower| instead.

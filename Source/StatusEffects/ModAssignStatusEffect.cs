@@ -5,8 +5,8 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLMod.BattleActions;
+using LBoLMod.Cards;
 using LBoLMod.Exhibits;
-using LBoLMod.Source.Cards;
 using LBoLMod.UltimateSkills;
 using System.Collections.Generic;
 

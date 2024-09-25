@@ -8,7 +8,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects;
 using System.Collections.Generic;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class MoreStanceHitsDef : ModCardTemplate
@@ -60,4 +60,4 @@ namespace LBoLMod.Cards
             }
         }
     }
-}
+}*/

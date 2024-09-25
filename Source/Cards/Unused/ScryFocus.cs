@@ -9,7 +9,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
 using LBoLMod.Utils;
 using System.Collections.Generic;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class ScryFocusDef : ModCardTemplate
@@ -52,3 +52,4 @@ namespace LBoLMod.Cards
         }
     }
 }
+*/

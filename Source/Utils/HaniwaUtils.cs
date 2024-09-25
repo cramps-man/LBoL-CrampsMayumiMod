@@ -179,5 +179,12 @@ namespace LBoLMod.Utils
             var se = player.GetStatusEffect(haniwaType);
             return se.Level >= requiredLevel;
         }
+
+        public static int GetHaniwaLevel<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
+        {
+            if (!player.HasStatusEffect<T>())
+                return 0;
+            return player.GetStatusEffect<T>().Level;
+        }
     }
 }
