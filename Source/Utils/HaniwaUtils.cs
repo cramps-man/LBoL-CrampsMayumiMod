@@ -1,51 +1,14 @@
-﻿using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Units;
+﻿using LBoL.Core.Units;
 using LBoLMod.Exhibits;
-using LBoLMod.Source.StatusEffects.Stances;
 using LBoLMod.StatusEffects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unit = LBoL.Core.Units.Unit;
 
 namespace LBoLMod.Utils
 {
     public static class HaniwaUtils
     {
-        public static BattleAction RemoveHaniwa<T>(Unit unit) where T : ModHaniwaStatusEffect
-        {
-            if (!unit.HasStatusEffect<T>())
-            {
-                return null;
-            }
-            var se = unit.GetStatusEffect<T>();
-            if (se.Preserved) {
-                return null;
-            }
-            return new RemoveStatusEffectAction(se);
-        }
-
-        public static BattleAction ForceRemoveHaniwa<T>(Unit unit) where T : ModHaniwaStatusEffect
-        {
-            if (!unit.HasStatusEffect<T>())
-            {
-                return null;
-            }
-            var se = unit.GetStatusEffect<T>();
-            return new RemoveStatusEffectAction(se);
-        }
-
-        public static BattleAction RemoveDowntime(Unit unit)
-        {
-            if (!unit.HasStatusEffect<Downtime>())
-            {
-                return null;
-            }
-            var se = unit.GetStatusEffect<Downtime>();
-            return new RemoveStatusEffectAction(se);
-        }
-
         public static bool DoesPlayerHavePreservedHaniwa(PlayerUnit player)
         {
             if (player.HasStatusEffect<ArcherHaniwa>())
@@ -117,34 +80,6 @@ namespace LBoLMod.Utils
                     se.Preserved = true;
                 }
             }
-        }
-
-        public static bool IsHaniwaFulfilled<T>(PlayerUnit player) where T : ModHaniwaStatusEffect
-        {
-            if (player.HasStatusEffect<T>())
-                return true;
-            if (player.HasStatusEffect<Dexterity>())
-                return true;
-            return false;
-        }
-
-        public static BattleAction RemoveDexterityIfNeeded<T>(PlayerUnit player, int requiredLevel = 1) where T : ModHaniwaStatusEffect
-        {
-            if (!player.HasStatusEffect<Dexterity>())
-                return null;
-            if (player.HasStatusEffect<T>())
-            {
-                var se = player.GetStatusEffect<T>();
-                if (se.Level >= requiredLevel)
-                    return null;
-            }
-            var dex = player.GetStatusEffect<Dexterity>();
-            if (dex.Level > 1)
-            {
-                dex.Level -= 1;
-                return null;
-            }
-            return new RemoveStatusEffectAction(dex);
         }
 
         public static int TotalHaniwaLevel(PlayerUnit player)

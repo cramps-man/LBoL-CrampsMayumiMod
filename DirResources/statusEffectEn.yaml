@@ -1,11 +1,11 @@
 Haniwa:
   Name: Haniwa
   Description:  |-
-    A buff that represents the level of Haniwa Troops (max lvl 10). 
+    A buff that represents the level of Haniwa Troops (max lvl 10 each type). 
     The 3 types of Haniwa are Fencer, Archer and Cavalry. 
     They can be used for various card effects. 
   Brief: |-
-    A buff that represents the level of Haniwa Troops (max lvl 10). 
+    A buff that represents the level of Haniwa Troops (max lvl 10 each type). 
     The 3 types of Haniwa are Fencer, Archer and Cavalry. 
     They can be used for various card effects. 
 
@@ -50,31 +50,12 @@ Assign:
   Name: Assign X
   Description: |-
     Requires X level of the specific Haniwa. 
-    For a duration, lose X level of Haniwa, then gain them back after. 
-    Note: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
+    Lose X level of Haniwa, then regain them after a certain number of cards are played. 
+    |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
   Brief: |-
     Requires X level of the specific Haniwa. 
-    For a duration, lose X level of Haniwa, then gain them back after. 
-    Note: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
-
-Downtime:
-  Name: Downtime
-  Description: Prevents gaining new |Stances| or leveling existing ones. 
-  Brief: Prevents gaining new |Stances| or leveling existing ones. 
-
-Dexterity:
-  Name: Dexterity
-  Description: Bypass the next few |Stance| requirements.
-  Brief: Bypass the next few |Stance| requirements.
-
-Preserve:
-  Name: Preserve Stance
-  Description: |-
-    When a |Stance| is |Preserved|, it can't be removed or lose level. At start of turn lose |Preserve|. 
-    Marked on the status icon with "KEEP". 
-  Brief: |-
-    When a |Stance| is |Preserved|, it can't be removed or lose level. At start of turn lose |Preserve|. 
-    Marked on the status icon with "KEEP". 
+    Lose X level of Haniwa, then regain them after a certain number of cards are played. 
+    |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
 
 AssignArcherPrepVolley:
   Name: Archer Prep Volley

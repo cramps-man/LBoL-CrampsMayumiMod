@@ -5,7 +5,6 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.StatusEffects.Stances;
 using System.Collections.Generic;
 /*
 namespace LBoLMod.Cards
