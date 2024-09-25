@@ -138,6 +138,12 @@ BuildWatchtower:
     After {Value2} cards are played, gain |Watchtower| {Value1}. 
     If a |Watchtower| is already built, instead no |Haniwa| are required and add a |Garrison Archer| to the hand. 
 
+GarrisonArcher:
+  Name: Garrison Archer
+  Description: |-
+    |Sacrifice {ArcherSacrificed} Archer|. 
+    Gain {Value1} |Watchtower|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

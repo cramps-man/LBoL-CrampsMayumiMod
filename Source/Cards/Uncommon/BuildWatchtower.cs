@@ -2,6 +2,7 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -36,6 +37,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue2 = 10;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Sacrifice), nameof(Watchtower) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Sacrifice), nameof(Watchtower) };
+            cardConfig.RelativeCards = new List<string>() { nameof(GarrisonArcher) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(GarrisonArcher) };
             return cardConfig;
         }
     }
@@ -71,7 +74,7 @@ namespace LBoLMod.Cards
                 };
             }
             else
-                yield break;//add archer garrison
+                yield return new AddCardsToHandAction(Library.CreateCard<GarrisonArcher>());
         }
     }
 }
