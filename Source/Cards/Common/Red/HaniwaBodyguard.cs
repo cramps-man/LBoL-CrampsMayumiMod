@@ -9,7 +9,6 @@ using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Source.Cards;
-using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
 
@@ -33,8 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Weak), nameof(Sacrifice) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Weak), nameof(Sacrifice) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Weak) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Weak) };
             return cardConfig;
         }
     }

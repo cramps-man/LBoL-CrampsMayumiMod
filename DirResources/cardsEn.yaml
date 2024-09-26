@@ -60,7 +60,7 @@ DefenceSummon:
   Name: Defence Summon
   Description: |-
     Gain {Block} |Block|.
-    Choose up to {Value1} card{Value1:plural one='' other='s'} of {Value2} and add them to the hand. 
+    Choose up to {Value1} of {Value2} cards and add them to the hand. 
 
 ExileCreateReserves:
   Name: Exile Create Reserves
@@ -129,6 +129,12 @@ AttackCreateReserves:
   Description: |-
     Deal {Damage} damage. 
     Add {Value1} |Create Haniwa| to the hand. 
+
+HaniwaAttacker:
+  Name: Haniwa Attacker
+  Description: |-
+    |While in hand at end of turn|: Deal {Value1} damage to the enemy with the lowest life. 
+    |When played|: Apply {Value2} |Vulnerable|. 
 
 #UNCOMMONS
 BuildWatchtower:

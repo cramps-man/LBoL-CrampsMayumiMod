@@ -31,7 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedBlock = 14;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Value2 = 2;
+            cardConfig.Value2 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;
@@ -44,7 +44,8 @@ namespace LBoLMod.Cards
         public readonly List<Type> summonTypes = new List<Type>
         {
             typeof(HaniwaBodyguard),
-            typeof(SupportFront)
+            typeof(SupportFront),
+            typeof(HaniwaAttacker)
         };
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
