@@ -60,7 +60,7 @@ DefenceSummon:
   Name: Defence Summon
   Description: |-
     Gain {Block} |Block|.
-    Choose up to {Value1} of {Value2} cards and add them to the hand. 
+    Choose up to {Value1} of {Value2} |Frontline| cards and add them to the hand. 
 
 ExileCreateReserves:
   Name: Exile Create Reserves
@@ -133,7 +133,7 @@ AttackCreateReserves:
 HaniwaAttacker:
   Name: Haniwa Attacker
   Description: |-
-    |While in hand at end of turn|: Deal {Value1} damage to the enemy with the lowest life. 
+    |While in hand|: At end of turn, deal {Value1} damage to the enemy with the lowest life. 
     |When played|: Apply {Value2} |Vulnerable|. 
 
 HaniwaDistraction:
@@ -145,6 +145,11 @@ HaniwaDistraction:
   NonbattleDescription: |-
     |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
     |When played|: Deal {Damage} damage. 
+
+SummonHaniwa:
+  Name: Summon Haniwa
+  Description: |-
+    Choose {Value2} Common |Frontline| card and add {Value1} cop{Value1:plural one='y' other='ies'} to the hand. 
 
 #UNCOMMONS
 BuildWatchtower:

@@ -57,6 +57,13 @@ Assign:
     Lose X level of Haniwa, then regain them after a certain number of cards are played. 
     |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
 
+Frontline:
+  Name: Frontline
+  Description: |-
+    A type of card that gives various effects while in your hand. Can also be played for a separate effect, but exiles itself. 
+  Brief: |-
+    A type of card that gives various effects while in your hand. Can also be played for a separate effect, but exiles itself. 
+
 AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-

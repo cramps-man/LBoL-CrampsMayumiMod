@@ -32,6 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Exile | Keyword.Accuracy;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile | Keyword.Accuracy;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Graze) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Graze) };
             return cardConfig;
         }
     }

@@ -14,32 +14,31 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class DefenceSummonDef : ModCardTemplate
+    public sealed class SummonHaniwaDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(DefenceSummon);
+            return nameof(SummonHaniwa);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            cardConfig.Type = CardType.Defense;
+            cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Any = 1, Red = 1 };
-            cardConfig.Block = 10;
-            cardConfig.UpgradedBlock = 14;
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
-            cardConfig.Value2 = 3;
+            cardConfig.Cost = new ManaGroup() { Red = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(DefenceSummonDef))]
-    public sealed class DefenceSummon : Card
+    [EntityLogic(typeof(SummonHaniwaDef))]
+    public sealed class SummonHaniwa : Card
     {
         public readonly List<Type> summonTypes = new List<Type>
         {
@@ -50,21 +49,19 @@ namespace LBoLMod.Cards
         };
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return DefenseAction();
-
             List<Card> list = new List<Card>();
             summonTypes.Shuffle(base.GameRun.BattleCardRng);
-            for (int i = 0; i < base.Value2; i++)
+            for (int i = 0; i < summonTypes.Count; i++)
             {
                 list.Add(Library.CreateCard(summonTypes[i]));
             }
 
-            SelectCardInteraction interaction = new SelectCardInteraction(1, base.Value1, list)
+            SelectCardInteraction interaction = new SelectCardInteraction(Value2, Value2, list)
             {
                 Source = this
             };
             yield return new InteractionAction(interaction);
-            yield return new AddCardsToHandAction(interaction.SelectedCards);
+            yield return new AddCardsToHandAction(interaction.SelectedCards[0].Clone(Value1));
         }
     }
 }
