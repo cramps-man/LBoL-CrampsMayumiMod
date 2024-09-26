@@ -46,7 +46,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(BuildWatchtowerDef))]
     public sealed class BuildWatchtower : ModAssignCard
     {
-        public override int FencerRequired => 3;
+        public override int FencerAssigned => 3;
         public int SacrificeArcherRequired => 2;
         public override int StartingCardCounter => Value2;
         public override Type AssignStatusType => typeof(AssignBuildWatchtower);

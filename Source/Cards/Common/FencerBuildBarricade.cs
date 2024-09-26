@@ -37,7 +37,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FencerBuildBarricadeDef))]
     public sealed class FencerBuildBarricade : ModAssignCard
     {
-        public override int FencerRequired => 2;
+        public override int FencerAssigned => 2;
         public override int StartingCardCounter => Value2;
         public override Type AssignStatusType => typeof(AssignFencerBuildBarricade);
     }

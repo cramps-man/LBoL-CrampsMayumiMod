@@ -15,9 +15,9 @@ namespace LBoLMod.StatusEffects
     public abstract class ModAssignStatusEffect: StatusEffect
     {
         protected ModAssignCard AssignSourceCard { get; set; }
-        protected int CardFencerRequired => AssignSourceCard.FencerRequired;
-        protected int CardArcherRequired => AssignSourceCard.ArcherRequired;
-        protected int CardCavalryRequired => AssignSourceCard.CavalryRequired;
+        protected int CardFencerRequired => AssignSourceCard.FencerAssigned;
+        protected int CardArcherRequired => AssignSourceCard.ArcherAssigned;
+        protected int CardCavalryRequired => AssignSourceCard.CavalryAssigned;
         protected int StartingCardCounter => AssignSourceCard.StartingCardCounter;
         protected DamageInfo CardDamage => AssignSourceCard.Damage;
         protected int CardShield => AssignSourceCard.RawShield;
