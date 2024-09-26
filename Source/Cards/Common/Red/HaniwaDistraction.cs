@@ -24,12 +24,14 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
-            cardConfig.TargetType = TargetType.Self;
+            cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Damage = 8;
+            cardConfig.UpgradedDamage = 11;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Exile | Keyword.Accuracy;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile | Keyword.Accuracy;
             return cardConfig;
         }
     }
@@ -73,14 +75,14 @@ namespace LBoLMod.Cards
             dmgInfo.Damage = DamageBypassAccurate;
             dmgInfo.IsGrazed = false;
             dmgInfo.IsAccuracy = true;
-            args.DamageInfo = dmgInfo;
+            args.DamageInfo = args.Target.MeasureDamage(dmgInfo);
             RemainingValue -= 1;
             base.NotifyChanged();
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield break;
+            yield return AttackAction(selector);
         }
     }
 }
