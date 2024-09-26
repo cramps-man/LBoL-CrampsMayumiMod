@@ -52,6 +52,8 @@ namespace LBoLMod.Cards
         {
             if (base.Zone != CardZone.Hand)
                 return;
+            if (RemainingValue <= 0)
+                return;
             
             var damageInfo = args.DamageInfo;
             if (damageInfo.DamageType == DamageType.Attack || damageInfo.DamageType == DamageType.Reaction)

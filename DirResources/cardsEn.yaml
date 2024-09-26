@@ -77,7 +77,7 @@ FencerKamikaze:
 ArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    |Assign {ArcherRequired} Archer|.
+    |Assign {ArcherAssigned} Archer|.
     After {Value2} cards are played, deal {Damage} damage {Value1} times to random enemies. 
 
 CavalrySwift:
@@ -89,7 +89,7 @@ CavalrySwift:
 CavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
-    |Assign {CavalryRequired} Cavalry|. 
+    |Assign {CavalryAssigned} Cavalry|. 
     After {Value1} cards are played, gain {Mana}. 
 
 HaniwaBodyguard:
@@ -114,7 +114,7 @@ SupportFront:
 FencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
-    |Assign {FencerRequired} Fencer|.
+    |Assign {FencerAssigned} Fencer|.
     After {Value2} cards are played, gain {Shield} |Barrier|. 
 
 CavalryRush:
@@ -135,6 +135,16 @@ HaniwaAttacker:
   Description: |-
     |While in hand at end of turn|: Deal {Value1} damage to the enemy with the lowest life. 
     |When played|: Apply {Value2} |Vulnerable|. 
+
+HaniwaDistraction:
+  Name: Haniwa Distraction
+  Description: |-
+    |While in hand|: If an enemy were to |Graze| your next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
+    {RemainingValue} instance{RemainingValue:plural one='' other='s'} remaining. 
+    |When played|: Gain . 
+  NonbattleDescription: |-
+    |While in hand|: If an enemy were to |Graze| your next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
+    |When played|: Gain . 
 
 #UNCOMMONS
 BuildWatchtower:

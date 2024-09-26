@@ -45,7 +45,8 @@ namespace LBoLMod.Cards
         {
             typeof(HaniwaBodyguard),
             typeof(SupportFront),
-            typeof(HaniwaAttacker)
+            typeof(HaniwaAttacker),
+            typeof(HaniwaDistraction)
         };
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
