@@ -155,7 +155,7 @@ SummonHaniwa:
 BuildWatchtower:
   Name: Build Watchtower
   Description: |-
-    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. Unusable if a |Watchtower| is building. 
+    |Assign {FencerAssigned} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. Unusable if a |Watchtower| is building. 
     After {Value2} cards are played, gain |Watchtower| {Value1}. 
     If a |Watchtower| is already built, instead no |Haniwa| are required and add a |Garrison Archer| to the hand. 
 
