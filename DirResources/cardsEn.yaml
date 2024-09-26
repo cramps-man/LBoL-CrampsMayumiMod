@@ -56,11 +56,11 @@ CreateFencer:
     Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
     Gain {Block} |Block|.
 
-FencerGuard:
-  Name: Fencer Guard
+DefenceSummon:
+  Name: Defence Summon
   Description: |-
     Gain {Block} |Block|.
-    |Require {FencerRequired} Fencer|: Also gain {Shield} |Barrier|.
+    Choose up to {Value1} card{Value1:plural one='' other='s'} of {Value2} and add them to the hand. 
 
 ExileCreateReserves:
   Name: Exile Create Reserves

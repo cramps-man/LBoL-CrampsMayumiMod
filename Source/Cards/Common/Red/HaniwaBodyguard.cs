@@ -27,7 +27,7 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 4;
             cardConfig.UpgradedValue1 = 6;
             cardConfig.Value2 = 1;
