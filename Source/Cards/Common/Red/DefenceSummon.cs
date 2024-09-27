@@ -65,9 +65,7 @@ namespace LBoLMod.Cards
                     continue;
 
                 foreach (BattleAction battleAction in optionCard.TakeEffectActions())
-                {
                     yield return battleAction;
-                }
             }
 
             yield return DefenseAction();

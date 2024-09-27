@@ -9,8 +9,6 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Source.Utils;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -41,7 +39,6 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(SummonHaniwaDef))]
     public sealed class SummonHaniwa : Card
     {
-        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
         public override Interaction Precondition()
         {
             List<Card> cards = new List<Card>();
@@ -57,21 +54,15 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            Console.WriteLine("We in");
             if (!(precondition is MiniSelectCardInteraction interaction))
                 yield break;
 
-            Console.WriteLine("Options");
             OptionCard optionCard = interaction.SelectedCard as OptionCard;
             if (optionCard == null)
                 yield break;
 
-            Console.WriteLine("Not null");
             foreach (BattleAction battleAction in optionCard.TakeEffectActions())
-            {
-                Console.WriteLine("ACTION");
                 yield return battleAction;
-            }
         }
     }
 }

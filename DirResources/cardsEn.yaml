@@ -63,8 +63,8 @@ DefenceSummon:
     Choose up to {Value1} of {Value2} |Frontline| cards and add them to the hand. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
-    If there are none of a type of |Haniwa|, the options that require it won't show up. 
-    If there are no Haniwa, none will show up. 
+    If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+    If there are no |Haniwa|, none will show up. 
 
 ExileCreateReserves:
   Name: Exile Create Reserves
@@ -156,8 +156,8 @@ SummonHaniwa:
     Choose {Value2} Common |Frontline| card and add {Value1} cop{Value1:plural one='y' other='ies'} to the hand. 
     |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
-    Requires atleast |e:1| |Haniwa| to play. 
-    If there are none of a type of |Haniwa|, the options that require it won't show up. 
+    If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+    If there are no |Haniwa|, none will show up. 
 
 OptionHaniwaAttacker:
   Name: Summon Haniwa Attacker
