@@ -11,7 +11,6 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Source.Utils;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -43,7 +42,6 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(DefenceSummonDef))]
     public sealed class DefenceSummon : Card
     {
-        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             List<Card> cards = new List<Card>();
@@ -55,7 +53,8 @@ namespace LBoLMod.Cards
                     cards.Add(c);
             }
             cards.Shuffle(base.BattleRng);
-            cards.RemoveRange(Value2, cards.Count - Value2);
+            if (cards.Count > Value2)
+                cards.RemoveRange(Value2, cards.Count - Value2);
             var selectInteraction = new SelectCardInteraction(0, Value1, cards);
             yield return new InteractionAction(selectInteraction);
 

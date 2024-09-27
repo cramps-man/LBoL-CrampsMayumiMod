@@ -12,7 +12,7 @@ namespace LBoLMod.Source.Patches
         {
             if (__instance._statusEffect is ModHaniwaStatusEffect modStanceStatusEffect)
             {
-                var textTransform = __instance.CenterWorldPosition;
+                /*var textTransform = __instance.CenterWorldPosition;
                 if (modStanceStatusEffect.Preserved)
                 {
                     __instance.upText.text = "KEEP";
@@ -24,7 +24,7 @@ namespace LBoLMod.Source.Patches
                 __instance.downText.fontSize = 32;
                 __instance.downText.transform.localPosition = new Vector3(textTransform.x + 34, textTransform.y - 89, textTransform.z);
                 __instance.downText.autoSizeTextContainer = true;
-                __instance.downText.enableAutoSizing = false;
+                __instance.downText.enableAutoSizing = false;*/
             }
             else if (__instance._statusEffect is ModAssignStatusEffect modAssignStatusEffect)
             {
