@@ -4,6 +4,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.EntityLib.Cards;
 using LBoLMod.BattleActions;
+using LBoLMod.StatusEffects;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,9 @@ namespace LBoLMod.Cards
 {
     public abstract class ModFrontlineOptionCard: OptionCard
     {
+        public int AvailableFencer => HaniwaUtils.GetHaniwaLevel<FencerHaniwa>(base.Battle.Player);
+        public int AvailableArcher => HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
+        public int AvailableCavalry => HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
         public virtual int SelectRequireFencer => 0;
         public virtual int SelectRequireArcher => 0;
         public virtual int SelectRequireCavalry => 0;

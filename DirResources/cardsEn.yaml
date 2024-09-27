@@ -164,24 +164,28 @@ OptionHaniwaAttacker:
   Description: |-
     Sacrifice {SelectRequireFencer} |Fencer|.
     Add a |Haniwa Attacker| to the hand. 
+    {AvailableFencer} available |Fencer|. 
 
 OptionHaniwaBodyguard:
   Name: Summon Haniwa Bodyguard
   Description: |-
     Sacrifice {SelectRequireFencer} |Fencer|.
     Add a |Haniwa Bodyguard| to the hand. 
+    {AvailableFencer} available |Fencer|. 
 
 OptionHaniwaDistraction:
   Name: Summon Haniwa Distraction
   Description: |-
     Sacrifice {SelectRequireArcher} |Archer|.
     Add a |Haniwa Distraction| to the hand. 
+    {AvailableArcher} available |Fencer|. 
 
 OptionHaniwaSupport:
   Name: Summon Haniwa Support
   Description: |-
     Sacrifice {SelectRequireCavalry} |Cavlary|.
     Add a |Haniwa Support| to the hand. 
+    {AvailableCavalry} available |Fencer|. 
 
 #UNCOMMONS
 BuildWatchtower:
