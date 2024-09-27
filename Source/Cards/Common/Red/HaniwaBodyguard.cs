@@ -23,6 +23,7 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };

@@ -8,4 +8,4 @@ ExhibitB:
   Name: BBBBBB
   Description: |-
     At start of combat, gain {Value1} of each |Haniwa|. 
-    |Sacrificing| |Haniwa| costs {Value2} less. 
+    Max hand size becomes {Value3}.

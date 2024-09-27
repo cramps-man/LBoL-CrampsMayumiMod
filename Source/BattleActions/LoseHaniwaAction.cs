@@ -53,8 +53,9 @@ namespace LBoLMod.BattleActions
             var player = base.Battle.Player;
             if (!player.HasStatusEffect<T>())
                 return;
-            if (args.HaniwaActionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
-                levelToLose = Math.Max(levelToLose - 1, 0);
+            //move this to an ability, which ill make later
+            /*if (args.HaniwaActionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
+                levelToLose = Math.Max(levelToLose - 1, 0);*/
 
             var se = player.GetStatusEffect<T>();
             if (se.Level > levelToLose)

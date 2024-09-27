@@ -108,8 +108,9 @@ namespace LBoLMod.Utils
                 return true;
             if (!player.HasStatusEffect(haniwaType))
                 return false;
-            if (actionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
-                requiredLevel = Math.Max(requiredLevel - 1, 0);
+            //move this to an ability, which ill make later
+            /*if (actionType == HaniwaActionType.Sacrifice && player.HasExhibit<ExhibitB>())
+                requiredLevel = Math.Max(requiredLevel - 1, 0);*/
 
             var se = player.GetStatusEffect(haniwaType);
             return se.Level >= requiredLevel;

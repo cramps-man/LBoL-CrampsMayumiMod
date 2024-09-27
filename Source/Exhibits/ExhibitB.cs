@@ -46,8 +46,8 @@ namespace LBoLMod.Exhibits
                 LosableType: ExhibitLosableType.DebutLosable,
                 Rarity: Rarity.Shining,
                 Value1: 3,
-                Value2: 1,
-                Value3: null,
+                Value2: null,
+                Value3: 12,
                 Mana: new ManaGroup() { Red = 1 },
                 BaseManaRequirement: null,
                 BaseManaColor: ManaColor.Red,
@@ -55,7 +55,7 @@ namespace LBoLMod.Exhibits
                 HasCounter: false,
                 InitialCounter: null,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(Haniwa), nameof(Sacrifice) },
+                RelativeEffects: new List<string>() { nameof(Haniwa) },
                 RelativeCards: new List<string>() { }
             );
 
@@ -67,6 +67,7 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
+            base.Battle.MaxHand = Value3;
             base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
         }
 
