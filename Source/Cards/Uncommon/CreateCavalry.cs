@@ -33,6 +33,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 5;
             cardConfig.Value2 = 1;
             cardConfig.UpgradedValue2 = 2;
+            cardConfig.Keywords = Keyword.Scry;
+            cardConfig.UpgradedKeywords = Keyword.Scry;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;

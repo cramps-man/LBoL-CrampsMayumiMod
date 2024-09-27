@@ -41,8 +41,13 @@ WeakeningShot:
 CreateArcher:
   Name: Create Archer
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer|. 
     Deal {Damage} damage.
+    Gain effects based on |Archer| level. 
+    |3|: Apply |e:1| |Weak|. 
+    |5|: Apply |e:1| |Vulnerable|. 
+    |7|: Apply |e:5| |Poison|. 
+    |10|: Become |Accurate|. 
 
 CreateCavalry:
   Name: Create Cavalry
