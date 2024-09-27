@@ -61,6 +61,7 @@ DefenceSummon:
   Description: |-
     Gain {Block} |Block|.
     Choose up to {Value1} of {Value2} |Frontline| cards and add them to the hand. 
+    |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
 
 ExileCreateReserves:
   Name: Exile Create Reserves
@@ -101,8 +102,8 @@ HaniwaBodyguard:
     |While in hand|: Reduce up to {Value1} damage recieved per turn. 
     |When played|: Apply {Value2} |Weak|. 
 
-SupportFront:
-  Name: Frontal Support
+HaniwaSupport:
+  Name: Haniwa Support
   Description: |-
     |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     {RemainingValue} draw{RemainingValue:plural one='' other='s'} remaining. 
@@ -150,6 +151,31 @@ SummonHaniwa:
   Name: Summon Haniwa
   Description: |-
     Choose {Value2} Common |Frontline| card and add {Value1} cop{Value1:plural one='y' other='ies'} to the hand. 
+    |Sacrifice Haniwa| depending on the chosen card. 
+
+OptionHaniwaAttacker:
+  Name: Summon Haniwa Attacker
+  Description: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Attacker| to the hand. 
+
+OptionHaniwaBodyguard:
+  Name: Summon Haniwa Bodyguard
+  Description: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Bodyguard| to the hand. 
+
+OptionHaniwaDistraction:
+  Name: Summon Haniwa Distraction
+  Description: |-
+    Sacrifice {SelectRequireArcher} |Archer|.
+    Add a |Haniwa Distraction| to the hand. 
+
+OptionHaniwaSupport:
+  Name: Summon Haniwa Support
+  Description: |-
+    Sacrifice {SelectRequireCavalry} |Cavlary|.
+    Add a |Haniwa Support| to the hand. 
 
 #UNCOMMONS
 BuildWatchtower:

@@ -5,7 +5,7 @@ using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
-using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -25,8 +25,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
-            cardConfig.RelativeEffects = new List<string>() { nameof(FencerHaniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(FencerHaniwa) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;
         }
     }

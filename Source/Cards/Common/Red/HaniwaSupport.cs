@@ -6,16 +6,15 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.Cards;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class SupportFrontDef : ModCardTemplate
+    public sealed class HaniwaSupportDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(SupportFront);
+            return nameof(HaniwaSupport);
         }
 
         public override CardConfig MakeConfig()
@@ -34,8 +33,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(SupportFrontDef))]
-    public sealed class SupportFront : ModFrontlineCard
+    [EntityLogic(typeof(HaniwaSupportDef))]
+    public sealed class HaniwaSupport : ModFrontlineCard
     {
         protected override void OnEnterBattle(BattleController battle)
         {

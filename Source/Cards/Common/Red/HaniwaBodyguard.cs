@@ -8,7 +8,6 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.Cards;
 using System;
 using System.Collections.Generic;
 

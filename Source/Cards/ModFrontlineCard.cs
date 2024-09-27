@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LBoLMod.Source.Cards
+namespace LBoLMod.Cards
 {
     public abstract class ModFrontlineCard: Card
     {

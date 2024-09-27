@@ -1,14 +1,15 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
+using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Source.Utils;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
 
@@ -40,28 +41,37 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(SummonHaniwaDef))]
     public sealed class SummonHaniwa : Card
     {
-        public readonly List<Type> summonTypes = new List<Type>
+        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
+        public override Interaction Precondition()
         {
-            typeof(HaniwaBodyguard),
-            typeof(SupportFront),
-            typeof(HaniwaAttacker),
-            typeof(HaniwaDistraction)
-        };
+            List<Card> cards = new List<Card>();
+            foreach (var type in HaniwaFrontlineUtils.CommonSummonTypes)
+            {
+                var c = Library.CreateCard(type) as ModFrontlineOptionCard;
+                c.SetBattle(base.Battle);
+                c.NumberToSpawn = Value1;
+                if (c.FulfilsRequirement)
+                    cards.Add(c);
+            }
+            return new MiniSelectCardInteraction(cards);
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            List<Card> list = new List<Card>();
-            summonTypes.Shuffle(base.GameRun.BattleCardRng);
-            for (int i = 0; i < summonTypes.Count; i++)
-            {
-                list.Add(Library.CreateCard(summonTypes[i]));
-            }
+            Console.WriteLine("We in");
+            if (!(precondition is MiniSelectCardInteraction interaction))
+                yield break;
 
-            SelectCardInteraction interaction = new SelectCardInteraction(Value2, Value2, list)
+            Console.WriteLine("Options");
+            OptionCard optionCard = interaction.SelectedCard as OptionCard;
+            if (optionCard == null)
+                yield break;
+
+            Console.WriteLine("Not null");
+            foreach (BattleAction battleAction in optionCard.TakeEffectActions())
             {
-                Source = this
-            };
-            yield return new InteractionAction(interaction);
-            yield return new AddCardsToHandAction(interaction.SelectedCards[0].Clone(Value1));
+                Console.WriteLine("ACTION");
+                yield return battleAction;
+            }
         }
     }
 }

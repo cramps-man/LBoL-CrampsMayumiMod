@@ -121,5 +121,12 @@ namespace LBoLMod.Utils
                 return 0;
             return player.GetStatusEffect<T>().Level;
         }
+
+        public static bool HasAnyHaniwa(PlayerUnit player)
+        {
+            return GetHaniwaLevel<FencerHaniwa>(player) > 0
+                || GetHaniwaLevel<ArcherHaniwa>(player) > 0
+                || GetHaniwaLevel<CavalryHaniwa>(player) > 0;
+        }
     }
 }
