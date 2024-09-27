@@ -6,7 +6,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
-using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 5;
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(ArcherHaniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(ArcherHaniwa) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;
         }
     }

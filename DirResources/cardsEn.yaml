@@ -47,14 +47,15 @@ CreateArcher:
 CreateCavalry:
   Name: Create Cavalry
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
+    |Scry| |e:1| for each level of |Cavalry|. 
     Draw {Value2} card{Value2:plural one='' other='s'}.
 
 CreateFencer:
   Name: Create Fencer
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
-    Gain {Block} |Block|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer|.
+    Gain {Value2} |Block| for every current |Fencer| available. 
 
 DefenceSummon:
   Name: Defence Summon
