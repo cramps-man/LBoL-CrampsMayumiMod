@@ -2,13 +2,15 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
-using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.Source.Utils;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -57,12 +59,12 @@ namespace LBoLMod.Cards
             if (!(precondition is MiniSelectCardInteraction interaction))
                 yield break;
 
-            OptionCard optionCard = interaction.SelectedCard as OptionCard;
+            ModFrontlineOptionCard optionCard = interaction.SelectedCard as ModFrontlineOptionCard;
             if (optionCard == null)
                 yield break;
 
-            foreach (BattleAction battleAction in optionCard.TakeEffectActions())
-                yield return battleAction;
+            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, optionCard.SelectRequireFencer, optionCard.SelectRequireArcher, optionCard.SelectRequireCavalry);
+            yield return new AddCardsToHandAction(optionCard.GetCardsToSpawn());
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public abstract class ModFrontlineOptionCard: OptionCard
+    public abstract class ModFrontlineOptionCard: Card
     {
         public int AvailableFencer => HaniwaUtils.GetHaniwaLevel<FencerHaniwa>(base.Battle.Player);
         public int AvailableArcher => HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
@@ -24,13 +24,12 @@ namespace LBoLMod.Cards
         public int NumberToSpawn { get; set; } = 1;
         public bool FulfilsRequirement => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Sacrifice, SelectRequireFencer, SelectRequireArcher, SelectRequireCavalry);
 
-        public override IEnumerable<BattleAction> TakeEffectActions()
+        public List<Card> GetCardsToSpawn()
         {
-            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, SelectRequireFencer, SelectRequireArcher, SelectRequireCavalry);
             List<Card> cards = new List<Card>();
             foreach (var i in Enumerable.Range(0, NumberToSpawn))
                 cards.Add(Library.CreateCard(CardTypeToSpawn));
-            yield return new AddCardsToHandAction(cards);
+            return cards;
         }
     }
 }

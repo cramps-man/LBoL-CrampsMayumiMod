@@ -6,11 +6,12 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
-using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.Source.Utils;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -58,15 +59,23 @@ namespace LBoLMod.Cards
             var selectInteraction = new SelectCardInteraction(0, Value1, cards);
             yield return new InteractionAction(selectInteraction);
 
+            int totalFencerCost = 0;
+            int totalArcherCost = 0;
+            int totalCavalryCost = 0;
+            List<Card> cardsToSpawn = new List<Card>();
             foreach (var card in selectInteraction.SelectedCards)
             {
-                OptionCard optionCard = card as OptionCard;
+                ModFrontlineOptionCard optionCard = card as ModFrontlineOptionCard;
                 if (optionCard == null)
                     continue;
 
-                foreach (BattleAction battleAction in optionCard.TakeEffectActions())
-                    yield return battleAction;
+                totalFencerCost += optionCard.SelectRequireFencer;
+                totalArcherCost += optionCard.SelectRequireArcher;
+                totalCavalryCost += optionCard.SelectRequireCavalry;
+                cardsToSpawn.AddRange(optionCard.GetCardsToSpawn());
             }
+            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, totalFencerCost, totalArcherCost, totalCavalryCost);
+            yield return new AddCardsToHandAction(cardsToSpawn);
 
             yield return DefenseAction();
         }
