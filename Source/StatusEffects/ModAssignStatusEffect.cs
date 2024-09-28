@@ -28,11 +28,23 @@ namespace LBoLMod.StatusEffects
         {
             if (SourceCard is ModAssignCard c)
                 AssignSourceCard = c;
-            this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsing, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsing));
             this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
-            base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnEnded, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnEnded));
+            base.HandleOwnerEvent(base.Battle.Player.TurnEnded, this.onPlayerTurnEnded);
             base.ReactOwnerEvent(base.Battle.UsUsed, this.OnUltimateSkillUsed);
+        }
+
+        public void Tickdown(int amount)
+        {
+            if (Count - amount >= 0)
+                Count -= amount;
+            else
+                Count = 0;
+        }
+
+        public void TickdownFull()
+        {
+            Count = 0;
         }
 
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
@@ -44,13 +56,9 @@ namespace LBoLMod.StatusEffects
             return null;
         }
 
-        private IEnumerable<BattleAction> onPlayerTurnEnded(UnitEventArgs args)
+        private void onPlayerTurnEnded(UnitEventArgs args)
         {
-            if (Count <= 3)
-                Count = 0;
-            else
-                Count -= 3;
-            yield break;
+            Tickdown(3);
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)
@@ -62,14 +70,9 @@ namespace LBoLMod.StatusEffects
             return null;
         }
 
-        private IEnumerable<BattleAction> OnCardUsing(CardUsingEventArgs args)
-        {
-            Count--;
-            yield break;
-        }
-
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
+            Tickdown(1);
             if (Count == 0)
             {
                 return AssignTriggering(PlayerHasExhibitA);
@@ -84,9 +87,7 @@ namespace LBoLMod.StatusEffects
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (hasExhibitA)
-            {
                 yield return new DrawCardAction();
-            }
             yield return new GainHaniwaAction(CardFencerRequired, CardArcherRequired, CardCavalryRequired, true);
             yield return new RemoveStatusEffectAction(this);
         }

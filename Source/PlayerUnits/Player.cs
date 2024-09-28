@@ -82,7 +82,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
-                nameof(FencerKamikaze),
+                nameof(SummonHaniwa),
             };
         }
     }

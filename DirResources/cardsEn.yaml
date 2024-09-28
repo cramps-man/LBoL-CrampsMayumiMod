@@ -211,6 +211,14 @@ DiscardFrontline:
     Discard up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. 
     They lose |Exile| and gain |Replenish|. 
 
+AssignTickdown:
+  Name: Assign Tickdown
+  Description: |-
+    Tickdown all |Assign| status effects by {Value1}. 
+  UpgradedDescription: |-
+    Choose an |Assign| status effect and trigger its effect immediately. 
+    Tickdown all |Assign| status effects by {Value1}. 
+
 #UNCOMMONS
 BuildWatchtower:
   Name: Build Watchtower

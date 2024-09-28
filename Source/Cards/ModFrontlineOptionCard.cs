@@ -1,9 +1,5 @@
 ﻿using LBoL.Core;
-using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
-using LBoL.EntityLib.Cards;
-using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.Utils;
 using System;
