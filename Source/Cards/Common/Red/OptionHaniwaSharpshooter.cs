@@ -4,7 +4,7 @@ using System;
 
 namespace LBoLMod.Cards
 {
-    public sealed class OptionHaniwaDistractionDef : ModFrontlineOptionCardTemplate
+    public sealed class OptionHaniwaSharpshooterDef : ModFrontlineOptionCardTemplate
     {
         protected override Type CardTypeToSpawn => typeof(HaniwaSharpshooter);
         public override IdContainer GetId()
@@ -13,7 +13,7 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(OptionHaniwaDistractionDef))]
+    [EntityLogic(typeof(OptionHaniwaSharpshooterDef))]
     public sealed class OptionHaniwaSharpshooter: ModFrontlineOptionCard
     {
         public override int SelectRequireArcher => 1;

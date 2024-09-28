@@ -45,8 +45,8 @@ CreateArcher:
     Deal {Damage} damage.
     Gain effects based on |Archer| level. 
     |3|: Apply |e:1| |Weak|. 
-    |5|: Apply |e:1| |Vulnerable|. 
-    |7|: Apply |e:5| |Poison|. 
+    |5|: Apply |e:2| |Lock On|. 
+    |7|: Apply |e:1| |Vulnerable|. 
     |10|: Become |Accurate|. 
 
 CreateCavalry:
@@ -151,10 +151,10 @@ HaniwaSharpshooter:
   Description: |-
     |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
     {RemainingValue} instance{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Deal {Damage} damage. 
+    |When played|: Apply {Value2} |Lock On|. 
   NonbattleDescription: |-
     |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
-    |When played|: Deal {Damage} damage. 
+    |When played|: Apply {Value2} |Lock On|. 
 
 SummonHaniwa:
   Name: Summon Haniwa

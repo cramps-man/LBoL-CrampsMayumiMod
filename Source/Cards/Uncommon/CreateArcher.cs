@@ -2,10 +2,8 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
-using LBoL.EntityLib.StatusEffects.Others;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -38,8 +36,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
             cardConfig.RelativeKeyword = Keyword.Accuracy;
             cardConfig.UpgradedRelativeKeyword = Keyword.Accuracy;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(Poison) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(Poison) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn) };
             return cardConfig;
         }
     }
@@ -56,15 +54,15 @@ namespace LBoLMod.Cards
                 yield return base.AttackAction(selector, DamageInfo.Attack(RawDamage, true));
             else
                 yield return base.AttackAction(selector);
+            
             if (base.Battle.BattleShouldEnd)
                 yield break;
-
             if (archerCount >= 3)
-                yield return new ApplyStatusEffectAction<Weak>(selector.GetEnemy(base.Battle), duration: 1);
+                yield return DebuffAction<Weak>(selector.GetEnemy(base.Battle), duration: 1);
             if (archerCount >= 5)
-                yield return new ApplyStatusEffectAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: 1);
+                yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), 2);
             if (archerCount >= 7)
-                yield return new ApplyStatusEffectAction<Poison>(selector.GetEnemy(base.Battle), 5);
+                yield return DebuffAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: 1);
         }
     }
 }

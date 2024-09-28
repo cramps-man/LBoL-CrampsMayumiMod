@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class HaniwaDistractionDef : ModCardTemplate
+    public sealed class HaniwaSharpshooterDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
@@ -26,19 +26,19 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 8;
-            cardConfig.UpgradedDamage = 11;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Exile | Keyword.Accuracy;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile | Keyword.Accuracy;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Graze) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Graze) };
+            cardConfig.Value2 = 1;
+            cardConfig.UpgradedValue2 = 2;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Graze), nameof(LockedOn) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Graze), nameof(LockedOn) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(HaniwaDistractionDef))]
+    [EntityLogic(typeof(HaniwaSharpshooterDef))]
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
         public int DamageBypassAccurate { get; set; } = 0;
@@ -84,7 +84,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return AttackAction(selector);
+            yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), Value2);
         }
     }
 }
