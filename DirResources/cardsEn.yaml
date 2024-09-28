@@ -205,6 +205,12 @@ OptionHaniwaSupport:
     Sacrifice {SelectRequireCavalry} |Cavlary|.
     Add a |Haniwa Support| to the hand. 
 
+DiscardFrontline:
+  Name: Discard Frontline
+  Description: |-
+    Discard up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. 
+    They lose |Exile| and gain |Replenish|. 
+
 #UNCOMMONS
 BuildWatchtower:
   Name: Build Watchtower
