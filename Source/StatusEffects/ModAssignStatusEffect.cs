@@ -51,7 +51,7 @@ namespace LBoLMod.StatusEffects
         {
             if (args.Us is UltimateSkillA)
             {
-                return AssignTriggering(PlayerHasExhibitA);
+                return AssignTriggering(false, PlayerHasExhibitA);
             }
             return null;
         }
@@ -65,25 +65,26 @@ namespace LBoLMod.StatusEffects
         {
             if (Count == 0)
             {
-                return AssignTriggering(false);
+                return AssignTriggering(true, false);
             }
             return null;
         }
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
-            Tickdown(1);
+            if (args.Card != AssignSourceCard)
+                Tickdown(1);
             if (Count == 0)
             {
-                return AssignTriggering(PlayerHasExhibitA);
+                return AssignTriggering(false, PlayerHasExhibitA);
             }
             return null;
         }
 
-        private IEnumerable<BattleAction> AssignTriggering(bool hasExhibitA)
+        private IEnumerable<BattleAction> AssignTriggering(bool onTurnStart, bool hasExhibitA)
         {
             this.NotifyActivating();
-            yield return new AssignTriggerAction(OnAssignmentDone());
+            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart));
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (hasExhibitA)
@@ -91,6 +92,6 @@ namespace LBoLMod.StatusEffects
             yield return new GainHaniwaAction(CardFencerRequired, CardArcherRequired, CardCavalryRequired, true);
             yield return new RemoveStatusEffectAction(this);
         }
-        protected abstract IEnumerable<BattleAction> OnAssignmentDone();
+        protected abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
     }
 }

@@ -130,9 +130,9 @@ FencerBuildBarricade:
 CavalryRush:
   Name: Cavalry Rush
   Description: |-
-    |Sacrifice {Value2} Cavalry|.
-    Deal {Damage} damage. 
-    If defeating an enemy with {SelfName}, gain {Mana} and draw {Value1} card{Value1:plural one='' other='s'}. 
+    |Assign {CavalryAssigned} Cavalry|.
+    After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
+    If effect is triggered via playing a card, gain {Mana}. 
 
 AttackCreateReserves:
   Name: Attack Create Reserves

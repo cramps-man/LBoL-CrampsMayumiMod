@@ -26,7 +26,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignBuildWatchtowerDef))]
     public sealed class AssignBuildWatchtower : ModAssignStatusEffect
     {
-        protected override IEnumerable<BattleAction> OnAssignmentDone()
+        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             yield return new ApplyStatusEffectAction<Watchtower>(Owner, CardValue1);
         }

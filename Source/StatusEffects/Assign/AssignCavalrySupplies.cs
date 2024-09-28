@@ -17,7 +17,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignCavalrySuppliesDef))]
     public sealed class AssignCavalrySupplies : ModAssignStatusEffect
     {
-        protected override IEnumerable<BattleAction> OnAssignmentDone()
+        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             yield return new GainManaAction(AssignSourceCard.Mana);
         }

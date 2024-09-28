@@ -17,7 +17,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignArcherPrepVolleyDef))]
     public sealed class AssignArcherPrepVolley : ModAssignStatusEffect
     {
-        protected override IEnumerable<BattleAction> OnAssignmentDone()
+        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             for (int i = 0; i < AssignSourceCard.Value1; i++)
             {
