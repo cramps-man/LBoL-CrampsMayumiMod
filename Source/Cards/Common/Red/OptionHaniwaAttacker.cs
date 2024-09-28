@@ -6,6 +6,7 @@ namespace LBoLMod.Cards
 {
     public sealed class OptionHaniwaAttackerDef : ModFrontlineOptionCardTemplate
     {
+        protected override Type CardTypeToSpawn => typeof(HaniwaAttacker);
         public override IdContainer GetId()
         {
             return nameof(OptionHaniwaAttacker);

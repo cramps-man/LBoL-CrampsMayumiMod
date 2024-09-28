@@ -184,14 +184,14 @@ OptionHaniwaDistraction:
   Description: |-
     Sacrifice {SelectRequireArcher} |Archer|.
     Add a |Haniwa Distraction| to the hand. 
-    {AvailableArcher} available |Fencer|. 
+    {AvailableArcher} available |Archer|. 
 
 OptionHaniwaSupport:
   Name: Summon Haniwa Support
   Description: |-
     Sacrifice {SelectRequireCavalry} |Cavlary|.
     Add a |Haniwa Support| to the hand. 
-    {AvailableCavalry} available |Fencer|. 
+    {AvailableCavalry} available |Cavalry|. 
 
 #UNCOMMONS
 BuildWatchtower:
