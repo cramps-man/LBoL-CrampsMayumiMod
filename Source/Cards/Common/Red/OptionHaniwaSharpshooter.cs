@@ -6,17 +6,17 @@ namespace LBoLMod.Cards
 {
     public sealed class OptionHaniwaDistractionDef : ModFrontlineOptionCardTemplate
     {
-        protected override Type CardTypeToSpawn => typeof(HaniwaDistraction);
+        protected override Type CardTypeToSpawn => typeof(HaniwaSharpshooter);
         public override IdContainer GetId()
         {
-            return nameof(OptionHaniwaDistraction);
+            return nameof(OptionHaniwaSharpshooter);
         }
     }
 
     [EntityLogic(typeof(OptionHaniwaDistractionDef))]
-    public sealed class OptionHaniwaDistraction: ModFrontlineOptionCard
+    public sealed class OptionHaniwaSharpshooter: ModFrontlineOptionCard
     {
         public override int SelectRequireArcher => 1;
-        public override Type CardTypeToSpawn => typeof(HaniwaDistraction);
+        public override Type CardTypeToSpawn => typeof(HaniwaSharpshooter);
     }
 }

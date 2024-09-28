@@ -16,7 +16,7 @@ namespace LBoLMod.Cards
     {
         public override IdContainer GetId()
         {
-            return nameof(HaniwaDistraction);
+            return nameof(HaniwaSharpshooter);
         }
 
         public override CardConfig MakeConfig()
@@ -39,7 +39,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(HaniwaDistractionDef))]
-    public sealed class HaniwaDistraction : ModFrontlineCard
+    public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
         public int DamageBypassAccurate { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)

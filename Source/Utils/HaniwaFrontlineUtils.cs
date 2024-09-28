@@ -16,7 +16,7 @@ namespace LBoLMod.Source.Utils
         {
             typeof(OptionHaniwaAttacker),
             typeof(OptionHaniwaBodyguard),
-            typeof(OptionHaniwaDistraction),
+            typeof(OptionHaniwaSharpshooter),
             typeof(OptionHaniwaSupport)
         };
 
