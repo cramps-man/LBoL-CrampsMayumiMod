@@ -43,15 +43,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = new List<Card>();
-            foreach (var type in HaniwaFrontlineUtils.CommonSummonTypes)
-            {
-                var c = Library.CreateCard(type) as ModFrontlineOptionCard;
-                c.SetBattle(base.Battle);
-                c.NumberToSpawn = Value1;
-                if (c.FulfilsRequirement)
-                    cards.Add(c);
-            }
+            List<Card> cards = HaniwaFrontlineUtils.GetCommonCards(base.Battle, Value1, true);
             return new MiniSelectCardInteraction(cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
