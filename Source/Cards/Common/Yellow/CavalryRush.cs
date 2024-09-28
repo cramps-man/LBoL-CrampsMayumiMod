@@ -22,8 +22,9 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.Nobody;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 14;
-            cardConfig.Value1 = 6;
+            cardConfig.Damage = 12;
+            cardConfig.UpgradedDamage = 17;
+            cardConfig.Value1 = 9;
             cardConfig.UpgradedValue1 = 4;
             cardConfig.Mana = new ManaGroup() { White = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
