@@ -1,6 +1,8 @@
 ﻿using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
+using LBoL.Core.Helpers;
+using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace LBoLMod.Cards
 {
     public abstract class ModFrontlineCard: Card
     {
+        public override string Description => base.Description + UiUtils.WrapByColor(" " + nameof(Frontline), GlobalConfig.DefaultKeywordColor);
         public int RemainingValue { get; set; } = 0;
 
         protected override void OnEnterBattle(BattleController battle)

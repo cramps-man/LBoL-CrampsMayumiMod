@@ -6,6 +6,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -30,6 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.Mana = new ManaGroup() { Red = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
         }
     }

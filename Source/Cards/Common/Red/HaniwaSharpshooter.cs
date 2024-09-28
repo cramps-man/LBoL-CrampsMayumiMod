@@ -8,6 +8,7 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -32,8 +33,10 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue2 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Graze), nameof(LockedOn) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Graze), nameof(LockedOn) };
+            cardConfig.RelativeKeyword = Keyword.Accuracy;
+            cardConfig.UpgradedRelativeKeyword = Keyword.Accuracy;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
             return cardConfig;
         }
     }
