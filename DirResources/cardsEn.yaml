@@ -219,6 +219,11 @@ AssignTickdown:
     Choose an |Assign| status effect and trigger its effect immediately. 
     Tickdown all |Assign| status effects by {Value1}. 
 
+ModAssignOptionCard:
+  Name: Dummy Status Selection
+  Description: |-
+    Dummy card for status effect selection, do not read. 
+
 #UNCOMMONS
 BuildWatchtower:
   Name: Build Watchtower

@@ -29,8 +29,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ModAssignOptionCardDef))]
     public sealed class ModAssignOptionCard: Card
     {
-        public override string Name => CardName;
-        public override string Description => CardText;
+        public override string Name => CardName == "" ? base.Name : CardName;
+        public override string Description => CardText == "" ? base.Description : CardText;
         public ModAssignStatusEffect StatusEffect { get; set; } = null;
 
         public string CardName { get; set; } = "";
