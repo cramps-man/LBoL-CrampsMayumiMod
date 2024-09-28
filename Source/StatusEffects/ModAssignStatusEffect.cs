@@ -23,6 +23,7 @@ namespace LBoLMod.StatusEffects
         protected int CardShield => AssignSourceCard.RawShield;
         protected ManaGroup CardMana => AssignSourceCard.Mana;
         protected int CardValue1 => AssignSourceCard.Value1;
+        protected int CardValue2 => AssignSourceCard.Value2;
         private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
         protected override void OnAdded(Unit unit)
         {

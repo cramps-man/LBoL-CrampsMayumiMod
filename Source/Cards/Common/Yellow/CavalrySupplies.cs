@@ -24,6 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.Value1 = 8;
             cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value2 = 1;
             cardConfig.Mana = new ManaGroup() { White = 1 };
             cardConfig.UpgradedMana = new ManaGroup() { Philosophy = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
