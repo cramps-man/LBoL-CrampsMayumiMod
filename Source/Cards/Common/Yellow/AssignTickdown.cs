@@ -2,10 +2,12 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.Interactions;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
+using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
@@ -36,7 +38,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AssignTickdownDef))]
     public sealed class AssignTickdown : Card
     {
-        public override Interaction Precondition()
+        /*public override Interaction Precondition()
         {
             if (!IsUpgraded)
                 return null;
@@ -51,19 +53,30 @@ namespace LBoLMod.Cards
                 list.Add(c);
             };
             return new MiniSelectCardInteraction(list);
-        }
+        }*/
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (precondition != null)
+            /*if (precondition != null)
             {
                 var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
                 c.StatusEffect.TickdownFull();
-            }
+            }*/
             foreach (ModAssignStatusEffect s in Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect))
             {
                 s.Tickdown(Value1);
             };
             yield break;
+        }
+
+        protected override void OnEnterBattle(BattleController battle)
+        {
+            base.ReactBattleEvent(ModGameEvents.AssignEffectTriggered, this.OnAssignTriggered);
+        }
+
+        private IEnumerable<BattleAction> OnAssignTriggered(AssignTriggerEventArgs args)
+        {
+            if (IsUpgraded && base.Zone == CardZone.Discard)
+                yield return new MoveCardAction(this, CardZone.Hand);
         }
     }
 }

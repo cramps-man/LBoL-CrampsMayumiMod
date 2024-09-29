@@ -218,8 +218,8 @@ AssignTickdown:
   Description: |-
     Tickdown all |Assign| status effects by {Value1}. 
   UpgradedDescription: |-
-    Choose an |Assign| status effect and trigger its effect immediately. 
     Tickdown all |Assign| status effects by {Value1}. 
+    Whenever an |Assign| effect triggers, return {SelfName} from the discard pile to the hand. 
 
 ModAssignOptionCard:
   Name: Dummy Status Selection
