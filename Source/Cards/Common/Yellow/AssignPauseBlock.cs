@@ -49,7 +49,8 @@ namespace LBoLMod.Cards
                 c.CardName = s.Name;
                 c.CardText = s.Description;
                 c.StatusEffect = s;
-                list.Add(c);
+                if (!s.IsPaused)
+                    list.Add(c);
             };
             return new MiniSelectCardInteraction(list);
         }
