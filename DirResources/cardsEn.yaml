@@ -93,8 +93,9 @@ ArcherPrepVolley:
 CavalrySwift:
   Name: Cavalry Swift
   Description: |-
-    Draw {Value1} cards. 
-    |Require {CavalryRequired} Cavalry|: Gain {Value2} |Graze|. 
+    Draw {Value1} card{Value1:plural one='' other='s'}. 
+    |{AssignRequirement} Assign statuses active|: draw |e:1| card.
+    |{FrontlineRequirement} Frontline cards in hand|: draw |e:1| card. 
 
 CavalrySupplies:
   Name: Cavalry Supplies
