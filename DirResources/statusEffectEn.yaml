@@ -64,6 +64,13 @@ Frontline:
   Brief: |-
     A type of card that gives various effects while in your hand. Can also be played for a separate effect, but exiles itself. 
 
+Pause:
+  Name: Pause
+  Description: |-
+    When an |Assign| status is |Paused|, its card played counter will not tick down. 
+  Brief: |- 
+    When an |Assign| status is |Paused|, its card played counter will not tick down. 
+
 AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
@@ -111,3 +118,10 @@ AssignCavalryRush:
     {CardCavalryRequired} |Cavalry| assigned. 
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 
+
+PauseBlock:
+  Name: Pause Block
+  Description: |-
+    At end of {PlayerName}'s turn, gain {Level} |Block| for each |Assign| status effect currently active. 
+  Brief: |-
+    At end of {PlayerName}'s turn, gain |Block| for each |Assign| status effect currently active. 

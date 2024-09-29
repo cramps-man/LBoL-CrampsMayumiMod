@@ -24,6 +24,7 @@ namespace LBoLMod.StatusEffects
         protected ManaGroup CardMana => AssignSourceCard.Mana;
         protected int CardValue1 => AssignSourceCard.Value1;
         protected int CardValue2 => AssignSourceCard.Value2;
+        public bool IsPaused { get; set; } = false;
         private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
         protected override void OnAdded(Unit unit)
         {
@@ -37,6 +38,8 @@ namespace LBoLMod.StatusEffects
 
         public void Tickdown(int amount)
         {
+            if (IsPaused)
+                return;
             if (Count - amount >= 0)
                 Count -= amount;
             else
@@ -60,6 +63,7 @@ namespace LBoLMod.StatusEffects
         private void onPlayerTurnEnded(UnitEventArgs args)
         {
             Tickdown(3);
+            IsPaused = false;
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)

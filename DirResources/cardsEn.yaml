@@ -226,6 +226,12 @@ ModAssignOptionCard:
   Description: |-
     Dummy card for status effect selection, do not read. 
 
+AssignPauseBlock:
+  Name: Assign Pause Block
+  Description: |-
+    Choose an |Assign| status effect and |Pause| it. 
+    At end of {PlayerName}'s turn, gain {Block} |Block| for each |Assign| status effect currently active. 
+
 #UNCOMMONS
 BuildWatchtower:
   Name: Build Watchtower
