@@ -134,11 +134,12 @@ CavalryRush:
     After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
     If effect is triggered via playing a card, gain {Mana}. 
 
-AttackCreateReserves:
-  Name: Attack Create Reserves
+RecycleCreateReserves:
+  Name: Recycle Create Reserves
   Description: |-
-    Deal {Damage} damage. 
-    Add {Value1} |Create Haniwa| to the hand. 
+    Remove {Value1} random card{Value1:plural one='' other='s'} in exile from combat. 
+    Add that many |Create Haniwa| to the hand. 
+    If there are none, add |e:1|. 
 
 HaniwaAttacker:
   Name: Haniwa Attacker
