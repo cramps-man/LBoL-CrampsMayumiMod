@@ -1,0 +1,24 @@
+red playstyle
+ - spawning in frontline haniwa
+   - strength in numbers
+     - let all the passives stack up
+     - remove exile add replenish, to allow lots of usage of the on play action
+     - stuff that scales with number of frontline cards
+   - make a strong haniwa
+     - sacrifice weaker ones to make a stronger one
+     - sacrifice from the haniwa count to make strong ones
+     - cards that upgrade other cards (yellow synergy)
+   - a strong haniwa that benefits from more frontline cards in hand/draw/discard
+   - stuff that scales with exile
+yellow playstyle
+ - assign many tasks
+   - number of current tasks
+     - pause tasks to keep them in play
+     - stuff that scales with number of active tasks
+   - activating tasks quickly
+     - cards that activate tasks immediately or tickdown the counter
+     - once you get a high enough haniwa count, you can assign lots of tasks at once
+   - make assigns more powerful
+     - activate more times
+     - charge based on number of cards played, then activate end of turn (or some other event)
+   - activating in a combo (same turn, start of turn, one after another) makes them more powerful
