@@ -54,6 +54,8 @@ namespace LBoLMod.Cards
                 yield break;
             if (RemainingValue <= 0)
                 yield break;
+            if (base.Battle.HandZone.Count == base.Battle.MaxHand)
+                yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
