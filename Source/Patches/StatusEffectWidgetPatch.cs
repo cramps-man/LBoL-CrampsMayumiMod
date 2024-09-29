@@ -2,7 +2,7 @@
 using LBoLMod.StatusEffects;
 using UnityEngine;
 
-namespace LBoLMod.Source.Patches
+namespace LBoLMod.Patches
 {
     [HarmonyLib.HarmonyPatch]
     internal class StatusEffectWidgetPatch

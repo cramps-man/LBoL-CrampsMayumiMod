@@ -5,19 +5,37 @@ namespace LBoLMod.GameEvents
 {
     public sealed class ModGameEvents
     {
-        public static GameEvent<AssignTriggerEventArgs> AssignEffectTriggering { get; } = new GameEvent<AssignTriggerEventArgs>();
-        public static GameEvent<AssignTriggerEventArgs> AssignEffectTriggered { get; } = new GameEvent<AssignTriggerEventArgs>();
-        public static GameEvent<LoseHaniwaEventArgs> LosingHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
-        public static GameEvent<LoseHaniwaEventArgs> LostHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
-        public static GameEvent<LoseHaniwaEventArgs> SacrificingHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
-        public static GameEvent<LoseHaniwaEventArgs> SacrificedHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
-        public static GameEvent<LoseHaniwaEventArgs> AssigningHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
-        public static GameEvent<LoseHaniwaEventArgs> AssignedHaniwa { get; } = new GameEvent<LoseHaniwaEventArgs>();
-        public static GameEvent<GainHaniwaEventArgs> GainingHaniwa { get; } = new GameEvent<GainHaniwaEventArgs>();
-        public static GameEvent<GainHaniwaEventArgs> GainedHaniwa { get; } = new GameEvent<GainHaniwaEventArgs>();
-        public static GameEvent<GainHaniwaEventArgs> GainingHaniwaFromAssign { get; } = new GameEvent<GainHaniwaEventArgs>();
-        public static GameEvent<GainHaniwaEventArgs> GainedHaniwaFromAssign { get; } = new GameEvent<GainHaniwaEventArgs>();
-        public static GameEvent<AssignPauseEventArgs> AssignStatusPausing { get; } = new GameEvent<AssignPauseEventArgs>();
-        public static GameEvent<AssignPauseEventArgs> AssignStatusPaused { get; } = new GameEvent<AssignPauseEventArgs>();
+        public static GameEvent<AssignTriggerEventArgs> AssignEffectTriggering { get; set; } = new GameEvent<AssignTriggerEventArgs>();
+        public static GameEvent<AssignTriggerEventArgs> AssignEffectTriggered { get; set; } = new GameEvent<AssignTriggerEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> LosingHaniwa { get; set; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> LostHaniwa { get; set; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> SacrificingHaniwa { get; set; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> SacrificedHaniwa { get; set; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> AssigningHaniwa { get; set; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<LoseHaniwaEventArgs> AssignedHaniwa { get; set; } = new GameEvent<LoseHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainingHaniwa { get; set; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainedHaniwa { get; set; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainingHaniwaFromAssign { get; set; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<GainHaniwaEventArgs> GainedHaniwaFromAssign { get; set; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<AssignPauseEventArgs> AssignStatusPausing { get; set; } = new GameEvent<AssignPauseEventArgs>();
+        public static GameEvent<AssignPauseEventArgs> AssignStatusPaused { get; set; } = new GameEvent<AssignPauseEventArgs>();
+
+        public static void Init()
+        {
+            AssignEffectTriggering = new GameEvent<AssignTriggerEventArgs>();
+            AssignEffectTriggered = new GameEvent<AssignTriggerEventArgs>();
+            LosingHaniwa = new GameEvent<LoseHaniwaEventArgs>();
+            LostHaniwa = new GameEvent<LoseHaniwaEventArgs>();
+            SacrificingHaniwa = new GameEvent<LoseHaniwaEventArgs>();
+            SacrificedHaniwa = new GameEvent<LoseHaniwaEventArgs>();
+            AssigningHaniwa = new GameEvent<LoseHaniwaEventArgs>();
+            AssignedHaniwa = new GameEvent<LoseHaniwaEventArgs>();
+            GainingHaniwa = new GameEvent<GainHaniwaEventArgs>();
+            GainedHaniwa = new GameEvent<GainHaniwaEventArgs>();
+            GainingHaniwaFromAssign = new GameEvent<GainHaniwaEventArgs>();
+            GainedHaniwaFromAssign = new GameEvent<GainHaniwaEventArgs>();
+            AssignStatusPausing = new GameEvent<AssignPauseEventArgs>();
+            AssignStatusPaused = new GameEvent<AssignPauseEventArgs>();
+        }
     }
 }

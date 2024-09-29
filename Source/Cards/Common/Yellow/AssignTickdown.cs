@@ -38,29 +38,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AssignTickdownDef))]
     public sealed class AssignTickdown : Card
     {
-        /*public override Interaction Precondition()
-        {
-            if (!IsUpgraded)
-                return null;
-
-            List<Card> list = new List<Card>();
-            foreach (ModAssignStatusEffect s in Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect))
-            {
-                ModAssignOptionCard c = Library.CreateCard<ModAssignOptionCard>();
-                c.CardName = s.Name;
-                c.CardText = s.Description;
-                c.StatusEffect = s;
-                list.Add(c);
-            };
-            return new MiniSelectCardInteraction(list);
-        }*/
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            /*if (precondition != null)
-            {
-                var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
-                c.StatusEffect.TickdownFull();
-            }*/
             foreach (ModAssignStatusEffect s in Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect))
             {
                 s.Tickdown(Value1);

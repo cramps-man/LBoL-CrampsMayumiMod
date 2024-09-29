@@ -4,7 +4,7 @@ using LBoL.Presentation.UI.Widgets;
 using LBoLMod.Cards;
 using UnityEngine;
 
-namespace LBoLMod.Source.Patches
+namespace LBoLMod.Patches
 {
     [HarmonyPatch(typeof(CardWidget), nameof(CardWidget.OnActivating))]
     class CardWidget_Patch
