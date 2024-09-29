@@ -17,5 +17,7 @@ namespace LBoLMod.GameEvents
         public static GameEvent<GainHaniwaEventArgs> GainedHaniwa { get; } = new GameEvent<GainHaniwaEventArgs>();
         public static GameEvent<GainHaniwaEventArgs> GainingHaniwaFromAssign { get; } = new GameEvent<GainHaniwaEventArgs>();
         public static GameEvent<GainHaniwaEventArgs> GainedHaniwaFromAssign { get; } = new GameEvent<GainHaniwaEventArgs>();
+        public static GameEvent<AssignPauseEventArgs> AssignStatusPausing { get; } = new GameEvent<AssignPauseEventArgs>();
+        public static GameEvent<AssignPauseEventArgs> AssignStatusPaused { get; } = new GameEvent<AssignPauseEventArgs>();
     }
 }

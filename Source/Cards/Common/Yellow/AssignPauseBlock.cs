@@ -6,6 +6,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects.Temporary;
@@ -57,7 +58,7 @@ namespace LBoLMod.Cards
             if (precondition != null)
             {
                 var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
-                c.StatusEffect.IsPaused = true;
+                yield return new AssignPauseAction(c.StatusEffect);
             }
             yield return BuffAction<PauseBlock>(Block.Block);
         }
