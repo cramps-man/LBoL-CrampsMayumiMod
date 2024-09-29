@@ -49,12 +49,12 @@ Sacrifice:
 Assign:
   Name: Assign X
   Description: |-
-    Requires X level of the specific Haniwa. 
-    Lose X level of Haniwa, then regain them after a certain number of cards are played. 
+    Lose X level of |Haniwa|, gain a buff which after a certain number of cards are played, triggers an effect. 
+    After the effect triggers, gain back the level of |Haniwa| lost. 
     |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
   Brief: |-
-    Requires X level of the specific Haniwa. 
-    Lose X level of Haniwa, then regain them after a certain number of cards are played. 
+    Lose X level of |Haniwa|, gain a buff which after a certain number of cards are played, triggers an effect. 
+    After the effect triggers, gain back the level of |Haniwa| lost. 
     |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
 
 Frontline:
