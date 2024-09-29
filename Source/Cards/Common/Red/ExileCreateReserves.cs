@@ -28,7 +28,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Keywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(CreateHaniwa) };
@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card hand) => hand is ModFrontlineCard).ToList();
+            List<Card> list = base.Battle.HandZone.Where((Card hand) => hand != this).ToList();
             return new SelectHandInteraction(0, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

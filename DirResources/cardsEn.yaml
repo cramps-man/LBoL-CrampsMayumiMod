@@ -75,8 +75,8 @@ DefenceSummon:
 ExileCreateReserves:
   Name: Exile Create Reserves
   Description: |-
-    Exile up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from the hand. Add that many |Create Haniwa| to the hand. 
-    Upgrade all other |Frontline| cards in the hand. 
+    Exile up to {Value1} card{Value1:plural one='' other='s'} from the hand. Add that many |Create Haniwa| to the hand. 
+    Upgrade all |Frontline| cards in the hand. 
 
 FencerKamikaze:
   Name: Fencer Kamikaze
