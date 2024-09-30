@@ -25,9 +25,8 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.HideMesuem = true;
             cardConfig.Type = CardType.Skill;
-            cardConfig.TargetType = TargetType.Self;
-            cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
@@ -43,7 +42,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            var selectList = new List<Card> { Library.CreateCard<CreateHaniwaArcher>(IsUpgraded), Library.CreateCard<CreateHaniwaCavalry>(IsUpgraded), Library.CreateCard<CreateHaniwaFencer>(IsUpgraded) };
+            var selectList = new List<Card> { Library.CreateCard<CreateHaniwaFencer>(IsUpgraded), Library.CreateCard<CreateHaniwaArcher>(IsUpgraded), Library.CreateCard<CreateHaniwaCavalry>(IsUpgraded) };
             return new MiniSelectCardInteraction(selectList);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

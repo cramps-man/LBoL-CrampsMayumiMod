@@ -18,7 +18,7 @@ BasicBlockW:
 CreateHaniwa:
   Name: Create Haniwa
   Description: |-
-    Choose |e:1| of |e:3| |Haniwa| types to gain.
+    Choose |e:1| of |e:3| |Haniwa| to gain {Value1} levels of.
 
 CreateHaniwaArcher:
   Name: Create Haniwa (Archer)
@@ -113,12 +113,11 @@ CavalryRush:
     After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
     If effect is triggered via playing a card, gain {Mana}. 
 
-RecycleCreateReserves:
-  Name: Recycle Create Reserves
+DefenceCreateReserves:
+  Name: Defence Create Reserves
   Description: |-
-    Remove {Value1} random card{Value1:plural one='' other='s'} in exile from combat. 
-    Add that many |Create Haniwa| to the hand. 
-    If there are none, add |e:1|. 
+    Gain {Block} |Block|. 
+    Add {Value1} |Create Haniwa| to the hand. 
 
 HaniwaAttacker:
   Name: Haniwa Attacker
