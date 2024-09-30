@@ -1,0 +1,1 @@
+ - defence summon card seemingly showed options when you had 0 of the type

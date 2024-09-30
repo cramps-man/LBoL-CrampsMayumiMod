@@ -23,7 +23,8 @@ namespace LBoLMod.BattleActions
             {
                 foreach (var action in args.BattleActions)
                 {
-                    base.React(action);
+                    if (!base.Battle.BattleShouldEnd)
+                        base.React(action);
                 }
             });
             yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggered", this.args, ModGameEvents.AssignEffectTriggered);

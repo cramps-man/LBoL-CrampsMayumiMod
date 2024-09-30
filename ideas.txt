@@ -22,3 +22,4 @@ yellow playstyle
      - activate more times
      - charge based on number of cards played, then activate end of turn (or some other event)
    - activating in a combo (same turn, start of turn, one after another) makes them more powerful
+     - pause/tickdown to control timings
