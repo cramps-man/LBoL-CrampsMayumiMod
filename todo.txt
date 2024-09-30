@@ -1,5 +1,6 @@
-update assign pause block, too weak
-assign tickdown should be uncommon, replace with a common version
+update assign pause block, too weak - done
+assign tickdown should be uncommon, replace with a common version - done
 update frontline card onplay effects, and change their types to match better - done
 prep archer volley set to 1 require archer - done
 haniwa attacker use normal attack instead of reaction? - done
+update recycle create reserves, feels weird to remove cards from play, nothing else is synergizing

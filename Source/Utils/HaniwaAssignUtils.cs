@@ -1,0 +1,28 @@
+﻿using LBoL.Core;
+using LBoL.Core.Cards;
+using LBoL.Core.Units;
+using LBoLMod.Cards;
+using LBoLMod.StatusEffects;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LBoLMod.Utils
+{
+    public static class HaniwaAssignUtils
+    {
+        public static List<Card> CreateAssignOptionCards(PlayerUnit player)
+        {
+            List<Card> list = new List<Card>();
+            foreach (ModAssignStatusEffect s in player.StatusEffects.Where(s => s is ModAssignStatusEffect))
+            {
+                ModAssignOptionCard c = Library.CreateCard<ModAssignOptionCard>();
+                c.CardName = s.Name;
+                c.CardText = s.Description;
+                c.StatusEffect = s;
+                if (!s.IsPaused)
+                    list.Add(c);
+            };
+            return list;
+        }
+    }
+}

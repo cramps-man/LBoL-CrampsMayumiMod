@@ -216,14 +216,6 @@ DiscardFrontline:
     Discard any amount of |Frontline| cards. 
     They lose |Exile| and gain |Replenish|. 
 
-AssignTickdown:
-  Name: Assign Tickdown
-  Description: |-
-    Tickdown all |Assign| status effects by {Value1}. 
-  UpgradedDescription: |-
-    Tickdown all |Assign| status effects by {Value1}. 
-    Whenever an |Assign| effect triggers, return {SelfName} from the discard pile to the hand. 
-
 ModAssignOptionCard:
   Name: Dummy Status Selection
   Description: |-
@@ -234,6 +226,11 @@ AssignPauseBlock:
   Description: |-
     Choose an |Assign| status effect and |Pause| it. 
     At end of {PlayerName}'s turn, gain {Block} |Block| for each |Assign| status effect currently active. 
+
+AssignTickdownRetain:
+  Name: Assign Tickdown Retain
+  Description: |-
+    Choose an |Assign| status effect and tickdown by {Value1}. 
 
 #UNCOMMONS
 BuildWatchtower:
@@ -248,6 +245,12 @@ GarrisonArcher:
   Description: |-
     |Sacrifice {ArcherSacrificed} Archer|. 
     Gain {Value1} |Watchtower|. 
+
+AssignTickdownReturn:
+  Name: Assign Tickdown Return
+  Description: |-
+    Tickdown all |Assign| status effects by {Value1}. 
+    Whenever an |Assign| effect triggers, return {SelfName} from the discard pile to the hand. 
 
 #RARES
 FullFrontalAssault:

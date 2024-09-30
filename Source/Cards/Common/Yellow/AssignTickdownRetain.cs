@@ -6,38 +6,37 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.StatusEffects.Temporary;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class AssignPauseBlockDef : ModCardTemplate
+    public sealed class AssignTickdownRetainDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(AssignPauseBlock);
+            return nameof(AssignTickdownRetain);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            cardConfig.Type = CardType.Defense;
+            cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { White = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1, White = 1 };
-            cardConfig.Block = 8;
-            cardConfig.UpgradedBlock = 12;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Pause) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Pause) };
+            cardConfig.Cost = new ManaGroup() { White = 1 };
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 4;
+            cardConfig.Keywords = Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Retain;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(AssignPauseBlockDef))]
-    public sealed class AssignPauseBlock : Card
+    [EntityLogic(typeof(AssignTickdownRetainDef))]
+    public sealed class AssignTickdownRetain : Card
     {
         public override Interaction Precondition()
         {
@@ -48,9 +47,9 @@ namespace LBoLMod.Cards
             if (precondition != null)
             {
                 var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
-                yield return new AssignPauseAction(c.StatusEffect);
+                c.StatusEffect.Tickdown(Value1);
             }
-            yield return BuffAction<PauseBlock>(Block.Block);
+            yield break;
         }
     }
 }

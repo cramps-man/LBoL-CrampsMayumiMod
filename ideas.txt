@@ -8,6 +8,7 @@ red playstyle
      - sacrifice weaker ones to make a stronger one
      - sacrifice from the haniwa count to make strong ones
      - cards that upgrade other cards (yellow synergy)
+     - make frontline cards upgradable more than once
    - a strong haniwa that benefits from more frontline cards in hand/draw/discard
    - stuff that scales with exile
 yellow playstyle
@@ -23,3 +24,11 @@ yellow playstyle
      - charge based on number of cards played, then activate end of turn (or some other event)
    - activating in a combo (same turn, start of turn, one after another) makes them more powerful
      - pause/tickdown to control timings
+
+red uncommons
+
+yellow uncommons
+ - attack that scales with how many assign triggers occured during the turn/or highest combo
+ - 
+general uncommons
+ - ability gain 1 of each haniwa per turn

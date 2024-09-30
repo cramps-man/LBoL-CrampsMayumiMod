@@ -15,28 +15,30 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class AssignTickdownDef : ModCardTemplate
+    public sealed class AssignTickdownReturnDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(AssignTickdown);
+            return nameof(AssignTickdownReturn);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 1 };
-            cardConfig.Value1 = 3;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(AssignTickdownDef))]
-    public sealed class AssignTickdown : Card
+    [EntityLogic(typeof(AssignTickdownReturnDef))]
+    public sealed class AssignTickdownReturn : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
@@ -54,7 +56,7 @@ namespace LBoLMod.Cards
 
         private IEnumerable<BattleAction> OnAssignTriggered(AssignTriggerEventArgs args)
         {
-            if (IsUpgraded && base.Zone == CardZone.Discard)
+            if (base.Zone == CardZone.Discard)
                 yield return new MoveCardAction(this, CardZone.Hand);
         }
     }
