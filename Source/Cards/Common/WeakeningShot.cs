@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
@@ -28,14 +27,14 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Damage = 10;
-            cardConfig.UpgradedDamage = 12;
-            cardConfig.Value1 = 4;
-            cardConfig.UpgradedValue1 = 7;
+            cardConfig.UpgradedDamage = 13;
+            cardConfig.Value1 = 1;
             cardConfig.Value2 = 1;
+            cardConfig.UpgradedValue2 = 2;
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(TempFirepowerNegative) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(TempFirepowerNegative) };
             return cardConfig;
         }
     }
@@ -43,28 +42,17 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(WeakeningShotDef))]
     public sealed class WeakeningShot : Card
     {
-        public int ArcherRequired => 1;
-        public DamageInfo HaniwaDamage
-        {
-            get
-            {
-                return this.Damage.IncreaseBy(Value1);
-            }
-        }
-
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherRequired, HaniwaActionType.Require))
-            {
-                yield return base.AttackAction(selector, HaniwaDamage);
-                if (base.Battle.BattleShouldEnd)
-                    yield break;
-                yield return new ApplyStatusEffectAction<Weak>(selector.SelectedEnemy, 0, Value2);
-            }
-            else
-            {
-                yield return base.AttackAction(selector);
-            }
+            yield return base.AttackAction(selector);
+            if (base.Battle.BattleShouldEnd)
+                yield break;
+ 
+            int archerCount = HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
+            if (archerCount >= 1)
+                yield return DebuffAction<Weak>(selector.SelectedEnemy, duration: Value1);
+            if (archerCount >= 3)
+                yield return DebuffAction<TempFirepowerNegative>(selector.SelectedEnemy, level: Value2);
         }
     }
 }

@@ -36,31 +36,9 @@ WeakeningShot:
   Name: Weakening Shot
   Description: |-
     Deal {Damage} damage.
-    |Require {ArcherRequired} Archer|: Deal {HaniwaDamage} damage instead and apply {Value2} |Weak|.
-
-CreateArcher:
-  Name: Create Archer
-  Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer|. 
-    Deal {Damage} damage.
-    Gain effects based on |Archer| level. 
-    |3|: Apply |e:1| |Weak|. 
-    |5|: Apply |e:2| |Lock On|. 
-    |7|: Apply |e:1| |Vulnerable|. 
-    |10|: Become |Accurate|. 
-
-CreateCavalry:
-  Name: Create Cavalry
-  Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
-    |Scry| |e:1| for each level of |Cavalry|. 
-    Draw {Value2} card{Value2:plural one='' other='s'}.
-
-CreateFencer:
-  Name: Create Fencer
-  Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer|.
-    Gain {Value2} |Block| for every current |Fencer| available. 
+    Apply extra effects depending on |Archer| level. 
+    |1|: Apply {Value1} |Weak|.
+    |3|: Apply {Value2} |Temporary Firepower Down|.
 
 DefenceSummon:
   Name: Defence Summon
@@ -233,6 +211,30 @@ AssignTickdownRetain:
     Choose an |Assign| status effect and tickdown by {Value1}. 
 
 #UNCOMMONS
+CreateArcher:
+  Name: Create Archer
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer|. 
+    Deal {Damage} damage.
+    Gain effects based on |Archer| level. 
+    |3|: Apply |e:1| |Weak|. 
+    |5|: Apply |e:2| |Lock On|. 
+    |7|: Apply |e:1| |Vulnerable|. 
+    |10|: Become |Accurate|. 
+
+CreateCavalry:
+  Name: Create Cavalry
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
+    |Scry| |e:1| for each level of |Cavalry|. 
+    Draw {Value2} card{Value2:plural one='' other='s'}.
+
+CreateFencer:
+  Name: Create Fencer
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer|.
+    Gain {Value2} |Block| for every current |Fencer| available. 
+
 BuildWatchtower:
   Name: Build Watchtower
   Description: |-
