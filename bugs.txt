@@ -1,1 +1,2 @@
- - defence summon card seemingly showed options when you had 0 of the type
+ - frontline summon cards seemingly showed options when you had 0 of the type
+   - seemingly random when it occurs, maybe when another issue happens, this happens

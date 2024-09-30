@@ -1,9 +1,7 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
@@ -31,7 +29,6 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedBlock = 14;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Value2 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -41,16 +38,14 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(DefenceSummonDef))]
     public sealed class DefenceSummon : Card
     {
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        public override Interaction Precondition()
         {
             List<Card> cards = HaniwaFrontlineUtils.GetCommonCards(base.Battle, checkSacrificeRequirement: true);
-            cards.Shuffle(base.BattleRng);
-            if (cards.Count > Value2)
-                cards.RemoveRange(Value2, cards.Count - Value2);
-            var selectInteraction = new SelectCardInteraction(0, Value1, cards);
-            yield return new InteractionAction(selectInteraction);
-
-            foreach (var action in HaniwaFrontlineUtils.CardsSummon(selectInteraction.SelectedCards))
+            return new SelectCardInteraction(0, Value1, cards);
+        }
+        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        {
+            foreach (var action in HaniwaFrontlineUtils.CardsSummon(((SelectCardInteraction)precondition).SelectedCards))
             {
                 yield return action;
             };

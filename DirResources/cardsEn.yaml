@@ -66,7 +66,7 @@ DefenceSummon:
   Name: Defence Summon
   Description: |-
     Gain {Block} |Block|.
-    Choose up to {Value1} of {Value2} |Frontline| cards and add them to the hand. 
+    Choose up to {Value1} common |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
