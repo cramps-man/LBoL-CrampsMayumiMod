@@ -29,9 +29,16 @@ namespace LBoLMod.Source.Utils
                 c.SetBattle(battle);
                 c.NumberToSpawn = numberToSpawn;
                 if (checkSacrificeRequirement)
+                {
                     if (c.FulfilsRequirement)
+                    {
                         cards.Add(c);
-                else cards.Add(c);
+                    }
+                }
+                else
+                {
+                    cards.Add(c);
+                }
             }
             return cards;
         }

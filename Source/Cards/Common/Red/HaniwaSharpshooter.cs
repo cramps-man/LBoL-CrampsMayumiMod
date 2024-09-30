@@ -24,17 +24,17 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
-            cardConfig.Type = CardType.Skill;
+            cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Damage = 5;
+            cardConfig.UpgradedDamage = 7;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
             cardConfig.UpgradedValue2 = 2;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.RelativeKeyword = Keyword.Accuracy;
-            cardConfig.UpgradedRelativeKeyword = Keyword.Accuracy;
+            cardConfig.Keywords = Keyword.Accuracy | Keyword.Retain | Keyword.Exile;
+            cardConfig.UpgradedKeywords = Keyword.Accuracy | Keyword.Retain | Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
             return cardConfig;
@@ -87,7 +87,9 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), Value2);
+            yield return AttackAction(selector);
+            if (!base.Battle.BattleShouldEnd)
+                yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), Value2);
         }
     }
 }

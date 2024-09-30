@@ -37,7 +37,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ArcherPrepVolleyDef))]
     public sealed class ArcherPrepVolley : ModAssignCard
     {
-        public override int ArcherAssigned => 2;
+        public override int ArcherAssigned => 1;
         public override int StartingCardCounter => Value2;
         public override Type AssignStatusType => typeof(AssignArcherPrepVolley);
     }

@@ -23,9 +23,11 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
-            cardConfig.Type = CardType.Skill;
+            cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Damage = 8;
+            cardConfig.UpgradedDamage = 10;
             cardConfig.Value1 = 6;
             cardConfig.UpgradedValue1 = 8;
             cardConfig.Value2 = 1;
@@ -51,6 +53,8 @@ namespace LBoLMod.Cards
 
         private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)
         {
+            if (base.Battle.BattleShouldEnd)
+                yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
             if (RemainingValue <= 0)
@@ -58,12 +62,14 @@ namespace LBoLMod.Cards
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
-            yield return new DamageAction(base.Battle.Player, base.Battle.LowestHpEnemy, DamageInfo.Reaction(Value1));
+            yield return new DamageAction(base.Battle.Player, base.Battle.LowestHpEnemy, DamageInfo.Attack(Value1));
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return DebuffAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: Value2);
+            yield return AttackAction(selector);
+            if (!base.Battle.BattleShouldEnd)
+                yield return DebuffAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: Value2);
         }
     }
 }

@@ -30,7 +30,6 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
             cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };

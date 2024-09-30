@@ -3,9 +3,7 @@ using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
-using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -25,16 +23,15 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
-            cardConfig.Type = CardType.Skill;
-            cardConfig.TargetType = TargetType.SingleEnemy;
+            cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Block = 8;
+            cardConfig.UpgradedBlock = 10;
             cardConfig.Value1 = 4;
             cardConfig.UpgradedValue1 = 6;
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Weak) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Weak) };
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -95,7 +92,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new ApplyStatusEffectAction<Weak>(selector.GetEnemy(base.Battle), duration: Value2);
+            yield return DefenseAction();
         }
     }
 }

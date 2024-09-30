@@ -94,8 +94,8 @@ CavalrySwift:
   Name: Cavalry Swift
   Description: |-
     Draw {Value1} card{Value1:plural one='' other='s'}. 
-    |{AssignRequirement} Assign statuses active|: draw |e:1| card.
-    |{FrontlineRequirement} Frontline cards in hand|: draw |e:1| card. 
+    |{AssignRequirement} Assign statuses active|: Draw |e:1| card.
+    |{FrontlineRequirement} Frontline cards in hand|: Draw |e:1| card. 
 
 CavalrySupplies:
   Name: Cavalry Supplies
@@ -107,10 +107,10 @@ HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
     |While in hand|: Reduce up to {Value1} damage recieved per turn. {RemainingValue} reduction remaining. 
-    |When played|: Apply {Value2} |Weak|. 
+    |When played|: Gain {Block} |Block|. 
   NonbattleDescription: |-
     |While in hand|: Reduce up to {Value1} damage recieved per turn. 
-    |When played|: Apply {Value2} |Weak|. 
+    |When played|: Gain {Block} |Block|. 
 
 HaniwaSupport:
   Name: Haniwa Support
@@ -146,17 +146,17 @@ HaniwaAttacker:
   Name: Haniwa Attacker
   Description: |-
     |While in hand|: At end of turn, deal {Value1} damage to the enemy with the lowest life. 
-    |When played|: Apply {Value2} |Vulnerable|. 
+    |When played|: Deal {Damage} damage and apply {Value2} |Vulnerable|. 
 
 HaniwaSharpshooter:
   Name: Haniwa Sharpshooter
   Description: |-
     |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
     {RemainingValue} instance{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Apply {Value2} |Lock On|. 
+    |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. 
   NonbattleDescription: |-
     |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
-    |When played|: Apply {Value2} |Lock On|. 
+    |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. 
 
 SummonHaniwa:
   Name: Summon Haniwa
@@ -211,6 +211,9 @@ DiscardFrontline:
   Name: Discard Frontline
   Description: |-
     Discard up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. 
+    They lose |Exile| and gain |Replenish|. 
+  UpgradedDescription: |-
+    Discard any amount of |Frontline| cards. 
     They lose |Exile| and gain |Replenish|. 
 
 AssignTickdown:
