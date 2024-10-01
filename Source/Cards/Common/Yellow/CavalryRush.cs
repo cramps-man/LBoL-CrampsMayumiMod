@@ -24,8 +24,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 12;
             cardConfig.UpgradedDamage = 17;
-            cardConfig.Value1 = 9;
-            cardConfig.UpgradedValue1 = 4;
+            cardConfig.Value1 = 4;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Mana = new ManaGroup() { White = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };

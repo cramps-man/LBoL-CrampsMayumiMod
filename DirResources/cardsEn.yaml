@@ -72,8 +72,8 @@ CavalrySwift:
   Name: Cavalry Swift
   Description: |-
     Draw {Value1} card{Value1:plural one='' other='s'}. 
-    |{AssignRequirement} Assign statuses active|: Draw |e:1| card.
-    |{FrontlineRequirement} Frontline cards in hand|: Draw |e:1| card. 
+    If there is an |Assign| status active, draw |e:1| card.
+    If there is a |Frontline| card in hand, draw |e:1| card. 
 
 CavalrySupplies:
   Name: Cavalry Supplies

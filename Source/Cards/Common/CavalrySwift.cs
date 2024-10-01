@@ -38,8 +38,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CavalrySwiftDef))]
     public sealed class CavalrySwift : Card
     {
-        public int AssignRequirement => 2;
-        public int FrontlineRequirement => 3;
+        public int AssignRequirement => 1;
+        public int FrontlineRequirement => 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new DrawManyCardAction(Value1);

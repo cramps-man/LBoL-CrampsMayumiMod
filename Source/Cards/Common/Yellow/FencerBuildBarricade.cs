@@ -20,12 +20,10 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Defense;
-            cardConfig.TargetType = TargetType.Nobody;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.Shield = 10;
-            cardConfig.UpgradedShield = 14;
-            cardConfig.Value2 = 9;
+            cardConfig.Shield = 15;
+            cardConfig.UpgradedShield = 20;
+            cardConfig.Value2 = 8;
             cardConfig.UpgradedValue2 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
