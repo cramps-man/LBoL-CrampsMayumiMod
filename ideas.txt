@@ -31,8 +31,9 @@ red uncommons
    - haniwa retainer, retain adjecent cards + upgrade if they are retain, defence with more retain in hand
    - haniwa follow up dude, something with attacking enemy with debuffs
    - stronk attacker, more strength if more other frontline cards in hand
- - summon card for uncommon
- - exile common/uncommon to summon uncommon/rare summon
+ - not sure which one to do, or both
+   - summon card for uncommon
+   - exile common/uncommon to summon uncommon/rare summon
  - attack that does more dmg with more frontline cards in hand
  - sacrifice = 1 firepower or tempfirepower + maybe exiling frontline cards
 

@@ -270,6 +270,12 @@ HaniwaRetainer:
     |While in hand|: At start of turn, give |Temporary Retain| to adjecent cards. 
     |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each |Retain| or |Temporary Retain| card in the hand ({RetainBlock}).
 
+HaniwaExploiter:
+  Name: Haniwa Exploiter
+  Description: |-
+    |While in hand|: At end of turn, deal {Value1} damage to all enemies with debuffs. If there are none, attack the enemy with the lowest life. 
+    |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
