@@ -26,9 +26,34 @@ yellow playstyle
      - pause/tickdown to control timings
 
 red uncommons
+ - summons
+   - haniwa spy, show cards and scry in various hand/discard/draw piles
+   - haniwa retainer, retain adjecent cards + upgrade if they are retain, defence with more retain in hand
+   - haniwa follow up dude, something with attacking enemy with debuffs
+   - stronk attacker, more strength if more other frontline cards in hand
+ - summon card for uncommon
+ - exile common/uncommon to summon uncommon/rare summon
+ - attack that does more dmg with more frontline cards in hand
+ - sacrifice = 1 firepower or tempfirepower + maybe exiling frontline cards
 
 yellow uncommons
  - attack that scales with how many assign triggers occured during the turn/or highest combo
- - 
+ - make 1 assign activate an extra time
+ - attack card that charges an assign, play assign card again to activate it
+   - or make the card count rly long, and assign triggers increase scaling until it activates
+ - forcefully trigger an assign effect
+ - assign triggered = gain block/barrier
+
 general uncommons
  - ability gain 1 of each haniwa per turn
+
+red rares
+ - attack that does more dmg with more frontline cards in exile
+ - create copies of a frontline card, exile original?
+
+yellow rares
+ - make all assign activate an extra time
+ - maybe make assign permanent? probs hard to show and broken
+ - playing an assign draw 1 card? probs broken lmao
+
+general rares
