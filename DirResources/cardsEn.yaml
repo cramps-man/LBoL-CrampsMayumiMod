@@ -264,6 +264,12 @@ HaniwaSpy:
     |While in draw/discard pile|: In the same pile as this card, lower a random card's cost by {Mana}. 
     |When played|: Move {Value2} <sprite=ManaSprite" name="0"> cost cards from discard to the top of the draw pile. 
 
+HaniwaRetainer:
+  Name: Haniwa Retainer
+  Description: |-
+    |While in hand|: At start of turn, give |Temporary Retain| to adjecent cards. 
+    |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each |Retain| or |Temporary Retain| card in the hand ({RetainBlock}).
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
