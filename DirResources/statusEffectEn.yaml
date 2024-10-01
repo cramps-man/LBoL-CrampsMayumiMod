@@ -106,9 +106,9 @@ AssignBuildWatchtower:
 Watchtower:
   Name: Watchtower
   Description: |-
-    After an attack card is played, deal {Level} + {ArcherLevel} damage to a random enemy. 
+    After an attack card is played, deal {Level} damage to a random enemy. 
   Brief: |-
-    After an attack card is played, deal |Watchtower Level| + |Archer Level| damage to a random enemy. 
+    After an attack card is played, deal |Watchtower Level| damage to a random enemy. 
 
 AssignCavalryRush:
   Name: Cavalry Rush

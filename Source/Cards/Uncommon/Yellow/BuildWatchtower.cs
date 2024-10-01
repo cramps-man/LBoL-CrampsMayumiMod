@@ -28,17 +28,15 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
-            cardConfig.TargetType = TargetType.Nobody;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 4;
-            cardConfig.Value2 = 15;
-            cardConfig.UpgradedValue2 = 10;
+            cardConfig.Value1 = 6;
+            cardConfig.UpgradedValue1 = 10;
+            cardConfig.Value2 = 12;
+            cardConfig.UpgradedValue2 = 8;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Sacrifice), nameof(Watchtower) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Sacrifice), nameof(Watchtower) };
             cardConfig.RelativeCards = new List<string>() { nameof(GarrisonArcher) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(GarrisonArcher) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(GarrisonArcher)+"+" };
             return cardConfig;
         }
     }
@@ -74,7 +72,7 @@ namespace LBoLMod.Cards
                 };
             }
             else
-                yield return new AddCardsToHandAction(Library.CreateCard<GarrisonArcher>());
+                yield return new AddCardsToHandAction(Library.CreateCard<GarrisonArcher>(IsUpgraded));
         }
     }
 }

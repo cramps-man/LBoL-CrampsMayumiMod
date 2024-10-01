@@ -44,7 +44,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(GarrisonArcherDef))]
     public sealed class GarrisonArcher:Card
     {
-        public int ArcherSacrificed => 2;
+        public int ArcherSacrificed => 1;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(base.Battle.Player, ArcherSacrificed, HaniwaActionType.Sacrifice);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
