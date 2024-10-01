@@ -276,6 +276,12 @@ HaniwaExploiter:
     |While in hand|: At end of turn, deal {Value1} damage to all enemies with debuffs. If there are none, attack the enemy with the lowest life. 
     |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
 
+HaniwaGeneral:
+  Name: Haniwa General
+  Description: |-
+    |While in hand|: At start of turn, add a random Common |Frontline| card to the hand. 
+    |When played|: Deal {Damage} damage. Deal {Value1} additional damage for each |Frontline| card in the hand ({HaniwaDamage}).
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

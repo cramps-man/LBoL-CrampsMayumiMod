@@ -12,7 +12,7 @@ namespace LBoLMod.Source.Utils
 {
     public static class HaniwaFrontlineUtils
     {
-        public static readonly List<Type> CommonSummonTypes = new List<Type>
+        public static readonly List<Type> CommonOptionTypes = new List<Type>
         {
             typeof(OptionHaniwaAttacker),
             typeof(OptionHaniwaBodyguard),
@@ -20,10 +20,18 @@ namespace LBoLMod.Source.Utils
             typeof(OptionHaniwaSupport)
         };
 
+        public static readonly List<Type> CommonSummonTypes = new List<Type>
+        {
+            typeof(HaniwaAttacker),
+            typeof(HaniwaBodyguard),
+            typeof(HaniwaSharpshooter),
+            typeof(HaniwaSupport)
+        };
+
         public static List<Card> GetCommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             List<Card> cards = new List<Card>();
-            foreach (var type in HaniwaFrontlineUtils.CommonSummonTypes)
+            foreach (var type in HaniwaFrontlineUtils.CommonOptionTypes)
             {
                 var c = Library.CreateCard(type) as ModFrontlineOptionCard;
                 c.SetBattle(battle);
