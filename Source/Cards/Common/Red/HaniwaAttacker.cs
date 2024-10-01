@@ -31,13 +31,10 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 6;
             cardConfig.UpgradedValue1 = 8;
             cardConfig.Value2 = 1;
-            cardConfig.Mana = new ManaGroup() { Red = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Vulnerable) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Vulnerable) };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Vulnerable) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Vulnerable) };
             return cardConfig;
         }
     }

@@ -46,6 +46,7 @@ yellow uncommons
 
 general uncommons
  - ability gain 1 of each haniwa per turn
+ - build barracks, assign then every turn spawn random frontline
 
 red rares
  - attack that does more dmg with more frontline cards in exile
