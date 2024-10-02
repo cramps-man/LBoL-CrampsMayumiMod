@@ -35,6 +35,14 @@ namespace LBoLMod.Utils
             typeof(OptionHaniwaGeneral)
         };
 
+        public static readonly List<Type> UncommonSummonTypes = new List<Type>
+        {
+            typeof(HaniwaSpy),
+            typeof(HaniwaRetainer),
+            typeof(HaniwaExploiter),
+            typeof(HaniwaGeneral)
+        };
+
         public static List<Card> GetCommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             return GetOptionCards(CommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);

@@ -3,4 +3,6 @@ assign tickdown should be uncommon, replace with a common version - done
 update frontline card onplay effects, and change their types to match better - done
 prep archer volley set to 1 require archer - done
 haniwa attacker use normal attack instead of reaction? - done
-update recycle create reserves, feels weird to remove cards from play, nothing else is synergizing
+update recycle create reserves, feels weird to remove cards from play, nothing else is synergizing - done
+
+update exile create reserves to exile then choose 1/2 common frontline card to add, and move the upgrade portion to an uncommon card?
