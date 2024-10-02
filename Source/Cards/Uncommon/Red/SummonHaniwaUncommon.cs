@@ -14,34 +14,34 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class SummonHaniwaDef : ModCardTemplate
+    public sealed class SummonHaniwaUncommonDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(SummonHaniwa);
+            return nameof(SummonHaniwaUncommon);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
-            cardConfig.Value1 = 2;
-            cardConfig.Value2 = 1;
+            cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
+            cardConfig.Value1 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(SummonHaniwaDef))]
-    public sealed class SummonHaniwa : Card
+    [EntityLogic(typeof(SummonHaniwaUncommonDef))]
+    public sealed class SummonHaniwaUncommon : Card
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = HaniwaFrontlineUtils.GetCommonCards(base.Battle, Value1, true);
+            List<Card> cards = HaniwaFrontlineUtils.GetUncommonCards(base.Battle, checkSacrificeRequirement: true);
             return new MiniSelectCardInteraction(cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

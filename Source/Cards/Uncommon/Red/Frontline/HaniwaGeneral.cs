@@ -7,7 +7,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Source.Utils;
+using LBoLMod.Utils;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;

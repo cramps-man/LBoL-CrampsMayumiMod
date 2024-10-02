@@ -36,6 +36,7 @@ red uncommons
    - exile common/uncommon to summon uncommon/rare summon
  - attack that does more dmg with more frontline cards in hand
  - sacrifice = 1 firepower or tempfirepower + maybe exiling frontline cards
+ - card or frontline that can command other frontline, aka use the on play function
 
 yellow uncommons
  - attack that scales with how many assign triggers occured during the turn/or highest combo

@@ -4,11 +4,10 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLMod.BattleActions;
 using LBoLMod.Cards;
-using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
 
-namespace LBoLMod.Source.Utils
+namespace LBoLMod.Utils
 {
     public static class HaniwaFrontlineUtils
     {
@@ -28,10 +27,28 @@ namespace LBoLMod.Source.Utils
             typeof(HaniwaSupport)
         };
 
+        public static readonly List<Type> UncommonOptionTypes = new List<Type>
+        {
+            typeof(OptionHaniwaSpy),
+            typeof(OptionHaniwaRetainer),
+            typeof(OptionHaniwaExploiter),
+            typeof(OptionHaniwaGeneral)
+        };
+
         public static List<Card> GetCommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
+            return GetOptionCards(CommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
+        }
+
+        public static List<Card> GetUncommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
+        {
+            return GetOptionCards(UncommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
+        }
+
+        private static List<Card> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
+        {
             List<Card> cards = new List<Card>();
-            foreach (var type in HaniwaFrontlineUtils.CommonOptionTypes)
+            foreach (var type in types)
             {
                 var c = Library.CreateCard(type) as ModFrontlineOptionCard;
                 c.SetBattle(battle);

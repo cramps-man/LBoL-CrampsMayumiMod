@@ -282,6 +282,55 @@ HaniwaGeneral:
     |While in hand|: At start of turn, add a random Common |Frontline| card to the hand. 
     |When played|: Deal {Damage} damage. Deal {Value1} additional damage for each |Frontline| card in the hand ({HaniwaDamage}).
 
+SummonHaniwaUncommon:
+  Name: Summon Haniwa Uncommon
+  Description: |-
+    Choose {Value1} Uncommon |Frontline| card and add it to the hand. 
+    |Sacrifice Haniwa| depending on the chosen card. 
+  DetailText: |-
+    If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+    If there are no |Haniwa|, none will show up. 
+
+OptionHaniwaSpy:
+  Name: Summon Haniwa Spy
+  Description: |-
+    Sacrifice {SelectRequireCavalry} |Cavalry|.
+    Add a |Haniwa Spy| to the hand. 
+    {AvailableCavalry} available |Cavalry|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireCavalry} |Cavalry|.
+    Add a |Haniwa Spy| to the hand. 
+
+OptionHaniwaRetainer:
+  Name: Summon Haniwa Retainer
+  Description: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Retainer| to the hand. 
+    {AvailableFencer} available |Fencer|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Retainer| to the hand. 
+
+OptionHaniwaExploiter:
+  Name: Summon Haniwa Exploiter
+  Description: |-
+    Sacrifice {SelectRequireArcher} |Archer|.
+    Add a |Haniwa Exploiter| to the hand. 
+    {AvailableArcher} available |Archer|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireArcher} |Archer|.
+    Add a |Haniwa Exploiter| to the hand. 
+
+OptionHaniwaGeneral:
+  Name: Summon Haniwa General
+  Description: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa General| to the hand. 
+    {AvailableFencer} available |Fencer|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa General| to the hand. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
