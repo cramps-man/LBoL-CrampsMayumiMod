@@ -8,16 +8,17 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ExileCreateReservesDef : ModCardTemplate
+    public sealed class ExileSummonDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileCreateReserves);
+            return nameof(ExileSummon);
         }
 
         public override CardConfig MakeConfig()
@@ -31,26 +32,28 @@ namespace LBoLMod.Cards
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.RelativeCards = new List<string>() { nameof(CreateHaniwa) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CreateHaniwa) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(ExileCreateReservesDef))]
-    public sealed class ExileCreateReserves : Card
+    [EntityLogic(typeof(ExileSummonDef))]
+    public sealed class ExileSummon : Card
     {
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card hand) => hand != this).ToList();
-            return new SelectHandInteraction(0, Value1, list);
+            return new SelectHandInteraction(1, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            IReadOnlyList<Card> cards = ((SelectHandInteraction)precondition).SelectedCards;
-            yield return new ExileManyCardAction(cards);
-            yield return new AddCardsToHandAction(Library.CreateCards<CreateHaniwa>(cards.Count));
-            yield return new UpgradeCardsAction(base.Battle.HandZone.Where((Card hand) => hand is ModFrontlineCard));
+            if (!(precondition is SelectHandInteraction exileInteraction))
+                yield break;
+
+            var summonInteraction = new SelectCardInteraction(0, 1, HaniwaFrontlineUtils.CommonSummonTypes.ConvertAll(t => Library.CreateCard(t)));
+            yield return new InteractionAction(summonInteraction);
+
+            yield return new ExileManyCardAction(exileInteraction.SelectedCards);
+            yield return new AddCardsToHandAction(summonInteraction.SelectedCards);
         }
     }
 }

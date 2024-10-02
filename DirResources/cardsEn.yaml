@@ -50,11 +50,10 @@ DefenceSummon:
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
     If there are no |Haniwa|, none will show up. 
 
-ExileCreateReserves:
-  Name: Exile Create Reserves
+ExileSummon:
+  Name: Exile Summon
   Description: |-
-    Exile up to {Value1} card{Value1:plural one='' other='s'} from the hand. Add that many |Create Haniwa| to the hand. 
-    Upgrade all |Frontline| cards in the hand. 
+    Exile {Value1} card{Value1:plural one='' other='s'} from the hand. Choose 1 Common |Frontline| card to add to the hand. 
 
 FencerKamikaze:
   Name: Fencer Kamikaze
