@@ -275,11 +275,13 @@ HaniwaExploiter:
     |While in hand|: At end of turn, deal {Value1} damage to all enemies with debuffs. If there are none, attack the enemy with the lowest life. 
     |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
 
-HaniwaGeneral:
-  Name: Haniwa General
+HaniwaCommander:
+  Name: Haniwa Commander
   Description: |-
     |While in hand|: At start of turn, add a random Common |Frontline| card to the hand. 
-    |When played|: Deal {Damage} damage. Deal {Value1} additional damage for each |Frontline| card in the hand ({HaniwaDamage}).
+    |When played|: Choose up to {Value1} |Frontline| cards and execute their |On Play| actions. 
+  DetailText: |-
+    Can not choose another |Haniwa Commander|. Bad things happen. 
 
 SummonHaniwaUncommon:
   Name: Summon Haniwa Uncommon
@@ -320,15 +322,15 @@ OptionHaniwaExploiter:
     Sacrifice {SelectRequireArcher} |Archer|.
     Add a |Haniwa Exploiter| to the hand. 
 
-OptionHaniwaGeneral:
-  Name: Summon Haniwa General
+OptionHaniwaCommander:
+  Name: Summon Haniwa Commander
   Description: |-
     Sacrifice {SelectRequireFencer} |Fencer|.
-    Add a |Haniwa General| to the hand. 
+    Add a |Haniwa Commander| to the hand. 
     {AvailableFencer} available |Fencer|. 
   NonbattleDescription: |-
     Sacrifice {SelectRequireFencer} |Fencer|.
-    Add a |Haniwa General| to the hand. 
+    Add a |Haniwa Commander| to the hand. 
 
 ExileSummonUncommon:
   Name: Exile Summon Uncommon

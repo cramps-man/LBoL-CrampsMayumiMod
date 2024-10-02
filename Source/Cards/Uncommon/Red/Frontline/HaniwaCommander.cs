@@ -12,14 +12,15 @@ using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using LBoL.Core.Battle.Interactions;
 
 namespace LBoLMod.Cards
 {
-    public sealed class HaniwaGeneralDef : ModCardTemplate
+    public sealed class HaniwaCommanderDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(HaniwaGeneral);
+            return nameof(HaniwaCommander);
         }
 
         public override CardConfig MakeConfig()
@@ -27,34 +28,22 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             //cardConfig.IsPooled = false;
             cardConfig.Rarity = Rarity.Uncommon;
-            cardConfig.Type = CardType.Attack;
+            cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 20;
-            cardConfig.UpgradedDamage = 25;
-            cardConfig.Value1 = 7;
-            cardConfig.UpgradedValue1 = 10;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Keywords = Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(HaniwaGeneralDef))]
-    public sealed class HaniwaGeneral : ModFrontlineCard
+    [EntityLogic(typeof(HaniwaCommanderDef))]
+    public sealed class HaniwaCommander : ModFrontlineCard
     {
-        public int HaniwaDamage
-        {
-            get
-            {
-                if (base.Battle != null)
-                    return base.Battle.HandZoneAndPlayArea.Where(c => c is ModFrontlineCard).Count() * Value1;
-                return 0;
-            }
-        }
-        public override int AdditionalDamage => HaniwaDamage;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -72,10 +61,24 @@ namespace LBoLMod.Cards
             Type commonType = HaniwaFrontlineUtils.CommonSummonTypes.SampleOrDefault(base.BattleRng);
             yield return new AddCardsToHandAction(Library.CreateCard(commonType));
         }
+        public override Interaction Precondition()
+        {
+            List<Card> list = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
+            return new SelectHandInteraction(0, Value1, list);
+        }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return AttackAction(selector);
+            if (!(precondition is SelectHandInteraction selectInteraction))
+                yield break;
+
+            foreach (var item in selectInteraction.SelectedCards)
+            {
+                foreach (var action in item.GetActions(selector, consumingMana, null, new List<DamageAction>(), false))
+                {
+                    yield return action;
+                }
+            }
         }
     }
 }

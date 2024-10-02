@@ -5,4 +5,6 @@ prep archer volley set to 1 require archer - done
 haniwa attacker use normal attack instead of reaction? - done
 update recycle create reserves, feels weird to remove cards from play, nothing else is synergizing - done
 
-update exile create reserves to exile then choose 1/2 common frontline card to add, and move the upgrade portion to an uncommon card?
+update exile create reserves to exile then choose 1/2 common frontline card to add - done
+and move the upgrade portion to another card
+find a way to get more haniwa gen in early game. Or no need? the starting 3 is enough?
