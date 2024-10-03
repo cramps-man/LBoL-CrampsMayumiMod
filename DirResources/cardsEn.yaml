@@ -355,6 +355,11 @@ LoyaltyStrike:
     Deal {Damage} damage. 
     Increase {SelfName}'s damage by {Value1} for each |Frontline| card in the hand ({AdditionalDamage}).
 
+ClayToAshes:
+  Name: Clay To Ashes
+  Description: |-
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Value1} |Temporary Firepower|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

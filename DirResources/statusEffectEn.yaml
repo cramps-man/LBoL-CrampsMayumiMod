@@ -125,3 +125,10 @@ PauseBlock:
     At end of {PlayerName}'s turn, gain {Level} |Block| for each |Assign| status effect currently active. 
   Brief: |-
     At end of {PlayerName}'s turn, gain |Block| for each |Assign| status effect currently active. 
+
+ClayToAshesSe:
+  Name: Clay To Ashes
+  Description: |-
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower|. 
+  Brief: |-
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower|. 
