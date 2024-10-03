@@ -363,7 +363,7 @@ ClayToAshes:
 AssignExtraTime:
   Name: Assign Extra Time
   Description: |-
-    Choose an |Assign| status effect and increase the amout of times it will trigger by {Value1}. 
+    Choose an |Assign| status effect and increase the amount of times it will trigger by {Value1}. 
 
 #RARES
 FullFrontalAssault:

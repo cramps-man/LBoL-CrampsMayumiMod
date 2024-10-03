@@ -2,11 +2,11 @@ Haniwa:
   Name: Haniwa
   Description:  |-
     A buff that represents the level of Haniwa Troops (max lvl 10 each type). 
-    The 3 types of Haniwa are Fencer, Archer and Cavalry. 
+    The 3 types of Haniwa are |Fencer|, |Archer| and |Cavalry|. 
     They can be used for various card effects. 
   Brief: |-
     A buff that represents the level of Haniwa Troops (max lvl 10 each type). 
-    The 3 types of Haniwa are Fencer, Archer and Cavalry. 
+    The 3 types of Haniwa are |Fencer|, |Archer| and |Cavalry|. 
     They can be used for various card effects. 
 
 ArcherHaniwa:

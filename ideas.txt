@@ -59,5 +59,6 @@ yellow rares
  - make all assign activate an extra time
  - maybe make assign permanent? probs hard to show and broken
  - playing an assign draw 1 card? probs broken lmao
+ - ability make assign cards have replenish
 
 general rares
