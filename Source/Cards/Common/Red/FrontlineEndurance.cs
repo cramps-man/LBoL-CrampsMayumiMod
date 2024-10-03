@@ -13,11 +13,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class DiscardFrontlineDef : ModCardTemplate
+    public sealed class FrontlineEnduranceDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(DiscardFrontline);
+            return nameof(FrontlineEndurance);
         }
 
         public override CardConfig MakeConfig()
@@ -34,8 +34,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(DiscardFrontlineDef))]
-    public sealed class DiscardFrontline : Card
+    [EntityLogic(typeof(FrontlineEnduranceDef))]
+    public sealed class FrontlineEndurance : Card
     {
         public override Interaction Precondition()
         {
@@ -53,7 +53,7 @@ namespace LBoLMod.Cards
                 card.IsExile = false;
                 card.IsReplenish = true;
             }
-            yield return new DiscardManyAction(cards);
+            yield return new DrawCardAction();
         }
     }
 }

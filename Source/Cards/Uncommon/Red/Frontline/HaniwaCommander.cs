@@ -26,15 +26,15 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            //cardConfig.IsPooled = false;
+            cardConfig.IsPooled = false;
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
-            cardConfig.Keywords = Keyword.Retain;
-            cardConfig.UpgradedKeywords = Keyword.Retain;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;

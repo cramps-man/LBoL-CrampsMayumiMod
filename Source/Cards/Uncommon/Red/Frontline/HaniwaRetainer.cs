@@ -22,7 +22,7 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            //cardConfig.IsPooled = false;
+            cardConfig.IsPooled = false;
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
@@ -68,12 +68,14 @@ namespace LBoLMod.Cards
             if (base.Battle.HandZone.Count <= 1)
                 yield break;
 
+            this.NotifyActivating();
             int index = base.Battle.HandZone.FindIndexOf(c => c == this);
             if (index != 0 && index != base.Battle.HandZone.Count - 1)
             {
                 SetTempRetain(base.Battle.HandZone[index + 1]);
                 SetTempRetain(base.Battle.HandZone[index - 1]);
-            } else if (index == 0)
+            } 
+            else if (index == 0)
             {
                 SetTempRetain(base.Battle.HandZone[index + 1]);
             }

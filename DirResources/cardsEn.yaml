@@ -183,14 +183,16 @@ OptionHaniwaSupport:
     Sacrifice {SelectRequireCavalry} |Cavlary|.
     Add a |Haniwa Support| to the hand. 
 
-DiscardFrontline:
-  Name: Discard Frontline
+FrontlineEndurance:
+  Name: Frontline Endurance
   Description: |-
-    Discard up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. 
     They lose |Exile| and gain |Replenish|. 
+    Draw |e:1| card. 
   UpgradedDescription: |-
-    Discard any amount of |Frontline| cards. 
+    Choose any amount of |Frontline| cards. 
     They lose |Exile| and gain |Replenish|. 
+    Draw |e:1| card. 
 
 ModAssignOptionCard:
   Name: Dummy Status Selection

@@ -8,3 +8,6 @@ update recycle create reserves, feels weird to remove cards from play, nothing e
 update exile create reserves to exile then choose 1/2 common frontline card to add - done
 and move the upgrade portion to another card
 find a way to get more haniwa gen in early game. Or no need? the starting 3 is enough?
+  - add starting cards that fit with each playstyle, and not pooled
+
+discard frontline make doesnt discard? - done
