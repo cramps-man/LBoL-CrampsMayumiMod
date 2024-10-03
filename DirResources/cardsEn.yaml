@@ -349,6 +349,12 @@ ExileSummonUncommon:
     |2 Exiled|: Add 1 card. 
     |3 Exiled|: Add 2 cards. 
 
+LoyaltyStrike:
+  Name: Loyalty Strike
+  Description: |-
+    Deal {Damage} damage. 
+    Increase {SelfName}'s damage by {Value1} for each |Frontline| card in the hand ({AdditionalDamage}).
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

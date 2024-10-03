@@ -30,7 +30,8 @@ red uncommons
    - haniwa spy, show cards and scry in various hand/discard/draw piles
    - haniwa retainer, retain adjecent cards + upgrade if they are retain, defence with more retain in hand
    - haniwa follow up dude, something with attacking enemy with debuffs
-   - stronk attacker, more strength if more other frontline cards in hand
+   - stronk attacker, more strength if more other frontline cards in hand - maybe just make an attack card
+   - mana manip dude, bring 0 cost card to top of draw pile, lower cost in hand
  - not sure which one to do, or both
    - summon card for uncommon
    - exile common/uncommon to summon uncommon/rare summon
