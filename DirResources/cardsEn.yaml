@@ -210,6 +210,12 @@ AssignTickdownRetain:
   Description: |-
     Choose an |Assign| status effect and tickdown by {Value1}. 
 
+HaniwaBlitz:
+  Name: Haniwa Blitz
+  Description: |-
+    Deal {Damage} damage. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. 
+
 #UNCOMMONS
 CreateArcher:
   Name: Create Archer
