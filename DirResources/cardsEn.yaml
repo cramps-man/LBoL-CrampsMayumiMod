@@ -343,11 +343,11 @@ OptionHaniwaCommander:
 ExileSummonUncommon:
   Name: Exile Summon Uncommon
   Description: |-
-    |Exile| {Value1} |Frontline| card{Value1:plural one='' other='s'} and choose |e:1| Uncommon |Frontline| card to add to the hand. 
+    |Exile| {Value1} |Frontline| card{Value1:plural one='' other='s'} and add |e:1| Uncommon |Frontline| card to the hand. 
   UpgradedDescription: |-
-    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. Depending on how many were |Exiled|, choose up to |e:2| Uncommon |Frontline| cards to add to the hand. 
-    |2 chosen|: Add 1 card. 
-    |3 chosen|: Add 2 cards. 
+    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. Depending on how many were |Exiled|, add up to |e:2| Uncommon |Frontline| cards to the hand. 
+    |2 Exiled|: Add 1 card. 
+    |3 Exiled|: Add 2 cards. 
 
 #RARES
 FullFrontalAssault:
