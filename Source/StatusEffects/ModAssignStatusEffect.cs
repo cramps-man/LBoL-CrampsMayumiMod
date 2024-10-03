@@ -28,6 +28,7 @@ namespace LBoLMod.StatusEffects
         private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
         protected override void OnAdded(Unit unit)
         {
+            Level = 1;
             if (SourceCard is ModAssignCard c)
                 AssignSourceCard = c;
             this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
@@ -89,7 +90,7 @@ namespace LBoLMod.StatusEffects
         private IEnumerable<BattleAction> AssignTriggering(bool onTurnStart, bool hasExhibitA)
         {
             this.NotifyActivating();
-            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart));
+            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), Level, onTurnStart);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (hasExhibitA)

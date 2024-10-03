@@ -360,6 +360,11 @@ ClayToAshes:
   Description: |-
     Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Value1} |Temporary Firepower|. 
 
+AssignExtraTime:
+  Name: Assign Extra Time
+  Description: |-
+    Choose an |Assign| status effect and increase the amout of times it will trigger by {Value1}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

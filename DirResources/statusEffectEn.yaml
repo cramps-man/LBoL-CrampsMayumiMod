@@ -75,7 +75,7 @@ AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {CardValue1} times to random enemies. 
-    {CardArcherRequired} |Archer| assigned. 
+    {CardArcherRequired} |Archer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal damage to random enemies. 
 
@@ -83,7 +83,7 @@ AssignCavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardMana} and draw {CardValue2} card{CardValue2:plural one='' other='s'}. 
-    {CardCavalryRequired} |Cavalry| assigned. 
+    {CardCavalryRequired} |Cavalry| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, gain mana. 
 
@@ -91,7 +91,7 @@ AssignFencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardShield} |Barrier|. 
-    {CardFencerRequired} |Fencer| assigned. 
+    {CardFencerRequired} |Fencer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, gain |Barrier|. 
 
@@ -99,7 +99,7 @@ AssignBuildWatchtower:
   Name: Build Watchtower
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain |Watchtower| {CardValue1}. 
-    {CardFencerRequired} |Fencer| assigned. 
+    {CardFencerRequired} |Fencer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, gain |Watchtower|. 
 
@@ -115,7 +115,7 @@ AssignCavalryRush:
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage to the lowest hp enemy. 
     If triggered via playing a card, gain {CardMana}. 
-    {CardCavalryRequired} |Cavalry| assigned. 
+    {CardCavalryRequired} |Cavalry| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 
 

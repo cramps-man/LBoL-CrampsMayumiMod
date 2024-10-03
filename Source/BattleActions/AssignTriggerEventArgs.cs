@@ -7,5 +7,7 @@ namespace LBoLMod.BattleActions
     public class AssignTriggerEventArgs: GameEventArgs
     {
         public IEnumerable<BattleAction> BattleActions { get; internal set; }
+        public int TimesToActivate { get; internal set; }
+        public bool OnTurnStart { get; internal set; }
     }
 }

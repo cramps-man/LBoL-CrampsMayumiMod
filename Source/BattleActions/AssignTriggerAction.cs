@@ -8,11 +8,13 @@ namespace LBoLMod.BattleActions
     {
         private readonly AssignTriggerEventArgs args;
 
-        internal AssignTriggerAction(IEnumerable<BattleAction> battleActions)
+        internal AssignTriggerAction(IEnumerable<BattleAction> battleActions, int timesToActivate, bool onTurnStart)
         {
             this.args = new AssignTriggerEventArgs
             {
-                BattleActions = battleActions
+                BattleActions = battleActions,
+                TimesToActivate = timesToActivate,
+                OnTurnStart = onTurnStart
             };
         }
 
@@ -21,10 +23,13 @@ namespace LBoLMod.BattleActions
             yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggering", this.args, ModGameEvents.AssignEffectTriggering);
             yield return base.CreatePhase("Main", delegate
             {
-                foreach (var action in args.BattleActions)
+                for (int i = 0; i < args.TimesToActivate; i++)
                 {
-                    if (!base.Battle.BattleShouldEnd)
-                        base.React(action);
+                    foreach (var action in args.BattleActions)
+                    {
+                        if (!base.Battle.BattleShouldEnd)
+                            base.React(action);
+                    }
                 }
             });
             yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggered", this.args, ModGameEvents.AssignEffectTriggered);

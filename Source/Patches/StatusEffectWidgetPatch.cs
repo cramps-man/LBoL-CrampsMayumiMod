@@ -39,7 +39,7 @@ namespace LBoLMod.Patches
                     __instance.downText.enableAutoSizing = false;
                     __instance.downText.color = Color.green;*/
                 }
-                else
+                else if (modAssignStatusEffect.Level <= 1)
                     __instance.downText.text = "";
                 modAssignStatusEffect.NotifyChanged();
             }
