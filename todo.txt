@@ -11,3 +11,6 @@ find a way to get more haniwa gen in early game. Or no need? the starting 3 is e
   - add starting cards that fit with each playstyle, and not pooled
 
 discard frontline make doesnt discard? - done
+
+update some cast block actions to use direct or whatever to stop the player animation
+  - such as on assign fencer build barricade, or haniwa bodyguard maybe

@@ -44,6 +44,7 @@ yellow uncommons
  - make 1 assign activate an extra time
  - attack card that charges an assign, play assign card again to activate it
    - or make the card count rly long, and assign triggers increase scaling until it activates
+   - not long count, let pause synergize
  - forcefully trigger an assign effect
  - assign triggered = gain block/barrier
 

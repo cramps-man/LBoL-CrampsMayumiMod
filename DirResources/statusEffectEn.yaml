@@ -132,3 +132,12 @@ ClayToAshesSe:
     Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower|. 
   Brief: |-
     Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower|. 
+
+AssignChargeAttack:
+  Name: Charge Attack
+  Description: |-
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the highest hp enemy. 
+    Increase this damage by {CardValue1} whenever an |Assign| is triggered. ({ChargeDamage})
+    {CardArcherRequired} |Archer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
+  Brief: |-
+    After X cards are played, deal damage to the lowest hp enemy. 

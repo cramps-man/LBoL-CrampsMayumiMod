@@ -365,6 +365,13 @@ AssignExtraTime:
   Description: |-
     Choose an |Assign| status effect and increase the amount of times it will trigger by {Value1}. 
 
+ChargeAttack:
+  Name: Charge Attack
+  Description: |-
+    |Assign {ArcherAssigned} Archer|.
+    After {Value2} cards are played, deal {Damage} damage to the highest hp enemy. 
+    Whenever an |Assign| is triggered, increase this damage by {Value1}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
