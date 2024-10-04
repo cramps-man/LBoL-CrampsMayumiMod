@@ -50,16 +50,18 @@ yellow uncommons
 
 general uncommons
  - ability gain 1 of each haniwa per turn
- - build barracks, assign then every turn spawn random frontline - already with the haniwa commander
+ - build barracks, assign then every turn spawn random frontline
+   - already with the haniwa commander, but maybe still do it?
 
 red rares
  - attack that does more dmg with more frontline cards in exile
+   - feels a little meh
  - create copies of a frontline card, exile original?
 
 yellow rares
  - make all assign activate an extra time
  - maybe make assign permanent? probs hard to show and broken
  - playing an assign draw 1 card? probs broken lmao
- - ability make assign cards have replenish
+   - or ability make assign cards have replenish
 
 general rares

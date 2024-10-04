@@ -141,3 +141,10 @@ AssignChargeAttack:
     {CardArcherRequired} |Archer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 
+
+AssignPlayDrawSe:
+  Name: Assign Play Draw
+  Description: |-
+    Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
+  Brief: |-
+    Whenever {PlayerName} plays an |Assign| card, draw 1 card. 

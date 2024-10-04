@@ -384,7 +384,11 @@ FullFrontalAssault:
     Deal {Damage} + |X| damage.
     |X| is {Value1} multiplied by the |total level| of all |Haniwa|.
 
-#ABILITIES
+AssignPlayDraw:
+  Name: AssignPlayDraw
+  Description: |-
+    Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
+
 #OFFCOLOURS
 #UNUSED
 RandomStance:

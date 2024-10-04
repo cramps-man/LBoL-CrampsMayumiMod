@@ -33,13 +33,18 @@ namespace LBoLMod.StatusEffects.Abilities
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (args.Card is ModFrontlineCard)
+            {
+                base.NotifyActivating();
                 yield return BuffAction<TempFirepower>(Level);
+            }
         }
 
         private IEnumerable<BattleAction> OnHaniwaSacrificed(LoseHaniwaEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
+
+            base.NotifyActivating();
             yield return BuffAction<TempFirepower>(Level);
         }
     }
