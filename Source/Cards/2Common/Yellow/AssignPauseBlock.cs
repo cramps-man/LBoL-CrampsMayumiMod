@@ -29,7 +29,9 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, White = 1 };
             cardConfig.Block = 8;
-            cardConfig.UpgradedBlock = 12;
+            cardConfig.UpgradedBlock = 10;
+            cardConfig.Value1 = 6;
+            cardConfig.UpgradedValue1 = 8;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Pause) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Pause) };
             return cardConfig;
@@ -49,8 +51,10 @@ namespace LBoLMod.Cards
             {
                 var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
                 yield return new AssignPauseAction(c.StatusEffect);
+                c.StatusEffect.Level++;
             }
-            yield return BuffAction<PauseBlock>(Block.Block);
+            yield return DefenseAction();
+            yield return BuffAction<PauseBlock>(Value1);
         }
     }
 }

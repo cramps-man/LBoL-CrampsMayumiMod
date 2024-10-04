@@ -67,8 +67,8 @@ ArcherPrepVolley:
     |Assign {ArcherAssigned} Archer|.
     After {Value2} cards are played, deal {Damage} damage {Value1} times to random enemies. 
 
-CavalrySwift:
-  Name: Cavalry Swift
+HybridDraw:
+  Name: Hybrid Draw
   Description: |-
     Draw {Value1} card{Value1:plural one='' other='s'}. 
     If there is an |Assign| status active, draw |e:1| card.
@@ -202,8 +202,9 @@ ModAssignOptionCard:
 AssignPauseBlock:
   Name: Assign Pause Block
   Description: |-
-    Choose an |Assign| status effect and |Pause| it. 
-    At end of {PlayerName}'s turn, gain {Block} |Block| for each |Assign| status effect currently active. 
+    Gain {Block} |Block|. 
+    Choose an |Assign| status effect, |Pause| it and increase the amount of times it will trigger by |e:1|. 
+    At end of {PlayerName}'s turn gain {Value1} |Block| for each |Assign| status effect currently active. 
 
 AssignTickdownRetain:
   Name: Assign Tickdown Retain

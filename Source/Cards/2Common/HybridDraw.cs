@@ -13,11 +13,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class CavalrySwiftDef : ModCardTemplate
+    public sealed class HybridDrawDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(CavalrySwift);
+            return nameof(HybridDraw);
         }
 
         public override CardConfig MakeConfig()
@@ -35,18 +35,18 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(CavalrySwiftDef))]
-    public sealed class CavalrySwift : Card
+    [EntityLogic(typeof(HybridDrawDef))]
+    public sealed class HybridDraw : Card
     {
         public int AssignRequirement => 1;
         public int FrontlineRequirement => 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new DrawManyCardAction(Value1);
-            var assignStatuses = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect).ToList().Count;
+            var assignStatuses = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect).Count();
             if (assignStatuses >= AssignRequirement)
                 yield return new DrawCardAction();
-            var frontlineCards = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList().Count;
+            var frontlineCards = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).Count();
             if (frontlineCards >= FrontlineRequirement)
                 yield return new DrawCardAction();
         }
