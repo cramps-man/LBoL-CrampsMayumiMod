@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 6;
             cardConfig.UpgradedValue1 = 8;
             cardConfig.Value2 = 1;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Vulnerable) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Vulnerable) };
             return cardConfig;

@@ -15,4 +15,6 @@ discard frontline make doesnt discard? - done
 update some cast block actions to use direct or whatever to stop the player animation
   - such as on assign fencer build barricade, or haniwa bodyguard maybe
 
-Make AssignPauseBlock pause block status an ability? or a separate skill
+Make AssignPauseBlock pause block status an ability? or a separate skill - done
+
+maybe frontline cards shouldnt exile by default?

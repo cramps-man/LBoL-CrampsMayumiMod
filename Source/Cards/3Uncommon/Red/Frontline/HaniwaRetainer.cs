@@ -30,8 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 0;
             cardConfig.Value2 = 3;
             cardConfig.UpgradedValue2 = 5;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeKeyword = Keyword.TempRetain;
             cardConfig.UpgradedRelativeKeyword = Keyword.TempRetain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };

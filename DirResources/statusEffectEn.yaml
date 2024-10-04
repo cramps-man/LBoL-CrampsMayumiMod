@@ -60,9 +60,9 @@ Assign:
 Frontline:
   Name: Frontline
   Description: |-
-    A type of card that gives various effects while in your hand. Can also be played for a separate effect, but exiles itself. 
+    A type of card that gives various effects while in your hand. Can also be played for a separate effect. 
   Brief: |-
-    A type of card that gives various effects while in your hand. Can also be played for a separate effect, but exiles itself. 
+    A type of card that gives various effects while in your hand. Can also be played for a separate effect. 
 
 Pause:
   Name: Pause

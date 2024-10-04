@@ -32,8 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.Value2 = 3;
             cardConfig.UpgradedValue2 = 5;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
-            cardConfig.Keywords = Keyword.Retain | Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Exile;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;

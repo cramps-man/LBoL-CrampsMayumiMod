@@ -183,16 +183,10 @@ OptionHaniwaSupport:
     Sacrifice {SelectRequireCavalry} |Cavlary|.
     Add a |Haniwa Support| to the hand. 
 
-FrontlineEndurance:
-  Name: Frontline Endurance
+StrengthInNumbers:
+  Name: Strength In Numbers
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. 
-    They lose |Exile| and gain |Replenish|. 
-    Draw |e:1| card. 
-  UpgradedDescription: |-
-    Choose any amount of |Frontline| cards. 
-    They lose |Exile| and gain |Replenish|. 
-    Draw |e:1| card. 
+    Gain |Temporary Firepower| for each {Mana} cost card in the hand, up to {Value1}. 
 
 ModAssignOptionCard:
   Name: Dummy Status Selection
