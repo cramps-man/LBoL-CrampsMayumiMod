@@ -53,9 +53,9 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
 
-            foreach (var item in selectInteraction.SelectedCards)
+            foreach (var card in selectInteraction.SelectedCards)
             {
-                foreach (var action in item.GetActions(selector, consumingMana, null, new List<DamageAction>(), false))
+                foreach (var action in card.GetActions(selector, consumingMana, null, new List<DamageAction>(), false))
                 {
                     if (base.Battle.BattleShouldEnd)
                         yield break;

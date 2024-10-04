@@ -15,9 +15,9 @@ namespace LBoLMod.StatusEffects
     public abstract class ModAssignStatusEffect: StatusEffect
     {
         protected ModAssignCard AssignSourceCard { get; set; }
-        protected int CardFencerRequired => AssignSourceCard.FencerAssigned;
-        protected int CardArcherRequired => AssignSourceCard.ArcherAssigned;
-        protected int CardCavalryRequired => AssignSourceCard.CavalryAssigned;
+        public int CardFencerAssigned => AssignSourceCard.FencerAssigned;
+        public int CardArcherAssigned => AssignSourceCard.ArcherAssigned;
+        public int CardCavalryAssigned => AssignSourceCard.CavalryAssigned;
         protected int StartingCardCounter => AssignSourceCard.StartingCardCounter;
         protected DamageInfo CardDamage => AssignSourceCard.Damage;
         protected int CardShield => AssignSourceCard.RawShield;
@@ -25,6 +25,9 @@ namespace LBoLMod.StatusEffects
         protected int CardValue1 => AssignSourceCard.Value1;
         protected int CardValue2 => AssignSourceCard.Value2;
         public bool IsPaused { get; set; } = false;
+        public int PauseGenFencer { get; set; } = 0;
+        public int PauseGenArcher { get; set; } = 0;
+        public int PauseGenCavalry { get; set; } = 0;
         private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
         protected override void OnAdded(Unit unit)
         {
@@ -95,7 +98,7 @@ namespace LBoLMod.StatusEffects
                 yield break;
             if (hasExhibitA)
                 yield return new DrawCardAction();
-            yield return new GainHaniwaAction(CardFencerRequired, CardArcherRequired, CardCavalryRequired, true);
+            yield return new GainHaniwaAction(CardFencerAssigned + PauseGenFencer, CardArcherAssigned + PauseGenArcher, CardCavalryAssigned + PauseGenCavalry, true);
             yield return new RemoveStatusEffectAction(this);
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
