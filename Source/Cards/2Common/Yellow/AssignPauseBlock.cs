@@ -8,7 +8,6 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.StatusEffects.Temporary;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -30,8 +29,6 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1, White = 1 };
             cardConfig.Block = 8;
             cardConfig.UpgradedBlock = 10;
-            cardConfig.Value1 = 6;
-            cardConfig.UpgradedValue1 = 8;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Pause) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Pause) };
             return cardConfig;
@@ -54,7 +51,6 @@ namespace LBoLMod.Cards
                 c.StatusEffect.Level++;
             }
             yield return DefenseAction();
-            yield return BuffAction<PauseBlock>(Value1);
         }
     }
 }

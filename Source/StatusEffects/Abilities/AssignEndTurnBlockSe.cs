@@ -8,29 +8,28 @@ using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LBoLMod.StatusEffects.Temporary
+namespace LBoLMod.StatusEffects.Abilities
 {
-    public sealed class PauseBlockDef : ModStatusEffectTemplate
+    public sealed class AssignEndTurnBlockDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(PauseBlock);
+            return nameof(AssignEndTurnBlockSe);
         }
     }
 
-    [EntityLogic(typeof(PauseBlockDef))]
-    public sealed class PauseBlock: StatusEffect
+    [EntityLogic(typeof(AssignEndTurnBlockDef))]
+    public sealed class AssignEndTurnBlockSe : StatusEffect
     {
         protected override void OnAdded(Unit unit)
         {
-            base.ReactOwnerEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
+            ReactOwnerEvent(Battle.Player.TurnEnded, OnPlayerTurnEnded);
         }
 
         private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)
         {
-            int numAssignStatuses = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect).Count();
+            int numAssignStatuses = Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect).Count();
             yield return new CastBlockShieldAction(args.Unit, Level * numAssignStatuses, 0);
-            yield return new RemoveStatusEffectAction(this);
         }
     }
 }

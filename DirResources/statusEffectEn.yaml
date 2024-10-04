@@ -119,8 +119,8 @@ AssignCavalryRush:
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 
 
-PauseBlock:
-  Name: Pause Block
+AssignEndTurnBlockSe:
+  Name: Assign End Turn Block
   Description: |-
     At end of {PlayerName}'s turn, gain {Level} |Block| for each |Assign| status effect currently active. 
   Brief: |-

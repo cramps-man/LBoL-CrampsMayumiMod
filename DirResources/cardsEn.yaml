@@ -204,7 +204,6 @@ AssignPauseBlock:
   Description: |-
     Gain {Block} |Block|. 
     Choose an |Assign| status effect, |Pause| it and increase the amount of times it will trigger by |e:1|. 
-    At end of {PlayerName}'s turn gain {Value1} |Block| for each |Assign| status effect currently active. 
 
 AssignTickdownRetain:
   Name: Assign Tickdown Retain
@@ -372,6 +371,11 @@ ChargeAttack:
     |Assign {ArcherAssigned} Archer|.
     After {Value2} cards are played, deal {Damage} damage to the highest hp enemy. 
     Whenever an |Assign| is triggered, increase this damage by {Value1}. 
+
+AssignEndTurnBlock:
+  Name: Assign End Turn Block
+  Description: |-
+    At end of {PlayerName}'s turn gain {Value1} |Block| for each |Assign| status effect currently active. 
 
 #RARES
 FullFrontalAssault:
