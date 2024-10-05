@@ -187,10 +187,10 @@ NumBuffBlock:
     Gain {Block} |Block|. 
     Gain {Value1} additional |Block| based on the number of buffs {PlayerName} has. ({AdditionalBlock})
 
-AssignTickdownRetain:
-  Name: Assign Tickdown Retain
+GainBuffTickdown:
+  Name: Gain Buff Tickdown
   Description: |-
-    Choose an |Assign| status effect and tickdown by {Value1}. 
+    For this turn when gaining a buff, tickdown all |Assign| buffs by {Value1}. 
 
 HaniwaBlitz:
   Name: Haniwa Blitz

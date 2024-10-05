@@ -2,21 +2,20 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class AssignTickdownRetainDef : ModCardTemplate
+    public sealed class GainBuffTickdownDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(AssignTickdownRetain);
+            return nameof(GainBuffTickdown);
         }
 
         public override CardConfig MakeConfig()
@@ -24,10 +23,9 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { White = 1 };
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 4;
-            cardConfig.Keywords = Keyword.Retain;
+            cardConfig.Cost = new ManaGroup() { White = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
+            cardConfig.Value1 = 1;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
@@ -35,21 +33,12 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(AssignTickdownRetainDef))]
-    public sealed class AssignTickdownRetain : Card
+    [EntityLogic(typeof(GainBuffTickdownDef))]
+    public sealed class GainBuffTickdown : Card
     {
-        public override Interaction Precondition()
-        {
-            return new MiniSelectCardInteraction(HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player, false));
-        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (precondition != null)
-            {
-                var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
-                c.StatusEffect.Tickdown(Value1);
-            }
-            yield break;
+            yield return BuffAction<GainBuffTickdownSe>(Value1);
         }
     }
 }

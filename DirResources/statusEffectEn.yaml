@@ -148,3 +148,10 @@ AssignPlayDrawSe:
     Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
   Brief: |-
     Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
+
+GainBuffTickdownSe:
+  Name: Gain Buff Tickdown
+  Description: |-
+    For this turn when gaining a buff, tickdown all |Assign| buffs by {Level}. 
+  Brief: |-
+    For this turn when gaining a buff, tickdown all |Assign| buffs by {Level}. 

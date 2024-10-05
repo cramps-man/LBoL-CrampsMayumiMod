@@ -65,3 +65,4 @@ yellow rares
    - or ability make assign cards have replenish
 
 general rares
+ - extra turn, assigns wont tick down during this extra turn?

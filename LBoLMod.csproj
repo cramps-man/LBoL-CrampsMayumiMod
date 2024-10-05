@@ -329,7 +329,6 @@
 
     <ItemGroup>
       <Folder Include="Resources\" />
-      <Folder Include="Source\StatusEffects\Temporary\" />
     </ItemGroup>
 
 
