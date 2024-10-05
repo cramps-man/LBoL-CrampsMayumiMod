@@ -10,7 +10,7 @@ namespace LBoLMod.Utils
 {
     public static class HaniwaAssignUtils
     {
-        public static List<Card> CreateAssignOptionCards(PlayerUnit player, bool includePaused)
+        public static List<Card> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true)
         {
             List<Card> list = new List<Card>();
             foreach (ModAssignStatusEffect s in player.StatusEffects.Where(s => s is ModAssignStatusEffect))

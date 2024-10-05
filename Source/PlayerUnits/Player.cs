@@ -68,7 +68,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
                 nameof(ArcherPrepVolley),
-                nameof(CreateHaniwa)
+                nameof(AssignHaniwaCreate)
             };
         }
         private static List<string> GetDeckB()
@@ -84,7 +84,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
                 nameof(SummonHaniwa),
-                nameof(CreateHaniwa)
+                nameof(FrontlineHaniwaCreate)
             };
         }
     }

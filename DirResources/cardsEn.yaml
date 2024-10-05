@@ -198,6 +198,21 @@ HaniwaBlitz:
     Deal {Damage} damage. 
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. 
 
+AssignHaniwaCreate:
+  Name: Assign Haniwa Create
+  Description: |-
+    Choose an |Assign| status effect. Gain |Haniwa| equal to the level |Assigned|. 
+  UpgradedDescription: |-
+    Choose an |Assign| status effect. Gain |Haniwa| equal to the level |Assigned| + {Value1}. 
+
+FrontlineHaniwaCreate:
+  Name: Frontline Haniwa Create
+  Description: |-
+    Choose a |Frontline| card. Gain |Haniwa| equal to the rarity. 
+    |Common|: {CommonGain} of each. 
+    |Uncommon|: {UncommonGain} of each. 
+    |Rare|: {RareGain} of each. 
+
 #UNCOMMONS
 CreateArcher:
   Name: Create Archer
