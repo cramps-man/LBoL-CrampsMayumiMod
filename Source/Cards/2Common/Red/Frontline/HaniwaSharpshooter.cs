@@ -44,6 +44,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSharpshooterDef))]
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
+        private Dictionary<GameEntity, DamageInfo> damageSources = new Dictionary<GameEntity, DamageInfo>();
         public int DamageBypassAccurate { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -54,7 +55,7 @@ namespace LBoLMod.Cards
 
         private void OnPlayerDamageDealing(DamageDealingEventArgs args)
         {
-            DamageBypassAccurate = args.DamageInfo.Damage.RoundToInt();
+            damageSources.TryAdd(args.ActionSource, args.DamageInfo);
         }
 
         private void OnPlayerDamageGiving(DamageEventArgs args)
@@ -73,6 +74,11 @@ namespace LBoLMod.Cards
                 return;
             if (!args.Target.HasStatusEffect<Graze>())
                 return;
+            if (damageSources.ContainsKey(args.ActionSource))
+            {
+                DamageBypassAccurate = damageSources.GetValueOrDefault(args.ActionSource).Damage.RoundToInt();
+                damageSources.Clear();
+            }
 
             base.NotifyActivating();
             args.AddModifier(this);
