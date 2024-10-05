@@ -105,13 +105,6 @@ FencerBuildBarricade:
     |Assign {FencerAssigned} Fencer|.
     After {Value2} cards are played, gain {Shield} |Barrier|. 
 
-CavalryRush:
-  Name: Cavalry Rush
-  Description: |-
-    |Assign {CavalryAssigned} Cavalry|.
-    After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
-    If effect is triggered via playing a card, gain {Mana}. 
-
 DefenceCreateReserves:
   Name: Defence Create Reserves
   Description: |-
@@ -183,21 +176,16 @@ OptionHaniwaSupport:
     Sacrifice {SelectRequireCavalry} |Cavlary|.
     Add a |Haniwa Support| to the hand. 
 
-StrengthInNumbers:
-  Name: Strength In Numbers
-  Description: |-
-    Gain |Temporary Firepower| for each {Mana} cost card in the hand, up to {Value1}. 
-
 ModAssignOptionCard:
   Name: Dummy Status Selection
   Description: |-
     Dummy card for status effect selection, do not read. 
 
-AssignPauseBlock:
-  Name: Assign Pause Block
+NumBuffBlock:
+  Name: Num Buff Block
   Description: |-
     Gain {Block} |Block|. 
-    Choose an |Assign| status effect, |Pause| it and increase the amount of times it will trigger by |e:1|. 
+    Gain {Value1} additional |Block| based on the number of buffs {PlayerName} has. ({AdditionalBlock})
 
 AssignTickdownRetain:
   Name: Assign Tickdown Retain
@@ -370,6 +358,18 @@ AssignEndTurnBlock:
   Name: Assign End Turn Block
   Description: |-
     At end of {PlayerName}'s turn gain {Value1} |Block| for each |Assign| status effect currently active. 
+
+StrengthInNumbers:
+  Name: Strength In Numbers
+  Description: |-
+    Gain |Temporary Firepower| for each {Mana} cost card in the hand. ({ZeroCostCount})
+
+CavalryRush:
+  Name: Cavalry Rush
+  Description: |-
+    |Assign {CavalryAssigned} Cavalry|.
+    After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
+    If effect is triggered via playing a card, gain {Mana}. 
 
 #RARES
 FullFrontalAssault:

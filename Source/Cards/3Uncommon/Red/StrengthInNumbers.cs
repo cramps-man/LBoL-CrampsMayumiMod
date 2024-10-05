@@ -6,8 +6,6 @@ using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.StatusEffects.Keywords;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,14 +21,14 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 1 };
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 10;
+            cardConfig.Cost = new ManaGroup() { Red = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
             cardConfig.Mana = new ManaGroup() { Any = 0 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(TempFirepower) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(TempFirepower) };
             return cardConfig;
         }
     }
@@ -38,13 +36,21 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(StrengthInNumbersDef))]
     public sealed class StrengthInNumbers : Card
     {
+        public int ZeroCostCount
+        {
+            get
+            {
+                if (base.Battle != null)
+                    return base.Battle.HandZoneAndPlayArea.Where(c => c.Cost == ManaGroup.Empty).Count();
+                return 0;
+            }
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            int zeroCostCount = base.Battle.HandZoneAndPlayArea.Where(c => c.Cost == ManaGroup.Empty).Count();
-            if (zeroCostCount <= 0)
+            if (ZeroCostCount <= 0)
                 yield break;
 
-            yield return BuffAction<TempFirepower>(Math.Min(zeroCostCount, Value1));
+            yield return BuffAction<TempFirepower>(ZeroCostCount);
         }
     }
 }

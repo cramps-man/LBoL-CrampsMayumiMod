@@ -17,4 +17,13 @@ update some cast block actions to use direct or whatever to stop the player anim
 
 Make AssignPauseBlock pause block status an ability? or a separate skill - done
 
-maybe frontline cards shouldnt exile by default?
+maybe frontline cards shouldnt exile by default? - done
+
+strength in numbers probs uncommon? also remove limit and upgrade for cost - done
+cavalry rush probs uncommon - done
+rework assign pause block, make it give block based on current buffs - done
+rework assign tickdown retain, make it when player gains a buff, tickdown assigns by 1
+let assigns be stackable, playing the same buff increases number of triggers by 1 by default
+remove assign tickdown extra time as it is now redundant? or rework to something
+charge attack increase the card count to 20 or something, since pause is being removed
+still need to refine uncommon frontline cards

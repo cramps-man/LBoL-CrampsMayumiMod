@@ -19,11 +19,11 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Attack;
-            cardConfig.TargetType = TargetType.Nobody;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 12;
-            cardConfig.UpgradedDamage = 17;
+            cardConfig.Damage = 15;
+            cardConfig.UpgradedDamage = 21;
             cardConfig.Value1 = 4;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Mana = new ManaGroup() { White = 1 };
