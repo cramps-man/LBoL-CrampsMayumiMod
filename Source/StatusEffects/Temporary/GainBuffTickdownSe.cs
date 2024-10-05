@@ -39,6 +39,8 @@ namespace LBoLMod.StatusEffects.Abilities
                 return;
             if (args.Effect.Type != StatusEffectType.Positive)
                 return;
+            if (args.AddResult != StatusEffectAddResult.Added)
+                return;
 
             var assigns = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect);
             foreach (ModAssignStatusEffect assign in assigns)

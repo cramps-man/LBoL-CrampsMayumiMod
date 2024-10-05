@@ -190,7 +190,7 @@ NumBuffBlock:
 GainBuffTickdown:
   Name: Gain Buff Tickdown
   Description: |-
-    For this turn when gaining a buff, tickdown all |Assign| buffs by {Value1}. 
+    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Value1}. 
 
 HaniwaBlitz:
   Name: Haniwa Blitz

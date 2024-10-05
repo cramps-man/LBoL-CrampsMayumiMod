@@ -28,3 +28,5 @@ let assigns be stackable, playing the same buff increases number of triggers by 
 remove assign tickdown extra time as it is now redundant? or rework to something
 charge attack increase the card count to 20 or something, since pause is being removed
 still need to refine uncommon frontline cards
+rework fencer build barricade to be like a cirno frost armor
+  - and add a fencer attack in commons

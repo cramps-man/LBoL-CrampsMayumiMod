@@ -154,6 +154,6 @@ AssignPlayDrawSe:
 GainBuffTickdownSe:
   Name: Gain Buff Tickdown
   Description: |-
-    For this turn when gaining a buff, tickdown all |Assign| buffs by {Level}. 
+    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Level}. 
   Brief: |-
-    For this turn when gaining a buff, tickdown all |Assign| buffs by {Level}. 
+    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Level}. 
