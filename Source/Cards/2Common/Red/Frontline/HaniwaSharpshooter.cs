@@ -1,11 +1,9 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
-using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -45,48 +43,31 @@ namespace LBoLMod.Cards
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
         private Dictionary<GameEntity, DamageInfo> damageSources = new Dictionary<GameEntity, DamageInfo>();
-        public int DamageBypassAccurate { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
             base.HandleBattleEvent(base.Battle.Player.DamageDealing, OnPlayerDamageDealing);
-            base.HandleBattleEvent(base.Battle.Player.DamageGiving, OnPlayerDamageGiving);
         }
 
         private void OnPlayerDamageDealing(DamageDealingEventArgs args)
         {
-            damageSources.TryAdd(args.ActionSource, args.DamageInfo);
-        }
-
-        private void OnPlayerDamageGiving(DamageEventArgs args)
-        {
+            if (args.Cause == ActionCause.OnlyCalculate)
+                return;
             if (base.Zone != CardZone.Hand)
                 return;
             if (RemainingValue <= 0)
-                return;
-            if (!(args.Target is EnemyUnit))
                 return;
             if (args.DamageInfo.DamageType != DamageType.Attack)
                 return;
             if (args.DamageInfo.IsAccuracy)
                 return;
-            if (!args.DamageInfo.IsGrazed)
-                return;
-            if (!args.Target.HasStatusEffect<Graze>())
-                return;
-            if (damageSources.ContainsKey(args.ActionSource))
-            {
-                DamageBypassAccurate = damageSources.GetValueOrDefault(args.ActionSource).Damage.RoundToInt();
-                damageSources.Clear();
-            }
+
+            var dmgInfo = args.DamageInfo;
+            dmgInfo.IsAccuracy = true;
+            args.DamageInfo = dmgInfo;
+            args.AddModifier(this);
 
             base.NotifyActivating();
-            args.AddModifier(this);
-            var dmgInfo = args.DamageInfo;
-            dmgInfo.Damage = DamageBypassAccurate;
-            dmgInfo.IsGrazed = false;
-            dmgInfo.IsAccuracy = true;
-            args.DamageInfo = args.Target.MeasureDamage(dmgInfo);
             RemainingValue -= 1;
             base.NotifyChanged();
         }
