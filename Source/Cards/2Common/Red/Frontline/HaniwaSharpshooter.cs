@@ -4,6 +4,7 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
+using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -42,11 +43,12 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSharpshooterDef))]
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
-        private Dictionary<GameEntity, DamageInfo> damageSources = new Dictionary<GameEntity, DamageInfo>();
+        private bool accuracyModified = false;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
             base.HandleBattleEvent(base.Battle.Player.DamageDealing, OnPlayerDamageDealing);
+            base.HandleBattleEvent(base.Battle.Player.DamageGiving, OnPlayerDamageGiving);
         }
 
         private void OnPlayerDamageDealing(DamageDealingEventArgs args)
@@ -67,8 +69,27 @@ namespace LBoLMod.Cards
             args.DamageInfo = dmgInfo;
             args.AddModifier(this);
 
+            accuracyModified = true;
+        }
+
+        private void OnPlayerDamageGiving(DamageEventArgs args)
+        {
+            if (base.Zone != CardZone.Hand)
+                return;
+            if (RemainingValue <= 0)
+                return;
+            if (!(args.Target is EnemyUnit))
+                return;
+            if (args.DamageInfo.DamageType != DamageType.Attack)
+                return;
+            if (!args.Target.HasStatusEffect<Graze>())
+                return;
+            if (!accuracyModified)
+                return;
+
             base.NotifyActivating();
             RemainingValue -= 1;
+            accuracyModified = false;
             base.NotifyChanged();
         }
 
