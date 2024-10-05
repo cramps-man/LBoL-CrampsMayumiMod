@@ -25,13 +25,9 @@ namespace LBoLMod.StatusEffects
         protected int CardValue1 => AssignSourceCard.Value1;
         protected int CardValue2 => AssignSourceCard.Value2;
         public bool IsPaused { get; set; } = false;
-        public int PauseGenFencer { get; set; } = 0;
-        public int PauseGenArcher { get; set; } = 0;
-        public int PauseGenCavalry { get; set; } = 0;
         private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
         protected override void OnAdded(Unit unit)
         {
-            Level = 1;
             if (SourceCard is ModAssignCard c)
                 AssignSourceCard = c;
             this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
@@ -98,7 +94,7 @@ namespace LBoLMod.StatusEffects
                 yield break;
             if (hasExhibitA)
                 yield return new DrawCardAction();
-            yield return new GainHaniwaAction(CardFencerAssigned + PauseGenFencer, CardArcherAssigned + PauseGenArcher, CardCavalryAssigned + PauseGenCavalry, true);
+            yield return new GainHaniwaAction(CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned, true);
             yield return new RemoveStatusEffectAction(this);
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);

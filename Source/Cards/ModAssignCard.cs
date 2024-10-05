@@ -21,7 +21,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
-            yield return BuffAction(AssignStatusType, count: StartingCardCounter);
+            yield return BuffAction(AssignStatusType, level: 1, count: StartingCardCounter);
         }
     }
 }

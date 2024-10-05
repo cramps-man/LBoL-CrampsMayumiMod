@@ -23,12 +23,6 @@ namespace LBoLMod.BattleActions
             yield return base.CreatePhase("Main", delegate
             {
                 args.StatusEffectToPause.IsPaused = true;
-                if (args.StatusEffectToPause.CardFencerAssigned > 0)
-                    args.StatusEffectToPause.PauseGenFencer++;
-                if (args.StatusEffectToPause.CardArcherAssigned > 0)
-                    args.StatusEffectToPause.PauseGenArcher++;
-                if (args.StatusEffectToPause.CardCavalryAssigned > 0)
-                    args.StatusEffectToPause.PauseGenCavalry++;
             });
             yield return base.CreateEventPhase<AssignPauseEventArgs>("AssignStatusPaused", this.args, ModGameEvents.AssignStatusPaused);
         }
