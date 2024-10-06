@@ -27,11 +27,12 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 0;
             cardConfig.UpgradedValue1 = 1;
-            cardConfig.UpgradedKeywords = Keyword.Retain;
+            cardConfig.Keywords = Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.RelativeKeyword = Keyword.Exile;
+            cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Frontline) };
             return cardConfig;
@@ -42,24 +43,23 @@ namespace LBoLMod.Cards
     public sealed class FrontlineHaniwaCreate : Card
     {
         public int CommonGain => 1 + Value1;
-        public int UncommonGain => 2 + Value1;
-        public int RareGain => 3 + Value1;
+        public int UncommonGain => 3 + Value1;
+        public int RareGain => 5 + Value1;
         public override Interaction Precondition()
         {
-            return new MiniSelectCardInteraction(base.Battle.HandZone.Where(c => c is ModFrontlineCard));
+            return new SelectCardInteraction(0, 1, base.Battle.HandZone.Where(c => c is ModFrontlineCard));
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (precondition != null)
+            foreach (Card card in ((SelectCardInteraction)precondition).SelectedCards)
             {
-                var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModFrontlineCard;
-                if (c.Config.Rarity == Rarity.Common)
+                if (card.Config.Rarity == Rarity.Common)
                     yield return new GainHaniwaAction(CommonGain, CommonGain, CommonGain);
-                else if (c.Config.Rarity == Rarity.Uncommon)
+                else if (card.Config.Rarity == Rarity.Uncommon)
                     yield return new GainHaniwaAction(UncommonGain, UncommonGain, UncommonGain);
-                else if (c.Config.Rarity == Rarity.Rare)
+                else if (card.Config.Rarity == Rarity.Rare)
                     yield return new GainHaniwaAction(RareGain, RareGain, RareGain);
-                yield return new ExileCardAction(c);
+                yield return new ExileCardAction(card);
             }
         }
     }

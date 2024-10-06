@@ -30,16 +30,18 @@ charge attack increase the card count to 20 or something, since pause is being r
 still need to refine uncommon frontline cards
 rework fencer build barricade to be like a cirno frost armor
   - and add a fencer attack in commons
+  - or just keep barricade and add new card in uncommon
 
 fix minicardselections as more than 5 cards wont show the rest
 
-frontline cards upgradable up to +99
-draw card after playing 0 cost card?
+frontline cards upgradable up to +99 - done
+draw card after playing 0 cost card? - already doing it after assign card, which is probs overkill to add another
 attack card dmg = number of cards in all piles
-upgrade frontline card by more than once?
+upgrade frontline card by more than once? - done
 card lowers cost when retain card is used
 exile frontline triggers onplay effect?
 exile frontline upgrade cards
 losing buff tickdown assign
+play assign card gain block
 
 update assign status effect to assign buff in card yaml

@@ -26,11 +26,11 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { White = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 0;
             cardConfig.UpgradedValue1 = 1;
-            cardConfig.UpgradedKeywords = Keyword.Retain;
+            cardConfig.Value2 = 1;
+            cardConfig.Keywords = Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
@@ -42,14 +42,16 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            return new MiniSelectCardInteraction(HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
+            return new SelectCardInteraction(0, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (precondition != null)
+            foreach (ModAssignOptionCard optionCard in ((SelectCardInteraction)precondition).SelectedCards)
             {
-                var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
-                yield return new GainHaniwaAction(c.StatusEffect.CardFencerAssigned + Value1, c.StatusEffect.CardArcherAssigned + Value1, c.StatusEffect.CardCavalryAssigned + Value1);
+                optionCard.StatusEffect.Count += Value2;
+                yield return new GainHaniwaAction(optionCard.StatusEffect.CardFencerAssigned + Value1, 
+                    optionCard.StatusEffect.CardArcherAssigned + Value1, 
+                    optionCard.StatusEffect.CardCavalryAssigned + Value1);
             }
         }
     }
