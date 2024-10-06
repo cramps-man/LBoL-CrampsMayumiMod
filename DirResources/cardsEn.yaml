@@ -213,6 +213,12 @@ FrontlineHaniwaCreate:
     |Uncommon|: {UncommonGain} of each. 
     |Rare|: {RareGain} of each. 
 
+AssignFastTrigger:
+  Name: Assign Fast Trigger
+  Description: |-
+    Deal {Damage} damage.
+    Choose 1 |Assign| buff and immidiately trigger its effect. 
+
 FrontlineUpgrade:
   Name: Frontline Upgrade
   Description: |-

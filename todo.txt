@@ -41,3 +41,5 @@ card lowers cost when retain card is used
 exile frontline triggers onplay effect?
 exile frontline upgrade cards
 losing buff tickdown assign
+
+update assign status effect to assign buff in card yaml
