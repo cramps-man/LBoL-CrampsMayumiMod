@@ -201,9 +201,9 @@ HaniwaBlitz:
 AssignHaniwaCreate:
   Name: Assign Haniwa Create
   Description: |-
-    Choose an |Assign| status effect and increase the card counter by {Value2}. Gain |Haniwa| equal to the level |Assigned|. 
+    Choose an |Assign| buff and increase the card counter by {Value2}. Gain |Haniwa| equal to the level |Assigned|. 
   UpgradedDescription: |-
-    Choose an |Assign| status effect and increase the card counter by {Value2}. Gain |Haniwa| equal to the level |Assigned| + {Value1}. 
+    Choose an |Assign| buff and increase the card counter by {Value2}. Gain |Haniwa| equal to the level |Assigned| + {Value1}. 
 
 FrontlineHaniwaCreate:
   Name: Frontline Haniwa Create
@@ -271,8 +271,8 @@ GarrisonArcher:
 AssignTickdownReturn:
   Name: Assign Tickdown Return
   Description: |-
-    Tickdown all |Assign| status effects by {Value1}. 
-    Whenever an |Assign| effect triggers, return {SelfName} from the discard pile to the hand. 
+    Tickdown all |Assign| buffs by {Value1}. 
+    Whenever an |Assign| buff triggers, return {SelfName} from the discard pile to the hand. 
 
 HaniwaSpy:
   Name: Haniwa Spy
@@ -373,7 +373,7 @@ ClayToAshes:
 AssignExtraTime:
   Name: Assign Extra Time
   Description: |-
-    Choose an |Assign| status effect and increase the amount of times it will trigger by {Value1}. 
+    Choose an |Assign| buff and increase the amount of times it will trigger by {Value1}. 
     Draw |e:1| card. 
 
 ChargeAttack:
@@ -386,7 +386,7 @@ ChargeAttack:
 AssignEndTurnBlock:
   Name: Assign End Turn Block
   Description: |-
-    At end of {PlayerName}'s turn gain {Value1} |Block| for each |Assign| status effect currently active. 
+    At end of {PlayerName}'s turn gain {Value1} |Block| for each |Assign| buff currently active. 
 
 StrengthInNumbers:
   Name: Strength In Numbers
@@ -398,7 +398,7 @@ CavalryRush:
   Description: |-
     |Assign {CavalryAssigned} Cavalry|.
     After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
-    If effect is triggered via playing a card, gain {Mana}. 
+    If effect is not triggered at turn start, gain {Mana}. 
 
 #RARES
 FullFrontalAssault:
