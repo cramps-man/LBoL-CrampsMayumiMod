@@ -31,6 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.Damage = 16;
             cardConfig.UpgradedDamage = 21;
             cardConfig.Value1 = 1;
+            cardConfig.Keywords = Keyword.Accuracy;
+            cardConfig.UpgradedKeywords = Keyword.Accuracy;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice) };
             return cardConfig;
