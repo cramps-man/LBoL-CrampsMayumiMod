@@ -26,10 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Block = 8;
-            cardConfig.UpgradedBlock = 10;
             cardConfig.Value1 = 4;
-            cardConfig.UpgradedValue1 = 6;
-            cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -41,6 +38,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaBodyguardDef))]
     public sealed class HaniwaBodyguard : ModFrontlineCard
     {
+        public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault() * 2;
+        protected override bool IncludeUpgradesInRemainingValue => true;
         public int DamageTaken { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
         {

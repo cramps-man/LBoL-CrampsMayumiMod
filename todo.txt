@@ -30,3 +30,14 @@ charge attack increase the card count to 20 or something, since pause is being r
 still need to refine uncommon frontline cards
 rework fencer build barricade to be like a cirno frost armor
   - and add a fencer attack in commons
+
+fix minicardselections as more than 5 cards wont show the rest
+
+frontline cards upgradable up to +99
+draw card after playing 0 cost card?
+attack card dmg = number of cards in all piles
+upgrade frontline card by more than once?
+card lowers cost when retain card is used
+exile frontline triggers onplay effect?
+exile frontline upgrade cards
+losing buff tickdown assign

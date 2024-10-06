@@ -13,6 +13,12 @@ namespace LBoLMod.Cards
     {
         public override string Description => base.Description + UiUtils.WrapByColor(" " + nameof(Frontline), GlobalConfig.DefaultKeywordColor);
         public int RemainingValue { get; set; } = 0;
+        protected virtual bool IncludeUpgradesInRemainingValue => false;
+        private void SetRemainValue(int value)
+        {
+            RemainingValue = value;
+            base.NotifyChanged();
+        }
 
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -23,29 +29,57 @@ namespace LBoLMod.Cards
         {
             if (args.Cards.Contains(this))
             {
-                RemainingValue = Value1;
-                base.NotifyChanged();
+                SetRemainValue(Value1);
             }
         }
         public override IEnumerable<BattleAction> OnDraw()
         {
-            RemainingValue = Value1;
-            base.NotifyChanged();
+            SetRemainValue(Value1);
             return null;
         }
 
         public override IEnumerable<BattleAction> OnTurnStartedInHand()
         {
-            RemainingValue = Value1;
-            base.NotifyChanged();
+            SetRemainValue(Value1);
             return null;
         }
+        public override int AdditionalValue1 => base.UpgradeCounter.GetValueOrDefault();
 
+        private const int UPGRADE_AMOUNT = 1;
         public override void Upgrade()
         {
-            base.Upgrade();
-            RemainingValue += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
-            base.NotifyChanged();
+            if (IncludeUpgradesInRemainingValue)
+            {
+                RemainingValue += UPGRADE_AMOUNT;
+            }
+            else
+            {
+                RemainingValue += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
+            }
+            int? upgradeCounter = base.UpgradeCounter + UPGRADE_AMOUNT;
+            base.UpgradeCounter = upgradeCounter;
+            ProcessKeywordUpgrade();
+            CostChangeInUpgrading();
+            NotifyChanged();
+        }
+        public override bool CanUpgrade => base.UpgradeCounter < 99;
+        public override bool IsUpgraded
+        {
+            get
+            {
+                int? upgradeCounter = base.UpgradeCounter;
+                if (upgradeCounter.HasValue)
+                {
+                    return upgradeCounter.GetValueOrDefault() > 0;
+                }
+
+                return false;
+            }
+        }
+        public override void Initialize()
+        {
+            base.Initialize();
+            base.UpgradeCounter = 0;
         }
     }
 }
