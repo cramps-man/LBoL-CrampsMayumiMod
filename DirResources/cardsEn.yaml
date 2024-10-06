@@ -374,6 +374,7 @@ AssignExtraTime:
   Name: Assign Extra Time
   Description: |-
     Choose an |Assign| status effect and increase the amount of times it will trigger by {Value1}. 
+    Draw |e:1| card. 
 
 ChargeAttack:
   Name: Charge Attack

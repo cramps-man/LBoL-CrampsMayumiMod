@@ -7,7 +7,7 @@ update recycle create reserves, feels weird to remove cards from play, nothing e
 
 update exile create reserves to exile then choose 1/2 common frontline card to add - done
 and move the upgrade portion to another card
-find a way to get more haniwa gen in early game. Or no need? the starting 3 is enough?
+find a way to get more haniwa gen in early game. Or no need? the starting 3 is enough? - done
   - add starting cards that fit with each playstyle, and not pooled
 
 discard frontline make doesnt discard? - done
@@ -25,9 +25,14 @@ rework assign pause block, make it give block based on current buffs - done
 rework assign tickdown retain, make it when player gains a buff, tickdown assigns by 1 - done
 let assigns be stackable, playing the same buff increases number of triggers by 1 by default - done
   - sideeffect of losing overspent haniwa, seems like a cool mechanic
-remove assign tickdown extra time as it is now redundant? or rework to something
-charge attack increase the card count to 20 or something, since pause is being removed
+remove assign tickdown extra time as it is now redundant? or rework to something - done
+  - can possibly keep, it's an easier way to increase trigger count
+  - made it draw 1
+charge attack increase the card count to 20 or something, since pause is being removed - done
+  - or keep it short and increase the dmg gain
 still need to refine uncommon frontline cards
+  - rework exploiter in hand ability to follow up with dmg + apply 1 random debuff
+  - commander should be rare?
 rework fencer build barricade to be like a cirno frost armor
   - and add a fencer attack in commons
   - or just keep barricade and add new card in uncommon
@@ -43,5 +48,7 @@ exile frontline triggers onplay effect?
 exile frontline upgrade cards
 losing buff tickdown assign
 play assign card gain block
+ability assigns now tickdown by +1? maybe broken
+build training camp, assign then gain ability, upgrade random card(s) at start of turn
 
 update assign status effect to assign buff in card yaml

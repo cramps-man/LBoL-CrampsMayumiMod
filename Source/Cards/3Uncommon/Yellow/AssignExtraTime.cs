@@ -2,6 +2,7 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
@@ -39,16 +40,15 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            return new MiniSelectCardInteraction(HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player, true));
+            return new SelectCardInteraction(0, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (precondition != null)
+            foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
-                var c = ((MiniSelectCardInteraction)precondition).SelectedCard as ModAssignOptionCard;
-                c.StatusEffect.Level++;
+                card.StatusEffect.Level++;
             }
-            yield break;
+            yield return new DrawCardAction();
         }
     }
 }
