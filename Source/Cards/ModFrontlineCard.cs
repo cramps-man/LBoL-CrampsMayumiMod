@@ -43,7 +43,16 @@ namespace LBoLMod.Cards
             SetRemainValue(Value1);
             return null;
         }
-        public override int AdditionalValue1 => base.UpgradeCounter.GetValueOrDefault();
+        public override int AdditionalValue1 
+        {
+            get
+            {
+                if (IncludeUpgradesInRemainingValue)
+                    return base.UpgradeCounter.GetValueOrDefault();
+                else
+                    return 0;
+            }
+        }
 
         private const int UPGRADE_AMOUNT = 1;
         public override void Upgrade()

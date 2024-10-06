@@ -27,11 +27,9 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Damage = 5;
-            cardConfig.UpgradedDamage = 7;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
-            cardConfig.UpgradedValue2 = 2;
             cardConfig.Keywords = Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
@@ -43,6 +41,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSharpshooterDef))]
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
+        public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
+        public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
         private bool accuracyModified = false;
         protected override void OnEnterBattle(BattleController battle)
         {
