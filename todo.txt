@@ -46,7 +46,8 @@ upgrade frontline card by more than once? - done
 card lowers cost when retain card is used
 exile frontline triggers onplay effect?
 exile frontline upgrade cards
-losing buff tickdown assign
+  - upgrade more depending on how many exiled
+losing buff tickdown assign - meh?
 play assign card gain block
 ability assigns now tickdown by +1? maybe broken
 build training camp, assign then gain ability, upgrade random card(s) at start of turn
@@ -55,4 +56,4 @@ num buff block should be uncommon? + give it base block
 gain buff tickdown should be reworked, too good for common or just broken in general
   - or make it rare?
 
-update assign status effect to assign buff in card yaml
+update assign status effect to assign buff in card yaml - done

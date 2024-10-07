@@ -88,6 +88,8 @@ namespace LBoLMod.StatusEffects
 
         private IEnumerable<BattleAction> AssignTriggering(bool onTurnStart, bool hasExhibitA)
         {
+            if (base.Battle.BattleShouldEnd)
+                yield break;
             this.NotifyActivating();
             yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), Level, onTurnStart);
             if (base.Battle.BattleShouldEnd)
