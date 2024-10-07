@@ -20,12 +20,13 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2, White = 1 };
             cardConfig.Block = 10;
-            cardConfig.Value1 = 2;
+            cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 4;
             return cardConfig;
         }

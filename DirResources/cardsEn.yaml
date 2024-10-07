@@ -181,17 +181,6 @@ ModAssignOptionCard:
   Description: |-
     Dummy card for status effect selection, do not read. 
 
-NumBuffBlock:
-  Name: Num Buff Block
-  Description: |-
-    Gain {Block} |Block|. 
-    Gain {Value1} additional |Block| based on the number of buffs {PlayerName} has. ({AdditionalBlock})
-
-GainBuffTickdown:
-  Name: Gain Buff Tickdown
-  Description: |-
-    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Value1}. 
-
 HaniwaBlitz:
   Name: Haniwa Blitz
   Description: |-
@@ -225,6 +214,15 @@ FrontlineUpgrade:
     Gain {Block} |Block|. 
     Choose up to {Value1} card{Value1:plural one='' other='s'} to upgrade. 
     If a |Frontline| card is chosen, upgrade it {Value2} additional time{Value2:plural one='' other='s'}. 
+
+ZeroCostMove:
+  Name: Zero Cost Move
+  Description: |-
+    Move up to {Value1} random {Mana} cost card{Value1:plural one='' other='s'} from the draw pile to the hand. 
+    Currently {ZeroCostCount} total in draw pile. 
+  UpgradedDescription: |-
+    Move up to {Value1} random {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles to the hand. 
+    Currently {ZeroCostCount} total in draw/discard piles. 
 
 #UNCOMMONS
 CreateArcher:
@@ -400,6 +398,12 @@ CavalryRush:
     After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
     If effect is not triggered at turn start, gain {Mana}. 
 
+NumBuffBlock:
+  Name: Num Buff Block
+  Description: |-
+    Gain {Block} |Block|. 
+    Gain {Value1} additional |Block| based on the number of buffs {PlayerName} has. ({AdditionalBlock})
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
@@ -416,6 +420,11 @@ AssignPlayDraw:
   Name: AssignPlayDraw
   Description: |-
     Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
+
+GainBuffTickdown:
+  Name: Gain Buff Tickdown
+  Description: |-
+    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Value1}. 
 
 #OFFCOLOURS
 #UNUSED
