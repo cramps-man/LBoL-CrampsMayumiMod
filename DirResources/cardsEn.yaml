@@ -224,6 +224,12 @@ ZeroCostMove:
     Move up to {Value1} random {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles to the hand. 
     Currently {ZeroCostCount} total in draw/discard piles. 
 
+AssignExtraTrigger:
+  Name: Assign Extra Trigger
+  Description: |-
+    Gain {Block} |Block|. 
+    Choose an |Assign| buff and increase the amount of times it will trigger by {Value1}. 
+
 #UNCOMMONS
 CreateArcher:
   Name: Create Archer
@@ -367,12 +373,6 @@ ClayToAshes:
   Name: Clay To Ashes
   Description: |-
     Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Value1} |Temporary Firepower|. 
-
-AssignExtraTime:
-  Name: Assign Extra Time
-  Description: |-
-    Choose an |Assign| buff and increase the amount of times it will trigger by {Value1}. 
-    Draw |e:1| card. 
 
 ChargeAttack:
   Name: Charge Attack
