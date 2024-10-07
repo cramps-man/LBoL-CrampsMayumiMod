@@ -159,3 +159,10 @@ GainBuffTickdownSe:
     For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Level}. 
   Brief: |-
     For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Level}. 
+
+ZeroCostReductionSe:
+  Name: Zero Cost Reduction
+  Description: |-
+    When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
+  Brief: |-
+    When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
