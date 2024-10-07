@@ -404,6 +404,13 @@ NumBuffBlock:
     Gain {Block} |Block|. 
     Gain {Value1} additional |Block| based on the number of buffs {PlayerName} has. ({AdditionalBlock})
 
+ExileUpgrade:
+  Name: Exile Upgrade
+  Description: |-
+    Gain {Block} |Block|. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and |Exile|. 
+    Upgrade all other cards in the hand by the amount of |Exiled| cards plus {Value2}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
