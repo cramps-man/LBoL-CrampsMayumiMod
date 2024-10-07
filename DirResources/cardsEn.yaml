@@ -411,6 +411,15 @@ ExileUpgrade:
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and |Exile|. 
     Upgrade all other cards in the hand by the amount of |Exiled| cards plus {Value2}. 
 
+AshesToClay:
+  Name: Ashes To Clay
+  Description: |-
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute their |On Play| actions. 
+    Move the selected cards from |Exile| to the top of the draw pile. 
+    Draw {Value2} card{Value2:plural one='' other='s'}. 
+  DetailText: |-
+    Can not choose a |Haniwa Commander|. Bad things happen. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

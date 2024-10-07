@@ -13,11 +13,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ExileUpgradeDef : ModCardTemplate
+    public sealed class AshesToClayDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileUpgrade);
+            return nameof(AshesToClay);
         }
 
         public override CardConfig MakeConfig()
@@ -25,14 +25,12 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
+            cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 2 };
-            cardConfig.Block = 16;
+            cardConfig.Cost = new ManaGroup() { Red = 1, Any = 1 };
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 1;
-            cardConfig.UpgradedValue2 = 2;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -41,26 +39,36 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(ExileUpgradeDef))]
-    public sealed class ExileUpgrade : Card
+    [EntityLogic(typeof(AshesToClayDef))]
+    public sealed class AshesToClay : Card
     {
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList();
+            List<Card> list = base.Battle.ExileZone.Where(c => c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
             return new SelectHandInteraction(0, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return DefenseAction();
-            if (!(precondition is SelectHandInteraction exileInteraction))
+            if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
 
-            int exileCount = exileInteraction.SelectedCards.Count;
-            for (int i = 0; i < exileCount + Value2; i++)
+            foreach (var card in selectInteraction.SelectedCards)
             {
-                yield return new UpgradeCardsAction(base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive));
+                foreach (var action in card.GetActions(selector, consumingMana, null, new List<DamageAction>(), false))
+                {
+                    if (base.Battle.BattleShouldEnd)
+                        yield break;
+                    yield return action;
+                }
             }
-            yield return new ExileManyCardAction(exileInteraction.SelectedCards);
+            if (base.Battle.BattleShouldEnd)
+                yield break;
+
+            foreach (var card in selectInteraction.SelectedCards)
+            {
+                yield return new MoveCardToDrawZoneAction(card, DrawZoneTarget.Top);
+            }
+            yield return new DrawManyCardAction(Value2);
         }
     }
 }
