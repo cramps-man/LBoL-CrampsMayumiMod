@@ -11,11 +11,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class AssignEndTurnBlockDef : ModCardTemplate
+    public sealed class AssignPlayGainBlockDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(AssignEndTurnBlock);
+            return nameof(AssignPlayGainBlock);
         }
 
         public override CardConfig MakeConfig()
@@ -33,12 +33,12 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(AssignEndTurnBlockDef))]
-    public sealed class AssignEndTurnBlock : Card
+    [EntityLogic(typeof(AssignPlayGainBlockDef))]
+    public sealed class AssignPlayGainBlock : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return BuffAction<AssignEndTurnBlockSe>(level: Value1);
+            yield return BuffAction<AssignPlayGainBlockSe>(level: Value1);
         }
     }
 }

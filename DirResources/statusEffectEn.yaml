@@ -123,12 +123,12 @@ AssignCavalryRush:
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 
 
-AssignEndTurnBlockSe:
-  Name: Assign End Turn Block
+AssignPlayGainBlockSe:
+  Name: Assign Play Gain Block
   Description: |-
-    At end of {PlayerName}'s turn, gain {Level} |Block| for each |Assign| status effect currently active. 
+    When playing an |Assign| card, gain {Level} |Block|. 
   Brief: |-
-    At end of {PlayerName}'s turn, gain |Block| for each |Assign| status effect currently active. 
+    When playing an |Assign| card, gain |Block|. 
 
 ClayToAshesSe:
   Name: Clay To Ashes

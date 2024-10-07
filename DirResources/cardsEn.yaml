@@ -381,10 +381,10 @@ ChargeAttack:
     After {Value2} cards are played, deal {Damage} damage to the highest hp enemy. 
     Whenever an |Assign| is triggered, increase this damage by {Value1}. 
 
-AssignEndTurnBlock:
-  Name: Assign End Turn Block
+AssignPlayGainBlock:
+  Name: Assign Play Gain Block
   Description: |-
-    At end of {PlayerName}'s turn gain {Value1} |Block| for each |Assign| buff currently active. 
+    When playing an |Assign| card, gain {Value1} |Block|. 
 
 StrengthInNumbers:
   Name: Strength In Numbers
