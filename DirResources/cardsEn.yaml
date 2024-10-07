@@ -433,7 +433,7 @@ FullFrontalAssault:
     |X| is {Value1} multiplied by the |total level| of all |Haniwa|.
 
 AssignPlayDraw:
-  Name: AssignPlayDraw
+  Name: Assign Play Draw
   Description: |-
     Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
 
@@ -446,6 +446,12 @@ ZeroCostReduction:
   Name: Zero Cost Reduction
   Description: |-
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
+
+MassRessurection:
+  Name: Mass Ressurection
+  Description: |-
+    Deal {Damage} damage to all enemies. Deal additional damage equal to the amount of |Frontline| cards in |Exile| multiplied by {Value1}. ({AdditionalDamage})
+    Move all those cards to the discard pile. 
 
 #OFFCOLOURS
 #UNUSED
