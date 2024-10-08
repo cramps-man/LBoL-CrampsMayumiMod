@@ -82,6 +82,7 @@ namespace LBoLMod.Cards
                 if (DamageTaken != 0)
                 {
                     base.NotifyActivating();
+                    DamageTaken = 0;
                     args.AddModifier(this);
                     args.DamageInfo = damageInfo;
                     base.NotifyChanged();

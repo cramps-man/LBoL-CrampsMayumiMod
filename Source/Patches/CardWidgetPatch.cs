@@ -15,7 +15,8 @@ namespace LBoLMod.Patches
             if (widget._card.Id == nameof(HaniwaBodyguard))
             {
                 var card = (HaniwaBodyguard)widget._card;
-                PopupHud.Instance.PopupFromScene(card.DamageTaken, PopupHud.PlayerHitColor, widget.transform.position + new Vector3(0, 13));
+                if (card.DamageTaken > 0)
+                    PopupHud.Instance.PopupFromScene(card.DamageTaken, PopupHud.PlayerHitColor, widget.transform.position + new Vector3(0, 13));
             }
         }
     }

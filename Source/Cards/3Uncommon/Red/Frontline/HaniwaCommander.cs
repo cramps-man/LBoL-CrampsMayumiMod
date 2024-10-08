@@ -74,6 +74,7 @@ namespace LBoLMod.Cards
 
             foreach (var card in selectInteraction.SelectedCards)
             {
+                card.NotifyActivating();
                 foreach (var action in card.GetActions(selector, consumingMana, null, new List<DamageAction>(), false))
                 {
                     if (base.Battle.BattleShouldEnd)

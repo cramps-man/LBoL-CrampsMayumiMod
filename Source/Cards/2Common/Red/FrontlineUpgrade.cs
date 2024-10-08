@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && (c is ModFrontlineCard || !c.IsUpgraded)).ToList();
+            List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c.CanUpgradeAndPositive).ToList();
             return new SelectHandInteraction(0, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

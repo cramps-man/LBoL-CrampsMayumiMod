@@ -41,19 +41,22 @@ fix minicardselections as more than 5 cards wont show the rest
 
 frontline cards upgradable up to +99 - done
 draw card after playing 0 cost card? - already doing it after assign card, which is probs overkill to add another
-attack card dmg = number of cards in all piles
 upgrade frontline card by more than once? - done
-card lowers cost when retain card is used
-exile frontline triggers onplay effect?
 exile frontline upgrade cards - done
   - upgrade more depending on how many exiled
 losing buff tickdown assign - meh?
 play assign card gain block - done
-ability assigns now tickdown by +1? maybe broken
-build training camp, assign then gain ability, upgrade random card(s) at start of turn
-exile frontline, trigger assign + extra time?
 num buff block should be uncommon? + give it base block - done
 gain buff tickdown should be reworked, too good for common or just broken in general - done
   - or make it rare?
 
 update assign status effect to assign buff in card yaml - done
+
+attack card dmg = number of cards in all piles - already have mass ressurection card, not sure bout this one
+card lowers cost when retain card is used - not sure im going too hard into retain
+exile frontline triggers onplay effect?
+ability assigns now tickdown by +1? maybe broken
+build training camp, assign then gain ability, upgrade random card(s) at start of turn
+exile frontline, trigger assign + extra time?
+
+more exile frontline cards, or exile cards in general
