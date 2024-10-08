@@ -61,5 +61,5 @@ exile frontline, trigger assign + extra time?
 
 more exile frontline cards, or exile cards in general
 exile all frontline cards, summon new frontline, is has upgrade equal to number of exiled cards + total upgrades
-summon random frontline until hand is full
-removal all but 1 assign buffs, that buff gains extra triggers equal to buffs removed
+summon random frontline until hand is full - done
+removal all but 1 assign buffs, that buff gains extra triggers equal to buffs removed - done

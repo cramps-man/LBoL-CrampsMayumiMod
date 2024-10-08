@@ -459,6 +459,11 @@ MassExtraTrigger:
     Choose |e:1| |Assign| buff and remove all other |Assign| buffs. 
     Add the number of triggers of the removed buffs onto the chosen buff. 
 
+MassSummon:
+  Name: Mass Summon
+  Description: |-
+    Add random Common/Uncommon |Frontline| cards to the hand until it is full. 
+
 #OFFCOLOURS
 #UNUSED
 RandomStance:
