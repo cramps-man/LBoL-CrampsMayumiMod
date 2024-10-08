@@ -29,7 +29,6 @@ namespace LBoLMod.Utils
 
         public static readonly List<Type> UncommonOptionTypes = new List<Type>
         {
-            typeof(OptionHaniwaCommander),
             typeof(OptionHaniwaRetainer),
             typeof(OptionHaniwaExploiter),
             typeof(OptionHaniwaSpy)
@@ -37,7 +36,6 @@ namespace LBoLMod.Utils
 
         public static readonly List<Type> UncommonSummonTypes = new List<Type>
         {
-            typeof(HaniwaCommander),
             typeof(HaniwaRetainer),
             typeof(HaniwaExploiter),
             typeof(HaniwaSpy)

@@ -4,15 +4,13 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Utils;
 using LBoLMod.StatusEffects.Keywords;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using LBoL.Core.Battle.Interactions;
 
 namespace LBoLMod.Cards
 {
@@ -27,12 +25,12 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
-            cardConfig.Rarity = Rarity.Uncommon;
+            cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value2 = 5;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -44,27 +42,42 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaCommanderDef))]
     public sealed class HaniwaCommander : ModFrontlineCard
     {
+        public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
+        protected override bool IncludeUpgradesInRemainingValue => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.ReactBattleEvent(base.Battle.Player.TurnStarted, this.OnPlayerTurnStarted);
+            base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
         }
 
-        private IEnumerable<BattleAction> OnPlayerTurnStarted(UnitEventArgs args)
+        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
+            if (!(args.Card is ModFrontlineCard))
+                yield break;
+            if (RemainingValue <= 0)
+                yield break;
 
+            Card card = base.Battle.DrawZone.Where(c => c is ModFrontlineCard).SampleOrDefault(base.BattleRng);
+            if (card == null) 
+                yield break;
             base.NotifyActivating();
-            Type commonType = HaniwaFrontlineUtils.CommonSummonTypes.SampleOrDefault(base.BattleRng);
-            yield return new AddCardsToHandAction(Library.CreateCard(commonType));
+            RemainingValue -= 1;
+            yield return new MoveCardAction(card, CardZone.Hand);
         }
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
-            return new SelectHandInteraction(0, Value1, list);
+            List<Card> list = new List<Card>();
+            if (base.UpgradeCounter >= 5)
+                list = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander))
+                    .Concat(base.Battle.DrawZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)))
+                    .Concat(base.Battle.DiscardZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander))).ToList();
+            else
+                list = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
+            return new SelectHandInteraction(0, Value2, list);
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
