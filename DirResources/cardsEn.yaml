@@ -294,7 +294,11 @@ HaniwaRetainer:
 HaniwaExploiter:
   Name: Haniwa Exploiter
   Description: |-
-    |While in hand|: At end of turn, deal {Value1} damage to all enemies with debuffs. If there are none, attack the enemy with the lowest life. 
+    |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
+    |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
+  NonbattleDescription: |-
+    |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
 
 SummonHaniwaUncommon:
