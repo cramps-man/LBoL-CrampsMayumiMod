@@ -70,5 +70,13 @@ exile summon uncommon, maybe make 1 exile = 1 summon, and 2 = 2 - done
 exile upgrade, not sure if need to limit how many cards get upgraded
 strength in numbers, upgrade includes 0 cost in draw/discard - done
 creaete cavalry, rework to not give scry? or atleast not only scry
-ultra frontline, check if going past 100 upgrade counter breaks, or maybe just remove the 99 limit
+  - 3:draw 1, 5: scry 3, 7: draw another 2, 10: gain redyellow mana
+ultra frontline, check if going past 100 upgrade counter breaks, or maybe just remove the 99 limit - done
+  - it does not break anything, but fixed it going past the limit. I also increased it to 999. 
 full frontal assault, probs tweak a bit to increase dmg + do sacrifice
+
+give charge attack retain maybe? perhaps on upgrade
+improve starter haniwa gens, be more stable
+add a haniwa gen in uncommon that is all 3
+assign heal card? + some other effect
+some fencer assign that reflects damage? or just gain reflect

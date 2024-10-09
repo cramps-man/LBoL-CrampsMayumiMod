@@ -31,8 +31,9 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 1;
-            cardConfig.UpgradedValue2 = 2;
+            cardConfig.Value2 = 3;
+            cardConfig.Mana = new ManaGroup() { Red = 1, White = 1};
+            cardConfig.UpgradedMana = new ManaGroup() { Philosophy = 2 };
             cardConfig.Keywords = Keyword.Scry;
             cardConfig.UpgradedKeywords = Keyword.Scry;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
@@ -47,8 +48,19 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(cavalryToGain: Value1);
-            yield return new ScryAction(new ScryInfo(HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player)));
-            yield return new DrawManyCardAction(Value2);
+            int cavalryCount = HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
+            if (cavalryCount >= 5)
+                yield return new ScryAction(new ScryInfo(Value2));
+
+            int drawCount = 0;
+            if (cavalryCount >= 3)
+                drawCount++;
+            if (cavalryCount >= 7)
+                drawCount++;
+            yield return new DrawManyCardAction(drawCount);
+
+            if (cavalryCount >= 10)
+                yield return new GainManaAction(Mana);
         }
     }
 }

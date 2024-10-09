@@ -246,8 +246,11 @@ CreateCavalry:
   Name: Create Cavalry
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
-    |Scry| |e:1| for each level of |Cavalry|. 
-    Draw {Value2} card{Value2:plural one='' other='s'}.
+    Gain effects based on |Cavalry| level. 
+    |3|: Draw 1 card. 
+    |5|: |Scry| {Value2}. 
+    |7|: Draw 1 card. 
+    |10|: Gain {Mana}. 
 
 CreateFencer:
   Name: Create Fencer
