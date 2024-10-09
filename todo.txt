@@ -64,11 +64,11 @@ exile all frontline cards, summon new frontline, is has upgrade equal to number 
 summon random frontline until hand is full - done
 removal all but 1 assign buffs, that buff gains extra triggers equal to buffs removed - done
 
-frontline upgrade, target 2 instead of 1x3
-zero cost move, upgrade lets you choose
-exile summon uncommon, maybe make 1 exile = 1 summon, and 2 = 2
+frontline upgrade, target 2 instead of 1x3 - done
+zero cost move, upgrade lets you choose - done
+exile summon uncommon, maybe make 1 exile = 1 summon, and 2 = 2 - done
 exile upgrade, not sure if need to limit how many cards get upgraded
-strength in numbers, upgrade includes 0 cost in draw/discard
+strength in numbers, upgrade includes 0 cost in draw/discard - done
 creaete cavalry, rework to not give scry? or atleast not only scry
 ultra frontline, check if going past 100 upgrade counter breaks, or maybe just remove the 99 limit
 full frontal assault, probs tweak a bit to increase dmg + do sacrifice

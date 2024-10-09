@@ -347,11 +347,7 @@ OptionHaniwaExploiter:
 ExileSummonUncommon:
   Name: Exile Summon Uncommon
   Description: |-
-    |Exile| {Value1} |Frontline| card{Value1:plural one='' other='s'} and add |e:1| Uncommon |Frontline| card to the hand. 
-  UpgradedDescription: |-
-    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'}. Depending on how many were |Exiled|, add up to |e:2| Uncommon |Frontline| cards to the hand. 
-    |2 Exiled|: Add 1 card. 
-    |3 Exiled|: Add 2 cards. 
+    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add that many Uncommon |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
 LoyaltyStrike:
   Name: Loyalty Strike
@@ -380,6 +376,8 @@ StrengthInNumbers:
   Name: Strength In Numbers
   Description: |-
     Gain |Temporary Firepower| for each {Mana} cost card in the hand. ({ZeroCostCount})
+  UpgradedDescription: |-
+    Gain |Temporary Firepower| for each {Mana} cost card in the hand/draw/discard piles. ({ZeroCostCount})
 
 CavalryRush:
   Name: Cavalry Rush

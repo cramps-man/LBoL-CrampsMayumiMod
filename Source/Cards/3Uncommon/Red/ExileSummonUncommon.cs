@@ -29,8 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -45,7 +45,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(2, Value1, list);
+            return new SelectHandInteraction(1, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
@@ -53,7 +53,7 @@ namespace LBoLMod.Cards
                 yield break;
 
             int exileCount = exileInteraction.SelectedCards.Count;
-            var summonInteraction = new SelectCardInteraction(0, exileCount - 1, HaniwaFrontlineUtils.UncommonSummonTypes.ConvertAll(t => Library.CreateCard(t)));
+            var summonInteraction = new SelectCardInteraction(0, exileCount, HaniwaFrontlineUtils.UncommonSummonTypes.ConvertAll(t => Library.CreateCard(t)));
             yield return new InteractionAction(summonInteraction);
 
             yield return new ExileManyCardAction(exileInteraction.SelectedCards);

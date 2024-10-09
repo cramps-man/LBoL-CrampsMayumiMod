@@ -24,8 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
+            cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.Mana = new ManaGroup() { Any = 0 };
             cardConfig.RelativeEffects = new List<string>() { nameof(TempFirepower) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(TempFirepower) };
@@ -40,9 +39,11 @@ namespace LBoLMod.Cards
         {
             get
             {
-                if (base.Battle != null)
-                    return base.Battle.HandZoneAndPlayArea.Where(c => c.Cost == ManaGroup.Empty).Count();
-                return 0;
+                if (base.Battle == null)
+                    return 0;
+                if (IsUpgraded)
+                    return base.Battle.HandZoneAndPlayArea.Concat(base.Battle.DrawZone).Concat(base.Battle.DiscardZone).Where(c => c.Cost == ManaGroup.Empty).Count();
+                return base.Battle.HandZoneAndPlayArea.Where(c => c.Cost == ManaGroup.Empty).Count();
             }
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
