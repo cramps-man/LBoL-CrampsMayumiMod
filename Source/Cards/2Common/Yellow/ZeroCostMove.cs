@@ -4,6 +4,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -25,8 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 2;
-            cardConfig.Cost = new ManaGroup() { White = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { White = 1 };
+            cardConfig.Cost = new ManaGroup() { White = 1 };
             cardConfig.Mana = new ManaGroup() { Any = 0 };
             return cardConfig;
         }
@@ -41,22 +41,36 @@ namespace LBoLMod.Cards
             {
                 if (base.Battle == null)
                     return 0;
-                if (IsUpgraded)
-                    return base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).Count();
-                return base.Battle.DrawZone.Where(c => c.Cost.IsEmpty).Count();
+                return base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).Count();
             }
+        }
+        public override Interaction Precondition()
+        {
+            if (IsUpgraded)
+            {
+                List<Card> cards = base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).ToList();
+                return new SelectCardInteraction(0, 2, cards);
+            }
+
+            return null;
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            for (int i = 0; i < Value1; i++)
+            if (IsUpgraded && precondition != null)
             {
-                Card card = null;
-                if (IsUpgraded)
-                    card = base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).SampleOrDefault(base.BattleRng);
-                else
-                    card = base.Battle.DrawZone.Where(c => c.Cost.IsEmpty).SampleOrDefault(base.BattleRng);
-                if (card != null)
+                foreach (var card in ((SelectCardInteraction)precondition).SelectedCards)
+                {
                     yield return new MoveCardAction(card, CardZone.Hand);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < Value1; i++)
+                {
+                    Card card = base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).SampleOrDefault(base.BattleRng);
+                    if (card != null)
+                        yield return new MoveCardAction(card, CardZone.Hand);
+                }
             }
         }
     }

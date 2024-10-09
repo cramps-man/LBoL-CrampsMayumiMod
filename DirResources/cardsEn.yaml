@@ -218,10 +218,10 @@ FrontlineUpgrade:
 ZeroCostMove:
   Name: Zero Cost Move
   Description: |-
-    Move up to {Value1} random {Mana} cost card{Value1:plural one='' other='s'} from the draw pile to the hand. 
-    Currently {ZeroCostCount} total in draw pile. 
+    {Value1} random {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard pile are moved to the hand. 
+    Currently {ZeroCostCount} total in draw/discard pile. 
   UpgradedDescription: |-
-    Move up to {Value1} random {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles to the hand. 
+    Choose up to {Value1} {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles and move them to the hand. 
     Currently {ZeroCostCount} total in draw/discard piles. 
 
 AssignExtraTrigger:

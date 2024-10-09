@@ -29,8 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Block = 6;
             cardConfig.UpgradedBlock = 8;
             cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
-            cardConfig.UpgradedValue2 = 2;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
