@@ -71,7 +71,8 @@ namespace LBoLMod.Cards
             CostChangeInUpgrading();
             NotifyChanged();
         }
-        public override bool CanUpgrade => base.UpgradeCounter < 99;
+        public const int MAX_UPGRADE = 999;
+        public override bool CanUpgrade => base.UpgradeCounter < MAX_UPGRADE;
         public override bool IsUpgraded
         {
             get

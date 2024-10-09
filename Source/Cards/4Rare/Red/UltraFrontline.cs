@@ -63,6 +63,8 @@ namespace LBoLMod.Cards
             }
             else
                 newSummon.UpgradeCounter = exileCards.Count;
+            if (newSummon.UpgradeCounter > ModFrontlineCard.MAX_UPGRADE)
+                newSummon.UpgradeCounter = ModFrontlineCard.MAX_UPGRADE;
             yield return new ExileManyCardAction(exileCards);
             yield return new AddCardsToHandAction(newSummon);
         }
