@@ -27,6 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 15;
             cardConfig.UpgradedValue1 = 20;
             cardConfig.Value2 = 10;
+            cardConfig.Keywords = Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;

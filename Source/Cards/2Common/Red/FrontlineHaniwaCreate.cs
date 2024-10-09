@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 0;
-            cardConfig.UpgradedValue1 = 1;
+            cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Keywords = Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeKeyword = Keyword.Exile;
@@ -59,7 +59,7 @@ namespace LBoLMod.Cards
                     yield return new GainHaniwaAction(UncommonGain, UncommonGain, UncommonGain);
                 else if (card.Config.Rarity == Rarity.Rare)
                     yield return new GainHaniwaAction(RareGain, RareGain, RareGain);
-                yield return new ExileCardAction(card);
+                yield return new UpgradeCardAction(card);
             }
         }
     }

@@ -75,8 +75,8 @@ ultra frontline, check if going past 100 upgrade counter breaks, or maybe just r
   - it does not break anything, but fixed it going past the limit. I also increased it to 999. 
 full frontal assault, probs tweak a bit to increase dmg + do sacrifice - done
 
-give charge attack retain maybe? perhaps on upgrade
-improve starter haniwa gens, be more stable
+give charge attack retain maybe? perhaps on upgrade - done
+improve starter haniwa gens, be more stable - done
 add a haniwa gen in uncommon that is all 3
 assign heal card? + some other effect
 some fencer assign that reflects damage? or just gain reflect

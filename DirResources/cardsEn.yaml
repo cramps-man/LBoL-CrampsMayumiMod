@@ -190,14 +190,12 @@ HaniwaBlitz:
 AssignHaniwaCreate:
   Name: Assign Haniwa Create
   Description: |-
-    Choose an |Assign| buff and increase the card counter by {Value2}. Gain |Haniwa| equal to the level |Assigned|. 
-  UpgradedDescription: |-
-    Choose an |Assign| buff and increase the card counter by {Value2}. Gain |Haniwa| equal to the level |Assigned| + {Value1}. 
+    Choose an |Assign| buff and increase the card counter by {Value2}. Gain |Haniwa| equal to the |Assigned| level + {Value1}. 
 
 FrontlineHaniwaCreate:
   Name: Frontline Haniwa Create
   Description: |-
-    Choose a |Frontline| card and |Exile| it. Gain |Haniwa| equal to the rarity. 
+    Choose a |Frontline| card and upgrade it. Gain |Haniwa| equal to the rarity. 
     |Common|: {CommonGain} of each. 
     |Uncommon|: {UncommonGain} of each. 
     |Rare|: {RareGain} of each. 
