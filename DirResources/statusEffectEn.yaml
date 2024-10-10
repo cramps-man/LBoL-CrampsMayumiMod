@@ -79,7 +79,7 @@ AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {CardValue1} times to random enemies. 
-    {CardArcherAssigned} |Archer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
+    {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal damage to random enemies. 
 
@@ -87,7 +87,7 @@ AssignCavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardMana} and draw {CardValue2} card{CardValue2:plural one='' other='s'}. 
-    {CardCavalryAssigned} |Cavalry| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
+    {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, gain mana. 
 
@@ -95,7 +95,7 @@ AssignFencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardShield} |Barrier|. 
-    {CardFencerAssigned} |Fencer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
+    {CardFencerAssigned} |Fencer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, gain |Barrier|. 
 
@@ -103,7 +103,7 @@ AssignBuildWatchtower:
   Name: Build Watchtower
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain |Watchtower| {CardValue1}. 
-    {CardFencerAssigned} |Fencer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
+    {CardFencerAssigned} |Fencer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, gain |Watchtower|. 
 
@@ -119,7 +119,7 @@ AssignCavalryRush:
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage to the lowest hp enemy. 
     If triggered via playing a card, gain {CardMana}. 
-    {CardCavalryAssigned} |Cavalry| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
+    {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 
 
@@ -143,7 +143,7 @@ AssignChargeAttack:
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the highest hp enemy. 
     Whenever an |Assign| is triggered, increase this damage by {CardValue1} and increase extra triggers by |e:1|. 
     Extra damage ({ChargeDamage})
-    {CardArcherAssigned} |Archer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
+    {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 
 

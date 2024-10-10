@@ -36,6 +36,17 @@ namespace LBoLMod.StatusEffects
             base.ReactOwnerEvent(base.Battle.UsUsed, this.OnUltimateSkillUsed);
         }
 
+        public override bool Stack(StatusEffect other)
+        {
+            base.Stack(other);
+            if (!SourceCard.IsUpgraded && other.SourceCard.IsUpgraded)
+            {
+                if (other.SourceCard is ModAssignCard c)
+                    AssignSourceCard = c;
+            }
+            return true;
+        }
+
         public void Tickdown(int amount)
         {
             if (IsPaused)

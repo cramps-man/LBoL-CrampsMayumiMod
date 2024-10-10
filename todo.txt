@@ -87,9 +87,9 @@ assign 1 cav, 1-2 card count, draw 1 + maybe scry
 
 charge attack probs shouldnt scale so hard like that - done
   - maybe increase dmg a smaller amount 3-5, and also increase extra trigger by 1
-fix assigns not using upgraded card values if non-upgraded version was used first
+fix assigns not using upgraded card values if non-upgraded version was used first - done
 fix assign create haniwa to not aoe the haniwa gain - done
-update assign text to say trigger instead of activate
+update assign text to say trigger instead of activate - done
 
 off color ideas
 frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards apply cold + frost armor, on play = cold + dmg to all?
