@@ -79,7 +79,8 @@ give charge attack retain maybe? perhaps on upgrade - done
 improve starter haniwa gens, be more stable - done
 add a haniwa gen in uncommon that is all 3 - will this make it too ez? since the starter gens got buffed
   - or update the defence create reserves to just gain all 3
-assign heal card? + some other effect
+assign heal card? + some other effect - done
+  - or sacrifice heal
 some fencer assign that reflects damage? or just gain reflect - done
 choose 1 random assign card, card count starts at some low number - done
 assign effect triggers, add 1 random frontline card to draw pile or hand - done

@@ -430,6 +430,12 @@ FencerPrepCounter:
     |Assign {FencerAssigned} Fencer|.
     After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Block} |Block| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
 
+HealSacrifice:
+  Name: Heal Sacrifice
+  Description: |-
+    |Sacrifice| |e:2| of each |Haniwa|. 
+    Gain {Value1} life and {Value2} |Firepower|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
