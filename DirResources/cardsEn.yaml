@@ -415,6 +415,12 @@ CavalryScout:
     |Assign {CavalryAssigned} Cavalry|.
     After {Value2} card{Value2:plural one=' is' other='s are'} played draw {Value1} card{Value1:plural one='' other='s'}. 
 
+ChooseShortAssign:
+  Name: Choose Short Assign
+  Description: |-
+    Choose 1 of 3 |Assign| cards and gain its buff. No |Haniwa| required. 
+    The buff has a starting card counter of {Value1} and number of triggers of {Value2}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

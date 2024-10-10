@@ -3,6 +3,7 @@ using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLMod.Cards;
 using LBoLMod.StatusEffects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +11,16 @@ namespace LBoLMod.Utils
 {
     public static class HaniwaAssignUtils
     {
+        public readonly static List<Type> AssignCardTypes = new List<Type>()
+        {
+            typeof(ArcherPrepVolley),
+            typeof(CavalrySupplies),
+            typeof(FencerBuildBarricade),
+            typeof(BuildWatchtower),
+            typeof(CavalryRush),
+            typeof(CavalryScout),
+            typeof(ChargeAttack)
+        };
         public static List<Card> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true)
         {
             List<Card> list = new List<Card>();
