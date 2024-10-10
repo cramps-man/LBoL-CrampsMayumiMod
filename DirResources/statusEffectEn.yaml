@@ -182,3 +182,11 @@ AssignCavalryScout:
     {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, draw cards. 
+
+AssignFencerPrepCounter:
+  Name: Fencer Prep Counter
+  Description: |-
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardBlock} |Block| then gain |Reflection| equal to the amount of |Block| on {PlayerName}. If upgraded, include |Barrier|. 
+    {CardFencerAssigned} |Fencer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
+  Brief: |-
+    After X cards are played, gain {CardBlock} |Block| then gain |Reflection| equal to the amount of |Block| on {PlayerName}. If upgraded, include |Barrier|. 

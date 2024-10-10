@@ -421,6 +421,15 @@ ChooseShortAssign:
     Choose 1 of 3 |Assign| cards and gain its buff. No |Haniwa| required. 
     The buff has a starting card counter of {Value1} and number of triggers of {Value2}. 
 
+FencerPrepCounter:
+  Name: Fencer Prep Counter
+  Description: |-
+    |Assign {FencerAssigned} Fencer|.
+    After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Block} |Block| then gain |Reflection| equal to the amount of |Block| on {PlayerName}. 
+  UpgradedDescription: |-
+    |Assign {FencerAssigned} Fencer|.
+    After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Block} |Block| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

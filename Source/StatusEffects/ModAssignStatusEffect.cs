@@ -20,6 +20,7 @@ namespace LBoLMod.StatusEffects
         public int CardCavalryAssigned => AssignSourceCard.CavalryAssigned;
         protected int StartingCardCounter => AssignSourceCard.StartingCardCounter;
         protected DamageInfo CardDamage => AssignSourceCard.Damage;
+        protected int CardBlock => AssignSourceCard.RawBlock;
         protected int CardShield => AssignSourceCard.RawShield;
         protected ManaGroup CardMana => AssignSourceCard.Mana;
         protected int CardValue1 => AssignSourceCard.Value1;
@@ -102,7 +103,7 @@ namespace LBoLMod.StatusEffects
             if (base.Battle.BattleShouldEnd)
                 yield break;
             this.NotifyActivating();
-            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), Level, onTurnStart);
+            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), AfterAssignmentDone(onTurnStart), Level, onTurnStart);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (hasExhibitA)
@@ -111,5 +112,9 @@ namespace LBoLMod.StatusEffects
             yield return new RemoveStatusEffectAction(this);
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
+        protected virtual IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        {
+            return new List<BattleAction>();
+        }
     }
 }
