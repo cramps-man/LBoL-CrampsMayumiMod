@@ -88,7 +88,7 @@ assign 1 cav, 1-2 card count, draw 1 + maybe scry
 charge attack probs shouldnt scale so hard like that - done
   - maybe increase dmg a smaller amount 3-5, and also increase extra trigger by 1
 fix assigns not using upgraded card values if non-upgraded version was used first
-fix assign create haniwa to not aoe the haniwa gain
+fix assign create haniwa to not aoe the haniwa gain - done
 update assign text to say trigger instead of activate
 
 off color ideas

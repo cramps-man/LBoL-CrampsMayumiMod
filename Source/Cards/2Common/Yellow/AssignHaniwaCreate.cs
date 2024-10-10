@@ -49,9 +49,16 @@ namespace LBoLMod.Cards
             foreach (ModAssignOptionCard optionCard in ((SelectCardInteraction)precondition).SelectedCards)
             {
                 optionCard.StatusEffect.Count += Value2;
-                yield return new GainHaniwaAction(optionCard.StatusEffect.CardFencerAssigned + Value1, 
-                    optionCard.StatusEffect.CardArcherAssigned + Value1, 
-                    optionCard.StatusEffect.CardCavalryAssigned + Value1);
+                int fencerGain = 0;
+                int archerGain = 0;
+                int cavalryGain = 0;
+                if (optionCard.StatusEffect.CardFencerAssigned > 0)
+                    fencerGain += optionCard.StatusEffect.CardFencerAssigned + Value1;
+                if (optionCard.StatusEffect.CardArcherAssigned > 0)
+                    archerGain += optionCard.StatusEffect.CardArcherAssigned + Value1;
+                if (optionCard.StatusEffect.CardCavalryAssigned > 0)
+                    cavalryGain += optionCard.StatusEffect.CardCavalryAssigned + Value1;
+                yield return new GainHaniwaAction(fencerGain, archerGain, cavalryGain);
             }
         }
     }
