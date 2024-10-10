@@ -82,8 +82,9 @@ add a haniwa gen in uncommon that is all 3 - will this make it too ez? since the
 assign heal card? + some other effect
 some fencer assign that reflects damage? or just gain reflect
 choose 1 random assign card, card count starts at some low number
-assign effect triggers, add 1 random frontline card to draw pile or hand
-assign 1 cav, 1-2 card count, draw 1 + maybe scry
+assign effect triggers, add 1 random frontline card to draw pile or hand - done
+assign 1 cav, 1-2 card count, draw 1 + maybe scry - done
+assign triggers, gain mana, every 3 triggers?
 
 charge attack probs shouldnt scale so hard like that - done
   - maybe increase dmg a smaller amount 3-5, and also increase extra trigger by 1

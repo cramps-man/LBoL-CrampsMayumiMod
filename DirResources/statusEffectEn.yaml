@@ -174,3 +174,11 @@ AssignTriggerSummonSe:
     Whenever an |Assign| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
   Brief: |-
     Whenever an |Assign| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
+
+AssignCavalryScout:
+  Name: Cavalry Scout
+  Description: |-
+    After {Count} card{Count:plural one=' is' other='s are'} played, draw {CardValue1} card {CardValue1:plural one='' other='s'}. 
+    {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
+  Brief: |-
+    After X cards are played, draw cards. 

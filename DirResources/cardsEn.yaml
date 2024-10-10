@@ -409,6 +409,12 @@ AshesToClay:
   DetailText: |-
     Can not choose a |Haniwa Commander|. Bad things happen. 
 
+CavalryScout:
+  Name: Cavalry Scout
+  Description: |-
+    |Assign {CavalryAssigned} Cavalry|.
+    After {Value2} card{Value2:plural one=' is' other='s are'} played draw {Value1} card{Value1:plural one='' other='s'}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
