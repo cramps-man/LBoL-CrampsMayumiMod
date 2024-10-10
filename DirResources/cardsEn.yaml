@@ -489,6 +489,11 @@ SummonCommander:
   Description: |-
     Add a |Haniwa Commander| to the hand. 
 
+AssignTriggerSummon:
+  Name: Assign Trigger Summon
+  Description: |-
+    Whenever an |Assign| buff is triggered, add {Value1} |Frontline| card{Value1:plural one='' other='s'} to the hand. 
+
 #OFFCOLOURS
 #UNUSED
 RandomStance:

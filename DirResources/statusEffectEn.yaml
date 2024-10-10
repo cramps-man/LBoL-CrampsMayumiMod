@@ -167,3 +167,10 @@ ZeroCostReductionSe:
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
   Brief: |-
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
+
+AssignTriggerSummonSe:
+  Name: Assign Trigger Summon
+  Description: |-
+    Whenever an |Assign| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
+  Brief: |-
+    Whenever an |Assign| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
