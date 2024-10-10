@@ -77,6 +77,22 @@ full frontal assault, probs tweak a bit to increase dmg + do sacrifice - done
 
 give charge attack retain maybe? perhaps on upgrade - done
 improve starter haniwa gens, be more stable - done
-add a haniwa gen in uncommon that is all 3
+add a haniwa gen in uncommon that is all 3 - will this make it too ez? since the starter gens got buffed
+  - or update the defence create reserves to just gain all 3
 assign heal card? + some other effect
 some fencer assign that reflects damage? or just gain reflect
+choose 1 random assign card, card count starts at some low number
+assign effect triggers, add 1 random frontline card to draw pile or hand
+assign 1 cav, 1-2 card count, draw 1 + maybe scry
+
+charge attack probs shouldnt scale so hard like that - done
+  - maybe increase dmg a smaller amount 3-5, and also increase extra trigger by 1
+fix assigns not using upgraded card values if non-upgraded version was used first
+fix assign create haniwa to not aoe the haniwa gain
+update assign text to say trigger instead of activate
+
+off color ideas
+frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards apply cold + frost armor, on play = cold + dmg to all?
+toxic haniwa
+poison arrows, assign or require archer level, do poison stuff
+cake teammate

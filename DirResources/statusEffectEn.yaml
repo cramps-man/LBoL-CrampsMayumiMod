@@ -141,7 +141,8 @@ AssignChargeAttack:
   Name: Charge Attack
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the highest hp enemy. 
-    Increase this damage by {CardValue1} whenever an |Assign| is triggered. ({ChargeDamage})
+    Whenever an |Assign| is triggered, increase this damage by {CardValue1} and increase extra triggers by |e:1|. 
+    Extra damage ({ChargeDamage})
     {CardArcherAssigned} |Archer| assigned. Will activate {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal damage to the lowest hp enemy. 

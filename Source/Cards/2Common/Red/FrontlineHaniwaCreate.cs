@@ -42,6 +42,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrontlineHaniwaCreateDef))]
     public sealed class FrontlineHaniwaCreate : Card
     {
+        public override bool DiscardCard => true;
         public int CommonGain => 1 + Value1;
         public int UncommonGain => 3 + Value1;
         public int RareGain => 5 + Value1;
@@ -59,7 +60,7 @@ namespace LBoLMod.Cards
                     yield return new GainHaniwaAction(UncommonGain, UncommonGain, UncommonGain);
                 else if (card.Config.Rarity == Rarity.Rare)
                     yield return new GainHaniwaAction(RareGain, RareGain, RareGain);
-                yield return new UpgradeCardAction(card);
+                yield return new DiscardAction(card);
             }
         }
     }

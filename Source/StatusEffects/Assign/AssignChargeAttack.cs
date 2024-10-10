@@ -33,6 +33,7 @@ namespace LBoLMod.StatusEffects.Assign
         private void OnAssignTriggered(AssignTriggerEventArgs args)
         {
             ChargeDamage += CardValue1;
+            Level++;
         }
 
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)

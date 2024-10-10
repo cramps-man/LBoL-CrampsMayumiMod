@@ -195,7 +195,7 @@ AssignHaniwaCreate:
 FrontlineHaniwaCreate:
   Name: Frontline Haniwa Create
   Description: |-
-    Choose a |Frontline| card and upgrade it. Gain |Haniwa| equal to the rarity. 
+    Choose a |Frontline| card and discard it. Gain |Haniwa| equal to the rarity. 
     |Common|: {CommonGain} of each. 
     |Uncommon|: {UncommonGain} of each. 
     |Rare|: {RareGain} of each. 
@@ -366,7 +366,7 @@ ChargeAttack:
   Description: |-
     |Assign {ArcherAssigned} Archer|.
     After {Value2} cards are played, deal {Damage} damage to the highest hp enemy. 
-    Whenever an |Assign| is triggered, increase this damage by {Value1}. 
+    Whenever an |Assign| is triggered, increase this damage by {Value1} and increase extra triggers by |e:1|. 
 
 AssignPlayGainBlock:
   Name: Assign Play Gain Block

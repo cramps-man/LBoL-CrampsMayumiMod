@@ -24,8 +24,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 15;
             cardConfig.UpgradedDamage = 20;
-            cardConfig.Value1 = 15;
-            cardConfig.UpgradedValue1 = 20;
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.Value2 = 10;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
