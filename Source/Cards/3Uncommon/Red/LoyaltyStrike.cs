@@ -24,6 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Damage = 18;
+            cardConfig.UpgradedDamage = 24;
             cardConfig.Value1 = 5;
             cardConfig.UpgradedValue1 = 7;
             cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };

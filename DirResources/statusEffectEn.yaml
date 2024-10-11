@@ -178,10 +178,10 @@ AssignTriggerSummonSe:
 AssignCavalryScout:
   Name: Cavalry Scout
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, draw {CardValue1} card {CardValue1:plural one='' other='s'}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, draw {CardValue1} card{CardValue1:plural one='' other='s'} and gain |e:1| |Graze|. 
     {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
-    After X cards are played, draw cards. 
+    After X cards are played, draw cards and gain |Graze|. 
 
 AssignFencerPrepCounter:
   Name: Fencer Prep Counter

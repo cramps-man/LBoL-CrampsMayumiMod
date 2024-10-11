@@ -71,7 +71,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = new List<Card>();
-            if (base.UpgradeCounter >= 5)
+            if (base.UpgradeCounter >= 10)
                 list = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander))
                     .Concat(base.Battle.DrawZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)))
                     .Concat(base.Battle.DiscardZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander))).ToList();

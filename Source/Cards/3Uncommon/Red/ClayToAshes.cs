@@ -26,6 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
             cardConfig.RelativeKeyword = Keyword.Exile;

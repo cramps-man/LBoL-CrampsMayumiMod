@@ -195,7 +195,7 @@ AssignHaniwaCreate:
 FrontlineHaniwaCreate:
   Name: Frontline Haniwa Create
   Description: |-
-    Choose a |Frontline| card and discard it. Gain |Haniwa| of all types equal to the rarity. 
+    Choose a |Frontline| card and |Exile| it. Gain |Haniwa| of all types equal to the rarity. 
     |Common|: {CommonGain} of each. 
     |Uncommon|: {UncommonGain} of each. 
     |Rare|: {RareGain} of each. 
@@ -413,7 +413,7 @@ CavalryScout:
   Name: Cavalry Scout
   Description: |-
     |Assign {CavalryAssigned} Cavalry|.
-    After {Value2} card{Value2:plural one=' is' other='s are'} played draw {Value1} card{Value1:plural one='' other='s'}. 
+    After {Value2} card{Value2:plural one=' is' other='s are'} played draw {Value1} card{Value1:plural one='' other='s'} and gain |e:1| |Graze|. 
 
 ChooseShortAssign:
   Name: Choose Short Assign
@@ -429,6 +429,8 @@ FencerPrepCounter:
   UpgradedDescription: |-
     |Assign {FencerAssigned} Fencer|.
     After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Block} |Block| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
+  DetailText: |-
+    |Reflection| gain only occurs once regardless of trigger count. 
 
 HealSacrifice:
   Name: Heal Sacrifice
@@ -494,10 +496,10 @@ HaniwaCommander:
   Description: |-
     |While in hand|: When a |Frontline| card is used, move |e:1| random |Frontline| card from the drawpile to the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+5 or more, allow choosing from draw/discard piles. 
+    |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+10 or more, allow choosing from draw/discard piles. 
   NonbattleDescription: |-
     |While in hand|: When a |Frontline| card is used, move |e:1| random |Frontline| card from the drawpile to the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+5 or more, allow choosing from draw/discard piles. 
+    |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+10 or more, allow choosing from draw/discard piles. 
   DetailText: |-
     Can not choose another |Haniwa Commander|. Bad things happen. 
 

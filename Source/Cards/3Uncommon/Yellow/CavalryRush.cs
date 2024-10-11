@@ -23,7 +23,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 15;
-            cardConfig.UpgradedDamage = 21;
+            cardConfig.UpgradedDamage = 19;
             cardConfig.Value1 = 4;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Mana = new ManaGroup() { White = 1 };
