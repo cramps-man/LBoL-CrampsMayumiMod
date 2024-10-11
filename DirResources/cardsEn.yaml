@@ -473,6 +473,12 @@ GuardRush:
     Gain {Block} |Block|. 
     Gain {Value1} |Graze|. 
 
+ArcherPrepDebuff:
+  Name: Archer Prep Debuff
+  Description: |-
+    |Assign {ArcherAssigned} Archer|.
+    After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} |Accurate| damage to all enemies and apply {Value1} |Vulnerable|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

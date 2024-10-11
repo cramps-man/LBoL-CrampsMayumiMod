@@ -101,7 +101,7 @@ cake teammate
 
 sacrifice card in red uncommon, some attack + defence perhaps? - done
   - fencer + cavalry sacrifice, atk + def
-one more debuff card in uncommon, either assign or sacrifice
+one more debuff card in uncommon, either assign or sacrifice - done
   - archer aoe dmg + debuffs?
 haniwa buffer, gain buff do something, on play number of buffs currently on player = do something
   - or gain random buff after something
