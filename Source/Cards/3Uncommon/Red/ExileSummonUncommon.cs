@@ -35,6 +35,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaUpgrader), nameof(HaniwaExploiter), nameof(HaniwaSpy) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaUpgrader), nameof(HaniwaExploiter), nameof(HaniwaSpy) };
             return cardConfig;
         }
     }
