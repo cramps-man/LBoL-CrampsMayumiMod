@@ -123,7 +123,7 @@ HaniwaAttacker:
   Name: Haniwa Attacker
   Description: |-
     |While in hand|: At end of turn, deal {Value1} damage to the enemy with the lowest life. 
-    |When played|: Deal {Damage} damage and apply {Value2} |Vulnerable|. 
+    |When played|: Deal {Damage} damage. 
   DetailText: |-
     Increases for each upgrade. 
     End of turn damage: +1

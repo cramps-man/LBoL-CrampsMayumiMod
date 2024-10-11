@@ -61,6 +61,7 @@ namespace LBoLMod.Cards
             this.NotifyActivating();
             RemainingValue -= 1;
             yield return new UpgradeCardAction(args.Card);
+            yield return PerformAction.ViewCard(args.Card);
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

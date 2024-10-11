@@ -28,7 +28,6 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Damage = 8;
             cardConfig.Value1 = 6;
-            cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Vulnerable) };
@@ -65,8 +64,6 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
-            if (!base.Battle.BattleShouldEnd)
-                yield return DebuffAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: Value2);
         }
     }
 }
