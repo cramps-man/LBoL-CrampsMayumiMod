@@ -465,6 +465,14 @@ HealSacrifice:
     |Sacrifice| |e:2| of each |Haniwa|. 
     Gain {Value1} life and {Value2} |Firepower|. 
 
+GuardRush:
+  Name: Guard Rush
+  Description: |-
+    |Sacrifice| {Value2} |Fencer| and |Cavalry|. 
+    Deal {Damage} damage. 
+    Gain {Block} |Block|. 
+    Gain {Value1} |Graze|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

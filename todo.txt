@@ -99,9 +99,10 @@ toxic haniwa
 poison arrows, assign or require archer level, do poison stuff
 cake teammate
 
-sacrifice card in red uncommon, some attack + defence perhaps?
+sacrifice card in red uncommon, some attack + defence perhaps? - done
   - fencer + cavalry sacrifice, atk + def
 one more debuff card in uncommon, either assign or sacrifice
+  - archer aoe dmg + debuffs?
 haniwa buffer, gain buff do something, on play number of buffs currently on player = do something
   - or gain random buff after something
 haniwa spy do something with scry on play? cards moved via scry cost less? in hand, after draw, show top card? - done
