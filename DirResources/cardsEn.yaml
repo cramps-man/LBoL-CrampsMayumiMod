@@ -88,6 +88,10 @@ HaniwaBodyguard:
   NonbattleDescription: |-
     |While in hand|: Reduce up to {Value1} damage recieved per turn. 
     |When played|: Gain {Block} |Block|. 
+  DetailText: |-
+    Increases for each upgrade. 
+    Damage reduction: +1
+    |Block|: +2
 
 HaniwaSupport:
   Name: Haniwa Support
@@ -98,6 +102,10 @@ HaniwaSupport:
   NonbattleDescription: |-
     |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     |When played|: Gain {Mana}. 
+  DetailText: |-
+    Increases for each upgrade. 
+    Total draws per turn: +1
+    1 extra red mana per 5 upgrade. 
 
 FencerBuildBarricade:
   Name: Fencer Build Barricade
@@ -116,6 +124,10 @@ HaniwaAttacker:
   Description: |-
     |While in hand|: At end of turn, deal {Value1} damage to the enemy with the lowest life. 
     |When played|: Deal {Damage} damage and apply {Value2} |Vulnerable|. 
+  DetailText: |-
+    Increases for each upgrade. 
+    End of turn damage: +1
+    On play damage: +2
 
 HaniwaSharpshooter:
   Name: Haniwa Sharpshooter
@@ -126,6 +138,11 @@ HaniwaSharpshooter:
   NonbattleDescription: |-
     |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
     |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. 
+  DetailText: |-
+    Increases for each upgrade. 
+    On play damage: +1
+    |Lock On| +1 per 3 upgrade
+    Accuracy instances stay at 2 after first upgrade
 
 SummonHaniwa:
   Name: Summon Haniwa
@@ -284,6 +301,9 @@ HaniwaSpy:
   Description: |-
     |While in draw/discard pile|: In the same pile as this card, a random card |temporarily costs| {Mana} less. 
     |When played|: |Scry| {TotalScry}. Any cards sent to the discard pile this way |temporarily cost| {Mana} less. 
+  DetailText: |-
+    Increases for each upgrade. 
+    On Play |Scry|: +1 up to |Scry| 10
 
 HaniwaUpgrader:
   Name: Haniwa Upgrader
@@ -294,6 +314,9 @@ HaniwaUpgrader:
   NonbattleDescription: |-
     |While in hand|: After a card is used, if it can be upgraded, upgrade it. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each remaining upgrade. ({AdditionalBlock}) 
+  DetailText: |-
+    Increases for each upgrade. 
+    Total upgrades per turn: +1
 
 HaniwaExploiter:
   Name: Haniwa Exploiter
@@ -304,6 +327,11 @@ HaniwaExploiter:
   NonbattleDescription: |-
     |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
+  DetailText: |-
+    Increases for each upgrade. 
+    Follow up damage: +1
+    On Play damage: +1
+    Follow up instances stays at 3 after first upgrade. 
 
 SummonHaniwaUncommon:
   Name: Summon Haniwa Uncommon
@@ -501,6 +529,10 @@ HaniwaCommander:
     |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+10 or more, allow choosing from draw/discard piles. 
   DetailText: |-
     Can not choose another |Haniwa Commander|. Bad things happen. 
+    
+    Increases for each upgrade. 
+    Total Frontline moves per turn: +1
+    Total On Play cards to choose: +1
 
 OptionHaniwaCommander:
   Name: Summon Haniwa Commander

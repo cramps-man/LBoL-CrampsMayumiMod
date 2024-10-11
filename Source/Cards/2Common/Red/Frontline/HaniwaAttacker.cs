@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaAttacker : ModFrontlineCard
     {
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
-        public override int AdditionalValue1 => base.UpgradeCounter.GetValueOrDefault() * 2;
+        public override int AdditionalValue1 => base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
