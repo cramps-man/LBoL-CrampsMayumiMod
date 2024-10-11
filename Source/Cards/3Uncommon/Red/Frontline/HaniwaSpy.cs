@@ -29,11 +29,12 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 0;
-            cardConfig.Value2 = 3;
-            cardConfig.UpgradedValue2 = 5;
+            cardConfig.Scry = 1;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.RelativeKeyword = Keyword.Scry | Keyword.TempMorph;
+            cardConfig.UpgradedRelativeKeyword = Keyword.Scry | Keyword.TempMorph;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -43,10 +44,20 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSpyDef))]
     public sealed class HaniwaSpy : ModFrontlineCard
     {
+        public ScryInfo TotalScry => Scry.IncreasedBy(Math.Min(base.UpgradeCounter.GetValueOrDefault(), 10));
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
             base.ReactBattleEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
+            base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
+        }
+
+        private void OnCardMoved(CardMovingEventArgs args)
+        {
+            if (args.ActionSource != this)
+                return;
+
+            args.Card.DecreaseTurnCost(Mana);
         }
 
         private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)
@@ -83,12 +94,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            List<Card> cards = Battle.DiscardZone.Where(c => c.Cost.Amount == 0).ToList();
-            foreach (var card in cards.GetRange(0, Math.Min(cards.Count, Value2)))
-            {
-                yield return PerformAction.ViewCard(card);
-                yield return new MoveCardToDrawZoneAction(card, DrawZoneTarget.Top);
-            };
+            yield return new ScryAction(TotalScry);
         }
     }
 }

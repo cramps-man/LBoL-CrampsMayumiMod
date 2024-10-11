@@ -282,9 +282,8 @@ AssignTickdownReturn:
 HaniwaSpy:
   Name: Haniwa Spy
   Description: |-
-    |While in hand|: Do something i dunno. 
-    |While in draw/discard pile|: In the same pile as this card, lower a random card's cost by {Mana}. 
-    |When played|: Move {Value2} <sprite=ManaSprite" name="0"> cost cards from discard to the top of the draw pile. 
+    |While in draw/discard pile|: In the same pile as this card, a random card |temporarily costs| {Mana} less. 
+    |When played|: |Scry| {TotalScry}. Any cards sent to the discard pile this way |temporarily cost| {Mana} less. 
 
 HaniwaUpgrader:
   Name: Haniwa Upgrader
@@ -463,7 +462,7 @@ GainBuffTickdown:
 ZeroCostReduction:
   Name: Zero Cost Reduction
   Description: |-
-    When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
+    When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand |temporarily costs| <sprite=ManaSprite" name="1"> less. 
 
 MassRessurection:
   Name: Mass Ressurection
