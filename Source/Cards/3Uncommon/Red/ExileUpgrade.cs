@@ -27,12 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
             cardConfig.Block = 16;
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
-            cardConfig.Value2 = 1;
-            cardConfig.UpgradedValue2 = 2;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -47,7 +43,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(0, Value1, list);
+            return new SelectHandInteraction(0, list.Count, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
@@ -56,7 +52,7 @@ namespace LBoLMod.Cards
                 yield break;
 
             int exileCount = exileInteraction.SelectedCards.Count;
-            for (int i = 0; i < exileCount + Value2; i++)
+            for (int i = 0; i < exileCount; i++)
             {
                 yield return new UpgradeCardsAction(base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive));
             }

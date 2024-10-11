@@ -397,8 +397,8 @@ ExileUpgrade:
   Name: Exile Upgrade
   Description: |-
     Gain {Block} |Block|. 
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and |Exile|. 
-    Upgrade all cards in the hand (including the |Exiled| cards) by the amount of |Exiled| cards plus {Value2}. 
+    Choose any number of |Frontline| cards in the hand and |Exile|. 
+    Upgrade all cards in the hand (including the |Exiled| cards) by the amount of |Exiled| cards. 
 
 AshesToClay:
   Name: Ashes To Clay
