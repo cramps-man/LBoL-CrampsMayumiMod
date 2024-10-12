@@ -3,6 +3,7 @@ using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.EntityLib.StatusEffects.Cirno;
 using LBoLEntitySideloader;
@@ -22,7 +23,7 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            //cardConfig.IsPooled = false;
+            cardConfig.IsPooled = false;
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.AllEnemies;
@@ -41,12 +42,20 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrozenHaniwaDef))]
     public sealed class FrozenHaniwa : ModFrontlineCard
     {
+        public Card OriginalCard { get; set; }
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         protected override bool IncludeUpgradesInRemainingValue => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
             base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
+            base.ReactBattleEvent(base.Battle.Player.TurnEnded, this.OnTurnEnded);
+        }
+
+        private IEnumerable<BattleAction> OnTurnEnded(UnitEventArgs args)
+        {
+            OriginalCard.UpgradeCounter = base.UpgradeCounter;
+            yield return new TransformCardAction(this, OriginalCard);
         }
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)

@@ -479,20 +479,6 @@ ArcherPrepDebuff:
     |Assign {ArcherAssigned} Archer|.
     After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} |Accurate| damage to all enemies and apply {Value1} |Vulnerable|. 
 
-FrozenHaniwa:
-  Name: Frozen Haniwa
-  Description: |-
-    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Deal {Damage} damage and apply |Cold| to all enemies. Transform back into the original |Frontline| card. 
-  NonbattleDescription: |-
-    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    |When played|: Deal {Damage} damage and apply |Cold| to all enemies. Transform back into the original |Frontline| card. 
-  DetailText: |-
-    Increases for each upgrade. 
-    Total |Cold| activations per turn: +1
-    On Play damage: +1
-
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
@@ -583,6 +569,26 @@ AssignTriggerSummon:
     Whenever an |Assign| buff is triggered, add {Value1} |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
 #OFFCOLOURS
+FrozenHaniwa:
+  Name: Frozen Haniwa
+  Description: |-
+    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'} per turn. {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
+    |When played|: Deal {Damage} damage and apply |Cold| to all enemies. 
+    |At end of turn|: Transform back into the original card. 
+  NonbattleDescription: |-
+    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |When played|: Deal {Damage} damage and apply |Cold| to all enemies. 
+    |At end of turn|: Transform back into the original card. 
+  DetailText: |-
+    Increases for each upgrade. 
+    Total |Cold| activations per turn: +1
+    On Play damage: +1
+
+FreezeFrontline:
+  Name: Freeze Frontline
+  Description: |-
+    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand. Transform them into |Frozen Haniwa|. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance

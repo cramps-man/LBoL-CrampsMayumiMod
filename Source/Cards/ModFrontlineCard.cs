@@ -22,6 +22,7 @@ namespace LBoLMod.Cards
 
         protected override void OnEnterBattle(BattleController battle)
         {
+            SetRemainValue(Value1);
             base.HandleBattleEvent<CardsEventArgs>(base.Battle.CardsAddedToHand, new GameEventHandler<CardsEventArgs>(this.OnCardsAddedToHand));
         }
 
