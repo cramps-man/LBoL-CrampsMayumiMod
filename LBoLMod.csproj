@@ -329,6 +329,7 @@
 
     <ItemGroup>
       <Folder Include="Resources\" />
+      <Folder Include="Source\Cards\5OffColor\Blue\" />
     </ItemGroup>
 
 
