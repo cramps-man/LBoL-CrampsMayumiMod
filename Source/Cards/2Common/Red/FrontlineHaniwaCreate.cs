@@ -1,4 +1,5 @@
 ﻿using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -29,6 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeKeyword = Keyword.Exile;
@@ -51,6 +53,12 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            if (((SelectCardInteraction)precondition).SelectedCards.Empty())
+            {
+                yield return new GainHaniwaAction(Value2, Value2, Value2);
+                yield break;
+            }
+
             foreach (Card card in ((SelectCardInteraction)precondition).SelectedCards)
             {
                 if (card.Config.Rarity == Rarity.Common)

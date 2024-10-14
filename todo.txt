@@ -114,7 +114,7 @@ num buff block upgraded give extra base block - done
 
 assign triggers, upgrade random card in hand - done
 exile frontline, increase all assign triggers by 1 - done
-when no haniwa at start of turn, give 1
+when no haniwa at start of turn, give 1 - done
   - or make that part of the starter cards, when cant fulfil condition
 exile frontlines, spawn in random frontlines?
 gainBuffTickdown buff it? maybe 1 cost?

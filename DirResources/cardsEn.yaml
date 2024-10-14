@@ -207,7 +207,8 @@ HaniwaBlitz:
 AssignHaniwaCreate:
   Name: Assign Haniwa Create
   Description: |-
-    Choose an |Assign| buff and increase the card counter by {Value2}. Gain |Haniwa| of the same type equal to the |Assigned| level + {Value1}. 
+    Choose an |Assign| buff and increase its card counter by {Value2}. Gain |Haniwa| of the same type equal to the |Assigned| level + {Value1}. 
+    If none are chosen, gain |e:1| of each instead. 
 
 FrontlineHaniwaCreate:
   Name: Frontline Haniwa Create
@@ -216,6 +217,7 @@ FrontlineHaniwaCreate:
     |Common|: {CommonGain} of each. 
     |Uncommon|: {UncommonGain} of each. 
     |Rare|: {RareGain} of each. 
+    If none are chosen, gain {Value2} of each instead. 
 
 AssignFastTrigger:
   Name: Assign Fast Trigger

@@ -1,4 +1,5 @@
 ﻿using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -46,6 +47,12 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            if (((SelectCardInteraction)precondition).SelectedCards.Empty())
+            {
+                yield return new GainHaniwaAction(1, 1, 1);
+                yield break;
+            }
+
             foreach (ModAssignOptionCard optionCard in ((SelectCardInteraction)precondition).SelectedCards)
             {
                 optionCard.StatusEffect.Count += Value2;
