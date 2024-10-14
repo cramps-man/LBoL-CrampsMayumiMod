@@ -605,6 +605,11 @@ FreezeFrontline:
   Description: |-
     Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand. Transform them into |Frozen Haniwa|. 
 
+FrontlineDiscardDraw:
+  Name: Frontline Discard Draw
+  Description: |-
+    Choose any number of |Frontline| cards in the hand. Upgrade and discard them, then draw that many cards. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance

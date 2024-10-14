@@ -93,12 +93,6 @@ fix assigns not using upgraded card values if non-upgraded version was used firs
 fix assign create haniwa to not aoe the haniwa gain - done
 update assign text to say trigger instead of activate - done
 
-off color ideas
-frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards apply cold + frost armor, on play = cold + dmg to all? - done
-toxic haniwa
-poison arrows, assign or require archer level, do poison stuff
-cake teammate
-
 sacrifice card in red uncommon, some attack + defence perhaps? - done
   - fencer + cavalry sacrifice, atk + def
 one more debuff card in uncommon, either assign or sacrifice - done
@@ -121,3 +115,26 @@ massExtraTrigger defs need a buff, either not exile or increase effect - done
 weakeningShot make upgrade 1 mana, dont upgrade dmg - done
 cavalryScout upgrade gives 2 draw - done
 exile frontlines, spawn in random frontlines?
+
+off color ideas
+BLUE
+frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards apply cold + frost armor, on play = cold + dmg to all? - done
+copy frontline - not sure if good idea, copy on only frontline is boring
+discard all frontline, draw that many cards - done
+cold arrow assign?
+cake teammate blue red yellow
+PURPLE
+toxic haniwa common
+  - unstable potion link?
+poison arrows, assign or require archer level, do poison stuff
+playing frontline card gives benefit but cost 1 life (or every 2-3 cost 1 life) red purple
+  - draw 1 card, spawn random frontline to draw or discard pile
+  - perhaps start with sacrifice 1 random haniwa, then when 0, drain life
+some sacrifice card here
+fencer assign debuff = block?
+GREEN
+mana for each assign buff currently on
+mana haniwa uncommon
+  - onPlay x cost convert mana to rainbow?
+  - in hand, refund mana spent up to blah times
+frontline in hand, gain 1 graze red green
