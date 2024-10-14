@@ -484,6 +484,12 @@ AssignTriggerUpgrade:
   Description: |-
     Whenever an |Assign| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
+ExileFrontlineExtraTrigger:
+  Name: Exile Frontline Extra Trigger
+  Description: |-
+    |Exile| {Value1} |Frontline| card{Value1:plural one='' other='s'} from the hand. 
+    Choose that many |Assign| buffs and give {Value2} extra trigger{Value2:plural one='' other='s'}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
