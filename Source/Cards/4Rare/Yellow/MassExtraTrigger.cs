@@ -29,10 +29,9 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
+            cardConfig.Value1 = 3;
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1 };
-            cardConfig.Keywords = Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
@@ -57,6 +56,7 @@ namespace LBoLMod.Cards
                     yield return new RemoveStatusEffectAction(statusEffect);
                 }
             }
+            yield return new DrawManyCardAction(Value1);
         }
     }
 }

@@ -24,6 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 3;
             cardConfig.UpgradedValue2 = 1;
             cardConfig.Mana = new ManaGroup() { White = 1 };

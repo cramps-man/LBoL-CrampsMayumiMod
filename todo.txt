@@ -116,6 +116,8 @@ assign triggers, upgrade random card in hand - done
 exile frontline, increase all assign triggers by 1 - done
 when no haniwa at start of turn, give 1 - done
   - or make that part of the starter cards, when cant fulfil condition
+gainBuffTickdown buff it? maybe 1 cost? - hold off on this for now, more testing
+massExtraTrigger defs need a buff, either not exile or increase effect - done
+weakeningShot make upgrade 1 mana, dont upgrade dmg - done
+cavalryScout upgrade gives 2 draw - done
 exile frontlines, spawn in random frontlines?
-gainBuffTickdown buff it? maybe 1 cost?
-massExtraTrigger defs need a buff, either not exile or increase effect
