@@ -94,7 +94,7 @@ fix assign create haniwa to not aoe the haniwa gain - done
 update assign text to say trigger instead of activate - done
 
 off color ideas
-frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards apply cold + frost armor, on play = cold + dmg to all?
+frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards apply cold + frost armor, on play = cold + dmg to all? - done
 toxic haniwa
 poison arrows, assign or require archer level, do poison stuff
 cake teammate
@@ -107,3 +107,15 @@ haniwa buffer, gain buff do something, on play number of buffs currently on play
   - or gain random buff after something
 haniwa spy do something with scry on play? cards moved via scry cost less? in hand, after draw, show top card? - done
   - on play scry X and decrease cost cards moved to discard, in draw/discard end of turn decrease cost
+
+haniwa spy filter unplayable cards to lower cost, and give onplay draw 1 - done
+summon commander give an upgrade
+
+assign triggers, upgrade random card in hand
+exile frontline, increase all assign triggers by 1
+num buff block upgraded give extra base block
+when no haniwa at start of turn, give 1
+  - or make that part of the starter cards, when cant fulfil condition
+exile frontlines, spawn in random frontlines?
+gainBuffTickdown buff it? maybe 1 cost?
+massExtraTrigger defs need a buff, either not exile or increase effect

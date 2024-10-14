@@ -299,8 +299,8 @@ AssignTickdownReturn:
 HaniwaSpy:
   Name: Haniwa Spy
   Description: |-
-    |While in draw/discard pile|: In the same pile as this card, a random card |temporarily costs| {Mana} less. 
-    |When played|: |Scry| {TotalScry}. Any cards sent to the discard pile this way |temporarily cost| {Mana} less. 
+    |While in draw/discard pile|: At end of turn in the same pile as {SelfName}, a random card |temporarily costs| {Mana} less. 
+    |When played|: |Scry| {TotalScry}. Draw |e:1| card. Any cards sent to the discard pile this way |temporarily cost| {Mana} less. 
   DetailText: |-
     Increases for each upgrade. 
     On Play |Scry|: +1 up to |Scry| 10

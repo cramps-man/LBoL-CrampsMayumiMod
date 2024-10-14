@@ -83,7 +83,7 @@ namespace LBoLMod.Cards
 
         private IEnumerable<BattleAction> LowerMana(IReadOnlyList<Card> cards)
         {
-            Card c = cards.Where(c => c.Cost.Any > 0).SampleOrDefault(base.BattleRng);
+            Card c = cards.Where(c => c.Cost.Any > 0 && !c.HasKeyword(Keyword.Forbidden)).SampleOrDefault(base.BattleRng);
             if (c == null)
                 yield break;
             yield return PerformAction.ViewCard(c);
@@ -95,6 +95,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new ScryAction(TotalScry);
+            yield return new DrawCardAction();
         }
     }
 }
