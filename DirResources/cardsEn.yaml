@@ -617,6 +617,15 @@ ArcherPrepFrostArrow:
     After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} damage and apply |Cold| to a random enemy. 
     If the target has |Cold|, gain {Block} |Block|. 
 
+KeikiTeammate:
+  Name: Keiki, The Creator
+  Description: |-
+    {FriendP} Add a random Common/Uncommon |Frontline| card to the hand. 
+  ExtraDescription1: |-
+    {FriendA} Trigger all |Assign| buffs. Gain {Value1} |Barrier| for each buff triggered. 
+  ExtraDescription2: |-
+    {FriendU} |Exile| all |Frontline| cards in hand/draw/discard piles. Deal {Value2} damage to all enemies for each card |Exiled| this way. ({FrontlineExileDamage})
+
 #UNUSED
 RandomStance:
   Name: Random Stance
