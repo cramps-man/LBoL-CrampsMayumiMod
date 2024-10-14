@@ -24,13 +24,14 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Value1 = 5;
             cardConfig.Cost = new ManaGroup() { Red = 2 };
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaCommander) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaCommander) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaCommander)+"+" };
             return cardConfig;
         }
     }
@@ -40,7 +41,13 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new AddCardsToHandAction(Library.CreateCard<HaniwaCommander>());
+            Card toAdd = Library.CreateCard<HaniwaCommander>();
+            if (IsUpgraded)
+            {
+                toAdd = Library.CreateCard<HaniwaCommander>(IsUpgraded);
+                toAdd.UpgradeCounter = Value1;
+            }
+            yield return new AddCardsToHandAction(toAdd);
         }
     }
 }

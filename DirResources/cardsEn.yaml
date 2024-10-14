@@ -562,6 +562,8 @@ SummonCommander:
   Name: Summon Commander
   Description: |-
     Add a |Haniwa Commander| to the hand. 
+  UpgradedDescription: |-
+    Add a |Haniwa Commander| to the hand. It starts upgraded+{Value1}. 
 
 AssignTriggerSummon:
   Name: Assign Trigger Summon
