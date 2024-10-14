@@ -26,6 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2, White = 1 };
             cardConfig.Block = 10;
+            cardConfig.UpgradedBlock = 15;
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 4;
             return cardConfig;

@@ -110,10 +110,10 @@ haniwa spy do something with scry on play? cards moved via scry cost less? in ha
 
 haniwa spy filter unplayable cards to lower cost, and give onplay draw 1 - done
 summon commander give an upgrade - done
+num buff block upgraded give extra base block - done
 
 assign triggers, upgrade random card in hand
 exile frontline, increase all assign triggers by 1
-num buff block upgraded give extra base block
 when no haniwa at start of turn, give 1
   - or make that part of the starter cards, when cant fulfil condition
 exile frontlines, spawn in random frontlines?
