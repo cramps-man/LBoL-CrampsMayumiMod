@@ -393,7 +393,7 @@ ChargeAttack:
   Description: |-
     |Assign {ArcherAssigned} Archer|.
     After {Value2} cards are played, deal {Damage} damage to the highest hp enemy. 
-    Whenever an |Assign| is triggered, increase this damage by {Value1} and increase extra triggers by |e:1|. 
+    Whenever an |Assign| buff is triggered, increase this damage by {Value1} and increase extra triggers by |e:1|. 
 
 AssignPlayGainBlock:
   Name: Assign Play Gain Block
@@ -478,6 +478,11 @@ ArcherPrepDebuff:
   Description: |-
     |Assign {ArcherAssigned} Archer|.
     After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} |Accurate| damage to all enemies and apply {Value1} |Vulnerable|. 
+
+AssignTriggerUpgrade:
+  Name: Assign Trigger Upgrade
+  Description: |-
+    Whenever an |Assign| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
 #RARES
 FullFrontalAssault:

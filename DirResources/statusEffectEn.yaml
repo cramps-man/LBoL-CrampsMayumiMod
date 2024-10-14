@@ -141,7 +141,7 @@ AssignChargeAttack:
   Name: Charge Attack
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the highest hp enemy. 
-    Whenever an |Assign| is triggered, increase this damage by {CardValue1} and increase extra triggers by |e:1|. 
+    Whenever an |Assign| buff is triggered, increase this damage by {CardValue1} and increase extra triggers by |e:1|. 
     Extra damage ({ChargeDamage})
     {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
@@ -198,3 +198,10 @@ AssignArcherPrepDebuff:
     {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
     After X cards are played, deal |Accurate| damage to all enemies and apply |Vulnerable|. 
+
+AssignTriggerUpgradeSe:
+  Name: Assign Trigger Upgrade
+  Description: |-
+    Whenever an |Assign| buff is triggered, upgrade {Level} random card{Level:plural one='' other='s'} in the hand. 
+  Brief: |-
+    Whenever an |Assign| buff is triggered, upgrade {Level} random card{Level:plural one='' other='s'} in the hand. 

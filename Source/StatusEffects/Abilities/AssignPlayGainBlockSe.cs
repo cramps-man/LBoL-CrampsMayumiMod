@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Abilities
 {
-    public sealed class AssignPlayGainBlockDef : ModStatusEffectTemplate
+    public sealed class AssignPlayGainBlockSeDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
@@ -18,7 +18,7 @@ namespace LBoLMod.StatusEffects.Abilities
         }
     }
 
-    [EntityLogic(typeof(AssignPlayGainBlockDef))]
+    [EntityLogic(typeof(AssignPlayGainBlockSeDef))]
     public sealed class AssignPlayGainBlockSe : StatusEffect
     {
         protected override void OnAdded(Unit unit)
