@@ -121,7 +121,7 @@ BLUE
 frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards apply cold + frost armor, on play = cold + dmg to all? - done
 copy frontline - not sure if good idea, copy on only frontline is boring
 discard all frontline, draw that many cards - done
-cold arrow assign?
+cold arrow assign? - done
 cake teammate blue red yellow
 PURPLE
 toxic haniwa common
@@ -138,3 +138,5 @@ mana haniwa uncommon
   - onPlay x cost convert mana to rainbow?
   - in hand, refund mana spent up to blah times
 frontline in hand, gain 1 graze red green
+
+some assign with multiple haniwa types (build watchtower doesnt count)

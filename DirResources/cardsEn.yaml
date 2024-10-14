@@ -610,6 +610,13 @@ FrontlineDiscardDraw:
   Description: |-
     Choose any number of |Frontline| cards in the hand. Upgrade and discard them, then draw that many cards. 
 
+ArcherPrepFrostArrow:
+  Name: Archer Prep Frost Arrow
+  Description: |-
+    |Assign {ArcherAssigned} Archer|.
+    After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} damage and apply |Cold| to a random enemy. 
+    If the target has |Cold|, gain {Block} |Block|. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance
