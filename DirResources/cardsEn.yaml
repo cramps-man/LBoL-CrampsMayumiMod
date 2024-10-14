@@ -512,7 +512,7 @@ AssignPlayDraw:
 GainBuffTickdown:
   Name: Gain Buff Tickdown
   Description: |-
-    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Value1}. 
+    For this turn when {PlayerName} gains a buff, tickdown all |Assign| buffs by {Value1}. 
 
 ZeroCostReduction:
   Name: Zero Cost Reduction
