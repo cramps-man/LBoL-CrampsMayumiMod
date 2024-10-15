@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Cost = new ManaGroup() { White = 1, Black = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Permanent) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Permanent) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Permanent) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Permanent) };
             return cardConfig;
         }
     }
@@ -48,7 +48,7 @@ namespace LBoLMod.Cards
 
             foreach (ModAssignOptionCard optionCard in assignInteraction.SelectedCards)
             {
-                optionCard.StatusEffect.IsPermanent = true;
+                optionCard.StatusEffect.MakePermanent();
             }
         }
     }

@@ -55,6 +55,11 @@ namespace LBoLMod.StatusEffects
             return true;
         }
 
+        public void MakePermanent()
+        {
+            IsPermanent = true;
+            Level = 1;
+        }
         public void IncreaseExtraTrigger(int amount)
         {
             if (IsPermanent)
