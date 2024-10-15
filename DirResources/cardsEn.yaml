@@ -631,6 +631,16 @@ PermanentAssign:
   Description: |-
     Choose {Value1} |Assign| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
 
+PoisonShot:
+  Name: Poison Shot
+  Description: |-
+    Deal {Damage} damage.
+    Apply extra effects depending on |Archer| level. 
+    |3|: Apply {Level1Poison} |Poison|.
+    |5|: Apply {Level2Poison} |Poison| instead. 
+    |7|: Apply |Poison| to all enemies. 
+    |10:| Apply {Level3Poison} |Poison| instead. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance
