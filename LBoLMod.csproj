@@ -328,6 +328,11 @@
 
 
     <ItemGroup>
+      <None Remove="Resources\MayumiStand.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
       <Folder Include="Resources\" />
     </ItemGroup>
 

@@ -9,6 +9,7 @@ using LBoLMod.Cards;
 using LBoLMod.Exhibits;
 using LBoLMod.UltimateSkills;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 namespace LBoLMod.PlayerUnits
@@ -27,7 +28,10 @@ namespace LBoLMod.PlayerUnits
 
         public override PlayerImages LoadPlayerImages()
         {
-            return new PlayerImages();
+            var images = new PlayerImages();
+            //images.SetStartPanelStand(ResourceLoader.LoadSpriteAsync("MayumiStand.png", BepinexPlugin.directorySource), () => ResourceLoader.LoadSprite("MayumiStand.png", BepinexPlugin.directorySource, ppu: 100, 1, FilterMode.Bilinear, generateMipMaps: true));
+            images.AutoLoad("Mayumi", str => ResourceLoader.LoadSprite(str, BepinexPlugin.embeddedSource, ppu: 100, 1, FilterMode.Bilinear, generateMipMaps: true), str => ResourceLoader.LoadSpriteAsync(str, BepinexPlugin.directorySource));
+            return images;
         }
 
         public override PlayerUnitConfig MakeConfig()
