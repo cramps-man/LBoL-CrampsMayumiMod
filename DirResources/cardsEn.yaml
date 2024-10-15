@@ -626,6 +626,11 @@ KeikiTeammate:
   ExtraDescription2: |-
     {FriendU} |Exile| all |Frontline| cards in hand/draw/discard piles. Deal {Value2} damage to all enemies for each card |Exiled| this way. ({FrontlineExileDamage})
 
+PermanentAssign:
+  Name: Permanent Assign
+  Description: |-
+    Choose {Value1} |Assign| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance

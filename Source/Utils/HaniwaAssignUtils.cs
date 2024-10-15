@@ -21,7 +21,7 @@ namespace LBoLMod.Utils
             typeof(CavalryScout),
             typeof(ChargeAttack)
         };
-        public static List<Card> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true)
+        public static List<Card> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true, bool includePermanent = true)
         {
             List<Card> list = new List<Card>();
             foreach (ModAssignStatusEffect s in player.StatusEffects.Where(s => s is ModAssignStatusEffect))
@@ -30,12 +30,12 @@ namespace LBoLMod.Utils
                 c.CardName = s.Name;
                 c.CardText = s.Description;
                 c.StatusEffect = s;
-                if (includePaused)
-                {
-                    list.Add(c);
-                    continue;
-                }
-                if (!s.IsPaused)
+                bool toAdd = true;
+                if (!includePaused && s.IsPaused)
+                    toAdd = false;
+                if (!includePermanent && s.IsPermanent)
+                    toAdd = false;
+                if (toAdd)
                     list.Add(c);
             };
             return list;

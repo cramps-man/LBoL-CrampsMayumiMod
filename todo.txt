@@ -115,6 +115,7 @@ massExtraTrigger defs need a buff, either not exile or increase effect - done
 weakeningShot make upgrade 1 mana, dont upgrade dmg - done
 cavalryScout upgrade gives 2 draw - done
 exile frontlines, spawn in random frontlines?
+  - could be ability
 
 off color ideas
 BLUE
@@ -122,7 +123,7 @@ frozen haniwa, adjectent cards temp retain end of turn, playing adjecent cards a
 copy frontline - not sure if good idea, copy on only frontline is boring
 discard all frontline, draw that many cards - done
 cold arrow assign? - done
-cake teammate blue red yellow
+cake teammate blue red yellow - done
 PURPLE
 toxic haniwa common
   - unstable potion link?
@@ -132,6 +133,8 @@ playing frontline card gives benefit but cost 1 life (or every 2-3 cost 1 life) 
   - perhaps start with sacrifice 1 random haniwa, then when 0, drain life
 some sacrifice card here
 fencer assign debuff = block?
+perma assign, when triggered lose haniwa, life instead when no haniwa - done
+  - no extra triggers, ticksdown 3 instead
 GREEN
 mana for each assign buff currently on
 mana haniwa uncommon

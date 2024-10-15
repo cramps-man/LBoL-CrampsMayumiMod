@@ -52,7 +52,7 @@ namespace LBoLMod.Cards
                 List<StatusEffect> removedAssignBuffs = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect && s != card.StatusEffect).ToList();
                 foreach (StatusEffect statusEffect in removedAssignBuffs)
                 {
-                    card.StatusEffect.Level += statusEffect.Level;
+                    card.StatusEffect.IncreaseExtraTrigger(statusEffect.Level);
                     yield return new RemoveStatusEffectAction(statusEffect);
                 }
             }

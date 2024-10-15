@@ -47,7 +47,7 @@ namespace LBoLMod.Cards
             yield return DefenseAction();
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
-                card.StatusEffect.Level++;
+                card.StatusEffect.IncreaseExtraTrigger(Value1);
             }
         }
     }

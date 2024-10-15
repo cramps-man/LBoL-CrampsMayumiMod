@@ -59,7 +59,7 @@ namespace LBoLMod.Cards
                 foreach (ModAssignOptionCard optionCard in assignInteraction.SelectedCards)
                 {
                     optionCard.StatusEffect.NotifyActivating();
-                    optionCard.StatusEffect.Level += Value2;
+                    optionCard.StatusEffect.IncreaseExtraTrigger(Value2);
                 }
             }
 
