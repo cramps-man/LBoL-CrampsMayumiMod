@@ -38,9 +38,10 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(PoisonShotDef))]
     public sealed class PoisonShot : Card
     {
-        public int Level1Poison => IsUpgraded?10:6;
-        public int Level2Poison => IsUpgraded?15:10;
-        public int Level3Poison => IsUpgraded?20:15;
+        public int Level0Poison => IsUpgraded ? 5 : 3;
+        public int Level1Poison => IsUpgraded ? 10 : 6;
+        public int Level2Poison => IsUpgraded ? 15 : 10;
+        public int Level3Poison => IsUpgraded ? 20 : 15;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return base.AttackAction(selector);
@@ -49,6 +50,8 @@ namespace LBoLMod.Cards
  
             int archerCount = HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
             int poisonValue = 0;
+            if (archerCount >= 1)
+                poisonValue = Level0Poison;
             if (archerCount >= 3)
                 poisonValue = Level1Poison;
             if (archerCount >= 5)
