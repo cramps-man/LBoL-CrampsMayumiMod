@@ -326,9 +326,17 @@
       <EmbeddedResource Remove="Resources\icon.png" />
     </ItemGroup>
 
-
     <ItemGroup>
-      <None Remove="Resources\MayumiStand.png" />
+      <EmbeddedResource Include="DirResources\MayumiAvatar.png" />
+      <EmbeddedResource Include="DirResources\MayumiCardImprint.png" />
+      <EmbeddedResource Include="DirResources\MayumiCollectionIcon.png" />
+      <EmbeddedResource Include="DirResources\MayumiDefeatedIcon.png" />
+      <EmbeddedResource Include="DirResources\MayumiDefeatedStand.png" />
+      <EmbeddedResource Include="DirResources\MayumiModel.png" />
+      <EmbeddedResource Include="DirResources\MayumiPerfectWinIcon.png" />
+      <EmbeddedResource Include="DirResources\MayumiSelectionCircleIcon.png" />
+      <EmbeddedResource Include="DirResources\MayumiStand.png" />
+      <EmbeddedResource Include="DirResources\MayumiWinIcon.png" />
     </ItemGroup>
 
 

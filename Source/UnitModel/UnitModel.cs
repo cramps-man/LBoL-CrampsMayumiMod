@@ -22,7 +22,7 @@ namespace LBoLMod.UnitModel
 
         public override ModelOption LoadModelOptions()
         {
-            return new ModelOption(ResourceLoader.LoadSpriteAsync("icon.png", BepinexPlugin.directorySource, ppu: 565));
+            return new ModelOption(ResourceLoader.LoadSpriteAsync("MayumiModel.png", BepinexPlugin.directorySource, ppu: 565));
         }
 
         public override UniTask<Sprite> LoadSpellSprite()

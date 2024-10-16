@@ -1,0 +1,8 @@
+battle model - battle char
+avatar - top left in battle - crop stand.png - done
+collectionIcon - in collection - crop battle model
+SelectCircleIcon - main menu profile top left - crop stand.png - done
+PerfectWinIcon - run history
+WinIcon - run history
+DefeatedIcon - run history - use defeatedstand.png? need to crop - done
+CardImprint - card
