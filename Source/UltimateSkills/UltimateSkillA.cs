@@ -28,7 +28,7 @@ namespace LBoLMod.UltimateSkills
 
         public override Sprite LoadSprite()
         {
-            return ResourceLoader.LoadSprite("icon.png", BepinexPlugin.directorySource);
+            return ResourceLoader.LoadSprite("dummyicon.png", BepinexPlugin.directorySource);
         }
 
         public override UltimateSkillConfig MakeConfig()

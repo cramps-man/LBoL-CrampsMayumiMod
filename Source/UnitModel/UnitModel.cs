@@ -27,12 +27,14 @@ namespace LBoLMod.UnitModel
 
         public override UniTask<Sprite> LoadSpellSprite()
         {
-            return ResourceLoader.LoadSpriteAsync("icon.png", BepinexPlugin.directorySource);
+            return ResourceLoader.LoadSpriteAsync("dummyicon.png", BepinexPlugin.directorySource);
         }
 
         public override UnitModelConfig MakeConfig()
         {
-            return DefaultConfig();
+            var config = DefaultConfig();
+            config.Flip = true;
+            return config;
         }
     }
 }
