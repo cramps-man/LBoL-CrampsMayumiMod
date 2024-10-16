@@ -12,7 +12,8 @@ namespace LBoLMod.Cards
         public override CardImages LoadCardImages()
         {
             var imgs = new CardImages(BepinexPlugin.embeddedSource);
-            imgs.AutoLoad(this, extension: ".png");
+            //imgs.AutoLoad(this, extension: ".png");
+            imgs.AutoLoad("carddefault", ".jpg", "");
             return imgs;
         }
 

@@ -318,7 +318,7 @@
 
 
     <ItemGroup>
-      <EmbeddedResource Include="Resources\*" />
+      <EmbeddedResource Include="Resources\**" />
     </ItemGroup>
 
 
@@ -337,11 +337,6 @@
       <EmbeddedResource Include="DirResources\MayumiSelectionCircleIcon.png" />
       <EmbeddedResource Include="DirResources\MayumiStand.png" />
       <EmbeddedResource Include="DirResources\MayumiWinIcon.png" />
-    </ItemGroup>
-
-
-    <ItemGroup>
-      <Folder Include="Resources\" />
     </ItemGroup>
 
 

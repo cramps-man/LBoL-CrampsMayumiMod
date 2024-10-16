@@ -1,8 +1,11 @@
-battle model - battle char
+battle model - battle char done just use stand.png
 avatar - top left in battle - crop stand.png - done
-collectionIcon - in collection - crop battle model
+collectionIcon - in collection - crop battle model done just use avatar
 SelectCircleIcon - main menu profile top left - crop stand.png - done
-PerfectWinIcon - run history
-WinIcon - run history
+PerfectWinIcon - run history - done just use avatar for now
+WinIcon - run history - done just use avatar for now
 DefeatedIcon - run history - use defeatedstand.png? need to crop - done
 CardImprint - card
+
+https://www.pixiv.net/en/artworks/121757746 - dairi bunch of player images
+https://www.pixiv.net/en/artworks/121673550 - default card image
