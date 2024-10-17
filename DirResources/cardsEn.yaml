@@ -538,6 +538,7 @@ MassSummon:
   Name: Mass Summon
   Description: |-
     Add random Common/Uncommon |Frontline| cards to the hand until it is full. 
+    Add {Value1} to the draw and discard piles as well. 
 
 UltraFrontline:
   Name: Ultra Frontline

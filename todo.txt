@@ -155,5 +155,5 @@ zero cost reduction just sometimes not reducing a cost? - done
   - maybe it's targetting an already 0 cost
   - probably the same issue with haniwaSpy before, not checking unplayable cards, which still have Any > 0 for whatever reason
 haniwa upgrader will activate when playing a ability or exile card, so i should probs make it upgrade a card in the hand? - done
-mass summon, buff to add +5 to draw and discard when upgraded, keep exile
+mass summon, buff to add +5 to draw and discard when upgraded, keep exile - done
 does exile frontline extra trigger need something more?
