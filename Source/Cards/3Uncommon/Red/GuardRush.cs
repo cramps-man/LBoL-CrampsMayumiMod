@@ -2,6 +2,7 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
@@ -24,14 +25,11 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Uncommon;
-            cardConfig.Type = CardType.Attack;
-            cardConfig.TargetType = TargetType.SingleEnemy;
+            cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 1, Any = 1 };
-            cardConfig.Damage = 14;
-            cardConfig.UpgradedDamage = 18;
-            cardConfig.Block = 10;
-            cardConfig.UpgradedBlock = 13;
+            cardConfig.Cost = new ManaGroup() { Red = 1, Any = 2 };
+            cardConfig.Block = 18;
+            cardConfig.UpgradedBlock = 24;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 2;
@@ -55,11 +53,9 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, Value2, 0, Value2);
-            yield return AttackAction(selector);
-            if (base.Battle.BattleShouldEnd)
-                yield break;
             yield return DefenseAction();
             yield return BuffAction<Graze>(Value1);
+            yield return new DrawManyCardAction(Value1);
         }
     }
 }

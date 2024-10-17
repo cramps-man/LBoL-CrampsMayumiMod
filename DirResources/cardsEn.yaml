@@ -473,9 +473,9 @@ GuardRush:
   Name: Guard Rush
   Description: |-
     |Sacrifice| {Value2} |Fencer| and |Cavalry|. 
-    Deal {Damage} damage. 
     Gain {Block} |Block|. 
     Gain {Value1} |Graze|. 
+    Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 ArcherPrepDebuff:
   Name: Archer Prep Debuff
