@@ -519,7 +519,7 @@ GainBuffTickdown:
 ZeroCostReduction:
   Name: Zero Cost Reduction
   Description: |-
-    When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand |temporarily costs| <sprite=ManaSprite" name="1"> less. 
+    When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand |temporarily costs| <sprite=ManaSprite" name="1"> less. Does not stack. 
 
 MassRessurection:
   Name: Mass Ressurection
