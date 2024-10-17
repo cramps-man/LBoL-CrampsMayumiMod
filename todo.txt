@@ -146,8 +146,9 @@ some assign with multiple haniwa types (build watchtower doesnt count)
 
 investigate haniwa attacker not attacking end of turn after summoned? - done
   - it's related to upgrading
-buff cake 2 haniwa per turn
+buff cake 2 haniwa per turn - done
 investigate assign buffs causing performance issues?
+  - unsure whats causing it, probs need to profile in some way
 zero cost reduction not working on 0 cost after play if it had its cost changed to 0 - done
 zero cost reduction reducing cost when there's 0 anys, even if there's colors - dunno wtf i mean here, probs brain being weird
 zero cost reduction just sometimes not reducing a cost? - done

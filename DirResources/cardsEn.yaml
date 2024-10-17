@@ -620,7 +620,7 @@ ArcherPrepFrostArrow:
 KeikiTeammate:
   Name: Keiki, The Creator
   Description: |-
-    {FriendP} Add a random Common/Uncommon |Frontline| card to the hand. 
+    {FriendP} Add |e:2| random Common/Uncommon |Frontline| cards to the hand. 
   ExtraDescription1: |-
     {FriendA} Trigger all |Assign| buffs. Gain {Value1} |Barrier| for each buff triggered. 
   ExtraDescription2: |-

@@ -44,8 +44,10 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedActiveCost = -4;
             cardConfig.UltimateCost = -9;
             cardConfig.UpgradedUltimateCost = -9;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeKeyword = Keyword.Exile;
+            cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
             return cardConfig;
         }
     }
@@ -76,7 +78,10 @@ namespace LBoLMod.Cards
             base.NotifyActivating();
             base.Loyalty += base.PassiveCost;
             IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.CommonSummonTypes.Concat(HaniwaFrontlineUtils.UncommonSummonTypes);
-            yield return new AddCardsToHandAction(Library.CreateCard(possibleSummons.Sample(base.BattleRng)));
+            List<Card> cards = new List<Card>();
+            for (int i = 0; i < 2; i++)
+                cards.Add(Library.CreateCard(possibleSummons.Sample(base.BattleRng)));
+            yield return new AddCardsToHandAction(cards);
         }
         public override IEnumerable<BattleAction> SummonActions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
