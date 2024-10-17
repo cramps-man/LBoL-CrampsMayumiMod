@@ -39,9 +39,9 @@ namespace LBoLMod.StatusEffects.Abilities
             if (base.Battle.BattleShouldEnd)
                 return;
 
-            if (args.Card.Cost.IsEmpty)
+            if (args.ConsumingMana.IsEmpty)
             {
-                Card card = base.Battle.HandZone.Where(c => c.Cost.Any > 0).SampleOrDefault(base.GameRun.BattleRng);
+                Card card = base.Battle.HandZone.Where(c => c.Cost.Any > 0 && !c.IsForbidden).SampleOrDefault(base.GameRun.BattleRng);
                 if (card != null)
                 {
                     card.DecreaseTurnCost(ManaGroup.Anys(1));

@@ -148,10 +148,11 @@ investigate haniwa attacker not attacking end of turn after summoned? - done
   - it's related to upgrading
 buff cake 2 haniwa per turn
 investigate assign buffs causing performance issues?
-zero cost reduction not working on 0 cost after play if it had its cost changed to 0
-zero cost reduction reducing cost when there's 0 anys, even if there's colors
-zero cost reduction just sometimes not reducing a cost?
+zero cost reduction not working on 0 cost after play if it had its cost changed to 0 - done
+zero cost reduction reducing cost when there's 0 anys, even if there's colors - dunno wtf i mean here, probs brain being weird
+zero cost reduction just sometimes not reducing a cost? - done
   - maybe it's targetting an already 0 cost
+  - probably the same issue with haniwaSpy before, not checking unplayable cards, which still have Any > 0 for whatever reason
 haniwa upgrader will activate when playing a ability or exile card, so i should probs make it upgrade a card in the hand?
 mass summon, buff to add +5 to draw and discard when upgraded, keep exile
 does exile frontline extra trigger need something more?
