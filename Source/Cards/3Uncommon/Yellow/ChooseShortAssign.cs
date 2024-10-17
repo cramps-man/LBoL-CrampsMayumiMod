@@ -44,7 +44,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            List<Card> cards = HaniwaAssignUtils.AssignCardTypes.SampleMany(3, base.BattleRng).Select(Library.CreateCard).ToList();
+            List<Card> cards = HaniwaAssignUtils.GetAssignCardTypes(base.Battle.Player).SampleMany(3, base.BattleRng).Select(Library.CreateCard).ToList();
             if (cards.Count == 0)
                 yield break;
 

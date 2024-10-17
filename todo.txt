@@ -159,3 +159,8 @@ haniwa upgrader will activate when playing a ability or exile card, so i should 
 mass summon, buff to add +5 to draw and discard when upgraded, keep exile - done
 does exile frontline extra trigger need something more? - done
   - made it give 2 extra triggers on upgrade
+
+fix ChooseShortAssign filtering on offcolor assign cards - done
+make fast trigger actually trigger it immidiately
+specify if zero cost reduction stacks
+check prep frost arrow actually gains block

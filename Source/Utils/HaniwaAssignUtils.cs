@@ -1,4 +1,6 @@
-﻿using LBoL.Core;
+﻿using HarmonyLib;
+using LBoL.Base;
+using LBoL.Core;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLMod.Cards;
@@ -11,7 +13,7 @@ namespace LBoLMod.Utils
 {
     public static class HaniwaAssignUtils
     {
-        public readonly static List<Type> AssignCardTypes = new List<Type>()
+        public readonly static List<Type> OnColorAssignCardTypes = new List<Type>()
         {
             typeof(ArcherPrepVolley),
             typeof(CavalrySupplies),
@@ -19,8 +21,20 @@ namespace LBoLMod.Utils
             typeof(BuildWatchtower),
             typeof(CavalryRush),
             typeof(CavalryScout),
-            typeof(ChargeAttack)
+            typeof(ChargeAttack),
+            typeof(ArcherPrepDebuff),
+            typeof(FencerPrepCounter)
         };
+        
+        public static List<Type> GetAssignCardTypes(PlayerUnit player, bool checkOffColor = true)
+        {
+            if (checkOffColor)
+            {
+                if (player.GameRun.BaseMana.HasColor(ManaColor.Blue))
+                    return OnColorAssignCardTypes.AddItem(typeof(ArcherPrepFrostArrow)).ToList();
+            }
+            return OnColorAssignCardTypes;
+        }
         public static List<Card> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true, bool includePermanent = true)
         {
             List<Card> list = new List<Card>();
