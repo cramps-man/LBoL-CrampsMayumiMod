@@ -161,8 +161,9 @@ does exile frontline extra trigger need something more? - done
   - made it give 2 extra triggers on upgrade
 
 fix ChooseShortAssign filtering on offcolor assign cards - done
-make fast trigger actually trigger it immidiately
+make fast trigger actually trigger it immidiately - done
 specify if zero cost reduction stacks - done
   - also nerfed cost a bit, cos effect is rly powerful
 check prep frost arrow actually gains block - seems to? not sure why i didnt in my last run, or i didnt see it attacked another target?
 buff MassExtraTrigger in some way as it still seems weak
+maybe make cake teammate spawn the frontline cards in draw/discard piles?

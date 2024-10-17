@@ -77,9 +77,10 @@ namespace LBoLMod.StatusEffects
                 Count = 0;
         }
 
-        public void TickdownFull()
+        public IEnumerable<BattleAction> ImmidiatelyTrigger()
         {
             Count = 0;
+            return AssignTriggering(false, PlayerHasExhibitA);
         }
 
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)

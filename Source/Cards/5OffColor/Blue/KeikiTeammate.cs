@@ -95,7 +95,10 @@ namespace LBoLMod.Cards
                 List<StatusEffect> removedAssignBuffs = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect).ToList();
                 foreach (ModAssignStatusEffect statusEffect in removedAssignBuffs)
                 {
-                    statusEffect.TickdownFull();
+                    foreach (var item in statusEffect.ImmidiatelyTrigger())
+                    {
+                        yield return item;
+                    }
                 }
                 yield return DefenseAction(0, Value1 * removedAssignBuffs.Count);
                 yield return base.SkillAnime;
