@@ -53,8 +53,6 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingValue <= 0)
-                yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
