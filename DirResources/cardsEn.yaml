@@ -491,7 +491,7 @@ AssignTriggerUpgrade:
 ExileFrontlineExtraTrigger:
   Name: Exile Frontline Extra Trigger
   Description: |-
-    |Exile| {Value1} |Frontline| card{Value1:plural one='' other='s'} from the hand. 
+    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from the hand. 
     Choose that many |Assign| buffs and give {Value2} extra trigger{Value2:plural one='' other='s'}. 
 
 #RARES
