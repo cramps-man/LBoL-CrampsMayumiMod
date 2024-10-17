@@ -43,7 +43,7 @@ namespace LBoLMod.Patches
                     __instance.downText.text = "∞";
                 else if (modAssignStatusEffect.Level <= 1)
                     __instance.downText.text = "";
-                modAssignStatusEffect.NotifyChanged();
+                //modAssignStatusEffect.NotifyChanged();
             }
         }
     }
