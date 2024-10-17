@@ -1,4 +1,5 @@
 ﻿using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -8,6 +9,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -53,15 +55,15 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (!args.Card.CanUpgrade)
-                yield break;
             if (RemainingValue <= 0)
                 yield break;
 
+            Card toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleOrDefault(base.BattleRng);
+            if (toUpgrade == null)
+                yield break;
             this.NotifyActivating();
             RemainingValue -= 1;
-            yield return new UpgradeCardAction(args.Card);
-            yield return PerformAction.ViewCard(args.Card);
+            yield return new UpgradeCardAction(toUpgrade);
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

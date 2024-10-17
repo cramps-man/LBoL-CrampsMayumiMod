@@ -310,13 +310,15 @@ HaniwaSpy:
 HaniwaUpgrader:
   Name: Haniwa Upgrader
   Description: |-
-    |While in hand|: After a card is used, if it can be upgraded, upgrade it. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
     |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each remaining upgrade. ({AdditionalBlock}) 
   NonbattleDescription: |-
-    |While in hand|: After a card is used, if it can be upgraded, upgrade it. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
     |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each remaining upgrade. ({AdditionalBlock}) 
   DetailText: |-
+    Can not target itself. 
+
     Increases for each upgrade. 
     Total upgrades per turn: +1
 
