@@ -337,10 +337,11 @@ HaniwaExploiter:
     On Play damage: +1
     Follow up instances stays at 3 after first upgrade. 
 
-SummonHaniwaUncommon:
-  Name: Summon Haniwa Uncommon
+UpgradedSummon:
+  Name: Upgraded Summon
   Description: |-
-    Choose {Value1} |Frontline| card and add it to the hand. 
+    Choose |e:1| |Frontline| card and add it to the hand. 
+    It starts with {Value1} upgrade{Value1:plural one='' other='s'}. 
     |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
