@@ -177,5 +177,5 @@ maybe uncommon haniwa summons should be included in common summon cards? them co
   - summon that starts the frontline upgraded
   - exileSummonUncommon can just be exileFrontlineSummon, and cost no haniwa to sacrifice? it already doesnt cost haniwa, just let it include common ones to summon
 make assignPlayGainBlock work with ChooseShortAssign? - done
-gainBuffTickdown reduce upgraded cost to W?
+gainBuffTickdown reduce upgraded cost to W? - done
 frontlineDiscardDraw let discard any card, but only draw based on frontline discard

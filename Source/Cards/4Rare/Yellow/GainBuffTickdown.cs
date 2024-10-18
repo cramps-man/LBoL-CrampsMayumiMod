@@ -25,7 +25,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { White = 1 };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
