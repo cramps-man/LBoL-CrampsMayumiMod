@@ -533,7 +533,8 @@ MassExtraTrigger:
   Name: Mass Extra Trigger
   Description: |-
     Choose |e:1| |Assign| buff and remove all other |Assign| buffs. 
-    Add the number of triggers of the removed buffs onto the chosen buff. 
+    Increase the chosen buff's triggers by {Value2}. 
+    Additionally, add the total number of triggers of the removed buffs onto the chosen buff. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 MassSummon:

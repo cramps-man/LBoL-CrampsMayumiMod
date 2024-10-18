@@ -30,7 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 3;
-            cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
+            cardConfig.Value2 = 2;
+            cardConfig.Cost = new ManaGroup() { White = 3 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
@@ -49,6 +50,7 @@ namespace LBoLMod.Cards
         {
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
+                card.StatusEffect.IncreaseExtraTrigger(Value2);
                 List<StatusEffect> removedAssignBuffs = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect && s != card.StatusEffect).ToList();
                 foreach (StatusEffect statusEffect in removedAssignBuffs)
                 {

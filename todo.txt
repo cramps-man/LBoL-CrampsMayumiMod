@@ -166,8 +166,9 @@ specify if zero cost reduction stacks - done
   - also nerfed cost a bit, cos effect is rly powerful
 check prep frost arrow actually gains block - seems to? not sure why i didnt in my last run, or i didnt see it attacked another target?
 
-buff MassExtraTrigger in some way as it still seems weak
+buff MassExtraTrigger in some way as it still seems weak - done
   - upgrade allows choosing 2 buffs? they both add the values from removed buffs
+  - just gave it 2 base extra triggers
 maybe make cake teammate spawn the frontline cards in draw/discard piles?
 
 make assign option card for prep frost arrow card blue - too annoying to add, color config changes all the option cards colors
@@ -180,3 +181,4 @@ make assignPlayGainBlock work with ChooseShortAssign? - done
 gainBuffTickdown reduce upgraded cost to W? - done
 frontlineDiscardDraw let discard any card, but only draw based on frontline discard - done
   - also only upgrade for the upgraded version
+Buff UltraFrontline to exile from draw/discard piles on upgrade
