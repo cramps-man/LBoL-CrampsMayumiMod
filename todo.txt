@@ -182,3 +182,7 @@ gainBuffTickdown reduce upgraded cost to W? - done
 frontlineDiscardDraw let discard any card, but only draw based on frontline discard - done
   - also only upgrade for the upgraded version
 Buff UltraFrontline to exile from draw/discard piles on upgrade - done
+
+MassSummon probs needs a nerf, either lower the count, or make it cost haniwa for each summon
+UpgradedSummon probs need a little nerf too? but need testing
+fix SummonHaniwa using mini card select - done

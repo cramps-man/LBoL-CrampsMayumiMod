@@ -5,7 +5,11 @@ SelectCircleIcon - main menu profile top left - crop stand.png - done
 PerfectWinIcon - run history - done just use avatar for now
 WinIcon - run history - done just use avatar for now
 DefeatedIcon - run history - use defeatedstand.png? need to crop - done
-CardImprint - card
+CardImprint - card - actually implement or leave blank
 
 https://www.pixiv.net/en/artworks/121757746 - dairi bunch of player images
 https://www.pixiv.net/en/artworks/121673550 - default card image
+
+improve haniwa buff icon
+add default icon for assign buffs
+add default icon for general abilities

@@ -44,19 +44,18 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> cards = HaniwaFrontlineUtils.GetAllCards(base.Battle, Value1, true);
-            return new MiniSelectCardInteraction(cards);
+            return new SelectCardInteraction(1, 1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (!(precondition is MiniSelectCardInteraction interaction))
+            if (!(precondition is SelectCardInteraction interaction))
                 yield break;
 
-            ModFrontlineOptionCard optionCard = interaction.SelectedCard as ModFrontlineOptionCard;
-            if (optionCard == null)
-                yield break;
-
-            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, optionCard.SelectRequireFencer, optionCard.SelectRequireArcher, optionCard.SelectRequireCavalry);
-            yield return new AddCardsToHandAction(optionCard.GetCardsToSpawn());
+            foreach (ModFrontlineOptionCard optionCard in interaction.SelectedCards)
+            {
+                yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, optionCard.SelectRequireFencer, optionCard.SelectRequireArcher, optionCard.SelectRequireCavalry);
+                yield return new AddCardsToHandAction(optionCard.GetCardsToSpawn());
+            }
         }
     }
 }
