@@ -181,4 +181,4 @@ make assignPlayGainBlock work with ChooseShortAssign? - done
 gainBuffTickdown reduce upgraded cost to W? - done
 frontlineDiscardDraw let discard any card, but only draw based on frontline discard - done
   - also only upgrade for the upgraded version
-Buff UltraFrontline to exile from draw/discard piles on upgrade
+Buff UltraFrontline to exile from draw/discard piles on upgrade - done

@@ -547,9 +547,9 @@ UltraFrontline:
   Name: Ultra Frontline
   Description: |-
     |Exile| all |Frontline| cards in the hand. 
-    Choose |e:1| |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards. 
+    Choose |e:1| |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards and their total upgrades. 
   UpgradedDescription: |-
-    |Exile| all |Frontline| cards in the hand. 
+    |Exile| all |Frontline| cards in the hand, draw and discard piles. 
     Choose |e:1| |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards and their total upgrades. 
 
 HaniwaCommander:

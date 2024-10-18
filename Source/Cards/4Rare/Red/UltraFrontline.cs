@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 2 };
-            cardConfig.RelativeKeyword = Keyword.Exile;
-            cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
+            cardConfig.Keywords = Keyword.Exile;
+            cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
@@ -57,14 +57,11 @@ namespace LBoLMod.Cards
 
             List<Card> exileCards = base.Battle.HandZone.Where(c => c is ModFrontlineCard).ToList();
             if (IsUpgraded)
+                exileCards = exileCards.Concat(base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c is ModFrontlineCard)).ToList();
+            foreach (Card c in exileCards)
             {
-                foreach (Card c in exileCards)
-                {
-                    newSummon.UpgradeCounter += c.UpgradeCounter + 1;
-                }
+                newSummon.UpgradeCounter += c.UpgradeCounter + 1;
             }
-            else
-                newSummon.UpgradeCounter = exileCards.Count;
             if (newSummon.UpgradeCounter > ModFrontlineCard.MAX_UPGRADE)
                 newSummon.UpgradeCounter = ModFrontlineCard.MAX_UPGRADE;
             yield return new ExileManyCardAction(exileCards);
