@@ -2,8 +2,10 @@
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLEntitySideloader.Resource;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace LBoLMod.StatusEffects
 {
@@ -13,7 +15,10 @@ namespace LBoLMod.StatusEffects
         {
             return nameof(ArcherHaniwa);
         }
-
+        public override Sprite LoadSprite()
+        {
+            return ResourceLoader.LoadSprite("archerhaniwa.png", BepinexPlugin.embeddedSource);
+        }
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();

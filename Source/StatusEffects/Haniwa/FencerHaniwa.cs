@@ -2,8 +2,10 @@
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLEntitySideloader.Resource;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace LBoLMod.StatusEffects
 {
@@ -12,6 +14,11 @@ namespace LBoLMod.StatusEffects
         public override IdContainer GetId()
         {
             return nameof(FencerHaniwa);
+        }
+
+        public override Sprite LoadSprite()
+        {
+            return ResourceLoader.LoadSprite("fencerhaniwa.png", BepinexPlugin.embeddedSource);
         }
 
         public override StatusEffectConfig MakeConfig()
