@@ -40,7 +40,7 @@ namespace LBoLMod.Cards
         public override bool DiscardCard => true;
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList();
+            List<Card> list = base.Battle.HandZone.Where((Card c) => c != this).ToList();
             return new SelectHandInteraction(0, list.Count, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
@@ -48,9 +48,10 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction discardInteraction))
                 yield break;
 
-            yield return new UpgradeCardsAction(discardInteraction.SelectedCards);
+            if (IsUpgraded)
+                yield return new UpgradeCardsAction(discardInteraction.SelectedCards.Where(c => c.CanUpgradeAndPositive));
             yield return new DiscardManyAction(discardInteraction.SelectedCards);
-            yield return new DrawManyCardAction(discardInteraction.SelectedCards.Count);
+            yield return new DrawManyCardAction(discardInteraction.SelectedCards.Where(c => c is ModFrontlineCard).Count());
         }
     }
 }

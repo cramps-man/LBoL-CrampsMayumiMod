@@ -611,7 +611,11 @@ FreezeFrontline:
 FrontlineDiscardDraw:
   Name: Frontline Discard Draw
   Description: |-
-    Choose any number of |Frontline| cards in the hand. Upgrade and discard them, then draw that many cards. 
+    Choose any number of cards in the hand. 
+    Discard them, then draw the number of |Frontline| cards discarded. 
+  UpgradedDescription: |-
+    Choose any number of cards in the hand. 
+    Upgrade then discard them, then draw the number of |Frontline| cards discarded. 
 
 ArcherPrepFrostArrow:
   Name: Archer Prep Frost Arrow
