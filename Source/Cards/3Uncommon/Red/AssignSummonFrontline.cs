@@ -14,11 +14,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ExileSummonUncommonDef : ModCardTemplate
+    public sealed class AssignSummonFrontlineDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileSummonUncommon);
+            return nameof(AssignSummonFrontline);
         }
 
         public override CardConfig MakeConfig()
@@ -29,38 +29,42 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
-            cardConfig.RelativeKeyword = Keyword.Exile;
-            cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(ExileSummonUncommonDef))]
-    public sealed class ExileSummonUncommon : Card
+    [EntityLogic(typeof(AssignSummonFrontlineDef))]
+    public sealed class AssignSummonFrontline : Card
     {
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(1, Value1, list);
+            List<Card> assignBuffs = HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player);
+            return new SelectCardInteraction(1, 1, assignBuffs);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (!(precondition is SelectHandInteraction exileInteraction))
+            if (!(precondition is SelectCardInteraction assignInteraction))
                 yield break;
 
-            int exileCount = exileInteraction.SelectedCards.Count;
-            var summonInteraction = new SelectCardInteraction(0, exileCount, HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t)));
+            var summonInteraction = new SelectCardInteraction(1, 1, HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t)));
             yield return new InteractionAction(summonInteraction);
 
-            yield return new ExileManyCardAction(exileInteraction.SelectedCards);
-            yield return new AddCardsToHandAction(summonInteraction.SelectedCards);
-
+            foreach (ModAssignOptionCard optionCard in assignInteraction.SelectedCards)
+            {
+                yield return new RemoveStatusEffectAction(optionCard.StatusEffect);
+            }
+            List<Card> cards = new List<Card>();
+            for (int i = 0; i < Value1; i++)
+            {
+                cards.Add(summonInteraction.SelectedCards.FirstOrDefault().CloneBattleCard());
+            }
+            yield return new AddCardsToHandAction(cards);
         }
     }
 }

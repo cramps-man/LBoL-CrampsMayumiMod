@@ -172,9 +172,10 @@ maybe make cake teammate spawn the frontline cards in draw/discard piles?
 
 make assign option card for prep frost arrow card blue - too annoying to add, color config changes all the option cards colors
 maybe buff loyalty strike dmg a bit - done
-maybe uncommon haniwa summons should be included in common summon cards? them costing more is already tougher to manage
+maybe uncommon haniwa summons should be included in common summon cards? them costing more is already tougher to manage - done
   - can come up with more unique summon options in uncommon cards
   - summon that starts the frontline upgraded
+  - remove an assign and add multiple copies of a frontline
 make assignPlayGainBlock work with ChooseShortAssign? - done
 gainBuffTickdown reduce upgraded cost to W? - done
 frontlineDiscardDraw let discard any card, but only draw based on frontline discard - done

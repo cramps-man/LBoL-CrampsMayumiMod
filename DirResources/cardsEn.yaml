@@ -377,10 +377,11 @@ OptionHaniwaExploiter:
     Sacrifice {SelectRequireArcher} |Archer|.
     Add a |Haniwa Exploiter| to the hand. 
 
-ExileSummonUncommon:
-  Name: Exile Summon Uncommon
+AssignSummonFrontline:
+  Name: Assign Summon Frontline
   Description: |-
-    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add that many |Frontline| card{Value1:plural one='' other='s'} to the hand. 
+    Choose an |Assign| buff and remove it without triggering it. 
+    Choose |e:1| |Frontline| card and add {Value1} copies of it to the hand. 
 
 LoyaltyStrike:
   Name: Loyalty Strike
