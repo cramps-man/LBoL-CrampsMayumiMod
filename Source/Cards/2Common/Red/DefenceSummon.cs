@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = HaniwaFrontlineUtils.GetCommonCards(base.Battle, checkSacrificeRequirement: true);
+            List<Card> cards = HaniwaFrontlineUtils.GetAllCards(base.Battle, checkSacrificeRequirement: true);
             return new SelectCardInteraction(0, Value1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

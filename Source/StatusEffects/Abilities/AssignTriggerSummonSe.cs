@@ -12,7 +12,6 @@ using LBoLMod.GameEvents;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.StatusEffects.Abilities
 {
@@ -37,7 +36,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (base.Battle.BattleShouldEnd)
                 yield break;
 
-            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.CommonSummonTypes.Concat(HaniwaFrontlineUtils.UncommonSummonTypes);
+            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.AllSummonTypes;
             List<Card> cards = new List<Card>();
             for (int i = 0; i < Level; i++)
             {

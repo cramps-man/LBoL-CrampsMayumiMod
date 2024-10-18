@@ -11,7 +11,6 @@ using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -35,6 +34,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             return cardConfig;
         }
     }
@@ -44,7 +45,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.CommonSummonTypes.Concat(HaniwaFrontlineUtils.UncommonSummonTypes);
+            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.AllSummonTypes;
             int emptySlots = base.Battle.MaxHand - base.Battle.HandZone.Count;
 
             yield return new AddCardsToHandAction(GetRandomCards(emptySlots, possibleSummons));

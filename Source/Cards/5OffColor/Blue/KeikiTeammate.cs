@@ -48,6 +48,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
+            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             return cardConfig;
         }
     }
@@ -77,7 +79,7 @@ namespace LBoLMod.Cards
                 yield break;
             base.NotifyActivating();
             base.Loyalty += base.PassiveCost;
-            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.CommonSummonTypes.Concat(HaniwaFrontlineUtils.UncommonSummonTypes);
+            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.AllSummonTypes;
             List<Card> cards = new List<Card>();
             for (int i = 0; i < 2; i++)
                 cards.Add(Library.CreateCard(possibleSummons.Sample(base.BattleRng)));

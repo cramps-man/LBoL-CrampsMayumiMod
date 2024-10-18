@@ -51,7 +51,7 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction exileInteraction))
                 yield break;
 
-            var summonInteraction = new SelectCardInteraction(0, 1, HaniwaFrontlineUtils.CommonSummonTypes.ConvertAll(t => Library.CreateCard(t)));
+            var summonInteraction = new SelectCardInteraction(0, 1, HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t)));
             yield return new InteractionAction(summonInteraction);
 
             yield return new ExileManyCardAction(exileInteraction.SelectedCards);

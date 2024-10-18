@@ -44,7 +44,7 @@ DefenceSummon:
   Name: Defence Summon
   Description: |-
     Gain {Block} |Block|.
-    Choose up to {Value1} common |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
@@ -53,7 +53,7 @@ DefenceSummon:
 ExileSummon:
   Name: Exile Summon
   Description: |-
-    Exile {Value1} card{Value1:plural one='' other='s'} from the hand. Choose 1 Common |Frontline| card to add to the hand. 
+    Exile {Value1} card{Value1:plural one='' other='s'} from the hand. Choose 1 |Frontline| card to add to the hand. 
 
 FencerKamikaze:
   Name: Fencer Kamikaze
@@ -147,7 +147,7 @@ HaniwaSharpshooter:
 SummonHaniwa:
   Name: Summon Haniwa
   Description: |-
-    Choose {Value2} Common |Frontline| card and add {Value1} cop{Value1:plural one='y' other='ies'} to the hand. 
+    Choose {Value2} |Frontline| card and add {Value1} cop{Value1:plural one='y' other='ies'} to the hand. 
     |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
@@ -340,7 +340,7 @@ HaniwaExploiter:
 SummonHaniwaUncommon:
   Name: Summon Haniwa Uncommon
   Description: |-
-    Choose {Value1} Uncommon |Frontline| card and add it to the hand. 
+    Choose {Value1} |Frontline| card and add it to the hand. 
     |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
@@ -379,7 +379,7 @@ OptionHaniwaExploiter:
 ExileSummonUncommon:
   Name: Exile Summon Uncommon
   Description: |-
-    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add that many Uncommon |Frontline| card{Value1:plural one='' other='s'} to the hand. 
+    |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add that many |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
 LoyaltyStrike:
   Name: Loyalty Strike
@@ -537,17 +537,17 @@ MassExtraTrigger:
 MassSummon:
   Name: Mass Summon
   Description: |-
-    Add random Common/Uncommon |Frontline| cards to the hand until it is full. 
+    Add random |Frontline| cards to the hand until it is full. 
     Add {Value1} to the draw and discard piles as well. 
 
 UltraFrontline:
   Name: Ultra Frontline
   Description: |-
     |Exile| all |Frontline| cards in the hand. 
-    Choose |e:1| Common/Uncommon |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards. 
+    Choose |e:1| |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards. 
   UpgradedDescription: |-
     |Exile| all |Frontline| cards in the hand. 
-    Choose |e:1| Common/Uncommon |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards and their total upgrades. 
+    Choose |e:1| |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards and their total upgrades. 
 
 HaniwaCommander:
   Name: Haniwa Commander
@@ -627,7 +627,7 @@ ArcherPrepFrostArrow:
 KeikiTeammate:
   Name: Keiki, The Creator
   Description: |-
-    {FriendP} Add |e:2| random Common/Uncommon |Frontline| cards to the hand. 
+    {FriendP} Add |e:2| random |Frontline| cards to the hand. 
   ExtraDescription1: |-
     {FriendA} Trigger all |Assign| buffs. Gain {Value1} |Barrier| for each buff triggered. 
   ExtraDescription2: |-

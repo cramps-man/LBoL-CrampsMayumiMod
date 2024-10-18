@@ -35,8 +35,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaUpgrader), nameof(HaniwaExploiter), nameof(HaniwaSpy) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaUpgrader), nameof(HaniwaExploiter), nameof(HaniwaSpy) };
+            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             return cardConfig;
         }
     }
@@ -55,7 +55,7 @@ namespace LBoLMod.Cards
                 yield break;
 
             int exileCount = exileInteraction.SelectedCards.Count;
-            var summonInteraction = new SelectCardInteraction(0, exileCount, HaniwaFrontlineUtils.UncommonSummonTypes.ConvertAll(t => Library.CreateCard(t)));
+            var summonInteraction = new SelectCardInteraction(0, exileCount, HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t)));
             yield return new InteractionAction(summonInteraction);
 
             yield return new ExileManyCardAction(exileInteraction.SelectedCards);

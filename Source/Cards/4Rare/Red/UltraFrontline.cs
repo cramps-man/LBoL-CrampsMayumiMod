@@ -32,6 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             return cardConfig;
         }
     }
@@ -41,7 +43,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = HaniwaFrontlineUtils.CommonSummonTypes.ConvertAll(t => Library.CreateCard(t)).Concat(HaniwaFrontlineUtils.UncommonSummonTypes.ConvertAll(t => Library.CreateCard(t))).ToList();
+            List<Card> cards = HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t));
             return new SelectCardInteraction(1, 1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

@@ -6,6 +6,7 @@ using LBoLMod.BattleActions;
 using LBoLMod.Cards;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Utils
 {
@@ -41,6 +42,9 @@ namespace LBoLMod.Utils
             typeof(HaniwaSpy)
         };
 
+        public static List<Type> AllOptionTypes => CommonOptionTypes.Concat(UncommonOptionTypes).ToList();
+        public static List<Type> AllSummonTypes => CommonSummonTypes.Concat(UncommonSummonTypes).ToList();
+
         public static List<Card> GetCommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             return GetOptionCards(CommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
@@ -49,6 +53,11 @@ namespace LBoLMod.Utils
         public static List<Card> GetUncommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             return GetOptionCards(UncommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
+        }
+
+        public static List<Card> GetAllCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
+        {
+            return GetOptionCards(AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
         }
 
         private static List<Card> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
