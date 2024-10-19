@@ -19,13 +19,14 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 6;
             cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 1;
-            cardConfig.Mana = new ManaGroup() { White = 1 };
-            cardConfig.UpgradedMana = new ManaGroup() { Philosophy = 1 };
+            cardConfig.Mana = new ManaGroup() { White = 1, Red = 1 };
+            cardConfig.UpgradedMana = new ManaGroup() { White = 1, Philosophy = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;

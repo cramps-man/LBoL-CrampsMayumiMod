@@ -74,12 +74,6 @@ HybridDraw:
     If there is an |Assign| status active, draw |e:1| card.
     If there is a |Frontline| card in hand, draw |e:1| card. 
 
-CavalrySupplies:
-  Name: Cavalry Supplies
-  Description: |-
-    |Assign {CavalryAssigned} Cavalry|. 
-    After {Value1} cards are played, gain {Mana} and draw {Value2} card{Value2:plural one='' other='s'}. 
-
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
@@ -248,6 +242,12 @@ AssignExtraTrigger:
   Description: |-
     Gain {Block} |Block|. 
     Choose an |Assign| buff and increase the amount of times it will trigger by {Value1}. 
+
+CavalryScout:
+  Name: Cavalry Scout
+  Description: |-
+    |Assign {CavalryAssigned} Cavalry|.
+    After {Value2} card{Value2:plural one=' is' other='s are'} played draw {Value1} card{Value1:plural one='' other='s'} and gain |e:1| |Graze|. 
 
 #UNCOMMONS
 CreateArcher:
@@ -444,12 +444,6 @@ AshesToClay:
   DetailText: |-
     Can not choose a |Haniwa Commander|. Bad things happen. 
 
-CavalryScout:
-  Name: Cavalry Scout
-  Description: |-
-    |Assign {CavalryAssigned} Cavalry|.
-    After {Value2} card{Value2:plural one=' is' other='s are'} played draw {Value1} card{Value1:plural one='' other='s'} and gain |e:1| |Graze|. 
-
 ChooseShortAssign:
   Name: Choose Short Assign
   Description: |-
@@ -497,6 +491,12 @@ ExileFrontlineExtraTrigger:
   Description: |-
     |Exile| up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from the hand. 
     Choose that many |Assign| buffs and give {Value2} extra trigger{Value2:plural one='' other='s'}. 
+
+CavalrySupplies:
+  Name: Cavalry Supplies
+  Description: |-
+    |Assign {CavalryAssigned} Cavalry|. 
+    After {Value1} cards are played, gain {Mana} and draw {Value2} card{Value2:plural one='' other='s'}. 
 
 #RARES
 FullFrontalAssault:
