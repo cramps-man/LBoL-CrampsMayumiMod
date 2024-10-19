@@ -233,3 +233,10 @@ ExileFrontlineBlitzSe:
     Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
   Brief: |-
     Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
+
+AssignCostTriggerSe:
+  Name: Assign Cost Trigger
+  Description: |-
+    Until the end of this combat, |Assign| cards cost <sprite=ManaSprite" name="1"> to play. |Assign| buffs start with increased extra triggers of {Level}.
+  Brief: |-
+    Until the end of this combat, |Assign| cards cost <sprite=ManaSprite" name="1"> to play. |Assign| buffs start with increased extra triggers.

@@ -598,6 +598,11 @@ ExileFrontlineBlitz:
   Description: |-
     Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
 
+AssignCostTrigger:
+  Name: Assign Cost Trigger
+  Description: |-
+    Until the end of this combat, |Assign| cards cost {Mana} to play. |Assign| buffs start with increased extra triggers of {Value1}.
+
 #OFFCOLOURS
 FrozenHaniwa:
   Name: Frozen Haniwa

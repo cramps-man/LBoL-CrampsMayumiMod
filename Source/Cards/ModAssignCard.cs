@@ -3,6 +3,7 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLMod.BattleActions;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace LBoLMod.Cards
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
             yield return BuffAction(AssignStatusType, level: 1, count: StartingCardCounter);
+        }
+
+        protected override void OnEnterBattle(BattleController battle)
+        {
+            if (base.Battle.Player.HasStatusEffect<AssignCostTriggerSe>())
+                base.IncreaseBaseCost(ManaGroup.Anys(1));
         }
     }
 }
