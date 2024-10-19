@@ -28,6 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 2 };
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -43,28 +45,30 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t));
-            return new SelectCardInteraction(1, 1, cards);
-        }
-        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
-        {
-            if (!(precondition is SelectCardInteraction interaction))
-                yield break;
-
-            Card newSummon = interaction.SelectedCards.FirstOrDefault();
-            if (newSummon == null)
-                yield break;
-
             List<Card> exileCards = base.Battle.HandZone.Where(c => c is ModFrontlineCard).ToList();
             if (IsUpgraded)
                 exileCards = exileCards.Concat(base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c is ModFrontlineCard)).ToList();
-            foreach (Card c in exileCards)
+            return new SelectCardInteraction(1, 10, exileCards);
+        }
+        protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
+        {
+            if (!(precondition is SelectCardInteraction exileInteraction))
+                yield break;
+
+            List<Card> summons = HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t));
+            var summonInteraction = new SelectCardInteraction(1, 1, summons);
+            yield return new InteractionAction(summonInteraction);
+            Card newSummon = summonInteraction.SelectedCards.FirstOrDefault();
+            if (newSummon == null)
+                yield break;
+
+            foreach (Card c in exileInteraction.SelectedCards)
             {
-                newSummon.UpgradeCounter += c.UpgradeCounter + 1;
+                newSummon.UpgradeCounter += c.UpgradeCounter + Value1;
             }
             if (newSummon.UpgradeCounter > ModFrontlineCard.MAX_UPGRADE)
                 newSummon.UpgradeCounter = ModFrontlineCard.MAX_UPGRADE;
-            yield return new ExileManyCardAction(exileCards);
+            yield return new ExileManyCardAction(exileInteraction.SelectedCards);
             yield return new AddCardsToHandAction(newSummon);
         }
     }
