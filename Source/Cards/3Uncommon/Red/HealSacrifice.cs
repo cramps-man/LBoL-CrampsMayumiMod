@@ -40,7 +40,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HealSacrificeDef))]
     public sealed class HealSacrifice : Card
     {
-        public int SacrificeAmount => 2;
+        public int SacrificeAmount => 1;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Sacrifice, SacrificeAmount, SacrificeAmount, SacrificeAmount);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

@@ -464,7 +464,7 @@ FencerPrepCounter:
 HealSacrifice:
   Name: Heal Sacrifice
   Description: |-
-    |Sacrifice| |e:2| of each |Haniwa|. 
+    |Sacrifice| {SacrificeAmount} of each |Haniwa|. 
     Gain {Value1} life and {Value2} |Firepower|. 
 
 GuardRush:
