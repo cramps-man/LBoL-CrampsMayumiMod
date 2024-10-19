@@ -542,6 +542,7 @@ MassExtraTrigger:
 MassSummon:
   Name: Mass Summon
   Description: |-
+    |Sacrifice| {Value2} of each |Haniwa|. 
     Add random |Frontline| cards to the hand until it is full. 
     Add {Value1} to the draw and discard piles as well. 
 

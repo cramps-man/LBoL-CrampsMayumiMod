@@ -1,0 +1,2 @@
+use localisation for cant use messages
+  - eg, "need more haniwa" when sacrificing or assigning

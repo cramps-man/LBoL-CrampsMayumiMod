@@ -7,6 +7,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System;
@@ -30,10 +31,11 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 3 };
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
             return cardConfig;
@@ -43,8 +45,11 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(MassSummonDef))]
     public sealed class MassSummon : Card
     {
+        public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Sacrifice, Value2, Value2, Value2);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, Value2, Value2, Value2);
+
             IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.AllSummonTypes;
             int emptySlots = base.Battle.MaxHand - base.Battle.HandZone.Count;
 
