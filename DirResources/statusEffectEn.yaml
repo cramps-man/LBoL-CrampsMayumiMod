@@ -226,3 +226,10 @@ AssignArcherPrepFrostArrow:
   Brief: |-
     After X cards are played, deal damage and apply |Cold| to a random enemy. 
     If the target has |Cold|, gain |Block|. 
+
+ExileFrontlineBlitzSe:
+  Name: Exile Frontline Blitz
+  Description: |-
+    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
+  Brief: |-
+    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 

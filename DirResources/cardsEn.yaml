@@ -593,6 +593,11 @@ AssignTriggerSummon:
   Description: |-
     Whenever an |Assign| buff is triggered, add {Value1} |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
+ExileFrontlineBlitz:
+  Name: Exile Frontline Blitz
+  Description: |-
+    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
+
 #OFFCOLOURS
 FrozenHaniwa:
   Name: Frozen Haniwa

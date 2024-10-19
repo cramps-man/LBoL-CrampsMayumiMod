@@ -194,7 +194,7 @@ make MassSummon sacrifice 2 of each? probs needs some downside at the current st
 ashes to clay feels like a brick if there's no frontlines in exile, perhaps something to make it feel better
 
 UltraFrontline should be able to choose which cards to exile, and perhaps have base increase in upgrades - done
-new card, exile or onplay frontline, execute the onplay action
+new card, exile or onplay frontline, execute the onplay action - done
 new card, assign cards cost 1any, but now start with extra triggers
 maybe swap cavalry scout and cavalry supplies rarity, and adjust the values - done
   - scout only 1 draw, supplies gain 2 mana
