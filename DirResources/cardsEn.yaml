@@ -203,6 +203,8 @@ HaniwaBlitz:
   Description: |-
     Deal {Damage} damage. 
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. 
+  DetailText: |-
+    Can not choose a |Haniwa Commander|. Bad things happen. 
 
 AssignHaniwaCreate:
   Name: Assign Haniwa Create

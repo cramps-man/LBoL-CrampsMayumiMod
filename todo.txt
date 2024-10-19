@@ -188,8 +188,8 @@ UpgradedSummon probs need a little nerf too? but need testing
 fix SummonHaniwa using mini card select - done
 
 fix haniwa attacker end of turn dmg not updating like dmg info for weak and stuff - done
-remove relative cards for create haniwa
-haniwa blitz tooltip say cant choose commander
+remove relative cards for create haniwa - done
+haniwa blitz tooltip say cant choose commander - done
 make MassSummon sacrifice 2 of each? probs needs some downside at the current state
 ashes to clay feels like a brick if there's no frontlines in exile, perhaps something to make it feel better
 
