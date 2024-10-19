@@ -18,7 +18,7 @@ BasicBlockW:
 CreateHaniwa:
   Name: Create Haniwa
   Description: |-
-    Choose |e:1| of |e:3| |Haniwa| to gain {Value1} levels of.
+    Gain {Value1} levels of the chosen |Haniwa| type (|Fencer|, |Archer|, |Cavalry|).
 
 CreateHaniwaArcher:
   Name: Create Haniwa (Archer)

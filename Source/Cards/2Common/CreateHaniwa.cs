@@ -31,8 +31,6 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
-            cardConfig.RelativeCards = new List<string>() { nameof(CreateHaniwaArcher), nameof(CreateHaniwaCavalry), nameof(CreateHaniwaFencer) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CreateHaniwaArcher)+"+", nameof(CreateHaniwaCavalry)+"+", nameof(CreateHaniwaFencer)+"+" };
             return cardConfig;
         }
     }
