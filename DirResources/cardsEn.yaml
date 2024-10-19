@@ -122,7 +122,7 @@ DefenceCreateReserves:
 HaniwaAttacker:
   Name: Haniwa Attacker
   Description: |-
-    |While in hand|: At end of turn, deal {Value1} damage to the enemy with the lowest life. 
+    |While in hand|: At end of turn, deal {EndOfTurnDmg} damage to the enemy with the lowest life. 
     |When played|: Deal {Damage} damage. 
   DetailText: |-
     Increases for each upgrade. 

@@ -39,15 +39,16 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaAttackerDef))]
     public sealed class HaniwaAttacker : ModFrontlineCard
     {
+        public DamageInfo EndOfTurnDmg => DamageInfo.Attack(Value1);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
         public override int AdditionalValue1 => base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.ReactBattleEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
+            base.ReactBattleEvent(base.Battle.Player.TurnEnding, this.OnPlayerTurnEnding);
         }
 
-        private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerTurnEnding(UnitEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
@@ -56,7 +57,7 @@ namespace LBoLMod.Cards
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
-            yield return new DamageAction(base.Battle.Player, base.Battle.LowestHpEnemy, DamageInfo.Attack(Value1));
+            yield return new DamageAction(base.Battle.Player, base.Battle.LowestHpEnemy, EndOfTurnDmg);
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
