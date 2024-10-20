@@ -454,10 +454,10 @@ FencerPrepCounter:
   Name: Fencer Prep Counter
   Description: |-
     |Assign {FencerAssigned} Fencer|.
-    After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Block} |Block| then gain |Reflection| equal to the amount of |Block| on {PlayerName}. 
+    After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Block} |Block| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
   UpgradedDescription: |-
     |Assign {FencerAssigned} Fencer|.
-    After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Block} |Block| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
+    After {Value1} card{Value1:plural one=' is' other='s are'} played, gain {Shield} |Barrier| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
   DetailText: |-
     |Reflection| gain only occurs once regardless of trigger count. 
 
