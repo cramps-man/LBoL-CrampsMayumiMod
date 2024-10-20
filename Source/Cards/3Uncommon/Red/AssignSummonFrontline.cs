@@ -9,6 +9,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -62,7 +63,8 @@ namespace LBoLMod.Cards
             List<Card> cards = new List<Card>();
             for (int i = 0; i < Value1; i++)
             {
-                cards.Add(summonInteraction.SelectedCards.FirstOrDefault().CloneBattleCard());
+                Type selectedType = summonInteraction.SelectedCards.FirstOrDefault().GetType();
+                cards.Add(Library.CreateCard(selectedType));
             }
             yield return new AddCardsToHandAction(cards);
         }

@@ -36,7 +36,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CavalrySuppliesDef))]
     public sealed class CavalrySupplies : ModAssignCard
     {
-        public override int CavalryAssigned => 1;
+        public override int CavalryAssigned => 2;
         public override int StartingCardCounter => Value1;
         public override Type AssignStatusType => typeof(AssignCavalrySupplies);
     }

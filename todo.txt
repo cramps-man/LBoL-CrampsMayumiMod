@@ -200,3 +200,7 @@ maybe swap cavalry scout and cavalry supplies rarity, and adjust the values - do
   - scout only 1 draw, supplies gain 2 mana
 nerf chooseShortAssign to not give extra trigger, make it set card counts to 3 and 1, aka 2 and 0 - done
 healSacrifice only sacrifice 1 each? 2 might be a bit much - done
+
+make cavalry supplies assign 2 cavalry, very stronk - done
+assign summon frontline dont make it create copies - done
+fencer prep counter work with barrier from get go?
