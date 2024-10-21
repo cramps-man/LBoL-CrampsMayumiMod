@@ -71,7 +71,7 @@ HybridDraw:
   Name: Hybrid Draw
   Description: |-
     Draw {Value1} card{Value1:plural one='' other='s'}. 
-    If there is an |Assign| status active, draw |e:1| card.
+    If there is an |Assign| buff active, draw |e:1| card.
     If there is a |Frontline| card in hand, draw |e:1| card. 
 
 HaniwaBodyguard:
@@ -190,7 +190,7 @@ OptionHaniwaSupport:
 ModAssignOptionCard:
   Name: Dummy Status Selection
   Description: |-
-    Dummy card for status effect selection, do not read. 
+    Dummy card for status effect selection. 
 
 HaniwaBlitz:
   Name: Haniwa Blitz
@@ -297,7 +297,7 @@ GarrisonArcher:
 AssignTickdownReturn:
   Name: Assign Tickdown Return
   Description: |-
-    Tickdown all |Assign| buffs by {Value1}. 
+    Decrease the card counter for all |Assign| buffs by {Value1}. 
     Whenever an |Assign| buff triggers, return {SelfName} from the discard pile to the hand. 
 
 HaniwaSpy:
@@ -518,7 +518,7 @@ AssignPlayDraw:
 GainBuffTickdown:
   Name: Gain Buff Tickdown
   Description: |-
-    For this turn when {PlayerName} gains a buff, tickdown all |Assign| buffs by {Value1}. 
+    For this turn when {PlayerName} gains a buff, decrease the card counter for all |Assign| buffs by {Value1}. 
 
 ZeroCostReduction:
   Name: Zero Cost Reduction

@@ -32,8 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 4;
             cardConfig.UpgradedValue1 = 1;
             cardConfig.Value2 = 1;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
             return cardConfig;
         }
     }

@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
-            cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
+            cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
             return cardConfig;

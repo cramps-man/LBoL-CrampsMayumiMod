@@ -13,6 +13,6 @@ https://www.pixiv.net/en/artworks/121673550 - default card image
 improve haniwa buff icon
 add default icon for assign buffs - done
 add default icon for general abilities
-add art and proper descriptions for exhibits
+add art and proper descriptions for exhibits - done
   - exhibitA mayumis haniwa staff thingy for assign
   - exhibitB clay scalpel carving thingy for frontline

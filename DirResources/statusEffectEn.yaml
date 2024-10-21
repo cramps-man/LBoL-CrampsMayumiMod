@@ -40,10 +40,10 @@ Require:
 Sacrifice:
   Name: Sacrifice X
   Description: |-
-    Requires X level of the specific Haniwa. 
+    Requires X level of the specific Haniwa to play the card. 
     Lose X level of the specific Haniwa. 
   Brief: |-
-    Requires X level of the specific Haniwa. 
+    Requires X level of the specific Haniwa to play the card. 
     Lose X level of the specific Haniwa. 
 
 Assign:
