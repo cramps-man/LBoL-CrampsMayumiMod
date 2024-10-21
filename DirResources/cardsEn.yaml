@@ -496,7 +496,7 @@ CavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
     |Assign {CavalryAssigned} Cavalry|. 
-    After {Value1} cards are played, gain {Mana} and draw {Value2} card{Value2:plural one='' other='s'}. 
+    After {Value1} cards are played, gain {Mana}. 
 
 #RARES
 FullFrontalAssault:

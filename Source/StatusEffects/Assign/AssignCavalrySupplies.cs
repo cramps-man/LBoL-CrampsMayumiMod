@@ -20,7 +20,6 @@ namespace LBoLMod.StatusEffects.Assign
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             yield return new GainManaAction(CardMana);
-            yield return new DrawManyCardAction(CardValue2);
         }
     }
 }
