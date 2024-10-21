@@ -23,12 +23,14 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 20;
+            cardConfig.Damage = 22;
             cardConfig.UpgradedDamage = 28;
             cardConfig.Value1 = 5;
             cardConfig.UpgradedValue1 = 7;
             cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 2 };
+            cardConfig.Keywords = Keyword.Accuracy;
+            cardConfig.UpgradedKeywords = Keyword.Accuracy;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
