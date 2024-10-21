@@ -28,7 +28,7 @@ namespace LBoLMod.Exhibits
 
         public override ExhibitSprites LoadSprite()
         {
-            return new ExhibitSprites();
+            return new ExhibitSprites(ResourceLoader.LoadSprite("assignexhibit.png", BepinexPlugin.embeddedSource));
         }
 
         public override ExhibitConfig MakeConfig()
