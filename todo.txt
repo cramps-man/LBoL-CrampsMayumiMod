@@ -214,3 +214,4 @@ AshesToClay make it 0 cost? it does nothing on its own except the 1 draw, so thi
   - repay by ticking down assigns, synergize with 0 cost stuff
 AssignTriggerupgrade, make it upgrade 1-2 random cards in hand? so it does something on its own if needed - no need
 maybe buff LoyaltyStrike dmg a bit again, still feels a little meh for 3 cost - done
+rework PoisonShot to be more about debuffs - done

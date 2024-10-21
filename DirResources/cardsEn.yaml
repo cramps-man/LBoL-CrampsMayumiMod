@@ -657,13 +657,8 @@ PermanentAssign:
 PoisonShot:
   Name: Poison Shot
   Description: |-
-    Deal {Damage} damage.
-    Apply extra effects depending on |Archer| level. 
-    |1|: Apply {Level0Poison} |Poison|. 
-    |3|: Apply {Level1Poison} |Poison| instead.
-    |5|: Apply {Level2Poison} |Poison| instead. 
-    |7|: Apply |Poison| to all enemies. 
-    |10:| Apply {Level3Poison} |Poison| instead. 
+    Deal {Damage} damage and apply {Value1} |Poison|. 
+    Apply {Value1} additional |Poison| for each debuff on the target. 
 
 #UNUSED
 RandomStance:
