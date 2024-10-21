@@ -207,10 +207,10 @@ fencer prep counter work with barrier from get go? - done
 
 remove 1 draw from cavalry supplies, was only added because it became 1 mana earlier on - done
 make frontlineDiscardDraw blue now, cos it doesnt require only frontline to discard - done
-ZeroCostReduction, maybe add moving a 0 cost card to hand? so it does something on its own if needed
-AssignTriggerSummon, make it summon 1 random frontline card? so it does something on its own if needed
-AssignPlayDraw, make it draw 1 card? so it does something on its own if needed
-AshesToClay make it 0 cost? it does nothing on its own except the 1 draw, so thisll atleast make it repay itself a tiny bit
+ZeroCostReduction, maybe add moving a 0 cost card to hand? so it does something on its own if needed - no need
+AssignTriggerSummon, make it summon 1 random frontline card? so it does something on its own if needed - no need
+AssignPlayDraw, make it draw 1 card? so it does something on its own if needed - no need
+AshesToClay make it 0 cost? it does nothing on its own except the 1 draw, so thisll atleast make it repay itself a tiny bit - done
   - repay by ticking down assigns, synergize with 0 cost stuff
-AssignTriggerupgrade, make it upgrade 1-2 random cards in hand? so it does something on its own if needed
+AssignTriggerupgrade, make it upgrade 1-2 random cards in hand? so it does something on its own if needed - no need
 maybe buff LoyaltyStrike dmg a bit again, still feels a little meh for 3 cost
