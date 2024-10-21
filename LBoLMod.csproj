@@ -326,6 +326,11 @@
       <EmbeddedResource Remove="Resources\icon.png" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <None Remove="Resources\StatusEffects\assignicon.png" />
+    </ItemGroup>
+
     <ItemGroup>
       <EmbeddedResource Include="DirResources\MayumiAvatar.png" />
       <EmbeddedResource Include="DirResources\MayumiCardImprint.png" />

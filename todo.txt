@@ -203,4 +203,14 @@ healSacrifice only sacrifice 1 each? 2 might be a bit much - done
 
 make cavalry supplies assign 2 cavalry, very stronk - done
 assign summon frontline dont make it create copies - done
-fencer prep counter work with barrier from get go?
+fencer prep counter work with barrier from get go? - done
+
+remove 1 draw from cavalry supplies, was only added because it became 1 mana earlier on
+make frontlineDiscardDraw blue now, cos it doesnt require only frontline to discard
+ZeroCostReduction, maybe add moving a 0 cost card to hand? so it does something on its own if needed
+AssignTriggerSummon, make it summon 1 random frontline card? so it does something on its own if needed
+AssignPlayDraw, make it draw 1 card? so it does something on its own if needed
+AshesToClay make it 0 cost? it does nothing on its own except the 1 draw, so thisll atleast make it repay itself a tiny bit
+  - repay by ticking down assigns, synergize with 0 cost stuff
+AssignTriggerupgrade, make it upgrade 1-2 random cards in hand? so it does something on its own if needed
+maybe buff LoyaltyStrike dmg a bit again, still feels a little meh for 3 cost
