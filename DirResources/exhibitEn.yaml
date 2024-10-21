@@ -6,7 +6,8 @@ ExhibitA:
     When an |Assign| effect triggers during the turn (not start of), draw {Value2} card. 
 
 ExhibitB:
-  Name: BBBBBB
+  Name: Sculpting Set
   Description: |-
+    Adds {Mana} to the mana base. Cards unique to |Mayumi| are added to the card pool. 
     At start of combat, gain {Value1} of each |Haniwa|. 
     Max hand size becomes {Value3}.
