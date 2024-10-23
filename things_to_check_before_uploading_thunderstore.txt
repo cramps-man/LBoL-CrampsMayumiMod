@@ -1,0 +1,6 @@
+- version number updated in 3 places
+  - PInfo.cs
+  - Readme.md
+  - manifest.json
+- build works
+- zip extracts fine

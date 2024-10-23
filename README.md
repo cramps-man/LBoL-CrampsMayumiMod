@@ -6,7 +6,7 @@
  - most card and status effect names are placeholder
 
 In spite of this, the mod is fully playable with 59 cards not including basics/tokens (few cards still missing such as green off-colors)  
-Current version beta 0.1.0
+Current version beta 0.1.1
 
 ## Char overview
 Mayumi's playstyle involves managing and creating multiple things at once. Whether you choose to command Frontline units (represented as cards) or Assign tasks (represented as buffs), you will need to manage your resources carefully.  
@@ -24,7 +24,7 @@ Frontline cards are retainable cards that have passive effects while in the hand
 There are currently 7 different types of Common/Uncommon Frontline cards available, each with their own abilities and Haniwa requirements.  
 They are upgradable any number of times, so you can choose to create more powerful cards or create a mass amount.  
 There are also ways to activate their effects with other cards, so the effects will depend on which Frontline cards you choose.  
-A playstyle that can have lots of passive effects going on, but handclog and drawing too many cards will be a thing to manage. 
+A playstyle that is versatile and can have lots of passive effects going on, but handclog and drawing too many cards will be a thing to manage. 
 
 ### Side theme - 0 cost cards
 Both sides have cards that are 0 cost, thus there are some cards which make use of those.  
