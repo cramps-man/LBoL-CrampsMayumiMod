@@ -128,11 +128,11 @@ Watchtower:
 AssignCavalryRush:
   Name: Cavalry Rush
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage to the lowest hp enemy. 
-    If triggered via playing a card, gain {CardMana}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage to the enemy with the lowest life. 
+    If triggered during the turn (not start of), gain {CardMana}. 
     {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
-    After X cards are played, deal damage to the lowest hp enemy. 
+    After X cards are played, deal damage to the enemy with the lowest life. 
 
 AssignPlayGainBlockSe:
   Name: Assign Play Gain Block
@@ -151,12 +151,12 @@ ClayToAshesSe:
 AssignChargeAttack:
   Name: Charge Attack
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the highest hp enemy. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the enemy with the highest life. 
     Whenever an |Assign| buff is triggered, increase this damage by {CardValue1} and increase extra triggers by |e:1|. 
     Extra damage ({ChargeDamage})
     {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
   Brief: |-
-    After X cards are played, deal damage to the lowest hp enemy. 
+    After X cards are played, deal damage to the enemy with the highest life. 
 
 AssignPlayDrawSe:
   Name: Assign Play Draw

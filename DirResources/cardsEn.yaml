@@ -400,7 +400,7 @@ ChargeAttack:
   Name: Charge Attack
   Description: |-
     |Assign {ArcherAssigned} Archer|.
-    After {Value2} cards are played, deal {Damage} damage to the highest hp enemy. 
+    After {Value2} cards are played, deal {Damage} damage to the enemy with the highest life. 
     Whenever an |Assign| buff is triggered, increase this damage by {Value1} and increase extra triggers by |e:1|. 
 
 AssignPlayGainBlock:
@@ -419,8 +419,8 @@ CavalryRush:
   Name: Cavalry Rush
   Description: |-
     |Assign {CavalryAssigned} Cavalry|.
-    After {Value1} cards are played deal {Damage} damage to the lowest hp enemy. 
-    If effect is not triggered at turn start, gain {Mana}. 
+    After {Value1} cards are played deal {Damage} damage to the enemy with the lowest life. 
+    If effect is triggered during the turn (not start of), gain {Mana}. 
 
 NumBuffBlock:
   Name: Num Buff Block
@@ -652,7 +652,7 @@ KeikiTeammate:
 PermanentAssign:
   Name: Permanent Assign
   Description: |-
-    Choose {Value1} |Assign| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
+    Choose{Value1:plural one='' other=' up to'} {Value1} |Assign| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
 
 PoisonShot:
   Name: Poison Shot

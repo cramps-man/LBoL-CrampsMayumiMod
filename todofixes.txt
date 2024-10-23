@@ -1,8 +1,8 @@
 swapping exhibit should still give mayumi 3 starting haniwa per battle - done
 prep frost arrow somehow being available with rainbow mana? - probs cos it has 0 cost
 adjust complexity rating - done
-permanent assign wording "up to blah assigns"
+permanent assign wording "up to blah assigns" - done
 assign keyword for assign cards?
-fix instances of wording where it says "hp"
+fix instances of wording where it says "hp" - done
 starting power not 30? 0? - done
-cavalry rush wording to say activate during turn (not start of)
+cavalry rush wording to say activate during turn (not start of) - done
