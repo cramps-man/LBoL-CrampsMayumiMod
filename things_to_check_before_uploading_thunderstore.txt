@@ -2,5 +2,6 @@
   - PInfo.cs
   - Readme.md
   - manifest.json
+- update CHANGELOG.md
 - build works
 - zip extracts fine
