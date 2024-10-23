@@ -1,10 +1,13 @@
 ﻿using LBoL.ConfigData;
+using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Units;
 using LBoL.EntityLib.Cards.Neutral.NoColor;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
+using LBoLMod.BattleActions;
 using LBoLMod.Cards;
 using LBoLMod.Exhibits;
 using LBoLMod.UltimateSkills;
@@ -45,15 +48,15 @@ namespace LBoLMod.PlayerUnits
             MaxHp: 85,
             InitialMana: new LBoL.Base.ManaGroup() { Red = 2, White = 2 },
             InitialMoney: 50,
-            InitialPower: 30,
+            InitialPower: 0,
             UltimateSkillA: nameof(UltimateSkillA),
             UltimateSkillB: nameof(UltimateSkillB),
             ExhibitA: new ExhibitADef().UniqueId,
             ExhibitB: new ExhibitBDef().UniqueId,
             DeckA: GetDeckA(),
             DeckB: GetDeckB(),
-            DifficultyA: 1,
-            DifficultyB: 1
+            DifficultyA: 3,
+            DifficultyB: 3
             );
             return config;
         }
@@ -94,5 +97,20 @@ namespace LBoLMod.PlayerUnits
     [EntityLogic(typeof(PlayerDef))]
     public sealed class ThePlayer: PlayerUnit
     {
+        public int StartingHaniwa => 3;
+        protected override void OnEnterBattle(BattleController battle)
+        {
+            base.ReactBattleEvent(base.TurnStarted, this.OnTurnStarted);
+        }
+
+        private IEnumerable<BattleAction> OnTurnStarted(UnitEventArgs args)
+        {
+            if (HasExhibit<ExhibitA>() || HasExhibit<ExhibitB>())
+                yield break;
+            if (TurnCounter != 1)
+                yield break;
+
+            yield return new GainHaniwaAction(StartingHaniwa, StartingHaniwa, StartingHaniwa);
+        }
     }
 }
