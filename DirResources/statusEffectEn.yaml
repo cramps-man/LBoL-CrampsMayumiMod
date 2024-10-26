@@ -59,6 +59,13 @@ Assign:
     Gaining the same type of buff will increase the number of times it triggers, at the cost of losing overspent |Haniwa| permanently. 
     |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
 
+AssignmentBonusSe:
+  Name: Assignment Bonus
+  Description: |-
+    After an |Assign| buff triggers during the turn (not start of), draw |e:1| card and lose |e:1| level of |Assignment Bonus|. 
+  Brief: |-
+    After an |Assign| buff triggers during the turn (not start of), draw |e:1| card and lose |e:1| level of |Assignment Bonus|. 
+
 Frontline:
   Name: Frontline
   Description: |-

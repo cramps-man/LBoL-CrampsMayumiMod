@@ -6,7 +6,6 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLMod.BattleActions;
 using LBoLMod.Cards;
-using LBoLMod.Exhibits;
 using LBoLMod.UltimateSkills;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -27,7 +26,6 @@ namespace LBoLMod.StatusEffects
         protected int CardValue1 => AssignSourceCard.Value1;
         protected int CardValue2 => AssignSourceCard.Value2;
         public bool IsPaused { get; set; } = false;
-        private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<AssignExhibit>();
         public bool IsPermanent { get; set; } = false;
         protected override void OnAdded(Unit unit)
         {
@@ -80,14 +78,14 @@ namespace LBoLMod.StatusEffects
         public IEnumerable<BattleAction> ImmidiatelyTrigger()
         {
             Count = 0;
-            return AssignTriggering(false, PlayerHasExhibitA);
+            return AssignTriggering(false);
         }
 
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
         {
             if (args.Us is UltimateSkillA)
             {
-                return AssignTriggering(false, PlayerHasExhibitA);
+                return AssignTriggering(false);
             }
             return null;
         }
@@ -102,7 +100,7 @@ namespace LBoLMod.StatusEffects
         {
             if (Count == 0)
             {
-                return AssignTriggering(true, false);
+                return AssignTriggering(true);
             }
             return null;
         }
@@ -113,12 +111,12 @@ namespace LBoLMod.StatusEffects
                 Tickdown(1);
             if (Count == 0)
             {
-                return AssignTriggering(false, PlayerHasExhibitA);
+                return AssignTriggering(false);
             }
             return null;
         }
 
-        private IEnumerable<BattleAction> AssignTriggering(bool onTurnStart, bool hasExhibitA)
+        private IEnumerable<BattleAction> AssignTriggering(bool onTurnStart)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
@@ -128,8 +126,6 @@ namespace LBoLMod.StatusEffects
             yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), AfterAssignmentDone(onTurnStart), Level, onTurnStart);
             if (base.Battle.BattleShouldEnd)
                 yield break;
-            if (hasExhibitA)
-                yield return new DrawCardAction();
             if (IsPermanent)
             {
                 Count = StartingCardCounter;

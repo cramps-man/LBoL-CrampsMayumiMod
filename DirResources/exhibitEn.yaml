@@ -3,7 +3,7 @@ AssignExhibit:
   Description: |-
     Adds {Mana} to the mana base. Cards unique to |Mayumi| are added to the card pool. 
     At start of combat, gain {Value1} of each |Haniwa|. Effect still occurs if swapping exhibit as |Mayumi|. 
-    When an |Assign| effect triggers during the turn (not start of), draw {Value2} card. 
+    At start of combat, also gain {Value3} level{Value3:plural one='' other='s'} of |Assignment Bonus|. After gaining |e:5| buffs, gain |e:1| level of |Assignment Bonus|. 
 
 FrontlineExhibit:
   Name: Sculpting Set

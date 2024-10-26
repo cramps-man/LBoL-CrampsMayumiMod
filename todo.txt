@@ -223,3 +223,5 @@ go through the balancing changes
 
 use more robust way of adding keywords to cards
   - so i can give assign cards the assign keyword too
+
+go through frontline card descriptions and see if they match

@@ -87,7 +87,7 @@ HaniwaBodyguard:
 HaniwaSupport:
   Name: Haniwa Support
   Description: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'. 
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'}. 
     |When played|: Gain {Mana}. 
   DetailText: |-
     Increases for each upgrade. 

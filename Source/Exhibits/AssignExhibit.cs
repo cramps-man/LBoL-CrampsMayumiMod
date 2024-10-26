@@ -2,6 +2,7 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.EntityLib.Exhibits;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -9,6 +10,7 @@ using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.BattleActions;
 using LBoLMod.PlayerUnits;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
@@ -47,15 +49,15 @@ namespace LBoLMod.Exhibits
                 Rarity: Rarity.Shining,
                 Value1: 3,
                 Value2: 1,
-                Value3: null,
+                Value3: 1,
                 Mana: new ManaGroup() { Red = 1 },
                 BaseManaRequirement: null,
                 BaseManaColor: ManaColor.Red,
                 BaseManaAmount: 1,
-                HasCounter: false,
-                InitialCounter: null,
+                HasCounter: true,
+                InitialCounter: 0,
                 Keywords: Keyword.None,
-                RelativeEffects: new List<string>() { nameof(Haniwa), nameof(Assign) },
+                RelativeEffects: new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentBonusSe) },
                 RelativeCards: new List<string>() { }
             );
 
@@ -67,7 +69,25 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
+            base.Counter = 0;
+            base.ReactBattleEvent(base.Battle.Player.TurnStarting, this.onPlayerTurnStarting);
+            base.ReactBattleEvent(base.Battle.Player.StatusEffectAdded, this.OnStatusEffectAdded);
+        }
+
+        private IEnumerable<BattleAction> OnStatusEffectAdded(StatusEffectApplyEventArgs args)
+        {
+            if (base.Battle.BattleShouldEnd)
+                yield break;
+            if (args.Effect.Type != StatusEffectType.Positive || args.Effect is AssignmentBonusSe)
+                yield break;
+
+            Counter++;
+            if (Counter >= 5)
+            {
+                base.NotifyActivating();
+                yield return new ApplyStatusEffectAction<AssignmentBonusSe>(base.Battle.Player, 1);
+                Counter = 0;
+            }
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
@@ -77,7 +97,13 @@ namespace LBoLMod.Exhibits
             {
                 base.NotifyActivating();
                 yield return new GainHaniwaAction(Value1, Value1, Value1);
+                yield return new ApplyStatusEffectAction<AssignmentBonusSe>(base.Battle.Player, Value3);
             }
+        }
+
+        protected override void OnLeaveBattle()
+        {
+            base.Counter = 0;
         }
     }
 }
