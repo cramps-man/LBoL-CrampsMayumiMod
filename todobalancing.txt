@@ -1,0 +1,97 @@
+system changes
+haniwa resource to be more limited? aka lower the max level to 5
+  - maybe we can keep the current max, just increase cost of starter haniwa gen to 1 mana
+frontlines gain exile, at upgrade+10 they lose it but gain 1 cost
+  - instead of the above, frontlines now dont leave the hand when played, but gain ethereal and 1 extra cost each time they are played
+
+just go through each card with the new system changes and see how it will be affected
+haniwa attacker - lower end of turn dmg scaling +1 per 2 upgrade
+haniwa bodyguard - lower dmg reduction scaling +1 per 2 upgrade
+haniwa sharpshooter is fine
+haniwa support - lower scaling on atk draw +1 per 2 upgrade
+defence summon is fine
+exile summon is the only summon that costs no haniwa + thins deck
+  - make it exile a frontline, then do something on top? or just carry over upgrades
+  - it may be more interesting if it did the onplay action, but didnt keep upgrades
+  - but will it be too similar to haniwa blitz?
+  - maybe just remove this card or rework it somehow
+fencer kamikaze is fine
+frontline haniwa create - probably lower gain, 
+frontline upgrade is fine
+haniwa blitz is fine, will benefit a lot with haniwa now exiling
+  - perhaps i should make it discard the chosen cards? that way its harder to burst and gives a way to cycle frontlines
+summon haniwa is probably fine, very cost efficient as a starter though
+  - maybe try lowering the efficiency a bit, keep cost at 2? lower frontline created?
+archer prep volley is fine
+assign extra trigger is fine
+assign fast trigger is fine
+assign haniwa create - lower gain a bit?
+cavalry scout - replace graze with scry 3(5), may be a bit weird to see a random popup but we'll see
+fencer build barricade - a bit too similar to fencer prep counter, so either nerf it to block or make it more different somehow
+zero cost move is fine
+defence create reserves is fine, probably benefits from the haniwa change
+hybrid draw is fine
+weakening shot update archer level restriction to be a bit looser now? 1 and 2?
+haniwa exploiter - on play action is too stronk for sure, so gotta change that
+  - spread the target enemys debuffs onto other enemies? if it has none, apply a random debuff?
+haniwa spy - is this too strong? lower scry scaling to +1 per 2 upgrade?
+  - and it's also technically +1 mana per turn due to the cost lowering, maybe figure out a way to make it less strong
+haniwa upgrader - i guess we remove the self scaling with 2+ upgraders
+  - and also lower upgrade per turn scaling to +1 per 2 upgrade
+  - or come up with a different way it does stuff
+ashes to clay - will benefit a lot from the frontline changes, so increase the cost for sure
+assign summon frontline is fine
+clay to ashes - maybe now it shouldnt be 2 firepower on upgrade? probs make it 1 and find something else for the upgrade
+exile upgrade - does this card upgrade too fast? if it didnt upgrade the exiled cards maybe its fine?
+guard rush is fine
+heal sacrifice is fine
+loyalty strike is fine
+strength in numbers is fine, it's harder to put frontlines in draw/discard
+upgraded summon - probably nerf upgrade to +5
+archer prep debuff is fine? maybe lose the accurate
+assign play gain block is fine
+assign tickdown return is probably fine
+build watchtower is fine
+cavalry rush is fine
+cavalry supplies - keep mana gain at 2, but increase cavalry assign to 3 and card counter to 8(5)
+charge attack is fine
+choose short assign is fine
+fencer prep counter is fine - since build barricade will probs get changed to be less similar
+num buff block is fine
+assign trigger upgrade is fine
+create archer - update the haniwa gain 2(3) probs? and update archer level reqs
+create cavalry - update haniwa gain 2(3) and update reqs. increase scry on upgrade as well
+create fencer is fine
+exile frontline extra trigger is fine
+haniwa commander - needs changes for sure, cant cycle frontlines to discard/draw so passive will need to be changed
+  - will also not exile haha, it's a damn rare
+exile frontline blitz is probably fine, will defs benefit from the frontline changes
+mass ressurection is probably fine, will defs benefit from the frontline changes
+mass summon - even with the frontline changes, the cost of 2 each is still too small?
+  - maybe make it more interesting and consume all haniwa, then create a frontline for each haniwa consumed
+summon commander is fine
+ultra frontline - unsure about this card. it does only spawn 1 frontline, but maybe too similar to exile upgrade anyway
+  - i feel i should remove or rework this
+assign cost trigger - make the cost increase only occur while in hand, so zero cost synergy is kept in draw/discard
+assign play draw - make it harder to play probs, keep cost at 5 on upgrade, maybe have ethereal unupgraded?
+gain buff tickdown is fine
+mass extra trigger is fine
+assign trigger summon is probs fine, 1 frontline per turn probs wont be too big of a benefit with them exiling now
+full frontal assault is fine, will be able to scale with new card that increases max haniwa, but they need multiple copies and then create the haniwa
+zero cost reduction - probs too good, but i dont want to nerf the effect yet?
+  - keep cost at 5 and have upgrade remove ethereal?
+archer prep frost arrow - maybe a little too strong? perhaps lower block gain and base dmg
+freeze frontline/frozen haniwa - with frontlines exiling, this is probs fine
+frontline discard draw - probably fine? now there's not many ways to cycle frontlines, so probs useful
+cake teammate is fine
+permanent assign is fine
+poison shot is fine
+
+new cards
+something to increase max haniwa level 3(5), and gain 2(3) of each haniwa
+something for assign to increase the counter by 3, and some other effect?
+
+exhibit changes
+frontline exhibit no changes, the card count increase is probs fine
+assign exhibit - every 5 buffs gained, gain a buff assignment bonus or something
+  - assignment bonus will be the old effect but tied to a buff, ticks down by 1 each draw
