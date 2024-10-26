@@ -12,6 +12,7 @@ using LBoLMod.BattleActions;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Exhibits
@@ -93,7 +94,7 @@ namespace LBoLMod.Exhibits
         private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
         {
             var player = base.Battle.Player;
-            if (player.TurnCounter == 1)
+            if (player.TurnCounter == 1 && !HaniwaUtils.HasAnyHaniwa(player))
             {
                 base.NotifyActivating();
                 yield return new GainHaniwaAction(Value1, Value1, Value1);
