@@ -95,6 +95,7 @@ namespace LBoLMod.Cards
                     yield return action;
                 }
             }
+            IncreaseFrontlineCosts();
         }
     }
 }

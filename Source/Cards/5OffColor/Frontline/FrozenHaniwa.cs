@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.Damage = 16;
             cardConfig.Value1 = 1;
             cardConfig.Value2 = 1;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(FrostArmor), nameof(Cold) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(FrostArmor), nameof(Cold) };
             return cardConfig;
@@ -88,6 +88,7 @@ namespace LBoLMod.Cards
             {
                 yield return item;
             };
+            IncreaseFrontlineCosts();
         }
     }
 }

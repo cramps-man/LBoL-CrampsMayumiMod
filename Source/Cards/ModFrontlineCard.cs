@@ -1,4 +1,5 @@
-﻿using LBoL.Core;
+﻿using LBoL.Base;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
@@ -41,7 +42,13 @@ namespace LBoLMod.Cards
 
         public override IEnumerable<BattleAction> OnTurnStartedInHand()
         {
-            SetRemainValue(Value1);
+            //SetRemainValue(Value1);
+            return null;
+        }
+
+        public override IEnumerable<BattleAction> OnTurnEndingInHand()
+        {
+            SetTurnCost(ManaGroup.Empty);
             return null;
         }
         public override int AdditionalValue1 
@@ -58,16 +65,17 @@ namespace LBoLMod.Cards
         private const int UPGRADE_AMOUNT = 1;
         public override void Upgrade()
         {
-            if (IncludeUpgradesInRemainingValue)
+            /*if (IncludeUpgradesInRemainingValue)
             {
                 RemainingValue += UPGRADE_AMOUNT;
             }
             else
             {
                 RemainingValue += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
-            }
+            }*/
             int? upgradeCounter = base.UpgradeCounter + UPGRADE_AMOUNT;
             base.UpgradeCounter = upgradeCounter;
+            SetRemainValue(Value1);
             ProcessKeywordUpgrade();
             CostChangeInUpgrading();
             NotifyChanged();
@@ -91,6 +99,14 @@ namespace LBoLMod.Cards
         {
             base.Initialize();
             base.UpgradeCounter = 0;
+        }
+
+        protected void IncreaseFrontlineCosts()
+        {
+            foreach (var frontlineCard in Battle.HandZoneAndPlayArea.Where(c => c is ModFrontlineCard))
+            {
+                frontlineCard.IncreaseTurnCost(ManaGroup.Anys(1));
+            }
         }
     }
 }

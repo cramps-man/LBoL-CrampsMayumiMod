@@ -7,7 +7,7 @@ using UnityEngine;
 namespace LBoLMod.Patches
 {
     [HarmonyPatch(typeof(CardWidget), nameof(CardWidget.OnActivating))]
-    class CardWidget_Patch
+    class HaniwaBodyguardCardWidgetPatch
     {
         static void Postfix(CardWidget __instance)
         {

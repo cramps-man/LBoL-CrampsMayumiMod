@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 0;
             cardConfig.Scry = 1;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
-            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeKeyword = Keyword.Scry | Keyword.TempMorph;
             cardConfig.UpgradedRelativeKeyword = Keyword.Scry | Keyword.TempMorph;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -96,6 +96,7 @@ namespace LBoLMod.Cards
         {
             yield return new ScryAction(TotalScry);
             yield return new DrawCardAction();
+            IncreaseFrontlineCosts();
         }
     }
 }

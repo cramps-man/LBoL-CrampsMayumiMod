@@ -4,6 +4,7 @@ haniwa resource to be more limited? aka lower the max level to 5
 frontlines gain exile, at upgrade+10 they lose it but gain 1 cost
   - instead of the above, frontlines now dont leave the hand when played, but gain ethereal and 1 extra cost each time they are played
   - or the passive ability only refreshes when card is added/drawn/upgraded, and frontlines exile
+  - each time a frontline card is played, all frontlines in hand gain 1 temp cost
 
 new cards
 something to increase max haniwa level 3(5), and gain 2(3) of each haniwa
@@ -16,3 +17,4 @@ frontline exhibit no changes, the card count increase is probs fine
 assign exhibit - every 5 buffs gained, gain a buff assignment bonus or something
   - assignment bonus will be the old effect but tied to a buff, ticks down by 1 each draw
 
+update haniwa spy and commanders effects?

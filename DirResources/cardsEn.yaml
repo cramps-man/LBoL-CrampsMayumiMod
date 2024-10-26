@@ -77,10 +77,7 @@ HybridDraw:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce up to {Value1} damage recieved per turn. {RemainingValue} reduction remaining. 
-    |When played|: Gain {Block} |Block|. 
-  NonbattleDescription: |-
-    |While in hand|: Reduce up to {Value1} damage recieved per turn. 
+    |While in hand|: Reduce up to {Value1} damage recieved. 
     |When played|: Gain {Block} |Block|. 
   DetailText: |-
     Increases for each upgrade. 
@@ -90,11 +87,7 @@ HaniwaBodyguard:
 HaniwaSupport:
   Name: Haniwa Support
   Description: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    {RemainingValue} draw{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Gain {Mana}. 
-  NonbattleDescription: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'. 
     |When played|: Gain {Mana}. 
   DetailText: |-
     Increases for each upgrade. 
@@ -116,7 +109,7 @@ DefenceCreateReserves:
 HaniwaAttacker:
   Name: Haniwa Attacker
   Description: |-
-    |While in hand|: At end of turn, deal {EndOfTurnDmg} damage to the enemy with the lowest life. 
+    |While in hand|: At end of turn, deal {EndOfTurnDmg} damage to the enemy with the lowest life. Up to {Value1} time{Value1:plural one='' other='s'}. 
     |When played|: Deal {Damage} damage. 
   DetailText: |-
     Increases for each upgrade. 
@@ -126,11 +119,7 @@ HaniwaAttacker:
 HaniwaSharpshooter:
   Name: Haniwa Sharpshooter
   Description: |-
-    |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
-    {RemainingValue} instance{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. 
-  NonbattleDescription: |-
-    |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'}. 
     |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. 
   DetailText: |-
     Increases for each upgrade. 
@@ -312,11 +301,7 @@ HaniwaSpy:
 HaniwaUpgrader:
   Name: Haniwa Upgrader
   Description: |-
-    |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each remaining upgrade. ({AdditionalBlock}) 
-  NonbattleDescription: |-
-    |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
     |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each remaining upgrade. ({AdditionalBlock}) 
   DetailText: |-
     Can not target itself. 
@@ -327,11 +312,7 @@ HaniwaUpgrader:
 HaniwaExploiter:
   Name: Haniwa Exploiter
   Description: |-
-    |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
-  NonbattleDescription: |-
-    |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'}. 
     |When played|: Deal {Damage} damage. Deal |e:1| additional hit for each debuff on the target. 
   DetailText: |-
     Increases for each upgrade. 
@@ -558,11 +539,7 @@ UltraFrontline:
 HaniwaCommander:
   Name: Haniwa Commander
   Description: |-
-    |While in hand|: When a |Frontline| card is used, move |e:1| random |Frontline| card from the drawpile to the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
-    {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+10 or more, allow choosing from draw/discard piles. 
-  NonbattleDescription: |-
-    |While in hand|: When a |Frontline| card is used, move |e:1| random |Frontline| card from the drawpile to the hand. Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: When a |Frontline| card is used, move |e:1| random |Frontline| card from the drawpile to the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
     |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+10 or more, allow choosing from draw/discard piles. 
   DetailText: |-
     Can not choose another |Haniwa Commander|. Bad things happen. 
@@ -607,11 +584,7 @@ AssignCostTrigger:
 FrozenHaniwa:
   Name: Frozen Haniwa
   Description: |-
-    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'} per turn. {RemainingValue} time{RemainingValue:plural one='' other='s'} remaining. 
-    |When played|: Deal {Damage} damage and apply |Cold| to all enemies. 
-    |At end of turn|: Transform back into the original card. 
-  NonbattleDescription: |-
-    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'} per turn. 
+    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'}. 
     |When played|: Deal {Damage} damage and apply |Cold| to all enemies. 
     |At end of turn|: Transform back into the original card. 
   DetailText: |-

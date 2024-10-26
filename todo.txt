@@ -220,3 +220,6 @@ update cards and status effects to use base class to generate name id - not wort
 update all cards to switch red and yellow colours - done
   - and exhibits and anything else required of course
 go through the balancing changes
+
+use more robust way of adding keywords to cards
+  - so i can give assign cards the assign keyword too

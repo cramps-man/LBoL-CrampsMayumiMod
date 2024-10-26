@@ -62,11 +62,13 @@ Assign:
 Frontline:
   Name: Frontline
   Description: |-
-    A type of card that gives various effects while in your hand. Can also be played for a separate effect. 
+    A type of card that gives various effects while in your hand, limited for a certain number of times. The effect in the hand can only be refreshed via the card being drawn or upgraded. 
     Upgradable any number of times. 
+    Can also be played for a separate effect. After playing a |Frontline| card, all other |Frontline| cards in the hand temporarily gain <sprite=ManaSprite" name="1"> cost. 
   Brief: |-
-    A type of card that gives various effects while in your hand. Can also be played for a separate effect. 
+    A type of card that gives various effects while in your hand, limited for a certain number of times. The effect in the hand can only be refreshed via the card being drawn or upgraded. 
     Upgradable any number of times. 
+    Can also be played for a separate effect. After playing a |Frontline| card, all other |Frontline| cards in the hand temporarily gain <sprite=ManaSprite" name="1"> cost. 
 
 Pause:
   Name: Pause

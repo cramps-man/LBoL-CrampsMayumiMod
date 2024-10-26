@@ -27,10 +27,11 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
             cardConfig.Mana = new ManaGroup() { White = 1 };
-            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -40,7 +41,6 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSupportDef))]
     public sealed class HaniwaSupport : ModFrontlineCard
     {
-        protected override bool IncludeUpgradesInRemainingValue => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -69,6 +69,7 @@ namespace LBoLMod.Cards
         {
             int additionalMana = Math.Truncate(base.UpgradeCounter.GetValueOrDefault() / 5.0).RoundToInt();
             yield return new GainManaAction(Mana * (additionalMana + 1));
+            IncreaseFrontlineCosts();
         }
     }
 }

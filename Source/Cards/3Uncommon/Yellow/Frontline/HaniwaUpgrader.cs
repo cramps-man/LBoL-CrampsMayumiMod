@@ -29,9 +29,10 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Block = 10;
             cardConfig.Value1 = 2;
-            cardConfig.Value2 = 3;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value2 = 2;
+            cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -41,8 +42,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
-        public override int AdditionalBlock => Value2 * RemainingValue;
-        protected override bool IncludeUpgradesInRemainingValue => true;
+        public override int AdditionalBlock => Value2 * base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -69,6 +69,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
+            IncreaseFrontlineCosts();
         }
     }
 }
