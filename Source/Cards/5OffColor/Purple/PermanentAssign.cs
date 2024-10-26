@@ -24,10 +24,10 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Black };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Cost = new ManaGroup() { White = 1, Black = 1 };
+            cardConfig.Cost = new ManaGroup() { Red = 1, Black = 1 };
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Permanent) };

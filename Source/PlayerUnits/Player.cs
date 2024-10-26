@@ -51,8 +51,8 @@ namespace LBoLMod.PlayerUnits
             InitialPower: 0,
             UltimateSkillA: nameof(UltimateSkillA),
             UltimateSkillB: nameof(UltimateSkillB),
-            ExhibitA: new ExhibitADef().UniqueId,
-            ExhibitB: new ExhibitBDef().UniqueId,
+            ExhibitA: new AssignExhibitDef().UniqueId,
+            ExhibitB: new FrontlineExhibitDef().UniqueId,
             DeckA: GetDeckA(),
             DeckB: GetDeckB(),
             DifficultyA: 3,
@@ -67,11 +67,11 @@ namespace LBoLMod.PlayerUnits
                 nameof(Shoot),
                 nameof(Boundary),
                 nameof(Boundary),
-                nameof(BasicAttackW),
-                nameof(BasicAttackW),
-                nameof(BasicBlockR),
-                nameof(BasicBlockR),
-                nameof(BasicBlockR),
+                nameof(BasicAttackR),
+                nameof(BasicAttackR),
+                nameof(BasicBlockW),
+                nameof(BasicBlockW),
+                nameof(BasicBlockW),
                 nameof(ArcherPrepVolley),
                 nameof(AssignHaniwaCreate)
             };
@@ -83,11 +83,11 @@ namespace LBoLMod.PlayerUnits
                 nameof(Shoot),
                 nameof(Boundary),
                 nameof(Boundary),
-                nameof(BasicAttackR),
-                nameof(BasicAttackR),
-                nameof(BasicBlockW),
-                nameof(BasicBlockW),
-                nameof(BasicBlockW),
+                nameof(BasicAttackW),
+                nameof(BasicAttackW),
+                nameof(BasicBlockR),
+                nameof(BasicBlockR),
+                nameof(BasicBlockR),
                 nameof(SummonHaniwa),
                 nameof(FrontlineHaniwaCreate)
             };
@@ -105,7 +105,7 @@ namespace LBoLMod.PlayerUnits
 
         private IEnumerable<BattleAction> OnTurnStarted(UnitEventArgs args)
         {
-            if (HasExhibit<ExhibitA>() || HasExhibit<ExhibitB>())
+            if (HasExhibit<AssignExhibit>() || HasExhibit<FrontlineExhibit>())
                 yield break;
             if (TurnCounter != 1)
                 yield break;

@@ -27,7 +27,7 @@ namespace LBoLMod.StatusEffects
         protected int CardValue1 => AssignSourceCard.Value1;
         protected int CardValue2 => AssignSourceCard.Value2;
         public bool IsPaused { get; set; } = false;
-        private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<ExhibitA>();
+        private bool PlayerHasExhibitA => base.Battle.Player.HasExhibit<AssignExhibit>();
         public bool IsPermanent { get; set; } = false;
         protected override void OnAdded(Unit unit)
         {

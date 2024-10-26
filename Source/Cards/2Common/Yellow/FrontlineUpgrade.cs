@@ -13,49 +13,52 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class FreezeFrontlineDef : ModCardTemplate
+    public sealed class FrontlineUpgradeDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(FreezeFrontline);
+            return nameof(FrontlineUpgrade);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Blue };
-            cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 0 };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
+            cardConfig.Cost = new ManaGroup() { White = 1 };
+            cardConfig.Block = 6;
+            cardConfig.UpgradedBlock = 8;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.RelativeCards = new List<string>() { nameof(FrozenHaniwa) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(FrozenHaniwa) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(FreezeFrontlineDef))]
-    public sealed class FreezeFrontline : Card
+    [EntityLogic(typeof(FrontlineUpgradeDef))]
+    public sealed class FrontlineUpgrade : Card
     {
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(1, Value1, list);
+            List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c.CanUpgradeAndPositive).ToList();
+            return new SelectHandInteraction(0, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (!(precondition is SelectHandInteraction freezeInteraction))
+            yield return DefenseAction();
+            if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
 
-            foreach(var card in freezeInteraction.SelectedCards)
+            yield return new UpgradeCardsAction(selectInteraction.SelectedCards);
+            foreach (var card in selectInteraction.SelectedCards)
             {
-                FrozenHaniwa frozen = Library.CreateCard<FrozenHaniwa>();
-                frozen.OriginalCard = card;
-                frozen.UpgradeCounter = card.UpgradeCounter;
-                yield return new TransformCardAction(card, frozen);
+                if (card is ModFrontlineCard)
+                {
+                    for (int i = 0; i < Value2; i++)
+                        yield return new UpgradeCardAction(card);
+                }
             }
         }
     }
