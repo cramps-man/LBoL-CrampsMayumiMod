@@ -31,6 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
+            cardConfig.Cost = new ManaGroup() { White = 1 };
             cardConfig.Keywords = Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeKeyword = Keyword.Exile;

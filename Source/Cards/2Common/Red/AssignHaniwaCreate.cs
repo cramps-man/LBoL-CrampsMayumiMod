@@ -30,6 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 1;
+            cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.Keywords = Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };

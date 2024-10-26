@@ -217,6 +217,6 @@ maybe buff LoyaltyStrike dmg a bit again, still feels a little meh for 3 cost - 
 rework PoisonShot to be more about debuffs - done
 
 update cards and status effects to use base class to generate name id - not worth, need to change class names too
-update all cards to switch red and yellow colours
+update all cards to switch red and yellow colours - done
   - and exhibits and anything else required of course
 go through the balancing changes
