@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Block = 10;
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
@@ -58,7 +58,7 @@ namespace LBoLMod.Cards
             if (RemainingValue <= 0)
                 yield break;
 
-            Card toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleOrDefault(base.BattleRng);
+            Card toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && !(c is HaniwaUpgrader)).SampleOrDefault(base.BattleRng);
             if (toUpgrade == null)
                 yield break;
             this.NotifyActivating();

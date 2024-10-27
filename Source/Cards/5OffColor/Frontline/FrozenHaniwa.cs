@@ -44,7 +44,6 @@ namespace LBoLMod.Cards
     {
         public Card OriginalCard { get; set; }
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
-        protected override bool IncludeUpgradesInRemainingValue => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

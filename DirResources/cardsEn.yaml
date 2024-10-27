@@ -82,7 +82,7 @@ HaniwaBodyguard:
   DetailText: |-
     Increases for each upgrade. 
     Damage reduction: +1
-    |Block|: +2
+    |Block|: +1
 
 HaniwaSupport:
   Name: Haniwa Support
@@ -91,8 +91,8 @@ HaniwaSupport:
     |When played|: Gain {Mana}. 
   DetailText: |-
     Increases for each upgrade. 
-    Total draws per turn: +1
-    1 extra red mana per 5 upgrade. 
+    1 extra yellow mana per 5 upgrade. 
+    Total draws stays at 2 after first upgrade. 
 
 FencerBuildBarricade:
   Name: Fencer Build Barricade
@@ -115,6 +115,7 @@ HaniwaAttacker:
     Increases for each upgrade. 
     End of turn damage: +1
     On play damage: +2
+    Number of attacks stays at 3 after first upgrade. 
 
 HaniwaSharpshooter:
   Name: Haniwa Sharpshooter
@@ -302,12 +303,13 @@ HaniwaUpgrader:
   Name: Haniwa Upgrader
   Description: |-
     |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each remaining upgrade. ({AdditionalBlock}) 
+    |When played|: Gain {Block} |Block|. 
   DetailText: |-
-    Can not target itself. 
+    Can not target itself or other upgraders. 
 
     Increases for each upgrade. 
-    Total upgrades per turn: +1
+    Block: +2
+    Number of upgrades stays at 2 after first upgrade. 
 
 HaniwaExploiter:
   Name: Haniwa Exploiter
@@ -589,8 +591,8 @@ FrozenHaniwa:
     |At end of turn|: Transform back into the original card. 
   DetailText: |-
     Increases for each upgrade. 
-    Total |Cold| activations per turn: +1
     On Play damage: +1
+    Total |Cold| activations stays at 1. 
 
 FreezeFrontline:
   Name: Freeze Frontline

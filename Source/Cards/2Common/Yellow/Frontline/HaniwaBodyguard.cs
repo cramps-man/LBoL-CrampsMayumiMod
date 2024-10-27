@@ -38,7 +38,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaBodyguardDef))]
     public sealed class HaniwaBodyguard : ModFrontlineCard
     {
-        public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault() * 2;
+        public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault();
         protected override bool IncludeUpgradesInRemainingValue => true;
         public int DamageTaken { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
@@ -74,10 +74,10 @@ namespace LBoLMod.Cards
                 }
                 if (damageInfo.DamageBlocked > 0) 
                 {
-                    int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), RemainingValue);
+                    /*int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), RemainingValue);
                     damageInfo.DamageBlocked -= reduction;
                     RemainingValue -= reduction;
-                    DamageTaken += reduction;
+                    DamageTaken += reduction;*/
                 }
                 if (DamageTaken != 0)
                 {
