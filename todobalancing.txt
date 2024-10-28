@@ -19,6 +19,7 @@ assign exhibit - every 5 buffs gained, gain a buff assignment bonus or something
   - assignment bonus will be the old effect but tied to a buff, ticks down by 1 each draw
 
 update haniwa spy and commanders effects?
+  - spy doesnt lower cost when using ashes to clay, and probs haniwa blitz cos source card isnt the same
 haniwa upgrader 1(2) for passive count - done
   - and not allow target other upgraders
 haniwa bodyguard make onplay not upgrade +2, maybe just +1 - done
@@ -28,7 +29,7 @@ haniwa exploiter update onplay action to apply random debuffs or spread an enemi
 frozen haniwa, dont allow cold count to scale with upgrade, make it just 1(2) - done
 full frontal assault, sacrifice all haniwa - done
 haniwa biltz, also discard selected cards - done
-ashes to clay, increase cost
+ashes to clay, increase cost - done
 exile summon, keep exile on upgrade, allow selecting 2 haniwa on upgrade
 cavalry scout replace graze with scry
 fencer build barricade make more unique cos too similar to prep counter?
