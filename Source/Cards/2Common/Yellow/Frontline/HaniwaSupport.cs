@@ -69,7 +69,6 @@ namespace LBoLMod.Cards
         {
             int additionalMana = Math.Truncate(base.UpgradeCounter.GetValueOrDefault() / 5.0).RoundToInt();
             yield return new GainManaAction(Mana * (additionalMana + 1));
-            IncreaseFrontlineCosts();
         }
     }
 }

@@ -100,7 +100,6 @@ namespace LBoLMod.Cards
             yield return AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
                 yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), Value2);
-            IncreaseFrontlineCosts();
         }
     }
 }

@@ -87,7 +87,6 @@ namespace LBoLMod.Cards
             {
                 yield return item;
             };
-            IncreaseFrontlineCosts();
         }
     }
 }

@@ -93,7 +93,6 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
-            IncreaseFrontlineCosts();
         }
     }
 }

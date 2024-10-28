@@ -24,7 +24,18 @@ namespace LBoLMod.Cards
         protected override void OnEnterBattle(BattleController battle)
         {
             SetRemainValue(Value1);
-            base.HandleBattleEvent<CardsEventArgs>(base.Battle.CardsAddedToHand, new GameEventHandler<CardsEventArgs>(this.OnCardsAddedToHand));
+            base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
+            base.HandleBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
+        }
+
+        private void OnCardUsed(CardUsingEventArgs args)
+        {
+            if (this.Zone != CardZone.Hand && this.Zone != CardZone.PlayArea)
+                return;
+            if (!(args.Card is ModFrontlineCard))
+                return;
+
+            base.SetTurnCost(ManaGroup.Anys(1));
         }
 
         private void OnCardsAddedToHand(CardsEventArgs args)
@@ -99,14 +110,6 @@ namespace LBoLMod.Cards
         {
             base.Initialize();
             base.UpgradeCounter = 0;
-        }
-
-        protected void IncreaseFrontlineCosts()
-        {
-            foreach (var frontlineCard in Battle.HandZoneAndPlayArea.Where(c => c is ModFrontlineCard))
-            {
-                frontlineCard.IncreaseTurnCost(ManaGroup.Anys(1));
-            }
         }
     }
 }
