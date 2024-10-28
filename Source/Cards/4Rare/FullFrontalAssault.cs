@@ -6,6 +6,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
+using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace LBoLMod.Cards
             get
             {
                 var player = base.Battle.Player;
-                return HaniwaUtils.IsLevelFulfilled(player, HaniwaActionType.Sacrifice, Value2, Value2, Value2);
+                return HaniwaUtils.HasAnyHaniwa(player);
             }
         }
         public override int AdditionalDamage
@@ -63,7 +64,8 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
-            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, Value2, Value2, Value2);
+            var player = base.Battle.Player;
+            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, HaniwaUtils.GetHaniwaLevel<FencerHaniwa>(player), HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(player), HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(player));
         }
     }
 }

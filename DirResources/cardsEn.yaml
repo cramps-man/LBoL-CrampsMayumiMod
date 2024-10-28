@@ -485,11 +485,11 @@ CavalrySupplies:
 FullFrontalAssault:
   Name: Full Frontal Assault
   Description: |-
-    |Sacrifice| {Value2} of each |Haniwa|. 
+    |Sacrifice| all |Haniwa|. 
     Deal {Damage} damage. 
     Deal {Value1} additional damage for each |Haniwa| level. ({AdditionalDamage})
   NonbattleDescription: |-
-    |Sacrifice| {Value2} of each |Haniwa|. 
+    |Sacrifice| all |Haniwa|. 
     Deal {Damage} damage. 
     Deal {Value1} additional damage for each |Haniwa| level. 
 
