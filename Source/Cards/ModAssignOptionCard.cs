@@ -21,7 +21,7 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.HideMesuem = true;
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             return cardConfig;
         }
     }
