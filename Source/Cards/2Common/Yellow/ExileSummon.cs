@@ -29,7 +29,10 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Exile;
+            cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
@@ -44,14 +47,14 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card hand) => hand != this).ToList();
-            return new SelectHandInteraction(1, Value1, list);
+            return new SelectHandInteraction(Value2, Value2, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (!(precondition is SelectHandInteraction exileInteraction))
                 yield break;
 
-            var summonInteraction = new SelectCardInteraction(0, 1, HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t)));
+            var summonInteraction = new SelectCardInteraction(0, Value1, HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t)));
             yield return new InteractionAction(summonInteraction);
 
             yield return new ExileManyCardAction(exileInteraction.SelectedCards);

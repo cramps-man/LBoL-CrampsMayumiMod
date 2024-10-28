@@ -53,7 +53,7 @@ DefenceSummon:
 ExileSummon:
   Name: Exile Summon
   Description: |-
-    Exile {Value1} card{Value1:plural one='' other='s'} from the hand. Choose 1 |Frontline| card to add to the hand. 
+    Exile {Value2} card{Value2:plural one='' other='s'} from the hand. Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} to add to the hand. 
 
 FencerKamikaze:
   Name: Fencer Kamikaze
