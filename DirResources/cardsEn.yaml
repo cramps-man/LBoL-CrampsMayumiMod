@@ -237,7 +237,7 @@ CavalryScout:
   Name: Cavalry Scout
   Description: |-
     |Assign {CavalryAssigned} Cavalry|.
-    After {Value2} card{Value2:plural one=' is' other='s are'} played draw {Value1} card{Value1:plural one='' other='s'} and gain |e:1| |Graze|. 
+    After {Value2} card{Value2:plural one=' is' other='s are'} played |Scry| {Scry} and draw {Value1} card{Value1:plural one='' other='s'}. 
 
 #UNCOMMONS
 CreateArcher:

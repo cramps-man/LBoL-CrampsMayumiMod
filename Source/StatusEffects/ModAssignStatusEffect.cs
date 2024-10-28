@@ -25,6 +25,7 @@ namespace LBoLMod.StatusEffects
         protected ManaGroup CardMana => AssignSourceCard.Mana;
         protected int CardValue1 => AssignSourceCard.Value1;
         protected int CardValue2 => AssignSourceCard.Value2;
+        protected ScryInfo CardScry => AssignSourceCard.Scry;
         public bool IsPaused { get; set; } = false;
         public bool IsPermanent { get; set; } = false;
         protected override void OnAdded(Unit unit)

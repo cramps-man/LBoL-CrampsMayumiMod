@@ -20,8 +20,8 @@ namespace LBoLMod.StatusEffects.Assign
     {
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
+            yield return new ScryAction(CardScry);
             yield return new DrawManyCardAction(CardValue1);
-            yield return BuffAction<Graze>(1);
         }
     }
 }
