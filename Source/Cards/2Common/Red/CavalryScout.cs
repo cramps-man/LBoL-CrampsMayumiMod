@@ -25,8 +25,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.Value2 = 3;
             cardConfig.UpgradedValue2 = 1;
-            cardConfig.Scry = 3;
-            cardConfig.UpgradedScry = 4;
+            cardConfig.Scry = 2;
+            cardConfig.UpgradedScry = 3;
             cardConfig.RelativeKeyword = Keyword.Scry;
             cardConfig.UpgradedRelativeKeyword = Keyword.Scry;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
