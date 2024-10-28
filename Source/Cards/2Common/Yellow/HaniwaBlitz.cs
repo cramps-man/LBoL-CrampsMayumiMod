@@ -63,6 +63,7 @@ namespace LBoLMod.Cards
                     yield return action;
                 }
             }
+            yield return new DiscardManyAction(selectInteraction.SelectedCards);
         }
     }
 }

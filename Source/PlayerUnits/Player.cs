@@ -11,6 +11,8 @@ using LBoLMod.BattleActions;
 using LBoLMod.Cards;
 using LBoLMod.Exhibits;
 using LBoLMod.UltimateSkills;
+using LBoLMod.Utils;
+using System;
 using System.Collections.Generic;
 
 
@@ -105,7 +107,12 @@ namespace LBoLMod.PlayerUnits
 
         private IEnumerable<BattleAction> OnTurnStarted(UnitEventArgs args)
         {
-            if (HasExhibit<AssignExhibit>() || HasExhibit<FrontlineExhibit>())
+            var assign = HasExhibit<AssignExhibit>();
+            var frontline = HasExhibit<FrontlineExhibit>();
+            Console.WriteLine("has assign exhibit " + assign);
+            Console.WriteLine("has frontline exhibit " + frontline);
+            Console.WriteLine("has any haniwa " + HaniwaUtils.HasAnyHaniwa(this));
+            if (assign || frontline)
                 yield break;
             if (TurnCounter != 1)
                 yield break;

@@ -186,7 +186,7 @@ HaniwaBlitz:
   Name: Haniwa Blitz
   Description: |-
     Deal {Damage} damage. 
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions then discard them. 
   DetailText: |-
     Can not choose a |Haniwa Commander|. Bad things happen. 
 
