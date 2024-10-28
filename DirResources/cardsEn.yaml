@@ -580,7 +580,7 @@ ExileFrontlineBlitz:
 AssignCostTrigger:
   Name: Assign Cost Trigger
   Description: |-
-    Until the end of this combat, |Assign| cards cost {Mana} to play. |Assign| buffs start with increased extra triggers of {Value1}.
+    Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost. |Assign| buffs start with increased extra triggers of {Value1}.
 
 #OFFCOLOURS
 FrozenHaniwa:

@@ -247,6 +247,6 @@ ExileFrontlineBlitzSe:
 AssignCostTriggerSe:
   Name: Assign Cost Trigger
   Description: |-
-    Until the end of this combat, |Assign| cards cost <sprite=ManaSprite" name="1"> to play. |Assign| buffs start with increased extra triggers of {Level}.
+    Until the end of this combat, |Assign| cards in the hand temporarily gain <sprite=ManaSprite" name="1"> cost. |Assign| buffs start with increased extra triggers of {Level}.
   Brief: |-
-    Until the end of this combat, |Assign| cards cost <sprite=ManaSprite" name="1"> to play. |Assign| buffs start with increased extra triggers.
+    Until the end of this combat, |Assign| cards in the hand temporarily gain <sprite=ManaSprite" name="1"> cost. |Assign| buffs start with increased extra triggers.

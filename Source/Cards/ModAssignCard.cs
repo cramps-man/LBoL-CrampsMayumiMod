@@ -27,8 +27,31 @@ namespace LBoLMod.Cards
 
         protected override void OnEnterBattle(BattleController battle)
         {
+            base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardAddedToHand);
+        }
+
+        private void OnCardAddedToHand(CardsEventArgs args)
+        {
+            SetAssignCostTriggerCost();
+        }
+
+        public override IEnumerable<BattleAction> OnDraw()
+        {
+            SetAssignCostTriggerCost();
+            return null;
+        }
+
+        public override IEnumerable<BattleAction> OnMove(CardZone srcZone, CardZone dstZone)
+        {
+            if (dstZone == CardZone.Hand)
+                SetAssignCostTriggerCost();
+            return null;
+        }
+
+        private void SetAssignCostTriggerCost()
+        {
             if (base.Battle.Player.HasStatusEffect<AssignCostTriggerSe>())
-                base.IncreaseBaseCost(ManaGroup.Anys(1));
+                base.SetTurnCost(ManaGroup.Anys(1));
         }
     }
 }

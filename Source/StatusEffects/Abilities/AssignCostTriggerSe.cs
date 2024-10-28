@@ -22,11 +22,11 @@ namespace LBoLMod.StatusEffects.Abilities
         protected override void OnAdded(Unit unit)
         {
             base.HandleOwnerEvent(base.Battle.Player.StatusEffectAdding, this.OnStatusEffectAdding);
-            foreach (var card in Battle.EnumerateAllCards())
+            foreach (var card in Battle.HandZoneAndPlayArea)
             {
                 if (card is ModAssignCard assignCard)
                 {
-                    assignCard.IncreaseBaseCost(ManaGroup.Anys(1));
+                    assignCard.SetTurnCost(ManaGroup.Anys(1));
                 }
             };
         }

@@ -29,6 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
+            cardConfig.RelativeKeyword = Keyword.TempMorph;
+            cardConfig.UpgradedRelativeKeyword = Keyword.TempMorph;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
