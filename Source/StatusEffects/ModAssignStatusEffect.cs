@@ -124,7 +124,7 @@ namespace LBoLMod.StatusEffects
             this.NotifyActivating();
             if (IsPermanent)
                 Level = 1;
-            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), AfterAssignmentDone(onTurnStart), Level, onTurnStart);
+            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), BeforeAssignmentDone(onTurnStart), AfterAssignmentDone(onTurnStart), Level, onTurnStart);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (IsPermanent)
@@ -146,6 +146,10 @@ namespace LBoLMod.StatusEffects
             }
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
+        protected virtual IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
+        {
+            return new List<BattleAction>();
+        }
         protected virtual IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
             return new List<BattleAction>();

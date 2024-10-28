@@ -8,11 +8,12 @@ namespace LBoLMod.BattleActions
     {
         private readonly AssignTriggerEventArgs args;
 
-        internal AssignTriggerAction(IEnumerable<BattleAction> battleActions, IEnumerable<BattleAction> afterBattleActions, int timesToActivate, bool onTurnStart)
+        internal AssignTriggerAction(IEnumerable<BattleAction> battleActions, IEnumerable<BattleAction> beforeBattleActions, IEnumerable<BattleAction> afterBattleActions, int timesToActivate, bool onTurnStart)
         {
             this.args = new AssignTriggerEventArgs
             {
                 BattleActions = battleActions,
+                BeforeBattleActions = beforeBattleActions,
                 AfterBattleActions = afterBattleActions,
                 TimesToActivate = timesToActivate,
                 OnTurnStart = onTurnStart
@@ -22,6 +23,14 @@ namespace LBoLMod.BattleActions
         public override IEnumerable<Phase> GetPhases()
         {
             yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggering", this.args, ModGameEvents.AssignEffectTriggering);
+            yield return base.CreatePhase("Before", delegate
+            {
+                foreach (var action in args.BeforeBattleActions)
+                {
+                    if (!base.Battle.BattleShouldEnd)
+                        base.React(action);
+                }
+            });
             yield return base.CreatePhase("Main", delegate
             {
                 for (int i = 0; i < args.TimesToActivate; i++)

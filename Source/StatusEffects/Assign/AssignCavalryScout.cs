@@ -1,6 +1,5 @@
 ﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -20,8 +19,12 @@ namespace LBoLMod.StatusEffects.Assign
     {
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new ScryAction(CardScry);
             yield return new DrawManyCardAction(CardValue1);
+        }
+
+        protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
+        {
+            yield return new ScryAction(CardScry.IncreasedBy((Level - 1) * CardScry.Count));
         }
     }
 }

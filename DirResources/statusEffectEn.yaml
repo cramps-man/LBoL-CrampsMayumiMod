@@ -200,6 +200,7 @@ AssignCavalryScout:
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, |Scry| {CardScry} and draw {CardValue1} card{CardValue1:plural one='' other='s'}. 
     {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
+    |Scry| is multiplied by the number of extra triggers and only occurs once. 
   Brief: |-
     After X cards are played, |Scry| and draw cards. 
 
