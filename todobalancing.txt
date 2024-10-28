@@ -19,7 +19,7 @@ assign exhibit - every 5 buffs gained, gain a buff assignment bonus or something
   - assignment bonus will be the old effect but tied to a buff, ticks down by 1 each draw
 
 update haniwa spy and commanders effects?
-  - spy doesnt lower cost when using ashes to clay, and probs haniwa blitz cos source card isnt the same
+  - spy doesnt lower cost when using ashes to clay, and probs haniwa blitz cos source card isnt the same - fixed
 haniwa upgrader 1(2) for passive count - done
   - and not allow target other upgraders
 haniwa bodyguard make onplay not upgrade +2, maybe just +1 - done

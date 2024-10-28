@@ -109,6 +109,7 @@ namespace LBoLMod.Cards
         public override void Initialize()
         {
             base.Initialize();
+            RemainingValue = Value1;
             base.UpgradeCounter = 0;
         }
     }
