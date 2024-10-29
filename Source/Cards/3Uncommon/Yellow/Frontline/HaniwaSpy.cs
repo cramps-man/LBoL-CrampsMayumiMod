@@ -28,7 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 0;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Scry = 1;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
@@ -49,15 +50,25 @@ namespace LBoLMod.Cards
         {
             base.OnEnterBattle(battle);
             base.ReactBattleEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
-            base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
+            base.ReactBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
         }
 
-        private void OnCardMoved(CardMovingEventArgs args)
+        private IEnumerable<BattleAction> OnCardMoved(CardMovingEventArgs args)
         {
-            if (args.ActionSource != this)
-                return;
+            if (base.Zone != CardZone.Hand)
+                yield break;
+            if (RemainingValue <= 0)
+                yield break;
+            if (args.SourceZone != CardZone.Draw || args.DestinationZone != CardZone.Discard)
+                yield break;
+            if (args.Card.Cost.Any <= 0 || args.Card.HasKeyword(Keyword.Forbidden))
+                yield break;
 
+            this.NotifyActivating();
+            RemainingValue -= 1;
+            yield return PerformAction.ViewCard(args.Card);
             args.Card.DecreaseTurnCost(Mana);
+            yield return PerformAction.Wait(0.2f);
         }
 
         private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)

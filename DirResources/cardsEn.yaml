@@ -295,11 +295,13 @@ AssignTickdownReturn:
 HaniwaSpy:
   Name: Haniwa Spy
   Description: |-
+    |While in hand|: Any cards sent from draw to discard |temporarily cost| {Mana} less. Up to {Value1} time{Value1:plural one='' other='s'}. 
     |While in draw/discard pile|: At end of turn in the same pile as {SelfName}, a random card |temporarily costs| {Mana} less. 
-    |When played|: |Scry| {TotalScry}. Draw |e:1| card. Any cards sent to the discard pile this way |temporarily cost| {Mana} less. 
+    |When played|: |Scry| {TotalScry} and draw |e:1| card. 
   DetailText: |-
     Increases for each upgrade. 
     On Play |Scry|: +1 up to |Scry| 10
+    Number of in hand cost reductions stays at 3 after first upgrade. 
 
 HaniwaUpgrader:
   Name: Haniwa Upgrader
