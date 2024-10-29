@@ -549,14 +549,14 @@ UltraFrontline:
 HaniwaCommander:
   Name: Haniwa Commander
   Description: |-
-    |While in hand|: When a |Frontline| card is used, move |e:1| random |Frontline| card from the drawpile to the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
+    |While in hand|: When a card is used, move |e:1| random |Frontline| card from the draw or discard pile to the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
     |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+10 or more, allow choosing from draw/discard piles. 
   DetailText: |-
     Can not choose another |Haniwa Commander|. Bad things happen. 
     
     Increases for each upgrade. 
-    Total Frontline moves per turn: +1
     Total On Play cards to choose: +1
+    Total Frontline moves stays at 5 after first upgrade. 
 
 OptionHaniwaCommander:
   Name: Summon Haniwa Commander

@@ -30,7 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 3;
-            cardConfig.Value2 = 5;
+            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value2 = 3;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -43,7 +44,6 @@ namespace LBoLMod.Cards
     public sealed class HaniwaCommander : ModFrontlineCard
     {
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
-        protected override bool IncludeUpgradesInRemainingValue => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -56,12 +56,12 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (!(args.Card is ModFrontlineCard))
-                yield break;
             if (RemainingValue <= 0)
                 yield break;
+            if (base.Battle.HandZone.Count == base.Battle.MaxHand)
+                yield break;
 
-            Card card = base.Battle.DrawZone.Where(c => c is ModFrontlineCard).SampleOrDefault(base.BattleRng);
+            Card card = base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c is ModFrontlineCard).SampleOrDefault(base.BattleRng);
             if (card == null) 
                 yield break;
             base.NotifyActivating();
@@ -72,9 +72,8 @@ namespace LBoLMod.Cards
         {
             List<Card> list = new List<Card>();
             if (base.UpgradeCounter >= 10)
-                list = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander))
-                    .Concat(base.Battle.DrawZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)))
-                    .Concat(base.Battle.DiscardZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander))).ToList();
+                list = base.Battle.HandZone.Concat(base.Battle.DrawZone).Concat(base.Battle.DiscardZone)
+                    .Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
             else
                 list = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
             return new SelectHandInteraction(0, Value2, list);
