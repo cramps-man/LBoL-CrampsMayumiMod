@@ -259,7 +259,7 @@ CreateCavalry:
     Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
     Gain effects based on |Cavalry| level. 
     |3|: Draw 1 card. 
-    |5|: |Scry| {Value2}. 
+    |5|: |Scry| {Scry}. 
     |7|: Draw 1 card. 
     |10|: Gain {Mana}. 
 

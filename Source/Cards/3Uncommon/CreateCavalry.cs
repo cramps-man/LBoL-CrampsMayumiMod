@@ -31,7 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 3;
+            cardConfig.Scry = 3;
+            cardConfig.UpgradedScry = 5;
             cardConfig.Mana = new ManaGroup() { Red = 1, White = 1};
             cardConfig.UpgradedMana = new ManaGroup() { Philosophy = 2 };
             cardConfig.Keywords = Keyword.Scry;
@@ -50,7 +51,7 @@ namespace LBoLMod.Cards
             yield return new GainHaniwaAction(cavalryToGain: Value1);
             int cavalryCount = HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
             if (cavalryCount >= 5)
-                yield return new ScryAction(new ScryInfo(Value2));
+                yield return new ScryAction(Scry);
 
             int drawCount = 0;
             if (cavalryCount >= 3)
