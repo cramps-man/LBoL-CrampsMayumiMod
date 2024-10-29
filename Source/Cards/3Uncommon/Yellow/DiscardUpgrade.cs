@@ -13,11 +13,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ExileUpgradeDef : ModCardTemplate
+    public sealed class DiscardUpgradeDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileUpgrade);
+            return nameof(DiscardUpgrade);
         }
 
         public override CardConfig MakeConfig()
@@ -29,16 +29,14 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.Block = 16;
-            cardConfig.RelativeKeyword = Keyword.Exile;
-            cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(ExileUpgradeDef))]
-    public sealed class ExileUpgrade : Card
+    [EntityLogic(typeof(DiscardUpgradeDef))]
+    public sealed class DiscardUpgrade : Card
     {
         public override Interaction Precondition()
         {
@@ -48,15 +46,15 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
-            if (!(precondition is SelectHandInteraction exileInteraction))
+            if (!(precondition is SelectHandInteraction discardInteraction))
                 yield break;
+            yield return new DiscardManyAction(discardInteraction.SelectedCards);
 
-            int exileCount = exileInteraction.SelectedCards.Count;
-            for (int i = 0; i < exileCount; i++)
+            int discardCount = discardInteraction.SelectedCards.Count;
+            for (int i = 0; i < discardCount; i++)
             {
                 yield return new UpgradeCardsAction(base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive));
             }
-            yield return new ExileManyCardAction(exileInteraction.SelectedCards);
         }
     }
 }
