@@ -44,3 +44,4 @@ ultra frontline too similar to exile upgrade, rework or remove
 assign cost trigger only increase cost in hand - done
 assign play draw and zero cost reduction, give ethereal and upgrade remove it - done
 create cavalry increase scry on upgrade - done
+cavalry rush only make mana gain occur once - done
