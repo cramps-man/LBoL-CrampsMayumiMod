@@ -9,10 +9,11 @@ frontlines gain exile, at upgrade+10 they lose it but gain 1 cost
 new cards
 something to increase max haniwa level 3(5), and gain 2(3) of each haniwa
   - maybe no need anymore, keeping max lvl 10
-something for assign to increase the counter by 3, and some other effect?
+something for assign to increase the counter by 3, and some other effect? - done
   - maybe just do it on the starter haniwa gen
 something that gives assignment bonus?
 something that puts frontline back into draw?
+  - technically ashes to clay does this, so probs ok on this front
 
 exhibit changes
 frontline exhibit no changes, the card count increase is probs fine
