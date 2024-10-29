@@ -225,5 +225,5 @@ use more robust way of adding keywords to cards
   - so i can give assign cards the assign keyword too
 
 go through frontline card descriptions and see if they match - done
-make frontlines cost more when they have 0 remaining value
+make frontlines cost more when they have 0 remaining value - done
 update player to just check for any haniwa exist before gaining haniwa

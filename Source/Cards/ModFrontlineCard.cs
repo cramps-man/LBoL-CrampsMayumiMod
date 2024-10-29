@@ -13,53 +13,46 @@ namespace LBoLMod.Cards
     public abstract class ModFrontlineCard: Card
     {
         public override string Description => base.Description + UiUtils.WrapByColor(" " + nameof(Frontline), GlobalConfig.DefaultKeywordColor);
-        public int RemainingValue { get; set; } = 0;
-        protected virtual bool IncludeUpgradesInRemainingValue => false;
-        private void SetRemainValue(int value)
+
+        private int _remainingValue = 0;
+        public int RemainingValue 
         {
-            RemainingValue = value;
-            base.NotifyChanged();
+            get
+            {
+                return _remainingValue;
+            }
+            set
+            {
+                _remainingValue = value;
+                if (_remainingValue <= 0) 
+                {
+                    base.IncreaseTurnCost(ManaGroup.Anys(1));
+                }
+                else if (TurnCostDelta.Amount > 0)
+                {
+                    base.DecreaseTurnCost(ManaGroup.Anys(1));
+                }
+                base.NotifyChanged();
+            }
         }
+        protected virtual bool IncludeUpgradesInRemainingValue => false;
 
         protected override void OnEnterBattle(BattleController battle)
         {
-            SetRemainValue(Value1);
+            RemainingValue = Value1;
             base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
-            base.HandleBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
-        }
-
-        private void OnCardUsed(CardUsingEventArgs args)
-        {
-            if (this.Zone != CardZone.Hand && this.Zone != CardZone.PlayArea)
-                return;
-            if (!(args.Card is ModFrontlineCard))
-                return;
-
-            base.SetTurnCost(ManaGroup.Anys(1));
         }
 
         private void OnCardsAddedToHand(CardsEventArgs args)
         {
             if (args.Cards.Contains(this))
             {
-                SetRemainValue(Value1);
+                RemainingValue = Value1;
             }
         }
         public override IEnumerable<BattleAction> OnDraw()
         {
-            SetRemainValue(Value1);
-            return null;
-        }
-
-        public override IEnumerable<BattleAction> OnTurnStartedInHand()
-        {
-            //SetRemainValue(Value1);
-            return null;
-        }
-
-        public override IEnumerable<BattleAction> OnTurnEndingInHand()
-        {
-            SetTurnCost(ManaGroup.Empty);
+            RemainingValue = Value1;
             return null;
         }
         public override int AdditionalValue1 
@@ -86,7 +79,7 @@ namespace LBoLMod.Cards
             }*/
             int? upgradeCounter = base.UpgradeCounter + UPGRADE_AMOUNT;
             base.UpgradeCounter = upgradeCounter;
-            SetRemainValue(Value1);
+            RemainingValue = Value1;
             ProcessKeywordUpgrade();
             CostChangeInUpgrading();
             NotifyChanged();
