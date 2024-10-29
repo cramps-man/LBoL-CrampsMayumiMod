@@ -35,11 +35,11 @@ ashes to clay, increase cost - done
 exile summon, keep exile on upgrade, allow selecting 2 haniwa on upgrade - done
 cavalry scout replace graze with scry - done
 fencer build barricade make more unique cos too similar to prep counter?
-cavalry supplies, either keep mana at 2 and increase assign and delay, or reduce it to 1 and give draw/graze?
+cavalry supplies, either keep mana at 2 and increase assign and delay, or reduce it to 1 and give draw/graze? - done
   - can make 1 of the mana in the after assignment, so extra triggers only increase by 1
 ultra frontline too similar to exile upgrade, rework or remove
   - well maybe it's fine? nothing else puts all upgrades onto a single unit
   - can make exile upgrade do discarding instead? then need to rework the blue card that basically does a similar thing
 assign cost trigger only increase cost in hand - done
-assign play draw and zero cost reduction, give ethereal and upgrade remove it
+assign play draw and zero cost reduction, give ethereal and upgrade remove it - done
 create cavalry increase scry on upgrade - done

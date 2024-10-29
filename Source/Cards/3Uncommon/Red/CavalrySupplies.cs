@@ -22,10 +22,11 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 6;
-            cardConfig.UpgradedValue1 = 3;
-            cardConfig.Mana = new ManaGroup() { Red = 1, White = 1 };
-            cardConfig.UpgradedMana = new ManaGroup() { Red = 1, Philosophy = 1 };
+            cardConfig.Value1 = 8;
+            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value2 = 1;
+            cardConfig.Mana = new ManaGroup() { White = 1 };
+            cardConfig.UpgradedMana = new ManaGroup() { Philosophy = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
@@ -35,7 +36,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CavalrySuppliesDef))]
     public sealed class CavalrySupplies : ModAssignCard
     {
-        public override int CavalryAssigned => 2;
+        public ManaGroup RedMana => ManaGroup.Reds(Value2);
+        public override int CavalryAssigned => 3;
         public override int StartingCardCounter => Value1;
         public override Type AssignStatusType => typeof(AssignCavalrySupplies);
     }

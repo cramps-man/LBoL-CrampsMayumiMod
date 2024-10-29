@@ -481,7 +481,9 @@ CavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
     |Assign {CavalryAssigned} Cavalry|. 
-    After {Value1} cards are played, gain {Mana}. 
+    After {Value1} cards are played, gain {RedMana}{Mana}. 
+  DetailText: |-
+    Only the red mana portion is affected by extra triggers. 
 
 #RARES
 FullFrontalAssault:

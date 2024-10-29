@@ -106,8 +106,9 @@ AssignArcherPrepVolley:
 AssignCavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardMana}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {RedMana}{CardMana}. 
     {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
+    Only the red mana portion is affected by extra triggers. 
   Brief: |-
     After X cards are played, gain mana. 
 
