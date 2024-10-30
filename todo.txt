@@ -235,3 +235,5 @@ frontline that benefits from gaining buffs
   - or passive is the charge, so you need to refresh counter if want to build up big
 new card next X frontlines add a copy to draw pile
 new card choose frontline and remove exile from it
+
+assignment bonus not notify activating - done

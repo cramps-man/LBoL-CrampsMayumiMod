@@ -33,6 +33,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.OnTurnStart)
                 yield break;
 
+            base.NotifyActivating();
             yield return new DrawCardAction();
 
             if (Level <= 1)
