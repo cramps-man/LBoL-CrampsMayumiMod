@@ -489,6 +489,12 @@ CavalrySupplies:
   DetailText: |-
     Only the red mana portion is affected by extra triggers. 
 
+AutoCreateReserves:
+  Name: Auto Create Reserves
+  Description: |-
+    Add a |Create Haniwa| to the hand. 
+    At the start of {PlayerName}'s turn, if there are no |Create Haniwa| in the hand, add a |Create Haniwa| to the hand. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

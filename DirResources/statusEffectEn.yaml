@@ -255,3 +255,10 @@ AssignCostTriggerSe:
     Until the end of this combat, |Assign| cards in the hand temporarily gain <sprite=ManaSprite" name="1"> cost. |Assign| buffs start with increased extra triggers of {Level}.
   Brief: |-
     Until the end of this combat, |Assign| cards in the hand temporarily gain <sprite=ManaSprite" name="1"> cost. |Assign| buffs start with increased extra triggers.
+
+AutoCreateReservesSe:
+  Name: Auto Create Reserves
+  Description: |-
+    At the start of {PlayerName}'s turn, if there are {Level:plural one='no' other='less than %'} |Create Haniwa| in the hand, add {Level:plural one='a |Create Haniwa|' other='|Create Haniwas|'} to the hand{Level:plural one='.' other=' until there are %.'}
+  Brief: |-
+    At the start of {PlayerName}'s turn, if there are less than a number of |Create Haniwa| in the hand, add that many |Create Haniwa| to the hand. 

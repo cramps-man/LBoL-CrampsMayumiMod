@@ -229,7 +229,7 @@ make frontlines cost more when they have 0 remaining value - done
 update player to just check for any haniwa exist before gaining haniwa - done
 assignment bonus not notify activating - done
 
-new card that add create haniwa to hand if less than level
+new card that add create haniwa to hand if less than level - done
 frontline that benefits from gaining buffs
   - onplay is an attack that charges up with each buff gained
   - passive deals dmg when gaining a buff? up to X times
