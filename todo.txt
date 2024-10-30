@@ -226,4 +226,12 @@ use more robust way of adding keywords to cards
 
 go through frontline card descriptions and see if they match - done
 make frontlines cost more when they have 0 remaining value - done
-update player to just check for any haniwa exist before gaining haniwa
+update player to just check for any haniwa exist before gaining haniwa - done
+
+new card that add create haniwa to hand if less than level
+frontline that benefits from gaining buffs
+  - onplay is an attack that charges up with each buff gained
+  - passive deals dmg when gaining a buff? up to X times
+  - or passive is the charge, so you need to refresh counter if want to build up big
+new card next X frontlines add a copy to draw pile
+new card choose frontline and remove exile from it

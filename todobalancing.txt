@@ -24,7 +24,7 @@ update haniwa spy effects? - done
   - spy doesnt lower cost when using ashes to clay, and probs haniwa blitz cos source card isnt the same - fixed
   - just limit spy to 3(5) activations per cycle? and allow reducing cost in hand?
   - make it so in hand has an effect of reducing card cost for cards that move from draw to discard
-update haniwa commander effects
+update haniwa commander effects - done
 haniwa upgrader 1(2) for passive count - done
   - and not allow target other upgraders
 haniwa bodyguard make onplay not upgrade +2, maybe just +1 - done

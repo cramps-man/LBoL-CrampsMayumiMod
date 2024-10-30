@@ -109,10 +109,11 @@ namespace LBoLMod.PlayerUnits
         {
             var assign = HasExhibit<AssignExhibit>();
             var frontline = HasExhibit<FrontlineExhibit>();
+            var hasHaniwa = HaniwaUtils.HasAnyHaniwa(this);
             Console.WriteLine("has assign exhibit " + assign);
             Console.WriteLine("has frontline exhibit " + frontline);
-            Console.WriteLine("has any haniwa " + HaniwaUtils.HasAnyHaniwa(this));
-            if (assign || frontline)
+            Console.WriteLine("has any haniwa " + hasHaniwa);
+            if (assign || frontline || hasHaniwa)
                 yield break;
             if (TurnCounter != 1)
                 yield break;
