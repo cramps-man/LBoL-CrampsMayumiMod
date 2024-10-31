@@ -14,6 +14,7 @@ namespace LBoLMod.StatusEffects
 {
     public abstract class ModAssignStatusEffect: StatusEffect
     {
+        private bool JustApplied { get; set; } = true;
         protected ModAssignCard AssignSourceCard { get; set; }
         public int CardFencerAssigned => AssignSourceCard.FencerAssigned;
         public int CardArcherAssigned => AssignSourceCard.ArcherAssigned;
@@ -108,8 +109,9 @@ namespace LBoLMod.StatusEffects
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
-            if (args.Card != AssignSourceCard)
+            if (!JustApplied)
                 Tickdown(1);
+            JustApplied = false;
             if (Count == 0)
             {
                 return AssignTriggering(false);

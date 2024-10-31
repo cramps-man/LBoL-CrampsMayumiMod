@@ -437,7 +437,7 @@ ChooseShortAssign:
   Name: Choose Short Assign
   Description: |-
     Choose 1 of 3 |Assign| cards and gain its buff. No |Haniwa| required. 
-    The buff has a starting card counter of {Value1} ({AfterCardPlayed} after this card is played). 
+    The buff has a starting card counter of {Value1}. 
 
 FencerPrepCounter:
   Name: Fencer Prep Counter

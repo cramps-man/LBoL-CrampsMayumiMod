@@ -29,8 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 1 };
-            cardConfig.Value1 = 4;
-            cardConfig.UpgradedValue1 = 1;
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 0;
             cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
@@ -41,7 +41,6 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ChooseShortAssignDef))]
     public sealed class ChooseShortAssign : Card
     {
-        public int AfterCardPlayed => Value1 - 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             List<Card> cards = HaniwaAssignUtils.GetAssignCardTypes(base.Battle.Player).SampleMany(3, base.BattleRng).Select(Library.CreateCard).ToList();
