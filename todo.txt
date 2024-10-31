@@ -259,6 +259,7 @@ fix assign buffs not counting down when cardSource is the played again, or when 
 swap cake ult and mass ressurection effects - done
 maybe buff haniwa bodyguard dmg reduction from 4 -> 5 - done
 fix haniwa blitz and discard upgrade flag for discard not set - done
-DiscardUpgrade dont try upgrade if nothing in hand can upgrade
+DiscardUpgrade dont try upgrade if nothing in hand can upgrade - done
+  - to fix delay of card resolving, since upgrading multiple times takes a bit
 investigate haniwa bodyguards getting to 2 cost - done
   - fixed by just setting turn cost instead of increasing/decreasing

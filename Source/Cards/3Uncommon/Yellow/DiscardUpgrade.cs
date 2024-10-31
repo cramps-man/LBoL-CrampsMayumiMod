@@ -54,7 +54,8 @@ namespace LBoLMod.Cards
             int discardCount = discardInteraction.SelectedCards.Count;
             for (int i = 0; i < discardCount; i++)
             {
-                yield return new UpgradeCardsAction(base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive));
+                if (base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive).Count() > 0)
+                    yield return new UpgradeCardsAction(base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive));
             }
         }
     }
