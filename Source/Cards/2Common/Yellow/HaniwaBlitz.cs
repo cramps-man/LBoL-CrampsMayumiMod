@@ -40,6 +40,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaBlitzDef))]
     public sealed class HaniwaBlitz : Card
     {
+        public override bool DiscardCard => true;
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();

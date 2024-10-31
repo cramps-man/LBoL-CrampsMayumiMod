@@ -257,8 +257,8 @@ fix haniwa upgrader upgrading when summoned - done
 fix assign buffs not counting down when cardSource is the played again, or when upgraded and cardSource changes - done
   - also fix text for chooseShortAssign to not include -1 values
 swap cake ult and mass ressurection effects - done
-maybe buff haniwa bodyguard dmg reduction from 4 -> 5
-fix haniwa blitz and discard upgrade flag for discard not set
+maybe buff haniwa bodyguard dmg reduction from 4 -> 5 - done
+fix haniwa blitz and discard upgrade flag for discard not set - done
 DiscardUpgrade dont try upgrade if nothing in hand can upgrade
 investigate haniwa bodyguards getting to 2 cost - done
   - fixed by just setting turn cost instead of increasing/decreasing

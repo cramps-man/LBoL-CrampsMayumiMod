@@ -38,6 +38,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(DiscardUpgradeDef))]
     public sealed class DiscardUpgrade : Card
     {
+        public override bool DiscardCard => true;
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList();
