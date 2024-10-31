@@ -260,4 +260,5 @@ swap cake ult and mass ressurection effects - done
 maybe buff haniwa bodyguard dmg reduction from 4 -> 5
 fix haniwa blitz and discard upgrade flag for discard not set
 DiscardUpgrade dont try upgrade if nothing in hand can upgrade
-investigate haniwa bodyguards getting to 2 cost
+investigate haniwa bodyguards getting to 2 cost - done
+  - fixed by just setting turn cost instead of increasing/decreasing

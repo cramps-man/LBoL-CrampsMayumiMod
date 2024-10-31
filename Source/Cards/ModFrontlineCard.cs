@@ -26,11 +26,11 @@ namespace LBoLMod.Cards
                 _remainingValue = value;
                 if (_remainingValue <= 0) 
                 {
-                    base.IncreaseTurnCost(ManaGroup.Anys(1));
+                    base.SetTurnCost(ManaGroup.Anys(1));
                 }
                 else if (TurnCostDelta.Amount > 0)
                 {
-                    base.DecreaseTurnCost(ManaGroup.Anys(1));
+                    base.SetTurnCost(ManaGroup.Anys(0));
                 }
                 base.NotifyChanged();
             }
