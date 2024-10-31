@@ -42,6 +42,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
+        private bool JustEnteredHand { get; set; } = true;
         public override int AdditionalBlock => Value2 * base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -49,12 +50,26 @@ namespace LBoLMod.Cards
             base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
         }
 
+        public override IEnumerable<BattleAction> OnDraw()
+        {
+            JustEnteredHand = false;
+            return base.OnDraw();
+        }
+
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (base.Zone != CardZone.Hand)
+            {
+                JustEnteredHand = true;
                 yield break;
+            }
+            if (JustEnteredHand)
+            {
+                JustEnteredHand = false;
+                yield break;
+            }
             if (RemainingValue <= 0)
                 yield break;
 

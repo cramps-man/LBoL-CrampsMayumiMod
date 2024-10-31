@@ -242,5 +242,18 @@ new card add card to battlefield, gain block/draw
 new card fencer assign gain buff charges block gain?
   - gaining buffs gains extra triggers, every 4-5 buffs?
   - card gives 4(5) block per trigger
+  - probs no need if crd gain counter block is implemented, which ill probs do that one over this
 new card if at max hand size, dmg or block? or it costs 0
   - gain block based on hand size, ohnyo its undine, if max handsize cost 0 to play
+new card assign buffs gain card counter instead of decreasing until end of turn
+  - at end of turn gain block = to total card counters
+new toxic haniwa that turns adjecent haniwa into toxic haniwa
+  - probs do poison to enemy and also apply poison to player for each toxic haniwa in hand
+new horse archer haniwa something about graze and damage
+new frontline related to assigns, like gaining assignment bonus onplay and then something else passive
+
+fix haniwa upgrader upgrading when summoned - done
+fix assign buffs not counting down when cardSource is the played again, or when upgraded and cardSource changes
+swap cake ult and mass ressurection effects
+maybe buff haniwa bodyguard dmg reduction from 4 -> 5
+fix haniwa blitz and discard upgrade flag for discard not set
