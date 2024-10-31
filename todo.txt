@@ -253,6 +253,7 @@ new horse archer haniwa something about graze and damage
 new frontline related to assigns, like gaining assignment bonus onplay and then something else passive
 
 fix haniwa upgrader upgrading when summoned - done
+  - had a hard time fixing all cases, so just made it not do it on summon
 fix assign buffs not counting down when cardSource is the played again, or when upgraded and cardSource changes
 swap cake ult and mass ressurection effects
 maybe buff haniwa bodyguard dmg reduction from 4 -> 5
