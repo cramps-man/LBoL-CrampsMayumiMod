@@ -239,13 +239,13 @@ new card next X frontlines add a copy to draw pile
 new card choose frontline and remove exile from it
   - remember to carry over losing exile to frozen haniwa
 new card add card to battlefield, gain block/draw
-new card fencer assign gain buff charges block gain?
+new card fencer assign gain buff charges block gain? - wont do
   - gaining buffs gains extra triggers, every 4-5 buffs?
   - card gives 4(5) block per trigger
   - probs no need if crd gain counter block is implemented, which ill probs do that one over this
 new card if at max hand size, dmg or block? or it costs 0
   - gain block based on hand size, ohnyo its undine, if max handsize cost 0 to play
-new card assign buffs gain card counter instead of decreasing until end of turn
+new card assign buffs gain card counter instead of decreasing until end of turn - done
   - at end of turn gain block = to total card counters
 new toxic haniwa that turns adjecent haniwa into toxic haniwa
   - probs do poison to enemy and also apply poison to player for each toxic haniwa in hand

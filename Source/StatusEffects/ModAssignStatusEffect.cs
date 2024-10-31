@@ -6,6 +6,7 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLMod.BattleActions;
 using LBoLMod.Cards;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.UltimateSkills;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -41,7 +42,12 @@ namespace LBoLMod.StatusEffects
 
         public override bool Stack(StatusEffect other)
         {
+            if (base.Battle.Player.HasStatusEffect<AssignReverseTickdownSe>())
+                Config.CountStackType = StackType.Max;
             base.Stack(other);
+            if (base.Battle.Player.HasStatusEffect<AssignReverseTickdownSe>())
+                Config.CountStackType = StackType.Min;
+
             if (!SourceCard.IsUpgraded && other.SourceCard.IsUpgraded)
             {
                 if (other.SourceCard is ModAssignCard c)
@@ -71,6 +77,11 @@ namespace LBoLMod.StatusEffects
         {
             if (IsPaused)
                 return;
+            if (base.Battle.Player.HasStatusEffect<AssignReverseTickdownSe>())
+            {
+                Count += amount;
+                return;
+            }
             if (Count - amount >= 0)
                 Count -= amount;
             else

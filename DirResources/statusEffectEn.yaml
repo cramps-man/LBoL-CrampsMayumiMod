@@ -262,3 +262,12 @@ AutoCreateReservesSe:
     At the start of {PlayerName}'s turn, if there are {Level:plural one='no' other='less than %'} |Create Haniwa| in the hand, add {Level:plural one='a |Create Haniwa|' other='|Create Haniwas|'} to the hand{Level:plural one='.' other=' until there are %.'}
   Brief: |-
     At the start of {PlayerName}'s turn, if there are less than a number of |Create Haniwa| in the hand, add that many |Create Haniwa| to the hand. 
+
+AssignReverseTickdownSe:
+  Name: Assign Reverse Tickdown
+  Description: |-
+    Until end of {PlayerName}'s turn, |Assign| buffs increase their card counter instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assign| buffs. 
+  Brief: |-
+    Until end of {PlayerName}'s turn, |Assign| buffs increase their card counter instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assign| buffs. 
