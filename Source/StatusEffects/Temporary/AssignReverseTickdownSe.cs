@@ -1,4 +1,5 @@
-﻿using LBoL.Core;
+﻿using LBoL.ConfigData;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
@@ -15,6 +16,13 @@ namespace LBoLMod.StatusEffects.Abilities
         public override IdContainer GetId()
         {
             return nameof(AssignReverseTickdownSe);
+        }
+
+        public override StatusEffectConfig MakeConfig()
+        {
+            var config = base.MakeConfig();
+            config.HasLevel = false;
+            return config;
         }
     }
 
