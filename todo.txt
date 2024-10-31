@@ -243,7 +243,7 @@ new card fencer assign gain buff charges block gain? - wont do
   - gaining buffs gains extra triggers, every 4-5 buffs?
   - card gives 4(5) block per trigger
   - probs no need if crd gain counter block is implemented, which ill probs do that one over this
-new card if at max hand size, dmg or block? or it costs 0
+new card if at max hand size, dmg or block? or it costs 0 - done
   - gain block based on hand size, ohnyo its undine, if max handsize cost 0 to play
 new card assign buffs gain card counter instead of decreasing until end of turn - done
   - at end of turn gain block = to total card counters
