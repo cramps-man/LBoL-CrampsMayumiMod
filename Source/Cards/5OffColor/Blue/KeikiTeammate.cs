@@ -34,16 +34,16 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 1, White = 1, Blue = 1 };
             cardConfig.Value1 = 8;
             cardConfig.UpgradedValue1 = 10;
-            cardConfig.Value2 = 10;
-            cardConfig.UpgradedValue2 = 16;
+            cardConfig.Value2 = 8;
+            cardConfig.UpgradedValue2 = 12;
             cardConfig.Loyalty = 2;
             cardConfig.UpgradedLoyalty = 2;
             cardConfig.PassiveCost = 1;
             cardConfig.UpgradedPassiveCost = 2;
             cardConfig.ActiveCost = -4;
             cardConfig.UpgradedActiveCost = -4;
-            cardConfig.UltimateCost = -9;
-            cardConfig.UpgradedUltimateCost = -9;
+            cardConfig.UltimateCost = -8;
+            cardConfig.UpgradedUltimateCost = -8;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
@@ -66,9 +66,7 @@ namespace LBoLMod.Cards
                 return ExileCards.Count() * Value2;
             }
         }
-        public IEnumerable<Card> ExileCards => base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard)
-                    .Concat(base.Battle.DrawZone.Where(c => c != this && c is ModFrontlineCard))
-                    .Concat(base.Battle.DiscardZone.Where(c => c != this && c is ModFrontlineCard));
+        public IEnumerable<Card> ExileCards => base.Battle.ExileZone.Where(c => c is ModFrontlineCard);
         public override IEnumerable<BattleAction> OnTurnStartedInHand()
         {
             return this.GetPassiveActions();
@@ -110,7 +108,10 @@ namespace LBoLMod.Cards
                 base.Loyalty += base.UltimateCost;
                 base.UltimateUsed = true;
                 yield return new DamageAction(base.Battle.Player, base.Battle.AllAliveEnemies, DamageInfo.Attack(FrontlineExileDamage));
-                yield return new ExileManyCardAction(ExileCards);
+                foreach (var card in ExileCards.ToList())
+                {
+                    yield return new MoveCardAction(card, CardZone.Discard);
+                }
                 yield return base.SkillAnime;
             }
         }

@@ -522,11 +522,11 @@ ZeroCostReduction:
   Description: |-
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand |temporarily costs| <sprite=ManaSprite" name="1"> less. Does not stack. 
 
-MassRessurection:
-  Name: Mass Ressurection
+MassDestruction:
+  Name: Mass Destruction
   Description: |-
-    Deal {Damage} damage to all enemies. Deal additional damage equal to the amount of |Frontline| cards in |Exile| multiplied by {Value1}. ({AdditionalDamage})
-    Move all those cards to the discard pile. 
+    Deal {Damage} damage to all enemies. Then |Exile| all |Frontline| cards in the hand/draw/discard piles. 
+    Deal additional damage equal to the amount of |Frontline| cards |Exiled| this way multiplied by {Value1}. ({AdditionalDamage})
 
 MassExtraTrigger:
   Name: Mass Extra Trigger
@@ -636,7 +636,7 @@ KeikiTeammate:
   ExtraDescription1: |-
     {FriendA} Trigger all |Assign| buffs. Gain {Value1} |Barrier| for each buff triggered. 
   ExtraDescription2: |-
-    {FriendU} |Exile| all |Frontline| cards in hand/draw/discard piles. Deal {Value2} damage to all enemies for each card |Exiled| this way. ({FrontlineExileDamage})
+    {FriendU} Move all |Frontline| cards in exile to discard pile. Deal {Value2} damage to all enemies for each card moved this way. ({FrontlineExileDamage})
 
 PermanentAssign:
   Name: Permanent Assign

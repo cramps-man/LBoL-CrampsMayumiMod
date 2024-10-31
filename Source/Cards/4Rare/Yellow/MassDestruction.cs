@@ -16,7 +16,7 @@ namespace LBoLMod.Cards
     {
         public override IdContainer GetId()
         {
-            return nameof(MassRessurection);
+            return nameof(MassDestruction);
         }
 
         public override CardConfig MakeConfig()
@@ -27,9 +27,10 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.AllEnemies;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
-            cardConfig.Damage = 20;
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Damage = 25;
+            cardConfig.UpgradedDamage = 35;
+            cardConfig.Value1 = 4;
+            cardConfig.UpgradedValue1 = 6;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -39,28 +40,26 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(MassRessurectionDef))]
-    public sealed class MassRessurection : Card
+    public sealed class MassDestruction : Card
     {
         public override int AdditionalDamage
         {
             get
             {
                 if (base.Battle != null)
-                    return base.Battle.ExileZone.Where(c => c is ModFrontlineCard).Count() * Value1;
+                    return CardsToExile.Count() * Value1;
                 return 0;
             }
         }
+
+        public IEnumerable<Card> CardsToExile => base.Battle.HandZone.Concat(base.Battle.DrawZone).Concat(base.Battle.DiscardZone).Where(c => c is ModFrontlineCard);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
             if (base.Battle.BattleShouldEnd)
                 yield break;
 
-            var cards = base.Battle.ExileZone.Where(c => c is ModFrontlineCard).ToList();
-            foreach (var card in cards)
-            {
-                yield return new MoveCardAction(card, CardZone.Discard);
-            }
+            yield return new ExileManyCardAction(CardsToExile);
         }
     }
 }
