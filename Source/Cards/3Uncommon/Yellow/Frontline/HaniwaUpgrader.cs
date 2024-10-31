@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Block = 10;
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
@@ -42,7 +42,6 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
-        private bool JustSummoned { get; set; } = true;
         public override int AdditionalBlock => Value2 * base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -56,11 +55,6 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (JustSummoned)
-            {
-                JustSummoned = false;
-                yield break;
-            }
             if (RemainingValue <= 0)
                 yield break;
 

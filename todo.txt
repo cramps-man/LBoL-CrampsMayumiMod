@@ -254,6 +254,8 @@ new frontline related to assigns, like gaining assignment bonus onplay and then 
 
 fix haniwa upgrader upgrading when summoned - done
   - had a hard time fixing all cases, so just made it not do it on summon
+  - just remove the check and buff the starting counter to 2(3), so it doesnt immidiately cost 1
+  - or make the condition for upgrading different
 fix assign buffs not counting down when cardSource is the played again, or when upgraded and cardSource changes - done
   - also fix text for chooseShortAssign to not include -1 values
 swap cake ult and mass ressurection effects - done
