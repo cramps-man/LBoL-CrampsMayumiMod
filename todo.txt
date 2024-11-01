@@ -230,10 +230,6 @@ update player to just check for any haniwa exist before gaining haniwa - done
 assignment bonus not notify activating - done
 
 new card that add create haniwa to hand if less than level - done
-frontline that benefits from gaining buffs
-  - onplay is an attack that charges up with each buff gained
-  - passive deals dmg when gaining a buff? up to X times
-  - or passive is the charge, so you need to refresh counter if want to build up big
 new card next X frontlines add a copy to draw pile - done
   - or just add echo
 new card choose frontline and remove exile from it - done
@@ -247,12 +243,16 @@ new card if at max hand size, dmg or block? or it costs 0 - done
   - gain block based on hand size, ohnyo its undine, if max handsize cost 0 to play
 new card assign buffs gain card counter instead of decreasing until end of turn - done
   - at end of turn gain block = to total card counters
+frontline that benefits from gaining buffs
+  - onplay is an attack that charges up with each buff gained
+  - passive deals dmg when gaining a buff? up to X times
+  - or passive is the charge, so you need to refresh counter if want to build up big
 new toxic haniwa that turns adjecent haniwa into toxic haniwa
   - probs do poison to enemy and also apply poison to player for each toxic haniwa in hand
 new horse archer haniwa something about graze and damage
 new frontline related to assigns, like gaining assignment bonus onplay and then something else passive
 new frontline hisoutensoku haniwa, reaches 30 upgrades big boom to all enemies
-new card green, trigger assign without removing then exile
+new card green, trigger assign without removing then exile - done
 
 fix haniwa upgrader upgrading when summoned - done
   - had a hard time fixing all cases, so just made it not do it on summon
@@ -269,3 +269,4 @@ investigate haniwa bodyguards getting to 2 cost - done
   - fixed by just setting turn cost instead of increasing/decreasing
 use AdditionalCost for frontline and assign cards - done
 rebalance Handsize Block
+add a limit to ZeroCostReduction per turn instead of having ethereal

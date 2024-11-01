@@ -94,6 +94,11 @@ namespace LBoLMod.StatusEffects
             return AssignTriggering(false);
         }
 
+        public IEnumerable<BattleAction> DuplicateTrigger()
+        {
+            return AssignTriggering(false, false);
+        }
+
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
         {
             if (args.Us is UltimateSkillA)
@@ -130,7 +135,7 @@ namespace LBoLMod.StatusEffects
             return null;
         }
 
-        private IEnumerable<BattleAction> AssignTriggering(bool onTurnStart)
+        private IEnumerable<BattleAction> AssignTriggering(bool onTurnStart, bool shouldRemove = true)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
@@ -152,7 +157,7 @@ namespace LBoLMod.StatusEffects
                     yield return new DamageAction(base.Battle.Player, base.Battle.Player, DamageInfo.HpLose(1));
                 }
             }
-            else
+            else if (shouldRemove)
             {
                 yield return new GainHaniwaAction(CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned, true);
                 yield return new RemoveStatusEffectAction(this);

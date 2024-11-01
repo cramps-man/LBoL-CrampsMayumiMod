@@ -675,6 +675,11 @@ PoisonShot:
     Deal {Damage} damage and apply {Value1} |Poison|. 
     Apply {Value1} additional |Poison| for each debuff on the target. 
 
+AssignDuplicateTrigger:
+  Name: Assign Duplicate Trigger
+  Description: |-
+    Choose 1 |Assign| buff and immidiately trigger its effect without removing it. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance
