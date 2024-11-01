@@ -270,4 +270,4 @@ investigate haniwa bodyguards getting to 2 cost - done
 use AdditionalCost for frontline and assign cards - done
 rebalance Handsize Block - done
   - very small change for now, need testing rly
-add a limit to ZeroCostReduction per turn instead of having ethereal
+add a limit to ZeroCostReduction per turn instead of having ethereal - done

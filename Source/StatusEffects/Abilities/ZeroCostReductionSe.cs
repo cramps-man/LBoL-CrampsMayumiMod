@@ -21,7 +21,7 @@ namespace LBoLMod.StatusEffects.Abilities
         public override StatusEffectConfig MakeConfig()
         {
             var config = base.MakeConfig();
-            config.HasLevel = false;
+            config.HasCount = true;
             return config;
         }
     }
@@ -32,11 +32,26 @@ namespace LBoLMod.StatusEffects.Abilities
         protected override void OnAdded(Unit unit)
         {
             base.HandleOwnerEvent(base.Battle.CardUsed, this.OnCardUsed);
+            base.HandleOwnerEvent(base.Battle.Player.TurnStarted, this.OnTurnStarted);
+        }
+
+        public override bool Stack(StatusEffect other)
+        {
+            base.Stack(other);
+            Count += other.Level;
+            return true;
+        }
+
+        private void OnTurnStarted(UnitEventArgs args)
+        {
+            Count = Level;
         }
 
         private void OnCardUsed(CardUsingEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
+                return;
+            if (Count <= 0)
                 return;
 
             if (args.ConsumingMana.IsEmpty)
@@ -44,7 +59,9 @@ namespace LBoLMod.StatusEffects.Abilities
                 Card card = base.Battle.HandZone.Where(c => c.Cost.Any > 0 && !c.IsForbidden).SampleOrDefault(base.GameRun.BattleRng);
                 if (card != null)
                 {
+                    base.NotifyActivating();
                     card.DecreaseTurnCost(ManaGroup.Anys(1));
+                    Count--;
                 }
             }
         }

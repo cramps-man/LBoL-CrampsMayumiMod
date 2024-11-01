@@ -189,8 +189,10 @@ ZeroCostReductionSe:
   Name: Zero Cost Reduction
   Description: |-
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
+    Up to {Level} time{Level:plural one='' other='s'} per turn. {Count} time{Count:plural one='' other='s'} remaining. 
   Brief: |-
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand temporarily costs <sprite=ManaSprite" name="1"> less. 
+    Up to {Level} time{Level:plural one='' other='s'} per turn.
 
 AssignTriggerSummonSe:
   Name: Assign Trigger Summon

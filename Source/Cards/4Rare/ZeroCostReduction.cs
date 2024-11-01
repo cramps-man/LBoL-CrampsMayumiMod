@@ -24,7 +24,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2, Red = 2, Any = 1 };
-            cardConfig.Keywords = Keyword.Ethereal;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.RelativeKeyword = Keyword.TempMorph;
             cardConfig.UpgradedRelativeKeyword = Keyword.TempMorph;
             return cardConfig;
@@ -36,7 +37,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return BuffAction<ZeroCostReductionSe>();
+            yield return BuffAction<ZeroCostReductionSe>(level: Value1, count: Value1);
         }
     }
 }
