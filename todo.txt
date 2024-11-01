@@ -236,7 +236,7 @@ frontline that benefits from gaining buffs
   - or passive is the charge, so you need to refresh counter if want to build up big
 new card next X frontlines add a copy to draw pile - done
   - or just add echo
-new card choose frontline and remove exile from it
+new card choose frontline and remove exile from it - done
   - remember to carry over losing exile to frozen haniwa
 new card add card to battlefield, gain block/draw - maybe no need
 new card fencer assign gain buff charges block gain? - wont do

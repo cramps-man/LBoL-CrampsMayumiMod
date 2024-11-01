@@ -615,6 +615,11 @@ HandsizeBlock:
     Gain {Block} |Block|. Gain {Value1} additional |Block| for each card in the hand. ({AdditionalBlock})
     If the current hand size is equal to the max hand size, {SelfName} costs {Mana} to use. 
 
+SturdyFrontline:
+  Name: Sturdy Frontline
+  Description: |-
+    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} and remove |Exile| from {Value1:plural one='it' other='them'}. 
+
 #OFFCOLOURS
 FrozenHaniwa:
   Name: Frozen Haniwa
@@ -623,6 +628,8 @@ FrozenHaniwa:
     |When played|: Deal {Damage} damage and apply |Cold| to all enemies. 
     |At end of turn|: Transform back into the original card. 
   DetailText: |-
+    Does not carry over keywords from the previous card. 
+
     Increases for each upgrade. 
     On Play damage: +1
     Total |Cold| activations stays at 1. 
