@@ -251,6 +251,8 @@ new toxic haniwa that turns adjecent haniwa into toxic haniwa
   - probs do poison to enemy and also apply poison to player for each toxic haniwa in hand
 new horse archer haniwa something about graze and damage
 new frontline related to assigns, like gaining assignment bonus onplay and then something else passive
+new frontline hisoutensoku haniwa, reaches 30 upgrades big boom to all enemies
+new card green, trigger assign without removing then exile
 
 fix haniwa upgrader upgrading when summoned - done
   - had a hard time fixing all cases, so just made it not do it on summon
@@ -265,3 +267,4 @@ DiscardUpgrade dont try upgrade if nothing in hand can upgrade - done
   - to fix delay of card resolving, since upgrading multiple times takes a bit
 investigate haniwa bodyguards getting to 2 cost - done
   - fixed by just setting turn cost instead of increasing/decreasing
+use AdditionalMana for frontline and assign cards

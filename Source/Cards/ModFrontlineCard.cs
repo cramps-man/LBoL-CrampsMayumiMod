@@ -24,17 +24,10 @@ namespace LBoLMod.Cards
             set
             {
                 _remainingValue = value;
-                if (_remainingValue <= 0) 
-                {
-                    base.SetTurnCost(ManaGroup.Anys(1));
-                }
-                else if (TurnCostDelta.Amount > 0)
-                {
-                    base.SetTurnCost(ManaGroup.Anys(0));
-                }
                 base.NotifyChanged();
             }
         }
+        public override ManaGroup AdditionalCost => RemainingValue <= 0 ? ManaGroup.Anys(1) : ManaGroup.Empty;
         protected virtual bool IncludeUpgradesInRemainingValue => false;
 
         protected override void OnEnterBattle(BattleController battle)
