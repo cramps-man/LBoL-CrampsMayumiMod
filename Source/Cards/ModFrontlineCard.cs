@@ -10,12 +10,12 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public abstract class ModFrontlineCard: Card
+    public abstract class ModFrontlineCard : Card
     {
         public override string Description => base.Description + UiUtils.WrapByColor(" " + nameof(Frontline), GlobalConfig.DefaultKeywordColor);
 
         private int _remainingValue = 0;
-        public int RemainingValue 
+        public int RemainingValue
         {
             get
             {
@@ -27,7 +27,15 @@ namespace LBoLMod.Cards
                 base.NotifyChanged();
             }
         }
-        public override ManaGroup AdditionalCost => RemainingValue <= 0 ? ManaGroup.Anys(1) : ManaGroup.Empty;
+        public override ManaGroup AdditionalCost
+        {
+            get
+            {
+                if (base.Battle == null)
+                    return ManaGroup.Empty;
+                return base.Battle.HandZone.Contains(this) && RemainingValue <= 0 ? ManaGroup.Anys(1) : ManaGroup.Empty;
+            }
+        }
         protected virtual bool IncludeUpgradesInRemainingValue => false;
 
         protected override void OnEnterBattle(BattleController battle)

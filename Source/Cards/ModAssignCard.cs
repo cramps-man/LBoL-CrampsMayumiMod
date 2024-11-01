@@ -7,6 +7,7 @@ using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -18,40 +19,22 @@ namespace LBoLMod.Cards
         public virtual int StartingCardCounter => 0;
         public virtual Type AssignStatusType => null;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
+        public override ManaGroup AdditionalCost
+        {
+            get
+            {
+                if (base.Battle == null)
+                    return ManaGroup.Empty;
+                if (base.Battle.HandZone.Contains(this) && base.Battle.Player.TryGetStatusEffect<AssignCostTriggerSe>(out AssignCostTriggerSe s))
+                    return ManaGroup.Anys(s.Level);
+                return ManaGroup.Empty;
+            }
+        }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
             yield return BuffAction(AssignStatusType, level: 1, count: StartingCardCounter);
-        }
-
-        protected override void OnEnterBattle(BattleController battle)
-        {
-            base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardAddedToHand);
-        }
-
-        private void OnCardAddedToHand(CardsEventArgs args)
-        {
-            SetAssignCostTriggerCost();
-        }
-
-        public override IEnumerable<BattleAction> OnDraw()
-        {
-            SetAssignCostTriggerCost();
-            return null;
-        }
-
-        public override IEnumerable<BattleAction> OnMove(CardZone srcZone, CardZone dstZone)
-        {
-            if (dstZone == CardZone.Hand)
-                SetAssignCostTriggerCost();
-            return null;
-        }
-
-        private void SetAssignCostTriggerCost()
-        {
-            if (base.Battle.Player.HasStatusEffect<AssignCostTriggerSe>())
-                base.SetTurnCost(ManaGroup.Anys(1));
         }
     }
 }

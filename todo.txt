@@ -267,4 +267,4 @@ DiscardUpgrade dont try upgrade if nothing in hand can upgrade - done
   - to fix delay of card resolving, since upgrading multiple times takes a bit
 investigate haniwa bodyguards getting to 2 cost - done
   - fixed by just setting turn cost instead of increasing/decreasing
-use AdditionalMana for frontline and assign cards
+use AdditionalCost for frontline and assign cards - done

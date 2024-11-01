@@ -4,7 +4,6 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Cards;
 
 namespace LBoLMod.StatusEffects.Abilities
 {
@@ -19,16 +18,10 @@ namespace LBoLMod.StatusEffects.Abilities
     [EntityLogic(typeof(AssignCostTriggerSeDef))]
     public sealed class AssignCostTriggerSe: StatusEffect
     {
+        public ManaGroup IncreasedCost => ManaGroup.Anys(Level);
         protected override void OnAdded(Unit unit)
         {
             base.HandleOwnerEvent(base.Battle.Player.StatusEffectAdding, this.OnStatusEffectAdding);
-            foreach (var card in Battle.HandZoneAndPlayArea)
-            {
-                if (card is ModAssignCard assignCard)
-                {
-                    assignCard.SetTurnCost(ManaGroup.Anys(1));
-                }
-            };
         }
 
         private void OnStatusEffectAdding(StatusEffectApplyEventArgs args)
