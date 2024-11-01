@@ -234,11 +234,11 @@ frontline that benefits from gaining buffs
   - onplay is an attack that charges up with each buff gained
   - passive deals dmg when gaining a buff? up to X times
   - or passive is the charge, so you need to refresh counter if want to build up big
-new card next X frontlines add a copy to draw pile
+new card next X frontlines add a copy to draw pile - done
   - or just add echo
 new card choose frontline and remove exile from it
   - remember to carry over losing exile to frozen haniwa
-new card add card to battlefield, gain block/draw
+new card add card to battlefield, gain block/draw - maybe no need
 new card fencer assign gain buff charges block gain? - wont do
   - gaining buffs gains extra triggers, every 4-5 buffs?
   - card gives 4(5) block per trigger
@@ -268,3 +268,4 @@ DiscardUpgrade dont try upgrade if nothing in hand can upgrade - done
 investigate haniwa bodyguards getting to 2 cost - done
   - fixed by just setting turn cost instead of increasing/decreasing
 use AdditionalCost for frontline and assign cards - done
+rebalance Handsize Block

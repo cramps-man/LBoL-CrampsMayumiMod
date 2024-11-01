@@ -495,6 +495,12 @@ AutoCreateReserves:
     Add a |Create Haniwa| to the hand. 
     At the start of {PlayerName}'s turn, if there are no |Create Haniwa| in the hand, add a |Create Haniwa| to the hand. 
 
+FrontlineCopy:
+  Name: Frontline Copy
+  Description: |-
+    Choose {Value2} |Frontline| card{Value2:plural one='' other='s'} and add 1 copy to the draw pile. 
+    Draw {Value1} card{Value1:plural one='' other='s'}. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
