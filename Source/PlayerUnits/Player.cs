@@ -12,7 +12,6 @@ using LBoLMod.Cards;
 using LBoLMod.Exhibits;
 using LBoLMod.UltimateSkills;
 using LBoLMod.Utils;
-using System;
 using System.Collections.Generic;
 
 
@@ -110,9 +109,6 @@ namespace LBoLMod.PlayerUnits
             var assign = HasExhibit<AssignExhibit>();
             var frontline = HasExhibit<FrontlineExhibit>();
             var hasHaniwa = HaniwaUtils.HasAnyHaniwa(this);
-            Console.WriteLine("has assign exhibit " + assign);
-            Console.WriteLine("has frontline exhibit " + frontline);
-            Console.WriteLine("has any haniwa " + hasHaniwa);
             if (assign || frontline || hasHaniwa)
                 yield break;
             if (TurnCounter != 1)
