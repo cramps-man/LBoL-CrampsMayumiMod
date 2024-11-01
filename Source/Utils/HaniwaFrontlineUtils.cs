@@ -32,14 +32,16 @@ namespace LBoLMod.Utils
         {
             typeof(OptionHaniwaUpgrader),
             typeof(OptionHaniwaExploiter),
-            typeof(OptionHaniwaSpy)
+            typeof(OptionHaniwaSpy),
+            typeof(OptionHaniwaMonk)
         };
 
         public static readonly List<Type> UncommonSummonTypes = new List<Type>
         {
             typeof(HaniwaUpgrader),
             typeof(HaniwaExploiter),
-            typeof(HaniwaSpy)
+            typeof(HaniwaSpy),
+            typeof(HaniwaMonk)
         };
 
         public static List<Type> AllOptionTypes => CommonOptionTypes.Concat(UncommonOptionTypes).ToList();

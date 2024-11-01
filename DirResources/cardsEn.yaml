@@ -326,6 +326,16 @@ HaniwaExploiter:
     On Play damage: +2
     Follow up instances stays at 3 after first upgrade. 
 
+HaniwaMonk:
+  Name: Haniwa Monk
+  Description: |-
+    |While in hand|: When {PlayerName} receives a buff, charge up damage by {Value2}. Up to {Value1} time{Value1:plural one='' other='s'}. 
+    |When played|: Deal {Damage} damage. Total charged damage ({ChargedDamage}). 
+  DetailText: |-
+    Increases for each upgrade. 
+    On Play damage: +1
+    Charge damage +1 per 4 upgrade. 
+
 UpgradedSummon:
   Name: Upgraded Summon
   Description: |-
@@ -365,6 +375,16 @@ OptionHaniwaExploiter:
   NonbattleDescription: |-
     Sacrifice {SelectRequireArcher} |Archer|.
     Add a |Haniwa Exploiter| to the hand. 
+
+OptionHaniwaMonk:
+  Name: Summon Haniwa Monk
+  Description: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Monk| to the hand. 
+    {AvailableFencer} available |Fencer|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Monk| to the hand. 
 
 AssignSummonFrontline:
   Name: Assign Summon Frontline

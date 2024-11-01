@@ -243,7 +243,7 @@ new card if at max hand size, dmg or block? or it costs 0 - done
   - gain block based on hand size, ohnyo its undine, if max handsize cost 0 to play
 new card assign buffs gain card counter instead of decreasing until end of turn - done
   - at end of turn gain block = to total card counters
-frontline that benefits from gaining buffs
+frontline that benefits from gaining buffs - done
   - onplay is an attack that charges up with each buff gained
   - passive deals dmg when gaining a buff? up to X times
   - or passive is the charge, so you need to refresh counter if want to build up big
