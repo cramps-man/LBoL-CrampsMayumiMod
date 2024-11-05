@@ -583,6 +583,7 @@ HaniwaCommander:
   Name: Haniwa Commander
   Description: |-
     |While in hand|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions. Up to {Value1} time{Value1:plural one='' other='s'}. 
+    If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. 
   DetailText: |-
     Can not choose another |Haniwa Commander|. 

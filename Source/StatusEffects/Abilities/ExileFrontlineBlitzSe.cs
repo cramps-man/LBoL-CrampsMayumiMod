@@ -8,6 +8,7 @@ using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Cards;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Abilities
@@ -44,7 +45,7 @@ namespace LBoLMod.StatusEffects.Abilities
             {
                 base.NotifyActivating();
                 frontlineCard.NotifyActivating();
-                foreach (var action in frontlineCard.GetActions(new UnitSelector(base.Battle.RandomAliveEnemy), new ManaGroup(), null, new List<DamageAction>(), false))
+                foreach (var action in frontlineCard.GetActions(HaniwaFrontlineUtils.GetTargetForOnPlayAction(base.Battle), new ManaGroup(), null, new List<DamageAction>(), false))
                 {
                     if (base.Battle.BattleShouldEnd)
                         yield break;
