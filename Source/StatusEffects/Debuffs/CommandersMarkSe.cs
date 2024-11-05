@@ -1,4 +1,5 @@
-﻿using LBoL.ConfigData;
+﻿using LBoL.Base;
+using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
@@ -19,6 +20,7 @@ namespace LBoLMod.StatusEffects.Abilities
         public override StatusEffectConfig MakeConfig()
         {
             var config = base.MakeConfig();
+            config.Type = StatusEffectType.Negative;
             config.HasLevel = false;
             return config;
         }
