@@ -271,3 +271,41 @@ use AdditionalCost for frontline and assign cards - done
 rebalance Handsize Block - done
   - very small change for now, need testing rly
 add a limit to ZeroCostReduction per turn instead of having ethereal - done
+
+commander moving commander to hand kinda be broken? yeah the passive probs needs a rework of some sort
+  - in hand, end of turn X random frontlines do their onplay action to random enemies
+  - on play, debuff commanders orders or some shit, makes random onplays target that enemy
+  - also deal a bit of dmg probs?
+and copying commander without exile? also seems broken
+  - only allow copying common/uncommon
+  - override base method for cloning so frontline stuff carries over
+refresh frontlines when discarded? just because commanders passive sucks when it pulls 0 usage frontlines - no need
+  - commander being reworked anyway so probs no need
+tenshi consume power is a debuff which triggers exploiter lol - tis fine
+  - dance of empty masks doesnt check for source of debuff either, so ill probs just leave it
+ultra frontline make an x cost? blah upgrades per mana spent
+  - may need to add a mana card that stores mana like radiance or something
+  - though cavalry supplies is sorta like a delayed mana
+upgraded summon maybe 5 upgraded?
+handsize block probs lower by 1 mana as well?
+  - or do something else when max handsize, like a different bonus
+  - probs can rework it into increasing block and cost with each card, every 2(3) or so
+prep frost arrow lower numbers a bit
+haniwa attacker lower onplay upgrade to +1? 
+  - since now theres a reason to use it over the passive, passive can run out
+  - and also buff the base on play to like 9-10
+haniwa monk reset charges after use
+  - may need to buff the charge rate but need to test
+  - 1 charge rate is probs low anyways, just nerf the per upgrade to like 5 or 6
+fencer prep counter give base reflect instead of base block/barrier
+
+new card based on cards created?
+frontline copy also remove retain or something?
+look into making choose short assign base class the assign base class
+  - and try adding keyword for assign
+  - check how game checks dynamically if there's any keyword to cater for new line
+haniwa upgrader onPlay also scaling with number of upgraded cards in hand
+  - lower block scaling to 1 and add per 5 upgrade or so, +1 to upgraded cards in hand scaling
+sturdy frontline, also remove replenish?
+zero cost reduction slightly buff
+  - 3 levels unupgraded and then 4 cost upgraded
