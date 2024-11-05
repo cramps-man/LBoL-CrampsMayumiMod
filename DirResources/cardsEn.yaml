@@ -573,11 +573,7 @@ MassSummon:
 UltraFrontline:
   Name: Ultra Frontline
   Description: |-
-    Choose up to |e:10| |Frontline| cards in the hand and |Exile| them. 
-    Choose |e:1| |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards * {Value1}, and their total upgrades. 
-  UpgradedDescription: |-
-    Choose up to |e:10| |Frontline| cards in the hand, draw and discard piles and |Exile| them. 
-    Choose |e:1| |Frontline| card to add to the hand. It has upgrades equal to the number of |Exiled| cards * {Value1}, and their total upgrades. 
+    Choose |e:1| |Frontline| card to add to the hand. For each mana spent, it gains {Value1} upgrade{Value1:plural one='' other='s'}. 
 
 HaniwaCommander:
   Name: Haniwa Commander

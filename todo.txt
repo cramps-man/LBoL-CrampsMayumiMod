@@ -285,7 +285,7 @@ refresh frontlines when discarded? just because commanders passive sucks when it
   - commander being reworked anyway so probs no need
 tenshi consume power is a debuff which triggers exploiter lol - tis fine
   - dance of empty masks doesnt check for source of debuff either, so ill probs just leave it
-ultra frontline make an x cost? blah upgrades per mana spent
+ultra frontline make an x cost? blah upgrades per mana spent - done
   - may need to add a mana card that stores mana like radiance or something
   - though cavalry supplies is sorta like a delayed mana
 upgraded summon maybe 5 upgraded?
