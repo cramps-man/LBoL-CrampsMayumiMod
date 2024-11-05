@@ -518,7 +518,7 @@ AutoCreateReserves:
 FrontlineCopy:
   Name: Frontline Copy
   Description: |-
-    Choose {Value2} |Frontline| card{Value2:plural one='' other='s'} and add 1 copy to the draw pile. 
+    Choose {Value2} Common or Uncommon |Frontline| card{Value2:plural one='' other='s'} and add 1 copy to the draw pile. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 #RARES

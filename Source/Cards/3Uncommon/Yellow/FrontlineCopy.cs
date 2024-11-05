@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList();
+            List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard && (c.Config.Rarity == Rarity.Common || c.Config.Rarity == Rarity.Uncommon)).ToList();
             return new SelectHandInteraction(0, Value2, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
@@ -52,7 +52,14 @@ namespace LBoLMod.Cards
             List<Card> copiedCards = new List<Card>();
             foreach (var card in copyInteraction.SelectedCards)
             {
-                copiedCards.Add(card.CloneBattleCard());
+                if (card is FrozenHaniwa frozenCard)
+                {
+                    var cardClone = (FrozenHaniwa)card.CloneBattleCard();
+                    cardClone.OriginalCard = frozenCard.OriginalCard.CloneBattleCard();
+                    copiedCards.Add(cardClone);
+                }
+                else
+                    copiedCards.Add(card.CloneBattleCard());
             }
             yield return new AddCardsToDrawZoneAction(copiedCards, DrawZoneTarget.Random);
             yield return new DrawManyCardAction(Value1);

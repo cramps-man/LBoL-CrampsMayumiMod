@@ -277,9 +277,10 @@ commander moving commander to hand kinda be broken? yeah the passive probs needs
   - on play, debuff commanders orders or some shit, makes random onplays target that enemy
   - also deal a bit of dmg probs?
   - and update ExileFrontlineBlitz to target enemies with Commanders Mark
-and copying commander without exile? also seems broken
+and copying commander without exile? also seems broken - done
   - only allow copying common/uncommon
   - override base method for cloning so frontline stuff carries over
+  - cant override it, so made monk use DeltaInt and hardcoded frozen haniwa cloning original card
 refresh frontlines when discarded? just because commanders passive sucks when it pulls 0 usage frontlines - no need
   - commander being reworked anyway so probs no need
 tenshi consume power is a debuff which triggers exploiter lol - tis fine

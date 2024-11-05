@@ -43,7 +43,7 @@ namespace LBoLMod.Cards
     {
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedDamage;
         public override int AdditionalValue2 => Math.Truncate(base.UpgradeCounter.GetValueOrDefault() / 4.0).RoundToInt();
-        public int ChargedDamage { get; set; }
+        public int ChargedDamage => DeltaInt;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -62,7 +62,7 @@ namespace LBoLMod.Cards
                 return;
 
             base.NotifyActivating();
-            ChargedDamage += Value2;
+            DeltaInt += Value2;
             RemainingValue -= 1;
         }
 
