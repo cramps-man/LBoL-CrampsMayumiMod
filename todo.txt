@@ -272,10 +272,11 @@ rebalance Handsize Block - done
   - very small change for now, need testing rly
 add a limit to ZeroCostReduction per turn instead of having ethereal - done
 
-commander moving commander to hand kinda be broken? yeah the passive probs needs a rework of some sort
+commander moving commander to hand kinda be broken? yeah the passive probs needs a rework of some sort - done
   - in hand, end of turn X random frontlines do their onplay action to random enemies
   - on play, debuff commanders orders or some shit, makes random onplays target that enemy
   - also deal a bit of dmg probs?
+  - and update ExileFrontlineBlitz to target enemies with Commanders Mark
 and copying commander without exile? also seems broken
   - only allow copying common/uncommon
   - override base method for cloning so frontline stuff carries over

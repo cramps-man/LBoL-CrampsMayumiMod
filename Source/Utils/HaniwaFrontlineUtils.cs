@@ -4,6 +4,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLMod.BattleActions;
 using LBoLMod.Cards;
+using LBoLMod.StatusEffects.Abilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,6 +105,16 @@ namespace LBoLMod.Utils
             }
             yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, totalFencerCost, totalArcherCost, totalCavalryCost);
             yield return new AddCardsToHandAction(cardsToSpawn);
+        }
+
+        public static UnitSelector GetTargetForOnPlayAction(BattleController battle)
+        {
+            var markedEnemy = battle.AllAliveEnemies.Where(e => e.HasStatusEffect<CommandersMarkSe>()).FirstOrDefault();
+            if (markedEnemy != null)
+            {
+                return new UnitSelector(markedEnemy);
+            }
+            return new UnitSelector(battle.RandomAliveEnemy);
         }
     }
 }

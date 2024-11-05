@@ -273,3 +273,10 @@ AssignReverseTickdownSe:
   Brief: |-
     Until end of {PlayerName}'s turn, |Assign| buffs increase their card counter instead of decreasing. 
     At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assign| buffs. 
+
+CommandersMarkSe:
+  Name: Commander's Mark
+  Description: |-
+    Random targeting of |Frontline| actions will instead target this enemy. 
+  Brief: |-
+    Random targeting of |Frontline| actions will instead target this enemy. 

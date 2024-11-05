@@ -188,7 +188,7 @@ HaniwaBlitz:
     Deal {Damage} damage. 
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions then discard them. 
   DetailText: |-
-    Can not choose a |Haniwa Commander|. Bad things happen. 
+    Can not choose a |Haniwa Commander|. 
 
 AssignHaniwaCreate:
   Name: Assign Haniwa Create
@@ -451,7 +451,7 @@ AshesToClay:
     Move the selected cards from |Exile| to the top of the draw pile. 
     Draw {Value2} card{Value2:plural one='' other='s'}. 
   DetailText: |-
-    Can not choose a |Haniwa Commander|. Bad things happen. 
+    Can not choose a |Haniwa Commander|. 
 
 ChooseShortAssign:
   Name: Choose Short Assign
@@ -582,14 +582,14 @@ UltraFrontline:
 HaniwaCommander:
   Name: Haniwa Commander
   Description: |-
-    |While in hand|: When a card is used, move |e:1| random |Frontline| card from the draw or discard pile to the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Choose up to {Value2} |Frontline| cards in the hand and execute their |On Play| actions. If upgraded+10 or more, allow choosing from draw/discard piles. 
+    |While in hand|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions. Up to {Value1} time{Value1:plural one='' other='s'}. 
+    |When played|: Deal {Damage} damage and apply |Commander's Mark|. 
   DetailText: |-
-    Can not choose another |Haniwa Commander|. Bad things happen. 
+    Can not choose another |Haniwa Commander|. 
     
     Increases for each upgrade. 
-    Total On Play cards to choose: +1
-    Total Frontline moves stays at 5 after first upgrade. 
+    Damage: +2
+    Number of Frontline |On Play| executions stays at 2 after first upgrade. 
 
 OptionHaniwaCommander:
   Name: Summon Haniwa Commander
