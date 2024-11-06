@@ -114,7 +114,7 @@ HaniwaAttacker:
   DetailText: |-
     Increases for each upgrade. 
     End of turn damage: +1
-    On play damage: +2
+    On play damage: +1
     Number of attacks stays at 3 after first upgrade. 
 
 HaniwaSharpshooter:

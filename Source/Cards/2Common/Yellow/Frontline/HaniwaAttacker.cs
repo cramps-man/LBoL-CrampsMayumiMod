@@ -25,7 +25,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 8;
+            cardConfig.Damage = 9;
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 6;
@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaAttacker : ModFrontlineCard
     {
         public DamageInfo EndOfTurnDmg => DamageInfo.Attack(Value2);
-        public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
+        public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
