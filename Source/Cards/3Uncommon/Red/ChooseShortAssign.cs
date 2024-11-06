@@ -39,8 +39,9 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(ChooseShortAssignDef))]
-    public sealed class ChooseShortAssign : Card
+    public sealed class ChooseShortAssign : ModAssignCard
     {
+        public override bool CanUse => true;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             List<Card> cards = HaniwaAssignUtils.GetAssignCardTypes(base.Battle.Player).SampleMany(3, base.BattleRng).Select(Library.CreateCard).ToList();

@@ -304,7 +304,7 @@ fencer prep counter give base reflect instead of base block/barrier - done
 
 new card based on cards created?
 frontline copy also remove retain or something?
-look into making choose short assign base class the assign base class
+look into making choose short assign base class the assign base class - done
   - and try adding keyword for assign
   - check how game checks dynamically if there's any keyword to cater for new line
 haniwa upgrader onPlay also scaling with number of upgraded cards in hand

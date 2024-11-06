@@ -28,7 +28,7 @@ namespace LBoLMod.StatusEffects.Abilities
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
-            if (args.Card is ModAssignCard || args.Card is ChooseShortAssign)
+            if (args.Card is ModAssignCard)
                 yield return new CastBlockShieldAction(base.Battle.Player, Level, 0);
         }
     }

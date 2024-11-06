@@ -2,8 +2,10 @@
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
+using LBoL.Core.Helpers;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Abilities;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace LBoLMod.Cards
 {
     public abstract class ModAssignCard: Card
     {
+        public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(nameof(Assign), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + nameof(Assign), GlobalConfig.DefaultKeywordColor);
         public virtual int FencerAssigned => 0;
         public virtual int ArcherAssigned => 0;
         public virtual int CavalryAssigned => 0;
