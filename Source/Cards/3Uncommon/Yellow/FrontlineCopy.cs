@@ -55,11 +55,16 @@ namespace LBoLMod.Cards
                 if (card is FrozenHaniwa frozenCard)
                 {
                     var cardClone = (FrozenHaniwa)card.CloneBattleCard();
+                    cardClone.IsRetain = false;
                     cardClone.OriginalCard = frozenCard.OriginalCard.CloneBattleCard();
                     copiedCards.Add(cardClone);
                 }
                 else
-                    copiedCards.Add(card.CloneBattleCard());
+                {
+                    var cardClone = card.CloneBattleCard();
+                    cardClone.IsRetain = false;
+                    copiedCards.Add(cardClone);
+                }
             }
             yield return new AddCardsToDrawZoneAction(copiedCards, DrawZoneTarget.Random);
             yield return new DrawManyCardAction(Value1);

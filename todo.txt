@@ -303,7 +303,7 @@ haniwa monk reset charges after use - done
 fencer prep counter give base reflect instead of base block/barrier - done
 
 new card based on cards created?
-frontline copy also remove retain or something?
+frontline copy also remove retain or something? - done
 look into making choose short assign base class the assign base class - done
   - and try adding keyword for assign
   - check how game checks dynamically if there's any keyword to cater for new line
@@ -314,4 +314,6 @@ zero cost reduction slightly buff
   - 3 levels unupgraded and then 4 cost upgraded
 assignTriggerUpgrade upgrade 2 random cards in hand on play
 haniwaSupport maybe use additionalMana for easy displaying of extra mana gain
+  - also nerf mana scaling to 7/8 upgrades
 fix various frontlines cards doing unnecessary math
+double check cards that choose from hand and update descriptions
