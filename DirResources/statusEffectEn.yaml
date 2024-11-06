@@ -279,5 +279,7 @@ CommandersMarkSe:
   Name: Commander's Mark
   Description: |-
     Random targeting of |Frontline| actions will instead target this enemy. 
+    Only 1 mark can be active at one time. 
   Brief: |-
     Random targeting of |Frontline| actions will instead target this enemy. 
+    Only 1 mark can be active at one time. 
