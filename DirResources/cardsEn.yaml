@@ -307,13 +307,14 @@ HaniwaUpgrader:
   Name: Haniwa Upgrader
   Description: |-
     |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Gain {Block} |Block|. 
+    |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each upgraded card in the hand ({NumUpgradedCardsBlock}). 
   DetailText: |-
     Can not target itself or other upgraders. 
 
     Increases for each upgrade. 
-    Block: +2
-    Number of upgrades stays at 2 after first upgrade. 
+    Block: +1
+    Upgraded card block: +1 per 5 upgrade
+    Number of upgrades stays at 3 after first upgrade. 
 
 HaniwaExploiter:
   Name: Haniwa Exploiter

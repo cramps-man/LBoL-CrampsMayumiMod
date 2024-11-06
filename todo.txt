@@ -307,7 +307,7 @@ frontline copy also remove retain or something?
 look into making choose short assign base class the assign base class - done
   - and try adding keyword for assign
   - check how game checks dynamically if there's any keyword to cater for new line
-haniwa upgrader onPlay also scaling with number of upgraded cards in hand
+haniwa upgrader onPlay also scaling with number of upgraded cards in hand - done
   - lower block scaling to 1 and add per 5 upgrade or so, +1 to upgraded cards in hand scaling
 sturdy frontline, also remove replenish?
 zero cost reduction slightly buff

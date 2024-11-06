@@ -30,7 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Block = 10;
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
-            cardConfig.Value2 = 2;
+            cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -42,7 +42,18 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
-        public override int AdditionalBlock => Value2 * base.UpgradeCounter.GetValueOrDefault();
+        public int NumUpgradedCards
+        {
+            get
+            {
+                if (base.Battle == null)
+                    return 0;
+                return base.Battle.HandZoneAndPlayArea.Where(c => c.IsUpgraded).Count();
+            }
+        }
+        public int NumUpgradedCardsBlock => NumUpgradedCards * Value2;
+        public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault() + NumUpgradedCardsBlock;
+        public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
