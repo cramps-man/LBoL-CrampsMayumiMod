@@ -1,5 +1,4 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -8,7 +7,6 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards

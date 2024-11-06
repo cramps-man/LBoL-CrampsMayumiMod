@@ -1,5 +1,4 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -9,7 +8,6 @@ using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -44,7 +42,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
-        public override int AdditionalValue2 => Math.Truncate(base.UpgradeCounter.GetValueOrDefault() / 3.0).RoundToInt();
+        public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 3;
         private bool accuracyModified = false;
         protected override void OnEnterBattle(BattleController battle)
         {
