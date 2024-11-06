@@ -312,7 +312,7 @@ haniwa upgrader onPlay also scaling with number of upgraded cards in hand - done
 sturdy frontline, also remove replenish? - done
 zero cost reduction slightly buff - done
   - 3 levels unupgraded and then 4 cost upgraded
-assignTriggerUpgrade upgrade 2 random cards in hand on play
+assignTriggerUpgrade upgrade 2 random cards in hand on play - done
 haniwaSupport maybe use additionalMana for easy displaying of extra mana gain
   - also nerf mana scaling to 7/8 upgrades
 fix various frontlines cards doing unnecessary math

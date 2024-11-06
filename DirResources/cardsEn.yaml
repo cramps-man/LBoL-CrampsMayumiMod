@@ -491,6 +491,7 @@ ArcherPrepDebuff:
 AssignTriggerUpgrade:
   Name: Assign Trigger Upgrade
   Description: |-
+    Upgrade {Value2} random card{Value2:plural one='' other='s'} in the hand. 
     Whenever an |Assign| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
 ExileFrontlineExtraTrigger:
