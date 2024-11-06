@@ -213,11 +213,11 @@ AssignCavalryScout:
 AssignFencerPrepCounter:
   Name: Fencer Prep Counter
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain {BlockBarrierText} then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardValue2} |Reflection| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
     {CardFencerAssigned} |Fencer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
-    |Reflection| gain can only be triggered once. 
+    |Reflection| gain from |Block|/|Barrier| can only be triggered once. 
   Brief: |-
-    After X cards are played, gain {CardBlock} |Block| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
+    After X cards are played, gain |Reflection| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
 
 AssignArcherPrepDebuff:
   Name: Archer Prep Debuff

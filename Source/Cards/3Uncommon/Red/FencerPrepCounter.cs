@@ -23,9 +23,9 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Block = 8;
-            cardConfig.Shield = 13;
             cardConfig.Value1 = 5;
+            cardConfig.Value2 = 8;
+            cardConfig.UpgradedValue2 = 13;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Reflect) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Reflect) };
             return cardConfig;

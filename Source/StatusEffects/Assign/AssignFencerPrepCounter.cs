@@ -1,6 +1,4 @@
-﻿using LBoL.Core;
-using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
+﻿using LBoL.Core.Battle;
 using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -19,14 +17,10 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignFencerPrepCounterDef))]
     public sealed class AssignFencerPrepCounter : ModAssignStatusEffect
     {
-        public string BlockBarrierText => StringDecorator.Decorate(AssignSourceCard.IsUpgraded ? "|e:" + CardShield + "| |Barrier|" : "|e:" + CardBlock + "| |Block|");
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             var player = base.Battle.Player;
-            if (AssignSourceCard.IsUpgraded)
-                yield return new CastBlockShieldAction(player, player, AssignSourceCard.Shield);
-            else
-                yield return new CastBlockShieldAction(player, player, AssignSourceCard.Block);
+            yield return BuffAction<Reflect>(level: CardValue2);
         }
 
         protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)

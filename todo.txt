@@ -300,7 +300,7 @@ haniwa attacker lower onplay upgrade to +1? - done
 haniwa monk reset charges after use - done
   - may need to buff the charge rate but need to test
   - 1 charge rate is probs low anyways, just nerf the per upgrade to like 5 or 6
-fencer prep counter give base reflect instead of base block/barrier
+fencer prep counter give base reflect instead of base block/barrier - done
 
 new card based on cards created?
 frontline copy also remove retain or something?
