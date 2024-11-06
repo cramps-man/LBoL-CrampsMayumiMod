@@ -12,7 +12,7 @@ namespace LBoLMod.Cards
 {
     public abstract class ModFrontlineCard : Card
     {
-        public override string Description => base.Description + UiUtils.WrapByColor(" " + nameof(Frontline), GlobalConfig.DefaultKeywordColor);
+        public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(nameof(Frontline), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + nameof(Frontline), GlobalConfig.DefaultKeywordColor);
 
         private int _remainingValue = 0;
         public int RemainingValue
