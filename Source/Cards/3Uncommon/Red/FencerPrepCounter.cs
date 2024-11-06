@@ -23,6 +23,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
+            cardConfig.Block = 0;
             cardConfig.Value1 = 5;
             cardConfig.Value2 = 8;
             cardConfig.UpgradedValue2 = 13;
