@@ -651,6 +651,7 @@ FrozenHaniwa:
 
     Increases for each upgrade. 
     On Play damage: +1
+    Cold activations stay at 2 after first upgrade. 
 
 FreezeFrontline:
   Name: Freeze Frontline

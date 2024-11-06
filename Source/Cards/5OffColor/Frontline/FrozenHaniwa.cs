@@ -30,6 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
             cardConfig.Damage = 16;
             cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
