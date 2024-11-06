@@ -293,7 +293,7 @@ upgraded summon maybe 5 upgraded? - done
 handsize block probs lower by 1 mana as well? - done
   - or do something else when max handsize, like a different bonus
   - probs can rework it into increasing block and cost with each card, every 2(3) or so
-prep frost arrow lower numbers a bit
+prep frost arrow lower numbers a bit - done
 haniwa attacker lower onplay upgrade to +1? 
   - since now theres a reason to use it over the passive, passive can run out
   - and also buff the base on play to like 9-10

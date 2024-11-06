@@ -24,10 +24,10 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.Damage = 15;
-            cardConfig.UpgradedDamage = 20;
-            cardConfig.Block = 8;
-            cardConfig.UpgradedBlock = 12;
+            cardConfig.Damage = 6;
+            cardConfig.UpgradedDamage = 9;
+            cardConfig.Block = 6;
+            cardConfig.UpgradedBlock = 9;
             cardConfig.Value2 = 6;
             cardConfig.UpgradedValue2 = 4;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Cold) };
