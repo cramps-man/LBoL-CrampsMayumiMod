@@ -54,6 +54,8 @@ namespace LBoLMod.Cards
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
+            if (base.Zone != CardZone.Draw && base.Zone != CardZone.Hand && base.Zone != CardZone.Discard)
+                yield break;
             if (RemainingValue <= 0)
                 yield break;
             var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
