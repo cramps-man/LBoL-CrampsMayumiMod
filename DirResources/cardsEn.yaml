@@ -322,7 +322,7 @@ HaniwaExploiter:
   Name: Haniwa Exploiter
   Description: |-
     |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Deal {Value2} damage. Deal {DebuffDmg} additional damage for each debuff on the target. 
+    |When played|: Deal {OnPlayDmg} damage. Deal {DebuffDmg} additional damage for each debuff on the target. 
   DetailText: |-
     Increases for each upgrade. 
     Follow up damage: +1
