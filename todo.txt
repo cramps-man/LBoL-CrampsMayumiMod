@@ -288,7 +288,8 @@ tenshi consume power is a debuff which triggers exploiter lol - tis fine
 ultra frontline make an x cost? blah upgrades per mana spent - done
   - may need to add a mana card that stores mana like radiance or something
   - though cavalry supplies is sorta like a delayed mana
-upgraded summon maybe 5 upgraded?
+upgraded summon maybe 5 upgraded? - done
+  - and maybe choose 2 on upgrade but dont lower cost
 handsize block probs lower by 1 mana as well?
   - or do something else when max handsize, like a different bonus
   - probs can rework it into increasing block and cost with each card, every 2(3) or so
@@ -311,3 +312,4 @@ haniwa upgrader onPlay also scaling with number of upgraded cards in hand
 sturdy frontline, also remove replenish?
 zero cost reduction slightly buff
   - 3 levels unupgraded and then 4 cost upgraded
+assignTriggerUpgrade upgrade 2 random cards in hand on play
