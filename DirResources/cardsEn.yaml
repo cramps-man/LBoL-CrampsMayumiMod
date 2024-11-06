@@ -88,10 +88,10 @@ HaniwaSupport:
   Name: Haniwa Support
   Description: |-
     |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Gain {Mana}. 
+    |When played|: Gain {TotalMana}. 
   DetailText: |-
     Increases for each upgrade. 
-    1 extra yellow mana per 5 upgrade. 
+    1 extra yellow mana per 8 upgrade. 
     Total draws stays at 2 after first upgrade. 
 
 FencerBuildBarricade:

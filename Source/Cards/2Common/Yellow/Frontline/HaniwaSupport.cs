@@ -41,6 +41,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSupportDef))]
     public sealed class HaniwaSupport : ModFrontlineCard
     {
+        public ManaGroup TotalMana => Mana + ManaGroup.Whites(base.UpgradeCounter.GetValueOrDefault() / 8);
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -67,8 +68,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            int additionalMana = Math.Truncate(base.UpgradeCounter.GetValueOrDefault() / 5.0).RoundToInt();
-            yield return new GainManaAction(Mana * (additionalMana + 1));
+            yield return new GainManaAction(TotalMana);
         }
     }
 }
