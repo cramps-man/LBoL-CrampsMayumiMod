@@ -634,7 +634,7 @@ HandsizeBlock:
 SturdyFrontline:
   Name: Sturdy Frontline
   Description: |-
-    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} and remove |Exile| from {Value1:plural one='it' other='them'}. 
+    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and remove both |Exile| and |Replenish|. 
 
 #OFFCOLOURS
 FrozenHaniwa:

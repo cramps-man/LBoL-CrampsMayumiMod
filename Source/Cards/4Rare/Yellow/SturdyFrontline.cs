@@ -52,6 +52,7 @@ namespace LBoLMod.Cards
             foreach (var card in removeExileInteraction.SelectedCards)
             {
                 card.IsExile = false;
+                card.IsReplenish = false;
             }
         }
     }
