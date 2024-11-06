@@ -22,12 +22,12 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { White = 1, Red = 1, Any = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 3, Hybrid = 1, HybridColor = 2 };
+            cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.Block = 0;
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 4;
-            cardConfig.Mana = new ManaGroup() { Any = 0 };
+            cardConfig.Value1 = 4;
+            cardConfig.Value2 = 2;
+            cardConfig.UpgradedValue2 = 3;
+            cardConfig.Mana = new ManaGroup() { Any = 1 };
             cardConfig.UpgradedKeywords = Keyword.Retain;
             return cardConfig;
         }
@@ -62,7 +62,7 @@ namespace LBoLMod.Cards
             {
                 if (base.Battle == null)
                     return ManaGroup.Empty;
-                return CurrentHandsize == base.Battle.MaxHand ? ManaGroup.Empty - base.BaseCost : Mana;
+                return ManaGroup.Anys(CurrentHandsize / Value2);
             }
         }
 

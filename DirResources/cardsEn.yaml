@@ -631,7 +631,7 @@ HandsizeBlock:
   Name: Handsize Block
   Description: |-
     Gain {Block} |Block|. Gain {Value1} additional |Block| for each card in the hand. ({AdditionalBlock})
-    If the current hand size is equal to the max hand size, {SelfName} costs {Mana} to use. 
+    For every {Value2} card{Value2:plural one='' other='s'} in the hand, {SelfName} gains {Mana} cost. 
 
 SturdyFrontline:
   Name: Sturdy Frontline
