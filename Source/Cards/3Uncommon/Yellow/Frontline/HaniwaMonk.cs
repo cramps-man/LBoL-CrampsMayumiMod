@@ -1,5 +1,4 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -7,7 +6,6 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -29,7 +27,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 12;
             cardConfig.Value1 = 5;
-            cardConfig.Value2 = 1;
+            cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -42,7 +40,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaMonk : ModFrontlineCard
     {
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedDamage;
-        public override int AdditionalValue2 => Math.Truncate(base.UpgradeCounter.GetValueOrDefault() / 4.0).RoundToInt();
+        public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;
         public int ChargedDamage => DeltaInt;
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -69,6 +67,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
+            DeltaInt = 0;
         }
     }
 }
