@@ -24,7 +24,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2, Red = 2, Any = 1 };
-            cardConfig.Value1 = 2;
+            cardConfig.UpgradedCost = new ManaGroup() { Hybrid = 2, HybridColor = 2, Any = 2 };
+            cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
             cardConfig.RelativeKeyword = Keyword.TempMorph;
             cardConfig.UpgradedRelativeKeyword = Keyword.TempMorph;
