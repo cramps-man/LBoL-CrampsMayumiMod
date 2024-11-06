@@ -5,8 +5,8 @@
  - spell cards have no icon
  - most card and status effect names are placeholder
 
-In spite of this, the mod is fully playable with 59 cards not including basics/tokens (few cards still missing such as green off-colors)  
-Current version beta 0.1.1
+In spite of this, the mod is fully playable with 65 cards not including basics/tokens
+Current version beta 0.2.0
 
 ## Char overview
 Mayumi's playstyle involves managing and creating multiple things at once. Whether you choose to command Frontline units (represented as cards) or Assign tasks (represented as buffs), you will need to manage your resources carefully.  
@@ -20,8 +20,8 @@ There are various ways to affect Assign buffs such as giving them extra triggers
 A playstyle that can play lots of cards and have various effects going off, but you will need to manage your Assign buffs and their current card counts to ensure you make optimal plays to be able to continue the turn. 
 
 ### Red side - Frontline
-Frontline cards are retainable cards that have passive effects while in the hand but require Haniwa resource to create. They can also be played for 0 cost and have replenish so they won't waste any card draw, but you will need to be careful of handclog.  
-There are currently 7 different types of Common/Uncommon Frontline cards available, each with their own abilities and Haniwa requirements.  
+Frontline cards are retainable cards that have passive effects while in the hand but require Haniwa resource to create. They can also be played for 0 for a separate effect. 
+There are currently 8 different types of Common/Uncommon Frontline cards available, each with their own abilities and Haniwa requirements.  
 They are upgradable any number of times, so you can choose to create more powerful cards or create a mass amount.  
 There are also ways to activate their effects with other cards, so the effects will depend on which Frontline cards you choose.  
 A playstyle that is versatile and can have lots of passive effects going on, but handclog and drawing too many cards will be a thing to manage. 
