@@ -28,7 +28,12 @@ namespace LBoLMod.StatusEffects.Assign
     {
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new ApplyStatusEffectAction<Watchtower>(Owner, CardValue1);
+            yield break;
+        }
+
+        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        {
+            yield return new ApplyStatusEffectAction<Watchtower>(Owner, CardValue1 + (Level - 1) * (CardValue1 / 2));
         }
     }
 }

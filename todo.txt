@@ -317,5 +317,5 @@ haniwaSupport maybe use additionalMana for easy displaying of extra mana gain - 
   - also nerf mana scaling to 7/8 upgrades
 fix various frontlines cards doing unnecessary math - done
 double check cards that choose from hand and update descriptions - done
-nerf watchtower gain by only having 6 be affected by extra triggers
+nerf watchtower gain by halving with extra triggers - done
 frozen haniwa increase cold activations to 2 on upgrade

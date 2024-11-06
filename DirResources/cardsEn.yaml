@@ -272,13 +272,15 @@ CreateFencer:
 BuildWatchtower:
   Name: Build Watchtower
   Description: |-
-    |Assign {FencerAssigned} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. Unusable if a |Watchtower| is building. 
+    |Assign {FencerAssigned} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
     After {Value2} cards are played, gain |Watchtower| {Value1}. 
     If a |Watchtower| is already built, instead no |Haniwa| are required and add a |Garrison Archer| to the hand. 
   UpgradedDescription: |-
-    |Assign {FencerAssigned} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. Unusable if a |Watchtower| is building. 
+    |Assign {FencerAssigned} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
     After {Value2} cards are played, gain |Watchtower| {Value1}. 
     If a |Watchtower| is already built, instead no |Haniwa| are required and add an upgraded |Garrison Archer| to the hand. 
+  DetailText: |-
+    |Watchtower| gain via extra triggers are halved. 
 
 GarrisonArcher:
   Name: Garrison Archer

@@ -52,8 +52,6 @@ namespace LBoLMod.Cards
             get
             {
                 var player = base.Battle.Player;
-                if (player.HasStatusEffect<AssignBuildWatchtower>())
-                    return false;
                 if (player.HasStatusEffect<Watchtower>())
                     return true;
                 return base.CanUse && HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(player, SacrificeArcherRequired, HaniwaActionType.Sacrifice);
