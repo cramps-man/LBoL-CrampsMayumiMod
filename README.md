@@ -6,7 +6,7 @@
  - most card and status effect names are placeholder
 
 In spite of this, the mod is fully playable with 65 cards not including basics/tokens
-Current version beta 0.2.0
+Current version beta 0.2.1
 
 ## Char overview
 Mayumi's playstyle involves managing and creating multiple things at once. Whether you choose to command Frontline units (represented as cards) or Assign tasks (represented as buffs), you will need to manage your resources carefully.  

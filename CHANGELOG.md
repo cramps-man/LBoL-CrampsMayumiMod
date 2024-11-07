@@ -1,3 +1,7 @@
+## 0.2.1
+
+Fix readme stuff not getting updated
+
 ## 0.2.0
 
 ### Overview of changes
