@@ -321,3 +321,22 @@ nerf watchtower gain by halving with extra triggers - done
 frozen haniwa increase cold activations to 2 on upgrade - done
 
 haniwa exploiter onplay doesnt change display for weak and shit - done
+
+haniwa exploiter passive activations set to 1
+  - also nerf debuff dmg to 2-3? and add scaling per X upgrades
+create cavalry mana op? maybe only give 1
+strength in numbers only check in hand or something, to limit fp gain to not broken levels
+ashes to clay probs too good
+haniwa exploiter check enemy is dead
+haniwa sharpshooter check weird accuracy proccing for another sharpshooter?
+  - most likely mistake seeing exploiter dmg trigger it
+clay to ashes maybe too good for 2 fp on upgrade?
+summon cards that sacrifice make mention that you get bonus haniwa by sacrificing less lel
+mass summon probs still too good
+white flashbang for extra turn spell anims?
+make haniwa buffs special type perhaps?
+  - or instead let them stay at 0 level without removal
+frontlines that dont upgrade should stay at the same passive counter, else people think they keep upgrading when it's only once
+ultra frontline break open the passive limit?
+auto create reserves doesnt add 1 create haniwa to hand on play
+assign tickdown return, give it 1 draw on upgrade instead of increasing tickdown amount
