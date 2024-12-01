@@ -41,9 +41,9 @@ namespace LBoLMod.Cards
         {
             if (args.Card != this)
                 yield break;
-            if (RemainingValue == 0)
+            if (RemainingValue == 0 && !(this is HaniwaCommander))
                 yield return new ExileCardAction(this);
-            else
+            else if (RemainingValue > 0)
                 RemainingValue -= 1;
         }
 
