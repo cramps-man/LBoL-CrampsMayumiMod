@@ -338,5 +338,15 @@ make haniwa buffs special type perhaps?
   - or instead let them stay at 0 level without removal
 frontlines that dont upgrade should stay at the same passive counter, else people think they keep upgrading when it's only once
 ultra frontline break open the passive limit?
+  - move SturdyFrontline to unused as it will be redundant with new frontline changes
 auto create reserves doesnt add 1 create haniwa to hand on play
 assign tickdown return, give it 1 draw on upgrade instead of increasing tickdown amount
+
+rework frontline changes from last version
+  - loses exile - done
+  - playing a frontline card costs 1 loyalty - done
+  - if played with 0 loyalty, exile the card - done
+  - no longer refreshes loyalty when redrawn, only when upgraded - done
+  - no longer becomes 1 cost with 0 loyalty - done
+  - should go through all the frontlines and update their passives to not be too easy for passive to consume
+  - and go through above list of todos, since not all of them might make sense anymore

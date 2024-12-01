@@ -1,6 +1,7 @@
 ﻿using LBoL.Base;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
 using LBoLMod.StatusEffects.Keywords;
@@ -27,21 +28,23 @@ namespace LBoLMod.Cards
                 base.NotifyChanged();
             }
         }
-        public override ManaGroup AdditionalCost
-        {
-            get
-            {
-                if (base.Battle == null)
-                    return ManaGroup.Empty;
-                return base.Battle.HandZone.Contains(this) && RemainingValue <= 0 ? ManaGroup.Anys(1) : ManaGroup.Empty;
-            }
-        }
         protected virtual bool IncludeUpgradesInRemainingValue => false;
 
         protected override void OnEnterBattle(BattleController battle)
         {
             RemainingValue = Value1;
             base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
+            base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
+        }
+
+        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        {
+            if (args.Card != this)
+                yield break;
+            if (RemainingValue == 0)
+                yield return new ExileCardAction(this);
+            else
+                RemainingValue -= 1;
         }
 
         private void OnCardsAddedToHand(CardsEventArgs args)
@@ -50,11 +53,6 @@ namespace LBoLMod.Cards
             {
                 RemainingValue = Value1;
             }
-        }
-        public override IEnumerable<BattleAction> OnDraw()
-        {
-            RemainingValue = Value1;
-            return null;
         }
         public override int AdditionalValue1 
         {

@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Damage = 12;
             cardConfig.Value1 = 5;
             cardConfig.Value2 = 2;
-            cardConfig.Keywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain | Keyword.Replenish;
+            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;

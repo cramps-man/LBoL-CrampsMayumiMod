@@ -30,8 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
-            cardConfig.Keywords = Keyword.Exile | Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
+            cardConfig.Keywords = Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
+            cardConfig.UpgradedKeywords = Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
             return cardConfig;
