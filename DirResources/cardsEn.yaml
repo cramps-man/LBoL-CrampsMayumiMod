@@ -77,7 +77,7 @@ HybridDraw:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce up to {Value1} damage recieved. 
+    |While in hand|: Reduce up to {DamageReduction} damage per hit. Lose 1 loyalty per hit. 
     |When played|: Gain {Block} |Block|. 
   DetailText: |-
     Increases for each upgrade. 

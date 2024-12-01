@@ -30,8 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 25;
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value1 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };

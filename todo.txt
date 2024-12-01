@@ -348,12 +348,12 @@ rework frontline changes from last version
   - if played with 0 loyalty, exile the card - done
   - no longer refreshes loyalty when redrawn, only when upgraded - done
   - no longer becomes 1 cost with 0 loyalty - done
-  - make restriction for commander to not exile at 0 loyalty
+  - make restriction for commander to not exile at 0 loyalty - done
   - should go through all the frontlines and update their passives to not be too easy for passive to consume
     - make all frontline loyaltys not change on upgrade
-    - bodyguard loyalty to 2, 1 loyalty = 4 dmg reduction
+    - bodyguard loyalty to 2, 1 loyalty per hit, 1 loyalty = 4 dmg reduction - done
     - exploiter loyalty to 2, passive now does follow up end of turn on each enemy with a debuff
-    - monk loyalty to 2, passive end of turn increase dmg based on number of buffs?
+    - monk loyalty to 3, passive end of turn increase dmg based on number of buffs?
     - upgrader loyalty to 2, passive end of turn upgrade 2 random cards, prioritise not itself, remove upgrade restriction on upgraders
     - attacker loyalty to 3
     - sharpshooter loyalty to 2
@@ -364,3 +364,5 @@ rework frontline changes from last version
   - and go through above list of todos, since not all of them might make sense anymore
 
 haniwa commander removes commanders mark if attacking same enemy - done
+haniwa bodyguard upgrades increase passive block? cos it will now scale per loyalty
+add "Loyalty" as a keyword to describe the exile/passive portion of frontlines

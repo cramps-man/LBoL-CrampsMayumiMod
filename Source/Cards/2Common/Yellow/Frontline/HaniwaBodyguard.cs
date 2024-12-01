@@ -26,7 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Block = 8;
-            cardConfig.Value1 = 5;
+            cardConfig.Value1 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -39,8 +39,8 @@ namespace LBoLMod.Cards
     public sealed class HaniwaBodyguard : ModFrontlineCard
     {
         public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault();
-        protected override bool IncludeUpgradesInRemainingValue => true;
         public int DamageTaken { get; set; } = 0;
+        public int DamageReduction => 4;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -60,23 +60,23 @@ namespace LBoLMod.Cards
                 DamageTaken = 0;
                 if (damageInfo.Damage > 0)
                 {
-                    int reduceDamageBy = Math.Min(damageInfo.Damage.RoundToInt(), RemainingValue);
+                    int reduceDamageBy = Math.Min(damageInfo.Damage.RoundToInt(), DamageReduction);
                     damageInfo = damageInfo.ReduceActualDamageBy(reduceDamageBy);
-                    RemainingValue -= reduceDamageBy;
+                    RemainingValue -= 1;
                     DamageTaken += reduceDamageBy;
                 }
                 if (damageInfo.DamageShielded > 0)
                 {
-                    int reduction = Math.Min(damageInfo.DamageShielded.RoundToInt(), RemainingValue);
+                    int reduction = Math.Min(damageInfo.DamageShielded.RoundToInt(), DamageReduction);
                     damageInfo.DamageShielded -= reduction;
-                    RemainingValue -= reduction;
+                    RemainingValue -= 1;
                     DamageTaken += reduction;
                 }
                 if (damageInfo.DamageBlocked > 0) 
                 {
-                    /*int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), RemainingValue);
+                    /*int reduction = Math.Min(damageInfo.DamageBlocked.RoundToInt(), DamageReduction);
                     damageInfo.DamageBlocked -= reduction;
-                    RemainingValue -= reduction;
+                    RemainingValue -= 1;
                     DamageTaken += reduction;*/
                 }
                 if (DamageTaken != 0)

@@ -29,7 +29,6 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Block = 10;
             cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
