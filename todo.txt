@@ -352,7 +352,7 @@ rework frontline changes from last version
   - should go through all the frontlines and update their passives to not be too easy for passive to consume
     - make all frontline loyaltys not change on upgrade
     - bodyguard loyalty to 2, 1 loyalty per hit, 1 loyalty = 4 dmg reduction - done
-    - exploiter loyalty to 2, passive now does follow up end of turn on each enemy with a debuff
+    - exploiter loyalty to 2, passive now does follow up end of turn on each enemy with a debuff - done
     - monk loyalty to 3, passive end of turn increase dmg based on number of buffs?
     - upgrader loyalty to 2, passive end of turn upgrade 2 random cards, prioritise not itself, remove upgrade restriction on upgraders
     - attacker loyalty to 3
