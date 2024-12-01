@@ -56,10 +56,10 @@ namespace LBoLMod.Cards
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
+            base.ReactBattleEvent(base.Battle.Player.TurnEnding, this.OnTurnEnding);
         }
 
-        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        private IEnumerable<BattleAction> OnTurnEnding(UnitEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
@@ -68,12 +68,12 @@ namespace LBoLMod.Cards
             if (RemainingValue <= 0)
                 yield break;
 
-            Card toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && !(c is HaniwaUpgrader)).SampleOrDefault(base.BattleRng);
-            if (toUpgrade == null)
-                yield break;
+            IReadOnlyList<Card> toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleManyOrAll(2, base.BattleRng);
+            if (toUpgrade.Count < 2)
+                toUpgrade.Append(this);
             this.NotifyActivating();
             RemainingValue -= 1;
-            yield return new UpgradeCardAction(toUpgrade);
+            yield return new UpgradeCardsAction(toUpgrade);
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
