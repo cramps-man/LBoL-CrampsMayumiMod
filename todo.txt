@@ -367,3 +367,4 @@ haniwa commander removes commanders mark if attacking same enemy - done
 haniwa bodyguard upgrades increase passive block? cos it will now scale per loyalty
 add "Loyalty" as a keyword to describe the exile/passive portion of frontlines
   - and update descriptions to match any new effects
+loyalty strike scale via total loyalty of in hand frontline cards, instead of just number of frontlines
