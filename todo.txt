@@ -327,16 +327,18 @@ haniwa exploiter passive activations set to 1
 create cavalry mana op? maybe only give 1
 strength in numbers only check in hand or something, to limit fp gain to not broken levels
 ashes to clay probs too good
-haniwa exploiter check enemy is dead
-haniwa sharpshooter check weird accuracy proccing for another sharpshooter?
+  - probs just move to discard instead of top of draw
+haniwa exploiter check enemy is dead - not sure what this means now, so just leave it
+haniwa sharpshooter check weird accuracy proccing for another sharpshooter? - not an issue
   - most likely mistake seeing exploiter dmg trigger it
-clay to ashes maybe too good for 2 fp on upgrade?
+clay to ashes maybe too good for 2 fp on upgrade? - maybe it's fine now with new loyalty changes, harder to exile
 summon cards that sacrifice make mention that you get bonus haniwa by sacrificing less lel
 mass summon probs still too good
-white flashbang for extra turn spell anims?
+  - consume up to 10(15) random haniwa, and create cards in draw pile based on the type consumed
+white flashbang for extra turn spell anims? - fixed
 make haniwa buffs special type perhaps?
   - or instead let them stay at 0 level without removal
-frontlines that dont upgrade should stay at the same passive counter, else people think they keep upgrading when it's only once
+frontlines that dont upgrade should stay at the same passive counter, else people think they keep upgrading when it's only once - done with new loyalty changes
 ultra frontline break open the passive limit?
   - move SturdyFrontline to unused as it will be redundant with new frontline changes
 auto create reserves doesnt add 1 create haniwa to hand on play
@@ -349,8 +351,8 @@ rework frontline changes from last version
   - no longer refreshes loyalty when redrawn, only when upgraded - done
   - no longer becomes 1 cost with 0 loyalty - done
   - make restriction for commander to not exile at 0 loyalty - done
-  - should go through all the frontlines and update their passives to not be too easy for passive to consume
-    - make all frontline loyaltys not change on upgrade
+  - should go through all the frontlines and update their passives to not be too easy for passive to consume - done
+    - make all frontline loyaltys not change on upgrade - done
     - bodyguard loyalty to 2, 1 loyalty per hit, 1 loyalty = 4 dmg reduction - done
     - exploiter loyalty to 2, passive now does follow up end of turn on each enemy with a debuff - done
     - monk loyalty to 5, no changes?
