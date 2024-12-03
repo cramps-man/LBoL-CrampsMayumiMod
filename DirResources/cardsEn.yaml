@@ -182,7 +182,7 @@ HaniwaBlitz:
   Name: Haniwa Blitz
   Description: |-
     Deal {Damage} damage. 
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions then discard them. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions without consuming |Loyalty|, then discard them. 
   DetailText: |-
     Can not choose a |Haniwa Commander|. 
 
@@ -441,7 +441,7 @@ DiscardUpgrade:
 AshesToClay:
   Name: Ashes To Clay
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute their |On Play| actions. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute their |On Play| actions without consuming |Loyalty|. 
     Move the selected cards from |Exile| to the top of the draw pile. 
     Draw {Value2} card{Value2:plural one='' other='s'}. 
   DetailText: |-
@@ -570,12 +570,11 @@ UltraFrontline:
 HaniwaCommander:
   Name: Haniwa Commander
   Description: |-
-    |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions. Requires |e:1| |Loyalty|. 
+    |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires |e:1| |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
-    |When played|: Deal {Damage} damage and apply |Commander's Mark|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
-    Does not |Exile| when used at |e:0| |Loyalty|. 
+    |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
-    Can not choose another |Haniwa Commander|. 
+    Can not have |On Play| action be activated by another card. 
     
     Increases for each upgrade. 
     Damage: +2
@@ -605,7 +604,7 @@ AssignTriggerSummon:
 ExileFrontlineBlitz:
   Name: Exile Frontline Blitz
   Description: |-
-    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
+    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action without consuming |Loyalty|. If it targets an enemy, target a random enemy. 
 
 AssignCostTrigger:
   Name: Assign Cost Trigger

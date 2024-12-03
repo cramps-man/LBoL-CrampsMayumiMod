@@ -6,7 +6,6 @@ using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
 using LBoLMod.StatusEffects.Keywords;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace LBoLMod.Cards
@@ -30,22 +29,28 @@ namespace LBoLMod.Cards
         }
         protected virtual bool IncludeUpgradesInRemainingValue => false;
         protected virtual int OnPlayConsumedRemainingValue => 1;
+        public bool ShouldConsumeRemainingValue { get; set; } = true;
 
         protected override void OnEnterBattle(BattleController battle)
         {
             RemainingValue = Value1;
             base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
-            base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
+            base.HandleBattleEvent(base.Battle.CardPlaying, this.OnCardPlaying);
         }
 
-        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        private void OnCardPlaying(CardUsingEventArgs args)
         {
-            if (args.Card != this)
-                yield break;
-            if (RemainingValue == 0 && !(this is HaniwaCommander))
-                yield return new ExileCardAction(this);
-            else if (RemainingValue > 0)
-                RemainingValue -= OnPlayConsumedRemainingValue;
+            ShouldConsumeRemainingValue = true;
+        }
+
+        protected BattleAction ConsumeLoyalty()
+        {
+            if (!ShouldConsumeRemainingValue)
+                return null;
+            RemainingValue -= OnPlayConsumedRemainingValue;
+            if (RemainingValue < 0)
+                return new ExileCardAction(this);
+            return null;
         }
 
         private void OnCardsAddedToHand(CardsEventArgs args)

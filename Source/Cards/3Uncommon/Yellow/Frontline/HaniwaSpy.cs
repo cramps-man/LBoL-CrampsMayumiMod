@@ -106,6 +106,7 @@ namespace LBoLMod.Cards
         {
             yield return new ScryAction(TotalScry);
             yield return new DrawCardAction();
+            yield return ConsumeLoyalty();
         }
     }
 }

@@ -69,15 +69,9 @@ namespace LBoLMod.Cards
             else if (base.Zone == CardZone.Draw || base.Zone == CardZone.Discard)
                 yield return PerformAction.ViewCard(this);
 
-            foreach (var card in frontlinesInHand)
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(frontlinesInHand, base.Battle))
             {
-                card.NotifyActivating();
-                foreach (var action in card.GetActions(HaniwaFrontlineUtils.GetTargetForOnPlayAction(base.Battle), new ManaGroup(), null, new List<DamageAction>(), false))
-                {
-                    if (base.Battle.BattleShouldEnd)
-                        yield break;
-                    yield return action;
-                }
+                yield return battleAction;
             }
             RemainingValue -= 1;
             base.NotifyChanged();

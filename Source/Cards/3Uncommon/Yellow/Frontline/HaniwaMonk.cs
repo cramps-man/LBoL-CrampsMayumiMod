@@ -68,6 +68,7 @@ namespace LBoLMod.Cards
         {
             yield return AttackAction(selector);
             DeltaInt = 0;
+            yield return ConsumeLoyalty();
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿using LBoL.Base;
-using LBoL.ConfigData;
+﻿using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
@@ -44,12 +43,9 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.Card is ModFrontlineCard frontlineCard && !(args.Card is HaniwaCommander))
             {
                 base.NotifyActivating();
-                frontlineCard.NotifyActivating();
-                foreach (var action in frontlineCard.GetActions(HaniwaFrontlineUtils.GetTargetForOnPlayAction(base.Battle), new ManaGroup(), null, new List<DamageAction>(), false))
+                foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(new List<Card> { frontlineCard }, base.Battle))
                 {
-                    if (base.Battle.BattleShouldEnd)
-                        yield break;
-                    yield return action;
+                    yield return battleAction;
                 }
             }
         }

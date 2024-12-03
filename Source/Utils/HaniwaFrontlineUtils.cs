@@ -1,4 +1,5 @@
-﻿using LBoL.Core;
+﻿using LBoL.Base;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
@@ -122,6 +123,21 @@ namespace LBoLMod.Utils
                 return new UnitSelector(markedEnemy);
             }
             return new UnitSelector(battle.RandomAliveEnemy);
+        }
+
+        public static IEnumerable<BattleAction> ExecuteOnPlayActions(List<Card> frontlineCards, BattleController battle, UnitSelector selector = null)
+        {
+            foreach (ModFrontlineCard card in frontlineCards)
+            {
+                card.NotifyActivating();
+                card.ShouldConsumeRemainingValue = false;
+                foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, null, new List<DamageAction>(), false))
+                {
+                    if (battle.BattleShouldEnd)
+                        yield break;
+                    yield return action;
+                }
+            }
         }
     }
 }

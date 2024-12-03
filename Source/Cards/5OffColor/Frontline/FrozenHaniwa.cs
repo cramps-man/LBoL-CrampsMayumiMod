@@ -87,6 +87,7 @@ namespace LBoLMod.Cards
             {
                 yield return item;
             };
+            yield return ConsumeLoyalty();
         }
     }
 }
