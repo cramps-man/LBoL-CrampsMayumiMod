@@ -41,6 +41,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
+        public int NumCardsToUpgrade => 2;
         public int NumUpgradedCards
         {
             get
@@ -68,8 +69,8 @@ namespace LBoLMod.Cards
             if (RemainingValue <= 0)
                 yield break;
 
-            IReadOnlyList<Card> toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleManyOrAll(2, base.BattleRng);
-            if (toUpgrade.Count < 2)
+            IReadOnlyList<Card> toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleManyOrAll(NumCardsToUpgrade, base.BattleRng);
+            if (toUpgrade.Count < NumCardsToUpgrade)
                 toUpgrade.Append(this);
             this.NotifyActivating();
             RemainingValue -= 1;

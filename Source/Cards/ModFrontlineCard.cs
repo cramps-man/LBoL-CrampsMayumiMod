@@ -29,6 +29,7 @@ namespace LBoLMod.Cards
             }
         }
         protected virtual bool IncludeUpgradesInRemainingValue => false;
+        protected virtual int OnPlayConsumedRemainingValue => 1;
 
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -44,7 +45,7 @@ namespace LBoLMod.Cards
             if (RemainingValue == 0 && !(this is HaniwaCommander))
                 yield return new ExileCardAction(this);
             else if (RemainingValue > 0)
-                RemainingValue -= 1;
+                RemainingValue -= OnPlayConsumedRemainingValue;
         }
 
         private void OnCardsAddedToHand(CardsEventArgs args)

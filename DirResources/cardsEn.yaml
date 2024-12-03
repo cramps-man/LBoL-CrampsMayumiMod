@@ -77,22 +77,20 @@ HybridDraw:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce up to {DamageReduction} damage per hit. Lose 1 loyalty per hit. 
-    |When played|: Gain {Block} |Block|. 
+    |While in hand|: Reduce up to {RemainingValue} direct or |Barrier| damage. Consume |Loyalty| based on damage reduced. 
+    |When played|: Gain {Block} |Block|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
-    Damage reduction: +1
     |Block|: +1
 
 HaniwaSupport:
   Name: Haniwa Support
   Description: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Gain {TotalMana}. 
+    |While in hand|: Whenever an attack card is played, draw {Value2} card. Requires |e:1| |Loyalty|. 
+    |When played|: Gain {TotalMana}. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
     1 extra yellow mana per 8 upgrade. 
-    Total draws stays at 2 after first upgrade. 
 
 FencerBuildBarricade:
   Name: Fencer Build Barricade
@@ -109,24 +107,22 @@ DefenceCreateReserves:
 HaniwaAttacker:
   Name: Haniwa Attacker
   Description: |-
-    |While in hand|: At end of turn, deal {EndOfTurnDmg} damage to the enemy with the lowest life. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Deal {Damage} damage. 
+    |While in hand|: At end of turn, deal {EndOfTurnDmg} damage to the enemy with the lowest life. Requires |e:1| |Loyalty|. 
+    |When played|: Deal {Damage} damage. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
     End of turn damage: +1
     On play damage: +1
-    Number of attacks stays at 3 after first upgrade. 
 
 HaniwaSharpshooter:
   Name: Haniwa Sharpshooter
   Description: |-
-    |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Up to {Value1} instance{Value1:plural one='' other='s'}. 
-    |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. 
+    |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Requires |e:1| |Loyalty|. 
+    |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
     On play damage: +1
     |Lock On| +1 per 3 upgrade
-    Accuracy instances stay at 2 after first upgrade
 
 SummonHaniwa:
   Name: Summon Haniwa
@@ -297,43 +293,38 @@ AssignTickdownReturn:
 HaniwaSpy:
   Name: Haniwa Spy
   Description: |-
-    |While in hand|: Any cards sent from draw to discard |temporarily cost| {Mana} less. Up to {Value1} time{Value1:plural one='' other='s'}. 
+    |While in hand|: Any cards sent from draw to discard |temporarily cost| {Mana} less. Requires |e:1| |Loyalty|. 
     |While in draw/discard pile|: At end of turn in the same pile as {SelfName}, a random card |temporarily costs| {Mana} less. 
-    |When played|: |Scry| {TotalScry} and draw |e:1| card. 
+    |When played|: |Scry| {TotalScry} and draw |e:1| card. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
-    On Play |Scry|: +1 up to |Scry| 10
-    Number of in hand cost reductions stays at 3 after first upgrade. 
+    On Play |Scry|: +1 up to |Scry 10|
 
 HaniwaUpgrader:
   Name: Haniwa Upgrader
   Description: |-
-    |While in hand|: After a card is used, upgrade a random card in the hand. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each upgraded card in the hand ({NumUpgradedCardsBlock}). 
+    |While in hand|: At end of turn, upgrade {NumCardsToUpgrade} random card{NumCardsToUpgrade:plural one='' other='s'} in the hand. Prioritises other cards. Requires |e:1| |Loyalty|. 
+    |When played|: Gain {Block} |Block|. Gain {Value2} additional |Block| for each upgraded card in the hand ({NumUpgradedCardsBlock}). Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
-    Can not target itself or other upgraders. 
-
     Increases for each upgrade. 
     Block: +1
     Upgraded card block: +1 per 5 upgrade
-    Number of upgrades stays at 3 after first upgrade. 
 
 HaniwaExploiter:
   Name: Haniwa Exploiter
   Description: |-
-    |While in hand|: When an enemy receives a debuff, deal {Damage} damage to that enemy. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Deal {OnPlayDmg} damage. Deal {DebuffDmg} additional damage for each debuff on the target. 
+    |While in hand|: At end of turn, deal {Damage} damage to all enemies with debuffs. Requires |e:1| |Loyalty|. 
+    |When played|: Deal {OnPlayDmg} damage. Deal {DebuffDmg} additional damage for each debuff on the target. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
     Follow up damage: +1
     On Play damage: +2
-    Follow up instances stays at 3 after first upgrade. 
 
 HaniwaMonk:
   Name: Haniwa Monk
   Description: |-
-    |While in hand|: When {PlayerName} receives a buff, increase damage by {Value2}. Up to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Deal {Damage} damage and reset increased damage to 0. Increased damage ({ChargedDamage}). 
+    |While in hand|: When {PlayerName} receives a buff, increase damage by {Value2}. Requires |e:1| |Loyalty|. 
+    |When played|: Deal {Damage} damage and reset increased damage to 0. Increased damage ({ChargedDamage}). Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
     On Play damage: +1
@@ -579,15 +570,15 @@ UltraFrontline:
 HaniwaCommander:
   Name: Haniwa Commander
   Description: |-
-    |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions. Up to {Value1} time{Value1:plural one='' other='s'}. 
+    |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions. Requires |e:1| |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
-    |When played|: Deal {Damage} damage and apply |Commander's Mark|. 
+    |When played|: Deal {Damage} damage and apply |Commander's Mark|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
+    Does not |Exile| when used at |e:0| |Loyalty|. 
   DetailText: |-
     Can not choose another |Haniwa Commander|. 
     
     Increases for each upgrade. 
     Damage: +2
-    Number of Frontline |On Play| executions stays at 2 after first upgrade. 
 
 OptionHaniwaCommander:
   Name: Summon Haniwa Commander
@@ -643,15 +634,14 @@ SturdyFrontline:
 FrozenHaniwa:
   Name: Frozen Haniwa
   Description: |-
-    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application is limited to {Value1} time{Value1:plural one='' other='s'}. 
-    |When played|: Deal {Damage} damage and apply |Cold| to all enemies. 
+    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application requires |e:1| |Loyalty|. 
+    |When played|: Deal {Damage} damage and apply |Cold| to all enemies. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
     |At end of turn|: Transform back into the original card. 
   DetailText: |-
-    Does not carry over keywords from the original card. 
+    Does not carry over keywords from/to the original card. 
 
     Increases for each upgrade. 
     On Play damage: +1
-    Cold activations stay at 2 after first upgrade. 
 
 FreezeFrontline:
   Name: Freeze Frontline
