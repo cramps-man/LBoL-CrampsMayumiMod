@@ -75,6 +75,8 @@ namespace LBoLMod.Cards
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
+            if (RemainingValue < PassiveConsumedRemainingValue)
+                yield break;
 
             IReadOnlyList<Card> cards = new List<Card>();
             if (base.Zone == CardZone.Discard)
@@ -97,6 +99,7 @@ namespace LBoLMod.Cards
             Card c = cards.Where(c => c.Cost.Any > 0 && !c.HasKeyword(Keyword.Forbidden)).SampleOrDefault(base.BattleRng);
             if (c == null)
                 yield break;
+            RemainingValue -= PassiveConsumedRemainingValue;
             yield return PerformAction.ViewCard(c);
             c.DecreaseTurnCost(Mana);
             c.NotifyChanged();

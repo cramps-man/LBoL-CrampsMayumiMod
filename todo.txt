@@ -387,7 +387,7 @@ haniwa bodyguard upgrades increase passive block? cos it will now scale per loya
 add "Loyalty" as a keyword to describe the exile/passive portion of frontlines - done
   - and update descriptions to match any new effects
 loyalty strike scale via total loyalty of in hand frontline cards, instead of just number of frontlines
-haniwa spy make in draw/discard effect also consume loyalty
+haniwa spy make in draw/discard effect also consume loyalty - done
 make haniwa monk not reset increased damage? if so, make loyalty on card played to 2
 make loyalty update immidiately when played, instead of needing to check discard pile - done
   - and fix commander staying at negative loyalty? - just dont consume loyalty on play

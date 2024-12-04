@@ -294,7 +294,7 @@ HaniwaSpy:
   Name: Haniwa Spy
   Description: |-
     |While in hand|: Any cards sent from draw to discard |temporarily cost| {Mana} less. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
-    |While in draw/discard pile|: At end of turn in the same pile as {SelfName}, a random card |temporarily costs| {Mana} less. 
+    |While in draw/discard pile|: At end of turn in the same pile as {SelfName}, a random card |temporarily costs| {Mana} less. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: |Scry| {TotalScry} and draw |e:1| card. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Increases for each upgrade. 
