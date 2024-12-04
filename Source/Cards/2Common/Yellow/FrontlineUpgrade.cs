@@ -28,9 +28,9 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 1 };
             cardConfig.Block = 6;
             cardConfig.UpgradedBlock = 8;
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value1 = 2;
             cardConfig.Value2 = 1;
+            cardConfig.UpgradedValue2 = 2;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -52,14 +52,8 @@ namespace LBoLMod.Cards
                 yield break;
 
             yield return new UpgradeCardsAction(selectInteraction.SelectedCards);
-            foreach (var card in selectInteraction.SelectedCards)
-            {
-                if (card is ModFrontlineCard)
-                {
-                    for (int i = 0; i < Value2; i++)
-                        yield return new UpgradeCardAction(card);
-                }
-            }
+            for (int i = 0; i < Value2; i++)
+                yield return new UpgradeCardsAction(selectInteraction.SelectedCards.Where(c => c is ModFrontlineCard).ToList());
         }
     }
 }

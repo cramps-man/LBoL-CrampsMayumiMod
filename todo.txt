@@ -411,8 +411,9 @@ create fencer give extra effects via levels - done
   - 10: 4(6) static charge
 starter haniwa gen cards, upgrade also make cost any1? - done
   - and lower frontline create for uncommon and rare
-haniwa blitz dont discard, but consume loyalty
-frontline upgrade target 3 or upgrade 3 times
+haniwa blitz dont discard, but consume loyalty - done
+frontline upgrade target 3 or upgrade 3 times - done
+  - buff to target 2 by default, upgrade makes it upgrade 3 times
 discard upgrade, upgrade discarded cards? if frontline 3(5) times?
 assign duplicate trigger dont exile, but only trigger the assign effect once?
 
