@@ -419,8 +419,8 @@ mass summon probs still too good
   - consume up to 10(15) random haniwa, and create cards in draw pile based on the type consumed
 make haniwa buffs special type perhaps?
   - or instead let them stay at 0 level without removal
-auto create reserves doesnt add 1 create haniwa to hand on play
-assign tickdown return, give it 1 draw on upgrade instead of increasing tickdown amount
+auto create reserves doesnt add 1 create haniwa to hand on play - fixed
+assign tickdown return, give it 1 draw on upgrade instead of increasing tickdown amount - done
 
 investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
   - made a woopsie when fixing commanders mark being removed
