@@ -29,6 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.Block = 16;
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -49,14 +51,9 @@ namespace LBoLMod.Cards
             yield return DefenseAction();
             if (!(precondition is SelectHandInteraction discardInteraction))
                 yield break;
+            for (int i = 0; i < Value1; i++)
+                yield return new UpgradeCardsAction(discardInteraction.SelectedCards.Where(c => c is ModFrontlineCard).ToList());
             yield return new DiscardManyAction(discardInteraction.SelectedCards);
-
-            int discardCount = discardInteraction.SelectedCards.Count;
-            for (int i = 0; i < discardCount; i++)
-            {
-                if (base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive).Count() > 0)
-                    yield return new UpgradeCardsAction(base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive));
-            }
         }
     }
 }

@@ -414,7 +414,7 @@ starter haniwa gen cards, upgrade also make cost any1? - done
 haniwa blitz dont discard, but consume loyalty - done
 frontline upgrade target 3 or upgrade 3 times - done
   - buff to target 2 by default, upgrade makes it upgrade 3 times
-discard upgrade, upgrade discarded cards? if frontline 3(5) times?
+discard upgrade, upgrade discarded cards? if frontline 3(5) times? - done
 assign duplicate trigger dont exile, but only trigger the assign effect once?
 
 investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
