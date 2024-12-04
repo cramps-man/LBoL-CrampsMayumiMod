@@ -27,7 +27,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 5;
-            cardConfig.Value1 = 2;
+            cardConfig.Value1 = 3;
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
@@ -40,6 +40,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSharpshooterDef))]
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
+        protected override int PassiveConsumedRemainingValue => 2;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 3;
         private bool accuracyModified = false;
@@ -75,7 +76,7 @@ namespace LBoLMod.Cards
         {
             if (base.Zone != CardZone.Hand)
                 return;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 return;
             if (!(args.Target is EnemyUnit))
                 return;
@@ -87,7 +88,7 @@ namespace LBoLMod.Cards
                 return;
 
             base.NotifyActivating();
-            RemainingValue -= 1;
+            RemainingValue -= PassiveConsumedRemainingValue;
             accuracyModified = false;
             base.NotifyChanged();
         }

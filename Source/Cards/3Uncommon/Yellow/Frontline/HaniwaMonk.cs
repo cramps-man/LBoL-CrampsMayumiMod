@@ -26,7 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 12;
-            cardConfig.Value1 = 5;
+            cardConfig.Value1 = 8;
             cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -39,6 +39,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaMonkDef))]
     public sealed class HaniwaMonk : ModFrontlineCard
     {
+        protected override int OnPlayConsumedRemainingValue => 2;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedDamage;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;
         public int ChargedDamage => DeltaInt;
@@ -56,12 +57,12 @@ namespace LBoLMod.Cards
                 return;
             if (args.Effect.Type != StatusEffectType.Positive)
                 return;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 return;
 
             base.NotifyActivating();
             DeltaInt += Value2;
-            RemainingValue -= 1;
+            RemainingValue -= PassiveConsumedRemainingValue;
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

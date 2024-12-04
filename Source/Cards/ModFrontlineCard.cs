@@ -27,7 +27,8 @@ namespace LBoLMod.Cards
                 base.NotifyChanged();
             }
         }
-        protected virtual bool IncludeUpgradesInRemainingValue => false;
+        protected virtual bool IncludeUpgradesInRemainingValue => true;
+        protected virtual int PassiveConsumedRemainingValue => 1;
         protected virtual int OnPlayConsumedRemainingValue => 1;
         public bool ShouldConsumeRemainingValue { get; set; } = true;
 
@@ -74,17 +75,9 @@ namespace LBoLMod.Cards
         private const int UPGRADE_AMOUNT = 1;
         public override void Upgrade()
         {
-            /*if (IncludeUpgradesInRemainingValue)
-            {
-                RemainingValue += UPGRADE_AMOUNT;
-            }
-            else
-            {
-                RemainingValue += Config.UpgradedValue1.GetValueOrDefault() - Config.Value1.GetValueOrDefault();
-            }*/
             int? upgradeCounter = base.UpgradeCounter + UPGRADE_AMOUNT;
             base.UpgradeCounter = upgradeCounter;
-            RemainingValue = Value1;
+            RemainingValue += UPGRADE_AMOUNT;
             ProcessKeywordUpgrade();
             CostChangeInUpgrading();
             NotifyChanged();

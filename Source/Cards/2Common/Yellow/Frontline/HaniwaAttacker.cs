@@ -25,7 +25,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 9;
+            cardConfig.Damage = 10;
             cardConfig.Value1 = 3;
             cardConfig.Value2 = 6;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
@@ -39,6 +39,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaAttackerDef))]
     public sealed class HaniwaAttacker : ModFrontlineCard
     {
+        protected override int OnPlayConsumedRemainingValue => 2;
         public DamageInfo EndOfTurnDmg => DamageInfo.Attack(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
@@ -54,13 +55,13 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
             yield return new DamageAction(base.Battle.Player, base.Battle.LowestHpEnemy, EndOfTurnDmg);
-            RemainingValue -= 1;
+            RemainingValue -= PassiveConsumedRemainingValue;
             base.NotifyChanged();
         }
 

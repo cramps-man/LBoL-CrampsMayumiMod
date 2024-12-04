@@ -41,6 +41,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
+        protected override int OnPlayConsumedRemainingValue => 3;
         public int NumCardsToUpgrade => 2;
         public int NumUpgradedCards
         {
@@ -66,20 +67,21 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 yield break;
 
             IReadOnlyList<Card> toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleManyOrAll(NumCardsToUpgrade, base.BattleRng);
             if (toUpgrade.Count < NumCardsToUpgrade)
                 toUpgrade.Append(this);
             this.NotifyActivating();
-            RemainingValue -= 1;
+            RemainingValue -= PassiveConsumedRemainingValue;
             yield return new UpgradeCardsAction(toUpgrade);
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
+            yield return UpgradeAllHandsAction();
             yield return ConsumeLoyalty();
         }
     }

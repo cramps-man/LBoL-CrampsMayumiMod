@@ -323,12 +323,14 @@ frozen haniwa increase cold activations to 2 on upgrade - done
 haniwa exploiter onplay doesnt change display for weak and shit - done
 
 haniwa exploiter passive activations set to 1 - passive was reworked
-  - also nerf debuff dmg to 2-3? and add scaling per X upgrades
+  - also nerf debuff dmg to 2-3? and add scaling per X upgrades - done
 create cavalry mana op? maybe only give 1
+  - or have another effect, but not sure atm
 strength in numbers only check in hand or something, to limit fp gain to not broken levels
   - make upgrade just give some flat temp fp? instead of allowing draw/discard piles
 ashes to clay probs too good
   - probs just move to discard instead of top of draw
+  - or same as copy frontline, move to draw but random
 haniwa exploiter check enemy is dead - not sure what this means now, so just leave it
 haniwa sharpshooter check weird accuracy proccing for another sharpshooter? - not an issue
   - most likely mistake seeing exploiter dmg trigger it
@@ -343,6 +345,7 @@ make haniwa buffs special type perhaps?
 frontlines that dont upgrade should stay at the same passive counter, else people think they keep upgrading when it's only once - done with new loyalty changes
 ultra frontline break open the passive limit?
   - move SturdyFrontline to unused as it will be redundant with new frontline changes
+  - if loyalty works like initial release, unsure what the bonus effect could be
 auto create reserves doesnt add 1 create haniwa to hand on play
 assign tickdown return, give it 1 draw on upgrade instead of increasing tickdown amount
 
@@ -364,8 +367,20 @@ rework frontline changes from last version
     - support loyalty to 2
     - spy loyalty to 3
     - commander loyalty to 2
-    - frozen haniwa loyalty to 2, 
-  - and go through above list of todos, since not all of them might make sense anymore
+    - frozen haniwa loyalty to 2
+    - forgo above loyalty number changes
+    - make loyalty increase by upgrading again, like initial release, not fully refresh - done
+    - attacker starting 3, passive 1, onplay 2 but increase dmg to 10
+    - bodyguard starting 5, passive dmg total, onplay 2/3? maybe 3
+    - sharpshooter starting 3, passive 2, onplay 1/2? maybe 2
+    - support starting 3, passive 2, onplay 3?
+    - exploiter starting 3, passive 2, onplay 2, debuff dmg to 3, but scale +1 per 3 upgrades
+    - upgrader starting 2, passive 1, onplay 2/3? maybe update onplay to also upgrade stuff, and make it 3 if so
+    - spy starting 5, passive 1, onplay 3, make scry start at 3, but scales slower like every 2/3 upgrades = 1 scry
+    - monk starting 8, passive 1, onplay 2/3
+    - commander starting 3, passive 2, onplay 0
+    - frozen starting 2, passive 2, onplay 1
+  - and go through above list of todos, since not all of them might make sense anymore - done
 
 haniwa commander removes commanders mark if attacking same enemy - done
 haniwa bodyguard upgrades increase passive block? cos it will now scale per loyalty - nvm, reverted that change

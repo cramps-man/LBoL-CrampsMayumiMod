@@ -24,7 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 2;
+            cardConfig.Value1 = 3;
             cardConfig.Value2 = 1;
             cardConfig.Mana = new ManaGroup() { White = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
@@ -38,6 +38,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSupportDef))]
     public sealed class HaniwaSupport : ModFrontlineCard
     {
+        protected override int PassiveConsumedRemainingValue => 2;
+        protected override int OnPlayConsumedRemainingValue => 3;
         public ManaGroup TotalMana => Mana + ManaGroup.Whites(base.UpgradeCounter.GetValueOrDefault() / 8);
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -51,7 +53,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (args.Card.CardType != CardType.Attack)
                 yield break;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 yield break;
             if (base.Battle.HandZone.Count == base.Battle.MaxHand)
                 yield break;
@@ -59,7 +61,7 @@ namespace LBoLMod.Cards
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
             yield return new DrawManyCardAction(Value2);
-            RemainingValue -= 1;
+            RemainingValue -= PassiveConsumedRemainingValue;
             base.NotifyChanged();
         }
 

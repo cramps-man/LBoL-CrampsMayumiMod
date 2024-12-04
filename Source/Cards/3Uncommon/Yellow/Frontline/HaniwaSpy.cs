@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 3;
-            cardConfig.Scry = 1;
+            cardConfig.Value1 = 5;
+            cardConfig.Scry = 3;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -44,7 +44,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSpyDef))]
     public sealed class HaniwaSpy : ModFrontlineCard
     {
-        public ScryInfo TotalScry => Scry.IncreasedBy(Math.Min(base.UpgradeCounter.GetValueOrDefault(), 10));
+        protected override int OnPlayConsumedRemainingValue => 3;
+        public ScryInfo TotalScry => Scry.IncreasedBy(Math.Min(base.UpgradeCounter.GetValueOrDefault() / 3, 10));
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -56,7 +57,7 @@ namespace LBoLMod.Cards
         {
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 yield break;
             if (args.SourceZone != CardZone.Draw || args.DestinationZone != CardZone.Discard)
                 yield break;
@@ -64,7 +65,7 @@ namespace LBoLMod.Cards
                 yield break;
 
             this.NotifyActivating();
-            RemainingValue -= 1;
+            RemainingValue -= PassiveConsumedRemainingValue;
             yield return PerformAction.ViewCard(args.Card);
             args.Card.DecreaseTurnCost(Mana);
             yield return PerformAction.Wait(0.2f);

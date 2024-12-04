@@ -42,6 +42,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrozenHaniwaDef))]
     public sealed class FrozenHaniwa : ModFrontlineCard
     {
+        protected override int PassiveConsumedRemainingValue => 2;
         public Card OriginalCard { get; set; }
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
@@ -70,10 +71,10 @@ namespace LBoLMod.Cards
             {
                 base.NotifyActivating();
                 yield return BuffAction<FrostArmor>(Value2);
-                if (RemainingValue > 0)
+                if (RemainingValue >= PassiveConsumedRemainingValue)
                 {
                     yield return DebuffAction<Cold>(base.Battle.RandomAliveEnemy);
-                    RemainingValue -= 1;
+                    RemainingValue -= PassiveConsumedRemainingValue;
                     base.NotifyChanged();
                 }
             }
