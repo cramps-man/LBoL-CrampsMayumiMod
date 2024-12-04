@@ -442,7 +442,7 @@ DiscardUpgrade:
 AshesToClay:
   Name: Ashes To Clay
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute their |On Play| actions without consuming |Loyalty|. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute their |On Play| actions while refreshing |Loyalty|. 
     Move the selected cards from |Exile| to the top of the draw pile. 
     Draw {Value2} card{Value2:plural one='' other='s'}. 
   DetailText: |-
@@ -670,8 +670,8 @@ KeikiTeammate:
     {FriendP} Add |e:2| random |Frontline| cards to the hand. 
   ExtraDescription1: |-
     {FriendA} Trigger all |Assign| buffs. Gain {Value1} |Barrier| for each buff triggered. 
-  ExtraDescription2: |-
-    {FriendU} Move all |Frontline| cards in exile to discard pile. Deal {Value2} damage to all enemies for each card moved this way. ({FrontlineExileDamage})
+  ExtraDescription3: |-
+    {FriendU} Move all |Frontline| cards in exile to discard pile and refresh their |Loyalty|. Deal {Value2} damage to all enemies for each card moved this way. ({FrontlineExileDamage})
 
 PermanentAssign:
   Name: Permanent Assign

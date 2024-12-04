@@ -36,10 +36,30 @@ namespace LBoLMod.Cards
         {
             RemainingValue = Value1;
             base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
-            base.HandleBattleEvent(base.Battle.CardPlaying, this.OnCardPlaying);
+            base.HandleBattleEvent(base.Battle.CardUsing, this.OnCardUsing);
+            base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
+            base.HandleBattleEvent(base.Battle.CardMovedToDrawZone, this.OnCardMovedToDrawZone);
         }
 
-        private void OnCardPlaying(CardUsingEventArgs args)
+        private void OnCardMovedToDrawZone(CardMovingToDrawZoneEventArgs args)
+        {
+            if (args.Card != this)
+                return;
+            if (args.SourceZone != CardZone.Exile)
+                return;
+            RemainingValue = Value1;
+        }
+
+        private void OnCardMoved(CardMovingEventArgs args)
+        {
+            if (args.Card != this)
+                return;
+            if (args.SourceZone != CardZone.Exile)
+                return;
+            RemainingValue = Value1;
+        }
+
+        private void OnCardUsing(CardUsingEventArgs args)
         {
             ShouldConsumeRemainingValue = true;
         }
