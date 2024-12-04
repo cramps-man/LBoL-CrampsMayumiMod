@@ -26,10 +26,10 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
             cardConfig.Value1 = 1;
-            cardConfig.Cost = new ManaGroup() { Red = 2, Green = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
-            cardConfig.Keywords = Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Exile;
+            cardConfig.Value2 = 1;
+            cardConfig.UpgradedValue2 = 2;
+            cardConfig.Cost = new ManaGroup() { Red = 1, Green = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 9 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
@@ -50,7 +50,7 @@ namespace LBoLMod.Cards
 
             foreach (ModAssignOptionCard optionCard in assignInteraction.SelectedCards)
             {
-                foreach (var item in optionCard.StatusEffect.DuplicateTrigger())
+                foreach (var item in optionCard.StatusEffect.DuplicateTrigger(Value2))
                 {
                     yield return item;
                 }

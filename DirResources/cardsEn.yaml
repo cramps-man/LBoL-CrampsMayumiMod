@@ -691,7 +691,7 @@ PoisonShot:
 AssignDuplicateTrigger:
   Name: Assign Duplicate Trigger
   Description: |-
-    Choose 1 |Assign| buff and immidiately trigger its effect without removing it. 
+    Choose {Value1} |Assign| buff{Value1:plural one='' other='s'} and immidiately trigger its effect {Value2} time{Value2:plural one='' other='s'} without removing {Value1:plural one='it' other='them'}. 
 
 #UNUSED
 RandomStance:

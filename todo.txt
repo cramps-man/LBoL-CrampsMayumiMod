@@ -373,7 +373,7 @@ haniwa commander removes commanders mark if attacking same enemy - done
 haniwa bodyguard upgrades increase passive block? cos it will now scale per loyalty - nvm, reverted that change
 add "Loyalty" as a keyword to describe the exile/passive portion of frontlines - done
   - and update descriptions to match any new effects
-loyalty strike scale via total loyalty of in hand frontline cards, instead of just number of frontlines
+loyalty strike scale via total loyalty of in hand frontline cards, instead of just number of frontlines - done
   - or both? cos 0 loyalty cards will feels badman
   - make 0 loyalty count as 1
   - or maybe leave it? might be hard to make balanced, eg. spam monk for 8 loyalty
@@ -402,8 +402,9 @@ haniwa blitz dont discard, but consume loyalty - done
 frontline upgrade target 3 or upgrade 3 times - done
   - buff to target 2 by default, upgrade makes it upgrade 3 times
 discard upgrade, upgrade discarded cards? if frontline 3(5) times? - done
-assign duplicate trigger dont exile, but only trigger the assign effect once?
+assign duplicate trigger dont exile, but only trigger the assign effect once? - done
   - maybe just make it not exile? probs too powerful
+  - or make upgrade trigger twice, worthy of 2 mana perhaps
 rework fencer prep counter? not sure what to do with it atm though
 
 create cavalry mana op? maybe only give 1

@@ -94,9 +94,9 @@ namespace LBoLMod.StatusEffects
             return AssignTriggering(false);
         }
 
-        public IEnumerable<BattleAction> DuplicateTrigger()
+        public IEnumerable<BattleAction> DuplicateTrigger(int triggerCount = 1)
         {
-            return AssignTriggering(false, false);
+            yield return new AssignTriggerAction(OnAssignmentDone(false), BeforeAssignmentDone(false), AfterAssignmentDone(false), triggerCount, false);
         }
 
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
