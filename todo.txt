@@ -322,16 +322,18 @@ frozen haniwa increase cold activations to 2 on upgrade - done
 
 haniwa exploiter onplay doesnt change display for weak and shit - done
 
-haniwa exploiter passive activations set to 1
+haniwa exploiter passive activations set to 1 - passive was reworked
   - also nerf debuff dmg to 2-3? and add scaling per X upgrades
 create cavalry mana op? maybe only give 1
 strength in numbers only check in hand or something, to limit fp gain to not broken levels
+  - make upgrade just give some flat temp fp? instead of allowing draw/discard piles
 ashes to clay probs too good
   - probs just move to discard instead of top of draw
 haniwa exploiter check enemy is dead - not sure what this means now, so just leave it
 haniwa sharpshooter check weird accuracy proccing for another sharpshooter? - not an issue
   - most likely mistake seeing exploiter dmg trigger it
-clay to ashes maybe too good for 2 fp on upgrade? - maybe it's fine now with new loyalty changes, harder to exile
+clay to ashes maybe too good for 2 fp on upgrade? - wont do
+  - maybe it's fine now with new loyalty changes, harder to exile
 summon cards that sacrifice make mention that you get bonus haniwa by sacrificing less lel
 mass summon probs still too good
   - consume up to 10(15) random haniwa, and create cards in draw pile based on the type consumed
@@ -376,3 +378,18 @@ make loyalty update immidiately when played, instead of needing to check discard
   - and fix commander staying at negative loyalty? - just dont consume loyalty on play
   - now haniwa blitz and probs commander will consume loyalty with the passives, fix this? - fixed
 summon haniwa make it choose 2 different cards, to increase haniwa cost, bit too efficient
+check loyalty resets when bringing back from exile
+  - can probs just check in base class, when card moved from exile, refresh it
+create fencer give extra effects via levels
+  - 3: 8(10) block
+  - 5: something, upgrade or reflect?
+  - 7: 8(10) barrier
+  - 10: 4(6) static charge
+starter haniwa gen cards, upgrade also make cost any1?
+haniwa blitz dont discard, but consume loyalty
+frontline upgrade target 3 or upgrade 3 times
+discard upgrade, upgrade discarded cards? if frontline 3(5) times?
+
+investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
+  - made a woopsie when fixing commanders mark being removed
+handsize block not 0 in draw pile?

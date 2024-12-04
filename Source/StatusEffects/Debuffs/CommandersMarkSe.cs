@@ -22,6 +22,7 @@ namespace LBoLMod.StatusEffects.Abilities
             var config = base.MakeConfig();
             config.Type = StatusEffectType.Negative;
             config.HasLevel = false;
+            config.IsStackable = false;
             return config;
         }
     }

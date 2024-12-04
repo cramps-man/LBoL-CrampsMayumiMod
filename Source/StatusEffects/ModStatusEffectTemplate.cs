@@ -27,7 +27,7 @@ namespace LBoLMod.StatusEffects
                 Order: 17,
                 Type: StatusEffectType.Positive,
                 IsVerbose: false,
-                IsStackable: false,
+                IsStackable: true,
                 StackActionTriggerLevel: null,
                 HasLevel: true,
                 LevelStackType: StackType.Add,
