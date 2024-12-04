@@ -125,12 +125,12 @@ namespace LBoLMod.Utils
             return new UnitSelector(battle.RandomAliveEnemy);
         }
 
-        public static IEnumerable<BattleAction> ExecuteOnPlayActions(List<Card> frontlineCards, BattleController battle, UnitSelector selector = null)
+        public static IEnumerable<BattleAction> ExecuteOnPlayActions(List<Card> frontlineCards, BattleController battle, UnitSelector selector = null, bool consumeRemainingValue = false)
         {
             foreach (ModFrontlineCard card in frontlineCards)
             {
                 card.NotifyActivating();
-                card.ShouldConsumeRemainingValue = false;
+                card.ShouldConsumeRemainingValue = consumeRemainingValue;
                 foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, null, new List<DamageAction>(), false))
                 {
                     if (battle.BattleShouldEnd)

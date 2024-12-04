@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
@@ -41,7 +40,6 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaBlitzDef))]
     public sealed class HaniwaBlitz : Card
     {
-        public override bool DiscardCard => true;
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
@@ -55,11 +53,10 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
 
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector))
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector, true))
             {
                 yield return battleAction;
             }
-            yield return new DiscardManyAction(selectInteraction.SelectedCards);
         }
     }
 }
