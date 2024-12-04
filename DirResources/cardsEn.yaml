@@ -395,7 +395,7 @@ LoyaltyStrike:
   Name: Loyalty Strike
   Description: |-
     Deal {Damage} damage. 
-    Increase {SelfName}'s damage by {Value1} for each |Frontline| card in the hand ({AdditionalDamage}).
+    Increase {SelfName}'s damage by the total |Loyalty| of each |Frontline| card in the hand ({AdditionalDamage}).
 
 ClayToAshes:
   Name: Clay To Ashes

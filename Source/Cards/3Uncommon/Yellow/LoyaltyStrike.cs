@@ -23,12 +23,10 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 22;
-            cardConfig.UpgradedDamage = 28;
-            cardConfig.Value1 = 5;
-            cardConfig.UpgradedValue1 = 7;
+            cardConfig.Damage = 20;
+            cardConfig.UpgradedDamage = 26;
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.Keywords = Keyword.Accuracy;
             cardConfig.UpgradedKeywords = Keyword.Accuracy;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -45,7 +43,7 @@ namespace LBoLMod.Cards
             get
             {
                 if (base.Battle != null)
-                    return base.Battle.HandZone.Where(c => c is ModFrontlineCard).Count() * Value1;
+                    return base.Battle.HandZone.Sum(c => c is ModFrontlineCard m ? m.RemainingValue : 0);
                 return 0;
             }
         }
