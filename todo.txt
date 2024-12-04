@@ -409,7 +409,8 @@ create fencer give extra effects via levels - done
   - 5: something, upgrade or reflect?
   - 7: 8(10) barrier
   - 10: 4(6) static charge
-starter haniwa gen cards, upgrade also make cost any1?
+starter haniwa gen cards, upgrade also make cost any1? - done
+  - and lower frontline create for uncommon and rare
 haniwa blitz dont discard, but consume loyalty
 frontline upgrade target 3 or upgrade 3 times
 discard upgrade, upgrade discarded cards? if frontline 3(5) times?

@@ -28,9 +28,10 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
+            cardConfig.UpgradedValue1 = 4;
             cardConfig.Value2 = 3;
             cardConfig.Cost = new ManaGroup() { Red = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };

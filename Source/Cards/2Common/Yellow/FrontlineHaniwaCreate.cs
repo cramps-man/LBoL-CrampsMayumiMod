@@ -32,6 +32,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 1;
             cardConfig.Cost = new ManaGroup() { White = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeKeyword = Keyword.Exile;
@@ -46,8 +47,8 @@ namespace LBoLMod.Cards
     public sealed class FrontlineHaniwaCreate : Card
     {
         public int CommonGain => 1 + Value1;
-        public int UncommonGain => 3 + Value1;
-        public int RareGain => 5 + Value1;
+        public int UncommonGain => 2 + Value1;
+        public int RareGain => 4 + Value1;
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(0, 1, base.Battle.HandZone.Where(c => c is ModFrontlineCard));
