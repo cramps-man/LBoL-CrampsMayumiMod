@@ -404,7 +404,7 @@ summon haniwa make it choose 2 different cards, to increase haniwa cost, bit too
 check loyalty resets when bringing back from exile - done
   - can probs just check in base class, when card moved from exile, refresh it
   - and update cards texts on the 2 cards that resurrect? or just leave it
-create fencer give extra effects via levels
+create fencer give extra effects via levels - done
   - 3: 8(10) block
   - 5: something, upgrade or reflect?
   - 7: 8(10) barrier

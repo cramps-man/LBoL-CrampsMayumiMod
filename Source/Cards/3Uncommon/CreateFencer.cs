@@ -3,6 +3,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
+using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -30,10 +31,14 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 3;
-            cardConfig.Block = 0;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.Value2 = 4;
+            cardConfig.UpgradedValue2 = 6;
+            cardConfig.Block = 8;
+            cardConfig.UpgradedBlock = 10;
+            cardConfig.Shield = 8;
+            cardConfig.UpgradedShield = 10;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(TempElectric) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(TempElectric) };
             return cardConfig;
         }
     }
@@ -41,19 +46,21 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CreateFencerDef))]
     public sealed class CreateFencer : Card
     {
-        public override int AdditionalBlock
-        {
-            get
-            {
-                if (base.Battle == null) 
-                    return 0;
-                return HaniwaUtils.GetHaniwaLevel<FencerHaniwa>(base.Battle.Player) * Value2;
-            }
-        }
+        public int NumUpgrade => IsUpgraded ? 2 : 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(fencerToGain: Value1);
-            yield return DefenseAction();
+            int fencerCount = HaniwaUtils.GetHaniwaLevel<FencerHaniwa>(base.Battle.Player);
+
+            if (fencerCount >= 7)
+                yield return DefenseAction(Block.Block, Shield.Shield);
+            else if (fencerCount >= 3)
+                yield return DefenseAction(Block.Block, 0);
+
+            if (fencerCount >= 5)
+                yield return UpgradeRandomHandAction(NumUpgrade);
+            if (fencerCount >= 10)
+                yield return BuffAction<TempElectric>(Value2);
         }
     }
 }
