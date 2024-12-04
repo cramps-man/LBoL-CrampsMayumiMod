@@ -293,6 +293,9 @@ AssignTickdownReturn:
   Description: |-
     Decrease the card counter for all |Assign| buffs by {Value1}. 
     Whenever an |Assign| buff triggers, return {SelfName} from the discard pile to the hand. 
+  UpgradedDescription: |-
+    Decrease the card counter for all |Assign| buffs by {Value1} and draw {Value2} card{Value2:plural one='' other='s'}. 
+    Whenever an |Assign| buff triggers, return {SelfName} from the discard pile to the hand. 
 
 HaniwaSpy:
   Name: Haniwa Spy

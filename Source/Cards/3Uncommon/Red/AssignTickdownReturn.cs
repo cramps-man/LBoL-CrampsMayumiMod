@@ -30,7 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
@@ -46,7 +46,8 @@ namespace LBoLMod.Cards
             {
                 s.Tickdown(Value1);
             };
-            yield break;
+            if (IsUpgraded)
+                yield return new DrawManyCardAction(Value2);
         }
 
         protected override void OnEnterBattle(BattleController battle)
