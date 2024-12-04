@@ -1,10 +1,7 @@
 ﻿using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
-using LBoLMod.Exhibits;
 using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects;
 using LBoLMod.Utils;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.BattleActions
@@ -58,12 +55,11 @@ namespace LBoLMod.BattleActions
                 levelToLose = Math.Max(levelToLose - 1, 0);*/
 
             var se = player.GetStatusEffect<T>();
-            if (se.Level > levelToLose)
-            {
+            if (se.Level >= levelToLose)
                 se.Level -= levelToLose;
-                return;
-            }
-            base.React(new RemoveStatusEffectAction(se));
+            else
+                se.Level = 0;
+            //base.React(new RemoveStatusEffectAction(se));
         }
     }
 }

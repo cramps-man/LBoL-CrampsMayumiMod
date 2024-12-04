@@ -5,3 +5,4 @@
 - update CHANGELOG.md
 - build works
 - zip extracts fine
+- files such as readme were updated in the zip
