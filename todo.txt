@@ -387,12 +387,20 @@ haniwa bodyguard upgrades increase passive block? cos it will now scale per loya
 add "Loyalty" as a keyword to describe the exile/passive portion of frontlines - done
   - and update descriptions to match any new effects
 loyalty strike scale via total loyalty of in hand frontline cards, instead of just number of frontlines
+  - or both? cos 0 loyalty cards will feels badman
+  - make 0 loyalty count as 1
+  - or maybe leave it? might be hard to make balanced, eg. spam monk for 8 loyalty
+  - well actually, upgraded cards increase loyalty anyway, so a bunch of upgraded frontlines will scale it hard too
+  - perhaps add a downside of lowering loyalty of frontlines in hand?
 haniwa spy make in draw/discard effect also consume loyalty - done
 make haniwa monk not reset increased damage? if so, make loyalty on card played to 2
+  - with new loyalty changes, needs to be more than 2 lel
+  - and too high of a loyalty migth be annoying to get the card staying alive perhaps, many buffs can happen
+  - or its fine, buffs are usually controlled?
 make loyalty update immidiately when played, instead of needing to check discard pile - done
   - and fix commander staying at negative loyalty? - just dont consume loyalty on play
   - now haniwa blitz and probs commander will consume loyalty with the passives, fix this? - fixed
-summon haniwa make it choose 2 different cards, to increase haniwa cost, bit too efficient
+summon haniwa make it choose 2 different cards, to increase haniwa cost, bit too efficient - done
 check loyalty resets when bringing back from exile
   - can probs just check in base class, when card moved from exile, refresh it
 create fencer give extra effects via levels
@@ -407,4 +415,5 @@ discard upgrade, upgrade discarded cards? if frontline 3(5) times?
 
 investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
   - made a woopsie when fixing commanders mark being removed
-handsize block not 0 in draw pile?
+handsize block not 0 in draw pile? - wont do
+  - yeah the code doesnt care where it is, but its probs fine like this

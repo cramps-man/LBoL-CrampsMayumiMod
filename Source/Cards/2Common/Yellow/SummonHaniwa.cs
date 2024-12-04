@@ -2,14 +2,12 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.BattleActions;
-using LBoLMod.Utils;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -29,7 +27,6 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1 };
             cardConfig.Value1 = 2;
-            cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
@@ -43,19 +40,18 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = HaniwaFrontlineUtils.GetAllCards(base.Battle, Value1, true);
-            return new SelectCardInteraction(1, 1, cards);
+            List<Card> cards = HaniwaFrontlineUtils.GetAllCards(base.Battle, checkSacrificeRequirement: true);
+            return new SelectCardInteraction(1, Value1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             if (!(precondition is SelectCardInteraction interaction))
                 yield break;
 
-            foreach (ModFrontlineOptionCard optionCard in interaction.SelectedCards)
+            foreach (var action in HaniwaFrontlineUtils.CardsSummon(((SelectCardInteraction)precondition).SelectedCards))
             {
-                yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, optionCard.SelectRequireFencer, optionCard.SelectRequireArcher, optionCard.SelectRequireCavalry);
-                yield return new AddCardsToHandAction(optionCard.GetCardsToSpawn());
-            }
+                yield return action;
+            };
         }
     }
 }
