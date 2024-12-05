@@ -8,7 +8,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
 using System.Linq;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class StrengthInNumbersDef : ModCardTemplate
@@ -55,3 +55,4 @@ namespace LBoLMod.Cards
         }
     }
 }
+*/

@@ -419,18 +419,25 @@ assign tickdown return, give it 1 draw on upgrade instead of increasing tickdown
 create cavalry mana op? maybe only give 1 - done
   - or have another effect, but not sure atm
   - assign 1 instance of cavalry rush lmao
-strength in numbers only check in hand or something, to limit fp gain to not broken levels
+strength in numbers only check in hand or something, to limit fp gain to not broken levels - removed for now
   - make upgrade just give some flat temp fp? instead of allowing draw/discard piles
-rework fencer prep counter? not sure what to do with it atm though
-new card increase max haniwa level and gain haniwa
-  - green offcolour? though it kinda fits as hybrid
-move SturdyFrontline to unused as it will be redundant with new frontline changes
+  - or just remove this? lmao
+move SturdyFrontline to unused as it will be redundant with new frontline changes - removed
   - or make it not exile when all loyalty consumed, but then need to indicate it somehow, which is annoying to do
-new frontline card horse archer, something related to graze and followups based on speedy or dodging
 fix AssignDuplicateTrigger using the actual status effect level when duplicating effect - fixed
 buff archerPrepFrostArrow somehow as the dmg and block are too low? - done
   - make it 9 by default then upgrade gives 2 triggers?
   - also increase archer assign to 2
+
+rework fencer prep counter? not sure what to do with it atm though
+  - deal damage, if attacked during buff active, gain block/reflect as well
+  - if attacked, increase damage?
+new card increase max haniwa level and gain haniwa
+  - green offcolour? though it kinda fits as hybrid
+new frontline card horse archer, something related to graze and followups based on speedy or dodging
+  - green offcolour availability?
+  - passive graze = dmg, 1 loyalty, works in draw/discard for 2 loyalty
+  - onplay = gain graze?
 
 investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
   - made a woopsie when fixing commanders mark being removed
