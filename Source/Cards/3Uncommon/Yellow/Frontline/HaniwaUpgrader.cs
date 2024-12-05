@@ -70,9 +70,9 @@ namespace LBoLMod.Cards
             if (RemainingValue < PassiveConsumedRemainingValue)
                 yield break;
 
-            IReadOnlyList<Card> toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleManyOrAll(NumCardsToUpgrade, base.BattleRng);
-            if (toUpgrade.Count < NumCardsToUpgrade)
-                toUpgrade.Append(this);
+            IEnumerable<Card> toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleManyOrAll(NumCardsToUpgrade, base.BattleRng);
+            if (toUpgrade.Count() < NumCardsToUpgrade)
+                toUpgrade = toUpgrade.Append(this);
             this.NotifyActivating();
             RemainingValue -= PassiveConsumedRemainingValue;
             yield return new UpgradeCardsAction(toUpgrade);
