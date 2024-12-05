@@ -428,8 +428,9 @@ move SturdyFrontline to unused as it will be redundant with new frontline change
   - or make it not exile when all loyalty consumed, but then need to indicate it somehow, which is annoying to do
 new frontline card horse archer, something related to graze and followups based on speedy or dodging
 fix AssignDuplicateTrigger using the actual status effect level when duplicating effect - fixed
-buff archerPrepFrostArrow somehow as the dmg and block are too low?
+buff archerPrepFrostArrow somehow as the dmg and block are too low? - done
   - make it 9 by default then upgrade gives 2 triggers?
+  - also increase archer assign to 2
 
 investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
   - made a woopsie when fixing commanders mark being removed

@@ -676,6 +676,11 @@ ArcherPrepFrostArrow:
     |Assign {ArcherAssigned} Archer|.
     After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} damage and apply |Cold| to a random enemy. 
     If the target has |Cold|, gain {Block} |Block|. 
+  UpgradedDescription: |-
+    |Assign {ArcherAssigned} Archer|.
+    After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} damage and apply |Cold| to a random enemy. 
+    If the target has |Cold|, gain {Block} |Block|. 
+    Start with {StartingTriggers} triggers. 
 
 KeikiTeammate:
   Name: Keiki, The Creator

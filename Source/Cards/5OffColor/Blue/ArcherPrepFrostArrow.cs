@@ -24,10 +24,10 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.Damage = 6;
-            cardConfig.UpgradedDamage = 9;
-            cardConfig.Block = 6;
-            cardConfig.UpgradedBlock = 9;
+            cardConfig.Damage = 9;
+            cardConfig.Block = 9;
+            cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 6;
             cardConfig.UpgradedValue2 = 4;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Cold) };
@@ -39,7 +39,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ArcherPrepFrostArrowDef))]
     public sealed class ArcherPrepFrostArrow : ModAssignCard
     {
-        public override int ArcherAssigned => 1;
+        public override int ArcherAssigned => 2;
+        public override int StartingTriggers => Value1;
         public override int StartingCardCounter => Value2;
         public override Type AssignStatusType => typeof(AssignArcherPrepFrostArrow);
     }
