@@ -49,6 +49,24 @@ namespace LBoLMod.Utils
         public static List<Type> AllOptionTypes => CommonOptionTypes.Concat(UncommonOptionTypes).ToList();
         public static List<Type> AllSummonTypes => CommonSummonTypes.Concat(UncommonSummonTypes).ToList();
 
+        public static List<Type> FencerTypes => new List<Type>
+        {
+            typeof(HaniwaAttacker),
+            typeof(HaniwaBodyguard),
+            typeof(HaniwaUpgrader),
+            typeof(HaniwaMonk)
+        };
+        public static List<Type> ArcherTypes => new List<Type>
+        {
+            typeof(HaniwaSharpshooter),
+            typeof(HaniwaExploiter),
+        };
+        public static List<Type> CavalryTypes => new List<Type>
+        {
+            typeof(HaniwaSupport),
+            typeof(HaniwaSpy),
+        };
+
         public static List<Card> GetCommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             return GetOptionCards(CommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);

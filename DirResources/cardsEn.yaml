@@ -566,9 +566,8 @@ MassExtraTrigger:
 MassSummon:
   Name: Mass Summon
   Description: |-
-    |Sacrifice| {Value2} of each |Haniwa|. 
-    Add random |Frontline| cards to the hand until it is full. 
-    Add {Value1} to the draw and discard piles as well. 
+    |Sacrifice| up to {Value1} |Haniwa|. Add that many random |Frontline| cards to the draw pile. 
+    The cards spawned are based on the types of |Haniwa| sacrificed, just like when normal summoning. 
 
 UltraFrontline:
   Name: Ultra Frontline

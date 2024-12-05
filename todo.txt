@@ -332,7 +332,6 @@ clay to ashes maybe too good for 2 fp on upgrade? - wont do
 white flashbang for extra turn spell anims? - fixed
 frontlines that dont upgrade should stay at the same passive counter, else people think they keep upgrading when it's only once - done with new loyalty changes
 ultra frontline break open the passive limit? - wont do
-  - move SturdyFrontline to unused as it will be redundant with new frontline changes
   - if loyalty works like initial release, unsure what the bonus effect could be
   - perhaps it's fine to leave it for now, increasing loyalty is probs good enough already
 
@@ -415,7 +414,7 @@ ashes to clay probs too good
   - probs just move to discard instead of top of draw
   - or same as copy frontline, move to draw but random
 summon cards that sacrifice make mention that you get bonus haniwa by sacrificing less lel
-mass summon probs still too good
+mass summon probs still too good - done
   - consume up to 10(15) random haniwa, and create cards in draw pile based on the type consumed
 make haniwa buffs special type perhaps? - done
   - or instead let them stay at 0 level without removal
@@ -423,6 +422,9 @@ auto create reserves doesnt add 1 create haniwa to hand on play - fixed
 assign tickdown return, give it 1 draw on upgrade instead of increasing tickdown amount - done
 new card increase max haniwa level and gain haniwa
   - green offcolour? though it kinda fits as hybrid
+move SturdyFrontline to unused as it will be redundant with new frontline changes
+  - or make it not exile when all loyalty consumed, but then need to indicate it somehow, which is annoying to do
+new frontline card horse archer, something related to graze and followups based on speedy or dodging
 
 investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
   - made a woopsie when fixing commanders mark being removed
