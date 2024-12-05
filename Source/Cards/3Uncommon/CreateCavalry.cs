@@ -33,12 +33,12 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 5;
             cardConfig.Scry = 3;
             cardConfig.UpgradedScry = 5;
-            cardConfig.Mana = new ManaGroup() { Red = 1, White = 1};
-            cardConfig.UpgradedMana = new ManaGroup() { Philosophy = 2 };
             cardConfig.Keywords = Keyword.Scry;
             cardConfig.UpgradedKeywords = Keyword.Scry;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
+            cardConfig.RelativeCards = new List<string>() { nameof(CavalryRush) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CavalryRush) + "+" };
             return cardConfig;
         }
     }
@@ -61,7 +61,20 @@ namespace LBoLMod.Cards
             yield return new DrawManyCardAction(drawCount);
 
             if (cavalryCount >= 10)
-                yield return new GainManaAction(Mana);
+            {
+                CavalryRush assignCard = Library.CreateCard<CavalryRush>(IsUpgraded);
+                yield return new LoseHaniwaAction(HaniwaActionType.Assign, assignCard.FencerAssigned, assignCard.ArcherAssigned, assignCard.CavalryAssigned);
+                yield return new ApplyStatusEffectAction(assignCard.AssignStatusType, base.Battle.Player, level: 1, count: assignCard.StartingCardCounter)
+                {
+                    Args =
+                    {
+                        Effect =
+                        {
+                            SourceCard = assignCard
+                        }
+                    }
+                };
+            }
         }
     }
 }

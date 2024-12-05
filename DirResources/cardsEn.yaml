@@ -257,7 +257,14 @@ CreateCavalry:
     |3|: Draw 1 card. 
     |5|: |Scry| {Scry}. 
     |7|: Draw 1 card. 
-    |10|: Gain {Mana}. 
+    |10|: |Assign| 1 instance of |Cavalry Rush|. 
+  UpgradedDescription: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
+    Gain effects based on |Cavalry| level. 
+    |3|: Draw 1 card. 
+    |5|: |Scry| {Scry}. 
+    |7|: Draw 1 card. 
+    |10|: |Assign| 1 instance of |Cavalry Rush+|. 
 
 CreateFencer:
   Name: Create Fencer
