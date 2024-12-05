@@ -31,9 +31,9 @@ namespace LBoLMod.StatusEffects.Assign
             yield break;
         }
 
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
         {
-            yield return new ApplyStatusEffectAction<Watchtower>(Owner, CardValue1 + (Level - 1) * (CardValue1 / 2));
+            yield return new ApplyStatusEffectAction<Watchtower>(Owner, CardValue1 + (triggerCount - 1) * (CardValue1 / 2));
         }
     }
 }

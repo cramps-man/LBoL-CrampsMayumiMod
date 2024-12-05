@@ -24,7 +24,7 @@ namespace LBoLMod.StatusEffects.Assign
             yield return new GainManaAction(RedMana);
         }
 
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
         {
             yield return new GainManaAction(CardMana);
         }

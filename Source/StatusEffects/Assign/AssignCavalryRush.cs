@@ -22,7 +22,7 @@ namespace LBoLMod.StatusEffects.Assign
             yield return new DamageAction(Owner, base.Battle.LowestHpEnemy, AssignSourceCard.Damage);
         }
 
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
         {
             if (!onTurnStart)
                 yield return new GainManaAction(CardMana);

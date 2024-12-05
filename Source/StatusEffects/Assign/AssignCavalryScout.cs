@@ -22,9 +22,9 @@ namespace LBoLMod.StatusEffects.Assign
             yield return new DrawManyCardAction(CardValue1);
         }
 
-        protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
+        protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart, int triggerCount)
         {
-            yield return new ScryAction(CardScry.IncreasedBy((Level - 1) * CardScry.Count));
+            yield return new ScryAction(CardScry.IncreasedBy((triggerCount - 1) * CardScry.Count));
         }
     }
 }

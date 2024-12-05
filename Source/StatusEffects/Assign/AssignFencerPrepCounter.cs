@@ -23,7 +23,7 @@ namespace LBoLMod.StatusEffects.Assign
             yield return BuffAction<Reflect>(level: CardValue2);
         }
 
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
         {
             var player = base.Battle.Player;
             yield return BuffAction<Reflect>(level: player.Block + player.Shield);
