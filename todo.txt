@@ -434,10 +434,12 @@ rework fencer prep counter? not sure what to do with it atm though
   - if attacked, increase damage?
 new card increase max haniwa level and gain haniwa - done
   - green offcolour? though it kinda fits as hybrid, do hybrid
-new frontline card horse archer, something related to graze and followups based on speedy or dodging
+new frontline card horse archer, something related to graze and followups based on speedy or dodging - done
   - green offcolour availability?
   - passive graze = dmg, 1 loyalty, works in draw/discard for 2 loyalty
   - onplay = gain graze?
+  - not sure if allow mass summon to spawn it, even with green mana - will leave mass summon for now
+create haniwa show current haniwa
 
 investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - fixed
   - made a woopsie when fixing commanders mark being removed

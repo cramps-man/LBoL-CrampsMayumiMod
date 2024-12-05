@@ -59,27 +59,18 @@ namespace LBoLMod.Utils
         public static List<Type> ArcherTypes => new List<Type>
         {
             typeof(HaniwaSharpshooter),
-            typeof(HaniwaExploiter),
+            typeof(HaniwaExploiter)
         };
         public static List<Type> CavalryTypes => new List<Type>
         {
             typeof(HaniwaSupport),
-            typeof(HaniwaSpy),
+            typeof(HaniwaSpy)
         };
-
-        public static List<Card> GetCommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
-        {
-            return GetOptionCards(CommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
-        }
-
-        public static List<Card> GetUncommonCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
-        {
-            return GetOptionCards(UncommonOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
-        }
 
         public static List<Card> GetAllCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
-            return GetOptionCards(AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
+            bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
+            return GetOptionCards(hasGreen ? AllOptionTypes.Append(typeof(OptionHaniwaHorseArcher)).ToList() : AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
         }
 
         private static List<Card> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)

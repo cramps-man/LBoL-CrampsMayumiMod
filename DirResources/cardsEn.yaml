@@ -713,6 +713,27 @@ AssignDuplicateTrigger:
   Description: |-
     Choose {Value1} |Assign| buff{Value1:plural one='' other='s'} and immidiately trigger its effect {Value2} time{Value2:plural one='' other='s'} without removing {Value1:plural one='it' other='them'}. 
 
+HaniwaHorseArcher:
+  Name: Haniwa Horse Archer
+  Description: |-
+    |While in hand/draw/discard|: Whenever {PlayerName} |Grazes| an attack, deal {Value2} damage to the attacker. Requires {PassiveConsumedRemainingValue} |Loyalty| in hand, {PassiveConsumedFromDrawDiscard} from draw/discard. 
+    |When played|: Deal {Damage} damage and gain {GrazeGained} |Graze|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
+  DetailText: |-
+    Increases for each upgrade. 
+    Graze damage: +1
+    On play damage: +1
+    Graze gained: +1 per 10 upgrades
+
+OptionHaniwaHorseArcher:
+  Name: Summon Haniwa Horse Archer
+  Description: |-
+    Sacrifice {SelectRequireArcher} |Archer| and {SelectRequireCavalry} |Cavalry|.
+    Add a |Haniwa Horse Archer| to the hand. 
+    {AvailableArcher} available |Archer|, {AvailableCavalry} available |Cavalry|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireArcher} |Archer| and {SelectRequireCavalry} |Cavalry|.
+    Add a |Haniwa Horse Archer| to the hand. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance
