@@ -432,8 +432,8 @@ buff archerPrepFrostArrow somehow as the dmg and block are too low? - done
 rework fencer prep counter? not sure what to do with it atm though
   - deal damage, if attacked during buff active, gain block/reflect as well
   - if attacked, increase damage?
-new card increase max haniwa level and gain haniwa
-  - green offcolour? though it kinda fits as hybrid
+new card increase max haniwa level and gain haniwa - done
+  - green offcolour? though it kinda fits as hybrid, do hybrid
 new frontline card horse archer, something related to graze and followups based on speedy or dodging
   - green offcolour availability?
   - passive graze = dmg, 1 loyalty, works in draw/discard for 2 loyalty

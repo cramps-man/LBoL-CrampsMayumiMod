@@ -643,6 +643,12 @@ SturdyFrontline:
   Description: |-
     Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and remove both |Exile| and |Replenish|. 
 
+MaxHaniwaUp:
+  Name: Max Haniwa Up
+  Description: |-
+    Increase the max |Haniwa| level by {Value1} for all types. 
+    Gain {Value1} of all |Haniwa|. 
+
 #OFFCOLOURS
 FrozenHaniwa:
   Name: Frozen Haniwa

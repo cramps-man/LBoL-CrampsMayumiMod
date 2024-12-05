@@ -290,3 +290,10 @@ CommandersMarkSe:
   Brief: |-
     Random targeting of |Frontline| actions will instead target this enemy. 
     Only 1 mark can be active at one time. 
+
+MaxHaniwaUpSe:
+  Name: Max Haniwa Up
+  Description: |-
+    Increase the max |Haniwa| level by {Level} for all types. 
+  Brief: |-
+    Increase the max |Haniwa| level for all types. 
