@@ -410,7 +410,7 @@ create cavalry mana op? maybe only give 1
   - or have another effect, but not sure atm
 strength in numbers only check in hand or something, to limit fp gain to not broken levels
   - make upgrade just give some flat temp fp? instead of allowing draw/discard piles
-ashes to clay probs too good
+ashes to clay probs too good - done
   - probs just move to discard instead of top of draw
   - or same as copy frontline, move to draw but random
 summon cards that sacrifice make mention that you get bonus haniwa by sacrificing less lel

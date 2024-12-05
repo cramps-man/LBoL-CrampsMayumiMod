@@ -62,7 +62,7 @@ namespace LBoLMod.Cards
 
             foreach (var card in selectInteraction.SelectedCards)
             {
-                yield return new MoveCardToDrawZoneAction(card, DrawZoneTarget.Top);
+                yield return new MoveCardToDrawZoneAction(card, DrawZoneTarget.Random);
             }
             yield return new DrawManyCardAction(Value2);
         }
