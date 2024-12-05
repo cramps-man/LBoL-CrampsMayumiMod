@@ -70,12 +70,12 @@ Frontline:
   Name: Frontline
   Description: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    |Loyalty| can only be refreshed via the card being upgraded. 
+    |Loyalty| is increased by |e:1| when upgraded. 
     Upgradable any number of times. Can also be played for a separate effect. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. 
   Brief: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    |Loyalty| can only be refreshed via the card being upgraded. 
+    |Loyalty| is increased by |e:1| when upgraded. 
     Upgradable any number of times. Can also be played for a separate effect. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. 
 
