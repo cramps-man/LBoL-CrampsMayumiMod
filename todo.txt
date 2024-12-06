@@ -458,3 +458,10 @@ do something about assignTriggerUpgrade? feels kinda meh tbh - done
 archer prep frost arrow maybe increase starting card count? - done
 permanent assign make hp loss equal require haniwa - done
 do something about frontline discard draw? feels weird a bit - removed it
+
+exile frontline extra trigger, lower cost to 1 or 0? or give it more direct benefit
+  - give retain?
+frontline upgrade upgrading nothing still causes delay
+fencer prep counter check dmg source is a enemyunit - fixed
+  - also fixed weird out of reacting issue, by reworking block to just gain at end of turn
+haniwa bodyguard do something about how it plays, best way is to just play it, cos passive dmg reduction is bad
