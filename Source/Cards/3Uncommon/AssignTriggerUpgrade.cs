@@ -25,7 +25,6 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 2;
             cardConfig.Cost = new ManaGroup() { White = 1, Red = 1, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
@@ -39,7 +38,7 @@ namespace LBoLMod.Cards
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return UpgradeRandomHandAction(Value2);
+            yield return UpgradeAllHandsAction();
             yield return BuffAction<AssignTriggerUpgradeSe>(level: Value1);
         }
     }

@@ -26,8 +26,8 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 5;
-            cardConfig.UpgradedValue1 = 7;
+            cardConfig.Value1 = 4;
+            cardConfig.UpgradedValue1 = 6;
             cardConfig.Value2 = 2;
             cardConfig.UpgradedValue2 = 3;
             cardConfig.Cost = new ManaGroup() { White = 1, Any = 1 };

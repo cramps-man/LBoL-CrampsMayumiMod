@@ -10,7 +10,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 using System.Linq;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class FrontlineDiscardDrawDef : ModCardTemplate
@@ -55,3 +55,4 @@ namespace LBoLMod.Cards
         }
     }
 }
+*/

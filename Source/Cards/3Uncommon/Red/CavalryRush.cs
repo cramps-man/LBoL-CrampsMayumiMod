@@ -22,8 +22,8 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 15;
-            cardConfig.UpgradedDamage = 19;
+            cardConfig.Damage = 13;
+            cardConfig.UpgradedDamage = 17;
             cardConfig.Value1 = 4;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Mana = new ManaGroup() { Red = 1 };

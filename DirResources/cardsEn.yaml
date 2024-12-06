@@ -424,13 +424,6 @@ AssignPlayGainBlock:
   Description: |-
     When playing an |Assign| card, gain {Value1} |Block|. 
 
-StrengthInNumbers:
-  Name: Strength In Numbers
-  Description: |-
-    Gain |Temporary Firepower| for each {Mana} cost card in the hand. ({ZeroCostCount})
-  UpgradedDescription: |-
-    Gain |Temporary Firepower| for each {Mana} cost card in the hand/draw/discard piles. ({ZeroCostCount})
-
 CavalryRush:
   Name: Cavalry Rush
   Description: |-
@@ -498,7 +491,7 @@ ArcherPrepDebuff:
 AssignTriggerUpgrade:
   Name: Assign Trigger Upgrade
   Description: |-
-    Upgrade {Value2} random card{Value2:plural one='' other='s'} in the hand. 
+    Upgrade all cards in the hand. 
     Whenever an |Assign| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
 ExileFrontlineExtraTrigger:
@@ -637,11 +630,6 @@ HandsizeBlock:
     Gain {Block} |Block|. Gain {Value1} additional |Block| for each card in the hand. ({AdditionalBlock})
     For every {Value2} card{Value2:plural one='' other='s'} in the hand, {SelfName} gains {Mana} cost. 
 
-SturdyFrontline:
-  Name: Sturdy Frontline
-  Description: |-
-    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and remove both |Exile| and |Replenish|. 
-
 MaxHaniwaUp:
   Name: Max Haniwa Up
   Description: |-
@@ -665,15 +653,6 @@ FreezeFrontline:
   Name: Freeze Frontline
   Description: |-
     Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand. Transform them into |Frozen Haniwa|. 
-
-FrontlineDiscardDraw:
-  Name: Frontline Discard Draw
-  Description: |-
-    Choose any number of cards in the hand. 
-    Discard them, then draw the number of |Frontline| cards discarded. 
-  UpgradedDescription: |-
-    Choose any number of cards in the hand. 
-    Upgrade then discard them, then draw the number of |Frontline| cards discarded. 
 
 ArcherPrepFrostArrow:
   Name: Archer Prep Frost Arrow
@@ -777,3 +756,24 @@ HealFirepower:
     Gain {Value2} |Firepower|.
     |Calm 2|: Gain {FullHeal} life instead.
     |Power 2|: Gain {FullFirepower} |Firepower| instead.
+
+StrengthInNumbers:
+  Name: Strength In Numbers
+  Description: |-
+    Gain |Temporary Firepower| for each {Mana} cost card in the hand. ({ZeroCostCount})
+  UpgradedDescription: |-
+    Gain |Temporary Firepower| for each {Mana} cost card in the hand/draw/discard piles. ({ZeroCostCount})
+
+SturdyFrontline:
+  Name: Sturdy Frontline
+  Description: |-
+    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and remove both |Exile| and |Replenish|. 
+
+FrontlineDiscardDraw:
+  Name: Frontline Discard Draw
+  Description: |-
+    Choose any number of cards in the hand. 
+    Discard them, then draw the number of |Frontline| cards discarded. 
+  UpgradedDescription: |-
+    Choose any number of cards in the hand. 
+    Upgrade then discard them, then draw the number of |Frontline| cards discarded. 

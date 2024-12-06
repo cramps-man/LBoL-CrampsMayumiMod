@@ -98,11 +98,11 @@ Permanent:
   Description: |-
     When an |Assign| status is |Permanent|, after being triggered it will not be removed. 
     Can not gain extra triggers. Giving extra triggers to a |Permanent Assign| will instead count as |e:3| cards played. 
-    After triggering, lose the number of |Assigned Haniwa| and reset the cards played counter. If there is not enough |Haniwa|, lose |e:1| life instead. 
+    After triggering, lose the number of |Assigned Haniwa| and reset the cards played counter. If there is not enough |Haniwa|, lose life equal to the number of required |Haniwa| instead. 
   Brief: |- 
     When an |Assign| status is |Permanent|, after being triggered it will not be removed. 
     Can not gain extra triggers. Giving extra triggers to a |Permanent Assign| will instead count as |e:3| cards played. 
-    After triggering, lose the number of |Assigned Haniwa| and reset the cards played counter. If there is not enough |Haniwa|, lose |e:1| life instead. 
+    After triggering, lose the number of |Assigned Haniwa| and reset the cards played counter. If there is not enough |Haniwa|, lose life equal to the number of required |Haniwa| instead. 
 
 AssignArcherPrepVolley:
   Name: Archer Prep Volley

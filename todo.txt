@@ -446,15 +446,15 @@ investigate fencer buff not stacking? 2 -> 5 from create fencer didnt happen - f
 handsize block not 0 in draw pile? - wont do
   - yeah the code doesnt care where it is, but its probs fine like this
 
-fencer build barricade adjust haniwa requirement and barrier gain
-haniwa upgrader make 3 starting loyalty 4 onplay cost?
-exile summon exile 2 on upgrade?
-archerprepdebuff lower dmg, maybe not increase vuln duration on upgrade?
-cavalryrush lower dmg a bit
-heal sacrifice lower healing a bit? or increase haniwa requirement again
-do something about assignTriggerUpgrade? feels kinda meh tbh
+fencer build barricade adjust haniwa requirement and barrier gain - done
+haniwa upgrader make 3 starting loyalty 4 onplay cost? - done
+exile summon exile 2 on upgrade? - maybe leave it
+archerprepdebuff lower dmg, maybe not increase vuln duration on upgrade? - done
+cavalryrush lower dmg a bit - done
+heal sacrifice lower healing a bit? or increase haniwa requirement again - done
+do something about assignTriggerUpgrade? feels kinda meh tbh - done
   - upgrade the hand when played?
   - oh it already upgrades 1-2 random cards, but whole hand might be better?
-archer prep frost arrow maybe increase starting card count?
-do something about frontline discard draw? feels weird a bit
-permanent assign make hp loss equal require haniwa
+archer prep frost arrow maybe increase starting card count? - done
+permanent assign make hp loss equal require haniwa - done
+do something about frontline discard draw? feels weird a bit - removed it

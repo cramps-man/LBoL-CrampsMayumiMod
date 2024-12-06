@@ -154,7 +154,8 @@ namespace LBoLMod.StatusEffects
                 }
                 else
                 {
-                    yield return new DamageAction(base.Battle.Player, base.Battle.Player, DamageInfo.HpLose(1));
+                    int hpLoss = CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned;
+                    yield return new DamageAction(base.Battle.Player, base.Battle.Player, DamageInfo.HpLose(hpLoss));
                 }
             }
             else if (shouldRemove)

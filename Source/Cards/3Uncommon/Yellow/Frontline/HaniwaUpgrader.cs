@@ -28,7 +28,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Block = 10;
-            cardConfig.Value1 = 2;
+            cardConfig.Value1 = 3;
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
-        protected override int OnPlayConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 4;
         public int NumCardsToUpgrade => 2;
         public int NumUpgradedCards
         {
