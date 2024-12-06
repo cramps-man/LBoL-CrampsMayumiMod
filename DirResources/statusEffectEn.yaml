@@ -221,11 +221,12 @@ AssignCavalryScout:
 AssignFencerPrepCounter:
   Name: Fencer Prep Counter
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain {CardValue2} |Reflection| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage multiplied by number of triggers, to all enemies that have attacked {PlayerName}. 
+    Whenever {PlayerName} is attacked, increase triggers by |e:1| and gain {CardBlock} |Block| before each hit. 
     {CardFencerAssigned} |Fencer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
-    |Reflection| gain from |Block|/|Barrier| can only be triggered once. 
+    Number of enemies that have attacked, {enemiesThatAttackedPlayerCount}
   Brief: |-
-    After X cards are played, gain |Reflection| then gain |Reflection| equal to the amount of |Block| and |Barrier| on {PlayerName}. 
+    After X cards are played, deal damage to all enemies that attacked. 
 
 AssignArcherPrepDebuff:
   Name: Archer Prep Debuff
