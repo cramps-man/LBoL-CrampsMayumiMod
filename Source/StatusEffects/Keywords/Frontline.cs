@@ -16,7 +16,8 @@ namespace LBoLMod.StatusEffects.Keywords
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
-            statusConfig.RelativeEffects = new List<string>() { nameof(Loyalty) };
+            statusConfig.Keywords = LBoL.Base.Keyword.Exile;
+            statusConfig.RelativeEffects = new List<string>() { nameof(Loyalty), nameof(Haniwa) };
             return statusConfig;
         }
     }
