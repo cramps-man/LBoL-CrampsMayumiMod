@@ -39,6 +39,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaMonkDef))]
     public sealed class HaniwaMonk : ModFrontlineCard
     {
+        public override bool IsFencerType => true;
         protected override int OnPlayConsumedRemainingValue => 2;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedDamage;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;

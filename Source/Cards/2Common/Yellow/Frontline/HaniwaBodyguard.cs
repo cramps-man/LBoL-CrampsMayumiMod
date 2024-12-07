@@ -41,6 +41,7 @@ namespace LBoLMod.Cards
         public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault();
         protected override int OnPlayConsumedRemainingValue => 2;
         public int DamageTaken { get; set; } = 0;
+        public override bool IsFencerType => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

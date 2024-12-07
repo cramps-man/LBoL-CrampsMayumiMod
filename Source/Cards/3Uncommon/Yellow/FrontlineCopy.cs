@@ -56,7 +56,7 @@ namespace LBoLMod.Cards
                 {
                     var cardClone = (FrozenHaniwa)card.CloneBattleCard();
                     cardClone.IsRetain = false;
-                    cardClone.OriginalCard = frozenCard.OriginalCard.CloneBattleCard();
+                    cardClone.OriginalCard = (ModFrontlineCard)frozenCard.OriginalCard.CloneBattleCard();
                     copiedCards.Add(cardClone);
                 }
                 else

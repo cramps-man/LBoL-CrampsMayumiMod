@@ -469,8 +469,9 @@ haniwa bodyguard do something about how it plays, best way is to just play it, c
   - or atleast a certain number like 4-5
 make gaining haniwa gain loyalty to frontlines of same type in hand
   - adjust loyalty numbers on frontlines if needed
+frozen haniwa show name of original card
 
-sharpshooter does not consume loyalty but still allows bypassing graze?
+sharpshooter does not consume loyalty but still allows bypassing graze? - fixed, forgor to update the check
   - had 1 loyalty and 4 loyalty sharpshooters
 fencer prep counter attacking dead unit shows number
   - check if the unit is dead or not

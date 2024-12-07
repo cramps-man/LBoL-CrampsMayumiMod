@@ -40,6 +40,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaHorseArcherDef))]
     public sealed class HaniwaHorseArcher : ModFrontlineCard
     {
+        public override bool IsArcherType => true;
+        public override bool IsCavalryType => true;
         public int PassiveConsumedFromDrawDiscard => 2;
         protected override int OnPlayConsumedRemainingValue => 3;
         public DamageInfo GrazeDamage => DamageInfo.Attack(Value2);

@@ -44,6 +44,7 @@ namespace LBoLMod.Cards
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 3;
         private bool accuracyModified = false;
+        public override bool IsArcherType => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

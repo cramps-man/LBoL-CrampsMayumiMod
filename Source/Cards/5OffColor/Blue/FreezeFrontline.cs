@@ -50,7 +50,7 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction freezeInteraction))
                 yield break;
 
-            foreach(var card in freezeInteraction.SelectedCards)
+            foreach(ModFrontlineCard card in freezeInteraction.SelectedCards)
             {
                 FrozenHaniwa frozen = Library.CreateCard<FrozenHaniwa>();
                 frozen.OriginalCard = card;

@@ -44,6 +44,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSpyDef))]
     public sealed class HaniwaSpy : ModFrontlineCard
     {
+        public override bool IsCavalryType => true;
         protected override int OnPlayConsumedRemainingValue => 3;
         public ScryInfo TotalScry => Scry.IncreasedBy(Math.Min(base.UpgradeCounter.GetValueOrDefault() / 3, 10));
         protected override void OnEnterBattle(BattleController battle)

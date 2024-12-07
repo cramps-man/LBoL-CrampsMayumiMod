@@ -4,6 +4,8 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
+using LBoLMod.BattleActions;
+using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Linq;
@@ -31,6 +33,9 @@ namespace LBoLMod.Cards
         protected virtual int PassiveConsumedRemainingValue => 1;
         protected virtual int OnPlayConsumedRemainingValue => 1;
         public bool ShouldConsumeRemainingValue { get; set; } = true;
+        public virtual bool IsFencerType => false;
+        public virtual bool IsArcherType => false;
+        public virtual bool IsCavalryType => false;
 
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -39,6 +44,17 @@ namespace LBoLMod.Cards
             base.HandleBattleEvent(base.Battle.CardUsing, this.OnCardUsing);
             base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
             base.HandleBattleEvent(base.Battle.CardMovedToDrawZone, this.OnCardMovedToDrawZone);
+            base.HandleBattleEvent(ModGameEvents.GainedHaniwa, this.OnGainedHaniwa);
+        }
+
+        private void OnGainedHaniwa(GainHaniwaEventArgs args)
+        {
+            if (IsFencerType)
+                RemainingValue += args.FencerToGain;
+            if (IsArcherType)
+                RemainingValue += args.ArcherToGain;
+            if (IsCavalryType)
+                RemainingValue += args.CavalryToGain;
         }
 
         private void OnCardMovedToDrawZone(CardMovingToDrawZoneEventArgs args)

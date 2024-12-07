@@ -41,6 +41,7 @@ namespace LBoLMod.Cards
         protected override int PassiveConsumedRemainingValue => 2;
         protected override int OnPlayConsumedRemainingValue => 3;
         public ManaGroup TotalMana => Mana + ManaGroup.Whites(base.UpgradeCounter.GetValueOrDefault() / 8);
+        public override bool IsCavalryType => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

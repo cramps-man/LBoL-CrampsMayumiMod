@@ -42,8 +42,11 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrozenHaniwaDef))]
     public sealed class FrozenHaniwa : ModFrontlineCard
     {
+        public override bool IsFencerType => OriginalCard == null ? false : OriginalCard.IsFencerType;
+        public override bool IsArcherType => OriginalCard == null ? false : OriginalCard.IsArcherType;
+        public override bool IsCavalryType => OriginalCard == null ? false : OriginalCard.IsCavalryType;
         protected override int PassiveConsumedRemainingValue => 2;
-        public Card OriginalCard { get; set; }
+        public ModFrontlineCard OriginalCard { get; set; }
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {

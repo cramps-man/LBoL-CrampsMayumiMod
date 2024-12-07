@@ -43,6 +43,7 @@ namespace LBoLMod.Cards
         public DamageInfo EndOfTurnDmg => DamageInfo.Attack(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
+        public override bool IsFencerType => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

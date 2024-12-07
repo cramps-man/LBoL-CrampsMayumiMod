@@ -80,6 +80,8 @@ HaniwaBodyguard:
     |While in hand|: Reduce up to {RemainingValue} direct or |Barrier| damage. Consume |Loyalty| based on damage reduced. 
     |When played|: Gain {Block} |Block|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Fencer| type. 
+
     Increases for each upgrade. 
     |Block|: +1
 
@@ -89,6 +91,8 @@ HaniwaSupport:
     |While in hand|: Whenever an attack card is played, draw {Value2} card. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Gain {TotalMana}. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Cavalry| type. 
+
     Increases for each upgrade. 
     1 extra yellow mana per 8 upgrade. 
 
@@ -110,6 +114,8 @@ HaniwaAttacker:
     |While in hand|: At end of turn, deal {EndOfTurnDmg} damage to the enemy with the lowest life. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Deal {Damage} damage. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Fencer| type. 
+
     Increases for each upgrade. 
     End of turn damage: +1
     On play damage: +1
@@ -120,6 +126,8 @@ HaniwaSharpshooter:
     |While in hand|: If an enemy were to |Graze| {PlayerName}'s next attack instance, gain |Accurate| on that instance. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Deal {Damage} damage and apply {Value2} |Lock On|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Archer| type. 
+
     Increases for each upgrade. 
     On play damage: +1
     |Lock On| +1 per 3 upgrade
@@ -311,6 +319,8 @@ HaniwaSpy:
     |While in draw/discard pile|: At end of turn in the same pile as {SelfName}, a random card |temporarily costs| {Mana} less. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: |Scry| {TotalScry} and draw |e:1| card. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Cavalry| type. 
+
     Increases for each upgrade. 
     On Play |Scry|: +1 every 3 upgrades, up to |Scry 10|
 
@@ -320,6 +330,8 @@ HaniwaUpgrader:
     |While in hand|: At end of turn, upgrade {NumCardsToUpgrade} random card{NumCardsToUpgrade:plural one='' other='s'} in the hand. Prioritises other cards. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Gain {Block} |Block| then upgrade all cards in the hand. Gain {Value2} additional |Block| for each upgraded card in the hand ({NumUpgradedCardsBlock}). Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Fencer| type. 
+
     Increases for each upgrade. 
     Block: +1
     Upgraded card block: +1 per 5 upgrade
@@ -330,6 +342,8 @@ HaniwaExploiter:
     |While in hand|: At end of turn, deal {Damage} damage to all enemies with debuffs. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Deal {OnPlayDmg} damage. Deal {DebuffDmg} additional damage for each debuff on the target. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Archer| type. 
+
     Increases for each upgrade. 
     End of turn damage: +1
     On Play damage: +1
@@ -341,6 +355,8 @@ HaniwaMonk:
     |While in hand|: When {PlayerName} receives a buff, increase damage by {Value2}. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Deal {Damage} damage and reset increased damage to 0. Increased damage ({ChargedDamage}). Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Fencer| type. 
+
     Increases for each upgrade. 
     On Play damage: +1
     Increased buff damage +1 per 5 upgrade. 
@@ -581,6 +597,7 @@ HaniwaCommander:
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
     Can not have |On Play| action be activated by another card. 
+    Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
     
     Increases for each upgrade. 
     Damage: +2
@@ -645,6 +662,7 @@ FrozenHaniwa:
     |At end of turn|: Transform back into the original card. 
   DetailText: |-
     Does not carry over keywords from/to the original card. 
+    Is same type as the original card. 
 
     Increases for each upgrade. 
     On Play damage: +1
@@ -697,6 +715,8 @@ HaniwaHorseArcher:
     |While in hand/draw/discard|: Whenever {PlayerName} |Grazes| an attack, deal {Value2} damage to the attacker. Requires {PassiveConsumedRemainingValue} |Loyalty| in hand, {PassiveConsumedFromDrawDiscard} from draw/discard. 
     |When played|: Deal {Damage} damage and gain {GrazeGained} |Graze|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
+    Is |Archer| and |Cavalry| type. 
+
     Increases for each upgrade. 
     Graze damage: +1
     On play damage: +1

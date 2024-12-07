@@ -41,6 +41,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaUpgraderDef))]
     public sealed class HaniwaUpgrader : ModFrontlineCard
     {
+        public override bool IsFencerType => true;
         protected override int OnPlayConsumedRemainingValue => 4;
         public int NumCardsToUpgrade => 2;
         public int NumUpgradedCards
