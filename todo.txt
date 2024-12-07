@@ -470,7 +470,13 @@ haniwa bodyguard do something about how it plays, best way is to just play it, c
 make gaining haniwa gain loyalty to frontlines of same type in hand - done
   - adjust loyalty numbers on frontlines if needed
 frozen haniwa show name of original card - done
-maybe haniwa bodyguard should gain 2 instead of 1 loyalty, but need to see how the numbers work
+maybe haniwa bodyguard should gain 2 instead of 1 loyalty, but need to see how the numbers work - done
+  - perhaps better to just give passive 4 loyalty per turn if less than 4, like the initial release, except it doesnt scale
+  - and perhaps loyalty cost to 5 so it needs 1 increase to cycle it
+maybe increase starter haniwa gen default gain to 2
+haniwa exploiter debuff dmg +1 per 5 upgrades instead of 3 - done
+discard upgrade always upgrade 5 times even unupgraded - done
+haniwa loyalty gain only in hand woops - done
 
 sharpshooter does not consume loyalty but still allows bypassing graze? - fixed, forgor to update the check
   - had 1 loyalty and 4 loyalty sharpshooters

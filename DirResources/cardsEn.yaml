@@ -77,7 +77,7 @@ HybridDraw:
 HaniwaBodyguard:
   Name: Haniwa Bodyguard
   Description: |-
-    |While in hand|: Reduce up to {RemainingValue} direct or |Barrier| damage. Consume |Loyalty| based on damage reduced. 
+    |While in hand|: Reduce up to {RemainingValue} direct or |Barrier| damage. Consume |Loyalty| based on damage reduced. At the start of {PlayerName}'s turn, if {SelfName} is in the hand and |Loyalty| is less than {LoyaltyThreshold}, |Loyalty| becomes {LoyaltyThreshold}. 
     |When played|: Gain {Block} |Block|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Is |Fencer| type. 
@@ -347,7 +347,7 @@ HaniwaExploiter:
     Increases for each upgrade. 
     End of turn damage: +1
     On Play damage: +1
-    Debuff damage: +1 per 3 upgrades
+    Debuff damage: +1 per 5 upgrades
 
 HaniwaMonk:
   Name: Haniwa Monk

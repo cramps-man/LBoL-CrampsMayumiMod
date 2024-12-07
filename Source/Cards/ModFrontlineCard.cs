@@ -49,6 +49,8 @@ namespace LBoLMod.Cards
 
         private void OnGainedHaniwa(GainHaniwaEventArgs args)
         {
+            if (!base.Battle.HandZone.Contains(this))
+                return;
             if (IsFencerType)
                 RemainingValue += args.FencerToGain;
             if (IsArcherType)

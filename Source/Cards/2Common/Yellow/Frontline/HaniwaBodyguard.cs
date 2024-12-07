@@ -9,6 +9,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -39,13 +40,21 @@ namespace LBoLMod.Cards
     public sealed class HaniwaBodyguard : ModFrontlineCard
     {
         public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault();
-        protected override int OnPlayConsumedRemainingValue => 4;
+        protected override int OnPlayConsumedRemainingValue => 5;
         public int DamageTaken { get; set; } = 0;
         public override bool IsFencerType => true;
+        public int LoyaltyThreshold => 4;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.HandleBattleEvent<DamageEventArgs>(base.Battle.Player.DamageTaking, new GameEventHandler<DamageEventArgs>(this.OnPlayerDamageTaking));
+            base.HandleBattleEvent(base.Battle.Player.DamageTaking, this.OnPlayerDamageTaking);
+            base.HandleBattleEvent(base.Battle.Player.TurnStarting, this.OnPlayerTurnStarting);
+        }
+
+        private void OnPlayerTurnStarting(UnitEventArgs args)
+        {
+            if (base.Battle.HandZone.Contains(this) && RemainingValue < LoyaltyThreshold)
+                RemainingValue = LoyaltyThreshold;
         }
 
         private void OnPlayerDamageTaking(DamageEventArgs args)
