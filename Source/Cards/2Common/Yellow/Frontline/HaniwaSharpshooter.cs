@@ -57,7 +57,7 @@ namespace LBoLMod.Cards
                 return;
             if (base.Zone != CardZone.Hand)
                 return;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 return;
             if (args.DamageInfo.DamageType != DamageType.Attack)
                 return;

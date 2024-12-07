@@ -464,4 +464,13 @@ exile frontline extra trigger, lower cost to 1 or 0? or give it more direct bene
 frontline upgrade upgrading nothing still causes delay
 fencer prep counter check dmg source is a enemyunit - fixed
   - also fixed weird out of reacting issue, by reworking block to just gain at end of turn
-haniwa bodyguard do something about how it plays, best way is to just play it, cos passive dmg reduction is bad
+haniwa bodyguard do something about how it plays, best way is to just play it, cos passive dmg reduction is bad - loyalty haniwa gain change will probs make this ok
+  - make loyalty refresh fully on upgrade, unique for bodyguard
+  - or atleast a certain number like 4-5
+make gaining haniwa gain loyalty to frontlines of same type in hand
+  - adjust loyalty numbers on frontlines if needed
+
+sharpshooter does not consume loyalty but still allows bypassing graze?
+  - had 1 loyalty and 4 loyalty sharpshooters
+fencer prep counter attacking dead unit shows number
+  - check if the unit is dead or not

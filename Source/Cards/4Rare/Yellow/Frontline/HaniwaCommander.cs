@@ -56,7 +56,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Draw && base.Zone != CardZone.Hand && base.Zone != CardZone.Discard)
                 yield break;
-            if (RemainingValue <= 0)
+            if (RemainingValue < PassiveConsumedRemainingValue)
                 yield break;
             var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
             if (!frontlinesInHand.Any())
@@ -74,7 +74,7 @@ namespace LBoLMod.Cards
             {
                 yield return battleAction;
             }
-            RemainingValue -= 1;
+            RemainingValue -= PassiveConsumedRemainingValue;
             base.NotifyChanged();
         }
 
