@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.AllEnemies;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
             cardConfig.Damage = 16;
-            cardConfig.Value1 = 2;
+            cardConfig.Value1 = 3;
             cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -45,7 +45,8 @@ namespace LBoLMod.Cards
         public override bool IsFencerType => OriginalCard == null ? false : OriginalCard.IsFencerType;
         public override bool IsArcherType => OriginalCard == null ? false : OriginalCard.IsArcherType;
         public override bool IsCavalryType => OriginalCard == null ? false : OriginalCard.IsCavalryType;
-        protected override int PassiveConsumedRemainingValue => 2;
+        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 2;
         public ModFrontlineCard OriginalCard { get; set; }
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)

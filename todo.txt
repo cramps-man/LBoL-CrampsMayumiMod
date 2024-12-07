@@ -467,7 +467,7 @@ fencer prep counter check dmg source is a enemyunit - fixed
 haniwa bodyguard do something about how it plays, best way is to just play it, cos passive dmg reduction is bad - loyalty haniwa gain change will probs make this ok
   - make loyalty refresh fully on upgrade, unique for bodyguard
   - or atleast a certain number like 4-5
-make gaining haniwa gain loyalty to frontlines of same type in hand
+make gaining haniwa gain loyalty to frontlines of same type in hand - done
   - adjust loyalty numbers on frontlines if needed
 frozen haniwa show name of original card
 

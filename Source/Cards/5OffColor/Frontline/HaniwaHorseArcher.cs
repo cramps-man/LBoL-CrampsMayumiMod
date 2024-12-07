@@ -42,8 +42,9 @@ namespace LBoLMod.Cards
     {
         public override bool IsArcherType => true;
         public override bool IsCavalryType => true;
-        public int PassiveConsumedFromDrawDiscard => 2;
-        protected override int OnPlayConsumedRemainingValue => 3;
+        public int PassiveConsumedFromDrawDiscard => 3;
+        protected override int PassiveConsumedRemainingValue => 2;
+        protected override int OnPlayConsumedRemainingValue => 6;
         public DamageInfo GrazeDamage => DamageInfo.Attack(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();

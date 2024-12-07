@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaCommanderDef))]
     public sealed class HaniwaCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 2;
+        protected override int PassiveConsumedRemainingValue => 3;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
         protected override void OnEnterBattle(BattleController battle)
         {

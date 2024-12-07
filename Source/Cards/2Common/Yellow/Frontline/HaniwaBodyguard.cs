@@ -39,7 +39,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaBodyguard : ModFrontlineCard
     {
         public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault();
-        protected override int OnPlayConsumedRemainingValue => 2;
+        protected override int OnPlayConsumedRemainingValue => 4;
         public int DamageTaken { get; set; } = 0;
         public override bool IsFencerType => true;
         protected override void OnEnterBattle(BattleController battle)

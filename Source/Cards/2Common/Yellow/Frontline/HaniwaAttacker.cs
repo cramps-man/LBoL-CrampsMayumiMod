@@ -26,7 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 10;
-            cardConfig.Value1 = 3;
+            cardConfig.Value1 = 5;
             cardConfig.Value2 = 6;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -39,7 +39,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaAttackerDef))]
     public sealed class HaniwaAttacker : ModFrontlineCard
     {
-        protected override int OnPlayConsumedRemainingValue => 2;
+        protected override int PassiveConsumedRemainingValue => 2;
+        protected override int OnPlayConsumedRemainingValue => 3;
         public DamageInfo EndOfTurnDmg => DamageInfo.Attack(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();

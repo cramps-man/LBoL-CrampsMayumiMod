@@ -24,7 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 3;
+            cardConfig.Value1 = 4;
             cardConfig.Value2 = 1;
             cardConfig.Mana = new ManaGroup() { White = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
@@ -38,8 +38,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSupportDef))]
     public sealed class HaniwaSupport : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 2;
-        protected override int OnPlayConsumedRemainingValue => 3;
+        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 5;
         public ManaGroup TotalMana => Mana + ManaGroup.Whites(base.UpgradeCounter.GetValueOrDefault() / 8);
         public override bool IsCavalryType => true;
         protected override void OnEnterBattle(BattleController battle)
