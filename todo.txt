@@ -482,3 +482,5 @@ sharpshooter does not consume loyalty but still allows bypassing graze? - fixed,
   - had 1 loyalty and 4 loyalty sharpshooters
 fencer prep counter attacking dead unit shows number - fixed
   - check if the unit is dead or not
+
+investigate how blank card does colour check, and use it for my horse archer and prep frost arrow checks
