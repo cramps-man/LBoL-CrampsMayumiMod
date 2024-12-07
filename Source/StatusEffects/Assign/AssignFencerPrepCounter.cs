@@ -52,7 +52,7 @@ namespace LBoLMod.StatusEffects.Assign
 
         protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
         {
-            yield return new DamageAction(Owner, enemiesThatAttackedPlayer, totalDamage);
+            yield return new DamageAction(Owner, enemiesThatAttackedPlayer.Where(e => e.IsAlive), totalDamage);
         }
     }
 }

@@ -50,10 +50,15 @@ namespace LBoLMod.Cards
             yield return DefenseAction();
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
+            if (selectInteraction.SelectedCards.Count == 0)
+                yield break;
 
             yield return new UpgradeCardsAction(selectInteraction.SelectedCards);
             for (int i = 0; i < Value2; i++)
-                yield return new UpgradeCardsAction(selectInteraction.SelectedCards.Where(c => c is ModFrontlineCard).ToList());
+            {
+                if (selectInteraction.SelectedCards.Any(c => c.CanUpgradeAndPositive))
+                    yield return new UpgradeCardsAction(selectInteraction.SelectedCards.Where(c => c.CanUpgradeAndPositive).ToList());
+            }
         }
     }
 }

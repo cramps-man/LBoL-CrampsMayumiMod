@@ -30,7 +30,9 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 2;
             cardConfig.Value2 = 1;
             cardConfig.UpgradedValue2 = 2;
-            cardConfig.Cost = new ManaGroup() { Hybrid = 1, Any = 1, HybridColor = 2 };
+            cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
+            cardConfig.Keywords = Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
             return cardConfig;

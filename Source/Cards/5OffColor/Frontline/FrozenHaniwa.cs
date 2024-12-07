@@ -48,6 +48,7 @@ namespace LBoLMod.Cards
         protected override int PassiveConsumedRemainingValue => 3;
         protected override int OnPlayConsumedRemainingValue => 2;
         public ModFrontlineCard OriginalCard { get; set; }
+        public string OriginalCardName => OriginalCard == null ? "None" : OriginalCard.Name;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
