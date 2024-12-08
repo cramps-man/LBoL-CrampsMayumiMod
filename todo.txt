@@ -491,7 +491,7 @@ add new common card fast summon - done
 move exile summon to uncommon - done
   - let it exile up to 2 cards
   - allow choosing more frontlines for each card exiled? so up to +2
-fix haniwa horse archer not being uncommon
+fix haniwa horse archer not being uncommon - done
 update loyalty numbers
   - upgrade increases by 2, and specify it also increases starting loyalty by 1
   - increase loyalty numbers across the board probs

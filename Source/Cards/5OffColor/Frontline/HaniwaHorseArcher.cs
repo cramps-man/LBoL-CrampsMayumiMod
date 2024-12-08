@@ -23,6 +23,7 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
+            cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Green };
