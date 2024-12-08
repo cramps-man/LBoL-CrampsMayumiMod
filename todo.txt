@@ -484,3 +484,14 @@ fencer prep counter attacking dead unit shows number - fixed
   - check if the unit is dead or not
 
 investigate how blank card does colour check, and use it for my horse archer and prep frost arrow checks
+  - it just sets a flag which is used when rolling and eventually checks mana base, so basically what im doing atm
+
+add new common card fast summon - done
+  - exile inate summon 1 W(0), replenish on upgrade
+move exile summon to uncommon
+  - let it exile up to 2 cards
+  - allow choosing more frontlines for each card exiled? so up to +2
+fix haniwa horse archer not being uncommon
+update loyalty numbers
+  - upgrade increases by 2, and specify it also increases starting loyalty by 1
+  - increase loyalty numbers across the board probs
