@@ -488,7 +488,7 @@ investigate how blank card does colour check, and use it for my horse archer and
 
 add new common card fast summon - done
   - exile inate summon 1 W(0), replenish on upgrade
-move exile summon to uncommon
+move exile summon to uncommon - done
   - let it exile up to 2 cards
   - allow choosing more frontlines for each card exiled? so up to +2
 fix haniwa horse archer not being uncommon
