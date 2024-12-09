@@ -492,6 +492,14 @@ move exile summon to uncommon - done
   - let it exile up to 2 cards
   - allow choosing more frontlines for each card exiled? so up to +2
 fix haniwa horse archer not being uncommon - done
-update loyalty numbers
+update loyalty numbers - done, nerfed haniwa loyalty gain, leave bodyguard for now
   - upgrade increases by 2, and specify it also increases starting loyalty by 1
   - increase loyalty numbers across the board probs
+  - or lower haniwa loyalty gain to 1, no matter the number of haniwa
+  - haniwa bodyguard can probs just gain 2 per upgrade/haniwagain
+new card, either skill or ability
+  - assign buffs dont stack
+  - not sure if ill implement this tbh, either stick to triggers or the buffs not stacking, so would be a lot of work to update existing stuff
+assign cost trigger overflow spent mana?
+  - upside might not make up downside, which is why this change might be nice
+maybe lower haniwa horse archer requirement to 1 archer 1 cavalry

@@ -51,12 +51,12 @@ namespace LBoLMod.Cards
         {
             if (!base.Battle.HandZone.Contains(this))
                 return;
-            if (IsFencerType)
-                RemainingValue += args.FencerToGain;
-            if (IsArcherType)
-                RemainingValue += args.ArcherToGain;
-            if (IsCavalryType)
-                RemainingValue += args.CavalryToGain;
+            if (IsFencerType && args.FencerToGain > 0)
+                RemainingValue += args.FencerToGain < 5 ? 1 : 2;
+            if (IsArcherType && args.ArcherToGain > 0)
+                RemainingValue += args.ArcherToGain < 5 ? 1 : 2;
+            if (IsCavalryType && args.CavalryToGain > 0)
+                RemainingValue += args.CavalryToGain < 5 ? 1 : 2;
         }
 
         private void OnCardMovedToDrawZone(CardMovingToDrawZoneEventArgs args)
