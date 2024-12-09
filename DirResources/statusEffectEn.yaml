@@ -265,8 +265,10 @@ AssignCostTriggerSe:
   Name: Assign Cost Trigger
   Description: |-
     Until the end of this combat, |Assign| cards in the hand temporarily gain {IncreasedCost} cost. |Assign| buffs start with increased extra triggers of {Level}.
+    Regain any mana spent on |Assign| cards at start of next turn. 
   Brief: |-
     Until the end of this combat, |Assign| cards in the hand temporarily gain {IncreasedCost} cost. |Assign| buffs start with increased extra triggers.
+    Regain any mana spent on |Assign| cards at start of next turn. 
 
 AutoCreateReservesSe:
   Name: Auto Create Reserves

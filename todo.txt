@@ -500,6 +500,8 @@ update loyalty numbers - done, nerfed haniwa loyalty gain, leave bodyguard for n
 new card, either skill or ability
   - assign buffs dont stack
   - not sure if ill implement this tbh, either stick to triggers or the buffs not stacking, so would be a lot of work to update existing stuff
-assign cost trigger overflow spent mana?
+assign cost trigger regain spent mana? - done
   - upside might not make up downside, which is why this change might be nice
+  - might need to increase cost of the ability but we shall see
 maybe lower haniwa horse archer requirement to 1 archer 1 cavalry
+  - it is easy accessible source of graze, so perhaps it's fine
