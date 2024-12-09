@@ -169,11 +169,11 @@ OptionHaniwaSharpshooter:
 OptionHaniwaSupport:
   Name: Summon Haniwa Support
   Description: |-
-    Sacrifice {SelectRequireCavalry} |Cavlary|.
+    Sacrifice {SelectRequireCavalry} |Cavalry|.
     Add a |Haniwa Support| to the hand. 
     {AvailableCavalry} available |Cavalry|. 
   NonbattleDescription: |-
-    Sacrifice {SelectRequireCavalry} |Cavlary|.
+    Sacrifice {SelectRequireCavalry} |Cavalry|.
     Add a |Haniwa Support| to the hand. 
 
 ModAssignOptionCard:

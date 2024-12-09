@@ -505,3 +505,5 @@ assign cost trigger regain spent mana? - done
   - might need to increase cost of the ability but we shall see
 maybe lower haniwa horse archer requirement to 1 archer 1 cavalry
   - it is easy accessible source of graze, so perhaps it's fine
+exile frontline extra trigger maybe also execute onplay actions?
+haniwa commander remove replinish perhaps, as it's basically a free 25+ dmg attack
