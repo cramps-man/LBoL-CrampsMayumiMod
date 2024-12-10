@@ -54,7 +54,6 @@ General card adjustments as well.
 
 - **Frontline Haniwa Create**: Cost updated to be W(1)
   - Uncommon and Rare haniwa gains reduced by 1. The gain was a bit much especially since it gains all 3 types
-
 - **Summon Haniwa**: Now requires selecting 2 different Frontline cards instead of creating 2 copies of 1
   - This effectively increases the Haniwa cost. It's quite effecient costwise but didn't want to nerf the mana
 - **Haniwa Blitz**: No longer discards selected cards
@@ -69,6 +68,7 @@ General card adjustments as well.
 - **Loyalty Strike**: Reworked bonus damage, no longer increased for each Frontline card in hand
   - Now increases by 1 for total Loyalty of all Frontline cards in hand
   - Damage reduced from 22(28) -> 20(26)
+  - Cost reduced from WW1(W2) -> WW1(W1)
 - **Ashes To Clay**: Now moves from Exile to draw pile randomly, instead of the top
 - **Heal Sacrifice**: Reduced healing from 5(7) -> 4(6)
 

@@ -497,7 +497,7 @@ update loyalty numbers - done, nerfed haniwa loyalty gain, leave bodyguard for n
   - increase loyalty numbers across the board probs
   - or lower haniwa loyalty gain to 1, no matter the number of haniwa
   - haniwa bodyguard can probs just gain 2 per upgrade/haniwagain
-new card, either skill or ability
+new card, either skill or ability - LEAVE FOR NOW
   - assign buffs dont stack
   - not sure if ill implement this tbh, either stick to triggers or the buffs not stacking, so would be a lot of work to update existing stuff
 assign cost trigger regain spent mana? - done
@@ -505,5 +505,19 @@ assign cost trigger regain spent mana? - done
   - might need to increase cost of the ability but we shall see
 maybe lower haniwa horse archer requirement to 1 archer 1 cavalry
   - it is easy accessible source of graze, so perhaps it's fine
+  - perhaps down to 1 archer 2 cavalry
 exile frontline extra trigger maybe also execute onplay actions?
 haniwa commander remove replinish perhaps, as it's basically a free 25+ dmg attack
+haniwa bodyguard minimum perturn could scale every few upgrades
+discard upgrade still has upgrade delay when not selecting any cards
+check blank card when summoning haniwa horse archer or choose short assign on archer prep frost arrow
+look into updating display when haniwa spy gets its onplay executed from another source
+  - leads to confusing moments where you dont know what the prompt is asking you for
+new cavalry frontline, charges loyalty for its passive
+  - active then deal more dmg if more loyalty + inflict vuln
+fencer prep counter should deal damage to a random enemy if none have been marked
+  - and perhaps lower base dmg to like 4(5) and start with 3 triggers
+make more clear distinction between Requires Loyalty and Consumes Loyalty
+forgor to mention loyalty strike on upgrade is cheaper in changelog
+
+investigate fencer kamikaze which is accurate, with sharpshooter that consumed loyalty for passive?
