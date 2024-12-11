@@ -510,7 +510,7 @@ maybe lower haniwa horse archer requirement to 1 archer 1 cavalry - PROBS LEAVE 
 exile frontline extra trigger maybe also execute onplay actions?
   - maybe find something else to make this feel better, consume loyalty instead?
 haniwa commander remove replinish perhaps, as it's basically a free 25+ dmg attack - DONE
-haniwa bodyguard minimum perturn could scale every few upgrades
+haniwa bodyguard minimum perturn could scale every few upgrades - DONE
 discard upgrade still has upgrade delay when not selecting any cards
 check blank card when summoning haniwa horse archer or choose short assign on archer prep frost arrow
 look into updating display when haniwa spy gets its onplay executed from another source

@@ -79,6 +79,7 @@ HaniwaBodyguard:
 
     Increases for each upgrade. 
     |Block|: +1
+    Turn start |Loyalty| minimum: +1 per {TurnStartLoyaltyScaling} upgrades
 
 HaniwaSupport:
   Name: Haniwa Support
