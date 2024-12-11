@@ -50,6 +50,8 @@ namespace LBoLMod.Cards
             yield return DefenseAction();
             if (!(precondition is SelectHandInteraction discardInteraction))
                 yield break;
+            if (discardInteraction.SelectedCards.Count == 0)
+                yield break;
             for (int i = 0; i < Value1; i++)
                 yield return new UpgradeCardsAction(discardInteraction.SelectedCards.Where(c => c is ModFrontlineCard).ToList());
             yield return new DiscardManyAction(discardInteraction.SelectedCards);
