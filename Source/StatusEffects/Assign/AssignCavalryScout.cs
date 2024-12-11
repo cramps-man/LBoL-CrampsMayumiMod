@@ -2,6 +2,7 @@
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign
@@ -24,7 +25,7 @@ namespace LBoLMod.StatusEffects.Assign
 
         protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart, int triggerCount)
         {
-            yield return new ScryAction(CardScry.IncreasedBy((triggerCount - 1) * CardScry.Count));
+            yield return new DescriptiveScryAction(CardScry.IncreasedBy((triggerCount - 1) * CardScry.Count), "Cavalry Scout - Scry");
         }
     }
 }

@@ -522,8 +522,10 @@ try use yellow mana symbol in haniwa support tooltip - DONE
 update cavalry supplies as well - DONE
 
 check blank card when summoning haniwa horse archer or choose short assign on archer prep frost arrow - DONE
-look into updating display when haniwa spy gets its onplay executed from another source
+look into updating display when haniwa spy gets its onplay executed from another source - DONE
   - leads to confusing moments where you dont know what the prompt is asking you for
+  - easiest way is to copy the scry battle action, and add my own stuff
+  - also fixed for cavalry scout just incase
 new cavalry frontline, charges loyalty for its passive
   - active then deal more dmg if more loyalty + inflict vuln
   - gain more loyalty end of turn every this card in hand
