@@ -526,10 +526,10 @@ look into updating display when haniwa spy gets its onplay executed from another
   - leads to confusing moments where you dont know what the prompt is asking you for
   - easiest way is to copy the scry battle action, and add my own stuff
   - also fixed for cavalry scout just incase
+make more clear distinction between Requires Loyalty and Consumes Loyalty - DONE
 new cavalry frontline, charges loyalty for its passive
   - active then deal more dmg if more loyalty + inflict vuln
   - gain more loyalty end of turn every this card in hand
-make more clear distinction between Requires Loyalty and Consumes Loyalty
 new card to replace exile summon
   - summon 1 frontline card, it starts with 2(10) extra loyalty
   - trigger its onplay action when added to hand and consume loyalty
