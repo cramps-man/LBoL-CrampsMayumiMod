@@ -528,3 +528,4 @@ new card to replace exile summon
 investigate fencer kamikaze which is accurate, with sharpshooter that consumed loyalty for passive?
 exile summon not giving horse archer cos using different method woops
 try use yellow mana symbol in haniwa support tooltip - DONE
+update cavalry supplies as well - DONE

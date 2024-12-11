@@ -117,7 +117,7 @@ AssignCavalrySupplies:
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {RedMana}{CardMana}. 
     {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
-    Only the red mana portion is affected by extra triggers. 
+    Only the {RedMana} portion is affected by extra triggers. 
   Brief: |-
     After X cards are played, gain mana. 
 

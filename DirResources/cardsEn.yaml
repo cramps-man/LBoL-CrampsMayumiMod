@@ -526,7 +526,7 @@ CavalrySupplies:
     |Assign {CavalryAssigned} Cavalry|. 
     After {Value1} cards are played, gain {RedMana}{Mana}. 
   DetailText: |-
-    Only the red mana portion is affected by extra triggers. 
+    Only the <sprite="ManaSprite" name={RedMana}> portion is affected by extra triggers. 
 
 AutoCreateReserves:
   Name: Auto Create Reserves
