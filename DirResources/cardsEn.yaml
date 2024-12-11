@@ -89,7 +89,7 @@ HaniwaSupport:
     Is |Cavalry| type. 
 
     Increases for each upgrade. 
-    1 extra yellow mana per 8 upgrade. 
+    OnPlay gain extra <sprite="ManaSprite" name={Mana}> per 8 upgrade. 
 
 FencerBuildBarricade:
   Name: Fencer Build Barricade

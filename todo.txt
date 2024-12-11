@@ -503,6 +503,7 @@ new card, either skill or ability - LEAVE FOR NOW
 assign cost trigger regain spent mana? - done
   - upside might not make up downside, which is why this change might be nice
   - might need to increase cost of the ability but we shall see
+
 maybe lower haniwa horse archer requirement to 1 archer 1 cavalry
   - it is easy accessible source of graze, so perhaps it's fine
   - perhaps down to 1 archer 2 cavalry
@@ -515,9 +516,15 @@ look into updating display when haniwa spy gets its onplay executed from another
   - leads to confusing moments where you dont know what the prompt is asking you for
 new cavalry frontline, charges loyalty for its passive
   - active then deal more dmg if more loyalty + inflict vuln
+  - gain more loyalty end of turn every this card in hand
 fencer prep counter should deal damage to a random enemy if none have been marked
   - and perhaps lower base dmg to like 4(5) and start with 3 triggers
 make more clear distinction between Requires Loyalty and Consumes Loyalty
-forgor to mention loyalty strike on upgrade is cheaper in changelog
+forgor to mention loyalty strike on upgrade is cheaper in changelog - FIXED
+new card to replace exile summon
+  - summon 1 frontline card, it starts with 2(10) extra loyalty
+  - trigger its onplay action when added to hand and consume loyalty
 
 investigate fencer kamikaze which is accurate, with sharpshooter that consumed loyalty for passive?
+exile summon not giving horse archer cos using different method woops
+try use yellow mana symbol in haniwa support tooltip - DONE
