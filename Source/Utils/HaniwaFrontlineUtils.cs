@@ -3,6 +3,7 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
+using LBoL.EntityLib.Exhibits.Shining;
 using LBoLMod.BattleActions;
 using LBoLMod.Cards;
 using LBoLMod.StatusEffects.Abilities;
@@ -70,7 +71,8 @@ namespace LBoLMod.Utils
         public static List<Card> GetAllCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
-            return GetOptionCards(hasGreen ? AllOptionTypes.Append(typeof(OptionHaniwaHorseArcher)).ToList() : AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
+            bool hasBlankCard = battle.Player.HasExhibit<KongbaiKapai>();
+            return GetOptionCards(hasGreen || hasBlankCard ? AllOptionTypes.Append(typeof(OptionHaniwaHorseArcher)).ToList() : AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
         }
 
         private static List<Card> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)

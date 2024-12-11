@@ -3,6 +3,7 @@ using LBoL.Base;
 using LBoL.Core;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
+using LBoL.EntityLib.Exhibits.Shining;
 using LBoLMod.Cards;
 using LBoLMod.StatusEffects;
 using System;
@@ -30,7 +31,9 @@ namespace LBoLMod.Utils
         {
             if (checkOffColor)
             {
-                if (player.GameRun.BaseMana.HasColor(ManaColor.Blue))
+                bool hasBlue = player.GameRun.BaseMana.HasColor(ManaColor.Blue);
+                bool hasBlankCard = player.HasExhibit<KongbaiKapai>();
+                if (hasBlue || hasBlankCard)
                     return OnColorAssignCardTypes.AddItem(typeof(ArcherPrepFrostArrow)).ToList();
             }
             return OnColorAssignCardTypes;
