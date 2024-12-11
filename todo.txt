@@ -504,11 +504,12 @@ assign cost trigger regain spent mana? - done
   - upside might not make up downside, which is why this change might be nice
   - might need to increase cost of the ability but we shall see
 
-maybe lower haniwa horse archer requirement to 1 archer 1 cavalry
+maybe lower haniwa horse archer requirement to 1 archer 1 cavalry - PROBS LEAVE FOR NOW
   - it is easy accessible source of graze, so perhaps it's fine
   - perhaps down to 1 archer 2 cavalry
 exile frontline extra trigger maybe also execute onplay actions?
-haniwa commander remove replinish perhaps, as it's basically a free 25+ dmg attack
+  - maybe find something else to make this feel better, consume loyalty instead?
+haniwa commander remove replinish perhaps, as it's basically a free 25+ dmg attack - DONE
 haniwa bodyguard minimum perturn could scale every few upgrades
 discard upgrade still has upgrade delay when not selecting any cards
 check blank card when summoning haniwa horse archer or choose short assign on archer prep frost arrow
@@ -525,7 +526,9 @@ new card to replace exile summon
   - summon 1 frontline card, it starts with 2(10) extra loyalty
   - trigger its onplay action when added to hand and consume loyalty
 
-investigate fencer kamikaze which is accurate, with sharpshooter that consumed loyalty for passive?
-exile summon not giving horse archer cos using different method woops
+investigate fencer kamikaze which is accurate, with sharpshooter that consumed loyalty for passive? - DUNNO
+  - not sure how to trigger this, perhaps some random followup was causing it?
+exile summon not giving horse archer cos using different method woops - GG
+  - replacing this card anyway
 try use yellow mana symbol in haniwa support tooltip - DONE
 update cavalry supplies as well - DONE

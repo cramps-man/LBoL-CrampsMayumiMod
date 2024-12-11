@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 25;
             cardConfig.Value1 = 3;
-            cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
-            cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
+            cardConfig.Keywords = Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
             return cardConfig;
