@@ -14,11 +14,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ExileSummonDef : ModCardTemplate
+    public sealed class BlitzSummonDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileSummon);
+            return nameof(BlitzSummon);
         }
 
         public override CardConfig MakeConfig()
@@ -26,14 +26,12 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
+            cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { White = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
+            cardConfig.Cost = new ManaGroup() { White = 2 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 1;
-            cardConfig.UpgradedValue2 = 2;
-            cardConfig.Keywords = Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Exile;
+            cardConfig.Value2 = 2;
+            cardConfig.UpgradedValue2 = 10;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
@@ -42,24 +40,27 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(ExileSummonDef))]
-    public sealed class ExileSummon : Card
+    [EntityLogic(typeof(BlitzSummonDef))]
+    public sealed class BlitzSummon : Card
     {
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card hand) => hand != this).ToList();
-            return new SelectHandInteraction(0, Value2, list);
+            List<Card> cards = HaniwaFrontlineUtils.GetAllCards(base.Battle, checkSacrificeRequirement: true);
+            return new SelectCardInteraction(1, Value1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (!(precondition is SelectHandInteraction exileInteraction))
-                yield break;
-
-            var summonInteraction = new SelectCardInteraction(0, Value1 + exileInteraction.SelectedCards.Count, HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t)));
-            yield return new InteractionAction(summonInteraction);
-
-            yield return new ExileManyCardAction(exileInteraction.SelectedCards);
-            yield return new AddCardsToHandAction(summonInteraction.SelectedCards);
+            foreach (var action in HaniwaFrontlineUtils.CardsSummon(((SelectCardInteraction)precondition).SelectedCards, startingLoyalty: Value2))
+            {
+                yield return action;
+                if (action is AddCardsToHandAction addCardsAction)
+                {
+                    foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(addCardsAction.Args.Cards.ToList(), base.Battle, selector, true))
+                    {
+                        yield return battleAction;
+                    }
+                }
+            };
         }
     }
 }

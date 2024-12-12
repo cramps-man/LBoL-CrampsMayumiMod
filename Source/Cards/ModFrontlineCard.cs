@@ -37,10 +37,10 @@ namespace LBoLMod.Cards
         public virtual bool IsFencerType => false;
         public virtual bool IsArcherType => false;
         public virtual bool IsCavalryType => false;
-
+        public int StartingExtraLoyalty { get; set; } = 0;
         protected override void OnEnterBattle(BattleController battle)
         {
-            RemainingValue = Value1;
+            RemainingValue = Value1 + StartingExtraLoyalty;
             base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
             base.HandleBattleEvent(base.Battle.CardUsing, this.OnCardUsing);
             base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
@@ -100,7 +100,7 @@ namespace LBoLMod.Cards
         {
             if (args.Cards.Contains(this))
             {
-                RemainingValue = Value1;
+                RemainingValue = Value1 + StartingExtraLoyalty;
             }
         }
         public override int AdditionalValue1 

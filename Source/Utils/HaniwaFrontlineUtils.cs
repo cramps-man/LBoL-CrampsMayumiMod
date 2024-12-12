@@ -101,7 +101,7 @@ namespace LBoLMod.Utils
             return cards;
         }
 
-        public static IEnumerable<BattleAction> CardsSummon(IReadOnlyList<Card> modFrontlineCards, int startingUpgrades = 0)
+        public static IEnumerable<BattleAction> CardsSummon(IReadOnlyList<Card> modFrontlineCards, int startingUpgrades = 0, int startingLoyalty = 0)
         {
             int totalFencerCost = 0;
             int totalArcherCost = 0;
@@ -116,14 +116,12 @@ namespace LBoLMod.Utils
                 totalFencerCost += optionCard.SelectRequireFencer;
                 totalArcherCost += optionCard.SelectRequireArcher;
                 totalCavalryCost += optionCard.SelectRequireCavalry;
+                List<ModFrontlineCard> cards = optionCard.GetCardsToSpawn().Cast<ModFrontlineCard>().ToList();
                 if (startingUpgrades > 0)
-                {
-                    var cards = optionCard.GetCardsToSpawn();
                     cards.ForEach(c => c.UpgradeCounter = startingUpgrades);
-                    cardsToSpawn.AddRange(cards);
-                }
-                else
-                    cardsToSpawn.AddRange(optionCard.GetCardsToSpawn());
+                if (startingLoyalty > 0)
+                    cards.ForEach(c => c.StartingExtraLoyalty += startingLoyalty);
+                cardsToSpawn.AddRange(cards);
             }
             yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, totalFencerCost, totalArcherCost, totalCavalryCost);
             yield return new AddCardsToHandAction(cardsToSpawn);
