@@ -366,6 +366,18 @@ HaniwaMonk:
     On Play damage: +1
     Increased buff damage +1 per 5 upgrade. 
 
+HaniwaCharger:
+  Name: Haniwa Charger
+  Description: |-
+    |While in hand|: At end of turn, gain {BaseLoyaltyGain} |Loyalty| for each |Haniwa Charger| in the hand ({TotalLoyaltyGain}). 
+    |When played|: Deal {Damage} damage. Deal additional damage equal to |Loyalty| ({RemainingValue}). Apply |e:1| |Vulnerable| for every {VulnScaling} |Loyalty| consumed ({Value2}). Consume all |Loyalty|, minimum of {OnPlayConsumedRemainingValue}. 
+  DetailText: |-
+    Is |Cavalry| type. 
+
+    Increases for each upgrade. 
+    |Loyalty| gain per charger: +1 per {LoyaltyGainScaling} upgrades
+    On Play damage: +1
+
 UpgradedSummon:
   Name: Upgraded Summon
   Description: |-
@@ -415,6 +427,16 @@ OptionHaniwaMonk:
   NonbattleDescription: |-
     Sacrifice {SelectRequireFencer} |Fencer|.
     Add a |Haniwa Monk| to the hand. 
+
+OptionHaniwaCharger:
+  Name: Summon Haniwa Charger
+  Description: |-
+    Sacrifice {SelectRequireCavalry} |Cavalry|.
+    Add a |Haniwa Charger| to the hand. 
+    {AvailableCavalry} available |Cavalry|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireCavalry} |Cavalry|.
+    Add a |Haniwa Charger| to the hand. 
 
 AssignSummonFrontline:
   Name: Assign Summon Frontline

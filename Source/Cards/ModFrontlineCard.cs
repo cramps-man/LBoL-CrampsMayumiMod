@@ -33,6 +33,7 @@ namespace LBoLMod.Cards
         protected virtual int PassiveConsumedRemainingValue => 1;
         protected virtual int OnPlayConsumedRemainingValue => 1;
         public bool ShouldConsumeRemainingValue { get; set; } = true;
+        protected virtual bool ShouldConsumeAll => false;
         public virtual bool IsFencerType => false;
         public virtual bool IsArcherType => false;
         public virtual bool IsCavalryType => false;
@@ -86,7 +87,10 @@ namespace LBoLMod.Cards
         {
             if (!ShouldConsumeRemainingValue)
                 return null;
-            RemainingValue -= OnPlayConsumedRemainingValue;
+            if (ShouldConsumeAll && RemainingValue > OnPlayConsumedRemainingValue)
+                RemainingValue = 0;
+            else
+                RemainingValue -= OnPlayConsumedRemainingValue;
             if (RemainingValue < 0)
                 return new ExileCardAction(this);
             return null;

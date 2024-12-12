@@ -36,7 +36,8 @@ namespace LBoLMod.Utils
             typeof(OptionHaniwaUpgrader),
             typeof(OptionHaniwaExploiter),
             typeof(OptionHaniwaSpy),
-            typeof(OptionHaniwaMonk)
+            typeof(OptionHaniwaMonk),
+            typeof(OptionHaniwaCharger)
         };
 
         public static readonly List<Type> UncommonSummonTypes = new List<Type>
@@ -44,7 +45,8 @@ namespace LBoLMod.Utils
             typeof(HaniwaUpgrader),
             typeof(HaniwaExploiter),
             typeof(HaniwaSpy),
-            typeof(HaniwaMonk)
+            typeof(HaniwaMonk),
+            typeof(HaniwaCharger)
         };
 
         public static List<Type> AllOptionTypes => CommonOptionTypes.Concat(UncommonOptionTypes).ToList();
@@ -65,7 +67,8 @@ namespace LBoLMod.Utils
         public static List<Type> CavalryTypes => new List<Type>
         {
             typeof(HaniwaSupport),
-            typeof(HaniwaSpy)
+            typeof(HaniwaSpy),
+            typeof(HaniwaCharger)
         };
 
         public static List<Card> GetAllCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
