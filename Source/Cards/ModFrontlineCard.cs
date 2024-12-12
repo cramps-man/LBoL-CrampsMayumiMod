@@ -83,11 +83,13 @@ namespace LBoLMod.Cards
             ShouldConsumeRemainingValue = true;
         }
 
-        protected BattleAction ConsumeLoyalty()
+        public BattleAction ConsumeLoyalty(int loyaltyOverride = -1)
         {
             if (!ShouldConsumeRemainingValue)
                 return null;
-            if (ShouldConsumeAll && RemainingValue > OnPlayConsumedRemainingValue)
+            if (loyaltyOverride > -1)
+                RemainingValue -= loyaltyOverride;
+            else if (ShouldConsumeAll && RemainingValue > OnPlayConsumedRemainingValue)
                 RemainingValue = 0;
             else
                 RemainingValue -= OnPlayConsumedRemainingValue;

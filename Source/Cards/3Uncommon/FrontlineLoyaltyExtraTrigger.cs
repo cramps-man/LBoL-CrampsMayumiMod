@@ -14,11 +14,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ExileFrontlineExtraTriggerDef : ModCardTemplate
+    public sealed class FrontlineLoyaltyExtraTriggerDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileFrontlineExtraTrigger);
+            return nameof(FrontlineLoyaltyExtraTrigger);
         }
 
         public override CardConfig MakeConfig()
@@ -27,9 +27,10 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
-            cardConfig.Value1 = 2;
-            cardConfig.Value2 = 1;
-            cardConfig.UpgradedValue2 = 2;
+            cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 12;
+            cardConfig.UpgradedValue2 = 10;
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
@@ -39,8 +40,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(ExileFrontlineExtraTriggerDef))]
-    public sealed class ExileFrontlineExtraTrigger : Card
+    [EntityLogic(typeof(FrontlineLoyaltyExtraTriggerDef))]
+    public sealed class FrontlineLoyaltyExtraTrigger : Card
     {
         public override Interaction Precondition()
         {
@@ -49,23 +50,27 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (!(precondition is SelectHandInteraction exileInteraction))
+            if (!(precondition is SelectHandInteraction frontlineInteraction))
                 yield break;
 
-            int exileCount = exileInteraction.SelectedCards.Count;
             var assignBuffs = HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player);
             if (assignBuffs.Count > 0)
             {
-                var assignInteraction = new SelectCardInteraction(1, exileCount, assignBuffs);
+                var assignInteraction = new SelectCardInteraction(1, 1, assignBuffs);
                 yield return new InteractionAction(assignInteraction);
                 foreach (ModAssignOptionCard optionCard in assignInteraction.SelectedCards)
                 {
                     optionCard.StatusEffect.NotifyActivating();
-                    optionCard.StatusEffect.IncreaseExtraTrigger(Value2);
+                    int totalLoyalty = frontlineInteraction.SelectedCards.Cast<ModFrontlineCard>().Sum(c => c.RemainingValue);
+                    optionCard.StatusEffect.IncreaseExtraTrigger(1 + totalLoyalty / Value2);
+                }
+                yield return PerformAction.Wait(0.3f);
+                foreach (ModFrontlineCard card in frontlineInteraction.SelectedCards)
+                {
+                    card.NotifyActivating();
+                    card.ConsumeLoyalty(card.RemainingValue);
                 }
             }
-
-            yield return new ExileManyCardAction(exileInteraction.SelectedCards);
         }
     }
 }
