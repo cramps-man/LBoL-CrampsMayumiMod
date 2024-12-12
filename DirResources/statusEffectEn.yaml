@@ -49,13 +49,11 @@ Sacrifice:
 Assign:
   Name: Assign X
   Description: |-
-    Lose X level of |Haniwa|, gain a buff which after a certain number of cards are played, triggers an effect. 
-    After the effect triggers, gain back the level of |Haniwa| lost. 
+    Lose X level of |Haniwa|, gain a buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back X |Haniwa|. 
     Gaining the same type of buff will increase the number of times it triggers, at the cost of losing overspent |Haniwa| permanently. 
     |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
   Brief: |-
-    Lose X level of |Haniwa|, gain a buff which after a certain number of cards are played, triggers an effect. 
-    After the effect triggers, gain back the level of |Haniwa| lost. 
+    Lose X level of |Haniwa|, gain a buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back X |Haniwa|. 
     Gaining the same type of buff will increase the number of times it triggers, at the cost of losing overspent |Haniwa| permanently. 
     |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
 

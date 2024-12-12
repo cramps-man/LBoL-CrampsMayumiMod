@@ -528,10 +528,23 @@ look into updating display when haniwa spy gets its onplay executed from another
   - also fixed for cavalry scout just incase
 make more clear distinction between Requires Loyalty and Consumes Loyalty - DONE
 new cavalry frontline, charges loyalty for its passive
-  - active then deal more dmg if more loyalty + inflict vuln
+  - active then deal more dmg if more loyalty + inflict vuln if greater than 8
   - gain more loyalty end of turn every this card in hand
+  - consume all loyalty but minimum 8
 new card to replace exile summon
   - summon 1 frontline card, it starts with 2(10) extra loyalty
   - trigger its onplay action when added to hand and consume loyalty
 exile frontline extra trigger maybe also execute onplay actions?
   - maybe find something else to make this feel better, consume loyalty instead?
+new archer frontline, more supportive/defensive?
+  - passive lower duration of incoming debuffs and counter the source
+  - onplay apply some of players debuffs onto enemies?
+  - or spread 1 enemies debuffs to others - probs more robust, less chance to break by not giving enemies a debuff they dont usually get
+extra trigger changes?
+  - stacking assign buff tracks total haniwa assigned, and gives them all back
+  - card counter becomes the maximum of the 2 buffs
+new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
+assign play gain block also activates when assign buff triggers, multiplied by number of triggers
+  - probs lower block gain as well 3(4)
+assign description make more clear - DONE
+assign summon frontline, maybe base number of copies on the current assigned haniwa?
