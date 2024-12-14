@@ -21,8 +21,8 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Shield = 8;
-            cardConfig.UpgradedShield = 12;
+            cardConfig.Shield = 2;
+            cardConfig.UpgradedShield = 3;
             cardConfig.Value2 = 5;
             cardConfig.UpgradedValue2 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -36,6 +36,7 @@ namespace LBoLMod.Cards
     {
         public override int FencerAssigned => 1;
         public override int StartingCardCounter => Value2;
+        public override int StartingTaskLevel => 4;
         public override Type AssignStatusType => typeof(AssignFencerBuildBarricade);
     }
 }
