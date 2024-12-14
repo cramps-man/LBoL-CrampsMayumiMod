@@ -17,9 +17,9 @@ namespace LBoLMod.StatusEffects
     {
         private bool JustApplied { get; set; } = true;
         protected ModAssignCard AssignSourceCard { get; set; }
-        public int CardFencerAssigned => AssignSourceCard.FencerAssigned;
-        public int CardArcherAssigned => AssignSourceCard.ArcherAssigned;
-        public int CardCavalryAssigned => AssignSourceCard.CavalryAssigned;
+        public int CardFencerAssigned { get; set; } = 0;
+        public int CardArcherAssigned { get; set; } = 0;
+        public int CardCavalryAssigned { get; set; } = 0;
         protected int StartingCardCounter => AssignSourceCard.StartingCardCounter;
         protected DamageInfo CardDamage => AssignSourceCard.Damage;
         protected int CardBlock => AssignSourceCard.RawBlock;
@@ -34,6 +34,9 @@ namespace LBoLMod.StatusEffects
         {
             if (SourceCard is ModAssignCard c)
                 AssignSourceCard = c;
+            CardFencerAssigned += AssignSourceCard.FencerAssigned;
+            CardArcherAssigned += AssignSourceCard.ArcherAssigned;
+            CardCavalryAssigned += AssignSourceCard.CavalryAssigned;
             this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
             base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
             base.HandleOwnerEvent(base.Battle.Player.TurnEnded, this.onPlayerTurnEnded);
@@ -42,12 +45,11 @@ namespace LBoLMod.StatusEffects
 
         public override bool Stack(StatusEffect other)
         {
-            if (base.Battle.Player.HasStatusEffect<AssignReverseTickdownSe>())
-                Config.CountStackType = StackType.Max;
             base.Stack(other);
-            if (base.Battle.Player.HasStatusEffect<AssignReverseTickdownSe>())
-                Config.CountStackType = StackType.Min;
-
+            Count += 3;
+            CardFencerAssigned += AssignSourceCard.FencerAssigned;
+            CardArcherAssigned += AssignSourceCard.ArcherAssigned;
+            CardCavalryAssigned += AssignSourceCard.CavalryAssigned;
             if (!SourceCard.IsUpgraded && other.SourceCard.IsUpgraded)
             {
                 if (other.SourceCard is ModAssignCard c)

@@ -28,7 +28,7 @@ namespace LBoLMod.StatusEffects
                 DurationStackType: StackType.Add,
                 DurationDecreaseTiming: DurationDecreaseTiming.Custom,
                 HasCount: true,
-                CountStackType: StackType.Min,
+                CountStackType: StackType.Keep,
                 LimitStackType: StackType.Keep,
                 ShowPlusByLimit: false,
                 Keywords: Keyword.None,

@@ -542,14 +542,37 @@ new archer frontline, more supportive/defensive?
   - or spread 1 enemies debuffs to others - probs more robust, less chance to break by not giving enemies a debuff they dont usually get
   - saevins idea of passive countering attacks by applying weak is probs pretty good though
   - onplay can have a new buff that decreases incoming debuffs by 1 level/duration
-extra trigger changes?
-  - stacking assign buff tracks total haniwa assigned, and gives them all back
-  - card counter becomes the maximum of the 2 buffs
-new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
-assign play gain block also activates when assign buff triggers, multiplied by number of triggers
-  - probs lower block gain as well 3(4)
 assign description make more clear - DONE
 assign summon frontline, maybe base number of copies on the current assigned haniwa?
   - or perhaps rework it somehow
   - or remove
+  - remove extra triggers? if 1 trigger, remove buff
 assign reverse tickdown update cost from RRR -> 1RR
+
+offcolour ideas
+all frontlines hand/draw/discard gain loyalty + maybe something else
+sacrifice haniwa for mana
+double extra triggers (now power or task level or whatever)
+
+still need to think over these assign changes
+extra trigger changes?
+  - stacking assign buff tracks total haniwa assigned, and gives them all back - DONE
+  - card counter becomes the maximum of the 2 buffs, or overwrite? - will add 3 DONE
+  - need to actually come up with a benefit to charging up, it only really benefits fencer prep counter, charge attack etc. 
+  - assign moves gain some scaling via extra triggers?
+  - perhaps delaying is fine as the only benefit, more control over when they trigger without sacrificing power
+  - or just need more synergies with extra triggers among cards
+  - make extra triggers worth less like charge attack and fencer prep counter, and make them easier to obtain
+  - give each assign buff a trigger that increases extra triggers like those 2 - maybe this can be an off colour ability
+    - archer prep volley - increase card counter
+    - fencer build barricade - play attack card
+    - cavalry scout - 
+    - cavalry rush - draw cards
+    - archer prep debuff - apply debuffs
+    - fencer prep counter - already has a good one
+    - charge attack - already has a good one
+    - build watchtower - sacrifice archer
+    - cavalry supplies - gain cavalry haniwa
+new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
+assign play gain block also activates when assign buff triggers, multiplied by number of triggers
+  - probs lower block gain as well 3(4)
