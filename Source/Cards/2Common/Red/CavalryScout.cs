@@ -1,6 +1,5 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Assign;
@@ -22,11 +21,10 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 1;
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.Value2 = 3;
             cardConfig.UpgradedValue2 = 1;
-            cardConfig.Scry = 2;
-            cardConfig.UpgradedScry = 3;
             cardConfig.RelativeKeyword = Keyword.Scry;
             cardConfig.UpgradedRelativeKeyword = Keyword.Scry;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -40,6 +38,7 @@ namespace LBoLMod.Cards
     {
         public override int CavalryAssigned => 1;
         public override int StartingCardCounter => Value2;
+        public override int StartingTaskLevel => Value1;
         public override Type AssignStatusType => typeof(AssignCavalryScout);
     }
 }
