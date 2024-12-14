@@ -20,7 +20,7 @@ namespace LBoLMod.Cards
         public virtual int ArcherAssigned => 0;
         public virtual int CavalryAssigned => 0;
         public virtual int StartingCardCounter => 0;
-        public virtual int StartingTriggers => 1;
+        public virtual int StartingTaskLevel => 1;
         public virtual Type AssignStatusType => null;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
         public override ManaGroup AdditionalCost
@@ -38,7 +38,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
-            yield return BuffAction(AssignStatusType, level: StartingTriggers, count: StartingCardCounter);
+            yield return BuffAction(AssignStatusType, level: StartingTaskLevel, count: StartingCardCounter);
         }
     }
 }

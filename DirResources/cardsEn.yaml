@@ -60,7 +60,8 @@ ArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
     |Assign {ArcherAssigned} Archer|.
-    After {Value2} cards are played, deal {Damage} damage {Value1} times to random enemies. 
+    After {Value2} cards are played, deal {Damage} damage to random enemies for each |Task Level|. 
+    Start with {StartingTaskLevel} |Task Level|. 
 
 HybridDraw:
   Name: Hybrid Draw

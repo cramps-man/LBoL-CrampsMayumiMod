@@ -39,7 +39,7 @@ namespace LBoLMod.Cards
     public sealed class ArcherPrepFrostArrow : ModAssignCard
     {
         public override int ArcherAssigned => 2;
-        public override int StartingTriggers => Value1;
+        public override int StartingTaskLevel => Value1;
         public override int StartingCardCounter => Value2;
         public override Type AssignStatusType => typeof(AssignArcherPrepFrostArrow);
     }

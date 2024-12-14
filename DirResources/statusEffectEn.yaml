@@ -49,13 +49,20 @@ Sacrifice:
 Assign:
   Name: Assign X
   Description: |-
-    Lose X level of |Haniwa|, gain a buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back X |Haniwa|. 
-    Gaining the same type of buff will increase the number of times it triggers, at the cost of losing overspent |Haniwa| permanently. 
-    |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
+    Lose X level of |Haniwa|, gain a buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back all assigned |Haniwa|. 
+    Gaining the same type of buff will increase its |Task Level| by |e:3|, increase counter by |e:3| and increase assigned |Haniwa| by X. 
+    |Note|: ending the turn counts as |e:3| cards played. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
   Brief: |-
-    Lose X level of |Haniwa|, gain a buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back X |Haniwa|. 
-    Gaining the same type of buff will increase the number of times it triggers, at the cost of losing overspent |Haniwa| permanently. 
-    |Note|: ending the turn counts as 3 cards played. If effect is to be triggered, it will trigger at start of next turn. 
+    Lose X level of |Haniwa|, gain a buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back all assigned |Haniwa|. 
+    Gaining the same type of buff will increase its |Task Level| by |e:3|, increase counter by |e:3| and increase assigned |Haniwa| by X. 
+    |Note|: ending the turn counts as |e:3| cards played. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
+
+TaskLevel:
+  Name: Task Level
+  Description: |-
+    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff's effect power. 
+  Brief: |-
+    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff's effect power. 
 
 AssignmentBonusSe:
   Name: Assignment Bonus
@@ -105,8 +112,8 @@ Permanent:
 AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {CardValue1} times to random enemies. 
-    {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {Level} times to random enemies. 
+    {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage to random enemies. 
 

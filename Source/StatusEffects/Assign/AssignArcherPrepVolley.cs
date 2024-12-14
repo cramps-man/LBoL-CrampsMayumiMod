@@ -19,10 +19,7 @@ namespace LBoLMod.StatusEffects.Assign
     {
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            for (int i = 0; i < AssignSourceCard.Value1; i++)
-            {
-                yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
-            }
+            yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
         }
     }
 }

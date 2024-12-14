@@ -566,13 +566,14 @@ extra trigger changes?
   - give each assign buff a trigger that increases extra triggers like those 2 - maybe this can be an off colour ability
     - archer prep volley - increase card counter
     - fencer build barricade - play attack card
-    - cavalry scout - 
+    - cavalry scout - play any card?
     - cavalry rush - draw cards
     - archer prep debuff - apply debuffs
-    - fencer prep counter - already has a good one
-    - charge attack - already has a good one
+    - fencer prep counter - already has a good one, could add another though
+    - charge attack - already has a good one, could add another though
     - build watchtower - sacrifice archer
     - cavalry supplies - gain cavalry haniwa
 new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
 assign play gain block also activates when assign buff triggers, multiplied by number of triggers
   - probs lower block gain as well 3(4)
+  - unsure if ill do this

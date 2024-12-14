@@ -22,9 +22,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Any = 0 };
-            cardConfig.Damage = 5;
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Damage = 3;
+            cardConfig.UpgradedDamage = 5;
             cardConfig.Value2 = 5;
             cardConfig.UpgradedValue2 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -38,6 +37,7 @@ namespace LBoLMod.Cards
     {
         public override int ArcherAssigned => 1;
         public override int StartingCardCounter => Value2;
+        public override int StartingTaskLevel => 3;
         public override Type AssignStatusType => typeof(AssignArcherPrepVolley);
     }
 }
