@@ -557,7 +557,7 @@ double extra triggers (now power or task level or whatever)
 still need to think over these assign changes
 extra trigger changes?
   - stacking assign buff tracks total haniwa assigned, and gives them all back - DONE
-  - card counter becomes the maximum of the 2 buffs, or overwrite? - will add 3 DONE
+  - card counter becomes the maximum of the 2 buffs, or overwrite? - will add 3 DONE, REVERTED
   - need to actually come up with a benefit to charging up, it only really benefits fencer prep counter, charge attack etc. 
   - assign moves gain some scaling via extra triggers?
   - perhaps delaying is fine as the only benefit, more control over when they trigger without sacrificing power

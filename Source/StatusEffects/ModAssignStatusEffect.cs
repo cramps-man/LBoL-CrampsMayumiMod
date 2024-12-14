@@ -47,7 +47,6 @@ namespace LBoLMod.StatusEffects
         {
             base.Stack(other);
             Count += 3;
-            Level += 3;
             CardFencerAssigned += AssignSourceCard.FencerAssigned;
             CardArcherAssigned += AssignSourceCard.ArcherAssigned;
             CardCavalryAssigned += AssignSourceCard.CavalryAssigned;
