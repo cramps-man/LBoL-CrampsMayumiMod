@@ -97,7 +97,7 @@ FencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
     |Assign {FencerAssigned} Fencer|.
-    After {StartingCardCounter} cards are played, gain {Shield} |Barrier| every {Value1} |Task Level|.
+    After {StartingCardCounter} cards are played, gain {Shield} |Barrier| per |Task Level|.
     Start with {StartingTaskLevel} |Task Level|. 
 
 DefenceCreateReserves:
@@ -239,7 +239,7 @@ CavalryScout:
   Name: Cavalry Scout
   Description: |-
     |Assign {CavalryAssigned} Cavalry|.
-    After {StartingCardCounter} cards are played, |Scry| |e:1| per {Value1} |Task Levels| and draw |e:1| card for every {Value2} |Task Levels|. 
+    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and draw |e:1| card per {Value2} |Task Level|. 
     Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     |Scry| only occurs once. 

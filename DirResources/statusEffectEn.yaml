@@ -131,7 +131,7 @@ AssignCavalrySupplies:
 AssignFencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain {TotalBarrier} |Barrier|. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {Level} |Barrier|. 
     {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, gain |Barrier|. 

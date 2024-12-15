@@ -21,9 +21,7 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Shield = 2;
-            cardConfig.UpgradedShield = 3;
-            cardConfig.Value1 = 2;
+            cardConfig.Shield = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
@@ -34,8 +32,8 @@ namespace LBoLMod.Cards
     public sealed class FencerBuildBarricade : ModAssignCard
     {
         public override int FencerAssigned => 1;
-        public override int StartingCardCounter => 5;
-        public override int StartingTaskLevel => 4;
+        public override int StartingCardCounter => IsUpgraded ? 3 : 5;
+        public override int StartingTaskLevel => IsUpgraded ? 10 : 5;
         public override Type AssignStatusType => typeof(AssignFencerBuildBarricade);
     }
 }
