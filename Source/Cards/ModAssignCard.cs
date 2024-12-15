@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public abstract class ModAssignCard: Card
+    public abstract class ModAssignCard : Card
     {
         public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(nameof(Assign), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + nameof(Assign), GlobalConfig.DefaultKeywordColor);
         public virtual int FencerAssigned => 0;
@@ -22,7 +22,15 @@ namespace LBoLMod.Cards
         public virtual int StartingCardCounter => 0;
         public virtual int StartingTaskLevel => 1;
         public virtual Type AssignStatusType => null;
-        public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
+        public override bool CanUse
+        {
+            get
+            {
+                if (base.Battle.Player.HasStatusEffect(AssignStatusType))
+                    return HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, Math.Min(FencerAssigned, 1), Math.Min(ArcherAssigned, 1), Math.Min(CavalryAssigned, 1));
+                return HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
+            }
+        }
         public override ManaGroup AdditionalCost
         {
             get
@@ -37,7 +45,10 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
+            if (base.Battle.Player.HasStatusEffect(AssignStatusType))
+                yield return new LoseHaniwaAction(HaniwaActionType.Assign, Math.Min(FencerAssigned, 1), Math.Min(ArcherAssigned, 1), Math.Min(CavalryAssigned, 1));
+            else
+                yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
             yield return BuffAction(AssignStatusType, level: StartingTaskLevel, count: StartingCardCounter);
         }
     }

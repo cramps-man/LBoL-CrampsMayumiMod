@@ -47,9 +47,9 @@ namespace LBoLMod.StatusEffects
         {
             base.Stack(other);
             Count += 3;
-            CardFencerAssigned += AssignSourceCard.FencerAssigned;
-            CardArcherAssigned += AssignSourceCard.ArcherAssigned;
-            CardCavalryAssigned += AssignSourceCard.CavalryAssigned;
+            CardFencerAssigned += AssignSourceCard.FencerAssigned > 0 ? 1 : 0;
+            CardArcherAssigned += AssignSourceCard.ArcherAssigned > 0 ? 1 : 0;
+            CardCavalryAssigned += AssignSourceCard.CavalryAssigned > 0 ? 1 : 0;
             if (!SourceCard.IsUpgraded && other.SourceCard.IsUpgraded)
             {
                 if (other.SourceCard is ModAssignCard c)
@@ -128,7 +128,10 @@ namespace LBoLMod.StatusEffects
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (!JustApplied)
+            {
+                Level += CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned;
                 Tickdown(1);
+            }
             JustApplied = false;
             if (Count == 0)
             {
