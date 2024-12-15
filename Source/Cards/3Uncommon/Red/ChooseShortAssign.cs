@@ -31,7 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 0;
-            cardConfig.Value2 = 1;
+            cardConfig.Value2 = 2;
+            cardConfig.UpgradedValue2 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
             return cardConfig;
@@ -53,7 +54,7 @@ namespace LBoLMod.Cards
             Card selectedCard = interaction.SelectedCard;
             if (selectedCard is ModAssignCard assignCard)
             {
-                yield return new ApplyStatusEffectAction(assignCard.AssignStatusType, base.Battle.Player, level: Value2, count: Value1)
+                yield return new ApplyStatusEffectAction(assignCard.AssignStatusType, base.Battle.Player, level: assignCard.StartingTaskLevel + Value2, count: Value1)
                 {
                     Args =
                     {

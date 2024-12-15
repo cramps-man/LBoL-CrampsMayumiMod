@@ -575,7 +575,8 @@ extra trigger changes?
     - cavalry supplies - gain cavalry haniwa
   - when stacking, if task level less than starting, = starting - DONE
   - update create cavalry to use lower costs when assigning, probably just call it's actions method - DONE
-  - also update choose short assign, need to figure out how to not spend haniwa, or just let is spend haniwa lmao
+  - also update choose short assign - DONE
+  - make fencer prep counter choose random enemy if no one has attacked
 new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
 assign play gain block also activates when assign buff triggers, multiplied by number of triggers
   - probs lower block gain as well 3(4)
