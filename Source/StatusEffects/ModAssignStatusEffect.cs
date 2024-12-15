@@ -37,8 +37,8 @@ namespace LBoLMod.StatusEffects
             CardFencerAssigned += AssignSourceCard.FencerAssigned;
             CardArcherAssigned += AssignSourceCard.ArcherAssigned;
             CardCavalryAssigned += AssignSourceCard.CavalryAssigned;
-            this.ReactOwnerEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
-            base.ReactOwnerEvent<UnitEventArgs>(base.Battle.Player.TurnStarted, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarted));
+            this.ReactOwnerEvent(base.Battle.CardUsed, this.OnCardUsed);
+            base.ReactOwnerEvent(base.Battle.Player.TurnStarted, this.onPlayerTurnStarted);
             base.HandleOwnerEvent(base.Battle.Player.TurnEnded, this.onPlayerTurnEnded);
             base.ReactOwnerEvent(base.Battle.UsUsed, this.OnUltimateSkillUsed);
         }
@@ -128,15 +128,15 @@ namespace LBoLMod.StatusEffects
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (!JustApplied)
-            {
-                Level += CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned;
                 Tickdown(1);
-            }
-            JustApplied = false;
             if (Count == 0)
             {
+                JustApplied = false;
                 return AssignTriggering(false);
             }
+            if (!JustApplied)
+                Level += CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned;
+            JustApplied = false;
             return null;
         }
 

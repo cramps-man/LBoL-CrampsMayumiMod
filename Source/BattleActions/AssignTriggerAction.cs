@@ -8,14 +8,14 @@ namespace LBoLMod.BattleActions
     {
         private readonly AssignTriggerEventArgs args;
 
-        internal AssignTriggerAction(IEnumerable<BattleAction> battleActions, IEnumerable<BattleAction> beforeBattleActions, IEnumerable<BattleAction> afterBattleActions, int timesToActivate, bool onTurnStart)
+        internal AssignTriggerAction(IEnumerable<BattleAction> battleActions, IEnumerable<BattleAction> beforeBattleActions, IEnumerable<BattleAction> afterBattleActions, int taskLevel, bool onTurnStart)
         {
             this.args = new AssignTriggerEventArgs
             {
                 BattleActions = battleActions,
                 BeforeBattleActions = beforeBattleActions,
                 AfterBattleActions = afterBattleActions,
-                TimesToActivate = timesToActivate,
+                TaskLevel = taskLevel,
                 OnTurnStart = onTurnStart
             };
         }
@@ -33,13 +33,10 @@ namespace LBoLMod.BattleActions
             });
             yield return base.CreatePhase("Main", delegate
             {
-                for (int i = 0; i < args.TimesToActivate; i++)
+                foreach (var action in args.BattleActions)
                 {
-                    foreach (var action in args.BattleActions)
-                    {
-                        if (!base.Battle.BattleShouldEnd)
-                            base.React(action);
-                    }
+                    if (!base.Battle.BattleShouldEnd)
+                        base.React(action);
                 }
             });
             yield return base.CreatePhase("After", delegate

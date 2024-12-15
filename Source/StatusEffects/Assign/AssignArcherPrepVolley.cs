@@ -17,9 +17,11 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignArcherPrepVolleyDef))]
     public sealed class AssignArcherPrepVolley : ModAssignStatusEffect
     {
+        public int TotalTimes => Level / CardValue1;
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
+            for (var i = 0; i < TotalTimes; i++)
+                yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
         }
     }
 }
