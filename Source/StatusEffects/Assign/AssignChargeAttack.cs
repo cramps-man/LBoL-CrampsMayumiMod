@@ -21,9 +21,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignChargeAttackDef))]
     public sealed class AssignChargeAttack : ModAssignStatusEffect
     {
-        public DamageInfo TotalDamage => CardDamage.IncreaseBy(ChargeDamage);
-        public int ChargeDamage { get; set; } = 0;
-
+        public int TotalHits => Level / CardValue1;
         protected override void OnAdded(Unit unit)
         {
             base.OnAdded(unit);
@@ -32,13 +30,13 @@ namespace LBoLMod.StatusEffects.Assign
 
         private void OnAssignTriggered(AssignTriggerEventArgs args)
         {
-            ChargeDamage += CardValue1;
-            Level++;
+            Level += CardValue1;
         }
 
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DamageAction(Owner, base.Battle.HighestHpEnemy, CardDamage.IncreaseBy(ChargeDamage));
+            for (int i = 0; i < TotalHits; i++)
+                yield return new DamageAction(Owner, base.Battle.HighestHpEnemy, CardDamage);
         }
     }
 }

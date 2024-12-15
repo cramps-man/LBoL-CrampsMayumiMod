@@ -462,8 +462,9 @@ ChargeAttack:
   Name: Charge Attack
   Description: |-
     |Assign {ArcherAssigned} Archer|.
-    After {Value2} cards are played, deal {Damage} damage to the enemy with the highest life. 
-    Whenever an |Assign| buff is triggered, increase this damage by {Value1} and increase extra triggers by |e:1|. 
+    After {StartingCardCounter} cards are played, deal {Damage} damage X times to the enemy with the highest life. X is |Task Level| / {Value1}. 
+    Whenever an |Assign| buff is triggered, increase |Task Level| by {Value1}. 
+    Start with {StartingTaskLevel} |Task Level|. 
 
 AssignPlayGainBlock:
   Name: Assign Play Gain Block

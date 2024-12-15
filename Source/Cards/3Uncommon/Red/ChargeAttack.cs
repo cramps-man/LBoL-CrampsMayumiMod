@@ -24,9 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Damage = 15;
             cardConfig.UpgradedDamage = 20;
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 10;
+            cardConfig.Value1 = 10;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -39,7 +37,8 @@ namespace LBoLMod.Cards
     public sealed class ChargeAttack : ModAssignCard
     {
         public override int ArcherAssigned => 3;
-        public override int StartingCardCounter => Value2;
+        public override int StartingCardCounter => 10;
+        public override int StartingTaskLevel => IsUpgraded ? 20 : 10;
         public override Type AssignStatusType => typeof(AssignChargeAttack);
     }
 }
