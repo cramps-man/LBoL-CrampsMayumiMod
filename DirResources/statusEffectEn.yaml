@@ -237,8 +237,8 @@ AssignFencerPrepCounter:
 AssignArcherPrepDebuff:
   Name: Archer Prep Debuff
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} |Accurate| damage to all enemies and apply {CardValue1} |Vulnerable|. 
-    {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {Level} |Accurate| damage to all enemies and apply {TotalVuln} |Vulnerable|. 
+    {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal |Accurate| damage to all enemies and apply |Vulnerable|. 
 

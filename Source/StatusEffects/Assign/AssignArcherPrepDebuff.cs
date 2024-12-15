@@ -4,6 +4,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign
@@ -19,11 +20,12 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignArcherPrepDebuffDef))]
     public sealed class AssignArcherPrepDebuff : ModAssignStatusEffect
     {
+        public int TotalVuln => Math.Max(Level / CardValue1, 1);
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            var accurateDmg = DamageInfo.Attack(CardDamage.Damage, true);
+            var accurateDmg = DamageInfo.Attack(Level, true);
             yield return new DamageAction(Owner, base.Battle.AllAliveEnemies, accurateDmg);
-            foreach (var item in DebuffAction<Vulnerable>(Battle.AllAliveEnemies, duration: CardValue1))
+            foreach (var item in DebuffAction<Vulnerable>(Battle.AllAliveEnemies, duration: TotalVuln))
             {
                 yield return item;
             };
