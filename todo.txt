@@ -573,6 +573,7 @@ extra trigger changes?
     - charge attack - already has a good one, could add another though
     - build watchtower - sacrifice archer
     - cavalry supplies - gain cavalry haniwa
+  - when stacking, if task level less than starting, = starting
 new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
 assign play gain block also activates when assign buff triggers, multiplied by number of triggers
   - probs lower block gain as well 3(4)

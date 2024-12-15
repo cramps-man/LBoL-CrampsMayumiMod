@@ -26,14 +26,10 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignBuildWatchtowerDef))]
     public sealed class AssignBuildWatchtower : ModAssignStatusEffect
     {
+        public int TotalWatchtower => Level / CardValue1;
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield break;
-        }
-
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
-        {
-            yield return new ApplyStatusEffectAction<Watchtower>(Owner, CardValue1 + (triggerCount - 1) * (CardValue1 / 2));
+            yield return new ApplyStatusEffectAction<Watchtower>(Owner, TotalWatchtower);
         }
     }
 }

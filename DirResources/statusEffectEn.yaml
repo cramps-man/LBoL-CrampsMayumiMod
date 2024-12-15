@@ -62,9 +62,11 @@ Assign:
 TaskLevel:
   Name: Task Level
   Description: |-
-    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff's effect power. 
+    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff effect's power. 
+    After a card is played, |Task Level| increases by the number of assigned |Haniwa|. 
   Brief: |-
-    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff's effect power. 
+    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff effect's power. 
+    After a card is played, |Task Level| increases by the number of assigned |Haniwa|. 
 
 AssignmentBonusSe:
   Name: Assignment Bonus
@@ -139,9 +141,8 @@ AssignFencerBuildBarricade:
 AssignBuildWatchtower:
   Name: Build Watchtower
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain |Watchtower| {CardValue1}. 
-    {CardFencerAssigned} |Fencer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
-    |Watchtower| gain via extra triggers are halved. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {TotalWatchtower} |Watchtower|. 
+    {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, gain |Watchtower|. 
 

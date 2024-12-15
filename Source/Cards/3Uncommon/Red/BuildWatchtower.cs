@@ -29,10 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 6;
-            cardConfig.UpgradedValue1 = 10;
-            cardConfig.Value2 = 12;
-            cardConfig.UpgradedValue2 = 8;
+            cardConfig.Value1 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Sacrifice), nameof(Watchtower) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Sacrifice), nameof(Watchtower) };
             cardConfig.RelativeCards = new List<string>() { nameof(GarrisonArcher) };
@@ -46,7 +43,8 @@ namespace LBoLMod.Cards
     {
         public override int FencerAssigned => 3;
         public int SacrificeArcherRequired => 2;
-        public override int StartingCardCounter => Value2;
+        public override int StartingCardCounter => IsUpgraded ? 8 : 12;
+        public override int StartingTaskLevel => IsUpgraded ? 40 : 15;
         public override Type AssignStatusType => typeof(AssignBuildWatchtower);
         public override bool CanUse {
             get
