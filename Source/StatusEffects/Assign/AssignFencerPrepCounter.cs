@@ -47,7 +47,8 @@ namespace LBoLMod.StatusEffects.Assign
 
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DamageAction(Owner, enemiesThatAttackedPlayer.Where(e => e.IsAlive), TotalDamage);
+            List<Unit> toAttack = enemiesThatAttackedPlayer.Count > 0 ? enemiesThatAttackedPlayer.Where(e => e.IsAlive).ToList() : new List<Unit>() { base.Battle.RandomAliveEnemy };
+            yield return new DamageAction(Owner, toAttack, TotalDamage);
         }
     }
 }

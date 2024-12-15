@@ -576,7 +576,7 @@ extra trigger changes?
   - when stacking, if task level less than starting, = starting - DONE
   - update create cavalry to use lower costs when assigning, probably just call it's actions method - DONE
   - also update choose short assign - DONE
-  - make fencer prep counter choose random enemy if no one has attacked
+  - make fencer prep counter choose random enemy if no one has attacked - DONE
 new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
 assign play gain block also activates when assign buff triggers, multiplied by number of triggers
   - probs lower block gain as well 3(4)

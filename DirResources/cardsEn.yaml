@@ -511,7 +511,7 @@ FencerPrepCounter:
   Name: Fencer Prep Counter
   Description: |-
     |Assign {FencerAssigned} Fencer|.
-    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to |Task Level|, to all enemies that have attacked {PlayerName}. 
+    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to |Task Level|, to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
     Whenever {PlayerName} is attacked, increase triggers by {Value1} for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
     Start with {StartingTaskLevel} |Task Level|. 
 
