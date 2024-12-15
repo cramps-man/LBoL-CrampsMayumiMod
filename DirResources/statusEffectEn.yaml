@@ -116,7 +116,7 @@ Permanent:
 AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {TotalTimes} times to random enemies. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {TotalTimes} time{TotalTimes:plural one='' other='s'} to random enemies. 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage to random enemies. 
@@ -124,11 +124,11 @@ AssignArcherPrepVolley:
 AssignCavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain {RedMana}{CardMana}. 
-    {CardCavalryAssigned} |Cavalry| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
-    Only the {RedMana} portion is affected by extra triggers. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, add {TotalTimes} |Flame{TotalTimes:plural one='' other='s'}| or |Radiance{TotalTimes:plural one='' other='s'}| to the draw pile. 
+    Alternate between |Flame| and |Radiance|, starting with |Flame|. 
+    {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   Brief: |-
-    After X cards are played, gain mana. 
+    After X cards are played, add |Flame| or |Radiance| to draw pile. 
 
 AssignFencerBuildBarricade:
   Name: Fencer Build Barricade

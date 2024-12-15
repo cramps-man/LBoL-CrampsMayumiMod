@@ -1,5 +1,6 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
+using LBoL.EntityLib.Cards.Neutral.NoColor;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Assign;
@@ -22,13 +23,12 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 8;
-            cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 1;
-            cardConfig.Mana = new ManaGroup() { White = 1 };
-            cardConfig.UpgradedMana = new ManaGroup() { Philosophy = 1 };
+            cardConfig.Value1 = 25;
+            cardConfig.UpgradedValue1 = 20;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
+            cardConfig.RelativeCards = new List<string>() { nameof(RManaCard), nameof(WManaCard) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(RManaCard), nameof(WManaCard) };
             return cardConfig;
         }
     }
@@ -36,9 +36,9 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CavalrySuppliesDef))]
     public sealed class CavalrySupplies : ModAssignCard
     {
-        public ManaGroup RedMana => ManaGroup.Reds(Value2);
         public override int CavalryAssigned => 3;
-        public override int StartingCardCounter => Value1;
+        public override int StartingCardCounter => IsUpgraded ? 5 : 8;
+        public override int StartingTaskLevel => IsUpgraded ? 30 : 15;
         public override Type AssignStatusType => typeof(AssignCavalrySupplies);
     }
 }

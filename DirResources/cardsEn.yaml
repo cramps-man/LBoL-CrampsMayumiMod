@@ -552,9 +552,9 @@ CavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
     |Assign {CavalryAssigned} Cavalry|. 
-    After {Value1} cards are played, gain {RedMana}{Mana}. 
-  DetailText: |-
-    Only the <sprite="ManaSprite" name={RedMana}> portion is affected by extra triggers. 
+    After {StartingCardCounter} cards are played, add X number of |Flames| or |Radiances| to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
+    Alternate adding |Flame| then |Radiance|, starting with |Flame|. 
+    Start with {StartingTaskLevel} |Task Level|. 
 
 AutoCreateReserves:
   Name: Auto Create Reserves
