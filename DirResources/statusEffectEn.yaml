@@ -252,9 +252,9 @@ AssignTriggerUpgradeSe:
 AssignArcherPrepFrostArrow:
   Name: Archer Prep Frost Arrow
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage and apply |Cold| to a random enemy. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage and apply |Cold| to random enemies {TotalTimes} time{TotalTimes:plural one='' other='s'}. 
     If the target has |Cold|, gain {CardBlock} |Block|. 
-    {CardArcherAssigned} |Archer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
+    {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage and apply |Cold| to a random enemy. 
     If the target has |Cold|, gain |Block|. 

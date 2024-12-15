@@ -719,13 +719,9 @@ ArcherPrepFrostArrow:
   Name: Archer Prep Frost Arrow
   Description: |-
     |Assign {ArcherAssigned} Archer|.
-    After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} damage and apply |Cold| to a random enemy. 
+    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal {Damage} damage and apply |Cold| to random enemies X times. X is |Task Level| / {Value1}. 
     If the target has |Cold|, gain {Block} |Block|. 
-  UpgradedDescription: |-
-    |Assign {ArcherAssigned} Archer|.
-    After {Value2} card{Value2:plural one=' is' other='s are'} played deal {Damage} damage and apply |Cold| to a random enemy. 
-    If the target has |Cold|, gain {Block} |Block|. 
-    Start with {StartingTriggers} triggers. 
+    Start with {StartingTaskLevel} |Task Level|. 
 
 KeikiTeammate:
   Name: Keiki, The Creator

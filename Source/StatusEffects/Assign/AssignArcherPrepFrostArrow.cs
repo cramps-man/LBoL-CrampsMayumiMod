@@ -20,6 +20,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignArcherPrepFrostArrowDef))]
     public sealed class AssignArcherPrepFrostArrow : ModAssignStatusEffect
     {
+        public int TotalTimes => Level / CardValue1;
         protected override void OnAdded(Unit unit)
         {
             base.OnAdded(unit);
@@ -39,9 +40,12 @@ namespace LBoLMod.StatusEffects.Assign
 
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            var target = base.Battle.RandomAliveEnemy;
-            yield return new DamageAction(Owner, target, AssignSourceCard.Damage);
-            yield return DebuffAction<Cold>(target);
+            for (var i = 0; i < TotalTimes; i++)
+            {
+                var target = base.Battle.RandomAliveEnemy;
+                yield return new DamageAction(Owner, target, AssignSourceCard.Damage);
+                yield return DebuffAction<Cold>(target);
+            }
         }
     }
 }

@@ -26,9 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Any = 0 };
             cardConfig.Damage = 9;
             cardConfig.Block = 9;
-            cardConfig.Value1 = 1;
-            cardConfig.UpgradedValue1 = 2;
-            cardConfig.Value2 = 9;
+            cardConfig.Value1 = 9;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Cold) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Cold) };
             return cardConfig;
@@ -39,8 +37,8 @@ namespace LBoLMod.Cards
     public sealed class ArcherPrepFrostArrow : ModAssignCard
     {
         public override int ArcherAssigned => 2;
-        public override int StartingTaskLevel => Value1;
-        public override int StartingCardCounter => Value2;
+        public override int StartingCardCounter => 9;
+        public override int StartingTaskLevel => IsUpgraded ? 18 : 9;
         public override Type AssignStatusType => typeof(AssignArcherPrepFrostArrow);
     }
 }

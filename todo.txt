@@ -553,6 +553,7 @@ offcolour ideas
 all frontlines hand/draw/discard gain loyalty + maybe something else
 sacrifice haniwa for mana
 double extra triggers (now power or task level or whatever)
+assign buffs dont stack
 
 still need to think over these assign changes
 extra trigger changes?
