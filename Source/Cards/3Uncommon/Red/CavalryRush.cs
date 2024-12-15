@@ -22,11 +22,9 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 2;
-            cardConfig.UpgradedDamage = 3;
+            cardConfig.Damage = 1;
             cardConfig.Value1 = 12;
             cardConfig.UpgradedValue1 = 10;
-            cardConfig.Value2 = 2;
             cardConfig.Mana = new ManaGroup() { Red = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -38,8 +36,8 @@ namespace LBoLMod.Cards
     public sealed class CavalryRush : ModAssignCard
     {
         public override int CavalryAssigned => 2;
-        public override int StartingCardCounter => 3;
-        public override int StartingTaskLevel => 8;
+        public override int StartingCardCounter => IsUpgraded ? 2 : 4;
+        public override int StartingTaskLevel => IsUpgraded ? 15 : 9;
         public override Type AssignStatusType => typeof(AssignCavalryRush);
     }
 }

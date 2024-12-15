@@ -19,7 +19,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignCavalryRushDef))]
     public sealed class AssignCavalryRush : ModAssignStatusEffect
     {
-        public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level / CardValue2);
+        public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level);
         public ManaGroup TotalMana => CardMana * (Level / CardValue1);
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
