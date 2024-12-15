@@ -1,4 +1,6 @@
-﻿using LBoL.Core.Battle;
+﻿using LBoL.Base;
+using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -17,15 +19,13 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignCavalryRushDef))]
     public sealed class AssignCavalryRush : ModAssignStatusEffect
     {
+        public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level / CardValue2);
+        public ManaGroup TotalMana => CardMana * (Level / CardValue1);
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DamageAction(Owner, base.Battle.LowestHpEnemy, AssignSourceCard.Damage);
-        }
-
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
-        {
+            yield return new DamageAction(Owner, base.Battle.LowestHpEnemy, TotalDamage);
             if (!onTurnStart)
-                yield return new GainManaAction(CardMana);
+                yield return new GainManaAction(TotalMana);
         }
     }
 }

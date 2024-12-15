@@ -474,10 +474,9 @@ CavalryRush:
   Name: Cavalry Rush
   Description: |-
     |Assign {CavalryAssigned} Cavalry|.
-    After {Value1} cards are played deal {Damage} damage to the enemy with the lowest life. 
-    If effect is triggered during the turn (not start of), gain {Mana}. 
-  DetailText: |-
-    Mana can only be gained once regardless of trigger count. 
+    After {StartingCardCounter} cards are played, deal {Damage} damage per {Value2} |Task Level| to the enemy with the lowest life. 
+    If effect is triggered during the turn (not start of), gain {Mana} per {Value1} |Task Level|. 
+    Start with {StartingTaskLevel} |Task Level|. 
 
 NumBuffBlock:
   Name: Num Buff Block
