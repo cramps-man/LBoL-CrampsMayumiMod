@@ -63,17 +63,11 @@ namespace LBoLMod.Cards
             if (cavalryCount >= 10)
             {
                 CavalryRush assignCard = Library.CreateCard<CavalryRush>(IsUpgraded);
-                yield return new LoseHaniwaAction(HaniwaActionType.Assign, assignCard.FencerAssigned, assignCard.ArcherAssigned, assignCard.CavalryAssigned);
-                yield return new ApplyStatusEffectAction(assignCard.AssignStatusType, base.Battle.Player, level: 1, count: assignCard.StartingCardCounter)
+                assignCard.SetBattle(base.Battle);
+                foreach (var battleAction in assignCard.GetActions(selector, consumingMana, null, new List<DamageAction>(), false))
                 {
-                    Args =
-                    {
-                        Effect =
-                        {
-                            SourceCard = assignCard
-                        }
-                    }
-                };
+                    yield return battleAction;
+                }
             }
         }
     }
