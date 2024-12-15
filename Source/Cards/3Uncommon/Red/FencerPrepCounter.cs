@@ -22,11 +22,11 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 5;
-            cardConfig.UpgradedDamage = 7;
+            cardConfig.Damage = 1;
             cardConfig.Block = 2;
             cardConfig.UpgradedBlock = 3;
-            cardConfig.Value1 = 9;
+            cardConfig.Value1 = 4;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
@@ -37,7 +37,8 @@ namespace LBoLMod.Cards
     public sealed class FencerPrepCounter : ModAssignCard
     {
         public override int FencerAssigned => 2;
-        public override int StartingCardCounter => Value1;
+        public override int StartingCardCounter => 9;
+        public override int StartingTaskLevel => IsUpgraded ? 16 : 10;
         public override Type AssignStatusType => typeof(AssignFencerPrepCounter);
     }
 }

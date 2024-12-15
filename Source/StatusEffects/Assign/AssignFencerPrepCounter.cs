@@ -21,10 +21,10 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignFencerPrepCounterDef))]
     public sealed class AssignFencerPrepCounter : ModAssignStatusEffect
     {
-        List<Unit> enemiesThatAttackedPlayer = new List<Unit>();
-        public int enemiesThatAttackedPlayerCount => enemiesThatAttackedPlayer.Count;
-        public DamageInfo totalDamage => CardDamage.MultiplyBy(Level);
-        public int totalBlock => CardBlock * base.Battle.AllAliveEnemies.Sum(e => e.Intentions.Where(i => i is AttackIntention).Cast<AttackIntention>().Sum(ai => ai.Times == null ? 1 : ai.Times.GetValueOrDefault()));
+        private List<Unit> enemiesThatAttackedPlayer = new List<Unit>();
+        public int EnemiesThatAttackedPlayerCount => enemiesThatAttackedPlayer.Count;
+        public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level);
+        public int TotalBlock => CardBlock * base.Battle.AllAliveEnemies.Sum(e => e.Intentions.Where(i => i is AttackIntention).Cast<AttackIntention>().Sum(ai => ai.Times == null ? 1 : ai.Times.GetValueOrDefault()));
 
         protected override void OnAdded(Unit unit)
         {
@@ -35,24 +35,19 @@ namespace LBoLMod.StatusEffects.Assign
 
         private IEnumerable<BattleAction> OnTurnEnded(UnitEventArgs args)
         {
-            yield return new CastBlockShieldAction(Owner, new BlockInfo(totalBlock));
+            yield return new CastBlockShieldAction(Owner, new BlockInfo(TotalBlock));
         }
 
         private void OnDamageReceived(DamageEventArgs args)
         {
             if (args.Source is EnemyUnit enemy && !enemiesThatAttackedPlayer.Contains(enemy))
                 enemiesThatAttackedPlayer.Add(enemy);
-            Level++;
+            Level += CardValue1;
         }
 
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield break;
-        }
-
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
-        {
-            yield return new DamageAction(Owner, enemiesThatAttackedPlayer.Where(e => e.IsAlive), totalDamage);
+            yield return new DamageAction(Owner, enemiesThatAttackedPlayer.Where(e => e.IsAlive), TotalDamage);
         }
     }
 }

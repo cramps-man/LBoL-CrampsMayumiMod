@@ -510,8 +510,9 @@ FencerPrepCounter:
   Name: Fencer Prep Counter
   Description: |-
     |Assign {FencerAssigned} Fencer|.
-    After {Value1} card{Value1:plural one=' is' other='s are'} played, deal {Damage} damage multiplied by number of triggers, to all enemies that have attacked {PlayerName}. 
-    Whenever {PlayerName} is attacked, increase triggers by |e:1| for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
+    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to |Task Level|, to all enemies that have attacked {PlayerName}. 
+    Whenever {PlayerName} is attacked, increase triggers by {Value1} for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
+    Start with {StartingTaskLevel} |Task Level|. 
 
 HealSacrifice:
   Name: Heal Sacrifice

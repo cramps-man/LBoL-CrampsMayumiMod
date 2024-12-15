@@ -226,11 +226,11 @@ AssignCavalryScout:
 AssignFencerPrepCounter:
   Name: Fencer Prep Counter
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage multiplied by number of triggers ({totalDamage}), to all enemies that have attacked {PlayerName}. 
-    Whenever {PlayerName} is attacked, increase triggers by |e:1| for each hit. 
-    At end of {PlayerName}'s turn, gain {CardBlock} |Block| multiplied by total enemy hits ({totalBlock}). 
-    {CardFencerAssigned} |Fencer| assigned. Will trigger {Level} time{Level:plural one='' other='s'}. 
-    Number of enemies that have attacked, {enemiesThatAttackedPlayerCount}
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to all enemies that have attacked {PlayerName}. 
+    Whenever {PlayerName} is attacked, increase triggers by {CardValue1} for each hit. 
+    At end of {PlayerName}'s turn, gain {CardBlock} |Block| multiplied by total enemy hits ({TotalBlock}). 
+    {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
+    Number of enemies that have attacked, {EnemiesThatAttackedPlayerCount}
   Brief: |-
     After X cards are played, deal damage to all enemies that attacked. 
 
