@@ -4,7 +4,6 @@ using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
-using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign
@@ -20,7 +19,8 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignCavalryScoutDef))]
     public sealed class AssignCavalryScout : ModAssignStatusEffect
     {
-        public int TotalDraw => Math.Max(Level / 3, 1);
+        public ScryInfo TotalScry => new ScryInfo(Level / CardValue1);
+        public int TotalDraw => Level / CardValue2;
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             yield break;
@@ -28,7 +28,7 @@ namespace LBoLMod.StatusEffects.Assign
 
         protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart, int triggerCount)
         {
-            yield return new DescriptiveScryAction(new ScryInfo(Level), "Cavalry Scout - Scry");
+            yield return new DescriptiveScryAction(TotalScry, "Cavalry Scout - Scry");
             yield return new DrawManyCardAction(TotalDraw);
         }
     }

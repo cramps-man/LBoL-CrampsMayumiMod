@@ -239,8 +239,8 @@ CavalryScout:
   Name: Cavalry Scout
   Description: |-
     |Assign {CavalryAssigned} Cavalry|.
-    After {Value2} card{Value2:plural one=' is' other='s are'} played |Scry| |e:1| for each |Task Level| and draw |e:1| card for every |e:3| |Task Levels|. 
-    Start with {Value1} |Task Level|. 
+    After {StartingCardCounter} cards are played, |Scry| |e:1| per {Value1} |Task Levels| and draw |e:1| card for every {Value2} |Task Levels|. 
+    Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     |Scry| only occurs once. 
 

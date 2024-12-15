@@ -22,9 +22,9 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 3;
-            cardConfig.UpgradedValue2 = 1;
+            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 5;
+            cardConfig.UpgradedValue2 = 4;
             cardConfig.RelativeKeyword = Keyword.Scry;
             cardConfig.UpgradedRelativeKeyword = Keyword.Scry;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -37,8 +37,8 @@ namespace LBoLMod.Cards
     public sealed class CavalryScout : ModAssignCard
     {
         public override int CavalryAssigned => 1;
-        public override int StartingCardCounter => Value2;
-        public override int StartingTaskLevel => Value1;
+        public override int StartingCardCounter => 3;
+        public override int StartingTaskLevel => 4;
         public override Type AssignStatusType => typeof(AssignCavalryScout);
     }
 }

@@ -219,7 +219,7 @@ AssignTriggerSummonSe:
 AssignCavalryScout:
   Name: Cavalry Scout
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, |Scry| {Level} and draw {TotalDraw} card{TotalDraw:plural one='' other='s'}. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, |Scry| {TotalScry} and draw {TotalDraw} card{TotalDraw:plural one='' other='s'}. 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, |Scry| and draw cards. 
