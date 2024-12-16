@@ -593,8 +593,8 @@ extra trigger changes?
     - assign extra trigger - since fast trigger kinda gives task level in commons, make this a different effect
       - like giving assignment bonus or something
     - frontline loyalty extra trigger - transfer loyalty to assign buffs task level - DONE
-    - assign cost trigger - just more task level?
-    - mass extra trigger - just more task level?
+    - assign cost trigger - just more task level? or increase task level gained from playing cards
+    - mass extra trigger - just more task level? - DONE
     - assign duplicate trigger - might have to rework, dont think current code lets me pass in task level, the properties use Level directly
       - could rework into green offcolour idea above, next assign gets triggered twice like old extra triggers
     - permanent assign - let level stack now, but it decreases per trigger?
@@ -611,5 +611,6 @@ maybe change frontlines to be A and assign to be B
 add "random" to assign trigger summon description
 frontline passive attacks make reactions? no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
 go through new assigns and check if any need a minimum
+  - and increase scaling requirement where necessary
 go through assign buffs and add scaling to buff description
 lower dmg of loyalty strike base dmg, cos upgrade now lowers cost

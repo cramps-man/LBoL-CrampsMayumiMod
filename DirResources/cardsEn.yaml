@@ -634,12 +634,12 @@ MassDestruction:
     Deal {Damage} damage to all enemies. Then |Exile| all |Frontline| cards in the hand/draw/discard piles. 
     Deal additional damage equal to the amount of |Frontline| cards |Exiled| this way multiplied by {Value1}. ({AdditionalDamage})
 
-MassExtraTrigger:
-  Name: Mass Extra Trigger
+MassTaskLevel:
+  Name: Mass Task Level
   Description: |-
     Choose |e:1| |Assign| buff and remove all other |Assign| buffs. 
-    Increase the chosen buff's triggers by {Value2}. 
-    Additionally, add the total number of triggers of the removed buffs onto the chosen buff. 
+    Increase the chosen buff's |Task Level| by {Value2}. 
+    Additionally, add the total |Task Level| of the removed buffs onto the chosen buff. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 MassSummon:

@@ -16,11 +16,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class MassExtraTriggerDef : ModCardTemplate
+    public sealed class MassTaskLevelDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(MassExtraTrigger);
+            return nameof(MassTaskLevel);
         }
 
         public override CardConfig MakeConfig()
@@ -30,7 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 3;
-            cardConfig.Value2 = 2;
+            cardConfig.Value2 = 20;
             cardConfig.Cost = new ManaGroup() { Red = 3 };
             cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
@@ -39,8 +39,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(MassExtraTriggerDef))]
-    public sealed class MassExtraTrigger : Card
+    [EntityLogic(typeof(MassTaskLevelDef))]
+    public sealed class MassTaskLevel : Card
     {
         public override Interaction Precondition()
         {
@@ -50,11 +50,11 @@ namespace LBoLMod.Cards
         {
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
-                card.StatusEffect.IncreaseExtraTrigger(Value2);
+                card.StatusEffect.Level += Value2;
                 List<StatusEffect> removedAssignBuffs = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect && s != card.StatusEffect).ToList();
                 foreach (StatusEffect statusEffect in removedAssignBuffs)
                 {
-                    card.StatusEffect.IncreaseExtraTrigger(statusEffect.Level);
+                    card.StatusEffect.Level += statusEffect.Level;
                     yield return new RemoveStatusEffectAction(statusEffect);
                 }
             }
