@@ -552,7 +552,7 @@ assign summon frontline, maybe base number of copies on the current assigned han
   - need something more otherwise it's just normal summon with a extra condition
   - task level = loyalty is maybe too similar to blitz summon
   - consume task level to summon?
-assign reverse tickdown update cost from RRR -> 1RR
+assign reverse tickdown update cost from RRR -> 1RR - DONE
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao
@@ -610,3 +610,4 @@ new frontline from summon commander, an assign variation?
 maybe change frontlines to be A and assign to be B
 add "random" to assign trigger summon description
 frontline passive attacks make reactions? no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
+go through new assigns and check if any need a minimum
