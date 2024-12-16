@@ -50,6 +50,7 @@ namespace LBoLMod.Cards
 
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
+                card.StatusEffect.Level += card.StatusEffect.Count;
                 foreach (var item in card.StatusEffect.ImmidiatelyTrigger())
                 {
                     yield return item;

@@ -589,7 +589,7 @@ extra trigger changes?
   - also update choose short assign - DONE
   - make fencer prep counter choose random enemy if no one has attacked - DONE
   - update the extra trigger cards (or anything else that might need it)
-    - assign fast trigger - convert remaining counter into task level before trigger
+    - assign fast trigger - convert remaining counter into task level before trigger - DONE
     - assign extra trigger - since fast trigger kinda gives task level in commons, make this a different effect
       - like giving assignment bonus or something
     - frontline loyalty extra trigger - transfer loyalty to assign buffs task level
@@ -611,3 +611,5 @@ maybe change frontlines to be A and assign to be B
 add "random" to assign trigger summon description
 frontline passive attacks make reactions? no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
 go through new assigns and check if any need a minimum
+go through assign buffs and add scaling to buff description
+lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
