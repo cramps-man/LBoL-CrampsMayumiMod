@@ -306,3 +306,10 @@ MaxHaniwaUpSe:
     Increase the max |Haniwa| level by {Level} for all types. 
   Brief: |-
     Increase the max |Haniwa| level for all types. 
+
+IllnessPreventionSe:
+  Name: Illness Prevention
+  Description: |-
+    Reduce incoming debuff level/duration by |e:1|. 
+  Brief: |-
+    Reduce incoming debuff level/duration by |e:1|. 

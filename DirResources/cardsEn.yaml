@@ -381,6 +381,18 @@ HaniwaCharger:
     |Loyalty| gain per charger: +1 per {LoyaltyGainScaling} upgrades
     On Play damage: +1
 
+HaniwaSentinel:
+  Name: Haniwa Sentiel
+  Description: |-
+    |While in hand|: At end of turn, deal {Value2} damage and apply |e:1| |Weak| to all enemies that are attacking. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |When played|: Gain {IllnessBuffLevel} |Illness Prevention| and {Block} |Block|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
+  DetailText: |-
+    Is |Archer| type. 
+
+    Increases for each upgrade. 
+    Apply Weak: +1 per {WeakDurationScaling} upgrades
+    Gain Illness Prevention: +1 per {IllnessBuffLevelScaling} upgrades
+
 UpgradedSummon:
   Name: Upgraded Summon
   Description: |-
@@ -440,6 +452,16 @@ OptionHaniwaCharger:
   NonbattleDescription: |-
     Sacrifice {SelectRequireCavalry} |Cavalry|.
     Add a |Haniwa Charger| to the hand. 
+
+OptionHaniwaSentinel:
+  Name: Summon Haniwa Sentinel
+  Description: |-
+    Sacrifice {SelectRequireArcher} |Archer|.
+    Add a |Haniwa Sentinel| to the hand. 
+    {AvailableArcher} available |Archer|. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireArcher} |Archer|.
+    Add a |Haniwa Sentinel| to the hand. 
 
 AssignSummonFrontline:
   Name: Assign Summon Frontline

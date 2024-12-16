@@ -37,7 +37,8 @@ namespace LBoLMod.Utils
             typeof(OptionHaniwaExploiter),
             typeof(OptionHaniwaSpy),
             typeof(OptionHaniwaMonk),
-            typeof(OptionHaniwaCharger)
+            typeof(OptionHaniwaCharger),
+            typeof(OptionHaniwaSentinel)
         };
 
         public static readonly List<Type> UncommonSummonTypes = new List<Type>
@@ -46,7 +47,8 @@ namespace LBoLMod.Utils
             typeof(HaniwaExploiter),
             typeof(HaniwaSpy),
             typeof(HaniwaMonk),
-            typeof(HaniwaCharger)
+            typeof(HaniwaCharger),
+            typeof(HaniwaSentinel)
         };
 
         public static List<Type> AllOptionTypes => CommonOptionTypes.Concat(UncommonOptionTypes).ToList();
@@ -62,7 +64,8 @@ namespace LBoLMod.Utils
         public static List<Type> ArcherTypes => new List<Type>
         {
             typeof(HaniwaSharpshooter),
-            typeof(HaniwaExploiter)
+            typeof(HaniwaExploiter),
+            typeof(HaniwaSentinel)
         };
         public static List<Type> CavalryTypes => new List<Type>
         {

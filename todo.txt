@@ -536,24 +536,34 @@ new card to replace exile summon - DONE
   - trigger its onplay action when added to hand and consume loyalty
 exile frontline extra trigger maybe also execute onplay actions? - DONE
   - maybe find something else to make this feel better, consume loyalty instead?
-new archer frontline, more supportive/defensive?
+new archer frontline, more supportive/defensive? - DONE
   - passive lower duration of incoming debuffs and counter the source
   - onplay apply some of players debuffs onto enemies?
   - or spread 1 enemies debuffs to others - probs more robust, less chance to break by not giving enemies a debuff they dont usually get
   - saevins idea of passive countering attacks by applying weak is probs pretty good though
+    - might have to activate at end of turn instead of before attacks, probs better that way for calculating too
   - onplay can have a new buff that decreases incoming debuffs by 1 level/duration
 assign description make more clear - DONE
 assign summon frontline, maybe base number of copies on the current assigned haniwa?
   - or perhaps rework it somehow
   - or remove
   - remove extra triggers? if 1 trigger, remove buff
+  - reduce 1 from assigned haniwa, if at 1 remove buff
+  - need something more otherwise it's just normal summon with a extra condition
+  - task level = loyalty is maybe too similar to blitz summon
+  - consume task level to summon?
 assign reverse tickdown update cost from RRR -> 1RR
 
 offcolour ideas
-all frontlines hand/draw/discard gain loyalty + maybe something else
-sacrifice haniwa for mana
-double extra triggers (now power or task level or whatever)
-assign buffs dont stack
+blue exile frontline, add splash, theming around mud lmao
+green/purple all frontlines hand/draw/discard gain loyalty + maybe something else
+green double extra triggers (now power or task level or whatever)
+  - maybe the next assign buff activate twice, like old extra triggers lmao
+  - could replace assign duplicate trigger, and come up with another card in green
+purple sacrifice haniwa for mana, or some other benefit
+purple assign buffs dont stack
+purple frontline, haniwa assassin, onplay insta kills if target below certain hp
+  - passive 
 
 still need to think over these assign changes
 extra trigger changes?
@@ -578,7 +588,25 @@ extra trigger changes?
   - update create cavalry to use lower costs when assigning, probably just call it's actions method - DONE
   - also update choose short assign - DONE
   - make fencer prep counter choose random enemy if no one has attacked - DONE
+  - update the extra trigger cards (or anything else that might need it)
+    - assign fast trigger - convert remaining counter into task level before trigger
+    - assign extra trigger - since fast trigger kinda gives task level in commons, make this a different effect
+      - like giving assignment bonus or something
+    - frontline loyalty extra trigger - transfer loyalty to assign buffs task level
+    - assign cost trigger - just more task level?
+    - mass extra trigger - just more task level?
+    - assign duplicate trigger - might have to rework, dont think current code lets me pass in task level, the properties use Level directly
+      - could rework into green offcolour idea above, next assign gets triggered twice like old extra triggers
+    - permanent assign - let level stack now, but it decreases per trigger?
+      - also have to do something about stacking too much haniwa so itll scale too much
+      - probs have a max of 5 level gain from playing cards
+    - gain buff tickdown maybe needs more, cos you miss out on buffing task level, or thats the downside/point
 new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
 assign play gain block also activates when assign buff triggers, multiplied by number of triggers
   - probs lower block gain as well 3(4)
   - unsure if ill do this
+new frontline from summon commander, an assign variation?
+  - you choose between the 2
+maybe change frontlines to be A and assign to be B
+add "random" to assign trigger summon description
+frontline passive attacks make reactions? no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
