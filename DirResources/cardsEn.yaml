@@ -793,6 +793,15 @@ OptionHaniwaHorseArcher:
     Sacrifice {SelectRequireArcher} |Archer| and {SelectRequireCavalry} |Cavalry|.
     Add a |Haniwa Horse Archer| to the hand. 
 
+MudExtraction:
+  Name: Mud Extraction
+  Description: |-
+    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and |Exile| them. 
+    Add a |Splash| to the hand. 
+  UpgradedDescription: |-
+    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and consume {Value2} |Loyalty|. 
+    Add a |Splash| to the hand. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance

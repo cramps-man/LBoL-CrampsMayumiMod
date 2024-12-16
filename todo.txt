@@ -554,17 +554,6 @@ assign summon frontline, maybe base number of copies on the current assigned han
   - consume task level to summon?
 assign reverse tickdown update cost from RRR -> 1RR - DONE
 
-offcolour ideas
-blue exile frontline, add splash, theming around mud lmao
-green/purple all frontlines hand/draw/discard gain loyalty + maybe something else
-green double extra triggers (now power or task level or whatever)
-  - maybe the next assign buff activate twice, like old extra triggers lmao
-  - could replace assign duplicate trigger, and come up with another card in green
-purple sacrifice haniwa for mana, or some other benefit
-purple assign buffs dont stack
-purple frontline, haniwa assassin, onplay insta kills if target below certain hp
-  - passive 
-
 still need to think over these assign changes
 extra trigger changes?
   - stacking assign buff tracks total haniwa assigned, and gives them all back - DONE
@@ -614,3 +603,14 @@ go through new assigns and check if any need a minimum
   - and increase scaling requirement where necessary
 go through assign buffs and add scaling to buff description
 lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
+
+offcolour ideas
+blue exile frontline, add splash, theming around mud lmao - DONE
+green/purple all frontlines hand/draw/discard gain loyalty + maybe something else
+green double extra triggers (now power or task level or whatever)
+  - maybe the next assign buff activate twice, like old extra triggers lmao
+  - could replace assign duplicate trigger, and come up with another card in green
+purple sacrifice haniwa for mana, or some other benefit
+purple assign buffs dont stack
+purple frontline, haniwa assassin, onplay insta kills if target below certain hp
+  - passive counters when attacked? or pierce block/barrier, ez with lifeloss attack type
