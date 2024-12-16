@@ -564,11 +564,11 @@ AssignTriggerUpgrade:
     Upgrade all cards in the hand. 
     Whenever an |Assign| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
-FrontlineLoyaltyExtraTrigger:
-  Name: Frontline Loyalty Extra Trigger
+FrontlineLoyaltyTaskLevel:
+  Name: Frontline Loyalty Task Level
   Description: |-
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from the hand and consume all |Loyalty|. 
-    Choose |e:1| |Assign| buff and give |e:1| extra trigger. Give |e:1| additional trigger per {Value2} |Loyalty| consumed. 
+    Choose |e:1| |Assign| buff and give |Task Level| for each |Loyalty| consumed. 
 
 CavalrySupplies:
   Name: Cavalry Supplies

@@ -592,7 +592,7 @@ extra trigger changes?
     - assign fast trigger - convert remaining counter into task level before trigger - DONE
     - assign extra trigger - since fast trigger kinda gives task level in commons, make this a different effect
       - like giving assignment bonus or something
-    - frontline loyalty extra trigger - transfer loyalty to assign buffs task level
+    - frontline loyalty extra trigger - transfer loyalty to assign buffs task level - DONE
     - assign cost trigger - just more task level?
     - mass extra trigger - just more task level?
     - assign duplicate trigger - might have to rework, dont think current code lets me pass in task level, the properties use Level directly

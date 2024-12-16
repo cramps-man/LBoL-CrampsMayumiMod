@@ -14,11 +14,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class FrontlineLoyaltyExtraTriggerDef : ModCardTemplate
+    public sealed class FrontlineLoyaltyTaskLevelDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(FrontlineLoyaltyExtraTrigger);
+            return nameof(FrontlineLoyaltyTaskLevel);
         }
 
         public override CardConfig MakeConfig()
@@ -29,8 +29,6 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Value2 = 12;
-            cardConfig.UpgradedValue2 = 10;
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
@@ -40,8 +38,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(FrontlineLoyaltyExtraTriggerDef))]
-    public sealed class FrontlineLoyaltyExtraTrigger : Card
+    [EntityLogic(typeof(FrontlineLoyaltyTaskLevelDef))]
+    public sealed class FrontlineLoyaltyTaskLevel : Card
     {
         public override Interaction Precondition()
         {
@@ -62,7 +60,7 @@ namespace LBoLMod.Cards
                 {
                     optionCard.StatusEffect.NotifyActivating();
                     int totalLoyalty = frontlineInteraction.SelectedCards.Cast<ModFrontlineCard>().Sum(c => c.RemainingValue);
-                    optionCard.StatusEffect.IncreaseExtraTrigger(1 + totalLoyalty / Value2);
+                    optionCard.StatusEffect.Level += totalLoyalty;
                 }
                 yield return PerformAction.Wait(0.3f);
                 foreach (ModFrontlineCard card in frontlineInteraction.SelectedCards)
