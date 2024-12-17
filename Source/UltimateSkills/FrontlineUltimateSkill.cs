@@ -15,11 +15,11 @@ using UnityEngine;
 
 namespace LBoLMod.UltimateSkills
 {
-    public sealed class UltimateSkillBDef: UltimateSkillTemplate
+    public sealed class FrontlineUltimateSkillDef: UltimateSkillTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(UltimateSkillB);
+            return nameof(FrontlineUltimateSkill);
         }
 
         public override LocalizationOption LoadLocalization()
@@ -54,10 +54,10 @@ namespace LBoLMod.UltimateSkills
         }
     }
 
-    [EntityLogic(typeof(UltimateSkillBDef))]
-    public sealed class UltimateSkillB : UltimateSkill
+    [EntityLogic(typeof(FrontlineUltimateSkillDef))]
+    public sealed class FrontlineUltimateSkill : UltimateSkill
     {
-        public UltimateSkillB() {
+        public FrontlineUltimateSkill() {
             base.TargetType = TargetType.SingleEnemy;
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)

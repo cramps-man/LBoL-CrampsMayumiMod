@@ -601,8 +601,8 @@ assign play gain block also activates when assign buff triggers, multiplied by n
   - unsure if ill do this
 new frontline from summon commander, an assign variation?
   - you choose between the 2
-maybe change frontlines to be A and assign to be B
-add "random" to assign trigger summon description
+maybe change frontlines to be A and assign to be B - DONE
+add "random" to assign trigger summon description - DONE
 frontline passive attacks make reactions? no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
 go through new assigns and check if any need a minimum
   - and increase scaling requirement where necessary
@@ -613,7 +613,11 @@ cavalry supplies add effect of choosing random frontline
 garrison archer allow using with lesser archer count, but give less watchtower
 auto update assign costs on cards when buff exists
   - watchtower also needs one for the archer sacrifice, might change it to not sacrifice if assign buff exists
-limit task level gain to 5 max per card played
+limit task level gain to 5 max per card played - LEAVE FOR NOW, see how it plays out
+  - Maybe no need since perma assign resets assigned haniwa anyway
+  - the problem will stem from eslewhere anyway, being able to loop and gain duplicate assign buffs
+  - or the scaling is just too much anyway
+  - and if i make it only scale by 1 no matter the amount of haniwa, stacking buffs has less incentive
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE

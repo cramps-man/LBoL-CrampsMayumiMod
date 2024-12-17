@@ -14,11 +14,11 @@ using UnityEngine;
 
 namespace LBoLMod.UltimateSkills
 {
-    public sealed class UltimateSkillADef: UltimateSkillTemplate
+    public sealed class AssignUltimateSkillDef: UltimateSkillTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(UltimateSkillA);
+            return nameof(AssignUltimateSkill);
         }
 
         public override LocalizationOption LoadLocalization()
@@ -53,10 +53,10 @@ namespace LBoLMod.UltimateSkills
         }
     }
 
-    [EntityLogic(typeof(UltimateSkillADef))]
-    public sealed class UltimateSkillA : UltimateSkill
+    [EntityLogic(typeof(AssignUltimateSkillDef))]
+    public sealed class AssignUltimateSkill : UltimateSkill
     {
-        public UltimateSkillA() {
+        public AssignUltimateSkill() {
             base.TargetType = TargetType.AllEnemies;
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector)

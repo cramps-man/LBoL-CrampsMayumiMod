@@ -50,18 +50,18 @@ namespace LBoLMod.PlayerUnits
             InitialMana: new LBoL.Base.ManaGroup() { Red = 2, White = 2 },
             InitialMoney: 50,
             InitialPower: 0,
-            UltimateSkillA: nameof(UltimateSkillA),
-            UltimateSkillB: nameof(UltimateSkillB),
-            ExhibitA: new AssignExhibitDef().UniqueId,
-            ExhibitB: new FrontlineExhibitDef().UniqueId,
-            DeckA: GetDeckA(),
-            DeckB: GetDeckB(),
+            UltimateSkillA: nameof(FrontlineUltimateSkill),
+            UltimateSkillB: nameof(AssignUltimateSkill),
+            ExhibitA: new FrontlineExhibitDef().UniqueId,
+            ExhibitB: new AssignExhibitDef().UniqueId,
+            DeckA: GetFrontlineDeck(),
+            DeckB: GetAssignDeck(),
             DifficultyA: 3,
             DifficultyB: 3
             );
             return config;
         }
-        private static List<string> GetDeckA()
+        private static List<string> GetAssignDeck()
         {
             return new List<string> {
                 nameof(Shoot),
@@ -77,7 +77,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(AssignHaniwaCreate)
             };
         }
-        private static List<string> GetDeckB()
+        private static List<string> GetFrontlineDeck()
         {
             return new List<string> {
                 nameof(Shoot),

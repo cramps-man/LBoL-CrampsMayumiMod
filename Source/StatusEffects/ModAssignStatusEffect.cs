@@ -91,7 +91,7 @@ namespace LBoLMod.StatusEffects
 
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
         {
-            if (args.Us is UltimateSkillA)
+            if (args.Us is AssignUltimateSkill)
             {
                 return AssignTriggering(false);
             }

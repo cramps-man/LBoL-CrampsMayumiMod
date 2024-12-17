@@ -680,7 +680,7 @@ SummonCommander:
 AssignTriggerSummon:
   Name: Assign Trigger Summon
   Description: |-
-    Whenever an |Assign| buff is triggered, add {Value1} |Frontline| card{Value1:plural one='' other='s'} to the hand. 
+    Whenever an |Assign| buff is triggered, add {Value1} random |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
 ExileFrontlineBlitz:
   Name: Exile Frontline Blitz
