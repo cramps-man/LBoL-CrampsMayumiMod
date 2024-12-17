@@ -19,18 +19,43 @@ namespace LBoLMod.Cards
         public virtual int FencerAssigned => 0;
         public virtual int ArcherAssigned => 0;
         public virtual int CavalryAssigned => 0;
-        public virtual int StartingCardCounter => 0;
-        public virtual int StartingTaskLevel => 1;
-        public virtual Type AssignStatusType => null;
-        public override bool CanUse
+        public int FencerRequired
         {
             get
             {
+                if (base.Battle == null)
+                    return FencerAssigned;
                 if (base.Battle.Player.HasStatusEffect(AssignStatusType))
-                    return HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, Math.Min(FencerAssigned, 1), Math.Min(ArcherAssigned, 1), Math.Min(CavalryAssigned, 1));
-                return HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
+                    return Math.Min(FencerAssigned, 1);
+                return FencerAssigned;
             }
         }
+        public int ArcherRequired
+        {
+            get
+            {
+                if (base.Battle == null)
+                    return ArcherAssigned;
+                if (base.Battle.Player.HasStatusEffect(AssignStatusType))
+                    return Math.Min(ArcherAssigned, 1);
+                return ArcherAssigned;
+            }
+        }
+        public int CavalryRequired
+        {
+            get
+            {
+                if (base.Battle == null)
+                    return CavalryAssigned;
+                if (base.Battle.Player.HasStatusEffect(AssignStatusType))
+                    return Math.Min(CavalryAssigned, 1);
+                return CavalryAssigned;
+            }
+        }
+        public virtual int StartingCardCounter => 0;
+        public virtual int StartingTaskLevel => 1;
+        public virtual Type AssignStatusType => null;
+        public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
         public override ManaGroup AdditionalCost
         {
             get
@@ -45,10 +70,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (base.Battle.Player.HasStatusEffect(AssignStatusType))
-                yield return new LoseHaniwaAction(HaniwaActionType.Assign, Math.Min(FencerAssigned, 1), Math.Min(ArcherAssigned, 1), Math.Min(CavalryAssigned, 1));
-            else
-                yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerAssigned, ArcherAssigned, CavalryAssigned);
+            yield return new LoseHaniwaAction(HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
             yield return BuffAction(AssignStatusType, level: StartingTaskLevel, count: StartingCardCounter);
         }
     }

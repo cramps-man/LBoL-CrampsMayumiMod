@@ -59,7 +59,7 @@ FencerKamikaze:
 ArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
-    |Assign {ArcherAssigned} Archer|.
+    |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} cards are played, deal {Damage} damage X times to random enemies. X is |Task Level| / {Value1}. 
     Start with {StartingTaskLevel} |Task Level|. 
 
@@ -96,7 +96,7 @@ HaniwaSupport:
 FencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
-    |Assign {FencerAssigned} Fencer|.
+    |Assign {FencerRequired} Fencer|.
     After {StartingCardCounter} cards are played, gain {Shield} |Barrier| per |Task Level|.
     Start with {StartingTaskLevel} |Task Level|. 
 
@@ -238,7 +238,7 @@ AssignExtraTime:
 CavalryScout:
   Name: Cavalry Scout
   Description: |-
-    |Assign {CavalryAssigned} Cavalry|.
+    |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and draw |e:1| card per {Value2} |Task Level|. 
     Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
@@ -295,12 +295,12 @@ CreateFencer:
 BuildWatchtower:
   Name: Build Watchtower
   Description: |-
-    |Assign {FencerAssigned} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
+    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
     After {StartingCardCounter} cards are played, gain |e:1| |Watchtower| per {Value1} |Task Level|. 
     If {PlayerName} already has |Watchtower|, instead no |Haniwa| are required and add a |Garrison Archer| to the hand. 
     Start with {StartingTaskLevel} |Task Level|. 
   UpgradedDescription: |-
-    |Assign {FencerAssigned} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
+    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
     After {StartingCardCounter} cards are played, gain |e:1| |Watchtower| per {Value1} |Task Level|. 
     If {PlayerName} already has |Watchtower|, instead no |Haniwa| are required and add an |upgraded Garrison Archer| to the hand. 
     Start with {StartingTaskLevel} |Task Level|. 
@@ -479,7 +479,7 @@ ClayToAshes:
 ChargeAttack:
   Name: Charge Attack
   Description: |-
-    |Assign {ArcherAssigned} Archer|.
+    |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} cards are played, deal {Damage} damage X times to the enemy with the highest life. X is |Task Level| / {Value1}. 
     Whenever an |Assign| buff is triggered, increase |Task Level| by {Value1}. 
     Start with {StartingTaskLevel} |Task Level|. 
@@ -492,7 +492,7 @@ AssignPlayGainBlock:
 CavalryRush:
   Name: Cavalry Rush
   Description: |-
-    |Assign {CavalryAssigned} Cavalry|.
+    |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
     If effect is triggered during the turn (not start of), gain {Mana} per {Value1} |Task Level|. 
     Start with {StartingTaskLevel} |Task Level|. 
@@ -528,7 +528,7 @@ ChooseShortAssign:
 FencerPrepCounter:
   Name: Fencer Prep Counter
   Description: |-
-    |Assign {FencerAssigned} Fencer|.
+    |Assign {FencerRequired} Fencer|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to |Task Level|, to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
     Whenever {PlayerName} is attacked, increase triggers by {Value1} for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
     Start with {StartingTaskLevel} |Task Level|. 
@@ -550,7 +550,7 @@ GuardRush:
 ArcherPrepDebuff:
   Name: Archer Prep Debuff
   Description: |-
-    |Assign {ArcherAssigned} Archer|.
+    |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal |Accurate| damage equal to |Task Level| to all enemies and apply |e:1| |Vulnerable| (minimum 1) per {Value1} |Task Level|. 
     Start with {StartingTaskLevel} |Task Level|. 
 
@@ -569,7 +569,7 @@ FrontlineLoyaltyTaskLevel:
 CavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
-    |Assign {CavalryAssigned} Cavalry|. 
+    |Assign {CavalryRequired} Cavalry|. 
     After {StartingCardCounter} cards are played, choose X of X + {Value2} cards to add to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
     Cards are randomized and can include |Flame|, |Radiance| or a random |Frontline|. 
     Start with {StartingTaskLevel} |Task Level|. 
@@ -738,7 +738,7 @@ FreezeFrontline:
 ArcherPrepFrostArrow:
   Name: Archer Prep Frost Arrow
   Description: |-
-    |Assign {ArcherAssigned} Archer|.
+    |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal {Damage} damage and apply |Cold| to random enemies X times. X is |Task Level| / {Value1}. 
     If the target has |Cold|, gain {Block} |Block|. 
     Start with {StartingTaskLevel} |Task Level|. 
