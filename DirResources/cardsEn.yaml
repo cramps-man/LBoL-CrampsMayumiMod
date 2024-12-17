@@ -690,7 +690,7 @@ ExileFrontlineBlitz:
 AssignCostTrigger:
   Name: Assign Cost Trigger
   Description: |-
-    Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost for each level of this buff. |Assign| buffs start with increased extra triggers of {Value1}.
+    Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost. |Assign| buffs gain {Value1} extra |Task Level| per card played.
     Regain any mana spent on |Assign| cards at start of next turn. 
 
 AssignReverseTickdown:

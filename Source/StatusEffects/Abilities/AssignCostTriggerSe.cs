@@ -22,10 +22,9 @@ namespace LBoLMod.StatusEffects.Abilities
     [EntityLogic(typeof(AssignCostTriggerSeDef))]
     public sealed class AssignCostTriggerSe: StatusEffect
     {
-        public ManaGroup IncreasedCost => ManaGroup.Anys(Level);
+        public ManaGroup IncreasedCost => ManaGroup.Anys(1);
         protected override void OnAdded(Unit unit)
         {
-            base.HandleOwnerEvent(base.Battle.Player.StatusEffectAdding, this.OnStatusEffectAdding);
             base.ReactOwnerEvent(base.Battle.CardUsed, this.OnCardUsed);
         }
 
@@ -33,16 +32,6 @@ namespace LBoLMod.StatusEffects.Abilities
         {
             if (args.Card is ModAssignCard)
                 yield return new GainTurnManaAction(args.ConsumingMana);
-        }
-
-        private void OnStatusEffectAdding(StatusEffectApplyEventArgs args)
-        {
-            if (base.Battle.BattleShouldEnd)
-                return;
-            if (args.Effect is ModAssignStatusEffect assignStatus)
-            {
-                assignStatus.Level += Level;
-            }
         }
     }
 }

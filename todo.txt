@@ -583,7 +583,7 @@ extra trigger changes?
       - like giving assignment bonus or something
       - increase card counter
     - frontline loyalty extra trigger - transfer loyalty to assign buffs task level - DONE
-    - assign cost trigger - just more task level? or increase task level gained from playing cards
+    - assign cost trigger - just more task level? or increase task level gained from playing cards - DONE
     - mass extra trigger - just more task level? - DONE
     - assign duplicate trigger - DONE
       - might have to rework, dont think current code lets me pass in task level, the properties use Level directly
@@ -621,6 +621,7 @@ green/purple all frontlines hand/draw/discard gain loyalty + maybe something els
 green double extra triggers (now power or task level or whatever) - DONE
   - maybe the next assign buff activate twice, like old extra triggers lmao
   - could replace assign duplicate trigger, and come up with another card in green
+green assign that costs 1 of each haniwa
 purple sacrifice haniwa for mana, or some other benefit
 purple assign buffs dont stack
 purple frontline, haniwa assassin, onplay insta kills if target below certain hp

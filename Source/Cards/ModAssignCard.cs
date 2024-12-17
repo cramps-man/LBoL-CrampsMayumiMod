@@ -37,8 +37,8 @@ namespace LBoLMod.Cards
             {
                 if (base.Battle == null)
                     return ManaGroup.Empty;
-                if (base.Battle.HandZone.Contains(this) && base.Battle.Player.TryGetStatusEffect<AssignCostTriggerSe>(out AssignCostTriggerSe s))
-                    return ManaGroup.Anys(s.Level);
+                if (base.Battle.HandZone.Contains(this) && base.Battle.Player.HasStatusEffect<AssignCostTriggerSe>())
+                    return ManaGroup.Anys(1);
                 return ManaGroup.Empty;
             }
         }
