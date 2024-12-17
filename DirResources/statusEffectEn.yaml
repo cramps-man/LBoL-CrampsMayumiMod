@@ -313,3 +313,10 @@ IllnessPreventionSe:
     Reduce incoming debuff level/duration by |e:1|. 
   Brief: |-
     Reduce incoming debuff level/duration by |e:1|. 
+
+AssignDoubleTriggerSe:
+  Name: Assign Double Trigger
+  Description: |-
+    The next {Level} |Assign| buff{Level:plural one='' other='s'} triggers twice. 
+  Brief: |-
+    The next |Assign| buff triggers twice. 

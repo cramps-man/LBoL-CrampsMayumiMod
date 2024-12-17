@@ -64,7 +64,7 @@ namespace LBoLMod.StatusEffects
         {
             IsPermanent = true;
         }
-        public void IncreaseExtraTrigger(int amount)
+        public void IncreaseTaskLevel(int amount)
         {
             Level += amount;
         }
@@ -87,11 +87,6 @@ namespace LBoLMod.StatusEffects
         {
             Count = 0;
             return AssignTriggering(false);
-        }
-
-        public IEnumerable<BattleAction> DuplicateTrigger(int triggerCount = 1)
-        {
-            yield return new AssignTriggerAction(OnAssignmentDone(false), BeforeAssignmentDone(false, triggerCount), AfterAssignmentDone(false, triggerCount), triggerCount, false);
         }
 
         private IEnumerable<BattleAction> OnUltimateSkillUsed(UsUsingEventArgs args)
@@ -138,7 +133,7 @@ namespace LBoLMod.StatusEffects
             if (base.Battle.BattleShouldEnd)
                 yield break;
             this.NotifyActivating();
-            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), BeforeAssignmentDone(onTurnStart, Level), AfterAssignmentDone(onTurnStart, Level), Level, onTurnStart);
+            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), BeforeAssignmentDone(onTurnStart), AfterAssignmentDone(onTurnStart), Level, onTurnStart);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (IsPermanent)
@@ -165,11 +160,11 @@ namespace LBoLMod.StatusEffects
             }
         }
         protected abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
-        protected virtual IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart, int triggerCount)
+        protected virtual IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
         {
             return new List<BattleAction>();
         }
-        protected virtual IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart, int triggerCount)
+        protected virtual IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
             return new List<BattleAction>();
         }

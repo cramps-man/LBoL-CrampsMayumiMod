@@ -585,7 +585,8 @@ extra trigger changes?
     - frontline loyalty extra trigger - transfer loyalty to assign buffs task level - DONE
     - assign cost trigger - just more task level? or increase task level gained from playing cards
     - mass extra trigger - just more task level? - DONE
-    - assign duplicate trigger - might have to rework, dont think current code lets me pass in task level, the properties use Level directly
+    - assign duplicate trigger - DONE
+      - might have to rework, dont think current code lets me pass in task level, the properties use Level directly
       - could rework into green offcolour idea above, next assign gets triggered twice like old extra triggers
     - permanent assign - let level stack now, but it decreases per trigger? - DONE
       - also have to do something about stacking too much haniwa so itll scale too much
@@ -617,7 +618,7 @@ limit task level gain to 5 max per card played
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE
 green/purple all frontlines hand/draw/discard gain loyalty + maybe something else
-green double extra triggers (now power or task level or whatever)
+green double extra triggers (now power or task level or whatever) - DONE
   - maybe the next assign buff activate twice, like old extra triggers lmao
   - could replace assign duplicate trigger, and come up with another card in green
 purple sacrifice haniwa for mana, or some other benefit

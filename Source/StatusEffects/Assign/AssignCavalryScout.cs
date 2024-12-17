@@ -23,11 +23,6 @@ namespace LBoLMod.StatusEffects.Assign
         public int TotalDraw => Level / CardValue2;
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield break;
-        }
-
-        protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart, int triggerCount)
-        {
             yield return new DescriptiveScryAction(TotalScry, "Cavalry Scout - Scry");
             yield return new DrawManyCardAction(TotalDraw);
         }
