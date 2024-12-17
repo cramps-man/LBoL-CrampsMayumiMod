@@ -25,12 +25,12 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignCavalrySupplies : ModAssignStatusEffect
     {
         public int TotalTimes => Math.Max(Level / CardValue1, 1);
-        public int TotalTimesPlusTwo => TotalTimes + 2;
+        public int TotalTimesPlusValue2 => TotalTimes + CardValue2;
         private SelectCardInteraction Interaction { get; set; }
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             List<Card> randomChoices = new List<Card>();
-            for (int i = 0; i < TotalTimes + 2; i++)
+            for (int i = 0; i < TotalTimesPlusValue2; i++)
             {
                 int rng = base.GameRun.BattleRng.NextInt(1, 3);
                 if (rng == 1)
