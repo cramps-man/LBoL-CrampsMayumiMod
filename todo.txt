@@ -593,24 +593,15 @@ extra trigger changes?
       - probs have a max of 5 level gain from playing cards
       - and have a fixed counter to reset to, probs 5
     - gain buff tickdown maybe needs more, cos you miss out on buffing task level, or thats the downside/point
-new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
-  - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
-  - come up with something else
 assign play gain block also activates when assign buff triggers, multiplied by number of triggers - WONT DO
   - probs lower block gain as well 3(4)
   - unsure if ill do this
-new frontline from summon commander, an assign variation?
-  - you choose between the 2
+
 maybe change frontlines to be A and assign to be B - DONE
 add "random" to assign trigger summon description - DONE
-frontline passive attacks make reactions? no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
-go through new assigns and check if any need a minimum
-  - and increase scaling requirement where necessary
-go through assign buffs and add scaling to buff description
-lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
-  - or remove upgraded dmg entirely, or keep 3 mana cost like before
 cavalry supplies add effect of choosing random frontline - DONE
   - and change choices to be random between flame/radiance/frontline, X + 2 choices
+  - and made frontline have higher chance to show
 garrison archer allow using with lesser archer count, but give less watchtower - DONE
 auto update assign costs on cards when buff exists - DONE
   - watchtower also needs one for the archer sacrifice, might change it to not sacrifice if assign buff exists - DONE
@@ -619,12 +610,28 @@ limit task level gain to 5 max per card played - LEAVE FOR NOW, see how it plays
   - the problem will stem from eslewhere anyway, being able to loop and gain duplicate assign buffs
   - or the scaling is just too much anyway
   - and if i make it only scale by 1 no matter the amount of haniwa, stacking buffs has less incentive
+
+new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
+  - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
+  - come up with something else
+new frontline from summon commander, an assign variation?
+  - you choose between the 2
+frontline passive attacks make reactions?
+  - no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
+go through new assigns and check if any need a minimum
+  - and increase scaling requirement where necessary
+go through assign buffs and add scaling to buff description
+lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
+  - or remove upgraded dmg entirely, or keep 3 mana cost like before
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
   - should I make source card a duplicate card? that is referenced only by the buff?
+starting task level should stack
+  - probs need to adjust scaling for the per card gain to slow it down, as both together are probs a lot
+duplicate haniwa bug might be because of dying then start new run?
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE
-green/purple all frontlines hand/draw/discard gain loyalty + maybe something else
+green all frontlines hand/draw/discard gain loyalty + maybe something else
 green double extra triggers (now power or task level or whatever) - DONE
   - maybe the next assign buff activate twice, like old extra triggers lmao
   - could replace assign duplicate trigger, and come up with another card in green

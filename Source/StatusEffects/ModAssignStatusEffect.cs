@@ -55,8 +55,6 @@ namespace LBoLMod.StatusEffects
             CardFencerAssigned += AssignSourceCard.FencerAssigned > 0 ? 1 : 0;
             CardArcherAssigned += AssignSourceCard.ArcherAssigned > 0 ? 1 : 0;
             CardCavalryAssigned += AssignSourceCard.CavalryAssigned > 0 ? 1 : 0;
-            if (Level < AssignSourceCard.StartingTaskLevel)
-                Level = AssignSourceCard.StartingTaskLevel;
             return true;
         }
 
