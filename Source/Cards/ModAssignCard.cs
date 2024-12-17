@@ -19,7 +19,7 @@ namespace LBoLMod.Cards
         public virtual int FencerAssigned => 0;
         public virtual int ArcherAssigned => 0;
         public virtual int CavalryAssigned => 0;
-        public int FencerRequired
+        public virtual int FencerRequired
         {
             get
             {
@@ -30,7 +30,7 @@ namespace LBoLMod.Cards
                 return FencerAssigned;
             }
         }
-        public int ArcherRequired
+        public virtual int ArcherRequired
         {
             get
             {
@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
                 return ArcherAssigned;
             }
         }
-        public int CavalryRequired
+        public virtual int CavalryRequired
         {
             get
             {

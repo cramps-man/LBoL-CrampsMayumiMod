@@ -613,7 +613,7 @@ cavalry supplies add effect of choosing random frontline - DONE
   - and change choices to be random between flame/radiance/frontline, X + 2 choices
 garrison archer allow using with lesser archer count, but give less watchtower - DONE
 auto update assign costs on cards when buff exists - DONE
-  - watchtower also needs one for the archer sacrifice, might change it to not sacrifice if assign buff exists
+  - watchtower also needs one for the archer sacrifice, might change it to not sacrifice if assign buff exists - DONE
 limit task level gain to 5 max per card played - LEAVE FOR NOW, see how it plays out
   - Maybe no need since perma assign resets assigned haniwa anyway
   - the problem will stem from eslewhere anyway, being able to loop and gain duplicate assign buffs

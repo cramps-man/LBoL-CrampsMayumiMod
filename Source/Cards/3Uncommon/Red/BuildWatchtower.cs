@@ -42,7 +42,28 @@ namespace LBoLMod.Cards
     public sealed class BuildWatchtower : ModAssignCard
     {
         public override int FencerAssigned => 3;
-        public int SacrificeArcherRequired => 2;
+        public int SacrificeArcherRequired
+        {
+            get
+            {
+                if (base.Battle == null)
+                    return 2;
+                if (base.Battle.Player.HasStatusEffect(AssignStatusType) || base.Battle.Player.HasStatusEffect<Watchtower>())
+                    return 0;
+                return 2;
+            }
+        }
+        public override int FencerRequired
+        {
+            get
+            {
+                if (base.Battle == null)
+                    return base.FencerRequired;
+                if (base.Battle.Player.HasStatusEffect<Watchtower>())
+                    return 0;
+                return base.FencerRequired;
+            }
+        }
         public override int StartingCardCounter => IsUpgraded ? 8 : 12;
         public override int StartingTaskLevel => IsUpgraded ? 40 : 15;
         public override Type AssignStatusType => typeof(AssignBuildWatchtower);
