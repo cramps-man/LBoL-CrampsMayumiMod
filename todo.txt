@@ -579,7 +579,7 @@ extra trigger changes?
   - make fencer prep counter choose random enemy if no one has attacked - DONE
   - update the extra trigger cards (or anything else that might need it)
     - assign fast trigger - convert remaining counter into task level before trigger - DONE
-    - assign extra trigger - since fast trigger kinda gives task level in commons, make this a different effect
+    - assign extra trigger - since fast trigger kinda gives task level in commons, make this a different effect - DONE
       - like giving assignment bonus or something
       - increase card counter
     - frontline loyalty extra trigger - transfer loyalty to assign buffs task level - DONE
@@ -587,9 +587,10 @@ extra trigger changes?
     - mass extra trigger - just more task level? - DONE
     - assign duplicate trigger - might have to rework, dont think current code lets me pass in task level, the properties use Level directly
       - could rework into green offcolour idea above, next assign gets triggered twice like old extra triggers
-    - permanent assign - let level stack now, but it decreases per trigger?
+    - permanent assign - let level stack now, but it decreases per trigger? - DONE
       - also have to do something about stacking too much haniwa so itll scale too much
       - probs have a max of 5 level gain from playing cards
+      - and have a fixed counter to reset to, probs 5
     - gain buff tickdown maybe needs more, cos you miss out on buffing task level, or thats the downside/point
 new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
   - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
@@ -611,6 +612,7 @@ cavalry supplies add effect of choosing random frontline
 garrison archer allow using with lesser archer count, but give less watchtower
 auto update assign costs on cards when buff exists
   - watchtower also needs one for the archer sacrifice, might change it to not sacrifice if assign buff exists
+limit task level gain to 5 max per card played
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE

@@ -40,9 +40,7 @@ namespace LBoLMod.Patches
                     __instance.downText.color = Color.green;*/
                 }
                 else if (modAssignStatusEffect.IsPermanent)
-                    __instance.downText.text = "∞";
-                else if (modAssignStatusEffect.Level <= 1)
-                    __instance.downText.text = "";
+                    __instance.upText.text = "∞" + __instance.upText.text;
                 //modAssignStatusEffect.NotifyChanged();
             }
         }

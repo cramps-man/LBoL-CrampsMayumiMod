@@ -57,25 +57,16 @@ namespace LBoLMod.StatusEffects
             CardCavalryAssigned += AssignSourceCard.CavalryAssigned > 0 ? 1 : 0;
             if (Level < AssignSourceCard.StartingTaskLevel)
                 Level = AssignSourceCard.StartingTaskLevel;
-            if (IsPermanent)
-            {
-                Level = 1;
-                this.Tickdown(3);
-            }
             return true;
         }
 
         public void MakePermanent()
         {
             IsPermanent = true;
-            Level = 1;
         }
         public void IncreaseExtraTrigger(int amount)
         {
-            if (IsPermanent)
-                Tickdown(3);
-            else
-                Level += amount;
+            Level += amount;
         }
         public void Tickdown(int amount)
         {
@@ -147,14 +138,11 @@ namespace LBoLMod.StatusEffects
             if (base.Battle.BattleShouldEnd)
                 yield break;
             this.NotifyActivating();
-            if (IsPermanent)
-                Level = 1;
             yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), BeforeAssignmentDone(onTurnStart, Level), AfterAssignmentDone(onTurnStart, Level), Level, onTurnStart);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (IsPermanent)
             {
-                Count = StartingCardCounter;
                 if (HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Require, CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned))
                 {
                     yield return new LoseHaniwaAction(HaniwaActionType.Require, CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned);
@@ -164,6 +152,11 @@ namespace LBoLMod.StatusEffects
                     int hpLoss = CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned;
                     yield return new DamageAction(base.Battle.Player, base.Battle.Player, DamageInfo.HpLose(hpLoss));
                 }
+                Count = 5;
+                Level = AssignSourceCard.StartingTaskLevel;
+                CardFencerAssigned = AssignSourceCard.FencerAssigned;
+                CardArcherAssigned = AssignSourceCard.ArcherAssigned;
+                CardCavalryAssigned = AssignSourceCard.CavalryAssigned;
             }
             else if (shouldRemove)
             {
