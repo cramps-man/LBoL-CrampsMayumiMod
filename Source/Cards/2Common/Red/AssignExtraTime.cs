@@ -12,11 +12,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class AssignExtraTriggerDef : ModCardTemplate
+    public sealed class AssignExtraTimeDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(AssignExtraTrigger);
+            return nameof(AssignExtraTime);
         }
 
         public override CardConfig MakeConfig()
@@ -28,15 +28,16 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedBlock = 16;
             cardConfig.Cost = new ManaGroup() { Red = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
-            cardConfig.Value1 = 1;
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(AssignExtraTriggerDef))]
-    public sealed class AssignExtraTrigger : Card
+    [EntityLogic(typeof(AssignExtraTimeDef))]
+    public sealed class AssignExtraTime : Card
     {
         public override Interaction Precondition()
         {
@@ -47,7 +48,7 @@ namespace LBoLMod.Cards
             yield return DefenseAction();
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
-                card.StatusEffect.IncreaseExtraTrigger(Value1);
+                card.StatusEffect.Count += Value1;
             }
         }
     }

@@ -229,11 +229,11 @@ ZeroCostMove:
     Choose up to {Value1} {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles and move them to the hand. 
     Currently {ZeroCostCount} total in draw/discard piles. 
 
-AssignExtraTrigger:
-  Name: Assign Extra Trigger
+AssignExtraTime:
+  Name: Assign Extra Time
   Description: |-
     Gain {Block} |Block|. 
-    Choose an |Assign| buff and increase the amount of times it will trigger by {Value1}. 
+    Choose an |Assign| buff and increase its counter by {Value1}. 
 
 CavalryScout:
   Name: Cavalry Scout
