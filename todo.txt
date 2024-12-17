@@ -611,7 +611,7 @@ lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
   - or remove upgraded dmg entirely, or keep 3 mana cost like before
 cavalry supplies add effect of choosing random frontline - DONE
   - and change choices to be random between flame/radiance/frontline, X + 2 choices
-garrison archer allow using with lesser archer count, but give less watchtower
+garrison archer allow using with lesser archer count, but give less watchtower - DONE
 auto update assign costs on cards when buff exists
   - watchtower also needs one for the archer sacrifice, might change it to not sacrifice if assign buff exists
 limit task level gain to 5 max per card played - LEAVE FOR NOW, see how it plays out

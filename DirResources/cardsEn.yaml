@@ -308,8 +308,10 @@ BuildWatchtower:
 GarrisonArcher:
   Name: Garrison Archer
   Description: |-
-    |Sacrifice {ArcherSacrificed} Archer|. 
-    Gain {Value1} |Watchtower|. 
+    Gain |Watchtower| based on |Archer| level and |Sacrifice| that amount of |Archers|. 
+    |0|: Gain {ArcherLvl0} |Watchtower|
+    |1|: Gain {ArcherLvl1} |Watchtower|
+    |2|: Gain {ArcherLvl2} |Watchtower|
 
 AssignTickdownReturn:
   Name: Assign Tickdown Return
