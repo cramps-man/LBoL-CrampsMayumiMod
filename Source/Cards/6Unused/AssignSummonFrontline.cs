@@ -12,7 +12,7 @@ using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+/*
 namespace LBoLMod.Cards
 {
     public sealed class AssignSummonFrontlineDef : ModCardTemplate
@@ -70,3 +70,4 @@ namespace LBoLMod.Cards
         }
     }
 }
+*/

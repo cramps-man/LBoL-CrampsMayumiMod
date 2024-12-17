@@ -544,7 +544,7 @@ new archer frontline, more supportive/defensive? - DONE
     - might have to activate at end of turn instead of before attacks, probs better that way for calculating too
   - onplay can have a new buff that decreases incoming debuffs by 1 level/duration
 assign description make more clear - DONE
-assign summon frontline, maybe base number of copies on the current assigned haniwa?
+assign summon frontline, maybe base number of copies on the current assigned haniwa? - REMOVED, add an effect to cavalry supplies
   - or perhaps rework it somehow
   - or remove
   - remove extra triggers? if 1 trigger, remove buff
@@ -581,6 +581,7 @@ extra trigger changes?
     - assign fast trigger - convert remaining counter into task level before trigger - DONE
     - assign extra trigger - since fast trigger kinda gives task level in commons, make this a different effect
       - like giving assignment bonus or something
+      - increase card counter
     - frontline loyalty extra trigger - transfer loyalty to assign buffs task level - DONE
     - assign cost trigger - just more task level? or increase task level gained from playing cards
     - mass extra trigger - just more task level? - DONE
@@ -591,7 +592,9 @@ extra trigger changes?
       - probs have a max of 5 level gain from playing cards
     - gain buff tickdown maybe needs more, cos you miss out on buffing task level, or thats the downside/point
 new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
-assign play gain block also activates when assign buff triggers, multiplied by number of triggers
+  - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
+  - come up with something else
+assign play gain block also activates when assign buff triggers, multiplied by number of triggers - WONT DO
   - probs lower block gain as well 3(4)
   - unsure if ill do this
 new frontline from summon commander, an assign variation?
@@ -603,6 +606,9 @@ go through new assigns and check if any need a minimum
   - and increase scaling requirement where necessary
 go through assign buffs and add scaling to buff description
 lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
+cavalry supplies add effect of choosing random frontline
+  - and change choices to be random between flame/radiance/frontline, X + 2 choices
+garrison archer allow using with lesser archer count, but give less watchtower
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE

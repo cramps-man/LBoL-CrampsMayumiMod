@@ -463,12 +463,6 @@ OptionHaniwaSentinel:
     Sacrifice {SelectRequireArcher} |Archer|.
     Add a |Haniwa Sentinel| to the hand. 
 
-AssignSummonFrontline:
-  Name: Assign Summon Frontline
-  Description: |-
-    Choose an |Assign| buff and remove it without triggering it. 
-    Choose |e:1| |Frontline| card and add {Value1} copies of it to the hand. 
-
 LoyaltyStrike:
   Name: Loyalty Strike
   Description: |-
@@ -867,3 +861,9 @@ FrontlineDiscardDraw:
   UpgradedDescription: |-
     Choose any number of cards in the hand. 
     Upgrade then discard them, then draw the number of |Frontline| cards discarded. 
+
+AssignSummonFrontline:
+  Name: Assign Summon Frontline
+  Description: |-
+    Choose an |Assign| buff and remove it without triggering it. 
+    Choose |e:1| |Frontline| card and add {Value1} copies of it to the hand. 
