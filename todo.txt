@@ -619,6 +619,8 @@ limit task level gain to 5 max per card played - LEAVE FOR NOW, see how it plays
   - the problem will stem from eslewhere anyway, being able to loop and gain duplicate assign buffs
   - or the scaling is just too much anyway
   - and if i make it only scale by 1 no matter the amount of haniwa, stacking buffs has less incentive
+assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
+  - should I make source card a duplicate card? that is referenced only by the buff?
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE

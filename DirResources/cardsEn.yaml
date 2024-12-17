@@ -571,6 +571,8 @@ CavalrySupplies:
     After {StartingCardCounter} cards are played, choose X of X + {Value2} cards to add to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
     Cards are randomized and can include |Flame|, |Radiance| or a random |Frontline|. 
     Start with {StartingTaskLevel} |Task Level|. 
+  DetailText: |-
+    |Flame| and |Radiance| have 1/5 chances, |Frontlines| have 3/5 chances. 
 
 AutoCreateReserves:
   Name: Auto Create Reserves
