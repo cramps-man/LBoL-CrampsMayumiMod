@@ -124,8 +124,7 @@ AssignArcherPrepVolley:
 AssignCavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, add {TotalTimes} |Flame{TotalTimes:plural one='' other='s'}| or |Radiance{TotalTimes:plural one='' other='s'}| to the draw pile. 
-    Alternate between |Flame| and |Radiance|, starting with |Flame|. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, choose {TotalTimes} of {TotalTimesPlusTwo} cards to add to the draw pile. Cards are randomized and can include |Flame|, |Radiance| or a random |Frontline|. 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, add |Flame| or |Radiance| to draw pile. 

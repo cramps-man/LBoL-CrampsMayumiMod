@@ -568,8 +568,8 @@ CavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
     |Assign {CavalryAssigned} Cavalry|. 
-    After {StartingCardCounter} cards are played, add X number of |Flames| or |Radiances| to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
-    Alternate adding |Flame| then |Radiance|, starting with |Flame|. 
+    After {StartingCardCounter} cards are played, choose X of X + 2 cards to add to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
+    Cards are randomized and can include |Flame|, |Radiance| or a random |Frontline|. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 AutoCreateReserves:
