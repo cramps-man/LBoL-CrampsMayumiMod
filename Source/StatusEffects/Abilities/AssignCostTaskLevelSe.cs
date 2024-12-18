@@ -11,16 +11,16 @@ using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Abilities
 {
-    public sealed class AssignCostTriggerSeDef : ModStatusEffectTemplate
+    public sealed class AssignCostTaskLevelSeDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(AssignCostTriggerSe);
+            return nameof(AssignCostTaskLevelSe);
         }
     }
 
-    [EntityLogic(typeof(AssignCostTriggerSeDef))]
-    public sealed class AssignCostTriggerSe: StatusEffect
+    [EntityLogic(typeof(AssignCostTaskLevelSeDef))]
+    public sealed class AssignCostTaskLevelSe: StatusEffect
     {
         public ManaGroup IncreasedCost => ManaGroup.Anys(1);
         protected override void OnAdded(Unit unit)

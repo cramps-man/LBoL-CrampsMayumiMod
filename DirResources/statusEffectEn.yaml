@@ -273,8 +273,8 @@ ExileFrontlineBlitzSe:
   Brief: |-
     Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
 
-AssignCostTriggerSe:
-  Name: Assign Cost Trigger
+AssignCostTaskLevelSe:
+  Name: Assign Cost Task Level
   Description: |-
     Until the end of this combat, |Assign| cards in the hand temporarily gain {IncreasedCost} cost. |Assign| buffs gain {Level} extra |Task Level| per card played.
     Regain any mana spent on |Assign| cards at start of next turn. 

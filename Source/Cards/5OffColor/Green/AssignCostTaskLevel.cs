@@ -11,11 +11,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class AssignCostTriggerDef : ModCardTemplate
+    public sealed class AssignCostTaskLevelDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(AssignCostTrigger);
+            return nameof(AssignCostTaskLevel);
         }
 
         public override CardConfig MakeConfig()
@@ -23,9 +23,9 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Ability;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2, Any = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1, Any = 1 };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
+            cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 9, Any = 3 };
+            cardConfig.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 9, Any = 1 };
             cardConfig.Value1 = 2;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
             cardConfig.RelativeKeyword = Keyword.TempMorph;
@@ -36,12 +36,12 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(AssignCostTriggerDef))]
-    public sealed class AssignCostTrigger : Card
+    [EntityLogic(typeof(AssignCostTaskLevelDef))]
+    public sealed class AssignCostTaskLevel : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return BuffAction<AssignCostTriggerSe>(Value1);
+            yield return BuffAction<AssignCostTaskLevelSe>(Value1);
         }
     }
 }

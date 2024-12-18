@@ -122,7 +122,7 @@ namespace LBoLMod.StatusEffects
             }
             if (!JustApplied)
             {
-                int assignCostTriggerIncrease = base.Battle.Player.TryGetStatusEffect<AssignCostTriggerSe>(out AssignCostTriggerSe se) ? se.Level : 0;
+                int assignCostTriggerIncrease = base.Battle.Player.TryGetStatusEffect<AssignCostTaskLevelSe>(out AssignCostTaskLevelSe se) ? se.Level : 0;
                 Level += CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned + assignCostTriggerIncrease;
             }
             JustApplied = false;

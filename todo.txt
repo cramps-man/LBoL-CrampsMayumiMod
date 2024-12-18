@@ -626,10 +626,6 @@ new card, increase assign buff counter by 5, move a card of the same type as ass
   - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
   - come up with something else
   - zero cost move is becoming uncommon, so perhaps no need anything here
-new frontline from summon commander, an assign variation?
-  - you choose between the 2
-  - passive, when assign is removed, auto assign to a new task which fits the haniwa requirements, even if it's multiple assigns
-  - onplay, double assigned haniwa for the selected buff?
 go through new assigns and check if any need a minimum - DONE
   - and increase scaling requirement where necessary
 go through assign buffs and add scaling to buff description - DONE
@@ -640,15 +636,23 @@ assign buff source card points to battle card, if that gets upgraded, buff is up
   - should I make source card a duplicate card? that is referenced only by the buff?
 duplicate haniwa bug might be because of dying then start new run?
 
-swap colors assign cost trigger and assign duplicate trigger
+swap colors assign cost trigger and assign duplicate trigger - DONE
+update name of assign cost trigger? - DONE
 cavalry supplies include more types of options to choose from, like tool cards with 1 use for this battle only
+  - just an idea for now, we'll see if we do it someday
 update rarity of zero cost move to uncommon
-update name of assign cost trigger?
 haniwa charger start with gaining 2 on its own?
+  - or start with some loyalty, like 4 so its 10 dmg
 haniwa sentinel make passive 5 cost? or more
+  - maybe just 4?
 haniwa commander make attack type not skill
 haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5
   - make this the same for the new assign commander
+
+new frontline from summon commander, an assign variation?
+  - you choose between the 2
+  - passive, when assign is removed, auto assign to a new task which fits the haniwa requirements, even if it's multiple assigns
+  - onplay, double assigned haniwa for the selected buff?
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE

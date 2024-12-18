@@ -691,12 +691,6 @@ ExileFrontlineBlitz:
   Description: |-
     Whenever a |Frontline| card is |Exiled|, execute its |On Play| action without consuming |Loyalty|. If it targets an enemy, target a random enemy. 
 
-AssignCostTrigger:
-  Name: Assign Cost Trigger
-  Description: |-
-    Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost. |Assign| buffs gain {Value1} extra |Task Level| per card played.
-    Regain any mana spent on |Assign| cards at start of next turn. 
-
 AssignReverseTickdown:
   Name: Assign Reverse Tickdown
   Description: |-
@@ -715,6 +709,11 @@ MaxHaniwaUp:
   Description: |-
     Increase the max |Haniwa| level by {Value1} for all types. 
     Gain {Value1} of all |Haniwa|. 
+
+AssignDuplicateTrigger:
+  Name: Assign Duplicate Trigger
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Assign Double Trigger|. 
 
 #OFFCOLOURS
 FrozenHaniwa:
@@ -763,11 +762,6 @@ PoisonShot:
     Deal {Damage} damage and apply {Value1} |Poison|. 
     Apply {Value1} additional |Poison| for each debuff on the target. 
 
-AssignDuplicateTrigger:
-  Name: Assign Duplicate Trigger
-  Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Assign Double Trigger|. 
-
 HaniwaHorseArcher:
   Name: Haniwa Horse Archer
   Description: |-
@@ -799,6 +793,12 @@ MudExtraction:
   UpgradedDescription: |-
     Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and consume {Value2} |Loyalty|. 
     Add a |Splash| to the hand. 
+
+AssignCostTaskLevel:
+  Name: Assign Cost Task Level
+  Description: |-
+    Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost. |Assign| buffs gain {Value1} extra |Task Level| per card played.
+    Regain any mana spent on |Assign| cards at start of next turn. 
 
 #UNUSED
 RandomStance:

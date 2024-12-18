@@ -23,11 +23,11 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.Green };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Cost = new ManaGroup() { Red = 1, Green = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Hybrid = 1, HybridColor = 9 };
+            cardConfig.Cost = new ManaGroup() { Red = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignDoubleTriggerSe) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignDoubleTriggerSe) };
             return cardConfig;
