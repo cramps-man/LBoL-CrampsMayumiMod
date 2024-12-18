@@ -1,11 +1,11 @@
-﻿using LBoL.Core;
-using LBoL.Core.Battle;
+﻿using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.GameEvents;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign
@@ -21,7 +21,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignChargeAttackDef))]
     public sealed class AssignChargeAttack : ModAssignStatusEffect
     {
-        public int TotalHits => Level / CardValue1;
+        public int TotalHits => Math.Max(Level / CardValue1, 1);
         protected override void OnAdded(Unit unit)
         {
             base.OnAdded(unit);

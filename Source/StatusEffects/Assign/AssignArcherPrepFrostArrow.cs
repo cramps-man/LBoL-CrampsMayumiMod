@@ -5,6 +5,7 @@ using LBoL.Core.Units;
 using LBoL.EntityLib.StatusEffects.Cirno;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Assign
@@ -20,7 +21,7 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignArcherPrepFrostArrowDef))]
     public sealed class AssignArcherPrepFrostArrow : ModAssignStatusEffect
     {
-        public int TotalTimes => Level / CardValue1;
+        public int TotalTimes => Math.Max(Level / CardValue1, 1);
         protected override void OnAdded(Unit unit)
         {
             base.OnAdded(unit);

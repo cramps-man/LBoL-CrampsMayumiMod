@@ -115,6 +115,7 @@ AssignArcherPrepVolley:
   Name: Archer Prep Volley
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {TotalTimes} time{TotalTimes:plural one='' other='s'} to random enemies. 
+    Deal an extra hit per {CardValue1} |Task Level|. 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage to random enemies. 
@@ -123,6 +124,7 @@ AssignCavalrySupplies:
   Name: Cavalry Supplies
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, choose {TotalTimes} of {TotalTimesPlusValue2} cards to add to the draw pile. Cards are randomized and can include |Flame|, |Radiance| or a random |Frontline|. 
+    |e:1| extra card choice per {CardValue1} |Task Level| (minimum 1). 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, add |Flame| or |Radiance| to draw pile. 
@@ -130,7 +132,8 @@ AssignCavalrySupplies:
 AssignFencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, gain {Level} |Barrier|. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, gain {TotalBarrier} |Barrier|. 
+    Gain {CardShield} |Barrier| per {CardValue1} |Task Level|. 
     {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, gain |Barrier|. 
@@ -139,6 +142,7 @@ AssignBuildWatchtower:
   Name: Build Watchtower
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {TotalWatchtower} |Watchtower|. 
+    Gain |e:1| |Watchtower| per {CardValue1} |Task Level|. 
     {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, gain |Watchtower|. 
@@ -155,6 +159,7 @@ AssignCavalryRush:
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the enemy with the lowest life. 
     If triggered during the turn (not start of), gain {TotalMana}. 
+    Deal damage equal to |Task Level| and gain {CardMana} per {CardValue1} |Task Level| (minimum 1 {CardMana}).
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage to the enemy with the lowest life. 
@@ -178,6 +183,7 @@ AssignChargeAttack:
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {TotalHits} time{TotalHits:plural one='' other='s'} to the enemy with the highest life. 
     Whenever an |Assign| buff is triggered, increase |Task Level| by {CardValue1}. 
+    Deal an extra hit per {CardValue1} |Task Level|. 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage to the enemy with the highest life. 
@@ -216,6 +222,7 @@ AssignCavalryScout:
   Name: Cavalry Scout
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, |Scry| {TotalScry} and draw {TotalDraw} card{TotalDraw:plural one='' other='s'}. 
+    |Scry| |e:1| per {CardValue1} |Task Level| and draw |e:1| per {CardValue2} |Task Level| (minimum 1 card). 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, |Scry| and draw cards. 
@@ -226,6 +233,7 @@ AssignFencerPrepCounter:
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
     Whenever {PlayerName} is attacked, increase triggers by {CardValue1} for each hit. 
     At end of {PlayerName}'s turn, gain {CardBlock} |Block| multiplied by total enemy hits ({TotalBlock}). 
+    Deal damage equal to |Task Level|. 
     {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
     Number of enemies that have attacked, {EnemiesThatAttackedPlayerCount}
   Brief: |-
@@ -235,6 +243,7 @@ AssignArcherPrepDebuff:
   Name: Archer Prep Debuff
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {Level} |Accurate| damage to all enemies and apply {TotalVuln} |Vulnerable|. 
+    Deal damage equal to |Task Level| and apply |e:1| |Vulnerable| per {CardValue1} |Task Level| (minimum 1 vuln). 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal |Accurate| damage to all enemies and apply |Vulnerable|. 
@@ -251,6 +260,7 @@ AssignArcherPrepFrostArrow:
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage and apply |Cold| to random enemies {TotalTimes} time{TotalTimes:plural one='' other='s'}. 
     If the target has |Cold|, gain {CardBlock} |Block|. 
+    Deal an extra hit and |Cold| per {CardValue1} |Task Level|. 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage and apply |Cold| to a random enemy. 

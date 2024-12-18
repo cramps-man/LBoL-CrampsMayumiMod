@@ -97,7 +97,7 @@ FencerBuildBarricade:
   Name: Fencer Build Barricade
   Description: |-
     |Assign {FencerRequired} Fencer|.
-    After {StartingCardCounter} cards are played, gain {Shield} |Barrier| per |Task Level|.
+    After {StartingCardCounter} cards are played, gain {Shield} |Barrier| per {Value1} |Task Level|.
     Start with {StartingTaskLevel} |Task Level|. 
 
 DefenceCreateReserves:
@@ -239,7 +239,7 @@ CavalryScout:
   Name: Cavalry Scout
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
-    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and draw |e:1| card per {Value2} |Task Level|. 
+    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and draw |e:1| card per {Value2} |Task Level| (minimum 1 card). 
     Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     |Scry| only occurs once. 
@@ -384,7 +384,7 @@ HaniwaCharger:
     On Play damage: +1
 
 HaniwaSentinel:
-  Name: Haniwa Sentiel
+  Name: Haniwa Sentinel
   Description: |-
     |While in hand|: At end of turn, deal {Value2} damage and apply |e:1| |Weak| to all enemies that are attacking. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Gain {IllnessBuffLevel} |Illness Prevention| and {Block} |Block|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
@@ -494,7 +494,7 @@ CavalryRush:
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
-    If effect is triggered during the turn (not start of), gain {Mana} per {Value1} |Task Level|. 
+    If effect is triggered during the turn (not start of), gain {Mana} per {Value1} |Task Level| (minimum 1 {Mana}). 
     Start with {StartingTaskLevel} |Task Level|. 
 
 NumBuffBlock:
@@ -530,7 +530,7 @@ FencerPrepCounter:
   Description: |-
     |Assign {FencerRequired} Fencer|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to |Task Level|, to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
-    Whenever {PlayerName} is attacked, increase triggers by {Value1} for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
+    Whenever {PlayerName} is attacked, increase |Task Level| by {Value1} for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 HealSacrifice:

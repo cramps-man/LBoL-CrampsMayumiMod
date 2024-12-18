@@ -622,14 +622,17 @@ check places where offcolour frontlines are being missed - DONE
   - create method for summon types like the option types one
 cavalry supplies make title text shorter - DONE
 
-new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
+new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand - NO NEED, unless a good idea for commons
   - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
   - come up with something else
+  - zero cost move is becoming uncommon, so perhaps no need anything here
 new frontline from summon commander, an assign variation?
   - you choose between the 2
-go through new assigns and check if any need a minimum
+  - passive, when assign is removed, auto assign to a new task which fits the haniwa requirements, even if it's multiple assigns
+  - onplay, double assigned haniwa for the selected buff?
+go through new assigns and check if any need a minimum - DONE
   - and increase scaling requirement where necessary
-go through assign buffs and add scaling to buff description
+go through assign buffs and add scaling to buff description - DONE
 lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
   - or remove upgraded dmg entirely, or keep 3 mana cost like before
 
@@ -643,6 +646,9 @@ update rarity of zero cost move to uncommon
 update name of assign cost trigger?
 haniwa charger start with gaining 2 on its own?
 haniwa sentinel make passive 5 cost? or more
+haniwa commander make attack type not skill
+haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5
+  - make this the same for the new assign commander
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE

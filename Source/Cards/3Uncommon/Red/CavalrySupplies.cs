@@ -24,7 +24,6 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 25;
-            cardConfig.UpgradedValue1 = 20;
             cardConfig.Value2 = 2;
             cardConfig.UpgradedValue2 = 4;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };

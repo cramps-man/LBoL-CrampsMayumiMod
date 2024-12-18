@@ -17,9 +17,10 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignFencerBuildBarricadeDef))]
     public sealed class AssignFencerBuildBarricade : ModAssignStatusEffect
     {
+        public int TotalBarrier => Level / CardValue1;
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new CastBlockShieldAction(base.Battle.Player, 0, Level);
+            yield return new CastBlockShieldAction(base.Battle.Player, 0, TotalBarrier);
         }
     }
 }
