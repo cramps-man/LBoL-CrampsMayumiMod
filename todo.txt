@@ -640,7 +640,7 @@ swap colors assign cost trigger and assign duplicate trigger - DONE
 update name of assign cost trigger? - DONE
 cavalry supplies include more types of options to choose from, like tool cards with 1 use for this battle only
   - just an idea for now, we'll see if we do it someday
-update rarity of zero cost move to uncommon
+update rarity of zero cost move to uncommon - DONE
 haniwa charger start with gaining 2 on its own?
   - or start with some loyalty, like 4 so its 10 dmg
 haniwa sentinel make passive 5 cost? or more
