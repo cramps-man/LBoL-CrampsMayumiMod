@@ -78,7 +78,7 @@ namespace LBoLMod.Utils
         {
             bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
             bool hasBlankCard = battle.Player.HasExhibit<KongbaiKapai>();
-            return GetOptionCards(hasGreen || hasBlankCard ? AllOptionTypes.Append(typeof(OptionHaniwaHorseArcher)).ToList() : AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
+            return GetOptionCards(hasGreen || hasBlankCard ? AllOptionTypes.Prepend(typeof(OptionHaniwaHorseArcher)).ToList() : AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
         }
 
         private static List<Card> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)

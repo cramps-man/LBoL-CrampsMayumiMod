@@ -18,7 +18,7 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var config = base.MakeConfig();
-            config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Green };
+            config.Colors = new List<ManaColor>() { ManaColor.Green };
             return config;
         }
     }
