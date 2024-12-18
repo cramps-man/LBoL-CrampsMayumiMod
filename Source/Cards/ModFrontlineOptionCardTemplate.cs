@@ -15,6 +15,7 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.HideMesuem = true;
             cardConfig.Type = CardType.Skill;
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice) };
             cardConfig.RelativeCards = new List<string>() { CardTypeToSpawn.Name };

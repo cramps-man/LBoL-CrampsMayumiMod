@@ -626,7 +626,8 @@ lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
 starting task level should stack - DONE
   - probs need to adjust scaling for the per card gain to slow it down, as both together are probs a lot
 let haniwa exploiter onplay update dmg in card description like it does with lockon/vuln ect
-add colour to the haniwa option cards
+add colour to the haniwa option cards - DONE
+make offcolour frontlines show up at start of summon list
 
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
   - should I make source card a duplicate card? that is referenced only by the buff?

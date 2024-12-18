@@ -1,6 +1,9 @@
-﻿using LBoLEntitySideloader;
+﻿using LBoL.Base;
+using LBoL.ConfigData;
+using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using System;
+using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
@@ -10,6 +13,13 @@ namespace LBoLMod.Cards
         public override IdContainer GetId()
         {
             return nameof(OptionHaniwaHorseArcher);
+        }
+
+        public override CardConfig MakeConfig()
+        {
+            var config = base.MakeConfig();
+            config.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Green };
+            return config;
         }
     }
 
