@@ -633,7 +633,7 @@ new frontline from summon commander, an assign variation?
 go through new assigns and check if any need a minimum - DONE
   - and increase scaling requirement where necessary
 go through assign buffs and add scaling to buff description - DONE
-lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
+lower dmg of loyalty strike base dmg, cos upgrade now lowers cost - DONE
   - or remove upgraded dmg entirely, or keep 3 mana cost like before
 
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
