@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 6;
-            cardConfig.Value1 = 0;
+            cardConfig.Value1 = 4;
             cardConfig.Value2 = 0;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;

@@ -31,7 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.Self;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Block = 4;
-            cardConfig.Value1 = 6;
+            cardConfig.Value1 = 7;
             cardConfig.Value2 = 4;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -45,7 +45,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaSentinel : ModFrontlineCard
     {
         public override bool IsArcherType => true;
-        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int PassiveConsumedRemainingValue => 4;
         protected override int OnPlayConsumedRemainingValue => 9;
         public int WeakDurationScaling => 7;
         public int WeakDuration => 1 + base.UpgradeCounter.GetValueOrDefault() / WeakDurationScaling;
