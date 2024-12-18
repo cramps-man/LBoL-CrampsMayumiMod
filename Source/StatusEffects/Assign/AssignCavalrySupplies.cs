@@ -42,7 +42,7 @@ namespace LBoLMod.StatusEffects.Assign
             }
             Interaction = new SelectCardInteraction(TotalTimes, TotalTimes, randomChoices)
             {
-                Description = SourceCardName + " - Choose " + TotalTimes + " to add to draw pile"
+                Description = SourceCardName + " - Add " + TotalTimes + " to draw pile"
             };
             yield return new InteractionAction(Interaction);
         }
