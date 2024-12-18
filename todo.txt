@@ -611,26 +611,27 @@ limit task level gain to 5 max per card played - LEAVE FOR NOW, see how it plays
   - or the scaling is just too much anyway
   - and if i make it only scale by 1 no matter the amount of haniwa, stacking buffs has less incentive
 
-new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
-  - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
-  - come up with something else
-new frontline from summon commander, an assign variation?
-  - you choose between the 2
 frontline passive attacks make reactions? - DONE
   - no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
-go through new assigns and check if any need a minimum
-  - and increase scaling requirement where necessary
-go through assign buffs and add scaling to buff description
-lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
-  - or remove upgraded dmg entirely, or keep 3 mana cost like before
 starting task level should stack - DONE
   - probs need to adjust scaling for the per card gain to slow it down, as both together are probs a lot
-let haniwa exploiter onplay update dmg in card description like it does with lockon/vuln ect
+let haniwa exploiter onplay update dmg in card description like it does with lockon/vuln ect - DONE
 add colour to the haniwa option cards - DONE
 make offcolour frontlines show up at start of summon list - DONE
 check places where offcolour frontlines are being missed - DONE
   - create method for summon types like the option types one
 cavalry supplies make title text shorter - DONE
+
+new card, increase assign buff counter by 5, move a card of the same type as assign buff into the hand
+  - maybe this is redundant as it'll be a combo of assign extra trigger + zero cost move
+  - come up with something else
+new frontline from summon commander, an assign variation?
+  - you choose between the 2
+go through new assigns and check if any need a minimum
+  - and increase scaling requirement where necessary
+go through assign buffs and add scaling to buff description
+lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
+  - or remove upgraded dmg entirely, or keep 3 mana cost like before
 
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
   - should I make source card a duplicate card? that is referenced only by the buff?
