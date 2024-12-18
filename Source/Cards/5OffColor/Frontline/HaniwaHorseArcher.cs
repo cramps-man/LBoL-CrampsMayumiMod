@@ -46,7 +46,7 @@ namespace LBoLMod.Cards
         public int PassiveConsumedFromDrawDiscard => 3;
         protected override int PassiveConsumedRemainingValue => 2;
         protected override int OnPlayConsumedRemainingValue => 6;
-        public DamageInfo GrazeDamage => DamageInfo.Attack(Value2);
+        public DamageInfo GrazeDamage => DamageInfo.Reaction(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
         public int GrazeGained => 1 + base.UpgradeCounter.GetValueOrDefault() / 10;

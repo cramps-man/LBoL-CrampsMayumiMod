@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
     {
         protected override int PassiveConsumedRemainingValue => 2;
         protected override int OnPlayConsumedRemainingValue => 3;
-        public DamageInfo EndOfTurnDmg => DamageInfo.Attack(Value2);
+        public DamageInfo EndOfTurnDmg => DamageInfo.Reaction(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
         public override bool IsFencerType => true;

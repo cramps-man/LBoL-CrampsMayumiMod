@@ -349,7 +349,7 @@ HaniwaUpgrader:
 HaniwaExploiter:
   Name: Haniwa Exploiter
   Description: |-
-    |While in hand|: At end of turn, deal {Damage} damage to all enemies with debuffs. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: At end of turn, deal {PassiveDmg} damage to all enemies with debuffs. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Deal {OnPlayDmg} damage. Deal {DebuffDmg} additional damage for each debuff on the target. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Is |Archer| type. 

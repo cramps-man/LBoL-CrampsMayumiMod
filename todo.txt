@@ -616,22 +616,33 @@ new card, increase assign buff counter by 5, move a card of the same type as ass
   - come up with something else
 new frontline from summon commander, an assign variation?
   - you choose between the 2
-frontline passive attacks make reactions?
+frontline passive attacks make reactions? - DONE
   - no fp scaling but will bypass graze which might be fine, wont trigger sharpshooter lmao
 go through new assigns and check if any need a minimum
   - and increase scaling requirement where necessary
 go through assign buffs and add scaling to buff description
 lower dmg of loyalty strike base dmg, cos upgrade now lowers cost
   - or remove upgraded dmg entirely, or keep 3 mana cost like before
+starting task level should stack - DONE
+  - probs need to adjust scaling for the per card gain to slow it down, as both together are probs a lot
+let haniwa exploiter onplay update dmg in card description like it does with lockon/vuln ect
+add colour to the haniwa option cards
+
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
   - should I make source card a duplicate card? that is referenced only by the buff?
-starting task level should stack
-  - probs need to adjust scaling for the per card gain to slow it down, as both together are probs a lot
 duplicate haniwa bug might be because of dying then start new run?
+
+swap colors assign cost trigger and assign duplicate trigger
+cavalry supplies include more types of options to choose from, like tool cards with 1 use for this battle only
+update rarity of zero cost move to uncommon
+update name of assign cost trigger?
+haniwa charger start with gaining 2 on its own?
+haniwa sentinel make passive 5 cost? or more
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE
 green all frontlines hand/draw/discard gain loyalty + maybe something else
+  - and has echo?
 green double extra triggers (now power or task level or whatever) - DONE
   - maybe the next assign buff activate twice, like old extra triggers lmao
   - could replace assign duplicate trigger, and come up with another card in green
@@ -640,3 +651,4 @@ purple sacrifice haniwa for mana, or some other benefit
 purple assign buffs dont stack
 purple frontline, haniwa assassin, onplay insta kills if target below certain hp
   - passive counters when attacked? or pierce block/barrier, ez with lifeloss attack type
+purple ability frontlines gain extra loyalty start of turn
