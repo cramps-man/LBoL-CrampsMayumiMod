@@ -38,7 +38,7 @@ namespace LBoLMod.StatusEffects.Assign
                 else if (rng == 2)
                     randomChoices.Add(Library.CreateCard<WManaCard>());
                 else if (rng >= 3 && rng <= 5)
-                    randomChoices.Add(Library.CreateCard(HaniwaFrontlineUtils.AllSummonTypes.Sample(base.GameRun.BattleRng)));
+                    randomChoices.Add(Library.CreateCard(HaniwaFrontlineUtils.GetAllSummonTypes(base.Battle).Sample(base.GameRun.BattleRng)));
             }
             Interaction = new SelectCardInteraction(TotalTimes, TotalTimes, randomChoices)
             {

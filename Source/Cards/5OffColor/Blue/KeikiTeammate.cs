@@ -77,7 +77,7 @@ namespace LBoLMod.Cards
                 yield break;
             base.NotifyActivating();
             base.Loyalty += base.PassiveCost;
-            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.AllSummonTypes;
+            IEnumerable<Type> possibleSummons = HaniwaFrontlineUtils.GetAllSummonTypes(base.Battle);
             List<Card> cards = new List<Card>();
             for (int i = 0; i < 2; i++)
                 cards.Add(Library.CreateCard(possibleSummons.Sample(base.BattleRng)));

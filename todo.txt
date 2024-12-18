@@ -628,6 +628,9 @@ starting task level should stack - DONE
 let haniwa exploiter onplay update dmg in card description like it does with lockon/vuln ect
 add colour to the haniwa option cards - DONE
 make offcolour frontlines show up at start of summon list - DONE
+check places where offcolour frontlines are being missed - DONE
+  - create method for summon types like the option types one
+cavalry supplies make title text shorter
 
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
   - should I make source card a duplicate card? that is referenced only by the buff?

@@ -46,7 +46,7 @@ namespace LBoLMod.Cards
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = HaniwaFrontlineUtils.AllSummonTypes.ConvertAll(t => Library.CreateCard(t));
+            List<Card> cards = HaniwaFrontlineUtils.GetAllSummonTypes(base.Battle).ConvertAll(t => Library.CreateCard(t));
             return new SelectCardInteraction(1, 1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

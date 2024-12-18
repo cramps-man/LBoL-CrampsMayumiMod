@@ -74,7 +74,18 @@ namespace LBoLMod.Utils
             typeof(HaniwaCharger)
         };
 
-        public static List<Card> GetAllCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
+        public static List<Type> GetAllSummonTypes(BattleController battle)
+        {
+            bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
+            bool hasBlankCard = battle.Player.HasExhibit<KongbaiKapai>();
+            List<Type> toReturn = new List<Type>();
+            if (hasGreen || hasBlankCard)
+                toReturn.Add(typeof(HaniwaHorseArcher));
+            toReturn.AddRange(AllSummonTypes);
+            return toReturn;
+        }
+
+        public static List<Card> GetAllOptionCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
             bool hasBlankCard = battle.Player.HasExhibit<KongbaiKapai>();
