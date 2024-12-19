@@ -664,15 +664,11 @@ FrontlineCommander:
     Increases for each upgrade. 
     Damage: +2
 
-OptionHaniwaCommander:
-  Name: Summon Haniwa Commander
+OptionFrontlineCommander:
+  Name: Summon Frontline Commander
   Description: |-
-    Sacrifice {SelectRequireFencer} |Fencer|.
-    Add a |Haniwa Commander| to the hand. 
-    {AvailableFencer} available |Fencer|. 
-  NonbattleDescription: |-
-    Sacrifice {SelectRequireFencer} |Fencer|.
-    Add a |Haniwa Commander| to the hand. 
+    Sacrifice {SelectRequireFencer} of all |Haniwa|.
+    Add a |Frontline Commander| to the hand. 
 
 AssignCommander:
   Name: Assign Commander
@@ -685,6 +681,12 @@ AssignCommander:
     
     Increases for each upgrade. 
     OnPlay task level: +1 per upgrade
+
+OptionAssignCommander:
+  Name: Summon Assign Commander
+  Description: |-
+    Sacrifice {SelectRequireFencer} of all |Haniwa|.
+    Add a |Assign Commander| to the hand. 
 
 SummonCommander:
   Name: Summon Commander
@@ -821,6 +823,14 @@ AssignSeparation:
   Name: Assign Separation
   Description: |-
     |Assign| buffs no longer stack, and will create a separate buff instead. 
+
+ChainOfCommand:
+  Name: Chain of Command
+  Description: |-
+    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 
+  UpgradedDescription: |-
+    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 
+    |At start of combat|: {SelfName} is automatically played. 
 
 #UNUSED
 RandomStance:

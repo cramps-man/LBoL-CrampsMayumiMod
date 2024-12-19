@@ -334,3 +334,10 @@ AssignSeparationSe:
     |Assign| buffs no longer stack, and will create a separate buff instead. 
   Brief: |-
     |Assign| buffs no longer stack, and will create a separate buff instead. 
+
+ChainOfCommandSe:
+  Name: Chain of Command
+  Description: |-
+    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 
+  Brief: |-
+    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 

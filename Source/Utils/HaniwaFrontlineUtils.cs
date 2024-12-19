@@ -81,6 +81,11 @@ namespace LBoLMod.Utils
             List<Type> toReturn = new List<Type>();
             if (hasGreen || hasBlankCard)
                 toReturn.Add(typeof(HaniwaHorseArcher));
+            if (battle.Player.HasStatusEffect<ChainOfCommandSe>())
+            {
+                toReturn.Add(typeof(FrontlineCommander));
+                toReturn.Add(typeof(AssignCommander));
+            }
             toReturn.AddRange(AllSummonTypes);
             return toReturn;
         }
@@ -89,7 +94,16 @@ namespace LBoLMod.Utils
         {
             bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
             bool hasBlankCard = battle.Player.HasExhibit<KongbaiKapai>();
-            return GetOptionCards(hasGreen || hasBlankCard ? AllOptionTypes.Prepend(typeof(OptionHaniwaHorseArcher)).ToList() : AllOptionTypes, battle, numberToSpawn, checkSacrificeRequirement);
+            List<Type> toReturn = new List<Type>();
+            if (hasGreen || hasBlankCard)
+                toReturn.Add(typeof(OptionHaniwaHorseArcher));
+            if (battle.Player.HasStatusEffect<ChainOfCommandSe>())
+            {
+                toReturn.Add(typeof(OptionFrontlineCommander));
+                toReturn.Add(typeof(OptionAssignCommander));
+            }
+            toReturn.AddRange(AllOptionTypes);
+            return GetOptionCards(toReturn, battle, numberToSpawn, checkSacrificeRequirement);
         }
 
         private static List<Card> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
