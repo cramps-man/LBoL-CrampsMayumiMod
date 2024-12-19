@@ -812,6 +812,11 @@ AssignCostTaskLevel:
     Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost. |Assign| buffs gain {Value1} extra |Task Level| per card played.
     Regain any mana spent on |Assign| cards at start of next turn. 
 
+FrontlineLoyaltyGain:
+  Name: Frontline Loyalty Gain
+  Description: |-
+    All |Frontline| cards in the hand, draw and discard piles gain {Value1} |Loyalty|. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance

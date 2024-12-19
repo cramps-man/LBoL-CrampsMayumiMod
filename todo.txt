@@ -664,7 +664,7 @@ new frontline from summon commander, an assign variation? - DONE
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE
-green all frontlines hand/draw/discard gain loyalty + maybe something else
+green all frontlines hand/draw/discard gain loyalty + maybe something else - DONE
   - and has echo?
 green double extra triggers (now power or task level or whatever) - DONE
   - maybe the next assign buff activate twice, like old extra triggers lmao
