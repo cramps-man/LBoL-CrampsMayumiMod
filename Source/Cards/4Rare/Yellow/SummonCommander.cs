@@ -3,6 +3,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -30,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaCommander) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaCommander)+"+" };
+            cardConfig.RelativeCards = new List<string>() { nameof(FrontlineCommander), nameof(AssignCommander) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(FrontlineCommander)+"+", nameof(AssignCommander)+"+" };
             return cardConfig;
         }
     }
@@ -39,14 +40,18 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(SummonCommanderDef))]
     public sealed class SummonCommander : Card
     {
+        public override Interaction Precondition()
+        {
+            var toSelect = new List<Card>() { Library.CreateCard<FrontlineCommander>(), Library.CreateCard<AssignCommander>() };
+            return new MiniSelectCardInteraction(toSelect);
+        }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            Card toAdd = Library.CreateCard<HaniwaCommander>();
+            if (!(precondition is MiniSelectCardInteraction selectInteraction))
+                yield break;
+            Card toAdd = selectInteraction.SelectedCard;
             if (IsUpgraded)
-            {
-                toAdd = Library.CreateCard<HaniwaCommander>(IsUpgraded);
                 toAdd.UpgradeCounter = Value1;
-            }
             yield return new AddCardsToHandAction(toAdd);
         }
     }

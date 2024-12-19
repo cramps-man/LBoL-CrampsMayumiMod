@@ -15,7 +15,7 @@ namespace LBoLMod.StatusEffects
 {
     public abstract class ModAssignStatusEffect: StatusEffect
     {
-        private bool JustApplied { get; set; } = true;
+        public bool JustApplied { get; set; } = true;
         protected ModAssignCard AssignSourceCard { get; set; }
         public int CardFencerAssigned { get; set; } = 0;
         public int CardArcherAssigned { get; set; } = 0;
@@ -45,6 +45,8 @@ namespace LBoLMod.StatusEffects
 
         public override bool Stack(StatusEffect other)
         {
+            if (other.SourceCard is ModAssignCard mac && !mac.ShouldStack)
+                return false;
             base.Stack(other);
             Count += 3;
             if (!SourceCard.IsUpgraded && other.SourceCard.IsUpgraded)

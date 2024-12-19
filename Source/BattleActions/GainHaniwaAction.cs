@@ -26,6 +26,8 @@ namespace LBoLMod.BattleActions
             yield return base.CreateEventPhase<GainHaniwaEventArgs>("GainingHaniwa", this.args, ModGameEvents.GainingHaniwa);
             if (this.args.IsFromAssign)
                 yield return base.CreateEventPhase<GainHaniwaEventArgs>("GainingHaniwaFromAssign", this.args, ModGameEvents.GainingHaniwaFromAssign);
+            if (args.IsCanceled)
+                yield break;
             yield return base.CreatePhase("Main", delegate
             {
                 if (args.FencerToGain > 0)

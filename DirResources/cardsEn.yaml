@@ -651,8 +651,8 @@ UltraFrontline:
   Description: |-
     Choose |e:1| |Frontline| card to add to the hand. For each mana spent, it gains {Value1} upgrade{Value1:plural one='' other='s'}. 
 
-HaniwaCommander:
-  Name: Haniwa Commander
+FrontlineCommander:
+  Name: Frontline Commander
   Description: |-
     |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {Value2} |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
@@ -674,12 +674,24 @@ OptionHaniwaCommander:
     Sacrifice {SelectRequireFencer} |Fencer|.
     Add a |Haniwa Commander| to the hand. 
 
+AssignCommander:
+  Name: Assign Commander
+  Description: |-
+    |While in hand/draw/discard|: When an |Assign| buff triggers, automatically redistribute assigned |Haniwa| into new |Assign| buffs that fulfil the required |Assign| costs. 
+    |When played|: Duplicate an |Assign| buff and give it {Value2} extra |Task Level|. Does not consume |Loyalty|. 
+  DetailText: |-
+    Can not have |On Play| action be activated by another card. 
+    Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
+    
+    Increases for each upgrade. 
+    OnPlay task level: +1 per upgrade
+
 SummonCommander:
   Name: Summon Commander
   Description: |-
-    Add a |Haniwa Commander| to the hand. 
+    Choose a |Frontline Commander| or |Assign Commander| to add to the hand. 
   UpgradedDescription: |-
-    Add a |Haniwa Commander| to the hand. It starts upgraded+{Value1}. 
+    Choose a |Frontline Commander| or |Assign Commander| to add to the hand. . It starts with {Value1} upgrades. 
 
 AssignTriggerSummon:
   Name: Assign Trigger Summon

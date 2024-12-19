@@ -634,6 +634,7 @@ lower dmg of loyalty strike base dmg, cos upgrade now lowers cost - DONE
 
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
   - should I make source card a duplicate card? that is referenced only by the buff?
+  - should probs fix since if card is removed from combat, it may not exist anymore and error out?
 duplicate haniwa bug might be because of dying then start new run?
 
 swap colors assign cost trigger and assign duplicate trigger - DONE
@@ -650,11 +651,16 @@ haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5 - DONE
   - make this the same for the new assign commander
 mass summon actually cater for haniwa costs? - DONE
   - also made it just sacrifice all, and upgrade lowers cost
+allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it
+  - can just make it not work with other commanders, cos that might be broken
+  - we'll see if i allow this
 
 new frontline from summon commander, an assign variation?
   - you choose between the 2
   - passive, when assign is removed, auto assign to a new task which fits the haniwa requirements, even if it's multiple assigns
   - onplay, double assigned haniwa for the selected buff?
+  - or perhaps give task level since that can scale with upgrades
+  - or duplicate an assign and give it more task level
 
 offcolour ideas
 blue exile frontline, add splash, theming around mud lmao - DONE

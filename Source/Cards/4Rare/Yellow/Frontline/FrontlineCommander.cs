@@ -14,11 +14,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class HaniwaCommanderDef : ModCardTemplate
+    public sealed class FrontlineCommanderDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(HaniwaCommander);
+            return nameof(FrontlineCommander);
         }
 
         public override CardConfig MakeConfig()
@@ -40,8 +40,8 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(HaniwaCommanderDef))]
-    public sealed class HaniwaCommander : ModFrontlineCard
+    [EntityLogic(typeof(FrontlineCommanderDef))]
+    public sealed class FrontlineCommander : ModFrontlineCard
     {
         protected override int PassiveConsumedRemainingValue => 5;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
@@ -65,7 +65,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (RemainingValue < PassiveConsumedRemainingValue)
                 yield break;
-            var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is HaniwaCommander)).ToList();
+            var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is FrontlineCommander)).ToList();
             if (!frontlinesInHand.Any())
                 yield break;
 

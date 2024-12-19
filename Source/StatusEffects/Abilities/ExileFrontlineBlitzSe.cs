@@ -40,7 +40,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (base.Battle.BattleShouldEnd)
                 yield break;
 
-            if (args.Card is ModFrontlineCard frontlineCard && !(args.Card is HaniwaCommander))
+            if (args.Card is ModFrontlineCard frontlineCard && !(args.Card is FrontlineCommander))
             {
                 base.NotifyActivating();
                 foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(new List<Card> { frontlineCard }, base.Battle))

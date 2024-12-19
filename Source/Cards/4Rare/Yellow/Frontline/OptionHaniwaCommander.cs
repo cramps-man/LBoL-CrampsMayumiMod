@@ -6,7 +6,7 @@ namespace LBoLMod.Cards
 {
     public sealed class OptionHaniwaCommanderDef : ModFrontlineOptionCardTemplate
     {
-        protected override Type CardTypeToSpawn => typeof(HaniwaCommander);
+        protected override Type CardTypeToSpawn => typeof(FrontlineCommander);
         public override IdContainer GetId()
         {
             return nameof(OptionHaniwaCommander);
@@ -17,6 +17,6 @@ namespace LBoLMod.Cards
     public sealed class OptionHaniwaCommander: ModFrontlineOptionCard
     {
         public override int SelectRequireFencer => 3;
-        public override Type CardTypeToSpawn => typeof(HaniwaCommander);
+        public override Type CardTypeToSpawn => typeof(FrontlineCommander);
     }
 }

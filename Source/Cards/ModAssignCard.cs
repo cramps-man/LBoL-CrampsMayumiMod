@@ -25,7 +25,7 @@ namespace LBoLMod.Cards
             {
                 if (base.Battle == null)
                     return FencerAssigned;
-                if (base.Battle.Player.HasStatusEffect(AssignStatusType))
+                if (base.Battle.Player.HasStatusEffect(AssignStatusType) && ShouldStack)
                     return Math.Min(FencerAssigned, 1);
                 return FencerAssigned;
             }
@@ -36,7 +36,7 @@ namespace LBoLMod.Cards
             {
                 if (base.Battle == null)
                     return ArcherAssigned;
-                if (base.Battle.Player.HasStatusEffect(AssignStatusType))
+                if (base.Battle.Player.HasStatusEffect(AssignStatusType) && ShouldStack)
                     return Math.Min(ArcherAssigned, 1);
                 return ArcherAssigned;
             }
@@ -47,7 +47,7 @@ namespace LBoLMod.Cards
             {
                 if (base.Battle == null)
                     return CavalryAssigned;
-                if (base.Battle.Player.HasStatusEffect(AssignStatusType))
+                if (base.Battle.Player.HasStatusEffect(AssignStatusType) && ShouldStack)
                     return Math.Min(CavalryAssigned, 1);
                 return CavalryAssigned;
             }
@@ -56,6 +56,8 @@ namespace LBoLMod.Cards
         public virtual int StartingTaskLevel => 1;
         public virtual Type AssignStatusType => null;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
+        public bool ShouldStack => ManualStack; //add no-stack ability check here too
+        public bool ManualStack { get; set; } = true;
         public override ManaGroup AdditionalCost
         {
             get
