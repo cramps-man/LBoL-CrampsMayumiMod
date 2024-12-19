@@ -11,7 +11,6 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects;
-using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -38,8 +37,8 @@ namespace LBoLMod.Cards
             cardConfig.Value2 = 15;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
             return cardConfig;
         }
     }
