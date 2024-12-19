@@ -648,6 +648,8 @@ haniwa sentinel make passive 5 cost? or more - DONE
 haniwa commander make attack type not skill
 haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5
   - make this the same for the new assign commander
+mass summon actually cater for haniwa costs? - DONE
+  - also made it just sacrifice all, and upgrade lowers cost
 
 new frontline from summon commander, an assign variation?
   - you choose between the 2

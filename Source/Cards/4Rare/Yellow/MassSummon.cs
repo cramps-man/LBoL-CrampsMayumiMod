@@ -30,8 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 3 };
-            cardConfig.Value1 = 10;
-            cardConfig.UpgradedValue1 = 15;
+            cardConfig.UpgradedCost = new ManaGroup() { White = 1 };
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa) };
@@ -57,25 +56,45 @@ namespace LBoLMod.Cards
                 { "archer", archerCount },
                 { "cavalry", cavalryCount },
             };
-            int totalHaniwa = haniwaCount.Sum(h => h.Value);
-            if (totalHaniwa > Value1)
+            Dictionary<string, int> haniwaSpent = new Dictionary<string, int>()
             {
-                for (int i = 0; i < totalHaniwa - Value1; i++)
+                { "fencer", 0 },
+                { "archer", 0 },
+                { "cavalry", 0 },
+            };
+            List<Card> cardsToSpawn = new List<Card>();
+            bool continueRandomizing = true;
+            while (continueRandomizing)
+            {
+                var allOptions = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle).Cast<ModFrontlineOptionCard>().ToList();
+                while (true)
                 {
-                    var rand = haniwaCount.Where(h => h.Value > 0).Sample(base.BattleRng);
-                    haniwaCount[rand.Key] -= 1;
+                    var randomSelection = allOptions.SampleOrDefault(base.BattleRng);
+                    if (randomSelection == null)
+                    {
+                        continueRandomizing = false;
+                        break;
+                    }
+                    allOptions.Remove(randomSelection);
+                    if (randomSelection.SelectRequireFencer > haniwaCount["fencer"])
+                        continue;
+                    if (randomSelection.SelectRequireArcher > haniwaCount["archer"])
+                        continue;
+                    if (randomSelection.SelectRequireCavalry > haniwaCount["cavalry"])
+                        continue;
+                    cardsToSpawn.AddRange(randomSelection.GetCardsToSpawn());
+                    haniwaCount["fencer"] -= randomSelection.SelectRequireFencer;
+                    haniwaCount["archer"] -= randomSelection.SelectRequireArcher;
+                    haniwaCount["cavalry"] -= randomSelection.SelectRequireCavalry;
+                    haniwaSpent["fencer"] += randomSelection.SelectRequireFencer;
+                    haniwaSpent["archer"] += randomSelection.SelectRequireArcher;
+                    haniwaSpent["cavalry"] += randomSelection.SelectRequireCavalry;
+                    break;
                 }
             }
-            List<Card> cardsToSpawn = new List<Card>();
-            for (int i = 0; i < haniwaCount["fencer"]; i++)
-                cardsToSpawn.Add(Library.CreateCard(HaniwaFrontlineUtils.FencerTypes.Sample(base.BattleRng)));
-            for (int i = 0; i < haniwaCount["archer"]; i++)
-                cardsToSpawn.Add(Library.CreateCard(HaniwaFrontlineUtils.ArcherTypes.Sample(base.BattleRng)));
-            for (int i = 0; i < haniwaCount["cavalry"]; i++)
-                cardsToSpawn.Add(Library.CreateCard(HaniwaFrontlineUtils.CavalryTypes.Sample(base.BattleRng)));
 
             yield return new AddCardsToDrawZoneAction(cardsToSpawn, DrawZoneTarget.Random);
-            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, haniwaCount["fencer"], haniwaCount["archer"], haniwaCount["cavalry"]);
+            yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, haniwaSpent["fencer"], haniwaSpent["archer"], haniwaSpent["cavalry"]);
         }
     }
 }

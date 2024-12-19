@@ -643,8 +643,8 @@ MassTaskLevel:
 MassSummon:
   Name: Mass Summon
   Description: |-
-    |Sacrifice| up to {Value1} |Haniwa|. Add that many random |Frontline| cards to the draw pile. 
-    The cards spawned are based on the types of |Haniwa| sacrificed, just like when normal summoning. 
+    |Sacrifice| all |Haniwa|. Add random |Frontline| cards to the draw pile. 
+    The cards spawned are based on the types of |Haniwa| sacrificed and their summon costs. 
 
 UltraFrontline:
   Name: Ultra Frontline
