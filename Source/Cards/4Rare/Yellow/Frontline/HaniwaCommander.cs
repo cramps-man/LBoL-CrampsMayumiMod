@@ -26,11 +26,12 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
             cardConfig.Rarity = Rarity.Rare;
-            cardConfig.Type = CardType.Skill;
+            cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 25;
-            cardConfig.Value1 = 3;
+            cardConfig.Value1 = 5;
+            cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
@@ -42,12 +43,18 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaCommanderDef))]
     public sealed class HaniwaCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int PassiveConsumedRemainingValue => 5;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
             base.ReactBattleEvent(base.Battle.Player.TurnStarted, this.OnTurnStarted);
+            base.HandleBattleEvent(base.Battle.Player.TurnEnded, this.OnTurnEnded);
+        }
+
+        private void OnTurnEnded(UnitEventArgs args)
+        {
+            RemainingValue += Value2;
         }
 
         private IEnumerable<BattleAction> OnTurnStarted(UnitEventArgs args)

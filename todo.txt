@@ -645,8 +645,8 @@ haniwa charger start with gaining 2 on its own? - DONE
   - or start with some loyalty, like 4 so its 10 dmg
 haniwa sentinel make passive 5 cost? or more - DONE
   - maybe just 4?
-haniwa commander make attack type not skill
-haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5
+haniwa commander make attack type not skill - DONE
+haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5 - DONE
   - make this the same for the new assign commander
 mass summon actually cater for haniwa costs? - DONE
   - also made it just sacrifice all, and upgrade lowers cost
@@ -669,3 +669,6 @@ purple assign buffs dont stack
 purple frontline, haniwa assassin, onplay insta kills if target below certain hp
   - passive counters when attacked? or pierce block/barrier, ez with lifeloss attack type
 purple ability frontlines gain extra loyalty start of turn
+ability allow commanders to be summonable/spawned via normal means like all other frontlines
+  - added to pool like the offcolours, so everything can summon them
+purple summon card that consumes 30/50P? allows choosing more than usual without haniwa cost?

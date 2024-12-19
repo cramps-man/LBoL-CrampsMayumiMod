@@ -654,7 +654,7 @@ UltraFrontline:
 HaniwaCommander:
   Name: Haniwa Commander
   Description: |-
-    |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {Value2} |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
