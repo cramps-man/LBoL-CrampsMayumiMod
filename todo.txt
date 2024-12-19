@@ -655,7 +655,7 @@ allow commander to be used for blitz actions? would be lame if blitz summon didn
   - can just make it not work with other commanders, cos that might be broken
   - we'll see if i allow this
 
-new frontline from summon commander, an assign variation?
+new frontline from summon commander, an assign variation? - DONE
   - you choose between the 2
   - passive, when assign is removed, auto assign to a new task which fits the haniwa requirements, even if it's multiple assigns
   - onplay, double assigned haniwa for the selected buff?

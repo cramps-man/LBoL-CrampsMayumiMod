@@ -4,6 +4,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -34,7 +35,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 25;
             cardConfig.Value1 = 5;
-            cardConfig.Value2 = 20;
+            cardConfig.Value2 = 15;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
@@ -48,6 +49,7 @@ namespace LBoLMod.Cards
     {
         protected override int PassiveConsumedRemainingValue => 5;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
+        public int LoyaltyGain => 2;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -57,7 +59,7 @@ namespace LBoLMod.Cards
 
         private void OnTurnEnded(UnitEventArgs args)
         {
-            RemainingValue += Value2;
+            RemainingValue += LoyaltyGain;
         }
         private IEnumerable<BattleAction> OnGainingHaniwaFromAssign(GainHaniwaEventArgs args)
         {
@@ -122,12 +124,23 @@ namespace LBoLMod.Cards
             args.CancelBy(this);
         }
 
+        public override Interaction Precondition()
+        {
+            return new SelectCardInteraction(1, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
+        }
+
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            var blah = Library.CreateCard<FencerBuildBarricade>();
-            blah.SetBattle(base.Battle);
-            blah.ManualStack = false;
-            return blah.GetActions(selector, consumingMana, precondition, new List<DamageAction>(), false);
+            if (!(precondition is SelectCardInteraction selectInteraction))
+                yield break;
+
+            foreach (ModAssignOptionCard card in selectInteraction.SelectedCards)
+            {
+                var sourceCard = card.StatusEffect.AssignSourceCard;
+                sourceCard.ManualStack = false;
+                var assignBuffAction = sourceCard.BuffAction(sourceCard.AssignStatusType, level: card.StatusEffect.Level + Value2, count: card.StatusEffect.Count);
+                yield return assignBuffAction;
+            }
         }
     }
 }
