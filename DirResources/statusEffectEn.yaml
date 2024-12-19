@@ -327,3 +327,10 @@ AssignDoubleTriggerSe:
     The next {Level} |Assign| buff{Level:plural one='' other='s'} triggers twice. 
   Brief: |-
     The next |Assign| buff triggers twice. 
+
+AssignSeparationSe:
+  Name: Assign Separation
+  Description: |-
+    |Assign| buffs no longer stack, and will create a separate buff instead. 
+  Brief: |-
+    |Assign| buffs no longer stack, and will create a separate buff instead. 

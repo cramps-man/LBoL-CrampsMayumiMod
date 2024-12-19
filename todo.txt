@@ -671,7 +671,9 @@ green double extra triggers (now power or task level or whatever) - DONE
   - could replace assign duplicate trigger, and come up with another card in green
 green assign that costs 1 of each haniwa
 purple sacrifice haniwa for mana, or some other benefit
-purple assign buffs dont stack
+purple assign buffs dont stack - DONE
+  - probs need to add something, or combine with assign cost trigger, on its own it doesnt rly do much cos you cant stack
+  - well maybe it's better for fast assign stuff with the same types, cos they wont get delayed
 purple frontline, haniwa assassin, onplay insta kills if target below certain hp
   - passive counters when attacked? or pierce block/barrier, ez with lifeloss attack type
 purple ability frontlines gain extra loyalty start of turn

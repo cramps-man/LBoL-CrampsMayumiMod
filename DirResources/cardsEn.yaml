@@ -817,6 +817,11 @@ FrontlineLoyaltyGain:
   Description: |-
     All |Frontline| cards in the hand, draw and discard piles gain {Value1} |Loyalty|. 
 
+AssignSeparation:
+  Name: Assign Separation
+  Description: |-
+    |Assign| buffs no longer stack, and will create a separate buff instead. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance
