@@ -44,6 +44,7 @@ namespace LBoLMod.Cards
     public sealed class FrontlineCommander : ModFrontlineCard
     {
         protected override int PassiveConsumedRemainingValue => 5;
+        protected override int OnPlayConsumedRemainingValue => 0;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
         protected override void OnEnterBattle(BattleController battle)
         {

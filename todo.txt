@@ -687,7 +687,7 @@ purple frontline, haniwa assassin, onplay insta kills if target below certain hp
   - maybe something with throwing knife?
 purple ability frontlines gain extra loyalty start of turn - WONT DO
   - not sure if need this, might be redundant with green skill that gives loyalty
-purple summon card that consumes 30/50P? allows choosing more than usual without haniwa cost?
+purple summon card that consumes 30/50P? allows choosing more than usual without haniwa cost? - DONE
   - frontline gains infinite loyalty and doesnt get removed from hand after playing, but passive/onplay costs Power
   - has ethereal?
 
