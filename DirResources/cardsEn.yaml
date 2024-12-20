@@ -847,6 +847,30 @@ DarknessSummon:
     The cards have infinite |Loyalty| and don't leave the hand when played, but consume <sprite="Point" name="Power"> equal to the amount of passive |Loyalty| consumed, or |e:10| when via |On Play|. If {PlayerName} runs out of <sprite="Point" name="Power">, the cards are removed from combat. 
     For |Frontlines| that use |Loyalty| for calculations, they count as having |e:10| |Loyalty|. 
 
+HaniwaAssassin:
+  Name: Haniwa Assassin
+  Description: |-
+    |While in hand|: Whenever {PlayerName} attacks an enemy, follow up with {FollowupDamage} damage. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in draw/discard|: Right before {PlayerName}'s turn ends, add a |Throwing Knife| to the hand. Requires {PassiveConsumedFromDrawDiscard} |Loyalty|. 
+    |When played|: If the target has less than or equal {Value2} life, instantly defeat it. Otherwise deal {Damage} damage. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
+  DetailText: |-
+    Is |Fencer| type. 
+
+    Increases for each upgrade. 
+    Followup damage: +1
+    On play damage: +1
+    On play instakill threshold: +2
+
+OptionHaniwaAssassin:
+  Name: Summon Haniwa Assassin
+  Description: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Assassin| to the hand. 
+    {AvailableFencer} |Fencer| available. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireFencer} |Fencer|.
+    Add a |Haniwa Assassin| to the hand. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance

@@ -678,11 +678,11 @@ green assign that costs 1 of each haniwa
   - gain mana after based on some condition
 green ability allow commanders to be summonable/spawned via normal means like all other frontlines - DONE
   - added to pool like the offcolours, so everything can summon them
-purple sacrifice haniwa for mana, or some other benefit
+purple sacrifice haniwa for mana, or some other benefit - MAYBE ANOTHER TIME
 purple assign buffs dont stack - DONE
   - probs need to add something, or combine with assign cost trigger, on its own it doesnt rly do much cos you cant stack
   - well maybe it's better for fast assign stuff with the same types, cos they wont get delayed
-purple frontline, haniwa assassin, onplay insta kills if target below certain hp
+purple frontline, haniwa assassin, onplay insta kills if target below certain hp - DONE
   - passive counters when attacked? or pierce block/barrier, ez with lifeloss attack type
   - maybe something with throwing knife?
 purple ability frontlines gain extra loyalty start of turn - WONT DO
@@ -693,3 +693,4 @@ purple summon card that consumes 30/50P? allows choosing more than usual without
 
 give frontline option cards proper rarity - DONE
 update text of commander summon card to explicitly mention its available for summon and random spawn - DONE
+look into darkness summon frontlines getting purple card bg via harmony patching probs

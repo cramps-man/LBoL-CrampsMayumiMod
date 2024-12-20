@@ -54,33 +54,16 @@ namespace LBoLMod.Utils
         public static List<Type> AllOptionTypes => CommonOptionTypes.Concat(UncommonOptionTypes).ToList();
         public static List<Type> AllSummonTypes => CommonSummonTypes.Concat(UncommonSummonTypes).ToList();
 
-        public static List<Type> FencerTypes => new List<Type>
-        {
-            typeof(HaniwaAttacker),
-            typeof(HaniwaBodyguard),
-            typeof(HaniwaUpgrader),
-            typeof(HaniwaMonk)
-        };
-        public static List<Type> ArcherTypes => new List<Type>
-        {
-            typeof(HaniwaSharpshooter),
-            typeof(HaniwaExploiter),
-            typeof(HaniwaSentinel)
-        };
-        public static List<Type> CavalryTypes => new List<Type>
-        {
-            typeof(HaniwaSupport),
-            typeof(HaniwaSpy),
-            typeof(HaniwaCharger)
-        };
-
         public static List<Type> GetAllSummonTypes(BattleController battle)
         {
             bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
+            bool hasPurple = battle.GameRun.BaseMana.HasColor(ManaColor.Black);
             bool hasBlankCard = battle.Player.HasExhibit<KongbaiKapai>();
             List<Type> toReturn = new List<Type>();
             if (hasGreen || hasBlankCard)
                 toReturn.Add(typeof(HaniwaHorseArcher));
+            if (hasPurple || hasBlankCard)
+                toReturn.Add(typeof(HaniwaAssassin));
             if (battle.Player.HasStatusEffect<ChainOfCommandSe>())
             {
                 toReturn.Add(typeof(FrontlineCommander));
@@ -93,10 +76,13 @@ namespace LBoLMod.Utils
         public static List<Card> GetAllOptionCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
+            bool hasPurple = battle.GameRun.BaseMana.HasColor(ManaColor.Black);
             bool hasBlankCard = battle.Player.HasExhibit<KongbaiKapai>();
             List<Type> toReturn = new List<Type>();
             if (hasGreen || hasBlankCard)
                 toReturn.Add(typeof(OptionHaniwaHorseArcher));
+            if (hasPurple || hasBlankCard)
+                toReturn.Add(typeof(OptionHaniwaAssassin));
             if (battle.Player.HasStatusEffect<ChainOfCommandSe>())
             {
                 toReturn.Add(typeof(OptionFrontlineCommander));
