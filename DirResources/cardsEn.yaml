@@ -835,9 +835,9 @@ AssignSeparation:
 ChainOfCommand:
   Name: Chain of Command
   Description: |-
-    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 
+    Allow |Frontline Commander| and |Assign Commander| to be selectable for summons and randomly spawned. 
   UpgradedDescription: |-
-    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 
+    Allow |Frontline Commander| and |Assign Commander| to be selectable for summons and randomly spawned. 
     |At start of combat|: {SelfName} is automatically played. 
 
 #UNUSED

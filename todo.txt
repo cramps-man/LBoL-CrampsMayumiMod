@@ -672,6 +672,9 @@ green double extra triggers (now power or task level or whatever) - DONE
   - could replace assign duplicate trigger, and come up with another card in green
 green assign that costs 1 of each haniwa
   - give graze? dunno what else this might do though
+  - 3 conditions based on the 3 types
+  - graze, block, debuff?
+  - or while this buff is up, fencer counters
 green ability allow commanders to be summonable/spawned via normal means like all other frontlines - DONE
   - added to pool like the offcolours, so everything can summon them
 purple sacrifice haniwa for mana, or some other benefit
@@ -688,4 +691,4 @@ purple summon card that consumes 30/50P? allows choosing more than usual without
   - has ethereal?
 
 give frontline option cards proper rarity - DONE
-update text of commander summon card to explicitly mention its available for summon and random spawn
+update text of commander summon card to explicitly mention its available for summon and random spawn - DONE
