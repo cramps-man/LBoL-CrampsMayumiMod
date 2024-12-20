@@ -69,14 +69,14 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingValue < PassiveConsumedRemainingValue)
+            if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
 
             IEnumerable<Card> toUpgrade = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this).SampleManyOrAll(NumCardsToUpgrade, base.BattleRng);
             if (toUpgrade.Count() < NumCardsToUpgrade)
                 toUpgrade = toUpgrade.Append(this);
             this.NotifyActivating();
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
             yield return new UpgradeCardsAction(toUpgrade);
         }
 
@@ -84,7 +84,6 @@ namespace LBoLMod.Cards
         {
             yield return DefenseAction();
             yield return UpgradeAllHandsAction();
-            yield return ConsumeLoyalty();
         }
     }
 }

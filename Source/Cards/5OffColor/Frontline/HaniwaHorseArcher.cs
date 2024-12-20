@@ -67,7 +67,7 @@ namespace LBoLMod.Cards
                 consumingPassive = PassiveConsumedFromDrawDiscard;
             else
                 yield break;
-            if (RemainingValue < consumingPassive)
+            if (CheckPassiveLoyaltyNotFulfiled(consumingPassive))
                 yield break;
             if (!args.DamageInfo.IsGrazed)
                 yield break;
@@ -77,7 +77,7 @@ namespace LBoLMod.Cards
             else
                 yield return PerformAction.ViewCard(this);
             yield return new DamageAction(base.Battle.Player, args.Source, GrazeDamage, "");
-            RemainingValue -= consumingPassive;
+            yield return ConsumePassiveLoyalty(consumingPassive);
             base.NotifyChanged();
         }
 
@@ -87,7 +87,6 @@ namespace LBoLMod.Cards
             if (base.Battle.BattleShouldEnd)
                 yield break;
             yield return BuffAction<Graze>(GrazeGained);
-            yield return ConsumeLoyalty();
         }
     }
 }

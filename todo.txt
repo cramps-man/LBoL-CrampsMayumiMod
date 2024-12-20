@@ -675,6 +675,7 @@ green assign that costs 1 of each haniwa
   - 3 conditions based on the 3 types
   - graze, block, debuff?
   - or while this buff is up, fencer counters
+  - gain mana after based on some condition
 green ability allow commanders to be summonable/spawned via normal means like all other frontlines - DONE
   - added to pool like the offcolours, so everything can summon them
 purple sacrifice haniwa for mana, or some other benefit

@@ -76,12 +76,11 @@ namespace LBoLMod.Cards
             {
                 base.NotifyActivating();
                 yield return BuffAction<FrostArmor>(Value2);
-                if (RemainingValue >= PassiveConsumedRemainingValue)
-                {
-                    yield return DebuffAction<Cold>(base.Battle.RandomAliveEnemy);
-                    RemainingValue -= PassiveConsumedRemainingValue;
-                    base.NotifyChanged();
-                }
+                if (CheckPassiveLoyaltyNotFulfiled())
+                    yield break;
+                yield return DebuffAction<Cold>(base.Battle.RandomAliveEnemy);
+                yield return ConsumePassiveLoyalty();
+                base.NotifyChanged();
             }
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
@@ -93,7 +92,6 @@ namespace LBoLMod.Cards
             {
                 yield return item;
             };
-            yield return ConsumeLoyalty();
         }
     }
 }

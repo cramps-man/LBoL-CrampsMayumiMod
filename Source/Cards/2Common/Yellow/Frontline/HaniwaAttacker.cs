@@ -57,20 +57,19 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingValue < PassiveConsumedRemainingValue)
+            if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
             yield return new DamageAction(base.Battle.Player, base.Battle.LowestHpEnemy, EndOfTurnDmg);
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
             base.NotifyChanged();
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
-            yield return ConsumeLoyalty();
         }
     }
 }

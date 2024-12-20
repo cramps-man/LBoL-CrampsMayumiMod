@@ -76,7 +76,6 @@ namespace LBoLMod.Cards
             yield return AttackAction(selector);
             if (Value2 > 0)
                 yield return DebuffAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: Value2);
-            yield return ConsumeLoyalty();
         }
     }
 }

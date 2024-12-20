@@ -13,7 +13,10 @@ namespace LBoLMod.Patches
             if (widget._card is ModFrontlineCard frontlineCard)
             {
                 widget.baseLoyaltyObj.SetActive(true);
-                widget.baseLoyalty.text = frontlineCard.RemainingValue.ToString();
+                if (frontlineCard.IsDarknessMode)
+                    widget.baseLoyalty.text = "∞";
+                else
+                    widget.baseLoyalty.text = frontlineCard.RemainingValue.ToString();
             }
         }
     }

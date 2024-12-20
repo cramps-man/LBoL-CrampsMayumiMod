@@ -8,6 +8,7 @@ using LBoLMod.BattleActions;
 using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects.Keywords;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LBoLMod.Cards
@@ -21,6 +22,8 @@ namespace LBoLMod.Cards
         {
             get
             {
+                if (IsDarknessMode)
+                    return 10;
                 return _remainingValue;
             }
             set
@@ -38,6 +41,7 @@ namespace LBoLMod.Cards
         public virtual bool IsArcherType => false;
         public virtual bool IsCavalryType => false;
         public int StartingExtraLoyalty { get; set; } = 0;
+        public bool IsDarknessMode { get; set; } = false;
         protected override void OnEnterBattle(BattleController battle)
         {
             RemainingValue = Value1 + StartingExtraLoyalty;
@@ -83,10 +87,25 @@ namespace LBoLMod.Cards
             ShouldConsumeRemainingValue = true;
         }
 
+        private void OnCardsAddedToHand(CardsEventArgs args)
+        {
+            if (args.Cards.Contains(this))
+            {
+                RemainingValue = Value1 + StartingExtraLoyalty;
+            }
+        }
+
         public BattleAction ConsumeLoyalty(int loyaltyOverride = -1)
         {
             if (!ShouldConsumeRemainingValue)
                 return null;
+            if (IsDarknessMode)
+            {
+                int powerToLose = 10;
+                if (powerToLose > base.Battle.Player.Power)
+                    return new RemoveCardAction(this);
+                return new LosePowerAction(powerToLose);
+            }
             if (loyaltyOverride > -1)
                 RemainingValue -= loyaltyOverride;
             else if (ShouldConsumeAll && RemainingValue > OnPlayConsumedRemainingValue)
@@ -97,13 +116,44 @@ namespace LBoLMod.Cards
                 return new ExileCardAction(this);
             return null;
         }
-
-        private void OnCardsAddedToHand(CardsEventArgs args)
+        public bool CheckPassiveLoyaltyNotFulfiled(int toCheck = -1)
         {
-            if (args.Cards.Contains(this))
+            if (IsDarknessMode)
+                return false;
+            if (toCheck > -1)
+                return RemainingValue < toCheck;
+            return RemainingValue < PassiveConsumedRemainingValue;
+        }
+
+        public BattleAction ConsumePassiveLoyalty(int toConsume = -1)
+        {
+            if (IsDarknessMode)
             {
-                RemainingValue = Value1 + StartingExtraLoyalty;
+                int powerToLose = toConsume > -1 ? toConsume : PassiveConsumedRemainingValue;
+                if (powerToLose > base.Battle.Player.Power)
+                    return new RemoveCardAction(this);
+                return new LosePowerAction(powerToLose);
             }
+            if (toConsume > -1)
+                RemainingValue -= toConsume;
+            else
+                RemainingValue -= PassiveConsumedRemainingValue;
+            return null;
+        }
+        public BattleAction CheckKeepInHand()
+        {
+            if (IsDarknessMode && Zone != CardZone.None)
+                return new MoveCardAction(this, CardZone.Hand);
+            return null;
+        }
+        public override IEnumerable<BattleAction> AfterUseAction()
+        {
+            yield return ConsumeLoyalty();
+            yield return CheckKeepInHand();
+            foreach (var battleAction in base.AfterUseAction())
+            {
+                yield return battleAction;
+            };
         }
         public override int AdditionalValue1 
         {

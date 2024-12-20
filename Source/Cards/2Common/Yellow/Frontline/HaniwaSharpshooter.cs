@@ -49,7 +49,7 @@ namespace LBoLMod.Cards
         {
             base.OnEnterBattle(battle);
             base.HandleBattleEvent(base.Battle.Player.DamageDealing, OnPlayerDamageDealing);
-            base.HandleBattleEvent(base.Battle.Player.DamageGiving, OnPlayerDamageGiving);
+            base.ReactBattleEvent(base.Battle.Player.DamageGiving, OnPlayerDamageGiving);
         }
 
         private void OnPlayerDamageDealing(DamageDealingEventArgs args)
@@ -58,7 +58,7 @@ namespace LBoLMod.Cards
                 return;
             if (base.Zone != CardZone.Hand)
                 return;
-            if (RemainingValue < PassiveConsumedRemainingValue)
+            if (CheckPassiveLoyaltyNotFulfiled())
                 return;
             if (args.DamageInfo.DamageType != DamageType.Attack)
                 return;
@@ -73,23 +73,23 @@ namespace LBoLMod.Cards
             accuracyModified = true;
         }
 
-        private void OnPlayerDamageGiving(DamageEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerDamageGiving(DamageEventArgs args)
         {
             if (base.Zone != CardZone.Hand)
-                return;
-            if (RemainingValue < PassiveConsumedRemainingValue)
-                return;
+                yield break;
+            if (CheckPassiveLoyaltyNotFulfiled())
+                yield break;
             if (!(args.Target is EnemyUnit))
-                return;
+                yield break;
             if (args.DamageInfo.DamageType != DamageType.Attack)
-                return;
+                yield break;
             if (!args.Target.HasStatusEffect<Graze>())
-                return;
+                yield break;
             if (!accuracyModified)
-                return;
+                yield break;
 
             base.NotifyActivating();
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
             accuracyModified = false;
             base.NotifyChanged();
         }
@@ -99,7 +99,6 @@ namespace LBoLMod.Cards
             yield return AttackAction(selector);
             if (!base.Battle.BattleShouldEnd)
                 yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), Value2);
-            yield return ConsumeLoyalty();
         }
     }
 }

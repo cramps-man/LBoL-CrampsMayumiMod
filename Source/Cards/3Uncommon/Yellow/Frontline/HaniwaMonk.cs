@@ -47,30 +47,29 @@ namespace LBoLMod.Cards
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.HandleBattleEvent(base.Battle.Player.StatusEffectAdded, this.OnPlayerStatusEffectAdded);
+            base.ReactBattleEvent(base.Battle.Player.StatusEffectAdded, this.OnPlayerStatusEffectAdded);
         }
 
-        private void OnPlayerStatusEffectAdded(StatusEffectApplyEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerStatusEffectAdded(StatusEffectApplyEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
-                return;
+                yield break;
             if (base.Zone != CardZone.Hand)
-                return;
+                yield break;
             if (args.Effect.Type != StatusEffectType.Positive)
-                return;
-            if (RemainingValue < PassiveConsumedRemainingValue)
-                return;
+                yield break;
+            if (CheckPassiveLoyaltyNotFulfiled())
+                yield break;
 
             base.NotifyActivating();
             DeltaInt += Value2;
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
             DeltaInt = 0;
-            yield return ConsumeLoyalty();
         }
     }
 }

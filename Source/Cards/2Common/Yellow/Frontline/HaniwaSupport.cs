@@ -54,7 +54,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (args.Card.CardType != CardType.Attack)
                 yield break;
-            if (RemainingValue < PassiveConsumedRemainingValue)
+            if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
             if (base.Battle.HandZone.Count == base.Battle.MaxHand)
                 yield break;
@@ -62,14 +62,13 @@ namespace LBoLMod.Cards
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
             yield return new DrawManyCardAction(Value2);
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
             base.NotifyChanged();
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainManaAction(TotalMana);
-            yield return ConsumeLoyalty();
         }
     }
 }

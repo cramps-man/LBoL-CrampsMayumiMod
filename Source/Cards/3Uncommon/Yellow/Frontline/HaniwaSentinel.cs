@@ -63,14 +63,14 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (RemainingValue < PassiveConsumedRemainingValue)
+            if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
             var attackingEnemies = base.Battle.AllAliveEnemies.Where(e => e.Intentions.Any(i => i is AttackIntention));
             if (!attackingEnemies.Any())
                 yield break;
 
             base.NotifyActivating();
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
             yield return new DamageAction(base.Battle.Player, attackingEnemies, DamageInfo.Reaction(Value2));
             foreach (var debuffAction in DebuffAction<Weak>(attackingEnemies, duration: WeakDuration))
             {
@@ -81,8 +81,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
-            yield return BuffAction<IllnessPreventionSe>(level: IllnessBuffLevelScaling);
-            yield return ConsumeLoyalty();
+            yield return BuffAction<IllnessPreventionSe>(level: IllnessBuffLevel);
         }
     }
 }

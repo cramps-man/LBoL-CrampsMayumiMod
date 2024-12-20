@@ -63,7 +63,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Draw && base.Zone != CardZone.Hand && base.Zone != CardZone.Discard)
                 yield break;
-            if (RemainingValue < PassiveConsumedRemainingValue)
+            if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
             var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is FrontlineCommander)).ToList();
             if (!frontlinesInHand.Any())
@@ -81,7 +81,7 @@ namespace LBoLMod.Cards
             {
                 yield return battleAction;
             }
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
             base.NotifyChanged();
         }
 

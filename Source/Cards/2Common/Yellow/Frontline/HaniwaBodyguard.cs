@@ -3,6 +3,7 @@ using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -48,7 +49,7 @@ namespace LBoLMod.Cards
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.HandleBattleEvent(base.Battle.Player.DamageTaking, this.OnPlayerDamageTaking);
+            base.ReactBattleEvent(base.Battle.Player.DamageTaking, this.OnPlayerDamageTaking);
             base.HandleBattleEvent(base.Battle.Player.TurnStarting, this.OnPlayerTurnStarting);
         }
 
@@ -58,12 +59,12 @@ namespace LBoLMod.Cards
                 RemainingValue = LoyaltyThreshold;
         }
 
-        private void OnPlayerDamageTaking(DamageEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerDamageTaking(DamageEventArgs args)
         {
             if (base.Zone != CardZone.Hand)
-                return;
+                yield break;
             if (RemainingValue <= 0)
-                return;
+                yield break;
             
             var damageInfo = args.DamageInfo;
             if (damageInfo.DamageType == DamageType.Attack || damageInfo.DamageType == DamageType.Reaction)
@@ -93,10 +94,17 @@ namespace LBoLMod.Cards
                 if (DamageTaken != 0)
                 {
                     base.NotifyActivating();
+                    int powerToLose = DamageTaken;
                     DamageTaken = 0;
                     args.AddModifier(this);
                     args.DamageInfo = damageInfo;
                     base.NotifyChanged();
+                    if (IsDarknessMode)
+                    {
+                        if (powerToLose > base.Battle.Player.Power)
+                            yield return new RemoveCardAction(this);
+                        yield return new LosePowerAction(powerToLose);
+                    }
                 }
             }
         }
@@ -104,7 +112,6 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
-            yield return ConsumeLoyalty();
         }
     }
 }

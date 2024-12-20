@@ -66,7 +66,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Draw && base.Zone != CardZone.Hand && base.Zone != CardZone.Discard)
                 yield break;
-            if (RemainingValue < PassiveConsumedRemainingValue)
+            if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
 
             if (base.Zone == CardZone.Hand)
@@ -118,7 +118,7 @@ namespace LBoLMod.Cards
                 }
             }
 
-            RemainingValue -= PassiveConsumedRemainingValue;
+            yield return ConsumePassiveLoyalty();
             base.NotifyChanged();
             args.CancelBy(this);
         }
