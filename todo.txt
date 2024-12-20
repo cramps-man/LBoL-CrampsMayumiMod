@@ -652,8 +652,9 @@ haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5 - DONE
 mass summon actually cater for haniwa costs? - DONE
   - also made it just sacrifice all, and upgrade lowers cost
 allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it
-  - can just make it not work with other commanders, cos that might be broken
+  - can just make it not work with other commanders, cos that might be broken, well not rly just extra dmg + the mark reapplied
   - we'll see if i allow this
+  - test precondition for assign commander works or not, if you pass in when calling precondition
 
 new frontline from summon commander, an assign variation? - DONE
   - you choose between the 2
@@ -670,6 +671,7 @@ green double extra triggers (now power or task level or whatever) - DONE
   - maybe the next assign buff activate twice, like old extra triggers lmao
   - could replace assign duplicate trigger, and come up with another card in green
 green assign that costs 1 of each haniwa
+  - give graze? dunno what else this might do though
 green ability allow commanders to be summonable/spawned via normal means like all other frontlines - DONE
   - added to pool like the offcolours, so everything can summon them
 purple sacrifice haniwa for mana, or some other benefit
@@ -678,5 +680,12 @@ purple assign buffs dont stack - DONE
   - well maybe it's better for fast assign stuff with the same types, cos they wont get delayed
 purple frontline, haniwa assassin, onplay insta kills if target below certain hp
   - passive counters when attacked? or pierce block/barrier, ez with lifeloss attack type
-purple ability frontlines gain extra loyalty start of turn
+  - maybe something with throwing knife?
+purple ability frontlines gain extra loyalty start of turn - WONT DO
+  - not sure if need this, might be redundant with green skill that gives loyalty
 purple summon card that consumes 30/50P? allows choosing more than usual without haniwa cost?
+  - frontline gains infinite loyalty and doesnt get removed from hand after playing, but passive/onplay costs Power
+  - has ethereal?
+
+give frontline option cards proper rarity - DONE
+update text of commander summon card to explicitly mention its available for summon and random spawn

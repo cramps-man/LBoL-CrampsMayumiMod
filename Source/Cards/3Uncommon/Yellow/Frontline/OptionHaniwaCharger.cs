@@ -1,4 +1,6 @@
-﻿using LBoLEntitySideloader;
+﻿using LBoL.Base;
+using LBoL.ConfigData;
+using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using System;
 
@@ -10,6 +12,12 @@ namespace LBoLMod.Cards
         public override IdContainer GetId()
         {
             return nameof(OptionHaniwaCharger);
+        }
+        public override CardConfig MakeConfig()
+        {
+            var config = base.MakeConfig();
+            config.Rarity = Rarity.Uncommon;
+            return config;
         }
     }
 

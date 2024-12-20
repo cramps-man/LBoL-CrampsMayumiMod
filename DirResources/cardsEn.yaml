@@ -669,6 +669,10 @@ OptionFrontlineCommander:
   Description: |-
     Sacrifice {SelectRequireFencer} of all |Haniwa|.
     Add a |Frontline Commander| to the hand. 
+    {AvailableFencer} |Fencer|, {AvailableArcher} |Archer|, {AvailableCavalry} |Cavalry| available. 
+  NonbattleDescription: |-
+    Sacrifice {SelectRequireFencer} of all |Haniwa|.
+    Add a |Frontline Commander| to the hand. 
 
 AssignCommander:
   Name: Assign Commander
@@ -685,6 +689,10 @@ AssignCommander:
 OptionAssignCommander:
   Name: Summon Assign Commander
   Description: |-
+    Sacrifice {SelectRequireFencer} of all |Haniwa|.
+    Add a |Assign Commander| to the hand. 
+    {AvailableFencer} |Fencer|, {AvailableArcher} |Archer|, {AvailableCavalry} |Cavalry| available. 
+  NonbattleDescription: |-
     Sacrifice {SelectRequireFencer} of all |Haniwa|.
     Add a |Assign Commander| to the hand. 
 
@@ -794,7 +802,7 @@ OptionHaniwaHorseArcher:
   Description: |-
     Sacrifice {SelectRequireArcher} |Archer| and {SelectRequireCavalry} |Cavalry|.
     Add a |Haniwa Horse Archer| to the hand. 
-    {AvailableArcher} available |Archer|, {AvailableCavalry} available |Cavalry|. 
+    {AvailableArcher} |Archer|, {AvailableCavalry} |Cavalry| available. 
   NonbattleDescription: |-
     Sacrifice {SelectRequireArcher} |Archer| and {SelectRequireCavalry} |Cavalry|.
     Add a |Haniwa Horse Archer| to the hand. 
