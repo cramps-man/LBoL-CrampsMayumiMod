@@ -31,6 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.IsXCost = true;
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value2 = 10;
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -57,7 +58,7 @@ namespace LBoLMod.Cards
             if (newSummon == null)
                 yield break;
 
-            newSummon.UpgradeCounter = consumingMana.Amount * Value1;
+            newSummon.UpgradeCounter = Value2 + consumingMana.Amount * Value1;
             yield return new AddCardsToHandAction(newSummon);
         }
     }
