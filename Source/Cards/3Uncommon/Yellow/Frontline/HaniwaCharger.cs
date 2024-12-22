@@ -44,7 +44,7 @@ namespace LBoLMod.Cards
     {
         public override bool IsCavalryType => true;
         protected override bool ShouldConsumeAll => true;
-        protected override int OnPlayConsumedRemainingValue => 10;
+        protected override int OnPlayConsumedRemainingValue => 4;
         public override int AdditionalDamage => RemainingValue + base.UpgradeCounter.GetValueOrDefault();
         public int VulnScaling => 10;
         public override int AdditionalValue2 => RemainingValue / VulnScaling;

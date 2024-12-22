@@ -30,8 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 2;
-            cardConfig.UpgradedValue2 = 10;
+            cardConfig.Value2 = 4;
+            cardConfig.UpgradedValue2 = 14;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
@@ -58,6 +58,10 @@ namespace LBoLMod.Cards
                     foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(addCardsAction.Args.Cards.ToList(), base.Battle, selector, true))
                     {
                         yield return battleAction;
+                    }
+                    foreach (ModFrontlineCard card in addCardsAction.Args.Cards)
+                    {
+                        yield return card.ConsumeLoyalty();
                     }
                 }
             };
