@@ -138,8 +138,13 @@ namespace LBoLMod.Cards
             {
                 var sourceCard = card.StatusEffect.AssignSourceCard;
                 sourceCard.ManualStack = false;
-                var assignBuffAction = sourceCard.BuffAction(sourceCard.AssignStatusType, level: card.StatusEffect.Level + Value2, count: card.StatusEffect.Count);
+                ApplyStatusEffectAction assignBuffAction = (ApplyStatusEffectAction)sourceCard.BuffAction(sourceCard.AssignStatusType, level: card.StatusEffect.Level + Value2, count: card.StatusEffect.Count);
                 yield return assignBuffAction;
+                if (assignBuffAction.Args.Effect is ModAssignStatusEffect mase)
+                {
+                    mase.IsPermanent = card.StatusEffect.IsPermanent;
+                    mase.NotifyChanged();
+                }
             }
         }
     }

@@ -30,8 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 1 };
             cardConfig.IsXCost = true;
             cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 10;
+            cardConfig.Value2 = 9;
+            cardConfig.UpgradedValue2 = 18;
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };

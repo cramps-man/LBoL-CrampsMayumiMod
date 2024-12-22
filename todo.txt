@@ -697,15 +697,27 @@ look into darkness summon frontlines getting purple card bg via harmony patching
 
 PLAYTESTING NOTES
 frontline loyalty task level feels kinda meh, hard to get loyalty high enough to be worth fast
-ultra frontline + upgraded summon would be nice if selection showed upgraded stats
+  - consume 5-10 loyalty, give blah task level per loyalty * something, probs better since itll be limited
+ultra frontline + upgraded summon would be nice if selection showed upgraded stats - PROBS NOT POSSIBLE
+  - dont think it's possible lmao
 gain buff tickdown feels meh? dont rly need it
   - rework into an ability instead of skill, also add the effect from assign cost trigger for adding more task level per card play
 find something else for assign cost trigger then
-assign commander duplicate if its permanent?
+assign separation needs an upgrade
+  - create 2 buffs with half starting task level?
 ultra frontline have base of +10 upgrades - DONE
+starter haniwa gens, dont give more haniwa, add inate instead?
+  - unsure, leave for now
+mud extraction add 2 splashes if targetting frozen haniwa? lol
+  - unsure, leave for now
+darkness summon make the cards start in darkness mode when created, so the loyalty doesnt change visually
+
+haniwa charger loyalty gain start at 2? - DONE
+  - and also vuln apply at 10? not sure if consume min 10
+darkness summon make rare - DONE
+assign commander duplicate if its permanent? - DONE
+ultra frontline make the upgrade increase base upgrades instead of scaling - DONE
 make loyalty gain from haniwa = to half rounded up
 make task level gain from card play = to half assigned haniwa rounded up
 mass task level either give more task level or lower costs
-darkness summon make rare
-assign separation needs an upgrade
-  - create 2 buffs with half starting task level?
+assassin repeatedly targets player when source comes from player unit, like water debuff thing

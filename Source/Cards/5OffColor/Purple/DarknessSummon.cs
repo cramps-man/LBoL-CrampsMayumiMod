@@ -24,7 +24,7 @@ namespace LBoLMod.Cards
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
-            cardConfig.Rarity = Rarity.Uncommon;
+            cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Black };
             cardConfig.Value1 = 1;

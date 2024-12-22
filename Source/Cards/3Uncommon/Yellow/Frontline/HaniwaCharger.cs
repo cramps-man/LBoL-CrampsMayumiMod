@@ -44,13 +44,13 @@ namespace LBoLMod.Cards
     {
         public override bool IsCavalryType => true;
         protected override bool ShouldConsumeAll => true;
-        protected override int OnPlayConsumedRemainingValue => 8;
+        protected override int OnPlayConsumedRemainingValue => 10;
         public override int AdditionalDamage => RemainingValue + base.UpgradeCounter.GetValueOrDefault();
-        public int VulnScaling => 8;
+        public int VulnScaling => 10;
         public override int AdditionalValue2 => RemainingValue / VulnScaling;
         public int TotalLoyaltyGain => BaseLoyaltyGain * ChargerCount;
         public int ChargerCount => base.Battle != null ? base.Battle.HandZone.Where(c => c is HaniwaCharger).Count() : 0;
-        public int BaseLoyaltyGain => 1 + base.UpgradeCounter.GetValueOrDefault() / LoyaltyGainScaling;
+        public int BaseLoyaltyGain => 2 + base.UpgradeCounter.GetValueOrDefault() / LoyaltyGainScaling;
         public int LoyaltyGainScaling => 5;
         protected override void OnEnterBattle(BattleController battle)
         {
