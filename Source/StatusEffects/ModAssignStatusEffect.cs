@@ -1,4 +1,5 @@
 ﻿using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
@@ -9,6 +10,7 @@ using LBoLMod.Cards;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.UltimateSkills;
 using LBoLMod.Utils;
+using System;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects
@@ -126,7 +128,7 @@ namespace LBoLMod.StatusEffects
             if (!JustApplied)
             {
                 int assignCostTriggerIncrease = base.Battle.Player.TryGetStatusEffect<AssignCostTaskLevelSe>(out AssignCostTaskLevelSe se) ? se.Level : 0;
-                Level += CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned + assignCostTriggerIncrease;
+                Level += Math.Ceiling((CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned) / 2d).RoundToInt() + assignCostTriggerIncrease;
             }
             JustApplied = false;
             return null;

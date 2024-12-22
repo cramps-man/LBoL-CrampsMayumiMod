@@ -717,7 +717,8 @@ haniwa charger loyalty gain start at 2? - DONE
 darkness summon make rare - DONE
 assign commander duplicate if its permanent? - DONE
 ultra frontline make the upgrade increase base upgrades instead of scaling - DONE
-make loyalty gain from haniwa = to half rounded up
-make task level gain from card play = to half assigned haniwa rounded up
+make loyalty gain from haniwa = to half rounded up - DONE
+make task level gain from card play = to half assigned haniwa rounded up - DONE
+  - and keep note of if the task level scaling is still okay during playtesting
 mass task level either give more task level or lower costs
 assassin repeatedly targets player when source comes from player unit, like water debuff thing

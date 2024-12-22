@@ -61,10 +61,10 @@ TaskLevel:
   Name: Task Level
   Description: |-
     Represented on |Assign| buffs via the level of the buff (red number). Determines the buff effect's power. 
-    After a card is played, |Task Level| increases by the number of assigned |Haniwa|. 
+    After a card is played, |Task Level| increases by half the number of assigned |Haniwa| rounded up. 
   Brief: |-
     Represented on |Assign| buffs via the level of the buff (red number). Determines the buff effect's power. 
-    After a card is played, |Task Level| increases by the number of assigned |Haniwa|. 
+    After a card is played, |Task Level| increases by half the number of assigned |Haniwa| rounded up. 
 
 AssignmentBonusSe:
   Name: Assignment Bonus
@@ -77,12 +77,12 @@ Frontline:
   Name: Frontline
   Description: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    |Loyalty| is increased by |e:1| when upgraded. Also increased by |e:1| when gaining |Haniwa| if same type as the card and it is in the hand. Increase by |e:2| instead if 5 or more |Haniwa| was gained. 
+    |Loyalty| is increased by |e:1| when upgraded. Also increased when gaining |Haniwa| by half the |Haniwa| gained rounded up, if it is same type as the card and it is in the hand. 
     Upgradable any number of times. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. Passive will not trigger if |Loyalty| would go below |e:0|. 
   Brief: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    |Loyalty| is increased by |e:1| when upgraded. Also increased by |e:1| when gaining |Haniwa| if same type as the card and it is in the hand. Increase by |e:2| instead if 5 or more |Haniwa| was gained. 
+    |Loyalty| is increased by |e:1| when upgraded. Also increased when gaining |Haniwa| by half the |Haniwa| gained rounded up, if it is same type as the card and it is in the hand. 
     Upgradable any number of times. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. Passive will not trigger if |Loyalty| would go below |e:0|. 
 
