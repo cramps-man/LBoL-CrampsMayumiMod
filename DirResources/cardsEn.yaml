@@ -335,7 +335,6 @@ HaniwaUpgrader:
 
     Increases for each upgrade. 
     Block: +1
-    Upgraded card block: +1 per 5 upgrade
 
 HaniwaExploiter:
   Name: Haniwa Exploiter

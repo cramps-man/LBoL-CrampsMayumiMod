@@ -56,7 +56,6 @@ namespace LBoLMod.Cards
         }
         public int NumUpgradedCardsBlock => NumUpgradedCards * Value2;
         public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault() + NumUpgradedCardsBlock;
-        public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

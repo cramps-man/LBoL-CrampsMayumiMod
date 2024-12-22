@@ -727,4 +727,4 @@ blitz summon cost WW to WW(W1)? - DONE
   - and increase loyalty to not make charger auto exile on spawn
   - perhaps with loyalty increase, no need to change cost for now
   - also fixed recent bug with it not consuming loyalty
-nerf haniwa upgrader block
+nerf haniwa upgrader block - DONE
