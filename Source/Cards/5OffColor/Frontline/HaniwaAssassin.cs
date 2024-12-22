@@ -80,6 +80,10 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Zone != CardZone.Hand)
                 yield break;
+            if (!(args.Target is EnemyUnit))
+                yield break;
+            if (args.ActionSource == this)
+                yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
 
