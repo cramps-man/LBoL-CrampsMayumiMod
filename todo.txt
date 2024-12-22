@@ -710,7 +710,7 @@ starter haniwa gens, dont give more haniwa, add inate instead?
   - unsure, leave for now
 mud extraction add 2 splashes if targetting frozen haniwa? lol
   - unsure, leave for now
-darkness summon make the cards start in darkness mode when created, so the loyalty doesnt change visually
+darkness summon make the cards start in darkness mode when created, so the loyalty doesnt change visually - DONE
 
 haniwa charger loyalty gain start at 2? - DONE
   - and also vuln apply at 10? not sure if consume min 10

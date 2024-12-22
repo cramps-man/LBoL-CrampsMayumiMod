@@ -50,13 +50,13 @@ namespace LBoLMod.Cards
         {
             foreach (var action in HaniwaFrontlineUtils.CardsSummon(((SelectCardInteraction)precondition).SelectedCards))
             {
-                yield return action;
                 if (action is AddCardsToHandAction addCardsAction)
                 {
                     addCardsAction.Args.Cards.Cast<ModFrontlineCard>().ToList().ForEach(card => {
                         card.IsDarknessMode = true;
                     });
                 }
+                yield return action;
             };
         }
     }
