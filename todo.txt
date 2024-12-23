@@ -698,6 +698,11 @@ ultra frontline + upgraded summon would be nice if selection showed upgraded sta
 gain buff tickdown feels meh? dont rly need it
   - rework into an ability instead of skill, also add the effect from assign cost trigger for adding more task level per card play
   - rework some other way, assign cost trigger is fine
+  - ability that forces starting counter to 3? or even just 1/2 lmao
+  - and maybe an extra portion at end of turn for number of assign triggers
+  - or keep it as a skill like now, starting at 3 is probs better than the current effect
+  - or make all existing counters become 3?
+  - or just remove this for now, not sure of a good effect atm
 find something else for assign cost trigger then - DONE
   - this might be fine tbh, just increase the task level gain now that overall task level gain is more balanced
 assign separation needs an upgrade - DONE
@@ -730,6 +735,7 @@ frontline copy copy loyalty and darkness mode, and anything else i missed - DONE
 new card concentration for loyalty, lowers loyalty consumption based on buff
 charger autoplay above 10 loyalty at turn end/start? and maybe increase from 10 - DONE
   - perhaps 15/20 autoplay
+cavalry scout interaction title show number of scry and draw - DONE
 
 allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it
   - can just make it not work with other commanders, cos that might be broken, well not rly just extra dmg + the mark reapplied

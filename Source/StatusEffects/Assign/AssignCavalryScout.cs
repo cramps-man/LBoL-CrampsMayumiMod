@@ -24,7 +24,7 @@ namespace LBoLMod.StatusEffects.Assign
         public int TotalDraw => Math.Max(Level / CardValue2, 1);
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DescriptiveScryAction(TotalScry, "Cavalry Scout - Scry");
+            yield return new DescriptiveScryAction(TotalScry, "Cavalry Scout - Scry, Draw " + TotalDraw);
             yield return new DrawManyCardAction(TotalDraw);
         }
     }
