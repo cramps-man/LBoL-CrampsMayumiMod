@@ -44,8 +44,9 @@ namespace LBoLMod.Cards
         public bool IsDarknessMode { get; set; } = false;
         protected override void OnEnterBattle(BattleController battle)
         {
-            RemainingValue = Value1 + StartingExtraLoyalty;
-            base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
+            if (!IsCopy)
+                RemainingValue = Value1 + StartingExtraLoyalty;
+            //base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
             base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
             base.HandleBattleEvent(base.Battle.CardMovedToDrawZone, this.OnCardMovedToDrawZone);
             base.HandleBattleEvent(ModGameEvents.GainedHaniwa, this.OnGainedHaniwa);
@@ -81,13 +82,13 @@ namespace LBoLMod.Cards
             RemainingValue = Value1;
         }
 
-        private void OnCardsAddedToHand(CardsEventArgs args)
+        /*private void OnCardsAddedToHand(CardsEventArgs args)
         {
             if (args.Cards.Contains(this))
             {
                 RemainingValue = Value1 + StartingExtraLoyalty;
             }
-        }
+        }*/
 
         public BattleAction ConsumeLoyalty(int loyaltyOverride = -1)
         {

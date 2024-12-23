@@ -667,6 +667,7 @@ green assign that costs 1 of each haniwa
   - graze, block, debuff?
   - or while this buff is up, fencer counters
   - gain mana after based on some condition
+  - tri assign rotates a passive until trigger?
 green ability allow commanders to be summonable/spawned via normal means like all other frontlines - DONE
   - added to pool like the offcolours, so everything can summon them
 purple sacrifice haniwa for mana, or some other benefit - MAYBE ANOTHER TIME
@@ -725,9 +726,8 @@ blitz summon cost WW to WW(W1)? - DONE
   - also fixed recent bug with it not consuming loyalty
 nerf haniwa upgrader block - DONE
 
-frontline copy copy loyalty and darkness mode, and anything else i missed
-concentration for loyalty, lowers loyalty consumption based on buff
-tri assign rotates a passive until trigger?
+frontline copy copy loyalty and darkness mode, and anything else i missed - DONE
+new card concentration for loyalty, lowers loyalty consumption based on buff
 charger autoplay above 10 loyalty at turn end/start? and maybe increase from 10
 
 allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it

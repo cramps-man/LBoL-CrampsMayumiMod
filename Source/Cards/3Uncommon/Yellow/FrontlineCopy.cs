@@ -52,21 +52,17 @@ namespace LBoLMod.Cards
                 yield break;
 
             List<Card> copiedCards = new List<Card>();
-            foreach (var card in copyInteraction.SelectedCards)
+            foreach (ModFrontlineCard card in copyInteraction.SelectedCards)
             {
+                var cardClone = (ModFrontlineCard)card.CloneBattleCard();
+                cardClone.IsRetain = false;
+                cardClone.RemainingValue = card.RemainingValue;
+                cardClone.IsDarknessMode = card.IsDarknessMode;
                 if (card is FrozenHaniwa frozenCard)
                 {
-                    var cardClone = (FrozenHaniwa)card.CloneBattleCard();
-                    cardClone.IsRetain = false;
-                    cardClone.OriginalCard = (ModFrontlineCard)frozenCard.OriginalCard.CloneBattleCard();
-                    copiedCards.Add(cardClone);
+                    ((FrozenHaniwa)cardClone).OriginalCard = (ModFrontlineCard)frozenCard.OriginalCard.CloneBattleCard();
                 }
-                else
-                {
-                    var cardClone = card.CloneBattleCard();
-                    cardClone.IsRetain = false;
-                    copiedCards.Add(cardClone);
-                }
+                copiedCards.Add(cardClone);
             }
             yield return new AddCardsToDrawZoneAction(copiedCards, DrawZoneTarget.Random);
             yield return new DrawManyCardAction(Value1);
