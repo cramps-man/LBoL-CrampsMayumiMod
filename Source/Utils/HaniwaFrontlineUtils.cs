@@ -156,13 +156,14 @@ namespace LBoLMod.Utils
             foreach (ModFrontlineCard card in frontlineCards)
             {
                 card.NotifyActivating();
-                card.ShouldConsumeRemainingValue = consumeRemainingValue;
                 foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, null, new List<DamageAction>(), false))
                 {
                     if (battle.BattleShouldEnd)
                         yield break;
                     yield return action;
                 }
+                if (consumeRemainingValue)
+                    yield return card.ConsumeLoyalty();
             }
         }
     }

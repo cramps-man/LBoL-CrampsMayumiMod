@@ -36,7 +36,6 @@ namespace LBoLMod.Cards
         protected virtual bool IncludeUpgradesInRemainingValue => true;
         protected virtual int PassiveConsumedRemainingValue => 1;
         protected virtual int OnPlayConsumedRemainingValue => 1;
-        public bool ShouldConsumeRemainingValue { get; set; } = true;
         protected virtual bool ShouldConsumeAll => false;
         public virtual bool IsFencerType => false;
         public virtual bool IsArcherType => false;
@@ -47,7 +46,6 @@ namespace LBoLMod.Cards
         {
             RemainingValue = Value1 + StartingExtraLoyalty;
             base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
-            base.HandleBattleEvent(base.Battle.CardUsing, this.OnCardUsing);
             base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
             base.HandleBattleEvent(base.Battle.CardMovedToDrawZone, this.OnCardMovedToDrawZone);
             base.HandleBattleEvent(ModGameEvents.GainedHaniwa, this.OnGainedHaniwa);
@@ -83,11 +81,6 @@ namespace LBoLMod.Cards
             RemainingValue = Value1;
         }
 
-        private void OnCardUsing(CardUsingEventArgs args)
-        {
-            ShouldConsumeRemainingValue = true;
-        }
-
         private void OnCardsAddedToHand(CardsEventArgs args)
         {
             if (args.Cards.Contains(this))
@@ -98,8 +91,6 @@ namespace LBoLMod.Cards
 
         public BattleAction ConsumeLoyalty(int loyaltyOverride = -1)
         {
-            if (!ShouldConsumeRemainingValue)
-                return null;
             if (IsDarknessMode)
             {
                 int powerToLose = 10;
@@ -108,14 +99,11 @@ namespace LBoLMod.Cards
                 return new LosePowerAction(powerToLose);
             }
             if (loyaltyOverride > -1)
-                RemainingValue -= loyaltyOverride;
+                return new ConsumeLoyaltyAction(this, loyaltyOverride);
             else if (ShouldConsumeAll && RemainingValue > OnPlayConsumedRemainingValue)
-                RemainingValue = 0;
+                return new ConsumeLoyaltyAction(this, RemainingValue);
             else
-                RemainingValue -= OnPlayConsumedRemainingValue;
-            if (RemainingValue < 0)
-                return new ExileCardAction(this);
-            return null;
+                return new ConsumeLoyaltyAction(this, OnPlayConsumedRemainingValue);
         }
         public bool CheckPassiveLoyaltyNotFulfiled(int toCheck = -1)
         {
@@ -136,10 +124,9 @@ namespace LBoLMod.Cards
                 return new LosePowerAction(powerToLose);
             }
             if (toConsume > -1)
-                RemainingValue -= toConsume;
+                return new ConsumeLoyaltyAction(this, toConsume);
             else
-                RemainingValue -= PassiveConsumedRemainingValue;
-            return null;
+                return new ConsumeLoyaltyAction(this, PassiveConsumedRemainingValue);
         }
         public BattleAction CheckKeepInHand()
         {

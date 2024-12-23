@@ -59,10 +59,6 @@ namespace LBoLMod.Cards
                     {
                         yield return battleAction;
                     }
-                    foreach (ModFrontlineCard card in addCardsAction.Args.Cards)
-                    {
-                        yield return card.ConsumeLoyalty();
-                    }
                 }
             };
         }

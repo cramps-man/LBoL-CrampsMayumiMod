@@ -7,6 +7,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
@@ -74,14 +75,14 @@ namespace LBoLMod.Cards
                 {
                     int reduceDamageBy = Math.Min(damageInfo.Damage.RoundToInt(), RemainingValue);
                     damageInfo = damageInfo.ReduceActualDamageBy(reduceDamageBy);
-                    RemainingValue -= reduceDamageBy;
+                    yield return new ConsumeLoyaltyAction(this, reduceDamageBy);
                     DamageTaken += reduceDamageBy;
                 }
                 if (damageInfo.DamageShielded > 0)
                 {
                     int reduction = Math.Min(damageInfo.DamageShielded.RoundToInt(), RemainingValue);
                     damageInfo.DamageShielded -= reduction;
-                    RemainingValue -= reduction;
+                    yield return new ConsumeLoyaltyAction(this, reduction);
                     DamageTaken += reduction;
                 }
                 if (damageInfo.DamageBlocked > 0) 

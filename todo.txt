@@ -632,11 +632,6 @@ go through assign buffs and add scaling to buff description - DONE
 lower dmg of loyalty strike base dmg, cos upgrade now lowers cost - DONE
   - or remove upgraded dmg entirely, or keep 3 mana cost like before
 
-assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
-  - should I make source card a duplicate card? that is referenced only by the buff?
-  - should probs fix since if card is removed from combat, it may not exist anymore and error out?
-duplicate haniwa bug might be because of dying then start new run?
-
 swap colors assign cost trigger and assign duplicate trigger - DONE
 update name of assign cost trigger? - DONE
 cavalry supplies include more types of options to choose from, like tool cards with 1 use for this battle only
@@ -651,10 +646,6 @@ haniwa commander gain 2 loyalty end of turn, and up cost of passive to 5 - DONE
   - make this the same for the new assign commander
 mass summon actually cater for haniwa costs? - DONE
   - also made it just sacrifice all, and upgrade lowers cost
-allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it
-  - can just make it not work with other commanders, cos that might be broken, well not rly just extra dmg + the mark reapplied
-  - we'll see if i allow this
-  - test precondition for assign commander works or not, if you pass in when calling precondition
 
 new frontline from summon commander, an assign variation? - DONE
   - you choose between the 2
@@ -699,11 +690,15 @@ PLAYTESTING NOTES
 frontline loyalty task level feels kinda meh, hard to get loyalty high enough to be worth fast
   - consume 5-10 loyalty, give blah task level per loyalty * something, probs better since itll be limited
   - some ability when loyalty is consumed, increase task level equal to that amount?
+  - perhaps can collect based on card play somehow
+  - fine ill make a consume loyalty battle action lmao
 ultra frontline + upgraded summon would be nice if selection showed upgraded stats - PROBS NOT POSSIBLE
   - dont think it's possible lmao
 gain buff tickdown feels meh? dont rly need it
   - rework into an ability instead of skill, also add the effect from assign cost trigger for adding more task level per card play
+  - rework some other way, assign cost trigger is fine
 find something else for assign cost trigger then
+  - this might be fine tbh, just increase the task level gain now that overall task level gain is more balanced
 assign separation needs an upgrade
   - create 2 buffs with half starting task level?
 ultra frontline have base of +10 upgrades - DONE
@@ -728,3 +723,17 @@ blitz summon cost WW to WW(W1)? - DONE
   - perhaps with loyalty increase, no need to change cost for now
   - also fixed recent bug with it not consuming loyalty
 nerf haniwa upgrader block - DONE
+
+frontline copy copy loyalty and darkness mode, and anything else i missed
+concentration for loyalty, lowers loyalty consumption based on buff
+tri assign rotates a passive until trigger?
+charger autoplay above 10 loyalty at turn end/start? and maybe increase from 10
+
+allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it
+  - can just make it not work with other commanders, cos that might be broken, well not rly just extra dmg + the mark reapplied
+  - we'll see if i allow this
+  - test precondition for assign commander works or not, if you pass in when calling precondition
+assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
+  - should I make source card a duplicate card? that is referenced only by the buff?
+  - should probs fix since if card is removed from combat, it may not exist anymore and error out?
+duplicate haniwa bug might be because of dying then start new run?
