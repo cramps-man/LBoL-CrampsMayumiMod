@@ -29,8 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Blue };
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 0 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
-            cardConfig.Value1 = 2;
-            cardConfig.Value2 = 10;
+            cardConfig.Value1 = 1;
+            cardConfig.Value2 = 6;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.None;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -47,7 +47,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(2, Value1, list);
+            return new SelectHandInteraction(Value1, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
