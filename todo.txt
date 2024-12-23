@@ -699,12 +699,13 @@ gain buff tickdown feels meh? dont rly need it
   - rework some other way, assign cost trigger is fine
 find something else for assign cost trigger then - DONE
   - this might be fine tbh, just increase the task level gain now that overall task level gain is more balanced
-assign separation needs an upgrade
+assign separation needs an upgrade - DONE
   - create 2 buffs with half starting task level?
+  - can just lower cost for the moment
 ultra frontline have base of +10 upgrades - DONE
-starter haniwa gens, dont give more haniwa, add inate instead?
+starter haniwa gens, dont give more haniwa, add inate instead? - LEAVE
   - unsure, leave for now
-mud extraction add 2 splashes if targetting frozen haniwa? lol
+mud extraction add 2 splashes if targetting frozen haniwa? lol - LEAVE
   - unsure, leave for now
 darkness summon make the cards start in darkness mode when created, so the loyalty doesnt change visually - DONE
 
