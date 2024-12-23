@@ -737,10 +737,11 @@ charger autoplay above 10 loyalty at turn end/start? and maybe increase from 10 
   - perhaps 15/20 autoplay
 cavalry scout interaction title show number of scry and draw - DONE
 
-allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it
+allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it - DONE, ALLOWED
   - can just make it not work with other commanders, cos that might be broken, well not rly just extra dmg + the mark reapplied
   - we'll see if i allow this
   - test precondition for assign commander works or not, if you pass in when calling precondition
+  - had to manually call an interaction action then pass into GetActions() precondition, and null check the selected cards in assign commander
 assign buff source card points to battle card, if that gets upgraded, buff is upgraded too lmao
   - should I make source card a duplicate card? that is referenced only by the buff?
   - should probs fix since if card is removed from combat, it may not exist anymore and error out?

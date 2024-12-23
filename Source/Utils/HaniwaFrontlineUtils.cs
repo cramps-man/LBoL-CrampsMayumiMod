@@ -156,7 +156,13 @@ namespace LBoLMod.Utils
             foreach (ModFrontlineCard card in frontlineCards)
             {
                 card.NotifyActivating();
-                foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, null, new List<DamageAction>(), false))
+                var precondition = card.Precondition();
+                if (precondition != null)
+                {
+                    precondition.Description = card.Name;
+                    yield return new InteractionAction(precondition, true);
+                }
+                foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, new List<DamageAction>(), false))
                 {
                     if (battle.BattleShouldEnd)
                         yield break;

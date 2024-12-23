@@ -133,6 +133,8 @@ namespace LBoLMod.Cards
         {
             if (!(precondition is SelectCardInteraction selectInteraction))
                 yield break;
+            if (selectInteraction.SelectedCards == null)
+                yield break;
 
             foreach (ModAssignOptionCard card in selectInteraction.SelectedCards)
             {

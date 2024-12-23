@@ -66,7 +66,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
-            var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard && !(c is FrontlineCommander)).ToList();
+            var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard).ToList();
             if (!frontlinesInHand.Any())
                 yield break;
 

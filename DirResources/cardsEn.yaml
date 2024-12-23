@@ -189,8 +189,6 @@ HaniwaBlitz:
   Description: |-
     Deal {Damage} damage. 
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
-  DetailText: |-
-    Can not choose a |Haniwa Commander|. 
 
 AssignHaniwaCreate:
   Name: Assign Haniwa Create
@@ -506,8 +504,6 @@ AshesToClay:
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute their |On Play| actions while refreshing |Loyalty|. 
     Move the selected cards from |Exile| to the draw pile. 
     Draw {Value2} card{Value2:plural one='' other='s'}. 
-  DetailText: |-
-    Can not choose a |Haniwa Commander|. 
 
 ChooseShortAssign:
   Name: Choose Short Assign
@@ -656,7 +652,6 @@ FrontlineCommander:
     If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
-    Can not have |On Play| action be activated by another card. 
     Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
     
     Increases for each upgrade. 
