@@ -697,7 +697,7 @@ ultra frontline + upgraded summon would be nice if selection showed upgraded sta
 gain buff tickdown feels meh? dont rly need it
   - rework into an ability instead of skill, also add the effect from assign cost trigger for adding more task level per card play
   - rework some other way, assign cost trigger is fine
-find something else for assign cost trigger then
+find something else for assign cost trigger then - DONE
   - this might be fine tbh, just increase the task level gain now that overall task level gain is more balanced
 assign separation needs an upgrade
   - create 2 buffs with half starting task level?
