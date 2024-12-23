@@ -3,6 +3,7 @@ using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
@@ -46,29 +47,40 @@ namespace LBoLMod.Cards
         protected override bool ShouldConsumeAll => true;
         protected override int OnPlayConsumedRemainingValue => 4;
         public override int AdditionalDamage => RemainingValue + base.UpgradeCounter.GetValueOrDefault();
-        public int VulnScaling => 10;
+        public int VulnScaling => 12;
         public override int AdditionalValue2 => RemainingValue / VulnScaling;
         public int TotalLoyaltyGain => BaseLoyaltyGain * ChargerCount;
         public int ChargerCount => base.Battle != null ? base.Battle.HandZone.Where(c => c is HaniwaCharger).Count() : 0;
         public int BaseLoyaltyGain => 2 + base.UpgradeCounter.GetValueOrDefault() / LoyaltyGainScaling;
         public int LoyaltyGainScaling => 5;
+        public int AutoChargeThreshold => 15;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.HandleBattleEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
+            base.ReactBattleEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
         }
 
-        private void OnPlayerTurnEnded(UnitEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
-                return;
+                yield break;
             if (base.Zone != CardZone.Hand)
-                return;
+                yield break;
             if (TotalLoyaltyGain <= 0)
-                return;
-            base.NotifyActivating();
+                yield break;
+
             RemainingValue += TotalLoyaltyGain;
             base.NotifyChanged();
+            if (RemainingValue >= AutoChargeThreshold)
+            {
+                base.NotifyActivating();
+                foreach (var action in GetActions(new UnitSelector(base.Battle.LowestHpEnemy), ManaGroup.Empty, null, new List<DamageAction>(), false))
+                {
+                    yield return action;
+                }
+                yield return ConsumeLoyalty();
+                yield return new DiscardAction(this);
+            }
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

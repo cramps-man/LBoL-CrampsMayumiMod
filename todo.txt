@@ -728,7 +728,8 @@ nerf haniwa upgrader block - DONE
 
 frontline copy copy loyalty and darkness mode, and anything else i missed - DONE
 new card concentration for loyalty, lowers loyalty consumption based on buff
-charger autoplay above 10 loyalty at turn end/start? and maybe increase from 10
+charger autoplay above 10 loyalty at turn end/start? and maybe increase from 10 - DONE
+  - perhaps 15/20 autoplay
 
 allow commander to be used for blitz actions? would be lame if blitz summon didnt work with it
   - can just make it not work with other commanders, cos that might be broken, well not rly just extra dmg + the mark reapplied
