@@ -687,7 +687,7 @@ update text of commander summon card to explicitly mention its available for sum
 look into darkness summon frontlines getting purple card bg via harmony patching probs
 
 PLAYTESTING NOTES
-frontline loyalty task level feels kinda meh, hard to get loyalty high enough to be worth fast
+frontline loyalty task level feels kinda meh, hard to get loyalty high enough to be worth fast - DONE
   - consume 5-10 loyalty, give blah task level per loyalty * something, probs better since itll be limited
   - some ability when loyalty is consumed, increase task level equal to that amount?
   - perhaps can collect based on card play somehow

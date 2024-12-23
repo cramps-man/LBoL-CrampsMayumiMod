@@ -553,8 +553,7 @@ AssignTriggerUpgrade:
 FrontlineLoyaltyTaskLevel:
   Name: Frontline Loyalty Task Level
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from the hand and consume all |Loyalty|. 
-    Choose |e:1| |Assign| buff and give |Task Level| for each |Loyalty| consumed. 
+    Whenever a |Frontline| card has |Loyalty| consumed, all |Assign| buffs gain |Task Level| equal to |Loyalty| consumed. 
 
 CavalrySupplies:
   Name: Cavalry Supplies
