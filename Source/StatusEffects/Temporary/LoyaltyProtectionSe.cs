@@ -31,6 +31,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.LoyaltyConsumption <= 0)
                 yield break;
 
+            base.NotifyActivating();
             int amountReduced = 0;
             if (Level > args.LoyaltyConsumption)
             {
