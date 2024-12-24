@@ -73,6 +73,7 @@ namespace LBoLMod.Cards
             base.NotifyChanged();
             if (RemainingValue >= AutoChargeThreshold)
             {
+                yield return PerformAction.Wait(0.2f);
                 base.NotifyActivating();
                 foreach (var action in GetActions(new UnitSelector(base.Battle.LowestHpEnemy), ManaGroup.Empty, null, new List<DamageAction>(), false))
                 {

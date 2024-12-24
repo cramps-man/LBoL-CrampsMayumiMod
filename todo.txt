@@ -747,3 +747,5 @@ assign buff source card points to battle card, if that gets upgraded, buff is up
   - should I make source card a duplicate card? that is referenced only by the buff?
   - should probs fix since if card is removed from combat, it may not exist anymore and error out?
 duplicate haniwa bug might be because of dying then start new run?
+
+add slight delay before charger autoplay - DONE
