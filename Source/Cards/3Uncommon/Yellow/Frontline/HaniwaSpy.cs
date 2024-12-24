@@ -111,7 +111,7 @@ namespace LBoLMod.Cards
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return new DescriptiveScryAction(TotalScry, "Haniwa Spy - Scry");
+            yield return new DescriptiveScryAction(TotalScry, "Haniwa Spy - Scry, Draw 1");
             yield return new DrawCardAction();
         }
     }
