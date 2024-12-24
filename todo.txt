@@ -695,7 +695,7 @@ frontline loyalty task level feels kinda meh, hard to get loyalty high enough to
   - fine ill make a consume loyalty battle action lmao
 ultra frontline + upgraded summon would be nice if selection showed upgraded stats - PROBS NOT POSSIBLE
   - dont think it's possible lmao
-gain buff tickdown feels meh? dont rly need it
+gain buff tickdown feels meh? dont rly need it - DONE
   - rework into an ability instead of skill, also add the effect from assign cost trigger for adding more task level per card play
   - rework some other way, assign cost trigger is fine
   - ability that forces starting counter to 3? or even just 1/2 lmao

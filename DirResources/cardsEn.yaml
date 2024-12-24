@@ -618,6 +618,7 @@ GainBuffTickdown:
   Name: Gain Buff Tickdown
   Description: |-
     For this turn when {PlayerName} gains a buff, decrease the card counter for all |Assign| buffs by {Value1}. 
+    At the start of next turn, gain |Temporary Firepower| for every {Value2} |Assign| buff{Value2:plural one='' other='s'} triggered. 
 
 ZeroCostReduction:
   Name: Zero Cost Reduction

@@ -198,9 +198,11 @@ AssignPlayDrawSe:
 GainBuffTickdownSe:
   Name: Gain Buff Tickdown
   Description: |-
-    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Level}. 
+    For this turn when {PlayerName} gains a buff, tickdown all |Assign| buffs by {Level}. 
+    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assign| buff{FirepowerScaling:plural one='' other='s'} triggered ({TotalFirepower}). 
   Brief: |-
-    For this turn when {PlayerName} gains a new buff, tickdown all |Assign| buffs by {Level}. 
+    For this turn when {PlayerName} gains a buff, tickdown all |Assign| buffs by {Level}. 
+    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assign| buff{FirepowerScaling:plural one='' other='s'} triggered. 
 
 ZeroCostReductionSe:
   Name: Zero Cost Reduction
