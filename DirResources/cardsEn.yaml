@@ -679,7 +679,6 @@ AssignCommander:
     |While in hand/draw/discard|: When an |Assign| buff triggers, automatically redistribute assigned |Haniwa| into new |Assign| buffs that fulfil the required |Assign| costs. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {LoyaltyGain} |Loyalty|. 
     |When played|: Duplicate an |Assign| buff and give it {Value2} extra |Task Level|. Does not consume |Loyalty|. 
   DetailText: |-
-    Can not have |On Play| action be activated by another card. 
     Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
     
     Increases for each upgrade. 
@@ -849,7 +848,7 @@ DarknessSummon:
 HaniwaAssassin:
   Name: Haniwa Assassin
   Description: |-
-    |While in hand|: Whenever {PlayerName} attacks an enemy, follow up with {FollowupDamage} damage. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: Whenever {PlayerName} deals damage to an enemy, follow up with {FollowupDamage} damage. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |While in draw/discard|: Right before {PlayerName}'s turn ends, add a |Throwing Knife| to the hand. Requires {PassiveConsumedFromDrawDiscard} |Loyalty|. 
     |When played|: If the target has less than or equal {Value2} life, instantly defeat it. Otherwise deal {Damage} damage. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
