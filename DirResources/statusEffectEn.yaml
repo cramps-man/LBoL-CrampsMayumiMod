@@ -348,3 +348,10 @@ FrontlineLoyaltyTaskLevelSe:
     Whenever a |Frontline| card has |Loyalty| consumed, all |Assign| buffs gain |Task Level| equal to |Loyalty| consumed. 
   Brief: |-
     Whenever a |Frontline| card has |Loyalty| consumed, all |Assign| buffs gain |Task Level| equal to |Loyalty| consumed. 
+
+LoyaltyProtectionSe:
+  Name: Loyalty Protection
+  Description: |-
+    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed up to {Level}. Gain |Block| equal to amount reduced. 
+  Brief: |-
+    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed. Gain |Block| equal to amount reduced. 

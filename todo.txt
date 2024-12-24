@@ -703,6 +703,7 @@ gain buff tickdown feels meh? dont rly need it
   - or keep it as a skill like now, starting at 3 is probs better than the current effect
   - or make all existing counters become 3?
   - or just remove this for now, not sure of a good effect atm
+  - maybe just give it a small buff and leave it mostly the same for now
 find something else for assign cost trigger then - DONE
   - this might be fine tbh, just increase the task level gain now that overall task level gain is more balanced
 assign separation needs an upgrade - DONE
@@ -732,7 +733,7 @@ blitz summon cost WW to WW(W1)? - DONE
 nerf haniwa upgrader block - DONE
 
 frontline copy copy loyalty and darkness mode, and anything else i missed - DONE
-new card concentration for loyalty, lowers loyalty consumption based on buff
+new card concentration for loyalty, lowers loyalty consumption based on buff - DONE
 charger autoplay above 10 loyalty at turn end/start? and maybe increase from 10 - DONE
   - perhaps 15/20 autoplay
 cavalry scout interaction title show number of scry and draw - DONE

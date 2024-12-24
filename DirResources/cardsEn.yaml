@@ -592,6 +592,11 @@ ZeroCostMove:
     Choose up to {Value1} {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles and move them to the hand. 
     Currently {ZeroCostCount} total in draw/discard piles. 
 
+LoyaltyProtection:
+  Name: Loyalty Protection
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Loyalty Protection|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
