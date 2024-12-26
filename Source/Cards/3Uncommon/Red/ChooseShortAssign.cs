@@ -52,6 +52,7 @@ namespace LBoLMod.Cards
             MiniSelectCardInteraction interaction = new MiniSelectCardInteraction(cards);
             yield return new InteractionAction(interaction);
             Card selectedCard = interaction.SelectedCard;
+            selectedCard.SetBattle(base.Battle);
             if (selectedCard is ModAssignCard assignCard)
             {
                 yield return new ApplyStatusEffectAction(assignCard.AssignStatusType, base.Battle.Player, level: assignCard.StartingTaskLevel + Value2, count: Value1)

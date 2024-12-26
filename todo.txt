@@ -749,3 +749,14 @@ assign buff source card points to battle card, if that gets upgraded, buff is up
 duplicate haniwa bug might be because of dying then start new run?
 
 add slight delay before charger autoplay - DONE
+
+haniwa charger add scaling to autoplay threshold +1
+stacking issue with choose short assign, buff triggered before stacking thus broke? - DONE
+  - forgor to set the battle in choose short assign
+ultra frontline perhaps needs to have haniwa cost, it's rly good now with the base upgrades, or horse archer is just broken, but which is why a haniwa cost will rein it in a bit
+also look into many assign buffs now not blowing at 0 counter, probs due to duplication and stuff
+sentinel not shooting damaging spellcards
+frontline commander + assign commander increase passive costs? frontline commander op with upgraders in hand
+  - loyalty for each frontline commanded, like 2 each
+frontline copies shouldnt gain back retain on upgrade
+  - remove the process keywords in base class upgrade method
