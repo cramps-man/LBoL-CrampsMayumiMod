@@ -1,3 +1,7 @@
+## 0.4.1
+
+Fix **Choose Short Assign** bugging out when stacking to an existing Assign buff
+
 ## 0.4.0
 
 ### Overview of changes

@@ -751,12 +751,38 @@ duplicate haniwa bug might be because of dying then start new run?
 add slight delay before charger autoplay - DONE
 
 haniwa charger add scaling to autoplay threshold +1
+haniwa charger also make autoplay on start of turn, cos vuln gets fucked lmao
 stacking issue with choose short assign, buff triggered before stacking thus broke? - DONE
   - forgor to set the battle in choose short assign
-ultra frontline perhaps needs to have haniwa cost, it's rly good now with the base upgrades, or horse archer is just broken, but which is why a haniwa cost will rein it in a bit
-also look into many assign buffs now not blowing at 0 counter, probs due to duplication and stuff
+look into many assign buffs now not blowing at 0 counter, probs due to duplication and stuff
+  - gain buff tickdown look into activating buffs when they reach 0 via this buff
 sentinel not shooting damaging spellcards
 frontline commander + assign commander increase passive costs? frontline commander op with upgraders in hand
   - loyalty for each frontline commanded, like 2 each
+  - if upgraders get nerfed, then maybe can just increase passive cost?
 frontline copies shouldnt gain back retain on upgrade
   - remove the process keywords in base class upgrade method
+blitz summon perhaps could upgrade to 1W
+  - or perhaps upgrade can summon 2, keep extra loyalty at 2/4, it's a bit similar to upgraded summon if i update that to give more upgrades
+  - that way this can become a more quick usage of frontlines
+  - might combo way too hard with ashes to clay but we shall see
+hybrid draw is probs too good at 4 max draw on upgrade
+  - upgrade can perhaps make debut refund mana
+summon haniwa should only allow summoning common rarity
+potentially add new starter assign card that lets you choose 1 of the 3 common assigns? maybe too good? but can cost RR
+  - if i do this, i can make the assign fast trigger and assign extra time cost 1R at base
+assign fast trigger make upgrade also double amount of task level conversion
+loyalty protection look into bodyguard interaction with the block visual showing but not blocking
+  - either show later or actually block
+  - or just change the block gain to end of the turn
+  - numbers might be too strong as well, cost W(1) values 6(10)
+assign commander onplay interaction description say it duplicates assign buff
+darkness summon description doesnt mention it sacrifices
+defence summon and upgraded summon dont spawn 2 on upgrade, update mana WW(1W) and upgrade the block/upgrade amount
+haniwa upgrader too stronk, nerf upgrade at base, dont upgrade block either
+  - upgrades increase upgrade targets + number of times it upgrades
+weakening shot dont upgrade values on upgrade, only the mana
+ultra frontline perhaps change from x-cost to flat cost, and flat amount of upgrades on the unit?
+  - thatll be basically a buffed upgraded summon though, so perhaps this card is just too hard to balance really as is
+  - need to rework again to better balance it but also not feel shit to use
+  - rework into ability that doubles amount a unit gets upgraded?
