@@ -159,7 +159,7 @@ namespace LBoLMod.Utils
                 var precondition = card.Precondition();
                 if (precondition != null)
                 {
-                    precondition.Description = card.Name;
+                    precondition.Description = card.ExtraDescription1.RuntimeFormat(card.FormatWrapper);
                     yield return new InteractionAction(precondition, true);
                 }
                 foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, new List<DamageAction>(), false))

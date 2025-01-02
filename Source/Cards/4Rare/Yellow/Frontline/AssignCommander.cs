@@ -126,7 +126,9 @@ namespace LBoLMod.Cards
 
         public override Interaction Precondition()
         {
-            return new SelectCardInteraction(1, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
+            var interaction = new SelectCardInteraction(1, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
+            interaction.Description = ExtraDescription1.RuntimeFormat(FormatWrapper);
+            return interaction;
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

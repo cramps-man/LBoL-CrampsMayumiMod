@@ -75,13 +75,17 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             IEnumerable<Card> cards = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive);
-            return new SelectCardInteraction(0, Value2, cards);
+            var interaction = new SelectCardInteraction(0, Value2, cards);
+            interaction.Description = ExtraDescription1.RuntimeFormat(FormatWrapper);
+            return interaction;
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
             if (!(precondition is SelectCardInteraction selectInteraction))
+                yield break;
+            if (selectInteraction.SelectedCards == null)
                 yield break;
             if (!selectInteraction.SelectedCards.Any())
                 yield break;

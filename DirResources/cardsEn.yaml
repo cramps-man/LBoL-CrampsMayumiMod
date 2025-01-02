@@ -334,6 +334,8 @@ HaniwaUpgrader:
     Increases for each upgrade. 
     Random upgraded cards: +1 per {NumCardsScaling} upgrades
     On Play times to upgrade: +1 per {OnPlayTimesToUpgradeScaling} upgrades
+  ExtraDescription1: |-
+    {SelfName} - Choose {Value2} card{Value2:plural one='' other='s'}, upgrade {OnPlayTimesToUpgrade} time{OnPlayTimesToUpgrade:plural one='' other='s'}
 
 HaniwaExploiter:
   Name: Haniwa Exploiter
@@ -685,6 +687,8 @@ AssignCommander:
     
     Increases for each upgrade. 
     OnPlay task level: +1 per upgrade
+  ExtraDescription1: |-
+    {SelfName} - Duplicate an Assign buff
 
 OptionAssignCommander:
   Name: Summon Assign Commander

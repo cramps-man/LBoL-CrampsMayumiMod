@@ -762,7 +762,8 @@ sentinel not shooting damaging spellcards - DONE
 frontline commander + assign commander increase passive costs? frontline commander op with upgraders in hand
   - loyalty for each frontline commanded, like 2 each
   - if upgraders get nerfed, then maybe can just increase passive cost?
-assign commander onplay interaction description say it duplicates assign buff
+assign commander onplay interaction description say it duplicates assign buff - DONE
+blitz action preconditions only show name, make them show full descriptions - DONE
 haniwa attacker lower dmg, passive 6->5, onplay 10->8
 haniwa exploiter onplay 12->9/10?
 overall increase starting loyalty so some frontlines dont auto exile if used
