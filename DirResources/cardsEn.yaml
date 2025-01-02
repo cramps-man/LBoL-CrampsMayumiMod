@@ -327,12 +327,13 @@ HaniwaUpgrader:
   Name: Haniwa Upgrader
   Description: |-
     |While in hand|: At end of turn, upgrade {NumCardsToUpgrade} random card{NumCardsToUpgrade:plural one='' other='s'} in the hand. Prioritises other cards. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
-    |When played|: Gain {Block} |Block| then upgrade all cards in the hand. Gain {Value2} additional |Block| for each upgraded card in the hand ({NumUpgradedCardsBlock}). Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
+    |When played|: Gain {Block} |Block| then choose up to {Value2} card{Value2:plural one='' other='s'} in the hand to upgrade {OnPlayTimesToUpgrade} time{OnPlayTimesToUpgrade:plural one='' other='s'}. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Is |Fencer| type. 
 
     Increases for each upgrade. 
-    Block: +1
+    Random upgraded cards: +1 per {NumCardsScaling} upgrades
+    On Play times to upgrade: +1 per {OnPlayTimesToUpgradeScaling} upgrades
 
 HaniwaExploiter:
   Name: Haniwa Exploiter

@@ -755,8 +755,9 @@ stacking issue with choose short assign, buff triggered before stacking thus bro
 
 haniwa charger add scaling to autoplay threshold +1 - DONE
   - also make autoplay on start of turn, cos vuln gets fucked lmao
-haniwa upgrader too stronk, nerf upgrade at base, dont upgrade block either
-  - upgrades increase upgrade targets + number of times it upgrades
+haniwa upgrader too stronk, nerf upgrade at base, dont upgrade block either - DONE
+  - passive upgrades increase number of targets
+  - onplay only chooses 1-2 cards to upgrade, upgrades increase number of times it upgrades
 sentinel not shooting damaging spellcards
 frontline commander + assign commander increase passive costs? frontline commander op with upgraders in hand
   - loyalty for each frontline commanded, like 2 each

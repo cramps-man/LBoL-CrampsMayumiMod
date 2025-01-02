@@ -4,6 +4,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -25,11 +26,11 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
             cardConfig.Rarity = Rarity.Uncommon;
-            cardConfig.Type = CardType.Defense;
+            cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Block = 10;
-            cardConfig.Value1 = 4;
-            cardConfig.Value2 = 1;
+            cardConfig.Block = 5;
+            cardConfig.Value1 = 5;
+            cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -43,19 +44,11 @@ namespace LBoLMod.Cards
     {
         public override bool IsFencerType => true;
         protected override int PassiveConsumedRemainingValue => 2;
-        protected override int OnPlayConsumedRemainingValue => 5;
-        public int NumCardsToUpgrade => 2;
-        public int NumUpgradedCards
-        {
-            get
-            {
-                if (base.Battle == null)
-                    return 0;
-                return base.Battle.HandZoneAndPlayArea.Where(c => c.IsUpgraded).Count();
-            }
-        }
-        public int NumUpgradedCardsBlock => NumUpgradedCards * Value2;
-        public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault() + NumUpgradedCardsBlock;
+        protected override int OnPlayConsumedRemainingValue => 4;
+        public int NumCardsScaling => 3;
+        public int NumCardsToUpgrade => 2 + base.UpgradeCounter.GetValueOrDefault() / NumCardsScaling;
+        public int OnPlayTimesToUpgradeScaling => 8;
+        public int OnPlayTimesToUpgrade => 1 + base.UpgradeCounter.GetValueOrDefault() / OnPlayTimesToUpgradeScaling;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -79,10 +72,22 @@ namespace LBoLMod.Cards
             yield return new UpgradeCardsAction(toUpgrade);
         }
 
+        public override Interaction Precondition()
+        {
+            IEnumerable<Card> cards = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive);
+            return new SelectCardInteraction(0, Value2, cards);
+        }
+
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
-            yield return UpgradeAllHandsAction();
+            if (!(precondition is SelectCardInteraction selectInteraction))
+                yield break;
+            if (!selectInteraction.SelectedCards.Any())
+                yield break;
+            for (int i = 0; i < OnPlayTimesToUpgrade; i++)
+                if (selectInteraction.SelectedCards.Any(c => c.CanUpgradeAndPositive))
+                    yield return new UpgradeCardsAction(selectInteraction.SelectedCards.Where(c => c.CanUpgradeAndPositive));
         }
     }
 }
