@@ -46,7 +46,7 @@ namespace LBoLMod.Cards
     {
         public override bool IsArcherType => true;
         protected override int PassiveConsumedRemainingValue => 4;
-        protected override int OnPlayConsumedRemainingValue => 9;
+        protected override int OnPlayConsumedRemainingValue => 7;
         public int WeakDurationScaling => 7;
         public int WeakDuration => 1 + base.UpgradeCounter.GetValueOrDefault() / WeakDurationScaling;
         public int IllnessBuffLevelScaling => 9;
@@ -65,7 +65,7 @@ namespace LBoLMod.Cards
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
-            var attackingEnemies = base.Battle.AllAliveEnemies.Where(e => e.Intentions.Any(i => i is AttackIntention));
+            var attackingEnemies = base.Battle.AllAliveEnemies.Where(e => e.Intentions.Any(i => i is AttackIntention || (i is SpellCardIntention sci && sci.Damage.HasValue)));
             if (!attackingEnemies.Any())
                 yield break;
 
