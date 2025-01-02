@@ -53,14 +53,14 @@ namespace LBoLMod.Cards
         public int ChargerCount => base.Battle != null ? base.Battle.HandZone.Where(c => c is HaniwaCharger).Count() : 0;
         public int BaseLoyaltyGain => 2 + base.UpgradeCounter.GetValueOrDefault() / LoyaltyGainScaling;
         public int LoyaltyGainScaling => 5;
-        public int AutoChargeThreshold => 15;
+        public int AutoChargeThreshold => 15 + base.UpgradeCounter.GetValueOrDefault();
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.ReactBattleEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
+            base.ReactBattleEvent(base.Battle.Player.TurnStarting, this.OnPlayerTurnStarting);
         }
 
-        private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerTurnStarting(UnitEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
