@@ -30,8 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 25;
-            cardConfig.Value1 = 5;
-            cardConfig.Value2 = 2;
+            cardConfig.Value1 = 10;
+            cardConfig.Value2 = 3;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
@@ -43,7 +43,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrontlineCommanderDef))]
     public sealed class FrontlineCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 5;
+        protected override int PassiveConsumedRemainingValue => 10;
         protected override int OnPlayConsumedRemainingValue => 0;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
         protected override void OnEnterBattle(BattleController battle)

@@ -41,6 +41,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
         protected override int PassiveConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 2;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 3;
         private bool accuracyModified = false;

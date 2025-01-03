@@ -24,7 +24,7 @@ namespace LBoLMod.Cards
             cardConfig.IsPooled = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 4;
+            cardConfig.Value1 = 5;
             cardConfig.Value2 = 1;
             cardConfig.Mana = new ManaGroup() { White = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;

@@ -32,8 +32,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 25;
-            cardConfig.Value1 = 5;
+            cardConfig.Value1 = 10;
             cardConfig.Value2 = 15;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
@@ -46,10 +45,10 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AssignCommanderDef))]
     public sealed class AssignCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 5;
+        protected override int PassiveConsumedRemainingValue => 10;
         protected override int OnPlayConsumedRemainingValue => 0;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
-        public int LoyaltyGain => 2;
+        public int LoyaltyGain => 3;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

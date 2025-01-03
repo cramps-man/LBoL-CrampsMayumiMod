@@ -764,9 +764,9 @@ frontline commander + assign commander increase passive costs? frontline command
   - if upgraders get nerfed, then maybe can just increase passive cost?
 assign commander onplay interaction description say it duplicates assign buff - DONE
 blitz action preconditions only show name, make them show full descriptions - DONE
-haniwa attacker lower dmg, passive 6->5, onplay 10->8
-haniwa exploiter onplay 12->9/10?
-overall increase starting loyalty so some frontlines dont auto exile if used
+haniwa attacker lower dmg, passive 6->5, onplay 10->8 - DONE
+haniwa exploiter onplay 12->9/10? - DONE
+overall increase starting loyalty so some frontlines dont auto exile if used - DONE
   - like support, upgrader, sentinel maybe
 
 summon haniwa should only allow summoning common rarity
@@ -801,3 +801,9 @@ loyalty protection look into bodyguard interaction with the block visual showing
   - or just change the block gain to end of the turn
   - numbers might be too strong as well, cost W(1) values 6(10)
 weakening shot dont upgrade values on upgrade, only the mana
+charge attack make single hit, task level = dmg
+  - also reduce scaling from assign triggers 12(15)
+all preconditions add better descriptions to the interaction titles
+
+proper names
+status icons

@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 4;
+            cardConfig.Value1 = 5;
             cardConfig.Scry = 3;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
