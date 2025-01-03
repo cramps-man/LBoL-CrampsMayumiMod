@@ -73,7 +73,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
                 nameof(BasicBlockW),
-                nameof(ArcherPrepVolley),
+                nameof(BasicAssignment),
                 nameof(AssignHaniwaCreate)
             };
         }

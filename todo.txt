@@ -796,7 +796,7 @@ look into many assign buffs now not blowing at 0 counter, probs due to duplicati
   - gain buff tickdown look into activating buffs when they reach 0 via this buff
 hybrid draw is probs too good at 4 max draw on upgrade
   - upgrade can perhaps make debut refund mana
-potentially add new starter assign card that lets you choose 1 of the 3 common assigns? maybe too good? but can cost RR
+potentially add new starter assign card that lets you choose 1 of the 3 common assigns? maybe too good? but can cost RR - DONE
   - if i do this, i can make the assign fast trigger and assign extra time cost 1R at base
   - also gain echo on upgrade, and mana to R
 assign fast trigger make upgrade also double amount of task level conversion

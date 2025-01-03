@@ -242,6 +242,11 @@ FastSummon:
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
     If there are no |Haniwa|, none will show up. 
 
+BasicAssignment:
+  Name: Basic Assignment
+  Description: |-
+    Choose |e:1| Common |Assign| card to add to the hand. 
+
 #UNCOMMONS
 CreateArcher:
   Name: Create Archer
