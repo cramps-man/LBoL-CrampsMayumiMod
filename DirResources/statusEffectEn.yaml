@@ -357,3 +357,10 @@ LoyaltyProtectionSe:
     Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed up to {Level}. Gain |Block| equal to amount reduced. 
   Brief: |-
     Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed. Gain |Block| equal to amount reduced. 
+
+EnhancedTrainingSe:
+  Name: Enhanced Training
+  Description: |-
+    Whenever a |Frontline| card is upgraded, it gains {Level} additional upgrade{Level:plural one='' other='s'}. 
+  Brief: |-
+    Whenever a |Frontline| card is upgraded, it gains additional upgrades. 

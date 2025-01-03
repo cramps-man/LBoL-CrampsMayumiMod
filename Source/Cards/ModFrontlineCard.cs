@@ -7,6 +7,7 @@ using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
 using LBoLMod.BattleActions;
 using LBoLMod.GameEvents;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
@@ -158,9 +159,9 @@ namespace LBoLMod.Cards
         private const int UPGRADE_AMOUNT = 1;
         public override void Upgrade()
         {
-            int? upgradeCounter = base.UpgradeCounter + UPGRADE_AMOUNT;
-            base.UpgradeCounter = upgradeCounter;
-            RemainingValue += UPGRADE_AMOUNT;
+            int totalUpgradeAmount = base.Battle.Player.TryGetStatusEffect<EnhancedTrainingSe>(out EnhancedTrainingSe se) ? UPGRADE_AMOUNT + se.Level : UPGRADE_AMOUNT;
+            base.UpgradeCounter += totalUpgradeAmount;
+            RemainingValue += totalUpgradeAmount;
             ProcessKeywordUpgrade();
             CostChangeInUpgrading();
             NotifyChanged();

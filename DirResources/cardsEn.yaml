@@ -654,10 +654,11 @@ MassSummon:
     |Sacrifice| all |Haniwa|. Add random |Frontline| cards to the draw pile. 
     The cards spawned are based on the types of |Haniwa| sacrificed and their summon costs. 
 
-UltraFrontline:
-  Name: Ultra Frontline
+EnhancedTraining:
+  Name: Enhanced Training
   Description: |-
-    Choose |e:1| |Frontline| card to add to the hand. It starts with {Value2} upgrades. For each mana spent, it gains {Value1} additional upgrade{Value1:plural one='' other='s'}. 
+    Whenever a |Frontline| card is upgraded, it gains {Value2} additional upgrade{Value2:plural one='' other='s'}. 
+    Choose |e:1| |Frontline| card and upgrade it {Value1} time{Value1:plural one='' other='s'}. 
 
 FrontlineCommander:
   Name: Frontline Commander
