@@ -210,6 +210,9 @@ AssignFastTrigger:
   Description: |-
     Deal {Damage} damage.
     Choose 1 |Assign| buff and immediately trigger its effect. Convert remaining buff counter into |Task Level| before triggering. 
+  UpgradedDescription: |-
+    Deal {Damage} damage.
+    Choose 1 |Assign| buff and immediately trigger its effect. Convert double the remaining buff counter into |Task Level| before triggering. 
 
 FrontlineUpgrade:
   Name: Frontline Upgrade
