@@ -354,9 +354,9 @@ FrontlineLoyaltyTaskLevelSe:
 LoyaltyProtectionSe:
   Name: Loyalty Protection
   Description: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed up to {Level}. Gain |Block| equal to amount reduced. 
+    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed up to {Level}. At end of turn, gain |Block| equal to amount reduced ({Count}). 
   Brief: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed. Gain |Block| equal to amount reduced. 
+    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed. At end of turn, gain |Block| equal to amount reduced. 
 
 EnhancedTrainingSe:
   Name: Enhanced Training

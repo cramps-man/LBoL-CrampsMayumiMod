@@ -1,4 +1,6 @@
-﻿using LBoL.Core.Battle;
+﻿using LBoL.ConfigData;
+using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
@@ -16,6 +18,13 @@ namespace LBoLMod.StatusEffects.Abilities
         {
             return nameof(LoyaltyProtectionSe);
         }
+        
+        public override StatusEffectConfig MakeConfig()
+        {
+            var config = base.MakeConfig();
+            config.HasCount = true;
+            return config;
+        }
     }
 
     [EntityLogic(typeof(LoyaltyProtectionSeDef))]
@@ -23,13 +32,22 @@ namespace LBoLMod.StatusEffects.Abilities
     {
         protected override void OnAdded(Unit unit)
         {
-            base.ReactOwnerEvent(ModGameEvents.ConsumingLoyalty, this.OnConsumingLoyalty);
+            base.HandleOwnerEvent(ModGameEvents.ConsumingLoyalty, this.OnConsumingLoyalty);
+            base.ReactOwnerEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnded);
         }
 
-        private IEnumerable<BattleAction> OnConsumingLoyalty(ConsumeLoyaltyEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerTurnEnded(UnitEventArgs args)
+        {
+            yield return new CastBlockShieldAction(base.Owner, Count, 0);
+            if (Level <= 0)
+                yield return new RemoveStatusEffectAction(this);
+            Count = 0;
+        }
+
+        private void OnConsumingLoyalty(ConsumeLoyaltyEventArgs args)
         {
             if (args.LoyaltyConsumption <= 0)
-                yield break;
+                return;
 
             base.NotifyActivating();
             int amountReduced = 0;
@@ -46,9 +64,7 @@ namespace LBoLMod.StatusEffects.Abilities
                 Level = 0;
             }
 
-            yield return new CastBlockShieldAction(base.Owner, amountReduced, 0);
-            if (Level <= 0)
-                yield return new RemoveStatusEffectAction(this);
+            Count += amountReduced;
         }
     }
 }

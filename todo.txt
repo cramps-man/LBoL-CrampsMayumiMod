@@ -800,7 +800,7 @@ potentially add new starter assign card that lets you choose 1 of the 3 common a
   - if i do this, i can make the assign fast trigger and assign extra time cost 1R at base
   - also gain echo on upgrade, and mana to R
 assign fast trigger make upgrade also double amount of task level conversion - DONE
-loyalty protection look into bodyguard interaction with the block visual showing but not blocking
+loyalty protection look into bodyguard interaction with the block visual showing but not blocking - DONE
   - either show later or actually block
   - or just change the block gain to end of the turn
   - numbers might be too strong as well, cost W(1) values 6(10)
