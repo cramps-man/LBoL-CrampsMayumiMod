@@ -181,9 +181,8 @@ ClayToAshesSe:
 AssignChargeAttack:
   Name: Charge Attack
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {CardDamage} damage {TotalHits} time{TotalHits:plural one='' other='s'} to the enemy with the highest life. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the enemy with the highest life. 
     Whenever an |Assign| buff is triggered, increase |Task Level| by {CardValue1}. 
-    Deal an extra hit per {CardValue1} |Task Level|. 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage to the enemy with the highest life. 

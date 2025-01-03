@@ -22,9 +22,9 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 15;
-            cardConfig.UpgradedDamage = 20;
-            cardConfig.Value1 = 15;
+            cardConfig.Damage = 1;
+            cardConfig.Value1 = 12;
+            cardConfig.UpgradedValue1 = 15;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
