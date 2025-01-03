@@ -574,7 +574,7 @@ AutoCreateReserves:
 FrontlineCopy:
   Name: Frontline Copy
   Description: |-
-    Choose {Value2} Common or Uncommon |Frontline| card{Value2:plural one='' other='s'} in the hand and add 1 copy to the draw pile. Copied cards lose |Retain|. 
+    Choose {Value2} Common or Uncommon |Frontline| card{Value2:plural one='' other='s'} in the hand and add 1 copy to the draw pile. Copied cards gain |Exile|. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 BlitzSummon:

@@ -30,8 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.Value2 = 2;
             cardConfig.UpgradedValue2 = 3;
-            cardConfig.RelativeKeyword = Keyword.Retain;
-            cardConfig.UpgradedRelativeKeyword = Keyword.Retain;
+            cardConfig.RelativeKeyword = Keyword.Exile;
+            cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -55,7 +55,7 @@ namespace LBoLMod.Cards
             foreach (ModFrontlineCard card in copyInteraction.SelectedCards)
             {
                 var cardClone = (ModFrontlineCard)card.CloneBattleCard();
-                cardClone.IsRetain = false;
+                cardClone.IsExile = true;
                 cardClone.RemainingValue = card.RemainingValue;
                 cardClone.IsDarknessMode = card.IsDarknessMode;
                 if (card is FrozenHaniwa frozenCard)

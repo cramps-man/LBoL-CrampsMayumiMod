@@ -771,10 +771,10 @@ overall increase starting loyalty so some frontlines dont auto exile if used - D
 
 summon haniwa should only allow summoning common rarity - DONE
   - perhaps update other summon cards to include 2 uncommons
-frontline copies shouldnt gain back retain on upgrade
+frontline copies shouldnt gain back retain on upgrade - DONE
   - remove the process keywords in base class upgrade method
   - make them gain exile instead
-frontline copy is also too stronk making that many copies
+  - frontline copy is also too stronk making that many copies
   - if it does it needs a bigger drawback, like exiling no matter the loyalty
   - or create less copies, but probs the exile if it's copy is better
 blitz summon perhaps could upgrade to 1W
@@ -796,6 +796,7 @@ hybrid draw is probs too good at 4 max draw on upgrade
   - upgrade can perhaps make debut refund mana
 potentially add new starter assign card that lets you choose 1 of the 3 common assigns? maybe too good? but can cost RR
   - if i do this, i can make the assign fast trigger and assign extra time cost 1R at base
+  - also gain echo on upgrade, and mana to R
 assign fast trigger make upgrade also double amount of task level conversion
 loyalty protection look into bodyguard interaction with the block visual showing but not blocking
   - either show later or actually block
