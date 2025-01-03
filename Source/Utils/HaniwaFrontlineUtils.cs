@@ -73,7 +73,7 @@ namespace LBoLMod.Utils
             return toReturn;
         }
 
-        public static List<Card> GetAllOptionCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
+        public static List<ModFrontlineOptionCard> GetAllOptionCards(BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
             bool hasGreen = battle.GameRun.BaseMana.HasColor(ManaColor.Green);
             bool hasPurple = battle.GameRun.BaseMana.HasColor(ManaColor.Black);
@@ -92,9 +92,9 @@ namespace LBoLMod.Utils
             return GetOptionCards(toReturn, battle, numberToSpawn, checkSacrificeRequirement);
         }
 
-        private static List<Card> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
+        public static List<ModFrontlineOptionCard> GetOptionCards(List<Type> types, BattleController battle, int numberToSpawn = 1, bool checkSacrificeRequirement = false)
         {
-            List<Card> cards = new List<Card>();
+            List<ModFrontlineOptionCard> cards = new List<ModFrontlineOptionCard>();
             foreach (var type in types)
             {
                 var c = Library.CreateCard(type) as ModFrontlineOptionCard;

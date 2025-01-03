@@ -12,11 +12,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class SummonHaniwaDef : ModCardTemplate
+    public sealed class BasicSummonDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(SummonHaniwa);
+            return nameof(BasicSummon);
         }
 
         public override CardConfig MakeConfig()
@@ -35,12 +35,12 @@ namespace LBoLMod.Cards
         }
     }
 
-    [EntityLogic(typeof(SummonHaniwaDef))]
-    public sealed class SummonHaniwa : Card
+    [EntityLogic(typeof(BasicSummonDef))]
+    public sealed class BasicSummon : Card
     {
         public override Interaction Precondition()
         {
-            List<Card> cards = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle, checkSacrificeRequirement: true);
+            List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetOptionCards(HaniwaFrontlineUtils.CommonOptionTypes, base.Battle, checkSacrificeRequirement: true);
             return new SelectCardInteraction(1, Value1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

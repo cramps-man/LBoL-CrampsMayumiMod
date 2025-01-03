@@ -12,7 +12,6 @@ using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -35,8 +34,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa) };
-            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaSharpshooter), nameof(HaniwaSupport) };
+            cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
             return cardConfig;
         }
     }
@@ -66,7 +65,7 @@ namespace LBoLMod.Cards
             bool continueRandomizing = true;
             while (continueRandomizing)
             {
-                var allOptions = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle).Cast<ModFrontlineOptionCard>().ToList();
+                var allOptions = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle);
                 while (true)
                 {
                     var randomSelection = allOptions.SampleOrDefault(base.BattleRng);

@@ -89,7 +89,7 @@ namespace LBoLMod.PlayerUnits
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
                 nameof(BasicBlockR),
-                nameof(SummonHaniwa),
+                nameof(BasicSummon),
                 nameof(FrontlineHaniwaCreate)
             };
         }
