@@ -29,9 +29,10 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 4;
-            cardConfig.UpgradedValue2 = 14;
+            cardConfig.Value2 = 0;
+            cardConfig.UpgradedValue2 = 10;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };

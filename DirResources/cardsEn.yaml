@@ -580,6 +580,10 @@ FrontlineCopy:
 BlitzSummon:
   Name: Blitz Summon
   Description: |-
+    Choose {Value1} |Frontline| card to add to the hand. 
+    |Sacrifice Haniwa| depending on the chosen card. 
+    Execute the new card's |On Play| action and consume its |Loyalty|. 
+  UpgradedDescription: |-
     Choose {Value1} |Frontline| card to add to the hand. It starts with {Value2} extra |Loyalty|. 
     |Sacrifice Haniwa| depending on the chosen card. 
     Execute the new card's |On Play| action and consume its |Loyalty|. 

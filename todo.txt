@@ -777,10 +777,11 @@ frontline copies shouldnt gain back retain on upgrade - DONE
   - frontline copy is also too stronk making that many copies
   - if it does it needs a bigger drawback, like exiling no matter the loyalty
   - or create less copies, but probs the exile if it's copy is better
-blitz summon perhaps could upgrade to 1W
+blitz summon perhaps could upgrade to 1W - DONE
   - or perhaps upgrade can summon 2, keep extra loyalty at 2/4, it's a bit similar to upgraded summon if i update that to give more upgrades
   - that way this can become a more quick usage of frontlines
   - might combo way too hard with ashes to clay but we shall see
+  - keep it at 1 summon, just upgrade cost
 darkness summon description doesnt mention it sacrifices
 defence summon and upgraded summon dont spawn 2 on upgrade, update mana WW(1W) and upgrade the block/upgrade amount - SKIP
   - we can probs skip this since we're making frontlines overall a bit weaker
