@@ -782,7 +782,8 @@ blitz summon perhaps could upgrade to 1W - DONE
   - that way this can become a more quick usage of frontlines
   - might combo way too hard with ashes to clay but we shall see
   - keep it at 1 summon, just upgrade cost
-darkness summon description doesnt mention it sacrifices
+darkness summon description doesnt mention it sacrifices - DONE
+  - also increase cost a bit
 defence summon and upgraded summon dont spawn 2 on upgrade, update mana WW(1W) and upgrade the block/upgrade amount - SKIP
   - we can probs skip this since we're making frontlines overall a bit weaker
 ultra frontline perhaps change from x-cost to flat cost, and flat amount of upgrades on the unit?

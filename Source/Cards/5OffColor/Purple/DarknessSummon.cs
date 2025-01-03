@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Black };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.Cost = new ManaGroup() { Black = 1, Any = 1 };
+            cardConfig.Cost = new ManaGroup() { Black = 1, Any = 2 };
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };

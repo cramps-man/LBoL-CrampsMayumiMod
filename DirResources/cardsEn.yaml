@@ -851,7 +851,7 @@ ChainOfCommand:
 DarknessSummon:
   Name: Darkness Summon
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. |Sacrifice Haniwa| depending on the chosen card. 
     The cards have infinite |Loyalty| and don't leave the hand when played, but consume <sprite="Point" name="Power"> equal to the amount of passive |Loyalty| consumed, or |e:10| when via |On Play|. If {PlayerName} runs out of <sprite="Point" name="Power">, the cards are removed from combat. 
     For |Frontlines| that use |Loyalty| for calculations, they count as having |e:10| |Loyalty|. 
 
