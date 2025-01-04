@@ -84,6 +84,8 @@ namespace LBoLMod.Cards
                 yield break;
             if (args.ActionSource == this)
                 yield break;
+            if (args.Target.IsDead)
+                yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
 

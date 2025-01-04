@@ -813,13 +813,13 @@ update frontline spellcard to be 50 cost with lower values
   - 3 of each haniwa + 20 dmg
   - also let it choose between gaining haniwa or commanding 2-3 frontlines without loyalty cost
 make haniwa exploiter activate after haniwa sentinel
-haniwa horse archer make it not consume if target is dead
+haniwa horse archer make it not consume if target is dead - DONE
   - same with assassin i think
 choose short assign give better upgrade? let it upgrade the assign card?
 haniwa attacker passive perhaps 1 dmg per 2 upgrades? - maybe its okay
 cavalry rush mana scaling make harder? to 20? - will test more with assign builds
 upgrader active upgrade 2 times at base? - DONE
-double check loyalty protection gaining 0 block
+double check loyalty protection gaining 0 block - IS OK, NOTHING HAPPENS
 basic assignment make upgrade autoplay start of combat - DONE
   - and lower base cost to R
 

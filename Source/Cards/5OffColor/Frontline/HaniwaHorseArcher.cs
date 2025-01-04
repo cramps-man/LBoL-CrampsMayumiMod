@@ -60,6 +60,8 @@ namespace LBoLMod.Cards
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
+            if (args.Source.IsDead)
+                yield break;
             int consumingPassive = 0;
             if (base.Zone == CardZone.Hand)
                 consumingPassive = PassiveConsumedRemainingValue;
