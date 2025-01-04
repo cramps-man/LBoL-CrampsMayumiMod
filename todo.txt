@@ -819,6 +819,9 @@ choose short assign give better upgrade? let it upgrade the assign card?
 haniwa attacker passive perhaps 1 dmg per 2 upgrades? - maybe its okay
 cavalry rush mana scaling make harder? to 20? - will test more with assign builds
 upgrader active upgrade 2 times at base? - DONE
+double check loyalty protection gaining 0 block
+basic assignment make upgrade autoplay start of combat - DONE
+  - and lower base cost to R
 
 all preconditions add better descriptions to the interaction titles
 proper names

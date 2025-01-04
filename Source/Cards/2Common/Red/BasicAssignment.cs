@@ -24,8 +24,8 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
+            cardConfig.Cost = new ManaGroup() { Red = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
@@ -39,6 +39,16 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(BasicAssignmentDef))]
     public sealed class BasicAssignment : Card
     {
+        protected override void OnEnterBattle(BattleController battle)
+        {
+            base.ReactBattleEvent(base.Battle.BattleStarted, this.OnBattleStarted);
+        }
+
+        private IEnumerable<BattleAction> OnBattleStarted(GameEventArgs args)
+        {
+            if (IsUpgraded)
+                yield return new PlayCardAction(this);
+        }
         public override Interaction Precondition()
         {
             var list = new List<Card>() { Library.CreateCard<ArcherPrepVolley>(), Library.CreateCard<FencerBuildBarricade>(), Library.CreateCard<CavalryScout>() };

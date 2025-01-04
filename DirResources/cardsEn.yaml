@@ -249,6 +249,9 @@ BasicAssignment:
   Name: Basic Assignment
   Description: |-
     Choose |e:1| Common |Assign| card to add to the hand. 
+  UpgradedDescription: |-
+    Choose |e:1| Common |Assign| card to add to the hand. 
+    |At start of combat|: {SelfName} is automatically played. 
 
 #UNCOMMONS
 CreateArcher:
