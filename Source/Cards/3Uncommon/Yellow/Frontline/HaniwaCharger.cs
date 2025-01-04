@@ -58,6 +58,13 @@ namespace LBoLMod.Cards
         {
             base.OnEnterBattle(battle);
             base.ReactBattleEvent(base.Battle.Player.TurnStarting, this.OnPlayerTurnStarting);
+            base.HandleBattleEvent(base.Battle.Player.TurnEnded, this.OnPlayerTurnEnding);
+        }
+
+        private void OnPlayerTurnEnding(UnitEventArgs args)
+        {
+            RemainingValue += TotalLoyaltyGain;
+            base.NotifyChanged();
         }
 
         private IEnumerable<BattleAction> OnPlayerTurnStarting(UnitEventArgs args)
@@ -69,8 +76,6 @@ namespace LBoLMod.Cards
             if (TotalLoyaltyGain <= 0)
                 yield break;
 
-            RemainingValue += TotalLoyaltyGain;
-            base.NotifyChanged();
             if (RemainingValue >= AutoChargeThreshold)
             {
                 yield return PerformAction.Wait(0.2f);
