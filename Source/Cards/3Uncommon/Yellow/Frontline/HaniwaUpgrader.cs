@@ -48,7 +48,7 @@ namespace LBoLMod.Cards
         public int NumCardsScaling => 3;
         public int NumCardsToUpgrade => 2 + base.UpgradeCounter.GetValueOrDefault() / NumCardsScaling;
         public int OnPlayTimesToUpgradeScaling => 8;
-        public int OnPlayTimesToUpgrade => 1 + base.UpgradeCounter.GetValueOrDefault() / OnPlayTimesToUpgradeScaling;
+        public int OnPlayTimesToUpgrade => 2 + base.UpgradeCounter.GetValueOrDefault() / OnPlayTimesToUpgradeScaling;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

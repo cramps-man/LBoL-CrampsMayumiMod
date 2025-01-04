@@ -159,7 +159,9 @@ namespace LBoLMod.Cards
         private const int UPGRADE_AMOUNT = 1;
         public override void Upgrade()
         {
-            int totalUpgradeAmount = base.Battle.Player.TryGetStatusEffect<EnhancedTrainingSe>(out EnhancedTrainingSe se) ? UPGRADE_AMOUNT + se.Level : UPGRADE_AMOUNT;
+            int totalUpgradeAmount = UPGRADE_AMOUNT;
+            if (base.Battle != null && base.Battle.Player.TryGetStatusEffect<EnhancedTrainingSe>(out EnhancedTrainingSe se))
+                totalUpgradeAmount = UPGRADE_AMOUNT + se.Level;
             base.UpgradeCounter += totalUpgradeAmount;
             RemainingValue += totalUpgradeAmount;
             ProcessKeywordUpgrade();
