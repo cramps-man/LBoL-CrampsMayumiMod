@@ -759,7 +759,7 @@ haniwa upgrader too stronk, nerf upgrade at base, dont upgrade block either - DO
   - passive upgrades increase number of targets
   - onplay only chooses 1-2 cards to upgrade, upgrades increase number of times it upgrades
 sentinel not shooting damaging spellcards - DONE
-frontline commander + assign commander increase passive costs? frontline commander op with upgraders in hand
+frontline commander + assign commander increase passive costs? frontline commander op with upgraders in hand - DONE
   - loyalty for each frontline commanded, like 2 each
   - if upgraders get nerfed, then maybe can just increase passive cost?
 assign commander onplay interaction description say it duplicates assign buff - DONE
@@ -795,6 +795,8 @@ ultra frontline perhaps change from x-cost to flat cost, and flat amount of upgr
 look into many assign buffs now not blowing at 0 counter, probs due to duplication and stuff
   - gain buff tickdown look into activating buffs when they reach 0 via this buff
   - or just move the check into base assign class
+  - most likely caused by assign triggering then gaining haniwa buff, which is after card is played
+  - i should probs just rework the decrease to be per card play, or rework it entirely, which im unsure how to
 hybrid draw is probs too good at 4 max draw on upgrade - UNSURE
   - upgrade can perhaps make debut refund mana
 potentially add new starter assign card that lets you choose 1 of the 3 common assigns? maybe too good? but can cost RR - DONE
@@ -809,7 +811,7 @@ weakening shot dont upgrade values on upgrade, only the mana - UNSURE
   - or just increase the numbers at base, temp fp down 2->3, weak can stay at 1
 charge attack make single hit, task level = dmg - DONE
   - also reduce scaling from assign triggers 12(15)
-update frontline spellcard to be 50 cost with lower values
+update frontline spellcard to be 50 cost with lower values - UNSURE
   - 3 of each haniwa + 20 dmg
   - also let it choose between gaining haniwa or commanding 2-3 frontlines without loyalty cost
 make haniwa exploiter activate after haniwa sentinel - DONE
@@ -825,9 +827,13 @@ basic assignment make upgrade autoplay start of combat - DONE
   - and lower base cost to R
 cavalry rush 15->20 mana, cavalry scout 7->8 for draw - DONE
 3 new cards gaining a certain amount of haniwa gives effects
-  - fencer, 5 = dmg to random enemy
-  - archer, 5 = 1 debuff to random enemy
-  - cavalry, 10 = 1 graze
+  - fencer, 5 = dmg to random enemy, blue
+  - archer, 5 = 1 debuff to random enemy, purple
+  - cavalry, 10 = 1 graze, green
+  - perhaps just 1 new card? well itd be hard to keep track of all the numbers, unless i gain 3 separate buffs
+  - 3 buffs at once is op, so perhaps a choice between the 3?
+haniwa charger increase vuln threshold to 15? same as starting autoplay
+haniwa sentinel says 1 weak hardcoded woops - DONE
 
 all preconditions add better descriptions to the interaction titles
 proper names

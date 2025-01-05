@@ -389,7 +389,7 @@ HaniwaCharger:
 HaniwaSentinel:
   Name: Haniwa Sentinel
   Description: |-
-    |While in hand|: At end of turn, deal {Value2} damage and apply |e:1| |Weak| to all enemies that are attacking. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: At end of turn, deal {Value2} damage and apply {WeakDuration} |Weak| to all enemies that are attacking. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Gain {IllnessBuffLevel} |Illness Prevention| and {Block} |Block|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Is |Archer| type. 
