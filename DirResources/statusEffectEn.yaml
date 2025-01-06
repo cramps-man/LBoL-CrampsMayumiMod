@@ -363,3 +363,10 @@ EnhancedTrainingSe:
     Whenever a |Frontline| card is upgraded, it gains {Level} additional upgrade{Level:plural one='' other='s'}. 
   Brief: |-
     Whenever a |Frontline| card is upgraded, it gains additional upgrades. 
+
+CavalryWorshippingSe:
+  Name: Cavalry Worshipping
+  Description: |-
+    For every {Threshold} |Cavalry| gained ({Count}), gain {Level} |Graze|. 
+  Brief: |-
+    For every number of |Cavalry| gained, gain |Graze|. 

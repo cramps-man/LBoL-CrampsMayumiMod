@@ -891,6 +891,12 @@ OptionHaniwaAssassin:
     Sacrifice {SelectRequireFencer} |Fencer|.
     Add a |Haniwa Assassin| to the hand. 
 
+CavalryWorshipping:
+  Name: Cavalry Worshipping
+  Description: |-
+    For every {Value2} |Cavalry| gained, gain {Value1} |Graze|. 
+    Gain {CavalryGain} |Cavalry|. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance
