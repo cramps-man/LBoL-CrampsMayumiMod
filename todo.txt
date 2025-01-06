@@ -832,7 +832,8 @@ cavalry rush 15->20 mana, cavalry scout 7->8 for draw - DONE
   - cavalry, 10 = 1 graze, green
   - perhaps just 1 new card? well itd be hard to keep track of all the numbers, unless i gain 3 separate buffs
   - 3 buffs at once is op, so perhaps a choice between the 3?
-haniwa charger increase vuln threshold to 15? same as starting autoplay
+haniwa charger increase vuln threshold to 15? same as starting autoplay - DONE
+  - also probs keep the vuln at 1
 haniwa sentinel says 1 weak hardcoded woops - DONE
 exile frontline blitz update to activate on play instead of exile - DONE
 

@@ -376,8 +376,8 @@ HaniwaMonk:
 HaniwaCharger:
   Name: Haniwa Charger
   Description: |-
-    |While in hand|: At end of turn, gain {BaseLoyaltyGain} |Loyalty| for each |Haniwa Charger| in the hand ({TotalLoyaltyGain}). At start of turn, if |Loyalty| goes above or equal {AutoChargeThreshold}, automatically execute the |On Play| action to enemy with the lowest life and discard. 
-    |When played|: Deal {Damage} damage. Deal additional damage equal to |Loyalty| ({RemainingValue}). Apply |e:1| |Vulnerable| for every {VulnScaling} |Loyalty| consumed ({Value2}). Consume all |Loyalty|, minimum of {OnPlayConsumedRemainingValue}. 
+    |While in hand|: At end of turn, gain {BaseLoyaltyGain} |Loyalty| for each |Haniwa Charger| in the hand ({TotalLoyaltyGain}). At start of turn, if |Loyalty| is above or equal {AutoChargeThreshold}, automatically execute the |On Play| action to enemy with the lowest life and discard. 
+    |When played|: Deal {Damage} damage. Deal additional damage equal to |Loyalty| ({RemainingValue}). Apply |e:1| |Vulnerable| if |Loyalty| consumed is above or equal {VulnScaling}. Consume all |Loyalty|, minimum of {OnPlayConsumedRemainingValue}. 
   DetailText: |-
     Is |Cavalry| type. 
 

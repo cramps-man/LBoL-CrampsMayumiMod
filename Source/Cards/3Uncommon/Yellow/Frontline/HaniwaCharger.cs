@@ -47,8 +47,8 @@ namespace LBoLMod.Cards
         protected override bool ShouldConsumeAll => true;
         protected override int OnPlayConsumedRemainingValue => 4;
         public override int AdditionalDamage => RemainingValue + base.UpgradeCounter.GetValueOrDefault();
-        public int VulnScaling => 12;
-        public override int AdditionalValue2 => RemainingValue / VulnScaling;
+        public int VulnScaling => 15;
+        public override int AdditionalValue2 => RemainingValue >= VulnScaling ? 1 : 0;
         public int TotalLoyaltyGain => BaseLoyaltyGain * ChargerCount;
         public int ChargerCount => base.Battle != null ? base.Battle.HandZone.Where(c => c is HaniwaCharger).Count() : 0;
         public int BaseLoyaltyGain => 2 + base.UpgradeCounter.GetValueOrDefault() / LoyaltyGainScaling;
