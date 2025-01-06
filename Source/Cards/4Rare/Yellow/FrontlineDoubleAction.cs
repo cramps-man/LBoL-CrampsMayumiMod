@@ -11,11 +11,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class ExileFrontlineBlitzDef : ModCardTemplate
+    public sealed class FrontlineDoubleActionDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileFrontlineBlitz);
+            return nameof(FrontlineDoubleAction);
         }
 
         public override CardConfig MakeConfig()
@@ -26,20 +26,18 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
-            cardConfig.RelativeKeyword = Keyword.Exile;
-            cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(ExileFrontlineBlitzDef))]
-    public sealed class ExileFrontlineBlitz : Card
+    [EntityLogic(typeof(FrontlineDoubleActionDef))]
+    public sealed class FrontlineDoubleAction : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return BuffAction<ExileFrontlineBlitzSe>();
+            yield return BuffAction<FrontlineDoubleActionSe>();
         }
     }
 }

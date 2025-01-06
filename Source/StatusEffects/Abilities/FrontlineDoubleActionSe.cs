@@ -12,11 +12,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Abilities
 {
-    public sealed class ExileFrontlineBlitzSeDef : ModStatusEffectTemplate
+    public sealed class FrontlineDoubleActionSeDef : ModStatusEffectTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ExileFrontlineBlitzSe);
+            return nameof(FrontlineDoubleActionSe);
         }
 
         public override StatusEffectConfig MakeConfig()
@@ -27,15 +27,15 @@ namespace LBoLMod.StatusEffects.Abilities
         }
     }
 
-    [EntityLogic(typeof(ExileFrontlineBlitzSeDef))]
-    public sealed class ExileFrontlineBlitzSe: StatusEffect
+    [EntityLogic(typeof(FrontlineDoubleActionSeDef))]
+    public sealed class FrontlineDoubleActionSe: StatusEffect
     {
         protected override void OnAdded(Unit unit)
         {
-            base.ReactOwnerEvent(base.Battle.CardExiled, this.OnCardExiled);
+            base.ReactOwnerEvent(base.Battle.CardUsed, this.OnCardUsed);
         }
 
-        private IEnumerable<BattleAction> OnCardExiled(CardEventArgs args)
+        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
@@ -43,7 +43,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.Card is ModFrontlineCard frontlineCard)
             {
                 base.NotifyActivating();
-                foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(new List<Card> { frontlineCard }, base.Battle))
+                foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(new List<Card> { frontlineCard }, base.Battle, args.Selector, consumeRemainingValue: true))
                 {
                     yield return battleAction;
                 }

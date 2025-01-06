@@ -267,12 +267,12 @@ AssignArcherPrepFrostArrow:
     After X cards are played, deal damage and apply |Cold| to a random enemy. 
     If the target has |Cold|, gain |Block|. 
 
-ExileFrontlineBlitzSe:
-  Name: Exile Frontline Blitz
+FrontlineDoubleActionSe:
+  Name: Frontline Double Action
   Description: |-
-    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
+    After playing a |Frontline| card, execute its |On Play| action and consume |Loyalty| again. 
   Brief: |-
-    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action. If it targets an enemy, target a random enemy. 
+    After playing a |Frontline| card, execute its |On Play| action and consume |Loyalty| again. 
 
 AssignCostTaskLevelSe:
   Name: Assign Cost Task Level

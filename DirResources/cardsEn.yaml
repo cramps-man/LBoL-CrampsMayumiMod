@@ -728,10 +728,10 @@ AssignTriggerSummon:
   Description: |-
     Whenever an |Assign| buff is triggered, add {Value1} random |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
-ExileFrontlineBlitz:
-  Name: Exile Frontline Blitz
+FrontlineDoubleAction:
+  Name: Frontline Double Action
   Description: |-
-    Whenever a |Frontline| card is |Exiled|, execute its |On Play| action without consuming |Loyalty|. If it targets an enemy, target a random enemy. 
+    After playing a |Frontline| card, execute its |On Play| action and consume |Loyalty| again. 
 
 AssignReverseTickdown:
   Name: Assign Reverse Tickdown

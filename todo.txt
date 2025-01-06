@@ -834,6 +834,7 @@ cavalry rush 15->20 mana, cavalry scout 7->8 for draw - DONE
   - 3 buffs at once is op, so perhaps a choice between the 3?
 haniwa charger increase vuln threshold to 15? same as starting autoplay
 haniwa sentinel says 1 weak hardcoded woops - DONE
+exile frontline blitz update to activate on play instead of exile - DONE
 
 all preconditions add better descriptions to the interaction titles
 proper names
