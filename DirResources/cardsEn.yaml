@@ -903,6 +903,19 @@ FencerWorshipping:
     For every {Value2} |Fencer| gained, deal {Value1} damage to a random enemy. 
     Gain {FencerGain} |Fencer|. 
 
+ArcherWorshipping:
+  Name: Archer Worshipping
+  Description: |-
+    For every {Value2} |Archer| gained, apply a random debuff to a random enemy. 
+    Gain {ArcherGain} |Archer|. 
+  DetailText: |-
+    Debuffs randomized between the following
+    |e:2| |Weak|
+    |e:2| |Vulnerable|
+    |e:3| |Temporary Firepower down|
+    |e:5| |Lock On|
+    |e:5| |Poison|
+
 #UNUSED
 RandomStance:
   Name: Random Stance

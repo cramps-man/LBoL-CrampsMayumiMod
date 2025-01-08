@@ -377,3 +377,10 @@ FencerWorshippingSe:
     For every {Threshold} |Fencer| gained ({Count}), deal {Level} damage to a random enemy. 
   Brief: |-
     For every number of |Fencer| gained, deal damage to a random enemy. 
+
+ArcherWorshippingSe:
+  Name: Archer Worshipping
+  Description: |-
+    For every {Threshold} |Archer| gained ({Count}), apply debuffs {Level} time{Level:plural one='' other='s'} to random enemies. 
+  Brief: |-
+    For every number of |Archer| gained, apply debuffs to random enemies. 

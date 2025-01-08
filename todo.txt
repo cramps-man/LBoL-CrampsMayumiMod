@@ -823,7 +823,7 @@ double check loyalty protection gaining 0 block - IS OK, NOTHING HAPPENS
 basic assignment make upgrade autoplay start of combat - DONE
   - and lower base cost to R
 cavalry rush 15->20 mana, cavalry scout 7->8 for draw - DONE
-3 new cards gaining a certain amount of haniwa gives effects
+3 new cards gaining a certain amount of haniwa gives effects - DONE
   - fencer, 5 = dmg to random enemy, blue
   - archer, 5 = 1 debuff to random enemy, purple
   - cavalry, 10 = 1 graze, green
