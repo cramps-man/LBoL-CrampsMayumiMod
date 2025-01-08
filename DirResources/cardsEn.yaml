@@ -897,6 +897,12 @@ CavalryWorshipping:
     For every {Value2} |Cavalry| gained, gain {Value1} |Graze|. 
     Gain {CavalryGain} |Cavalry|. 
 
+FencerWorshipping:
+  Name: Fencer Worshipping
+  Description: |-
+    For every {Value2} |Fencer| gained, deal {Value1} damage to a random enemy. 
+    Gain {FencerGain} |Fencer|. 
+
 #UNUSED
 RandomStance:
   Name: Random Stance

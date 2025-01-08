@@ -370,3 +370,10 @@ CavalryWorshippingSe:
     For every {Threshold} |Cavalry| gained ({Count}), gain {Level} |Graze|. 
   Brief: |-
     For every number of |Cavalry| gained, gain |Graze|. 
+
+FencerWorshippingSe:
+  Name: Fencer Worshipping
+  Description: |-
+    For every {Threshold} |Fencer| gained ({Count}), deal {Level} damage to a random enemy. 
+  Brief: |-
+    For every number of |Fencer| gained, deal damage to a random enemy. 

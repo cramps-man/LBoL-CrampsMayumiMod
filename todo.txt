@@ -811,13 +811,10 @@ weakening shot dont upgrade values on upgrade, only the mana - UNSURE
   - or just increase the numbers at base, temp fp down 2->3, weak can stay at 1
 charge attack make single hit, task level = dmg - DONE
   - also reduce scaling from assign triggers 12(15)
-update frontline spellcard to be 50 cost with lower values - UNSURE
-  - 3 of each haniwa + 20 dmg
-  - also let it choose between gaining haniwa or commanding 2-3 frontlines without loyalty cost
 make haniwa exploiter activate after haniwa sentinel - DONE
 haniwa horse archer make it not consume if target is dead - DONE
   - same with assassin i think
-choose short assign give better upgrade? let it upgrade the assign card?
+choose short assign give better upgrade? let it upgrade the assign card? - UNSURE
   - or give it 5 choices? seems pretty good, maybe too good
 haniwa attacker passive perhaps 1 dmg per 2 upgrades? - maybe its okay
 cavalry rush mana scaling make harder? to 20? - will test more with assign builds
@@ -837,6 +834,17 @@ haniwa charger increase vuln threshold to 15? same as starting autoplay - DONE
 haniwa sentinel says 1 weak hardcoded woops - DONE
 exile frontline blitz update to activate on play instead of exile - DONE
 
+update frontline spellcard to be 50 cost with lower values - UNSURE
+  - 3 of each haniwa + 20 dmg
+  - also let it choose between gaining haniwa or commanding 2-3 frontlines without loyalty cost
+  - probs can give an option and keep at 100 power
+  - also for the assign spellcard, option for zero cost move choosing effect
+zero cost move become rare?
+gain buff tickdown go to uncommon and change effect perhaps?
+  - exile and give assignment bonus?
+permanent assign make it lose only half task level/assigned haniwa?
+
 all preconditions add better descriptions to the interaction titles
-proper names
-status icons
+proper names - probs this update
+status icons - probs another update
+long term thing to think about, reduce amount of text for some cards, quite long haha
