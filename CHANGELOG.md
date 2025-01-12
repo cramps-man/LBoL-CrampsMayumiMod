@@ -1,3 +1,122 @@
+## 0.5.0
+
+### Overview of changes
+
+A smaller balance update to refine the changes that have been made in 0.3 and 0.4. 
+
+### General changes
+
+#### Frontline
+
+- Frontline starting Loyalty values have been standardised across the board to be 5 (10 for Commanders and offcolors)
+- Also adjusted Loyalty costs so Frontlines don't immediately exile if you play them right after summoning
+
+#### Assign
+
+- Starter card **Archer Prep Volley** has been replaced with a new card **Basic Assignment**
+
+#### Quality of life
+
+- Added descriptions to select card interactions to Frontlines that have preconditions (Assign Commander + reworked Haniwa Upgrader)
+
+### Card changes
+
+#### Frontline cards
+
+##### Frontlines
+
+- **Haniwa Charger**: Moved the autoplay from end to start of turn, as it was interferring with Loyalty gains for other Chargers when they discard
+  - Added scaling to the autoplay threshold, increases by +1 per upgrade
+  - Removed Vulnerable scaling, only applies 1 Vuln when above the threshold
+  - Vuln threshold increased from 12 -> 15
+  - On Play base dmg 6 -> 5, starting Loyalty was increased from 4 -> 5 due to universal change, so it still starts at 10 dmg
+- **Haniwa Upgrader**: Slightly reworked as it was too good at upgrading the whole hand and providing block at the same time. I want it to be more focused towards the upgrading role
+  - Updated from Defence to Skill type
+  - On Play provides a fixed 5 block, no scaling
+  - On Play effect also changed from upgrading the hand once, to choosing 2 cards to upgrade 2 times. +1 times per 8 upgrades
+  - On Play Loyalty cost reduced from 5 -> 4
+  - Passive now scales number of targets, +1 per 3 upgrades
+- **Haniwa Sentinel**: On Play Loyalty cost reduced from 9 -> 5
+- **Haniwa Attacker**: Passive dmg 6 -> 5, On Play damage 10 -> 8
+- **Haniwa Sharpshooter**: On Play Loyalty cost 1 -> 2
+- **Haniwa Exploiter**: Passive dmg 10 -> 8, On Play damage 12 -> 10
+  - Passive activates after **Haniwa Sentinel** passive, so the weak application will trigger the Exploiter passive no matter the card order in the hand
+- **Assign + Frontline Commander**: Passive Loyalty cost 5 -> 10, end of turn Loyalty gain 2 -> 3
+- **Frozen Haniwa**: Passive Loyalty cost 3 -> 5, due to the fact Loyalty starts at the card's base loyalty + the upgrades of the original card
+
+##### Common
+
+- **Summon Haniwa**: Renamed into **Basic Summon**, now only allows selecting Common rarity Frontlines
+  - This is to help give this card a downside since it's the most mana efficient summon card, and also help it be less overwhelming for new players of the mod
+  - Adjusted relative cards for all other summons to include uncommons
+
+##### Uncommon
+
+- **Frontline Copy**: No longer removes Retain, it gives Exile instead
+- **Blitz Summon**: Adjusted cost from WW -> WW(1W)
+  - Reduced extra Loyalty gain from 4(14) -> 0(10), universal change to Loyalty costs means no Frontlines exile on first play so the Frontline will still be alive after the Blitz Loyalty consumption
+- **Loyalty Protection**: Block gain occurs at end of player turn instead of when reducing Loyalty consumption, due to wonky interaction with **Haniwa Bodyguard**
+  - Cost updated from 1W -> W(1)
+  - Reduced buff level from 8(16) -> 6(10)
+
+##### Rare
+
+- **Ultra Frontline**: Reworked into an ability **Enhanced Training**, it was just too hard to balance as an X-cost
+  - No longer summons a Frontline with starting upgrades
+  - Instead when a Frontline card is upgraded, it gains 1 more upgrade
+  - Choose 1 Frontline card to upgrade 2(5) times (which results in 2x2 and 2x5 on first play)
+  - Cost updated to 1WW(1W)
+- **Exile Frontline Blitz**: Renamed to **Frontline Double Action**
+  - Now activates when playing a Frontline card instead of when it exiles
+  - Now consumes Loyalty 1 additional time
+
+#### Assign cards
+
+##### Common
+
+- **Assign Fast Trigger**: Upgrade now doubles count before converting to Task Level
+  - Cost updated to RR(1R) -> 1R
+- **Assign Extra Time**: Cost updated to RR(1R) -> 1R
+- **Cavalry Scout**: Draw scaling threshold increased from 7 -> 8
+
+##### Uncommon
+
+- **Charge Attack**: Made into a single hit with damage equal to Task Level
+  - Reduced Task Level gain to 12(15)
+  - Damage used to be 15(20) with Task Level gain at 15, so this is an overall reduction in scaling
+  - It used to be single hit with damage increase before initial release, but with extra triggers is scaled way too hard. Glad I can make it the same way again with Task Level (I forgor to do it last update)
+  - I should probably make it accurate in that case, but we'll see in a future update
+- **Cavalry Rush**: Increased mana scaling threshold from 15 -> 20
+
+#### Off colors
+
+- **Darkness Summon**: Increased cost from 1B -> 2B
+  - Fixed description not mentioning it sacrifices Haniwa
+
+### New cards
+
+- **Basic Assignment**: Red Common, Choose 1 common Assign card to add to the hand. On upgrade it autoplays at start of combat
+- **Fencer Worshipping**: Blue Uncommon ability, when gaining 10 Fencer deal damage to a random enemy
+- **Archer Worshipping**: Purple Uncommon ability, when gaining 10 Archer apply 2 random debuffs to a random enemy
+- **Cavalry Worshipping**: Green Uncommon ability, when gaining 10 Cavalry gain 1 Graze
+
+### Fixes
+
+- Fix **Haniwa Sentinel** passive not activating on spellcards that dealt damage
+  - Fix the number of Weak not updating in the description (always showed 1, but the internal scaling still increased when applied to an enemy)
+- Fix **Haniwa Horse Archer** and **Haniwa Assassin** to not trigger passive on dead targets
+
+### What's next
+
+Wow the **What's next** section makes its return since 0.2.0. Now that the remaining work is mostly presentation related, I figure it would be good to outline where we go from here
+- Renaming placeholder names
+- Art for buffs/debuffs and other misc things
+- Attack animations
+- Card arts
+
+I'll most likely split these into some separate updates, though not sure what will be bundled together  
+The next version will most likely be the renaming first. Maybe buff/debuff arts too. No timeframe on when they'll be done though  
+
 ## 0.4.1
 
 Fix **Choose Short Assign** bugging out when stacking to an existing Assign buff

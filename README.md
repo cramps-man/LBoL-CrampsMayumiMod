@@ -5,8 +5,8 @@
  - spell cards have no icon
  - most card and status effect names are placeholder
 
-The mod is fully playable with 69 cards not including basics/tokens
-Current version beta 0.4.1
+The mod is fully playable with 73 cards not including basics/tokens
+Current version beta 0.5.0
 
 ## Char overview
 Mayumi's playstyle involves managing and creating multiple things at once. Whether you choose to command Frontline units (represented as cards) or Assign tasks (represented as buffs), you will need to manage your resources carefully.  
@@ -33,7 +33,7 @@ Effects such as gaining temp firepower for the number of 0 cost cards, moving 0 
 ### Side theme - Haniwa types
 The 3 haniwa types each have a general theme to them, with some exceptions.  
 
- - Fencer - Defence, Followups, Counters
+ - Fencer - Defence, Followups, Upgrading
  - Archer - Debuffs, Accuracy
  - Cavalry - Draw, Mana, Graze
 
