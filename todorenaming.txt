@@ -1,0 +1,73 @@
+BASICS
+BasicAttackR -> Archery Expertise
+BasicAttackW -> Expert Swordsmanship
+BasicBlockR -> Defence Delegation
+BasicBlockW -> Equestrian Expertise
+
+ASSIGNS
+ArcherPrepVolley -> Assignment - Arrow Volley/Barrage
+AssignExtraTime -> Delayed Task Completion/or something about spending more time to make higher quality
+AssignFastTrigger -> Quick Task Completion
+AssignHaniwaCreate -> Haniwa Reserves (Assignment)
+CavalryScout -> Assignment - Scout Ahead
+FencerBuildBarricade -> Assignment - Build Barricade
+ArcherPrepDebuff -> Assignment - Debilitate Foe
+AssignPlayGainBlock
+AssignTickdownReturn
+BuildWatchtower -> Assignment - Build Watchtower
+CavalryRush -> Assignment - Rush Attack
+CavalrySupplies -> Assignment - Bring the Supplies
+ChargeAttack -> Assignment - Ballista Bolt
+ChooseShortAssign -> Quick Assignment
+FencerPrepCounter -> Assignment - Counter Attack
+NumBuffBlock
+ZeroCostMove
+AssignDuplicateTrigger -> Assignment Double Time, better for another card
+AssignPlayDraw -> Assignment Juggling
+AssignReverseTickdown -> Guard Scramble
+GainBuffTickdown
+MassTaskLevel -> Perfect Task Quality
+
+FRONTLINES
+HaniwaAttacker maybe? -> Haniwa Soldier/Grunt? maybe
+BasicSummon -> Basic Recruitment
+DefenceSummon -> Safety Recruitment
+FastSummon -> Early Recruitment
+FrontlineHaniwaCreate -> Haniwa Reserves (Frontline)
+FrontlineUpgrade -> Simple Training
+HaniwaBlitz -> Command Frontline/Command the Front?
+HaniwaUpgrader maybe? -> Haniwa Trainer? maybe
+BlitzSummon -> Command Recruitment?
+DiscardUpgrade -> something for training that takes time
+FrontlineCopy
+HealSacrifice
+UpgradedSummon -> Seasoned Recruitment
+AssignCommander -> Assignment Commander?
+MassDestruction maybe?
+MassSummon -> Call to Arms
+SummonCommander
+
+HYBRIDS
+CreateHaniwa -> Haniwa Reserves
+DefenceCreateReserves
+HybridDraw
+WeakeningShot maybe?
+AssignTriggerUpgrade
+AutoCreateReserves
+CreateArcher -> Skilled Archer Haniwa
+CreateCavalry -> Skilled Cavalry Haniwa
+CreateFencer -> Skilled Fencer Haniwa
+FrontlineLoyaltyTaskLevel -> something about inspring the back?
+AssignTriggerSummon
+HandsizeBlock -> Defensive Formation
+MaxHaniwaUp
+ZeroCostReduction
+
+OFFCOLOURS
+ArcherPrepFrostArrow -> Assignment - Frost Arrow
+AssignCostTaskLevel -> Assignment Double Time
+FrontlineLoyaltyGain -> Inspirational Speech
+AssignSeparation -> Assignment Separation/Delegation?
+DarknessSummon -> Dark Recruitment
+PermanentAssign -> Permanent Assignment
+PoisonShot maybe?
