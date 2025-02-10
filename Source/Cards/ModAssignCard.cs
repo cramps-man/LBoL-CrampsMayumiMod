@@ -56,6 +56,7 @@ namespace LBoLMod.Cards
         public virtual int StartingTaskLevel => 1;
         public virtual Type AssignStatusType => null;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
+        public override string CantUseMessage => HaniwaUtils.CantUseMessages(base.Battle.Player, HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
         public bool ShouldStack => ManualStack && !base.Battle.Player.HasStatusEffect<AssignSeparationSe>();
         public bool ManualStack { get; set; } = true;
         public override ManaGroup AdditionalCost

@@ -10,6 +10,7 @@ using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
@@ -74,6 +75,19 @@ namespace LBoLMod.Cards
                 if (player.HasStatusEffect<Watchtower>())
                     return true;
                 return base.CanUse && HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(player, SacrificeArcherRequired, HaniwaActionType.Sacrifice);
+            }
+        }
+        public override string CantUseMessage
+        {
+            get
+            {
+                var player = base.Battle.Player;
+                string message = "";
+                if (!HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(player, FencerRequired, HaniwaActionType.Assign))
+                    message += LocSe.NeedMoreFencer();
+                if (!HaniwaUtils.IsLevelFulfilled<ArcherHaniwa>(player, SacrificeArcherRequired, HaniwaActionType.Sacrifice))
+                    message += LocSe.NeedMoreArcher();
+                return message;
             }
         }
 

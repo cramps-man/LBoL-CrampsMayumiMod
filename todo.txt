@@ -859,7 +859,7 @@ assign commander increase task level before duplicating, and update base task le
 basic assignment upgrade auto triggers only one card per combat - DONE
 cavalry supplies add low rainbow chance - DONE
 
-look into getting localised yaml texts into code
+look into getting localised yaml texts into code - DONE
   - update frontline and assign keywords in their base classes to grab from the yaml
   - check other places for any hardcoded string stuff
   - add text for haniwa requirements, which grab from yaml
