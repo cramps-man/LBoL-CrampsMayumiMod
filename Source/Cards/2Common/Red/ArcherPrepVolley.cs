@@ -35,7 +35,7 @@ namespace LBoLMod.Cards
     {
         public override int ArcherAssigned => 1;
         public override int StartingCardCounter => IsUpgraded ? 3 : 5;
-        public override int StartingTaskLevel => IsUpgraded ? 17 : 10;
+        public override int StartingTaskLevel => IsUpgraded ? 15 : 10;
         public override Type AssignStatusType => typeof(AssignArcherPrepVolley);
     }
 }

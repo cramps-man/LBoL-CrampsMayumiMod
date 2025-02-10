@@ -119,18 +119,14 @@ namespace LBoLMod.StatusEffects
         {
             AssignSourceCard.ManualStack = true;
             if (!JustApplied)
+            {
                 Tickdown(1);
-            if (Count == 0)
-            {
-                JustApplied = false;
-                return AssignTriggering(false);
-            }
-            if (!JustApplied)
-            {
                 int assignCostTriggerIncrease = base.Battle.Player.TryGetStatusEffect<AssignCostTaskLevelSe>(out AssignCostTaskLevelSe se) ? se.Level : 0;
                 Level += Math.Ceiling((CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned) / 2d).RoundToInt() + assignCostTriggerIncrease;
             }
             JustApplied = false;
+            if (Count == 0)
+                return AssignTriggering(false);
             return null;
         }
 
