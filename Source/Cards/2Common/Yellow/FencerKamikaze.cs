@@ -8,6 +8,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -43,7 +44,7 @@ namespace LBoLMod.Cards
     public sealed class FencerKamikaze : Card
     {
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, Value1, HaniwaActionType.Sacrifice);
-        public override string CantUseMessage => "Need more Fencer";
+        public override string CantUseMessage => LocSe.NeedMoreFencer();
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, fencerToLose: Value1);

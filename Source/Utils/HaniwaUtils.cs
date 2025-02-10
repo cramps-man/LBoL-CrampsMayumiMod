@@ -1,5 +1,6 @@
 ﻿using LBoL.Core.Units;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Localization;
 using System;
 using System.Collections.Generic;
 
@@ -71,6 +72,18 @@ namespace LBoLMod.Utils
             return GetHaniwaLevel<FencerHaniwa>(player) > 0
                 || GetHaniwaLevel<ArcherHaniwa>(player) > 0
                 || GetHaniwaLevel<CavalryHaniwa>(player) > 0;
+        }
+
+        public static string CantUseMessages(PlayerUnit player, HaniwaActionType actionType, int fencerRequired = 0, int archerRequired = 0, int cavalryRequired = 0)
+        {
+            string message = "";
+            if (!IsLevelFulfilled<FencerHaniwa>(player, fencerRequired, actionType))
+                message += LocSe.NeedMoreFencer();
+            if (!IsLevelFulfilled<ArcherHaniwa>(player, archerRequired, actionType))
+                message += LocSe.NeedMoreArcher();
+            if (!IsLevelFulfilled<CavalryHaniwa>(player, cavalryRequired, actionType))
+                message += LocSe.NeedMoreCavalry();
+            return message;
         }
     }
 }

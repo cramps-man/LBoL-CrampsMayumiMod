@@ -50,6 +50,7 @@ namespace LBoLMod.Cards
                 return HaniwaUtils.IsLevelFulfilled(player, HaniwaActionType.Sacrifice, Value2, 0, Value2);
             }
         }
+        public override string CantUseMessage => HaniwaUtils.CantUseMessages(base.Battle.Player, HaniwaActionType.Sacrifice, Value2, 0, Value2);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, Value2, 0, Value2);

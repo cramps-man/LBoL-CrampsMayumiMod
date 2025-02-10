@@ -42,6 +42,7 @@ namespace LBoLMod.Cards
     {
         public int SacrificeAmount => 1;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Sacrifice, SacrificeAmount, SacrificeAmount, SacrificeAmount);
+        public override string CantUseMessage => HaniwaUtils.CantUseMessages(base.Battle.Player, HaniwaActionType.Sacrifice, SacrificeAmount, SacrificeAmount, SacrificeAmount);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, SacrificeAmount, SacrificeAmount, SacrificeAmount);

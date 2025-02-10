@@ -8,6 +8,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -44,14 +45,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FullFrontalAssaultDef))]
     public sealed class FullFrontalAssault : Card
     {
-        public override bool CanUse
-        {
-            get
-            {
-                var player = base.Battle.Player;
-                return HaniwaUtils.HasAnyHaniwa(player);
-            }
-        }
+        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
+        public override string CantUseMessage => LocSe.RequiresHaniwa();
         public override int AdditionalDamage
         {
             get

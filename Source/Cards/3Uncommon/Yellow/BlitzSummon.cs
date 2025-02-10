@@ -8,6 +8,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(BlitzSummonDef))]
     public sealed class BlitzSummon : Card
     {
+        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
+        public override string CantUseMessage => LocSe.RequiresHaniwa();
         public override Interaction Precondition()
         {
             List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle, checkSacrificeRequirement: true);

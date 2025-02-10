@@ -10,6 +10,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -44,6 +45,7 @@ namespace LBoLMod.Cards
     public sealed class MassSummon : Card
     {
         public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
+        public override string CantUseMessage => LocSe.RequiresHaniwa();
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             int fencerCount = HaniwaUtils.GetHaniwaLevel<FencerHaniwa>(base.Battle.Player);

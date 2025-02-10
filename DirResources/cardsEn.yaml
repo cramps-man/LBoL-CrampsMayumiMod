@@ -48,7 +48,6 @@ DefenceSummon:
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
-    If there are no |Haniwa|, none will show up. 
 
 FencerKamikaze:
   Name: Fencer Kamikaze
@@ -137,7 +136,6 @@ BasicSummon:
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
-    If there are no |Haniwa|, none will show up. 
 
 OptionHaniwaAttacker:
   Name: Summon Haniwa Attacker
@@ -241,7 +239,6 @@ FastSummon:
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
-    If there are no |Haniwa|, none will show up. 
 
 BasicAssignment:
   Name: Basic Assignment
@@ -404,7 +401,6 @@ UpgradedSummon:
     |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
-    If there are no |Haniwa|, none will show up. 
 
 OptionHaniwaSpy:
   Name: Summon Haniwa Spy
@@ -598,7 +594,6 @@ BlitzSummon:
     Execute the new card's |On Play| action and consume its |Loyalty|. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
-    If there are no |Haniwa|, none will show up. 
 
 ZeroCostMove:
   Name: Zero Cost Move
@@ -864,6 +859,8 @@ DarknessSummon:
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. |Sacrifice Haniwa| depending on the chosen card. 
     The cards have infinite |Loyalty| and don't leave the hand when played, but consume <sprite="Point" name="Power"> equal to the amount of passive |Loyalty| consumed, or |e:10| when via |On Play|. If {PlayerName} runs out of <sprite="Point" name="Power">, the cards are removed from combat. 
     For |Frontlines| that use |Loyalty| for calculations, they count as having |e:10| |Loyalty|. 
+  DetailText: |-
+    If there are none of a type of |Haniwa|, the cards that require it won't show up. 
 
 HaniwaAssassin:
   Name: Haniwa Assassin

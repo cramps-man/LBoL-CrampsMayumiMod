@@ -32,5 +32,6 @@ namespace LBoLMod.StatusEffects.Localization
         public static string NeedMoreFencer() => LocalizeProp("NeedFencerText");
         public static string NeedMoreArcher() => LocalizeProp("NeedArcherText");
         public static string NeedMoreCavalry() => LocalizeProp("NeedCavalryText");
+        public static string RequiresHaniwa() => LocalizeProp("RequiresHaniwaText");
     }
 }

@@ -7,6 +7,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -38,6 +39,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(BasicSummonDef))]
     public sealed class BasicSummon : Card
     {
+        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
+        public override string CantUseMessage => LocSe.RequiresHaniwa();
         public override Interaction Precondition()
         {
             List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetOptionCards(HaniwaFrontlineUtils.CommonOptionTypes, base.Battle, checkSacrificeRequirement: true);

@@ -392,6 +392,8 @@ LocSe:
     Need more Archer. 
   NeedCavalryText: |-
     Need more Cavalry. 
+  RequiresHaniwaText: |-
+    Requires Haniwa. 
   FrontlineKeyword: |-
     Frontline
   AssignKeyword: |-

@@ -9,6 +9,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.Utils;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
+using LBoLMod.StatusEffects.Localization;
 
 namespace LBoLMod.Cards
 {
@@ -40,6 +41,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FastSummonDef))]
     public sealed class FastSummon : Card
     {
+        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
+        public override string CantUseMessage => LocSe.RequiresHaniwa();
         public override Interaction Precondition()
         {
             List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle, checkSacrificeRequirement: true);
