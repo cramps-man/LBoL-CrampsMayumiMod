@@ -856,7 +856,7 @@ cavalry rush rework a bit - DONE
 playing card on assign buff last counter still increases task level - DONE
   - adjust some starting task levels of assign cards so it doesnt go overboard
 assign commander increase task level before duplicating, and update base task level gain to 10 - DONE
-basic assignment upgrade auto triggers only one card per combat
+basic assignment upgrade auto triggers only one card per combat - DONE
 cavalry supplies add low rainbow chance
 
 look into getting localised yaml texts into code

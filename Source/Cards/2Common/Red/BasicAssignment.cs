@@ -39,15 +39,20 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(BasicAssignmentDef))]
     public sealed class BasicAssignment : Card
     {
+        private static bool DoneFirstAutoplay = false;
         protected override void OnEnterBattle(BattleController battle)
         {
+            DoneFirstAutoplay = false;
             base.ReactBattleEvent(base.Battle.BattleStarted, this.OnBattleStarted);
         }
 
         private IEnumerable<BattleAction> OnBattleStarted(GameEventArgs args)
         {
-            if (IsUpgraded)
+            if (IsUpgraded && !DoneFirstAutoplay)
+            {
+                DoneFirstAutoplay = true;
                 yield return new PlayCardAction(this);
+            }
         }
         public override Interaction Precondition()
         {
