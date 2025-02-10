@@ -849,8 +849,8 @@ proper names - probs this update
 status icons - probs another update
 long term thing to think about, reduce amount of text for some cards, quite long haha
 
-cavalry scout increase card count 7(3)
-cavalry rush rework a bit
+cavalry scout increase card count 7(3) - DONE
+cavalry rush rework a bit - DONE
   - mana gain on defeating enemy
   - on defeating enemy, attack the next lowest life enemy
 playing card on assign buff last counter still increases task level

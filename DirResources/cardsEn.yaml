@@ -495,7 +495,7 @@ CavalryRush:
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
-    If effect is triggered during the turn (not start of), gain {Mana} per {Value1} |Task Level| (minimum 1 {Mana}). 
+    When {SelfName} defeats an enemy, gain {Mana} and deal damage again to the next lowest life enemy. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 NumBuffBlock:
