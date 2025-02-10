@@ -8,7 +8,7 @@ using LBoL.Core.Helpers;
 using LBoLMod.BattleActions;
 using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects.Abilities;
-using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.StatusEffects.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace LBoLMod.Cards
 {
     public abstract class ModFrontlineCard : Card
     {
-        public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(nameof(Frontline), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + nameof(Frontline), GlobalConfig.DefaultKeywordColor);
+        public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(LocSe.FrontlineKeyword(), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + LocSe.FrontlineKeyword(), GlobalConfig.DefaultKeywordColor);
 
         private int _remainingValue = 0;
         public int RemainingValue

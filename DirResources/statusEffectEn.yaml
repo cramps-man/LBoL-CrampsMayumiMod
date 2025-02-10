@@ -384,3 +384,15 @@ ArcherWorshippingSe:
     For every {Threshold} |Archer| gained ({Count}), apply debuffs {Level} time{Level:plural one='' other='s'} to random enemies. 
   Brief: |-
     For every number of |Archer| gained, apply debuffs to random enemies. 
+
+LocSe:
+  NeedFencerText: |-
+    Need more Fencer. 
+  NeedArcherText: |-
+    Need more Archer. 
+  NeedCavalryText: |-
+    Need more Cavalry. 
+  FrontlineKeyword: |-
+    Frontline
+  AssignKeyword: |-
+    Assign
