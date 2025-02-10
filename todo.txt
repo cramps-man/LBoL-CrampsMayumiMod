@@ -848,3 +848,18 @@ all preconditions add better descriptions to the interaction titles
 proper names - probs this update
 status icons - probs another update
 long term thing to think about, reduce amount of text for some cards, quite long haha
+
+cavalry scout increase card count 7(3)
+cavalry rush rework a bit
+  - mana gain on defeating enemy
+  - on defeating enemy, attack the next lowest life enemy
+playing card on assign buff last counter still increases task level
+  - adjust some starting task levels of assign cards so it doesnt go overboard
+assign commander increase task level before duplicating, and update base task level gain to 10
+basic assignment upgrade auto triggers only one card per combat
+cavalry supplies add low rainbow chance
+
+look into getting localised yaml texts into code
+  - update frontline and assign keywords in their base classes to grab from the yaml
+  - check other places for any hardcoded string stuff
+  - add text for haniwa requirements, which grab from yaml

@@ -233,8 +233,6 @@ CavalryScout:
     |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and draw |e:1| card per {Value2} |Task Level| (minimum 1 card). 
     Start with {StartingTaskLevel} |Task Level|. 
-  DetailText: |-
-    |Scry| only occurs once. 
 
 FastSummon:
   Name: Fast Summon
