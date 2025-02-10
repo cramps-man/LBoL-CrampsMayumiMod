@@ -32,12 +32,14 @@ namespace LBoLMod.StatusEffects.Assign
             List<Card> randomChoices = new List<Card>();
             for (int i = 0; i < TotalTimesPlusValue2; i++)
             {
-                int rng = base.GameRun.BattleRng.NextInt(1, 5);
-                if (rng == 1)
+                int rng = base.GameRun.BattleRng.NextInt(1, 100);
+                if (rng >= 1 && rng <= 15)
                     randomChoices.Add(Library.CreateCard<RManaCard>());
-                else if (rng == 2)
+                else if (rng >= 16 && rng <= 30)
                     randomChoices.Add(Library.CreateCard<WManaCard>());
-                else if (rng >= 3 && rng <= 5)
+                else if (rng >= 31 && rng <= 35)
+                    randomChoices.Add(Library.CreateCard<PManaCard>());
+                else if (rng >= 36 && rng <= 100)
                     randomChoices.Add(Library.CreateCard(HaniwaFrontlineUtils.GetAllSummonTypes(base.Battle).Sample(base.GameRun.BattleRng)));
             }
             Interaction = new SelectCardInteraction(TotalTimes, TotalTimes, randomChoices)

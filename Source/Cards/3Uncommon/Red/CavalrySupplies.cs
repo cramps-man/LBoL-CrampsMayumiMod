@@ -28,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue2 = 4;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
-            cardConfig.RelativeCards = new List<string>() { nameof(RManaCard), nameof(WManaCard), nameof(HaniwaAttacker) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(RManaCard), nameof(WManaCard), nameof(HaniwaAttacker) };
+            cardConfig.RelativeCards = new List<string>() { nameof(RManaCard), nameof(WManaCard), nameof(PManaCard), nameof(HaniwaAttacker) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(RManaCard), nameof(WManaCard), nameof(PManaCard), nameof(HaniwaAttacker) };
             return cardConfig;
         }
     }
