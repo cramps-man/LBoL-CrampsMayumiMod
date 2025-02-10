@@ -695,7 +695,7 @@ AssignCommander:
   Name: Assign Commander
   Description: |-
     |While in hand/draw/discard|: When an |Assign| buff triggers, automatically redistribute assigned |Haniwa| into new |Assign| buffs that fulfil the required |Assign| costs. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {LoyaltyGain} |Loyalty|. 
-    |When played|: Duplicate an |Assign| buff and give it {Value2} extra |Task Level|. Does not consume |Loyalty|. 
+    |When played|: Choose an |Assign| buff and give it {Value2} extra |Task Level| then duplicate it. Does not consume |Loyalty|. 
   DetailText: |-
     Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
     

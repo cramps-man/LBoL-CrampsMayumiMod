@@ -33,7 +33,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 10;
-            cardConfig.Value2 = 15;
+            cardConfig.Value2 = 10;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
@@ -139,12 +139,14 @@ namespace LBoLMod.Cards
 
             foreach (ModAssignOptionCard card in selectInteraction.SelectedCards)
             {
+                card.StatusEffect.Level += Value2;
                 var sourceCard = card.StatusEffect.AssignSourceCard;
                 sourceCard.ManualStack = false;
-                ApplyStatusEffectAction assignBuffAction = (ApplyStatusEffectAction)sourceCard.BuffAction(sourceCard.AssignStatusType, level: card.StatusEffect.Level + Value2, count: card.StatusEffect.Count);
+                ApplyStatusEffectAction assignBuffAction = (ApplyStatusEffectAction)sourceCard.BuffAction(sourceCard.AssignStatusType, level: card.StatusEffect.Level, count: card.StatusEffect.Count);
                 yield return assignBuffAction;
                 if (assignBuffAction.Args.Effect is ModAssignStatusEffect mase)
                 {
+                    mase.JustApplied = false;
                     mase.IsPermanent = card.StatusEffect.IsPermanent;
                     mase.NotifyChanged();
                 }
