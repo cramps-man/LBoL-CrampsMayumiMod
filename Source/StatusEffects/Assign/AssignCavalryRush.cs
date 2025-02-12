@@ -29,8 +29,6 @@ namespace LBoLMod.StatusEffects.Assign
 
         private IEnumerable<BattleAction> OnEnemyDied(DieEventArgs args)
         {
-            if (args.ActionSource != this)
-                yield break;
             if (base.Battle.BattleShouldEnd)
                 yield break;
 

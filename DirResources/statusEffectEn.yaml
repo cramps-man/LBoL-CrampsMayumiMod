@@ -158,7 +158,7 @@ AssignCavalryRush:
   Name: Cavalry Rush
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the enemy with the lowest life. 
-    When {SelfName} defeats an enemy, gain {CardMana} and deal damage again to the next lowest life enemy. 
+    When an enemy is defeated while this buff is active, gain {CardMana} and deal damage to the lowest life enemy. 
     Deal damage equal to |Task Level|.
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   Brief: |-
