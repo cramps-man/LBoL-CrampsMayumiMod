@@ -869,8 +869,8 @@ haniwa exploiter doesnt get bonus debuff dmg when frontline double action activa
 haniwa sentinel perhaps make upgrade scaling on illnessprotection stacks +1 per 5 upgrades?
 frontline double action error when dying after playing frontline due to yuyuko misfortune - probs can just leave it lmao
 frontline exhibit add new effect first time per combat reduce sacrifice cost by 1 haniwa?
-loyalty protection give 4(6) block as well
-clay to ashes give 2(3) temp fp on card play
+loyalty protection give 4(6) block as well - DONE
+clay to ashes give 2(3) temp fp on card play - DONE
 mud extraction always consume 5 loyalty, upgrade now allows selecting 2 which makes 2 splashes
 update scry interactions with custom titles to put the text into yaml - DONE
   - haniwa spy

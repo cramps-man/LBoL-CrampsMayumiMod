@@ -27,6 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 2;
+            cardConfig.UpgradedValue2 = 3;
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.RelativeKeyword = Keyword.Exile;
@@ -43,6 +45,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return BuffAction<ClayToAshesSe>(level: Value1);
+            yield return BuffAction<TempFirepower>(level: Value2);
         }
     }
 }
