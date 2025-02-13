@@ -827,11 +827,8 @@ OptionHaniwaHorseArcher:
 MudExtraction:
   Name: Mud Extraction
   Description: |-
-    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and |Exile| them. 
-    Add a |Splash| to the hand. 
-  UpgradedDescription: |-
-    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and consume {Value2} |Loyalty|. 
-    Add a |Splash| to the hand. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and consume {Value2} |Loyalty|. 
+    Add that many |Splashes| to the hand. 
 
 AssignCostTaskLevel:
   Name: Assign Cost Task Level

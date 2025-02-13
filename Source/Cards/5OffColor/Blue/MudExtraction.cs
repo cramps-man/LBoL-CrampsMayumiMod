@@ -30,7 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 0 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 6;
+            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 5;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.None;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -47,7 +48,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(Value1, Value1, list);
+            return new SelectHandInteraction(1, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
@@ -56,12 +57,9 @@ namespace LBoLMod.Cards
 
             foreach(ModFrontlineCard card in frontlineInteraction.SelectedCards)
             {
-                if (IsUpgraded)
-                    yield return card.ConsumeLoyalty(Value2);
+                yield return card.ConsumeLoyalty(Value2);
             }
-            if (!IsUpgraded)
-                yield return new ExileManyCardAction(frontlineInteraction.SelectedCards);
-            yield return new AddCardsToHandAction(Library.CreateCard<UManaCard>());
+            yield return new AddCardsToHandAction(Library.CreateCards<UManaCard>(frontlineInteraction.SelectedCards.Count));
         }
     }
 }
