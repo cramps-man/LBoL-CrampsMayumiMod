@@ -609,7 +609,8 @@ ZeroCostMove:
 LoyaltyProtection:
   Name: Loyalty Protection
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Loyalty Protection|. 
+    Gain {Block} |Block|. 
+    Gain {Value1} |Loyalty Protection|. 
 
 #RARES
 FullFrontalAssault:
