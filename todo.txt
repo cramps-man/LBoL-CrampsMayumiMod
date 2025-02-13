@@ -875,5 +875,5 @@ mud extraction always consume 5 loyalty, upgrade now allows selecting 2 which ma
 update scry interactions with custom titles to put the text into yaml - DONE
   - haniwa spy
   - assign cavalry scout
-  - frozen haniwa - can leave, theoretically shouldnt ever happen
+  - frozen haniwa - can leave, theoretically shouldnt ever happen, nvm it does in card collection lmao
   - assign cavalry supplies

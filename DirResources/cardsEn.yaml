@@ -716,7 +716,7 @@ SummonCommander:
   Description: |-
     Choose a |Frontline Commander| or |Assign Commander| to add to the hand. 
   UpgradedDescription: |-
-    Choose a |Frontline Commander| or |Assign Commander| to add to the hand. . It starts with {Value1} upgrades. 
+    Choose a |Frontline Commander| or |Assign Commander| to add to the hand. It starts with {Value1} upgrades. 
 
 AssignTriggerSummon:
   Name: Assign Trigger Summon
@@ -758,7 +758,7 @@ FrozenHaniwa:
   Description: |-
     |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Deal {Damage} damage and apply |Cold| to all enemies. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
-    |At end of turn|: Transform back into the original card ({OriginalCardName}). 
+    |At end of turn|: Transform back into the original card {OriginalCardName}. 
   DetailText: |-
     Does not carry over keywords from/to the original card. 
     Is same type as the original card. 
