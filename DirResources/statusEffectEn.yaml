@@ -126,6 +126,8 @@ AssignCavalrySupplies:
     After {Count} card{Count:plural one=' is' other='s are'} played, choose {TotalTimes} of {TotalTimesPlusValue2} cards to add to the draw pile. Cards are randomized and can include |Flame|, |Radiance| or a random |Frontline|. 
     |e:1| extra card choice per {CardValue1} |Task Level| (minimum 1). 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
+  InteractionTitle: |-
+    {Name} - Add {TotalTimes} to draw pile
   Brief: |-
     After X cards are played, add |Flame| or |Radiance| to draw pile. 
 
@@ -225,6 +227,8 @@ AssignCavalryScout:
     After {Count} card{Count:plural one=' is' other='s are'} played, |Scry| {TotalScry} and draw {TotalDraw} card{TotalDraw:plural one='' other='s'}. 
     |Scry| |e:1| per {CardValue1} |Task Level| and draw |e:1| per {CardValue2} |Task Level| (minimum 1 card). 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
+  InteractionTitle: |-
+    {Name} - Scry, Draw {TotalDraw}
   Brief: |-
     After X cards are played, |Scry| and draw cards. 
 

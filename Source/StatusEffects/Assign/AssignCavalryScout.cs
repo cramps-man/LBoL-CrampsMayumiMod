@@ -22,9 +22,10 @@ namespace LBoLMod.StatusEffects.Assign
     {
         public ScryInfo TotalScry => new ScryInfo(Level / CardValue1);
         public int TotalDraw => Math.Max(Level / CardValue2, 1);
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DescriptiveScryAction(TotalScry, "Cavalry Scout - Scry, Draw " + TotalDraw);
+            yield return new DescriptiveScryAction(TotalScry, InteractionTitle);
             yield return new DrawManyCardAction(TotalDraw);
         }
     }

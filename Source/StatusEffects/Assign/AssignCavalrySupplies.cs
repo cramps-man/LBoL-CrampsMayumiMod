@@ -27,6 +27,7 @@ namespace LBoLMod.StatusEffects.Assign
         public int TotalTimes => Math.Max(Level / CardValue1, 1);
         public int TotalTimesPlusValue2 => TotalTimes + CardValue2;
         private SelectCardInteraction Interaction { get; set; }
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             List<Card> randomChoices = new List<Card>();
@@ -44,7 +45,7 @@ namespace LBoLMod.StatusEffects.Assign
             }
             Interaction = new SelectCardInteraction(TotalTimes, TotalTimes, randomChoices)
             {
-                Description = SourceCardName + " - Add " + TotalTimes + " to draw pile"
+                Description = InteractionTitle
             };
             yield return new InteractionAction(Interaction);
         }
