@@ -840,9 +840,6 @@ update frontline spellcard to be 50 cost with lower values - UNSURE
   - probs can give an option and keep at 100 power
   - also for the assign spellcard, option for zero cost move choosing effect
 zero cost move become rare? - NO NEED
-gain buff tickdown go to uncommon and change effect perhaps?
-  - exile and give assignment bonus?
-permanent assign make it lose only half task level/assigned haniwa?
 
 all preconditions add better descriptions to the interaction titles
 proper names - probs this update
@@ -866,7 +863,6 @@ look into getting localised yaml texts into code - DONE
 
 haniwa exploiter doesnt get bonus debuff dmg when frontline double action activates - FIXED
   - i feel this effects all blitz type actions on exploiter, ever since the change to use on dmg dealing
-haniwa sentinel perhaps make upgrade scaling on illnessprotection stacks +1 per 5 upgrades?
 frontline double action error when dying after playing frontline due to yuyuko misfortune - probs can just leave it lmao
 frontline exhibit add new effect first time per combat reduce sacrifice cost by 1 haniwa?
   - maybe another effect thats easier to do, gain block? tempfp?
@@ -879,9 +875,14 @@ update scry interactions with custom titles to put the text into yaml - DONE
   - frozen haniwa - can leave, theoretically shouldnt ever happen, nvm it does in card collection lmao
   - assign cavalry supplies
 
+gain buff tickdown go to uncommon and change effect perhaps?
+  - exile and give assignment bonus?
+  - could stay rare, assignment bonus is basically draw
+permanent assign make it lose only half task level/assigned haniwa?
+haniwa sentinel perhaps make upgrade scaling on illnessprotection stacks +1 per 5 upgrades?
 worshipping offcolors, add effect of gaining the specific type per turn
 frontline double action, also add a random frontline to hand?
-update frontline spellcard to not do 40 dmg, but instead add 3 frontlines to hand while sacrificing haniwa
+update frontline spellcard to not do 40 dmg, but instead add 3 frontlines to hand while sacrificing haniwa - DONE
   - gain the 5 of all types first
 look into mass destruction numbers, or concept entirely, it feels weird
 update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg

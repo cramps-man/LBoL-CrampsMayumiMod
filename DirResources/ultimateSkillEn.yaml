@@ -6,8 +6,11 @@ AssignUltimateSkill:
     Trigger all current |Assignment| buffs. 
 
 FrontlineUltimateSkill:
-  Title: Bb
-  Content: What
+  Title: Haniwa
+  Content: Hollow Inexhaustible Troops
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of all |Haniwa|. 
-    Deal {Damage} damage. |Accurate|
+    Then choose up to {Value2} |Frontline| card{Value2:plural one='' other='s'} to add to the hand. Sacrifice |Haniwa| depending on the chosen card{Value2:plural one='' other='s'}. 
+    If the cards can't fit in the hand, the remainder are added to the draw pile. 
+  InteractionTitle: |-
+    Choose up to {Value2} to add to the hand
