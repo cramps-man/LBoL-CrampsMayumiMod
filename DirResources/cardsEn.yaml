@@ -66,7 +66,7 @@ HybridDraw:
   Name: Combined Efforts
   Description: |-
     Draw {Value1} card{Value1:plural one='' other='s'}. 
-    If there is an |Assign| buff active, draw |e:1| card.
+    If there is an |Assignment| buff active, draw |e:1| card.
     If there is a |Frontline| card in hand, draw |e:1| card. 
 
 HaniwaBodyguard:
@@ -191,7 +191,7 @@ HaniwaBlitz:
 AssignHaniwaCreate:
   Name: Haniwa Reserves (Assignment)
   Description: |-
-    Choose an |Assign| buff and increase its card counter by {Value2}. Gain |Haniwa| of the same type equal to the |Assigned| level + {Value1}. 
+    Choose an |Assignment| buff and increase its card counter by {Value2}. Gain |Haniwa| of the same type equal to the number of assigned |Haniwa| + {Value1}. 
     If none are chosen, gain |e:1| of each instead. 
 
 FrontlineHaniwaCreate:
@@ -207,10 +207,10 @@ AssignFastTrigger:
   Name: Quick Task Completion
   Description: |-
     Deal {Damage} damage.
-    Choose 1 |Assign| buff and immediately trigger its effect. Convert remaining buff counter into |Task Level| before triggering. 
+    Choose 1 |Assignment| buff and immediately trigger its effect. Convert remaining buff counter into |Task Level| before triggering. 
   UpgradedDescription: |-
     Deal {Damage} damage.
-    Choose 1 |Assign| buff and immediately trigger its effect. Convert double the remaining buff counter into |Task Level| before triggering. 
+    Choose 1 |Assignment| buff and immediately trigger its effect. Convert |e:double| the remaining buff counter into |Task Level| before triggering. 
 
 FrontlineUpgrade:
   Name: Basic Training
@@ -223,7 +223,7 @@ AssignExtraTime:
   Name: Delayed Task Completion
   Description: |-
     Gain {Block} |Block|. 
-    Choose an |Assign| buff and increase its counter by {Value1}. 
+    Choose an |Assignment| buff and increase its counter by {Value1}. 
 
 CavalryScout:
   Name: Assignment - Scout Ahead
@@ -243,9 +243,9 @@ FastSummon:
 BasicAssignment:
   Name: Basic Assignment
   Description: |-
-    Choose |e:1| Common |Assign| card to add to the hand. 
+    Choose |e:1| Common |Assignment| card to add to the hand. 
   UpgradedDescription: |-
-    Choose |e:1| Common |Assign| card to add to the hand. 
+    Choose |e:1| Common |Assignment| card to add to the hand. 
     |At start of combat|: {SelfName} is automatically played. Only one {SelfName} may be automatically played per combat. 
 
 #UNCOMMONS
@@ -311,11 +311,11 @@ GarrisonArcher:
 AssignTickdownReturn:
   Name: Task Hustle
   Description: |-
-    Decrease the card counter for all |Assign| buffs by {Value1}. 
-    Whenever an |Assign| buff triggers, return {SelfName} from the discard pile to the hand. 
+    Decrease the card counter for all |Assignment| buffs by {Value1}. 
+    Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
   UpgradedDescription: |-
-    Decrease the card counter for all |Assign| buffs by {Value1} and draw {Value2} card{Value2:plural one='' other='s'}. 
-    Whenever an |Assign| buff triggers, return {SelfName} from the discard pile to the hand. 
+    Decrease the card counter for all |Assignment| buffs by {Value1} and draw {Value2} card{Value2:plural one='' other='s'}. 
+    Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
 
 HaniwaSpy:
   Name: Haniwa Spy
@@ -481,13 +481,13 @@ ChargeAttack:
   Description: |-
     |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the highest life. 
-    Whenever an |Assign| buff is triggered, increase |Task Level| by {Value1}. 
+    Whenever an |Assignment| buff is triggered, increase |Task Level| by {Value1}. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 AssignPlayGainBlock:
   Name: Defence Delegation
   Description: |-
-    When playing an |Assign| card, gain {Value1} |Block|. 
+    When playing an |Assignment| card, gain {Value1} |Block|. 
 
 CavalryRush:
   Name: Assignment - Rush Attack
@@ -520,7 +520,7 @@ AshesToClay:
 ChooseShortAssign:
   Name: Quick Assignment
   Description: |-
-    Choose 1 of 3 |Assign| cards and gain its buff. No |Haniwa| required. 
+    Choose 1 of 3 |Assignment| cards and gain its buff. No |Haniwa| required. 
     The buff has a starting card counter of {Value1} and starts with {Value2} extra |Task Level|. 
 
 FencerPrepCounter:
@@ -556,12 +556,12 @@ AssignTriggerUpgrade:
   Name: Free Training
   Description: |-
     Upgrade all cards in the hand. 
-    Whenever an |Assign| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
+    Whenever an |Assignment| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
 FrontlineLoyaltyTaskLevel:
   Name: Inspire the Back
   Description: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, all |Assign| buffs gain |Task Level| equal to |Loyalty| consumed. 
+    Whenever a |Frontline| card has |Loyalty| consumed, all |Assignment| buffs gain |Task Level| equal to |Loyalty| consumed. 
 
 CavalrySupplies:
   Name: Assignment - Bring the Supplies
@@ -628,13 +628,13 @@ FullFrontalAssault:
 AssignPlayDraw:
   Name: Task Completion Reward
   Description: |-
-    Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
+    Whenever {PlayerName} plays an |Assignment| card, draw 1 card. 
 
 GainBuffTickdown:
   Name: Gain Buff Tickdown
   Description: |-
-    For this turn when {PlayerName} gains a buff, decrease the card counter for all |Assign| buffs by {Value1}. 
-    At the start of next turn, gain |Temporary Firepower| for every {Value2} |Assign| buff{Value2:plural one='' other='s'} triggered. 
+    For this turn when {PlayerName} gains a buff, decrease the card counter for all |Assignment| buffs by {Value1}. 
+    At the start of next turn, gain |Temporary Firepower| for every {Value2} |Assignment| buff{Value2:plural one='' other='s'} triggered. 
 
 ZeroCostReduction:
   Name: Power of Zero
@@ -651,7 +651,7 @@ MassDestruction:
 MassTaskLevel:
   Name: Perfect Task
   Description: |-
-    Choose |e:1| |Assign| buff and remove all other |Assign| buffs. 
+    Choose |e:1| |Assignment| buff and remove all other |Assignment| buffs. 
     Increase the chosen buff's |Task Level| by {Value2}. 
     Additionally, add the total |Task Level| of the removed buffs onto the chosen buff. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
@@ -691,39 +691,39 @@ OptionFrontlineCommander:
     Add a |Frontline Commander| to the hand. 
 
 AssignCommander:
-  Name: Assign Commander
+  Name: Assignment Commander
   Description: |-
-    |While in hand/draw/discard|: When an |Assign| buff triggers, automatically redistribute assigned |Haniwa| into new |Assign| buffs that fulfil the required |Assign| costs. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {LoyaltyGain} |Loyalty|. 
-    |When played|: Choose an |Assign| buff and give it {Value2} extra |Task Level| then duplicate it. Does not consume |Loyalty|. 
+    |While in hand/draw/discard|: When an |Assignment| buff triggers, automatically redistribute assigned |Haniwa| into new |Assignment| buffs that fulfil the required costs. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {LoyaltyGain} |Loyalty|. 
+    |When played|: Choose an |Assignment| buff and give it {Value2} extra |Task Level| then duplicate it. Does not consume |Loyalty|. 
   DetailText: |-
     Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
     
     Increases for each upgrade. 
     OnPlay task level: +1 per upgrade
   ExtraDescription1: |-
-    {SelfName} - Duplicate an Assign buff
+    {SelfName} - Duplicate an Assignment buff
 
 OptionAssignCommander:
-  Name: Summon Assign Commander
+  Name: Summon Assignment Commander
   Description: |-
     Sacrifice {SelectRequireFencer} of all |Haniwa|.
-    Add a |Assign Commander| to the hand. 
+    Add a |Assignment Commander| to the hand. 
     {AvailableFencer} |Fencer|, {AvailableArcher} |Archer|, {AvailableCavalry} |Cavalry| available. 
   NonbattleDescription: |-
     Sacrifice {SelectRequireFencer} of all |Haniwa|.
-    Add a |Assign Commander| to the hand. 
+    Add a |Assignment Commander| to the hand. 
 
 SummonCommander:
   Name: Summon Commander
   Description: |-
-    Choose a |Frontline Commander| or |Assign Commander| to add to the hand. 
+    Choose a |Frontline Commander| or |Assignment Commander| to add to the hand. 
   UpgradedDescription: |-
-    Choose a |Frontline Commander| or |Assign Commander| to add to the hand. It starts with {Value1} upgrades. 
+    Choose a |Frontline Commander| or |Assignment Commander| to add to the hand. It starts with {Value1} upgrades. 
 
 AssignTriggerSummon:
   Name: Free Summoning
   Description: |-
-    Whenever an |Assign| buff is triggered, add {Value1} random |Frontline| card{Value1:plural one='' other='s'} to the hand. 
+    Whenever an |Assignment| buff is triggered, add {Value1} random |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
 FrontlineDoubleAction:
   Name: Frontline Double Action
@@ -734,8 +734,8 @@ AssignReverseTickdown:
   Name: Guard Scramble
   Description: |-
     Gain {Block} |Block|. 
-    Until end of {PlayerName}'s turn, |Assign| buffs increase their card counter instead of decreasing. 
-    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assign| buffs. 
+    Until end of {PlayerName}'s turn, |Assignment| buffs increase their card counter instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assignment| buffs. 
 
 HandsizeBlock:
   Name: Defensive Formation
@@ -786,14 +786,14 @@ KeikiTeammate:
   Description: |-
     {FriendP} Add |e:2| random |Frontline| cards to the hand. 
   ExtraDescription1: |-
-    {FriendA} Trigger all |Assign| buffs. Gain {Value1} |Barrier| for each buff triggered. 
+    {FriendA} Trigger all |Assignment| buffs. Gain {Value1} |Barrier| for each buff triggered. 
   ExtraDescription3: |-
     {FriendU} Move all |Frontline| cards in exile to discard pile and refresh their |Loyalty|. Deal {Value2} damage to all enemies for each card moved this way. ({FrontlineExileDamage})
 
 PermanentAssign:
   Name: Permanent Task
   Description: |-
-    Choose{Value1:plural one='' other=' up to'} {Value1} |Assign| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
+    Choose{Value1:plural one='' other=' up to'} {Value1} |Assignment| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
 
 PoisonShot:
   Name: Poison Shot
@@ -833,8 +833,8 @@ MudExtraction:
 AssignCostTaskLevel:
   Name: Assignment Double Time
   Description: |-
-    Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost. |Assign| buffs gain {Value1} extra |Task Level| per card played.
-    Regain any mana spent on |Assign| cards at start of next turn. 
+    Until the end of this combat, |Assignment| cards in the hand temporarily gain {Mana} cost. |Assignment| buffs gain {Value1} extra |Task Level| per card played.
+    Regain any mana spent on |Assignment| cards at start of next turn. 
 
 FrontlineLoyaltyGain:
   Name: Inspirational Speech
@@ -844,14 +844,14 @@ FrontlineLoyaltyGain:
 AssignSeparation:
   Name: Task Separation
   Description: |-
-    |Assign| buffs no longer stack, and will create a separate buff instead. 
+    |Assignment| buffs no longer stack, and will create a separate buff instead. 
 
 ChainOfCommand:
   Name: Chain of Command
   Description: |-
-    Allow |Frontline Commander| and |Assign Commander| to be selectable for summons and randomly spawned. 
+    Allow |Frontline Commander| and |Assignment Commander| to be selectable for summons and randomly spawned. 
   UpgradedDescription: |-
-    Allow |Frontline Commander| and |Assign Commander| to be selectable for summons and randomly spawned. 
+    Allow |Frontline Commander| and |Assignment Commander| to be selectable for summons and randomly spawned. 
     |At start of combat|: {SelfName} is automatically played. 
 
 DarknessSummon:

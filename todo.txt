@@ -886,3 +886,5 @@ update frontline spellcard to not do 40 dmg, but instead add 3 frontlines to han
 look into mass destruction numbers, or concept entirely, it feels weird
 update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg
 give assign separation some other effect, autoplay on upgrade?
+ashes to clay, upgrade increases draw instead of selected exiled frontlines?
+  - same for frontline copy?

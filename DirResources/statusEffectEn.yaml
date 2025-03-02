@@ -50,40 +50,40 @@ Assign:
   Name: Assign X
   Description: |-
     Lose X level of |Haniwa|, to gain an |Assignment| buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back all assigned |Haniwa|. 
-    Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X. 
+    Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X, accumilating assigned |Haniwa|. 
     |Note|: ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
   Brief: |-
     Lose X level of |Haniwa|, to gain an |Assignment| buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back all assigned |Haniwa|. 
-    Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X. 
+    Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X, accumilating assigned |Haniwa|. 
     |Note|: ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
 
 TaskLevel:
   Name: Task Level
   Description: |-
-    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff effect's power. 
+    Represented on |Assignment| buffs via the level of the buff (red number). Determines the buff effect's power. 
     After a card is played, |Task Level| increases by half the number of assigned |Haniwa| rounded up. 
   Brief: |-
-    Represented on |Assign| buffs via the level of the buff (red number). Determines the buff effect's power. 
+    Represented on |Assignment| buffs via the level of the buff (red number). Determines the buff effect's power. 
     After a card is played, |Task Level| increases by half the number of assigned |Haniwa| rounded up. 
 
 AssignmentBonusSe:
   Name: Assignment Bonus
   Description: |-
-    After an |Assign| buff triggers during the turn (not start of), draw |e:1| card and lose |e:1| level of |Assignment Bonus|. 
+    After an |Assignment| buff triggers during the turn (not start of), draw |e:1| card and lose |e:1| level of |Assignment Bonus|. 
   Brief: |-
-    After an |Assign| buff triggers during the turn (not start of), draw |e:1| card and lose |e:1| level of |Assignment Bonus|. 
+    After an |Assignment| buff triggers during the turn (not start of), draw |e:1| card and lose |e:1| level of |Assignment Bonus|. 
 
 Frontline:
   Name: Frontline
   Description: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    |Loyalty| is increased by |e:1| when upgraded. Also increased when gaining |Haniwa| by half the |Haniwa| gained rounded up, if it is same type as the card and it is in the hand. 
     Upgradable any number of times. 
+    |Loyalty| is increased by |e:1| when upgraded. Also increased when gaining |Haniwa| by half the |Haniwa| gained rounded up, if it is same |Haniwa| type as the card and it is in the hand. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. Passive will not trigger if |Loyalty| would go below |e:0|. 
   Brief: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    |Loyalty| is increased by |e:1| when upgraded. Also increased when gaining |Haniwa| by half the |Haniwa| gained rounded up, if it is same type as the card and it is in the hand. 
     Upgradable any number of times. 
+    |Loyalty| is increased by |e:1| when upgraded. Also increased when gaining |Haniwa| by half the |Haniwa| gained rounded up, if it is same |Haniwa| type as the card and it is in the hand. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. Passive will not trigger if |Loyalty| would go below |e:0|. 
 
 Loyalty:
@@ -103,11 +103,11 @@ Pause:
 Permanent:
   Name: Permanent Task
   Description: |-
-    When an |Assign| buff is |Permanent|, after being triggered it will not be removed. 
+    When an |Assignment| buff is |Permanent|, after being triggered it will not be removed. 
     After triggering, lose the number of assigned |Haniwa|, reset the buff's counter to |e:5| and |Task Level| + assigned |Haniwa| to the card's starting values. 
     If there is not enough |Haniwa|, lose life equal to the number of assigned |Haniwa| instead. 
   Brief: |- 
-    When an |Assign| buff is |Permanent|, after being triggered it will not be removed. 
+    When an |Assignment| buff is |Permanent|, after being triggered it will not be removed. 
     After triggering, lose the number of assigned |Haniwa|, reset the buff's counter to |e:5| and |Task Level| + assigned |Haniwa| to the card's starting values. 
     If there is not enough |Haniwa|, lose life equal to the number of assigned |Haniwa| instead. 
 
@@ -169,9 +169,9 @@ AssignCavalryRush:
 AssignPlayGainBlockSe:
   Name: Defence Delegation
   Description: |-
-    When playing an |Assign| card, gain {Level} |Block|. 
+    When playing an |Assignment| card, gain {Level} |Block|. 
   Brief: |-
-    When playing an |Assign| card, gain |Block|. 
+    When playing an |Assignment| card, gain |Block|. 
 
 ClayToAshesSe:
   Name: Clay To Ashes
@@ -184,7 +184,7 @@ AssignChargeAttack:
   Name: Assignment - Ballista Bolt
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to the enemy with the highest life. 
-    Whenever an |Assign| buff is triggered, increase |Task Level| by {CardValue1}. 
+    Whenever an |Assignment| buff is triggered, increase |Task Level| by {CardValue1}. 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal damage to the enemy with the highest life. 
@@ -192,18 +192,18 @@ AssignChargeAttack:
 AssignPlayDrawSe:
   Name: Task Completion Reward
   Description: |-
-    Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
+    Whenever {PlayerName} plays an |Assignment| card, draw 1 card. 
   Brief: |-
-    Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
+    Whenever {PlayerName} plays an |Assignment| card, draw 1 card. 
 
 GainBuffTickdownSe:
   Name: Gain Buff Tickdown
   Description: |-
-    For this turn when {PlayerName} gains a buff, tickdown all |Assign| buffs by {Level}. 
-    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assign| buff{FirepowerScaling:plural one='' other='s'} triggered ({TotalFirepower}). 
+    For this turn when {PlayerName} gains a buff, tickdown all |Assignment| buffs by {Level}. 
+    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assignment| buff{FirepowerScaling:plural one='' other='s'} triggered ({TotalFirepower}). 
   Brief: |-
-    For this turn when {PlayerName} gains a buff, tickdown all |Assign| buffs by {Level}. 
-    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assign| buff{FirepowerScaling:plural one='' other='s'} triggered. 
+    For this turn when {PlayerName} gains a buff, tickdown all |Assignment| buffs by {Level}. 
+    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assignment| buff{FirepowerScaling:plural one='' other='s'} triggered. 
 
 ZeroCostReductionSe:
   Name: Power of Zero
@@ -217,9 +217,9 @@ ZeroCostReductionSe:
 AssignTriggerSummonSe:
   Name: Free Summoning
   Description: |-
-    Whenever an |Assign| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
+    Whenever an |Assignment| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
   Brief: |-
-    Whenever an |Assign| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
+    Whenever an |Assignment| buff is triggered, add {Level} |Frontline| card{Level:plural one='' other='s'} to the hand. 
 
 AssignCavalryScout:
   Name: Assignment - Scout Ahead
@@ -256,9 +256,9 @@ AssignArcherPrepDebuff:
 AssignTriggerUpgradeSe:
   Name: Free Training
   Description: |-
-    Whenever an |Assign| buff is triggered, upgrade {Level} random card{Level:plural one='' other='s'} in the hand. 
+    Whenever an |Assignment| buff is triggered, upgrade {Level} random card{Level:plural one='' other='s'} in the hand. 
   Brief: |-
-    Whenever an |Assign| buff is triggered, upgrade {Level} random card{Level:plural one='' other='s'} in the hand. 
+    Whenever an |Assignment| buff is triggered, upgrade {Level} random card{Level:plural one='' other='s'} in the hand. 
 
 AssignArcherPrepFrostArrow:
   Name: Assignment - Frost Arrow
@@ -281,11 +281,11 @@ FrontlineDoubleActionSe:
 AssignCostTaskLevelSe:
   Name: Assignment Double Time
   Description: |-
-    Until the end of this combat, |Assign| cards in the hand temporarily gain {IncreasedCost} cost. |Assign| buffs gain {Level} extra |Task Level| per card played.
-    Regain any mana spent on |Assign| cards at start of next turn. 
+    Until the end of this combat, |Assignment| cards in the hand temporarily gain {IncreasedCost} cost. |Assignment| buffs gain {Level} extra |Task Level| per card played.
+    Regain any mana spent on |Assignment| cards at start of next turn. 
   Brief: |-
-    Until the end of this combat, |Assign| cards in the hand temporarily gain {IncreasedCost} cost. |Assign| buffs gain extra |Task Level| per card played.
-    Regain any mana spent on |Assign| cards at start of next turn. 
+    Until the end of this combat, |Assignment| cards in the hand temporarily gain {IncreasedCost} cost. |Assignment| buffs gain extra |Task Level| per card played.
+    Regain any mana spent on |Assignment| cards at start of next turn. 
 
 AutoCreateReservesSe:
   Name: Auto Haniwa Reserves
@@ -297,11 +297,11 @@ AutoCreateReservesSe:
 AssignReverseTickdownSe:
   Name: Guard Scramble
   Description: |-
-    Until end of {PlayerName}'s turn, |Assign| buffs increase their card counter instead of decreasing. 
-    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assign| buffs. 
+    Until end of {PlayerName}'s turn, |Assignment| buffs increase their card counter instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assignment| buffs. 
   Brief: |-
-    Until end of {PlayerName}'s turn, |Assign| buffs increase their card counter instead of decreasing. 
-    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assign| buffs. 
+    Until end of {PlayerName}'s turn, |Assignment| buffs increase their card counter instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assignment| buffs. 
 
 CommandersMarkSe:
   Name: Commander's Mark
@@ -329,30 +329,30 @@ IllnessPreventionSe:
 AssignDoubleTriggerSe:
   Name: Assignment Double Trigger
   Description: |-
-    The next {Level} |Assign| buff{Level:plural one='' other='s'} triggers twice. 
+    The next {Level} |Assignment| buff{Level:plural one='' other='s'} triggers twice. 
   Brief: |-
-    The next |Assign| buff triggers twice. 
+    The next |Assignment| buff triggers twice. 
 
 AssignSeparationSe:
   Name: Task Separation
   Description: |-
-    |Assign| buffs no longer stack, and will create a separate buff instead. 
+    |Assignment| buffs no longer stack, and will create a separate buff instead. 
   Brief: |-
-    |Assign| buffs no longer stack, and will create a separate buff instead. 
+    |Assignment| buffs no longer stack, and will create a separate buff instead. 
 
 ChainOfCommandSe:
   Name: Chain of Command
   Description: |-
-    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 
+    Allow |Frontline Commander| and |Assignment Commander| to be summonable via normal means. 
   Brief: |-
-    Allow |Frontline Commander| and |Assign Commander| to be summonable via normal means. 
+    Allow |Frontline Commander| and |Assignment Commander| to be summonable via normal means. 
 
 FrontlineLoyaltyTaskLevelSe:
   Name: Inspire the Back
   Description: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, all |Assign| buffs gain |Task Level| equal to |Loyalty| consumed. 
+    Whenever a |Frontline| card has |Loyalty| consumed, all |Assignment| buffs gain |Task Level| equal to |Loyalty| consumed. 
   Brief: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, all |Assign| buffs gain |Task Level| equal to |Loyalty| consumed. 
+    Whenever a |Frontline| card has |Loyalty| consumed, all |Assignment| buffs gain |Task Level| equal to |Loyalty| consumed. 
 
 LoyaltyProtectionSe:
   Name: Loyalty Protection

@@ -3,7 +3,7 @@ AssignUltimateSkill:
   Content: What
   Description: |-
     Deal {Damage} damage to all enemies. |Accurate|
-    Trigger all current |Assign| status effects. 
+    Trigger all current |Assignment| buffs. 
 
 FrontlineUltimateSkill:
   Title: Bb
