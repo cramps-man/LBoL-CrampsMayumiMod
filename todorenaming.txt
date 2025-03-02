@@ -23,7 +23,7 @@ FencerPrepCounter -> Assignment - Counter Attack
 NumBuffBlock
 ZeroCostMove -> Task Transfer
 AssignDuplicateTrigger -> Assignment Double Trigger
-AssignPlayDraw -> Task Completion Reward
+AssignPlayDraw -> Task Start Reward
 AssignReverseTickdown -> Guard Scramble
 GainBuffTickdown
 MassTaskLevel -> Perfect Task

@@ -626,7 +626,7 @@ FullFrontalAssault:
     Deal {Value1} additional damage for each |Haniwa| level. 
 
 AssignPlayDraw:
-  Name: Task Completion Reward
+  Name: Task Start Reward
   Description: |-
     Whenever {PlayerName} plays an |Assignment| card, draw 1 card. 
 
