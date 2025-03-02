@@ -17,11 +17,11 @@ using System.Collections.Generic;
 
 namespace LBoLMod.PlayerUnits
 {
-    public sealed class PlayerDef : PlayerUnitTemplate
+    public sealed class MayumiPlayerDef : PlayerUnitTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(ThePlayer);
+            return nameof(MayumiPlayer);
         }
 
         public override LocalizationOption LoadLocalization()
@@ -39,7 +39,7 @@ namespace LBoLMod.PlayerUnits
         public override PlayerUnitConfig MakeConfig()
         {
             var config = new PlayerUnitConfig(
-            Id: nameof(ThePlayer),
+            Id: nameof(MayumiPlayer),
             ShowOrder: 6,
             Order: 0,
             UnlockLevel: 0,
@@ -95,8 +95,8 @@ namespace LBoLMod.PlayerUnits
         }
     }
 
-    [EntityLogic(typeof(PlayerDef))]
-    public sealed class ThePlayer: PlayerUnit
+    [EntityLogic(typeof(MayumiPlayerDef))]
+    public sealed class MayumiPlayer: PlayerUnit
     {
         public int StartingHaniwa => 3;
         protected override void OnEnterBattle(BattleController battle)

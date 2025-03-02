@@ -12,7 +12,7 @@ namespace LBoLMod.UnitModel
     {
         public override IdContainer GetId()
         {
-            return new PlayerDef().UniqueId;
+            return new MayumiPlayerDef().UniqueId;
         }
 
         public override LocalizationOption LoadLocalization()

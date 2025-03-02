@@ -87,7 +87,7 @@ namespace LBoLMod.Cards
                RelativeCards: new List<string>() { },
                UpgradedRelativeCards: new List<string>() { },
 
-               Owner: new PlayerDef().UniqueId,
+               Owner: new MayumiPlayerDef().UniqueId,
                ImageId: "",
                UpgradeImageId: "",
 

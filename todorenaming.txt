@@ -1,8 +1,8 @@
 BASICS
 BasicAttackR -> Archery Expertise
-BasicAttackW -> Expert Swordsmanship
-BasicBlockR -> Defence Delegation
-BasicBlockW -> Equestrian Expertise
+BasicAttackW -> Expert Swordsmanship, Sword Mastery
+BasicBlockR -> Defence Delegation, Guard Duty
+BasicBlockW -> Equestrian Expertise, Master Riding
 
 ASSIGNS
 ArcherPrepVolley -> Assignment - Arrow Volley/Barrage
@@ -12,8 +12,8 @@ AssignHaniwaCreate -> Haniwa Reserves (Assignment)
 CavalryScout -> Assignment - Scout Ahead
 FencerBuildBarricade -> Assignment - Build Barricade
 ArcherPrepDebuff -> Assignment - Debilitate Foe
-AssignPlayGainBlock
-AssignTickdownReturn
+AssignPlayGainBlock -> Defence Delegation
+AssignTickdownReturn -> Work Hustle
 BuildWatchtower -> Assignment - Build Watchtower
 CavalryRush -> Assignment - Rush Attack
 CavalrySupplies -> Assignment - Bring the Supplies
@@ -21,7 +21,7 @@ ChargeAttack -> Assignment - Ballista Bolt
 ChooseShortAssign -> Quick Assignment
 FencerPrepCounter -> Assignment - Counter Attack
 NumBuffBlock
-ZeroCostMove
+ZeroCostMove -> Task Transfer
 AssignDuplicateTrigger -> Assignment Double Time, better for another card
 AssignPlayDraw -> Assignment Juggling
 AssignReverseTickdown -> Guard Scramble
@@ -31,7 +31,7 @@ MassTaskLevel -> Perfect Task Quality
 FRONTLINES
 HaniwaAttacker maybe? -> Haniwa Soldier/Grunt? maybe
 BasicSummon -> Basic Recruitment
-DefenceSummon -> Safety Recruitment
+DefenceSummon -> Safe Recruitment
 FastSummon -> Early Recruitment
 FrontlineHaniwaCreate -> Haniwa Reserves (Frontline)
 FrontlineUpgrade -> Simple Training
@@ -53,14 +53,14 @@ DefenceCreateReserves
 HybridDraw
 WeakeningShot maybe?
 AssignTriggerUpgrade
-AutoCreateReserves
+AutoCreateReserves -> Auto Haniwa Reserves
 CreateArcher -> Skilled Archer Haniwa
 CreateCavalry -> Skilled Cavalry Haniwa
 CreateFencer -> Skilled Fencer Haniwa
 FrontlineLoyaltyTaskLevel -> something about inspring the back?
 AssignTriggerSummon
 HandsizeBlock -> Defensive Formation
-MaxHaniwaUp
+MaxHaniwaUp -> Troop Capacity Up
 ZeroCostReduction
 
 OFFCOLOURS

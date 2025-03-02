@@ -45,7 +45,7 @@ namespace LBoLMod.Exhibits
                 IsSentinel: false,
                 Revealable: false,
                 Appearance: AppearanceType.Nowhere,
-                Owner: new PlayerDef().UniqueId,
+                Owner: new MayumiPlayerDef().UniqueId,
                 LosableType: ExhibitLosableType.DebutLosable,
                 Rarity: Rarity.Shining,
                 Value1: 3,
