@@ -43,8 +43,8 @@ namespace LBoLMod.Cards
         public override string CantUseMessage => LocSe.RequiresHaniwa();
         public override Interaction Precondition()
         {
-            List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetOptionCards(HaniwaFrontlineUtils.CommonOptionTypes, base.Battle, checkSacrificeRequirement: true);
-            return new SelectCardInteraction(1, Value1, cards);
+            List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetOptionCards(HaniwaFrontlineUtils.CommonOptionTypes, base.Battle, Value1, true);
+            return new SelectCardInteraction(1, 1, cards);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

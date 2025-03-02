@@ -132,8 +132,8 @@ HaniwaSharpshooter:
 BasicSummon:
   Name: Basic Summoning
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. Only Common rarities can be chosen. 
-    |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
+    Choose 1 |Frontline| card and add {Value1:plural one='% copy' other='% copies'} to the hand. Only Common rarities can be chosen. 
+    |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
 
