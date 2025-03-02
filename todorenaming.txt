@@ -23,7 +23,7 @@ FencerPrepCounter -> Assignment - Counter Attack
 NumBuffBlock
 ZeroCostMove -> Task Transfer
 AssignDuplicateTrigger -> Assignment Double Trigger
-AssignPlayDraw -> Assignment Completion Reward
+AssignPlayDraw -> Task Completion Reward
 AssignReverseTickdown -> Guard Scramble
 GainBuffTickdown
 MassTaskLevel -> Perfect Task
@@ -31,11 +31,11 @@ MassTaskLevel -> Perfect Task
 FRONTLINES
 HaniwaAttacker maybe? -> Haniwa Soldier/Grunt? maybe
 BasicSummon -> Basic Summoning
-DefenceSummon -> Safe Summoning
+DefenceSummon -> Guard Summoning
 FastSummon -> Early Summoning
 FrontlineHaniwaCreate -> Haniwa Reserves (Frontline)
-FrontlineUpgrade -> Simple Training
-HaniwaBlitz -> Command Frontline/Command the Front?
+FrontlineUpgrade -> Basic Training
+HaniwaBlitz -> Command Frontline/Command the Front? Front Command
 HaniwaUpgrader maybe? -> Haniwa Trainer? maybe
 BlitzSummon -> Summoning - Instant Command
 DiscardUpgrade -> Dedicated Training
@@ -61,7 +61,7 @@ FrontlineLoyaltyTaskLevel -> Inspire the Back
 AssignTriggerSummon -> Free Summoning
 HandsizeBlock -> Defensive Formation
 MaxHaniwaUp -> Reserves Capacity Up
-ZeroCostReduction -> The Power of Zero
+ZeroCostReduction -> Power of Zero
 
 OFFCOLOURS
 ArcherPrepFrostArrow -> Assignment - Frost Arrow
@@ -69,7 +69,7 @@ AssignCostTaskLevel -> Assignment Double Time
 FrontlineLoyaltyGain -> Inspirational Speech
 AssignSeparation -> Assignment Separation/Delegation? Task Separation
 DarknessSummon -> Dark Summoning
-PermanentAssign -> Permanent Assignment
+PermanentAssign -> Permanent Task
 PoisonShot maybe? - IS FINE
 
 SPELLCARDS

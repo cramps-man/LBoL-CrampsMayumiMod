@@ -1,35 +1,35 @@
 BasicAttackR:
-  Name: Basic Attack
+  Name: Expert Archery
   Description: Deal {Damage} damage.
 
 BasicAttackW:
-  Name: Basic Attack
+  Name: Sword Mastery
   Description: Deal {Damage} damage.
 
 BasicBlockR:
-  Name: Basic Block
+  Name: Master Riding
   Description: Gain {Block} |Block|.
 
 BasicBlockW:
-  Name: Basic Block
+  Name: Guard Duty
   Description: Gain {Block} |Block|.
 
 #COMMONS
 CreateHaniwa:
-  Name: Create Haniwa
+  Name: Haniwa Reserves
   Description: |-
     Gain {Value1} levels of the chosen |Haniwa| type (|Fencer|, |Archer|, |Cavalry|).
 
 CreateHaniwaArcher:
-  Name: Create Haniwa (Archer)
+  Name: Haniwa Reserves (Archer)
   Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|.
 
 CreateHaniwaCavalry:
-  Name: Create Haniwa (Cavalry)
+  Name: Haniwa Reserves (Cavalry)
   Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|.
 
 CreateHaniwaFencer:
-  Name: Create Haniwa (Fencer)
+  Name: Haniwa Reserves (Fencer)
   Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
 
 WeakeningShot:
@@ -41,7 +41,7 @@ WeakeningShot:
     |3|: Apply {Value2} |Temporary Firepower Down|.
 
 DefenceSummon:
-  Name: Defence Summon
+  Name: Guard Summoning
   Description: |-
     Gain {Block} |Block|.
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
@@ -56,14 +56,14 @@ FencerKamikaze:
     Deal {Damage} damage to all enemies. 
 
 ArcherPrepVolley:
-  Name: Archer Prep Volley
+  Name: Assignment - Arrow Barrage
   Description: |-
     |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} cards are played, deal {Damage} damage X times to random enemies. X is |Task Level| / {Value1}. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 HybridDraw:
-  Name: Hybrid Draw
+  Name: Combined Efforts
   Description: |-
     Draw {Value1} card{Value1:plural one='' other='s'}. 
     If there is an |Assign| buff active, draw |e:1| card.
@@ -93,17 +93,17 @@ HaniwaSupport:
     OnPlay gain extra <sprite="ManaSprite" name={Mana}> per 8 upgrade. 
 
 FencerBuildBarricade:
-  Name: Fencer Build Barricade
+  Name: Assignment - Build Barricade
   Description: |-
     |Assign {FencerRequired} Fencer|.
     After {StartingCardCounter} cards are played, gain {Shield} |Barrier| per {Value1} |Task Level|.
     Start with {StartingTaskLevel} |Task Level|. 
 
 DefenceCreateReserves:
-  Name: Defence Create Reserves
+  Name: Create Reserves
   Description: |-
     Gain {Block} |Block|. 
-    Add {Value1} |Create Haniwa| to the hand. 
+    Add {Value1} |Haniwa Reserves| to the hand. 
 
 HaniwaAttacker:
   Name: Haniwa Attacker
@@ -130,7 +130,7 @@ HaniwaSharpshooter:
     |Lock On| +1 per 3 upgrade
 
 BasicSummon:
-  Name: Basic Summon
+  Name: Basic Summoning
   Description: |-
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. Only Common rarities can be chosen. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
@@ -183,19 +183,19 @@ ModAssignOptionCard:
     Dummy card for status effect selection. 
 
 HaniwaBlitz:
-  Name: Haniwa Blitz
+  Name: Front Command
   Description: |-
     Deal {Damage} damage. 
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
 
 AssignHaniwaCreate:
-  Name: Assign Haniwa Create
+  Name: Haniwa Reserves (Assignment)
   Description: |-
     Choose an |Assign| buff and increase its card counter by {Value2}. Gain |Haniwa| of the same type equal to the |Assigned| level + {Value1}. 
     If none are chosen, gain |e:1| of each instead. 
 
 FrontlineHaniwaCreate:
-  Name: Frontline Haniwa Create
+  Name: Haniwa Reserves (Frontline)
   Description: |-
     Choose a |Frontline| card and |Exile| it. Gain |Haniwa| of all types equal to the rarity. 
     |Common|: {CommonGain} of each. 
@@ -204,7 +204,7 @@ FrontlineHaniwaCreate:
     If none are chosen, gain {Value2} of each instead. 
 
 AssignFastTrigger:
-  Name: Assign Fast Trigger
+  Name: Quick Task Completion
   Description: |-
     Deal {Damage} damage.
     Choose 1 |Assign| buff and immediately trigger its effect. Convert remaining buff counter into |Task Level| before triggering. 
@@ -213,27 +213,27 @@ AssignFastTrigger:
     Choose 1 |Assign| buff and immediately trigger its effect. Convert double the remaining buff counter into |Task Level| before triggering. 
 
 FrontlineUpgrade:
-  Name: Frontline Upgrade
+  Name: Basic Training
   Description: |-
     Gain {Block} |Block|. 
     Choose up to {Value1} card{Value1:plural one='' other='s'} to upgrade. 
     If a |Frontline| card is chosen, upgrade it {Value2} additional time{Value2:plural one='' other='s'}. 
 
 AssignExtraTime:
-  Name: Assign Extra Time
+  Name: Delayed Task Completion
   Description: |-
     Gain {Block} |Block|. 
     Choose an |Assign| buff and increase its counter by {Value1}. 
 
 CavalryScout:
-  Name: Cavalry Scout
+  Name: Assignment - Scout Ahead
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and draw |e:1| card per {Value2} |Task Level| (minimum 1 card). 
     Start with {StartingTaskLevel} |Task Level|. 
 
 FastSummon:
-  Name: Fast Summon
+  Name: Early Summoning
   Description: |-
     Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
@@ -250,7 +250,7 @@ BasicAssignment:
 
 #UNCOMMONS
 CreateArcher:
-  Name: Create Archer
+  Name: Skilled Archer Haniwa
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Archer|. 
     Deal {Damage} damage.
@@ -261,24 +261,24 @@ CreateArcher:
     |10|: Become |Accurate|. 
 
 CreateCavalry:
-  Name: Create Cavalry
+  Name: Skilled Cavalry Haniwa
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
     Gain effects based on |Cavalry| level. 
     |3|: Draw 1 card. 
     |5|: |Scry| {Scry}. 
     |7|: Draw 1 card. 
-    |10|: |Assign| 1 instance of |Cavalry Rush|. 
+    |10|: |Assign| 1 instance of |Assignment - Rush Attack|. 
   UpgradedDescription: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
     Gain effects based on |Cavalry| level. 
     |3|: Draw 1 card. 
     |5|: |Scry| {Scry}. 
     |7|: Draw 1 card. 
-    |10|: |Assign| 1 instance of |Cavalry Rush+|. 
+    |10|: |Assign| 1 instance of |Assignment - Rush Attack+|. 
 
 CreateFencer:
-  Name: Create Fencer
+  Name: Skilled Fencer Haniwa
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer|.
     Gain effects based on |Fencer| level. 
@@ -288,7 +288,7 @@ CreateFencer:
     |10|: Gain {Value2} |Static Charge| until {PlayerName}'s next turn. 
 
 BuildWatchtower:
-  Name: Build Watchtower
+  Name: Assignment - Build Watchtower
   Description: |-
     |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
     After {StartingCardCounter} cards are played, gain |e:1| |Watchtower| per {Value1} |Task Level|. 
@@ -309,7 +309,7 @@ GarrisonArcher:
     |2|: Gain {ArcherLvl2} |Watchtower|
 
 AssignTickdownReturn:
-  Name: Assign Tickdown Return
+  Name: Task Hustle
   Description: |-
     Decrease the card counter for all |Assign| buffs by {Value1}. 
     Whenever an |Assign| buff triggers, return {SelfName} from the discard pile to the hand. 
@@ -332,7 +332,7 @@ HaniwaSpy:
     On Play |Scry|: +1 every 3 upgrades, up to |Scry 10|
 
 HaniwaUpgrader:
-  Name: Haniwa Upgrader
+  Name: Haniwa Trainer
   Description: |-
     |While in hand|: At end of turn, upgrade {NumCardsToUpgrade} random card{NumCardsToUpgrade:plural one='' other='s'} in the hand. Prioritises other cards. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Gain {Block} |Block| then choose up to {Value2} card{Value2:plural one='' other='s'} in the hand to upgrade {OnPlayTimesToUpgrade} time{OnPlayTimesToUpgrade:plural one='' other='s'}. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
@@ -396,7 +396,7 @@ HaniwaSentinel:
     Gain Illness Prevention: +1 per {IllnessBuffLevelScaling} upgrades
 
 UpgradedSummon:
-  Name: Upgraded Summon
+  Name: Trained Summoning
   Description: |-
     Choose{Value2:plural one='' other=' up to'} {Value2} |Frontline| card and add {Value2:plural one='it' other='them'} to the hand. 
     {Value2:plural one='It starts' other='They start'} with {Value1} upgrade{Value1:plural one='' other='s'}. 
@@ -415,14 +415,14 @@ OptionHaniwaSpy:
     Add a |Haniwa Spy| to the hand. 
 
 OptionHaniwaUpgrader:
-  Name: Summon Haniwa Upgrader
+  Name: Summon Haniwa Trainer
   Description: |-
     Sacrifice {SelectRequireFencer} |Fencer|.
-    Add a |Haniwa Upgrader| to the hand. 
+    Add a |Haniwa Trainer| to the hand. 
     {AvailableFencer} available |Fencer|. 
   NonbattleDescription: |-
     Sacrifice {SelectRequireFencer} |Fencer|.
-    Add a |Haniwa Upgrader| to the hand. 
+    Add a |Haniwa Trainer| to the hand. 
 
 OptionHaniwaExploiter:
   Name: Summon Haniwa Exploiter
@@ -477,7 +477,7 @@ ClayToAshes:
     Gain {Value2} |Temporary Firepower|. 
 
 ChargeAttack:
-  Name: Charge Attack
+  Name: Assignment - Ballista Bolt
   Description: |-
     |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the highest life. 
@@ -485,12 +485,12 @@ ChargeAttack:
     Start with {StartingTaskLevel} |Task Level|. 
 
 AssignPlayGainBlock:
-  Name: Assign Play Gain Block
+  Name: Defence Delegation
   Description: |-
     When playing an |Assign| card, gain {Value1} |Block|. 
 
 CavalryRush:
-  Name: Cavalry Rush
+  Name: Assignment - Rush Attack
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
@@ -504,7 +504,7 @@ NumBuffBlock:
     Gain {Value1} additional |Block| based on the number of buffs {PlayerName} has. ({AdditionalBlock})
 
 DiscardUpgrade:
-  Name: Discard Upgrade
+  Name: Dedicated Training
   Description: |-
     Gain {Block} |Block|. 
     Choose any number of |Frontline| cards in the hand and discard them. 
@@ -518,13 +518,13 @@ AshesToClay:
     Draw {Value2} card{Value2:plural one='' other='s'}. 
 
 ChooseShortAssign:
-  Name: Choose Short Assign
+  Name: Quick Assignment
   Description: |-
     Choose 1 of 3 |Assign| cards and gain its buff. No |Haniwa| required. 
     The buff has a starting card counter of {Value1} and starts with {Value2} extra |Task Level|. 
 
 FencerPrepCounter:
-  Name: Fencer Prep Counter
+  Name: Assignment - Counter Attack
   Description: |-
     |Assign {FencerRequired} Fencer|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to |Task Level|, to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
@@ -546,25 +546,25 @@ GuardRush:
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 ArcherPrepDebuff:
-  Name: Archer Prep Debuff
+  Name: Assignment - Debilitate Foe
   Description: |-
     |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal |Accurate| damage equal to |Task Level| to all enemies and apply |e:1| |Vulnerable| (minimum 1) per {Value1} |Task Level|. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 AssignTriggerUpgrade:
-  Name: Assign Trigger Upgrade
+  Name: Free Training
   Description: |-
     Upgrade all cards in the hand. 
     Whenever an |Assign| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
 FrontlineLoyaltyTaskLevel:
-  Name: Frontline Loyalty Task Level
+  Name: Inspire the Back
   Description: |-
     Whenever a |Frontline| card has |Loyalty| consumed, all |Assign| buffs gain |Task Level| equal to |Loyalty| consumed. 
 
 CavalrySupplies:
-  Name: Cavalry Supplies
+  Name: Assignment - Bring the Supplies
   Description: |-
     |Assign {CavalryRequired} Cavalry|. 
     After {StartingCardCounter} cards are played, choose X of X + {Value2} cards to add to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
@@ -574,10 +574,10 @@ CavalrySupplies:
     |Flame| and |Radiance| have 15% chance, |Rainbow| have 5% chance, |Frontlines| have 65% chance. 
 
 AutoCreateReserves:
-  Name: Auto Create Reserves
+  Name: Auto Haniwa Reserves
   Description: |-
-    Add a |Create Haniwa| to the hand. 
-    At the start of {PlayerName}'s turn, if there are no |Create Haniwa| in the hand, add a |Create Haniwa| to the hand. 
+    Add a |Haniwa Reserves| to the hand. 
+    At the start of {PlayerName}'s turn, if there are no |Haniwa Reserves| in the hand, add a |Haniwa Reserves| to the hand. 
 
 FrontlineCopy:
   Name: Frontline Copy
@@ -586,7 +586,7 @@ FrontlineCopy:
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 BlitzSummon:
-  Name: Blitz Summon
+  Name: Summoning - Instant Command
   Description: |-
     Choose {Value1} |Frontline| card to add to the hand. 
     |Sacrifice Haniwa| depending on the chosen card. 
@@ -599,7 +599,7 @@ BlitzSummon:
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
 
 ZeroCostMove:
-  Name: Zero Cost Move
+  Name: Task Transfer
   Description: |-
     {Value1} random {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard pile are moved to the hand. 
     Currently {ZeroCostCount} total in draw/discard pile. 
@@ -626,7 +626,7 @@ FullFrontalAssault:
     Deal {Value1} additional damage for each |Haniwa| level. 
 
 AssignPlayDraw:
-  Name: Assign Play Draw
+  Name: Task Completion Reward
   Description: |-
     Whenever {PlayerName} plays an |Assign| card, draw 1 card. 
 
@@ -637,7 +637,7 @@ GainBuffTickdown:
     At the start of next turn, gain |Temporary Firepower| for every {Value2} |Assign| buff{Value2:plural one='' other='s'} triggered. 
 
 ZeroCostReduction:
-  Name: Zero Cost Reduction
+  Name: Power of Zero
   Description: |-
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand |temporarily costs| <sprite=ManaSprite" name="1"> less. 
     Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
@@ -649,7 +649,7 @@ MassDestruction:
     Deal additional damage equal to the amount of |Frontline| cards |Exiled| this way multiplied by {Value1}. ({AdditionalDamage})
 
 MassTaskLevel:
-  Name: Mass Task Level
+  Name: Perfect Task
   Description: |-
     Choose |e:1| |Assign| buff and remove all other |Assign| buffs. 
     Increase the chosen buff's |Task Level| by {Value2}. 
@@ -657,7 +657,7 @@ MassTaskLevel:
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 MassSummon:
-  Name: Mass Summon
+  Name: Summoning - Call to Arms
   Description: |-
     |Sacrifice| all |Haniwa|. Add random |Frontline| cards to the draw pile. 
     The cards spawned are based on the types of |Haniwa| sacrificed and their summon costs. 
@@ -721,7 +721,7 @@ SummonCommander:
     Choose a |Frontline Commander| or |Assign Commander| to add to the hand. It starts with {Value1} upgrades. 
 
 AssignTriggerSummon:
-  Name: Assign Trigger Summon
+  Name: Free Summoning
   Description: |-
     Whenever an |Assign| buff is triggered, add {Value1} random |Frontline| card{Value1:plural one='' other='s'} to the hand. 
 
@@ -731,28 +731,28 @@ FrontlineDoubleAction:
     After playing a |Frontline| card, execute its |On Play| action and consume |Loyalty| again. 
 
 AssignReverseTickdown:
-  Name: Assign Reverse Tickdown
+  Name: Guard Scramble
   Description: |-
     Gain {Block} |Block|. 
     Until end of {PlayerName}'s turn, |Assign| buffs increase their card counter instead of decreasing. 
     At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assign| buffs. 
 
 HandsizeBlock:
-  Name: Handsize Block
+  Name: Defensive Formation
   Description: |-
     Gain {Block} |Block|. Gain {Value1} additional |Block| for each card in the hand. ({AdditionalBlock})
     For every {Value2} card{Value2:plural one='' other='s'} in the hand, {SelfName} gains {Mana} cost. 
 
 MaxHaniwaUp:
-  Name: Max Haniwa Up
+  Name: Reserves Capacity Up
   Description: |-
     Increase the max |Haniwa| level by {Value1} for all types. 
     Gain {Value1} of all |Haniwa|. 
 
 AssignDuplicateTrigger:
-  Name: Assign Duplicate Trigger
+  Name: Assignment Double Trigger
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Assign Double Trigger|. 
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Assignment Double Trigger|. 
 
 #OFFCOLOURS
 FrozenHaniwa:
@@ -774,7 +774,7 @@ FreezeFrontline:
     Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand. Transform them into |Frozen Haniwa|. 
 
 ArcherPrepFrostArrow:
-  Name: Archer Prep Frost Arrow
+  Name: Assignment - Frost Arrow
   Description: |-
     |Assign {ArcherRequired} Archer|.
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal {Damage} damage and apply |Cold| to random enemies X times. X is |Task Level| / {Value1}. 
@@ -791,7 +791,7 @@ KeikiTeammate:
     {FriendU} Move all |Frontline| cards in exile to discard pile and refresh their |Loyalty|. Deal {Value2} damage to all enemies for each card moved this way. ({FrontlineExileDamage})
 
 PermanentAssign:
-  Name: Permanent Assign
+  Name: Permanent Task
   Description: |-
     Choose{Value1:plural one='' other=' up to'} {Value1} |Assign| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
 
@@ -831,18 +831,18 @@ MudExtraction:
     Add that many |Splashes| to the hand. 
 
 AssignCostTaskLevel:
-  Name: Assign Cost Task Level
+  Name: Assignment Double Time
   Description: |-
     Until the end of this combat, |Assign| cards in the hand temporarily gain {Mana} cost. |Assign| buffs gain {Value1} extra |Task Level| per card played.
     Regain any mana spent on |Assign| cards at start of next turn. 
 
 FrontlineLoyaltyGain:
-  Name: Frontline Loyalty Gain
+  Name: Inspirational Speech
   Description: |-
     All |Frontline| cards in the hand, draw and discard piles gain {Value1} |Loyalty|. 
 
 AssignSeparation:
-  Name: Assign Separation
+  Name: Task Separation
   Description: |-
     |Assign| buffs no longer stack, and will create a separate buff instead. 
 
@@ -855,7 +855,7 @@ ChainOfCommand:
     |At start of combat|: {SelfName} is automatically played. 
 
 DarknessSummon:
-  Name: Darkness Summon
+  Name: Dark Summoning
   Description: |-
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. |Sacrifice Haniwa| depending on the chosen card. 
     The cards have infinite |Loyalty| and don't leave the hand when played, but consume <sprite="Point" name="Power"> equal to the amount of passive |Loyalty| consumed, or |e:10| when via |On Play|. If {PlayerName} runs out of <sprite="Point" name="Power">, the cards are removed from combat. 
