@@ -889,4 +889,4 @@ give assign separation some other effect, autoplay on upgrade?
 ashes to clay, upgrade increases draw instead of selected exiled frontlines?
   - same for frontline copy?
 basic summoning only choose 1 but create 2 copies again? since only commons can be chosen now - DONE
-skilled fencer haniwa make unupgraded block/barrier 10? upgrade then doesnt touch them
+skilled fencer haniwa make unupgraded block/barrier 10? upgrade then doesnt touch them - DONE

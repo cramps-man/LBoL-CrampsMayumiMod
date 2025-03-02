@@ -33,10 +33,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 5;
             cardConfig.Value2 = 4;
             cardConfig.UpgradedValue2 = 6;
-            cardConfig.Block = 8;
-            cardConfig.UpgradedBlock = 10;
-            cardConfig.Shield = 8;
-            cardConfig.UpgradedShield = 10;
+            cardConfig.Block = 10;
+            cardConfig.Shield = 10;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(TempElectric) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(TempElectric) };
             return cardConfig;
