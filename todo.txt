@@ -839,7 +839,7 @@ update frontline spellcard to be 50 cost with lower values - UNSURE
   - also let it choose between gaining haniwa or commanding 2-3 frontlines without loyalty cost
   - probs can give an option and keep at 100 power
   - also for the assign spellcard, option for zero cost move choosing effect
-zero cost move become rare?
+zero cost move become rare? - NO NEED
 gain buff tickdown go to uncommon and change effect perhaps?
   - exile and give assignment bonus?
 permanent assign make it lose only half task level/assigned haniwa?
@@ -883,3 +883,6 @@ worshipping offcolors, add effect of gaining the specific type per turn
 frontline double action, also add a random frontline to hand?
 update frontline spellcard to not do 40 dmg, but instead add 3 frontlines to hand while sacrificing haniwa
   - gain the 5 of all types first
+look into mass destruction numbers, or concept entirely, it feels weird
+update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg
+give assign separation some other effect, autoplay on upgrade?

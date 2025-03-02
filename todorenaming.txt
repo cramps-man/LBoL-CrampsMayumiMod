@@ -1,7 +1,7 @@
 BASICS
-BasicAttackR -> Archery Expertise
+BasicAttackR -> Archery Expertise, Expert Archery
 BasicAttackW -> Expert Swordsmanship, Sword Mastery
-BasicBlockR -> Defence Delegation, Guard Duty
+BasicBlockR -> Guard Duty
 BasicBlockW -> Equestrian Expertise, Master Riding
 
 ASSIGNS
@@ -13,7 +13,7 @@ CavalryScout -> Assignment - Scout Ahead
 FencerBuildBarricade -> Assignment - Build Barricade
 ArcherPrepDebuff -> Assignment - Debilitate Foe
 AssignPlayGainBlock -> Defence Delegation
-AssignTickdownReturn -> Work Hustle
+AssignTickdownReturn -> Task Hustle
 BuildWatchtower -> Assignment - Build Watchtower
 CavalryRush -> Assignment - Rush Attack
 CavalrySupplies -> Assignment - Bring the Supplies
@@ -22,52 +22,56 @@ ChooseShortAssign -> Quick Assignment
 FencerPrepCounter -> Assignment - Counter Attack
 NumBuffBlock
 ZeroCostMove -> Task Transfer
-AssignDuplicateTrigger -> Assignment Double Time, better for another card
-AssignPlayDraw -> Assignment Juggling
+AssignDuplicateTrigger -> Assignment Double Trigger
+AssignPlayDraw -> Assignment Completion Reward
 AssignReverseTickdown -> Guard Scramble
 GainBuffTickdown
-MassTaskLevel -> Perfect Task Quality
+MassTaskLevel -> Perfect Task
 
 FRONTLINES
 HaniwaAttacker maybe? -> Haniwa Soldier/Grunt? maybe
-BasicSummon -> Basic Recruitment
-DefenceSummon -> Safe Recruitment
-FastSummon -> Early Recruitment
+BasicSummon -> Basic Summoning
+DefenceSummon -> Safe Summoning
+FastSummon -> Early Summoning
 FrontlineHaniwaCreate -> Haniwa Reserves (Frontline)
 FrontlineUpgrade -> Simple Training
 HaniwaBlitz -> Command Frontline/Command the Front?
 HaniwaUpgrader maybe? -> Haniwa Trainer? maybe
-BlitzSummon -> Command Recruitment?
-DiscardUpgrade -> something for training that takes time
-FrontlineCopy
-HealSacrifice
-UpgradedSummon -> Seasoned Recruitment
-AssignCommander -> Assignment Commander?
-MassDestruction maybe?
-MassSummon -> Call to Arms
-SummonCommander
+BlitzSummon -> Summoning - Instant Command
+DiscardUpgrade -> Dedicated Training
+FrontlineCopy -> maybe fine? IS FINE
+HealSacrifice -> maybe fine? IS FINE
+UpgradedSummon -> Trained Summoning
+AssignCommander -> Assignment Commander? IS FINE
+MassDestruction maybe? might get reworked anyway
+MassSummon -> Summoning - Call to Arms
+SummonCommander -> probs fine? IS FINE
 
 HYBRIDS
 CreateHaniwa -> Haniwa Reserves
-DefenceCreateReserves
-HybridDraw
-WeakeningShot maybe?
-AssignTriggerUpgrade
+DefenceCreateReserves -> Create Reserves
+HybridDraw -> Combined Efforts
+WeakeningShot maybe? - IS FINE
+AssignTriggerUpgrade -> Free Training
 AutoCreateReserves -> Auto Haniwa Reserves
 CreateArcher -> Skilled Archer Haniwa
 CreateCavalry -> Skilled Cavalry Haniwa
 CreateFencer -> Skilled Fencer Haniwa
-FrontlineLoyaltyTaskLevel -> something about inspring the back?
-AssignTriggerSummon
+FrontlineLoyaltyTaskLevel -> Inspire the Back
+AssignTriggerSummon -> Free Summoning
 HandsizeBlock -> Defensive Formation
-MaxHaniwaUp -> Troop Capacity Up
-ZeroCostReduction
+MaxHaniwaUp -> Reserves Capacity Up
+ZeroCostReduction -> The Power of Zero
 
 OFFCOLOURS
 ArcherPrepFrostArrow -> Assignment - Frost Arrow
 AssignCostTaskLevel -> Assignment Double Time
 FrontlineLoyaltyGain -> Inspirational Speech
-AssignSeparation -> Assignment Separation/Delegation?
-DarknessSummon -> Dark Recruitment
+AssignSeparation -> Assignment Separation/Delegation? Task Separation
+DarknessSummon -> Dark Summoning
 PermanentAssign -> Permanent Assignment
-PoisonShot maybe?
+PoisonShot maybe? - IS FINE
+
+SPELLCARDS
+FrontlineSpellcard -> Haniwa <Undefeated Inexhaustible Troops>
+AssignSpellcard -> 
