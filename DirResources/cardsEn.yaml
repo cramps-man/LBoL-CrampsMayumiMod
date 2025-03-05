@@ -276,6 +276,8 @@ CreateCavalry:
     |5|: |Scry| {Scry}. 
     |7|: Draw 1 card. 
     |10|: |Assign| 1 instance of |Assignment - Rush Attack+|. 
+  InteractionTitle: |-
+    {SelfName} - Scry, Draw {TotalDraw}
 
 CreateFencer:
   Name: Skilled Fencer Haniwa

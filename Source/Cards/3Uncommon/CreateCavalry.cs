@@ -46,19 +46,28 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CreateCavalryDef))]
     public sealed class CreateCavalry : Card
     {
+        public int TotalDraw
+        {
+            get
+            {
+                int cavalryCount = HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
+                int drawCount = 0;
+                if (cavalryCount >= 3)
+                    drawCount++;
+                if (cavalryCount >= 7)
+                    drawCount++;
+                return drawCount;
+            }
+        }
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(cavalryToGain: Value1);
             int cavalryCount = HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
             if (cavalryCount >= 5)
-                yield return new ScryAction(Scry);
+                yield return new DescriptiveScryAction(Scry, InteractionTitle);
 
-            int drawCount = 0;
-            if (cavalryCount >= 3)
-                drawCount++;
-            if (cavalryCount >= 7)
-                drawCount++;
-            yield return new DrawManyCardAction(drawCount);
+            yield return new DrawManyCardAction(TotalDraw);
 
             if (cavalryCount >= 10)
             {
