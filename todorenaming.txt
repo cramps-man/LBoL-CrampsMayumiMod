@@ -13,7 +13,7 @@ CavalryScout -> Assignment - Scout Ahead
 FencerBuildBarricade -> Assignment - Build Barricade
 ArcherPrepDebuff -> Assignment - Debilitate Foe
 AssignPlayGainBlock -> Defence Delegation
-AssignTickdownReturn -> Task Hustle
+AssignTickdownReturn -> Assignment Hustle
 BuildWatchtower -> Assignment - Build Watchtower
 CavalryRush -> Assignment - Rush Attack
 CavalrySupplies -> Assignment - Bring the Supplies
@@ -26,7 +26,7 @@ AssignDuplicateTrigger -> Assignment Double Trigger
 AssignPlayDraw -> Task Start Reward
 AssignReverseTickdown -> Guard Scramble
 GainBuffTickdown
-MassTaskLevel -> Perfect Task
+MassTaskLevel -> Perfect Assignment
 
 FRONTLINES
 HaniwaAttacker maybe? -> Haniwa Soldier/Grunt? maybe
@@ -69,9 +69,9 @@ AssignCostTaskLevel -> Assignment Double Time
 FrontlineLoyaltyGain -> Inspirational Speech
 AssignSeparation -> Assignment Separation/Delegation? Task Separation
 DarknessSummon -> Dark Summoning
-PermanentAssign -> Permanent Task
+PermanentAssign -> Permanent Assignment
 PoisonShot maybe? - IS FINE
 
 SPELLCARDS
 FrontlineSpellcard -> Haniwa <Hollow Inexhaustible Troops>
-AssignSpellcard -> 
+AssignSpellcard -> Assignment <Hardworking Clay Soldiers>

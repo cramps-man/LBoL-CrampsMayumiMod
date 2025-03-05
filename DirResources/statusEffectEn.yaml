@@ -101,7 +101,7 @@ Pause:
     When an |Assign| status is |Paused|, its card played counter will not tick down. 
 
 Permanent:
-  Name: Permanent Task
+  Name: Permanent Assignment
   Description: |-
     When an |Assignment| buff is |Permanent|, after being triggered it will not be removed. 
     After triggering, lose the number of assigned |Haniwa|, reset the buff's counter to |e:5| and |Task Level| + assigned |Haniwa| to the card's starting values. 
