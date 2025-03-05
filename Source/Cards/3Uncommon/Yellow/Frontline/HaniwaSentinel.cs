@@ -47,9 +47,10 @@ namespace LBoLMod.Cards
         public override bool IsArcherType => true;
         protected override int PassiveConsumedRemainingValue => 4;
         protected override int OnPlayConsumedRemainingValue => 5;
-        public int WeakDurationScaling => 7;
-        public int WeakDuration => 1 + base.UpgradeCounter.GetValueOrDefault() / WeakDurationScaling;
-        public int IllnessBuffLevelScaling => 9;
+        public int PassiveScaling => 10;
+        public int PassiveNumTimes => 1 + base.UpgradeCounter.GetValueOrDefault() / 10;
+        public int WeakDuration => 1;
+        public int IllnessBuffLevelScaling => 5;
         public int IllnessBuffLevel => 1 + base.UpgradeCounter.GetValueOrDefault() / IllnessBuffLevelScaling;
         protected override void OnEnterBattle(BattleController battle)
         {
@@ -69,13 +70,16 @@ namespace LBoLMod.Cards
             if (!attackingEnemies.Any())
                 yield break;
 
-            base.NotifyActivating();
             yield return ConsumePassiveLoyalty();
-            yield return new DamageAction(base.Battle.Player, attackingEnemies, DamageInfo.Reaction(Value2));
-            foreach (var debuffAction in DebuffAction<Weak>(attackingEnemies, duration: WeakDuration))
+            for (int i = 0; i < PassiveNumTimes; i++)
             {
-                yield return debuffAction;
-            };
+                base.NotifyActivating();
+                yield return new DamageAction(base.Battle.Player, attackingEnemies, DamageInfo.Reaction(Value2));
+                foreach (var debuffAction in DebuffAction<Weak>(attackingEnemies, duration: WeakDuration))
+                {
+                    yield return debuffAction;
+                };
+            }
         }
 
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

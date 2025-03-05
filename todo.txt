@@ -876,8 +876,8 @@ update scry interactions with custom titles to put the text into yaml - DONE
 gain buff tickdown go to uncommon and change effect perhaps?
   - exile and give assignment bonus?
   - could stay rare, assignment bonus is basically draw
-permanent assign make it lose only half task level/assigned haniwa?
-haniwa sentinel perhaps make upgrade scaling on illnessprotection stacks +1 per 5 upgrades?
+permanent assign make it lose only half task level/assigned haniwa? - DONE
+haniwa sentinel perhaps make upgrade scaling on illnessprotection stacks +1 per 5 upgrades? - DONE
   - also change weak scaling to shoot 1 additional time per 10 upgrades
 worshipping offcolors, add effect of gaining the specific type per turn
 frontline double action, also add a random frontline to hand?
@@ -907,3 +907,4 @@ clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
 create cavalry update scry interaction title
 fencer prep counter bug if enemy has attacked then died, no longer attacks random enemy
 assign tickdown return also gain colorless?
+illness prevention look into it not reducing all the way, only by 1 for each debuff
