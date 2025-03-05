@@ -900,7 +900,7 @@ single oncolor haniwa gen
 handsize block unupgraded give retain? and make it 5 block?
 num buff block let it gain barrier, or after certain buffs gained this turn become free or cost less
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier
-frontline exhibit add new effect first time per combat reduce sacrifice cost by 1 haniwa?
+frontline exhibit add new effect first time per combat reduce sacrifice cost by 1 haniwa? - DONE
   - maybe another effect thats easier to do, gain block? tempfp?
   - can just add haniwa reserves
 weakening shot lower unupgraded mana and dmg - DONE

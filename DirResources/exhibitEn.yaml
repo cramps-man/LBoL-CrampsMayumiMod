@@ -10,4 +10,5 @@ FrontlineExhibit:
   Description: |-
     Adds {Mana} to the mana base. Cards unique to |Mayumi| are added to the card pool. 
     At start of combat, gain {Value1} of each |Haniwa|. Effect still occurs if swapping exhibit as |Mayumi|. 
+    At start of combat, also add a |Haniwa Reserves| to the hand. 
     Max hand size becomes {Value3}.

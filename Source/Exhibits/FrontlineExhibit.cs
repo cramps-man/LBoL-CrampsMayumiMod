@@ -2,12 +2,14 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.EntityLib.Exhibits;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
 using LBoLMod.BattleActions;
+using LBoLMod.Cards;
 using LBoLMod.PlayerUnits;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
@@ -57,7 +59,7 @@ namespace LBoLMod.Exhibits
                 InitialCounter: null,
                 Keywords: Keyword.None,
                 RelativeEffects: new List<string>() { nameof(Haniwa) },
-                RelativeCards: new List<string>() { }
+                RelativeCards: new List<string>() { nameof(CreateHaniwa) }
             );
 
         }
@@ -69,10 +71,17 @@ namespace LBoLMod.Exhibits
         protected override void OnEnterBattle()
         {
             base.Battle.MaxHand = Value3;
-            base.ReactBattleEvent<UnitEventArgs>(base.Battle.Player.TurnStarting, new EventSequencedReactor<UnitEventArgs>(this.onPlayerTurnStarting));
+            base.ReactBattleEvent(base.Battle.Player.TurnStarting, this.OnPlayerTurnStarting);
+            base.ReactBattleEvent(base.Battle.Player.TurnStarted, this.OnPlayerTurnStarted);
         }
 
-        private IEnumerable<BattleAction> onPlayerTurnStarting(UnitEventArgs args)
+        private IEnumerable<BattleAction> OnPlayerTurnStarted(UnitEventArgs args)
+        {
+            if (base.Battle.Player.TurnCounter == 1)
+                yield return new AddCardsToHandAction(Library.CreateCard<CreateHaniwa>());
+        }
+
+        private IEnumerable<BattleAction> OnPlayerTurnStarting(UnitEventArgs args)
         {
             var player = base.Battle.Player;
             if (player.TurnCounter == 1 && !HaniwaUtils.HasAnyHaniwa(player))
