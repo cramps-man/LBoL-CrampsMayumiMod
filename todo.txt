@@ -909,4 +909,5 @@ create cavalry update scry interaction title - DONE
 fencer prep counter bug if enemy has attacked then died, no longer attacks random enemy - DONE
 assign tickdown return also gain colorless? - DONE
 illness prevention look into it not reducing all the way, only by 1 for each debuff - DONE
-create archer make lvl 10 be vuln and give accurate natively?
+create archer make lvl 10 be vuln and give accurate natively? - DONE
+  - lvl 7 can be temp fp down

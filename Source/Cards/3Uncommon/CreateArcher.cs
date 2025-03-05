@@ -34,10 +34,10 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 5;
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
-            cardConfig.RelativeKeyword = Keyword.Accuracy;
-            cardConfig.UpgradedRelativeKeyword = Keyword.Accuracy;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn) };
+            cardConfig.Keywords = Keyword.Accuracy;
+            cardConfig.UpgradedKeywords = Keyword.Accuracy;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn), nameof(TempFirepowerNegative) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn), nameof(TempFirepowerNegative) };
             return cardConfig;
         }
     }
@@ -48,13 +48,9 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(archerToGain: Value1);
-            int archerCount = HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
-
-            if (archerCount >= 10)
-                yield return base.AttackAction(selector, DamageInfo.Attack(RawDamage, true));
-            else
-                yield return base.AttackAction(selector);
+            yield return base.AttackAction(selector);
             
+            int archerCount = HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (archerCount >= 3)
@@ -62,6 +58,8 @@ namespace LBoLMod.Cards
             if (archerCount >= 5)
                 yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), 2);
             if (archerCount >= 7)
+                yield return DebuffAction<TempFirepowerNegative>(selector.GetEnemy(base.Battle), 3);
+            if (archerCount >= 10)
                 yield return DebuffAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: 1);
         }
     }

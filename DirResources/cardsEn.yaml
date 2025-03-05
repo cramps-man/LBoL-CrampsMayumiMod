@@ -257,8 +257,8 @@ CreateArcher:
     Gain effects based on |Archer| level. 
     |3|: Apply |e:1| |Weak|. 
     |5|: Apply |e:2| |Lock On|. 
-    |7|: Apply |e:1| |Vulnerable|. 
-    |10|: Become |Accurate|. 
+    |7|: Apply |e:3| |Temporary Firepower Down|. 
+    |10|: Apply |e:1| |Vulnerable|. 
 
 CreateCavalry:
   Name: Skilled Cavalry Haniwa
