@@ -93,23 +93,16 @@ Loyalty:
   Brief: |-
     Represented by the number on the left of |Frontline| cards. Used for their passive and On Play effects. 
 
-Pause:
-  Name: Pause
-  Description: |-
-    When an |Assign| status is |Paused|, its card played counter will not tick down. 
-  Brief: |- 
-    When an |Assign| status is |Paused|, its card played counter will not tick down. 
-
 Permanent:
   Name: Permanent Assignment
   Description: |-
     When an |Assignment| buff is |Permanent|, after being triggered it will not be removed. 
-    After triggering, lose the number of assigned |Haniwa|, reset the buff's counter to |e:5| and |Task Level| + assigned |Haniwa| to the card's starting values. 
-    If there is not enough |Haniwa|, lose life equal to the number of assigned |Haniwa| instead. 
+    After triggering, reset the buff's counter to |e:5|, then half |Task Level| (won't go below starting |Task Level|), and reduce assigned |Haniwa| by |e:1|. 
+    If assigned |Haniwa| would go to |e:0|, lose |e:1| life instead. 
   Brief: |- 
     When an |Assignment| buff is |Permanent|, after being triggered it will not be removed. 
-    After triggering, lose the number of assigned |Haniwa|, reset the buff's counter to |e:5| and |Task Level| + assigned |Haniwa| to the card's starting values. 
-    If there is not enough |Haniwa|, lose life equal to the number of assigned |Haniwa| instead. 
+    After triggering, reset the buff's counter to |e:5|, then half |Task Level| (won't go below starting |Task Level|), and reduce assigned |Haniwa| by |e:1|. 
+    If assigned |Haniwa| would go to |e:0|, lose |e:1| life instead. 
 
 AssignArcherPrepVolley:
   Name: Assignment - Arrow Barrage
@@ -123,7 +116,7 @@ AssignArcherPrepVolley:
 AssignCavalrySupplies:
   Name: Assignment - Bring the Supplies
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, choose {TotalTimes} of {TotalTimesPlusValue2} cards to add to the draw pile. Cards are randomized and can include |Flame|, |Radiance| or a random |Frontline|. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, choose {TotalTimes} of {TotalTimesPlusValue2} cards to add to the draw pile. Cards are randomized and can include |Flame|, |Radiance|, |Rainbow| or a random |Frontline|. 
     |e:1| extra card choice per {CardValue1} |Task Level| (minimum 1). 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   InteractionTitle: |-
@@ -402,3 +395,11 @@ LocSe:
     Frontline
   AssignKeyword: |-
     Assignment
+
+#UNUSED
+Pause:
+  Name: Pause
+  Description: |-
+    When an |Assign| status is |Paused|, its card played counter will not tick down. 
+  Brief: |- 
+    When an |Assign| status is |Paused|, its card played counter will not tick down. 

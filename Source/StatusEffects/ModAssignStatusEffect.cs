@@ -140,20 +140,19 @@ namespace LBoLMod.StatusEffects
                 yield break;
             if (IsPermanent)
             {
-                if (HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Require, CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned))
+                int fencerRequired = CardFencerAssigned > 0 ? 1 : 0;
+                int archerRequired = CardArcherAssigned > 0 ? 1 : 0;
+                int cavalryRequired = CardCavalryAssigned > 0 ? 1 : 0;
+                if (CardFencerAssigned == 1 || CardArcherAssigned == 1 || CardCavalryAssigned == 1)
                 {
-                    yield return new LoseHaniwaAction(HaniwaActionType.Require, CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned);
-                }
-                else
-                {
-                    int hpLoss = CardFencerAssigned + CardArcherAssigned + CardCavalryAssigned;
+                    int hpLoss = fencerRequired + archerRequired + cavalryRequired;
                     yield return new DamageAction(base.Battle.Player, base.Battle.Player, DamageInfo.HpLose(hpLoss));
                 }
                 Count = 5;
-                Level = AssignSourceCard.StartingTaskLevel;
-                CardFencerAssigned = AssignSourceCard.FencerAssigned;
-                CardArcherAssigned = AssignSourceCard.ArcherAssigned;
-                CardCavalryAssigned = AssignSourceCard.CavalryAssigned;
+                Level = Math.Max(AssignSourceCard.StartingTaskLevel, Level / 2);
+                CardFencerAssigned = Math.Max(fencerRequired, CardFencerAssigned - fencerRequired);
+                CardArcherAssigned = Math.Max(archerRequired, CardArcherAssigned - archerRequired);
+                CardCavalryAssigned = Math.Max(cavalryRequired, CardCavalryAssigned - cavalryRequired);
             }
             else if (shouldRemove)
             {
