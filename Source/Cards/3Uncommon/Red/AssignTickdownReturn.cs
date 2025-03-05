@@ -31,6 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.Value1 = 2;
             cardConfig.Value2 = 1;
+            cardConfig.Mana = new ManaGroup() { Colorless = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
@@ -46,6 +47,7 @@ namespace LBoLMod.Cards
             {
                 s.Tickdown(Value1);
             };
+            yield return new GainManaAction(Mana);
             if (IsUpgraded)
                 yield return new DrawManyCardAction(Value2);
         }

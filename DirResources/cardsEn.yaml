@@ -312,9 +312,11 @@ AssignTickdownReturn:
   Name: Assignment Hustle
   Description: |-
     Decrease the card counter for all |Assignment| buffs by {Value1}. 
+    Gain {Mana}. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
   UpgradedDescription: |-
     Decrease the card counter for all |Assignment| buffs by {Value1} and draw {Value2} card{Value2:plural one='' other='s'}. 
+    Gain {Mana}. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
 
 HaniwaSpy:

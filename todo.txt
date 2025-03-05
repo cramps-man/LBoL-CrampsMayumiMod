@@ -893,9 +893,10 @@ ashes to clay, upgrade increases draw instead of selected exiled frontlines?
 basic summoning only choose 1 but create 2 copies again? since only commons can be chosen now - DONE
 skilled fencer haniwa make unupgraded block/barrier 10? upgrade then doesnt touch them - DONE
 
-new card uncommon red, every 3 assign triggers add haniwa reserves to hand?
-new card uncommon white, every sacrifice 5 haniwa add haniwa reserves to hand
-or just allow the common haniwa gens to be pooled
+single oncolor haniwa gen
+  - new card uncommon red, every 3 assign triggers add haniwa reserves to hand?
+  - new card uncommon white, every sacrifice 5 haniwa add haniwa reserves to hand
+  - or just allow the common haniwa gens to be pooled
 handsize block unupgraded give retain? and make it 5 block?
 num buff block let it gain barrier, or after certain buffs gained this turn become free or cost less
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier
@@ -906,5 +907,5 @@ weakening shot lower unupgraded mana and dmg
 clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
 create cavalry update scry interaction title
 fencer prep counter bug if enemy has attacked then died, no longer attacks random enemy
-assign tickdown return also gain colorless?
-illness prevention look into it not reducing all the way, only by 1 for each debuff
+assign tickdown return also gain colorless? - DONE
+illness prevention look into it not reducing all the way, only by 1 for each debuff - DONE
