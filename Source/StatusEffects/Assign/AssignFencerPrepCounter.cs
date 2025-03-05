@@ -22,7 +22,7 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignFencerPrepCounter : ModAssignStatusEffect
     {
         private List<Unit> enemiesThatAttackedPlayer = new List<Unit>();
-        public int EnemiesThatAttackedPlayerCount => enemiesThatAttackedPlayer.Count;
+        public int EnemiesThatAttackedPlayerCount => enemiesThatAttackedPlayer.Where(e => e.IsAlive).Count();
         public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level);
         public int TotalBlock => CardBlock * base.Battle.AllAliveEnemies.Sum(e => e.Intentions.Where(i => i is AttackIntention).Cast<AttackIntention>().Sum(ai => ai.Times == null ? 1 : ai.Times.GetValueOrDefault()));
 
@@ -47,7 +47,7 @@ namespace LBoLMod.StatusEffects.Assign
 
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            List<Unit> toAttack = enemiesThatAttackedPlayer.Count > 0 ? enemiesThatAttackedPlayer.Where(e => e.IsAlive).ToList() : new List<Unit>() { base.Battle.RandomAliveEnemy };
+            List<Unit> toAttack = enemiesThatAttackedPlayer.Where(e => e.IsAlive).Count() > 0 ? enemiesThatAttackedPlayer.Where(e => e.IsAlive).ToList() : new List<Unit>() { base.Battle.RandomAliveEnemy };
             yield return new DamageAction(Owner, toAttack, TotalDamage);
         }
     }
