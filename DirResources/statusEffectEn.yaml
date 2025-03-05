@@ -315,9 +315,9 @@ MaxHaniwaUpSe:
 IllnessPreventionSe:
   Name: Illness Prevention
   Description: |-
-    Reduce incoming debuff level/duration by |e:1|. 
+    Reduce incoming debuff level/duration by up to {Level}. 
   Brief: |-
-    Reduce incoming debuff level/duration by |e:1|. 
+    Reduce incoming debuff level/duration by |e:1| for each level of this buff. 
 
 AssignDoubleTriggerSe:
   Name: Assignment Double Trigger

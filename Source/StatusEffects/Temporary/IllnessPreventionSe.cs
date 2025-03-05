@@ -34,29 +34,37 @@ namespace LBoLMod.StatusEffects.Abilities
 
             if (args.Effect.HasLevel)
             {
-                if (args.Effect.Level > 1)
-                    args.Effect.Level -= 1;
-                else
-                    args.CancelBy(this);
-
                 base.NotifyActivating();
-                if (Level > 1)
-                    Level -= 1;
+                if (Level > args.Effect.Level)
+                {
+                    Level -= args.Effect.Level;
+                    args.CancelBy(this);
+                }
                 else
+                {
+                    if (Level == args.Effect.Level)
+                        args.CancelBy(this);
+                    else
+                        args.Effect.Level -= Level;
                     yield return new RemoveStatusEffectAction(this);
+                }
             }
             else if (args.Effect.HasDuration)
             {
-                if (args.Effect.Duration > 1)
-                    args.Effect.Duration -= 1;
-                else
-                    args.CancelBy(this);
-
                 base.NotifyActivating();
-                if (Level > 1)
-                    Level -= 1;
+                if (Level > args.Effect.Duration)
+                {
+                    Level -= args.Effect.Duration;
+                    args.CancelBy(this);
+                }
                 else
+                {
+                    if (Level == args.Effect.Duration)
+                        args.CancelBy(this);
+                    else
+                        args.Effect.Duration -= Level;
                     yield return new RemoveStatusEffectAction(this);
+                }
             }
         }
     }
