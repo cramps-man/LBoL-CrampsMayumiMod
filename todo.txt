@@ -903,9 +903,10 @@ num buff block let it gain barrier, or after certain buffs gained this turn beco
 frontline exhibit add new effect first time per combat reduce sacrifice cost by 1 haniwa?
   - maybe another effect thats easier to do, gain block? tempfp?
   - can just add haniwa reserves
-weakening shot lower unupgraded mana and dmg
+weakening shot lower unupgraded mana and dmg - DONE
 clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
 create cavalry update scry interaction title - DONE
 fencer prep counter bug if enemy has attacked then died, no longer attacks random enemy - DONE
 assign tickdown return also gain colorless? - DONE
 illness prevention look into it not reducing all the way, only by 1 for each debuff - DONE
+create archer make lvl 10 be vuln and give accurate natively?
