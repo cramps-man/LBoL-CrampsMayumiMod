@@ -611,11 +611,11 @@ ZeroCostMove:
     Choose up to {Value1} {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles and move them to the hand. 
     Currently {ZeroCostCount} total in draw/discard piles. 
 
-LoyaltyProtection:
-  Name: Loyalty Protection
+LoyaltyCommand:
+  Name: Loyalty Command
   Description: |-
-    Gain {Block} |Block|. 
     Gain {Value1} |Loyalty Protection|. 
+    Choose up to {Value2} |Frontline| card{Value2:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
 
 #RARES
 FullFrontalAssault:

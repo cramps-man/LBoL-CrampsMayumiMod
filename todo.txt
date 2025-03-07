@@ -901,7 +901,7 @@ worshipping offcolors, add effect of gaining the specific type per turn - DONE
   - or maybe just lower the thresholds to 5?
 look into mass destruction numbers, or concept entirely, it feels weird - DONE
   - rework into blitz command, W cost with exile, execute all frontlines onplay in hand, upgrade includes draw/discard
-update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg
+update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg - DONE
   - perhaps instead of gaining R, gain a buff that refunds 1 mana on next card or attack card
   - could also command 1 random frontline to same target
 give assign separation some other effect, autoplay on upgrade?
@@ -921,5 +921,5 @@ clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
 haniwa charger negative loyalty in exile makes dmg lower
 
 frontline upgrade maybe give loyalty protection instead of block?
-loyalty protection card allow select 1 frontline to command? and maybe remove new base block
+loyalty protection card allow select 1 frontline to command? and maybe remove new base block - DONE
   - rename to loyalty command
