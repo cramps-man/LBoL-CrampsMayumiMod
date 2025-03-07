@@ -906,14 +906,14 @@ update cavalry rush to work better in boss fights without summons, against an al
   - could also command 1 random frontline to same target
 give assign separation some other effect, autoplay on upgrade?
   - when assign triggers, tickdown all assigns by 1? give all assigns task level?
-frontline double action, also add a random frontline to hand? - unsure
-ashes to clay, upgrade increases draw instead of selected exiled frontlines? - unsure
+frontline double action, also add a random frontline to hand? - UNSURE
+ashes to clay, upgrade increases draw instead of selected exiled frontlines? - UNSURE
   - same for frontline copy?
-single oncolor haniwa gen
+single oncolor haniwa gen - DONE
   - new card uncommon red, every 3 assign triggers add haniwa reserves to hand?
   - new card uncommon white, every sacrifice 5 haniwa add haniwa reserves to hand
   - or just allow the common haniwa gens to be pooled
-handsize block unupgraded give retain? and make it 5 block?
+handsize block unupgraded give retain? and make it 5 block? - UNSURE
 num buff block let it gain barrier, or after certain buffs gained this turn become free or cost less
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier
 clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
