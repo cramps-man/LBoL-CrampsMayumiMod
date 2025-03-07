@@ -155,7 +155,10 @@ namespace LBoLMod.Utils
         {
             foreach (ModFrontlineCard card in frontlineCards)
             {
-                card.NotifyActivating();
+                if (battle.HandZone.Contains(card))
+                    card.NotifyActivating();
+                else
+                    yield return PerformAction.ViewCard(card);
                 var precondition = card.Precondition();
                 if (precondition != null)
                 {

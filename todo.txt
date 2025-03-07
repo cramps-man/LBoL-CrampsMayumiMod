@@ -873,26 +873,41 @@ update scry interactions with custom titles to put the text into yaml - DONE
   - frozen haniwa - can leave, theoretically shouldnt ever happen, nvm it does in card collection lmao
   - assign cavalry supplies
 
-gain buff tickdown go to uncommon and change effect perhaps?
-  - exile and give assignment bonus?
-  - could stay rare, assignment bonus is basically draw
 permanent assign make it lose only half task level/assigned haniwa? - DONE
 haniwa sentinel perhaps make upgrade scaling on illnessprotection stacks +1 per 5 upgrades? - DONE
   - also change weak scaling to shoot 1 additional time per 10 upgrades
-worshipping offcolors, add effect of gaining the specific type per turn
-frontline double action, also add a random frontline to hand?
 update frontline spellcard to not do 40 dmg, but instead add 3 frontlines to hand while sacrificing haniwa - DONE
   - gain the 5 of all types first
-look into mass destruction numbers, or concept entirely, it feels weird
-  - rework into blitz command, W cost with exile, execute all frontlines onplay in hand, upgrade includes draw/discard
-update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg
-  - perhaps instead of gaining R, gain a buff that refunds 1 mana on next card or attack card
-give assign separation some other effect, autoplay on upgrade?
-ashes to clay, upgrade increases draw instead of selected exiled frontlines?
-  - same for frontline copy?
 basic summoning only choose 1 but create 2 copies again? since only commons can be chosen now - DONE
 skilled fencer haniwa make unupgraded block/barrier 10? upgrade then doesnt touch them - DONE
 
+frontline exhibit add new effect first time per combat reduce sacrifice cost by 1 haniwa? - DONE
+  - maybe another effect thats easier to do, gain block? tempfp?
+  - can just add haniwa reserves
+weakening shot lower unupgraded mana and dmg - DONE
+create cavalry update scry interaction title - DONE
+fencer prep counter bug if enemy has attacked then died, no longer attacks random enemy - DONE
+assign tickdown return also gain colorless? - DONE
+illness prevention look into it not reducing all the way, only by 1 for each debuff - DONE
+create archer make lvl 10 be vuln and give accurate natively? - DONE
+  - lvl 7 can be temp fp down
+
+gain buff tickdown go to uncommon and change effect perhaps?
+  - exile and give assignment bonus?
+  - could stay rare, assignment bonus is basically draw
+  - use perma deckcounter that increases when assign buff triggers
+  - deal big dick dmg, when used, remove from library or reset the counter
+worshipping offcolors, add effect of gaining the specific type per turn
+look into mass destruction numbers, or concept entirely, it feels weird - DONE
+  - rework into blitz command, W cost with exile, execute all frontlines onplay in hand, upgrade includes draw/discard
+update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg
+  - perhaps instead of gaining R, gain a buff that refunds 1 mana on next card or attack card
+  - could also command 1 random frontline to same target
+give assign separation some other effect, autoplay on upgrade?
+  - when assign triggers, tickdown all assigns by 1? give all assigns task level?
+frontline double action, also add a random frontline to hand? - unsure
+ashes to clay, upgrade increases draw instead of selected exiled frontlines? - unsure
+  - same for frontline copy?
 single oncolor haniwa gen
   - new card uncommon red, every 3 assign triggers add haniwa reserves to hand?
   - new card uncommon white, every sacrifice 5 haniwa add haniwa reserves to hand
@@ -900,14 +915,10 @@ single oncolor haniwa gen
 handsize block unupgraded give retain? and make it 5 block?
 num buff block let it gain barrier, or after certain buffs gained this turn become free or cost less
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier
-frontline exhibit add new effect first time per combat reduce sacrifice cost by 1 haniwa? - DONE
-  - maybe another effect thats easier to do, gain block? tempfp?
-  - can just add haniwa reserves
-weakening shot lower unupgraded mana and dmg - DONE
 clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
-create cavalry update scry interaction title - DONE
-fencer prep counter bug if enemy has attacked then died, no longer attacks random enemy - DONE
-assign tickdown return also gain colorless? - DONE
-illness prevention look into it not reducing all the way, only by 1 for each debuff - DONE
-create archer make lvl 10 be vuln and give accurate natively? - DONE
-  - lvl 7 can be temp fp down
+  - could limit to once per turn so fair for uncommon
+haniwa charger negative loyalty in exile makes dmg lower
+
+frontline upgrade maybe give loyalty protection instead of block?
+loyalty protection card allow select 1 frontline to command? and maybe remove new base block
+  - rename to loyalty command

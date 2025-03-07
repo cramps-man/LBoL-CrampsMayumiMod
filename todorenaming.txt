@@ -43,7 +43,7 @@ FrontlineCopy -> maybe fine? IS FINE
 HealSacrifice -> maybe fine? IS FINE
 UpgradedSummon -> Trained Summoning
 AssignCommander -> Assignment Commander? IS FINE
-MassDestruction maybe? might get reworked anyway
+MassDestruction -> Blitz Command
 MassSummon -> Summoning - Call to Arms
 SummonCommander -> probs fine? IS FINE
 

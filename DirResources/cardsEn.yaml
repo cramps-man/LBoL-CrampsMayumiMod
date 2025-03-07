@@ -646,11 +646,12 @@ ZeroCostReduction:
     When playing a <sprite=ManaSprite" name="0"> cost card, a random card in the hand |temporarily costs| <sprite=ManaSprite" name="1"> less. 
     Up to {Value1} time{Value1:plural one='' other='s'} per turn. 
 
-MassDestruction:
-  Name: Mass Destruction
+BlitzCommand:
+  Name: Blitz Command
   Description: |-
-    Deal {Damage} damage to all enemies. Then |Exile| all |Frontline| cards in the hand/draw/discard piles. 
-    Deal additional damage equal to the amount of |Frontline| cards |Exiled| this way multiplied by {Value1}. ({AdditionalDamage})
+    Execute the |On Play| actions for all |Frontline| cards in |e:hand| while consuming |Loyalty|. 
+  UpgradedDescription: |-
+    Execute the |On Play| actions for all |Frontline| cards in |e:hand/draw/discard| piles while consuming |Loyalty|. 
 
 MassTaskLevel:
   Name: Perfect Assignment
