@@ -1,13 +1,12 @@
-﻿using LBoL.Base.Extensions;
+﻿using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Cards;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,31 +25,49 @@ namespace LBoLMod.StatusEffects.Assign
     {
         public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level);
         public EnemyUnit Target { get; set; }
+        public ModFrontlineCard RandomFrontline { get; set; }
+        public Interaction Precondition { get; set; }
 
         protected override void OnAdded(Unit unit)
         {
             base.OnAdded(unit);
         }
 
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
         {
             EnemyUnit target = base.Battle.LowestHpEnemy;
             yield return new DamageAction(Owner, target, TotalDamage);
             Target = target;
-            yield return PerformAction.Wait(0.5f);
+        }
+
+        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        {
+            if (base.Battle.BattleShouldEnd || Target == null || Target.IsDead)
+                yield break;
+            RandomFrontline = base.Battle.HandZone.Where(c => c is ModFrontlineCard).SampleOrDefault(base.GameRun.BattleRng) as ModFrontlineCard;
+            if (RandomFrontline == null)
+                yield break;
+            Precondition = RandomFrontline.Precondition();
+            if (Precondition != null)
+            {
+                Precondition.Description = RandomFrontline.ExtraDescription1.RuntimeFormat(RandomFrontline.FormatWrapper);
+                yield return new InteractionAction(Precondition, true);
+            }
+            else
+                yield return PerformAction.Wait(0.5f);
         }
 
         protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
-            if (base.Battle.BattleShouldEnd || Target == null || Target.IsDead)
+            if (RandomFrontline == null)
                 yield break;
-            Card randomFrontline = base.Battle.HandZone.Where(c => c is ModFrontlineCard).SampleOrDefault(base.GameRun.BattleRng);
-            if (randomFrontline == null)
-                yield break;
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(new List<Card>() { randomFrontline }, Battle, new UnitSelector(Target)))
+            RandomFrontline.NotifyActivating();
+            foreach (var action in RandomFrontline.GetActions(new UnitSelector(Target), ManaGroup.Empty, Precondition, new List<DamageAction>(), false))
             {
-                yield return battleAction;
-            };
+                if (base.Battle.BattleShouldEnd)
+                    yield break;
+                yield return action;
+            }
         }
     }
 }
