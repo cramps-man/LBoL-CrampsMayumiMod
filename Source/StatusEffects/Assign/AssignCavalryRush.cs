@@ -1,10 +1,15 @@
-﻿using LBoL.Core;
+﻿using LBoL.Base.Extensions;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Cards;
+using LBoLMod.Utils;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.StatusEffects.Assign
 {
@@ -20,25 +25,32 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignCavalryRush : ModAssignStatusEffect
     {
         public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level);
+        public EnemyUnit Target { get; set; }
 
         protected override void OnAdded(Unit unit)
         {
             base.OnAdded(unit);
-            base.ReactOwnerEvent(base.Battle.EnemyDied, this.OnEnemyDied);
-        }
-
-        private IEnumerable<BattleAction> OnEnemyDied(DieEventArgs args)
-        {
-            if (base.Battle.BattleShouldEnd)
-                yield break;
-
-            yield return new GainManaAction(CardMana);
-            yield return new DamageAction(Owner, base.Battle.LowestHpEnemy, TotalDamage);
         }
 
         protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DamageAction(Owner, base.Battle.LowestHpEnemy, TotalDamage);
+            EnemyUnit target = base.Battle.LowestHpEnemy;
+            yield return new DamageAction(Owner, target, TotalDamage);
+            Target = target;
+            yield return PerformAction.Wait(0.5f);
+        }
+
+        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        {
+            if (base.Battle.BattleShouldEnd || Target == null || Target.IsDead)
+                yield break;
+            Card randomFrontline = base.Battle.HandZone.Where(c => c is ModFrontlineCard).SampleOrDefault(base.GameRun.BattleRng);
+            if (randomFrontline == null)
+                yield break;
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(new List<Card>() { randomFrontline }, Battle, new UnitSelector(Target)))
+            {
+                yield return battleAction;
+            };
         }
     }
 }

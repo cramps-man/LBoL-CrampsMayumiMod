@@ -498,7 +498,7 @@ CavalryRush:
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
-    When an enemy is defeated while this buff is active, gain {Mana} and deal damage to the lowest life enemy. 
+    Also execute the |On Play| action of a random |Frontline| in hand to the same target, without consuming |Loyalty|. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 NumBuffBlock:
