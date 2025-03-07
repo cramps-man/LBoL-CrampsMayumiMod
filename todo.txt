@@ -931,5 +931,5 @@ num buff block let it gain barrier, or after certain buffs gained this turn beco
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier
 cavalry rush rework bug with interactions getting cancelled - DONE
   - maybe just a little buggy in general, a few occasions where it didnt do anything, or maybe i didnt have a frontline in hand, i didnt see lel
-sharpshooter fix bug with flag not getting reset
+sharpshooter fix bug with flag not getting reset - DONE
 make assign keyword tooltip more clear haniwa go into the buff

@@ -57,6 +57,7 @@ namespace LBoLMod.Cards
         {
             if (args.Cause == ActionCause.OnlyCalculate)
                 return;
+            accuracyModified = false;
             if (base.Zone != CardZone.Hand)
                 return;
             if (CheckPassiveLoyaltyNotFulfiled())
