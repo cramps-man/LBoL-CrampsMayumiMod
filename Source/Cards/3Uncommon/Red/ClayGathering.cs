@@ -10,11 +10,11 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public sealed class NumBuffBlockDef : ModCardTemplate
+    public sealed class ClayGatheringDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(NumBuffBlock);
+            return nameof(ClayGathering);
         }
 
         public override CardConfig MakeConfig()
@@ -23,20 +23,20 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 2, Red = 1 };
+            cardConfig.Cost = new ManaGroup() { Red = 1, Any = 1 };
             cardConfig.Block = 10;
             cardConfig.UpgradedBlock = 15;
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 4;
+            cardConfig.Shield = 0;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(NumBuffBlockDef))]
-    public sealed class NumBuffBlock : Card
+    [EntityLogic(typeof(ClayGatheringDef))]
+    public sealed class ClayGathering : Card
     {
-        public override int AdditionalBlock
+        public override int AdditionalShield
         {
             get
             {

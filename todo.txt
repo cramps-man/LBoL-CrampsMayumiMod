@@ -926,5 +926,5 @@ gain buff tickdown go to uncommon and change effect perhaps?
   - deal big dick dmg, when used, remove from library or reset the counter
 give assign separation some other effect, autoplay on upgrade?
   - when assign triggers, tickdown all assigns by 1? give all assigns task level?
-num buff block let it gain barrier, or after certain buffs gained this turn become free or cost less
+num buff block let it gain barrier, or after certain buffs gained this turn become free or cost less - DONE
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier

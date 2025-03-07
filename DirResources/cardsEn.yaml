@@ -501,11 +501,11 @@ CavalryRush:
     Also execute the |On Play| action of a random |Frontline| in hand to the same target, without consuming |Loyalty|. 
     Start with {StartingTaskLevel} |Task Level|. 
 
-NumBuffBlock:
-  Name: Num Buff Block
+ClayGathering:
+  Name: Clay Gathering
   Description: |-
     Gain {Block} |Block|. 
-    Gain {Value1} additional |Block| based on the number of buffs {PlayerName} has. ({AdditionalBlock})
+    Gain {Value1} |Barrier| for each buff {PlayerName} has. ({AdditionalShield})
 
 DiscardUpgrade:
   Name: Dedicated Training
