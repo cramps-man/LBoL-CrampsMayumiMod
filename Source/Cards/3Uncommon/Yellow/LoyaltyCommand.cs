@@ -7,6 +7,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
+using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +33,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 6;
             cardConfig.UpgradedValue1 = 10;
             cardConfig.Value2 = 1;
-            cardConfig.RelativeEffects = new List<string>() { nameof(LoyaltyProtectionSe) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(LoyaltyProtectionSe) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(LoyaltyProtectionSe), nameof(Frontline) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(LoyaltyProtectionSe), nameof(Frontline) };
             return cardConfig;
         }
     }

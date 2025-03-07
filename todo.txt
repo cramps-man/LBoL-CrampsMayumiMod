@@ -920,6 +920,7 @@ clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
   - could limit to once per turn so fair for uncommon
 haniwa charger negative loyalty in exile makes dmg lower
 
-frontline upgrade maybe give loyalty protection instead of block?
+frontline upgrade maybe give loyalty protection instead of block? - DONE
+  - why not give both?
 loyalty protection card allow select 1 frontline to command? and maybe remove new base block - DONE
   - rename to loyalty command

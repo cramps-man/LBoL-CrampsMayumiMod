@@ -7,6 +7,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 2;
             cardConfig.Value2 = 1;
             cardConfig.UpgradedValue2 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(LoyaltyProtectionSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(LoyaltyProtectionSe) };
             return cardConfig;
         }
     }
@@ -40,6 +41,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrontlineUpgradeDef))]
     public sealed class FrontlineUpgrade : Card
     {
+        public int LoyaltyProtectionGain => IsUpgraded ? 6 : 4;
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c.CanUpgradeAndPositive).ToList();
@@ -48,6 +50,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
+            yield return BuffAction<LoyaltyProtectionSe>(LoyaltyProtectionGain);
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
             if (selectInteraction.SelectedCards.Count == 0)
