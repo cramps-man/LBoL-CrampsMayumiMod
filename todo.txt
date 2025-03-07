@@ -918,7 +918,7 @@ num buff block let it gain barrier, or after certain buffs gained this turn beco
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier
 clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
   - could limit to once per turn so fair for uncommon
-haniwa charger negative loyalty in exile makes dmg lower
+haniwa charger negative loyalty in exile makes dmg lower - FIXED
 
 frontline upgrade maybe give loyalty protection instead of block? - DONE
   - why not give both?

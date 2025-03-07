@@ -9,6 +9,7 @@ using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -46,7 +47,7 @@ namespace LBoLMod.Cards
         public override bool IsCavalryType => true;
         protected override bool ShouldConsumeAll => true;
         protected override int OnPlayConsumedRemainingValue => 4;
-        public override int AdditionalDamage => RemainingValue + base.UpgradeCounter.GetValueOrDefault();
+        public override int AdditionalDamage => Math.Max(0, RemainingValue) + base.UpgradeCounter.GetValueOrDefault();
         public int VulnScaling => 15;
         public override int AdditionalValue2 => RemainingValue >= VulnScaling ? 1 : 0;
         public int TotalLoyaltyGain => BaseLoyaltyGain * ChargerCount;
