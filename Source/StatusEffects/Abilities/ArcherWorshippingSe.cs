@@ -28,7 +28,7 @@ namespace LBoLMod.StatusEffects.Abilities
     [EntityLogic(typeof(ArcherWorshippingSeDef))]
     public sealed class ArcherWorshippingSe: StatusEffect
     {
-        public int Threshold => 10;
+        public int Threshold => 5;
         protected override void OnAdded(Unit unit)
         {
             base.ReactOwnerEvent(ModGameEvents.GainedHaniwa, this.OnGainedHaniwa);

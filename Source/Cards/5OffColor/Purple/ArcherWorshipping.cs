@@ -30,7 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Black = 1, Any = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Black = 1, Any = 1 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 10;
+            cardConfig.Value2 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(TempFirepowerNegative), nameof(LockedOn), nameof(Poison) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(TempFirepowerNegative), nameof(LockedOn), nameof(Poison) };
             return cardConfig;

@@ -897,7 +897,8 @@ gain buff tickdown go to uncommon and change effect perhaps?
   - could stay rare, assignment bonus is basically draw
   - use perma deckcounter that increases when assign buff triggers
   - deal big dick dmg, when used, remove from library or reset the counter
-worshipping offcolors, add effect of gaining the specific type per turn
+worshipping offcolors, add effect of gaining the specific type per turn - DONE
+  - or maybe just lower the thresholds to 5?
 look into mass destruction numbers, or concept entirely, it feels weird - DONE
   - rework into blitz command, W cost with exile, execute all frontlines onplay in hand, upgrade includes draw/discard
 update cavalry rush to work better in boss fights without summons, against an alone boss it's just dmg

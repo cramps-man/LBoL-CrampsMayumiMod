@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Green = 1, Any = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Green = 1, Any = 1 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 10;
+            cardConfig.Value2 = 5;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Graze) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Graze) };
             return cardConfig;
