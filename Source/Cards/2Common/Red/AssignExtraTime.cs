@@ -29,6 +29,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Red = 1, Any = 1 };
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value2 = 8;
+            cardConfig.UpgradedValue2 = 14;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
@@ -48,6 +50,7 @@ namespace LBoLMod.Cards
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
                 card.StatusEffect.Count += Value1;
+                card.StatusEffect.Level += Value2;
             }
         }
     }

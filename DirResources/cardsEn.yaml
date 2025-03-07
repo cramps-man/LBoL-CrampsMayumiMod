@@ -223,7 +223,7 @@ AssignExtraTime:
   Name: Delayed Task Completion
   Description: |-
     Gain {Block} |Block|. 
-    Choose an |Assignment| buff and increase its counter by {Value1}. 
+    Choose an |Assignment| buff and increase its counter by {Value1} and its |Task Level| by {Value2}. 
 
 CavalryScout:
   Name: Assignment - Scout Ahead
