@@ -43,6 +43,7 @@ namespace LBoLMod.StatusEffects.Assign
                 else if (rng >= 36 && rng <= 100)
                     randomChoices.Add(Library.CreateCard(HaniwaFrontlineUtils.GetAllSummonTypes(base.Battle).Sample(base.GameRun.BattleRng)));
             }
+            randomChoices.ForEach(c => c.IsReplenish = true);
             Interaction = new SelectCardInteraction(TotalTimes, TotalTimes, randomChoices)
             {
                 Description = InteractionTitle

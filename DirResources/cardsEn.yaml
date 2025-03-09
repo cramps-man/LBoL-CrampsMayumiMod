@@ -573,7 +573,7 @@ CavalrySupplies:
   Description: |-
     |Assign {CavalryRequired} Cavalry|. 
     After {StartingCardCounter} cards are played, choose X of X + {Value2} cards to add to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
-    Cards are randomized and can include |Flame|, |Radiance|, |Rainbow| or a random |Frontline|. 
+    Cards are randomized and can include |Flame|, |Radiance|, |Rainbow| or a random |Frontline|. They gain |Replenish|. 
     Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     |Flame| and |Radiance| have 15% chance, |Rainbow| have 5% chance, |Frontlines| have 65% chance. 

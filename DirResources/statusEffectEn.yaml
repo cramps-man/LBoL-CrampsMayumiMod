@@ -116,7 +116,7 @@ AssignArcherPrepVolley:
 AssignCavalrySupplies:
   Name: Assignment - Bring the Supplies
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, choose {TotalTimes} of {TotalTimesPlusValue2} cards to add to the draw pile. Cards are randomized and can include |Flame|, |Radiance|, |Rainbow| or a random |Frontline|. 
+    After {Count} card{Count:plural one=' is' other='s are'} played, choose {TotalTimes} of {TotalTimesPlusValue2} cards to add to the draw pile. Cards are randomized and can include |Flame|, |Radiance|, |Rainbow| or a random |Frontline|. They gain |Replenish|. 
     |e:1| extra card choice per {CardValue1} |Task Level| (minimum 1). 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   InteractionTitle: |-

@@ -946,7 +946,7 @@ choose short assign gain colorless? - DONE
 full frontal assault nerf bonus dmg a bit?
 loyalty command increase loyalty protection gain a bit? - DONE
 assignment bonus dont waste if hand is full - DONE
-cavalry supplies give the mana cards replenish?
+cavalry supplies give the mana cards replenish? - DONE
 inspire the back multiply task level gain by 2?
 frontline commander passive requires less loyalty (5) but only commands 3 frontlines
   - also only works in hand?
