@@ -1,4 +1,5 @@
 ﻿using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -29,7 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 25;
+            cardConfig.Damage = 20;
             cardConfig.Value1 = 10;
             cardConfig.Value2 = 3;
             cardConfig.Keywords = Keyword.Retain;
@@ -43,9 +44,11 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrontlineCommanderDef))]
     public sealed class FrontlineCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 10;
+        protected override int PassiveConsumedRemainingValue => 5;
         protected override int OnPlayConsumedRemainingValue => 0;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
+        public int PassiveCommandCount => 3 + base.UpgradeCounter.GetValueOrDefault() / PassiveScaling;
+        public int PassiveScaling => 3;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -62,7 +65,7 @@ namespace LBoLMod.Cards
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
-            if (base.Zone != CardZone.Draw && base.Zone != CardZone.Hand && base.Zone != CardZone.Discard)
+            if (base.Zone != CardZone.Hand)
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
@@ -70,15 +73,9 @@ namespace LBoLMod.Cards
             if (!frontlinesInHand.Any())
                 yield break;
 
-            if (base.Zone == CardZone.Hand)
-            {
-                base.NotifyActivating();
-                yield return PerformAction.Wait(0.3f);
-            }
-            else if (base.Zone == CardZone.Draw || base.Zone == CardZone.Discard)
-                yield return PerformAction.ViewCard(this);
-
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(frontlinesInHand, base.Battle))
+            base.NotifyActivating();
+            yield return PerformAction.Wait(0.3f);
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(frontlinesInHand.SampleManyOrAll(PassiveCommandCount, base.BattleRng).ToList(), base.Battle))
             {
                 yield return battleAction;
             }

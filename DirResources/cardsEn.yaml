@@ -677,7 +677,7 @@ EnhancedTraining:
 FrontlineCommander:
   Name: Frontline Commander
   Description: |-
-    |While in hand/draw/discard|: At start of {PlayerName}'s turn, all |Frontline| cards in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {Value2} |Loyalty|. 
+    |While in hand|: At start of {PlayerName}'s turn, {PassiveCommandCount} random |Frontline| card{PassiveCommandCount:plural one='' other='s'} in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {Value2} |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
@@ -685,6 +685,7 @@ FrontlineCommander:
     
     Increases for each upgrade. 
     Damage: +2
+    Random Frontline count: +1 per {PassiveScaling} upgrades
 
 OptionFrontlineCommander:
   Name: Summon Frontline Commander
