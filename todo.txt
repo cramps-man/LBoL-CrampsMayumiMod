@@ -945,7 +945,7 @@ assign commander passive requires less loyalty (3) - DONE
 blitz summon rework upgrade to allow selecting 2 instead of increasing starting loyalty - DONE
   - starting loyalty clashes with upgraded summon, and only really is good with charger cos the vuln
 cavalry rush add scaling to frontline command, +1 frontline every 15/20 task level (min 1)
-haniwa upgrader dont allow targetting itself for onplay
+haniwa upgrader dont allow targetting itself for onplay - DONE
 
 clay to ashes still feels weak, perhaps make it perma firepower per sacrifice? - DONE
   - could limit to once per turn so fair for uncommon
