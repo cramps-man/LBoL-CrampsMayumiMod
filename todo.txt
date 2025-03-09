@@ -944,7 +944,7 @@ guard rush rework - DONE
 frontline upgrade nerf block to 4(6) so same as the loyalty protection gain - DONE
 choose short assign gain colorless? - DONE
 full frontal assault nerf bonus dmg a bit?
-loyalty command increase loyalty protection gain a bit?
+loyalty command increase loyalty protection gain a bit? - DONE
 assignment bonus dont waste if hand is full
 cavalry supplies give the mana cards replenish?
 inspire the back multiply task level gain by 2?
