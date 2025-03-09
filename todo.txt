@@ -954,6 +954,6 @@ frontline commander passive requires less loyalty (5) but only commands 3 frontl
   - also lower onplay dmg 25 -> 20
 assign commander passive requires less loyalty (3) - DONE
   - also only works in hand?
-blitz summon rework upgrade to allow selecting 2 instead of increasing starting loyalty
+blitz summon rework upgrade to allow selecting 2 instead of increasing starting loyalty - DONE
   - starting loyalty clashes with upgraded summon, and only really is good with charger cos the vuln
 cavalry rush add scaling to frontline command, +1 frontline every 20 task level (min 1)

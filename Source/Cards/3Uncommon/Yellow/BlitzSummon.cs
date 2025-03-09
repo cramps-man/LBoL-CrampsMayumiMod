@@ -30,10 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 0;
-            cardConfig.UpgradedValue2 = 10;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
@@ -54,7 +52,7 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            foreach (var action in HaniwaFrontlineUtils.CardsSummon(((SelectCardInteraction)precondition).SelectedCards, startingLoyalty: Value2))
+            foreach (var action in HaniwaFrontlineUtils.CardsSummon(((SelectCardInteraction)precondition).SelectedCards))
             {
                 yield return action;
                 if (action is AddCardsToHandAction addCardsAction)

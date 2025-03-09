@@ -132,7 +132,7 @@ HaniwaSharpshooter:
 BasicSummon:
   Name: Basic Summoning
   Description: |-
-    Choose 1 |Frontline| card and add {Value1:plural one='% copy' other='% copies'} to the hand. Only Common rarities can be chosen. 
+    Choose |e:1| |Frontline| card and add {Value1:plural one='% copy' other='% copies'} to the hand. Only Common rarities can be chosen. 
     |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
@@ -404,7 +404,7 @@ UpgradedSummon:
   Description: |-
     Choose{Value2:plural one='' other=' up to'} {Value2} |Frontline| card and add {Value2:plural one='it' other='them'} to the hand. 
     {Value2:plural one='It starts' other='They start'} with {Value1} upgrade{Value1:plural one='' other='s'}. 
-    |Sacrifice Haniwa| depending on the chosen card. 
+    |Sacrifice Haniwa| depending on the chosen card{Value2:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
 
@@ -593,13 +593,9 @@ FrontlineCopy:
 BlitzSummon:
   Name: Summoning - Instant Command
   Description: |-
-    Choose {Value1} |Frontline| card to add to the hand. 
-    |Sacrifice Haniwa| depending on the chosen card. 
-    Execute the new card's |On Play| action and consume its |Loyalty|. 
-  UpgradedDescription: |-
-    Choose {Value1} |Frontline| card to add to the hand. It starts with {Value2} extra |Loyalty|. 
-    |Sacrifice Haniwa| depending on the chosen card. 
-    Execute the new card's |On Play| action and consume its |Loyalty|. 
+    Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} to add to the hand. 
+    |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
+    Execute the new card's |On Play| action{Value1:plural one=' and consume its' other='s and consume their'} |Loyalty|. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
 
