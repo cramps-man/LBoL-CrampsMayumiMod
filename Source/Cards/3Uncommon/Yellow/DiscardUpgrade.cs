@@ -30,6 +30,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.Block = 16;
             cardConfig.Value1 = 5;
+            cardConfig.Value2 = 2;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;
@@ -55,6 +56,7 @@ namespace LBoLMod.Cards
             for (int i = 0; i < Value1; i++)
                 yield return new UpgradeCardsAction(discardInteraction.SelectedCards.Where(c => c is ModFrontlineCard).ToList());
             yield return new DiscardManyAction(discardInteraction.SelectedCards);
+            yield return new DrawManyCardAction(Value2);
         }
     }
 }

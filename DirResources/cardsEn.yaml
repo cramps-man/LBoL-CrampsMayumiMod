@@ -513,6 +513,7 @@ DiscardUpgrade:
     Gain {Block} |Block|. 
     Choose any number of |Frontline| cards in the hand and discard them. 
     Upgrade all selected cards {Value1} time{Value1:plural one='' other='s'}. 
+    Draw {Value2} card{Value2:plural one='' other='s'} if a card was discarded. 
 
 AshesToClay:
   Name: Ashes To Clay

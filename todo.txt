@@ -924,6 +924,7 @@ gain buff tickdown go to uncommon and change effect perhaps?
   - could stay rare, assignment bonus is basically draw
   - use perma deckcounter that increases when assign buff triggers
   - deal big dick dmg, when used, remove from library or reset the counter
+  - or when sacrificing, assign those haniwa into assign buffs
 give assign separation some other effect, autoplay on upgrade?
   - when assign triggers, tickdown all assigns by 1? give all assigns task level?
   - gain some assignment bonus?
@@ -933,3 +934,26 @@ cavalry rush rework bug with interactions getting cancelled - DONE
   - maybe just a little buggy in general, a few occasions where it didnt do anything, or maybe i didnt have a frontline in hand, i didnt see lel
 sharpshooter fix bug with flag not getting reset - DONE
 make assign keyword tooltip more clear haniwa go into the buff
+discard upgrade give 2 draw? - DONE
+  - only if discarded it gives draw
+guard rush rework
+  - sacrifice 2 of each haniwa
+  - add haniwa bodyguard + horse archer to drawpile
+  - draw 1(2) cards
+  - same mana cost of 2w or so, upgrade can lower it?
+frontline upgrade nerf block to 4(6) so same as the loyalty protection gain
+choose short assign gain colorless?
+full frontal assault nerf bonus dmg a bit?
+loyalty command increase loyalty protection gain a bit?
+assignment bonus dont waste if hand is full
+cavalry supplies give the mana cards replenish?
+inspire the back multiply task level gain by 2?
+frontline commander passive requires less loyalty (5) but only commands 3 frontlines
+  - also only works in hand?
+  - +1 frontline per 3 upgrades?
+  - also lower onplay dmg 25 -> 20
+assign commander passive requires less loyalty (2)
+  - also only works in hand?
+blitz summon rework upgrade to allow selecting 2 instead of increasing starting loyalty
+  - starting loyalty clashes with upgraded summon, and only really is good with charger cos the vuln
+cavalry rush add scaling to frontline command, +1 frontline every 20 task level (min 1)
