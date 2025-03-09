@@ -29,8 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 2;
             cardConfig.UpgradedValue2 = 3;
-            cardConfig.Cost = new ManaGroup() { White = 2, Any = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
+            cardConfig.Cost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(TempFirepower) };

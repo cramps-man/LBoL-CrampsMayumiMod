@@ -914,20 +914,8 @@ ashes to clay, upgrade increases draw instead of selected exiled frontlines? - U
 handsize block unupgraded give retain? and make it 5 block? - UNSURE
   - maybe gain some temp spirit?
 
-clay to ashes still feels weak, perhaps make it perma firepower per sacrifice?
-  - could limit to once per turn so fair for uncommon
-  - or every 5 haniwa = 1 firepower?
 assign extra time grant extra task level as well - DONE
   - it granted extra triggers before which was way worth than extra card counter
-gain buff tickdown go to uncommon and change effect perhaps?
-  - exile and give assignment bonus?
-  - could stay rare, assignment bonus is basically draw
-  - use perma deckcounter that increases when assign buff triggers
-  - deal big dick dmg, when used, remove from library or reset the counter
-  - or when sacrificing, assign those haniwa into assign buffs
-give assign separation some other effect, autoplay on upgrade?
-  - when assign triggers, tickdown all assigns by 1? give all assigns task level?
-  - gain some assignment bonus?
 num buff block let it gain barrier, or after certain buffs gained this turn become free or cost less - DONE
   - perhaps cost RR(1R) but nerf buff block to 2(3) and change it to barrier
 cavalry rush rework bug with interactions getting cancelled - DONE
@@ -956,4 +944,19 @@ assign commander passive requires less loyalty (3) - DONE
   - also only works in hand?
 blitz summon rework upgrade to allow selecting 2 instead of increasing starting loyalty - DONE
   - starting loyalty clashes with upgraded summon, and only really is good with charger cos the vuln
-cavalry rush add scaling to frontline command, +1 frontline every 20 task level (min 1)
+cavalry rush add scaling to frontline command, +1 frontline every 15/20 task level (min 1)
+haniwa upgrader dont allow targetting itself for onplay
+
+clay to ashes still feels weak, perhaps make it perma firepower per sacrifice? - DONE
+  - could limit to once per turn so fair for uncommon
+  - or every 5 haniwa = 1 firepower?
+  - perhaps try just lowering unupgraded mana
+gain buff tickdown go to uncommon and change effect perhaps?
+  - exile and give assignment bonus?
+  - could stay rare, assignment bonus is basically draw
+  - use perma deckcounter that increases when assign buff triggers
+  - deal big dick dmg, when used, remove from library or reset the counter
+  - or when sacrificing, assign those haniwa into assign buffs
+give assign separation some other effect, autoplay on upgrade?
+  - when assign triggers, tickdown all assigns by 1? give all assigns task level?
+  - gain some assignment bonus?
