@@ -49,13 +49,13 @@ Sacrifice:
 Assign:
   Name: Assign X
   Description: |-
-    Lose X level of |Haniwa|, to gain an |Assignment| buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back all assigned |Haniwa|. 
+    Put X |Haniwa| onto an |Assignment| buff. When the buff triggers its effect, gain back all assigned |Haniwa|. The buff triggers when its counter reaches |e:0|, which ticks down by |e:1| every card played. 
     Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X, accumilating assigned |Haniwa|. 
-    |Note|: ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
+    Ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
   Brief: |-
-    Lose X level of |Haniwa|, to gain an |Assignment| buff which has a counter that ticks down every card played. When counter reaches |e:0|, triggers the specified effect. After the effect triggers, gain back all assigned |Haniwa|. 
+    Put X |Haniwa| onto an |Assignment| buff. When the buff triggers its effect, gain back all assigned |Haniwa|. The buff triggers when its counter reaches |e:0|, which ticks down by |e:1| every card played. 
     Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X, accumilating assigned |Haniwa|. 
-    |Note|: ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
+    Ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
 
 TaskLevel:
   Name: Task Level

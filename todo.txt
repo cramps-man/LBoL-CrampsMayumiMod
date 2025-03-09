@@ -933,7 +933,7 @@ num buff block let it gain barrier, or after certain buffs gained this turn beco
 cavalry rush rework bug with interactions getting cancelled - DONE
   - maybe just a little buggy in general, a few occasions where it didnt do anything, or maybe i didnt have a frontline in hand, i didnt see lel
 sharpshooter fix bug with flag not getting reset - DONE
-make assign keyword tooltip more clear haniwa go into the buff
+make assign keyword tooltip more clear haniwa go into the buff - DONE
 discard upgrade give 2 draw? - DONE
   - only if discarded it gives draw
 guard rush rework - DONE
