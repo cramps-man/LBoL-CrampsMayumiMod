@@ -33,6 +33,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 0;
             cardConfig.Value2 = 2;
             cardConfig.UpgradedValue2 = 5;
+            cardConfig.Mana = new ManaGroup() { Colorless = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(Haniwa) };
             return cardConfig;
@@ -66,6 +67,7 @@ namespace LBoLMod.Cards
                     }
                 };
             }
+            yield return new GainManaAction(Mana);
         }
     }
 }

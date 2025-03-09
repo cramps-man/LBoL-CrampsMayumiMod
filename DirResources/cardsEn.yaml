@@ -527,6 +527,7 @@ ChooseShortAssign:
   Description: |-
     Choose 1 of 3 |Assignment| cards and gain its buff. No |Haniwa| required. 
     The buff has a starting card counter of {Value1} and starts with {Value2} extra |Task Level|. 
+    Gain {Mana}. 
 
 FencerPrepCounter:
   Name: Assignment - Counter Attack

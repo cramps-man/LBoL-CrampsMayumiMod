@@ -942,7 +942,7 @@ guard rush rework - DONE
   - draw 1(2) cards
   - same mana cost of 2w or so, upgrade can lower it?
 frontline upgrade nerf block to 4(6) so same as the loyalty protection gain - DONE
-choose short assign gain colorless?
+choose short assign gain colorless? - DONE
 full frontal assault nerf bonus dmg a bit?
 loyalty command increase loyalty protection gain a bit?
 assignment bonus dont waste if hand is full
