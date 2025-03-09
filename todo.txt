@@ -952,7 +952,7 @@ frontline commander passive requires less loyalty (5) but only commands 3 frontl
   - also only works in hand?
   - +1 frontline per 3 upgrades?
   - also lower onplay dmg 25 -> 20
-assign commander passive requires less loyalty (2)
+assign commander passive requires less loyalty (3) - DONE
   - also only works in hand?
 blitz summon rework upgrade to allow selecting 2 instead of increasing starting loyalty
   - starting loyalty clashes with upgraded summon, and only really is good with charger cos the vuln

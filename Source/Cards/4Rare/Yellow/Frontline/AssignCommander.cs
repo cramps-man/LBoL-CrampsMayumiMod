@@ -45,7 +45,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AssignCommanderDef))]
     public sealed class AssignCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 10;
+        protected override int PassiveConsumedRemainingValue => 3;
         protected override int OnPlayConsumedRemainingValue => 0;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
         public int LoyaltyGain => 3;
@@ -64,18 +64,13 @@ namespace LBoLMod.Cards
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
-            if (base.Zone != CardZone.Draw && base.Zone != CardZone.Hand && base.Zone != CardZone.Discard)
+            if (base.Zone != CardZone.Hand)
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
 
-            if (base.Zone == CardZone.Hand)
-            {
-                base.NotifyActivating();
-                yield return PerformAction.Wait(0.3f);
-            }
-            else if (base.Zone == CardZone.Draw || base.Zone == CardZone.Discard)
-                yield return PerformAction.ViewCard(this);
+            base.NotifyActivating();
+            yield return PerformAction.Wait(0.3f);
 
             int fencerCount = args.FencerToGain;
             int archerCount = args.ArcherToGain;
