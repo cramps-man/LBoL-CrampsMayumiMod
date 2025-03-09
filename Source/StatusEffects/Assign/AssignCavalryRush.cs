@@ -3,10 +3,12 @@ using LBoL.Base.Extensions;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.Cards;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,9 +26,9 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignCavalryRush : ModAssignStatusEffect
     {
         public DamageInfo TotalDamage => CardDamage.MultiplyBy(Level);
+        public int TotalFrontlineCount => Math.Max(Level / CardValue1, 1);
         public EnemyUnit Target { get; set; }
-        public ModFrontlineCard RandomFrontline { get; set; }
-        public Interaction Precondition { get; set; }
+        public Dictionary<ModFrontlineCard, Interaction> RandomFrontlines { get; set; } = new Dictionary<ModFrontlineCard, Interaction>();
 
         protected override void OnAdded(Unit unit)
         {
@@ -44,29 +46,36 @@ namespace LBoLMod.StatusEffects.Assign
         {
             if (base.Battle.BattleShouldEnd || Target == null || Target.IsDead)
                 yield break;
-            RandomFrontline = base.Battle.HandZone.Where(c => c is ModFrontlineCard).SampleOrDefault(base.GameRun.BattleRng) as ModFrontlineCard;
-            if (RandomFrontline == null)
+            List<Card> randomFrontlines = base.Battle.HandZone.Where(c => c is ModFrontlineCard).SampleManyOrAll(TotalFrontlineCount, base.GameRun.BattleRng).ToList();
+            if (!randomFrontlines.Any())
                 yield break;
-            Precondition = RandomFrontline.Precondition();
-            if (Precondition != null)
+            foreach (ModFrontlineCard frontline in randomFrontlines)
             {
-                Precondition.Description = RandomFrontline.ExtraDescription1.RuntimeFormat(RandomFrontline.FormatWrapper);
-                yield return new InteractionAction(Precondition, true);
+                Interaction precondition = frontline.Precondition();
+                RandomFrontlines.Add(frontline, precondition);
+                if (precondition != null)
+                {
+                    precondition.Description = frontline.ExtraDescription1.RuntimeFormat(frontline.FormatWrapper);
+                    yield return new InteractionAction(precondition, true);
+                    yield return PerformAction.Wait(0.3f);
+                }
             }
-            else
-                yield return PerformAction.Wait(0.5f);
         }
 
         protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
-            if (RandomFrontline == null)
+            if (!RandomFrontlines.Any())
                 yield break;
-            RandomFrontline.NotifyActivating();
-            foreach (var action in RandomFrontline.GetActions(new UnitSelector(Target), ManaGroup.Empty, Precondition, new List<DamageAction>(), false))
+            foreach (var keyValue in RandomFrontlines)
             {
-                if (base.Battle.BattleShouldEnd)
-                    yield break;
-                yield return action;
+                ModFrontlineCard frontline = keyValue.Key;
+                frontline.NotifyActivating();
+                foreach (var action in frontline.GetActions(new UnitSelector(Target), ManaGroup.Empty, keyValue.Value, new List<DamageAction>(), false))
+                {
+                    if (base.Battle.BattleShouldEnd)
+                        yield break;
+                    yield return action;
+                }
             }
         }
     }
