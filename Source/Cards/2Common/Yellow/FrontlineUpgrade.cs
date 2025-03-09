@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 1 };
-            cardConfig.Block = 6;
-            cardConfig.UpgradedBlock = 8;
+            cardConfig.Block = 4;
+            cardConfig.UpgradedBlock = 6;
             cardConfig.Value1 = 2;
             cardConfig.Value2 = 1;
             cardConfig.UpgradedValue2 = 2;
