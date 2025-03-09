@@ -32,6 +32,8 @@ namespace LBoLMod.StatusEffects.Abilities
                 yield break;
             if (args.OnTurnStart)
                 yield break;
+            if (base.Battle.HandZone.Count == base.Battle.MaxHand)
+                yield break;
 
             base.NotifyActivating();
             yield return new DrawCardAction();
