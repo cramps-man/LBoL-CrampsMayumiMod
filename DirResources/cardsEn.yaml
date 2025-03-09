@@ -545,9 +545,8 @@ HealSacrifice:
 GuardRush:
   Name: Guard Rush
   Description: |-
-    |Sacrifice| {Value2} |Fencer| and |Cavalry|. 
-    Gain {Block} |Block|. 
-    Gain {Value1} |Graze|. 
+    |Sacrifice| {Value2} of each |Haniwa|. 
+    Add |e:2| |Haniwa Bodyguards| and |e:1| |Haniwa Horse Archer| to the top of the draw pile. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
 
 ArcherPrepDebuff:

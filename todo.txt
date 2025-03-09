@@ -936,7 +936,7 @@ sharpshooter fix bug with flag not getting reset - DONE
 make assign keyword tooltip more clear haniwa go into the buff
 discard upgrade give 2 draw? - DONE
   - only if discarded it gives draw
-guard rush rework
+guard rush rework - DONE
   - sacrifice 2 of each haniwa
   - add haniwa bodyguard + horse archer to drawpile
   - draw 1(2) cards
