@@ -731,6 +731,7 @@ FrontlineDoubleAction:
   Name: Frontline Double Action
   Description: |-
     After playing a |Frontline| card, execute its |On Play| action and consume |Loyalty| again. 
+    Gain {Value1} |Loyalty Protection|. 
 
 AssignReverseTickdown:
   Name: Guard Scramble

@@ -26,8 +26,9 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 2, Any = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { White = 1, Any = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.Value1 = 20;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(LoyaltyProtectionSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(LoyaltyProtectionSe) };
             return cardConfig;
         }
     }
@@ -38,6 +39,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return BuffAction<FrontlineDoubleActionSe>();
+            yield return BuffAction<LoyaltyProtectionSe>(Value1);
         }
     }
 }

@@ -957,7 +957,7 @@ gain buff tickdown go to uncommon and change effect perhaps? - DONE
 give assign separation some other effect, autoplay on upgrade?
   - when assign triggers, tickdown all assigns by 1? give all assigns task level?
   - gain some assignment bonus?
-frontline double action, also add a random frontline to hand?
+frontline double action, also add a random frontline to hand? - DONE
   - can gain some loyalty protection
 handsize block unupgraded give retain? and make it 5 block?
   - maybe gain some temp spirit?
