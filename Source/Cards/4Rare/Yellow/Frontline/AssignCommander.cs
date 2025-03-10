@@ -13,6 +13,7 @@ using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -82,7 +83,7 @@ namespace LBoLMod.Cards
 
         public override Interaction Precondition()
         {
-            var interaction = new SelectCardInteraction(1, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
+            var interaction = new SelectCardInteraction(1, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player).Where(c => c.StatusEffect.Count != 0));
             interaction.Description = ExtraDescription1.RuntimeFormat(FormatWrapper);
             return interaction;
         }

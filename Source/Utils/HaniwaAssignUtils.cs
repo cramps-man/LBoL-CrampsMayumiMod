@@ -4,7 +4,6 @@ using LBoL.Base.Extensions;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoL.EntityLib.Exhibits.Shining;
 using LBoLMod.Cards;
@@ -41,9 +40,9 @@ namespace LBoLMod.Utils
             }
             return OnColorAssignCardTypes;
         }
-        public static List<Card> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true, bool includePermanent = true)
+        public static List<ModAssignOptionCard> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true, bool includePermanent = true)
         {
-            List<Card> list = new List<Card>();
+            List<ModAssignOptionCard> list = new List<ModAssignOptionCard>();
             foreach (ModAssignStatusEffect s in player.StatusEffects.Where(s => s is ModAssignStatusEffect))
             {
                 ModAssignOptionCard c = Library.CreateCard<ModAssignOptionCard>();

@@ -965,5 +965,5 @@ handsize block unupgraded give retain? and make it 5 block? - DONE
   - lower block a bit 4 -> 3(4) and keep mana gain at 2 per non 0-cost
 chain of command lower unupgraded cost? - DONE
 frontline loyalty gain give loyalty protection? - NO NEED
-fix new cavalry rush when commanding assign commander, allows selecting the cavalry rush about to pop
+fix new cavalry rush when commanding assign commander, allows selecting the cavalry rush about to pop - DONE
   - just filter buffs with 0 card count in assign commander
