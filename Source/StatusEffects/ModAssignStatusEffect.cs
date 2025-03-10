@@ -9,7 +9,6 @@ using LBoLMod.BattleActions;
 using LBoLMod.Cards;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.UltimateSkills;
-using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
 

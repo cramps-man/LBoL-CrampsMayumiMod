@@ -908,11 +908,8 @@ frontline upgrade maybe give loyalty protection instead of block? - DONE
   - why not give both?
 loyalty protection card allow select 1 frontline to command? and maybe remove new base block - DONE
   - rename to loyalty command
-frontline double action, also add a random frontline to hand? - UNSURE
 ashes to clay, upgrade increases draw instead of selected exiled frontlines? - UNSURE
   - same for frontline copy?
-handsize block unupgraded give retain? and make it 5 block? - UNSURE
-  - maybe gain some temp spirit?
 
 assign extra time grant extra task level as well - DONE
   - it granted extra triggers before which was way worth than extra card counter
@@ -951,7 +948,7 @@ clay to ashes still feels weak, perhaps make it perma firepower per sacrifice? -
   - could limit to once per turn so fair for uncommon
   - or every 5 haniwa = 1 firepower?
   - perhaps try just lowering unupgraded mana
-gain buff tickdown go to uncommon and change effect perhaps?
+gain buff tickdown go to uncommon and change effect perhaps? - DONE
   - exile and give assignment bonus?
   - could stay rare, assignment bonus is basically draw
   - use perma deckcounter that increases when assign buff triggers
@@ -960,3 +957,13 @@ gain buff tickdown go to uncommon and change effect perhaps?
 give assign separation some other effect, autoplay on upgrade?
   - when assign triggers, tickdown all assigns by 1? give all assigns task level?
   - gain some assignment bonus?
+frontline double action, also add a random frontline to hand?
+  - can gain some loyalty protection
+handsize block unupgraded give retain? and make it 5 block?
+  - maybe gain some temp spirit?
+  - make it so 0 cost cards dont count in the cost gain
+  - lower block a bit 4 -> 3(4) and keep mana gain at 2 per non 0-cost
+chain of command lower unupgraded cost?
+frontline loyalty gain give loyalty protection?
+fix new cavalry rush when commanding assign commander, allows selecting the cavalry rush about to pop
+  - just filter buffs with 0 card count in assign commander

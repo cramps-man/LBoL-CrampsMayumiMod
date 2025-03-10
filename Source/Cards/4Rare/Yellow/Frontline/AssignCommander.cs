@@ -1,5 +1,4 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
@@ -14,7 +13,6 @@ using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -72,46 +70,10 @@ namespace LBoLMod.Cards
             base.NotifyActivating();
             yield return PerformAction.Wait(0.3f);
 
-            int fencerCount = args.FencerToGain;
-            int archerCount = args.ArcherToGain;
-            int cavalryCount = args.CavalryToGain;
-            Dictionary<string, int> haniwaCount = new Dictionary<string, int>()
+            foreach (var battleAction in HaniwaAssignUtils.GetRandomAssignBuffs(base.Battle, args.FencerToGain, args.ArcherToGain, args.CavalryToGain, false))
             {
-                { "fencer", fencerCount },
-                { "archer", archerCount },
-                { "cavalry", cavalryCount },
+                yield return battleAction;
             };
-            bool continueRandomizing = true;
-            while (continueRandomizing)
-            {
-                var allOptions = HaniwaAssignUtils.GetAssignCardTypes(base.Battle.Player).Select(Library.CreateCard).Cast<ModAssignCard>().ToList();
-                while (true)
-                {
-                    var randomSelection = allOptions.SampleOrDefault(base.BattleRng);
-                    if (randomSelection == null)
-                    {
-                        continueRandomizing = false;
-                        break;
-                    }
-                    allOptions.Remove(randomSelection);
-                    if (randomSelection.FencerAssigned > haniwaCount["fencer"])
-                        continue;
-                    if (randomSelection.ArcherAssigned > haniwaCount["archer"])
-                        continue;
-                    if (randomSelection.CavalryAssigned > haniwaCount["cavalry"])
-                        continue;
-                    randomSelection.SetBattle(base.Battle);
-                    randomSelection.ManualStack = false;
-                    var assignBuffAction = randomSelection.BuffAction(randomSelection.AssignStatusType, level: randomSelection.StartingTaskLevel, count: randomSelection.StartingCardCounter);
-                    yield return assignBuffAction;
-                    if (assignBuffAction is ApplyStatusEffectAction sea && sea.Args.Effect is ModAssignStatusEffect mase)
-                        mase.JustApplied = false;
-                    haniwaCount["fencer"] -= randomSelection.FencerAssigned;
-                    haniwaCount["archer"] -= randomSelection.ArcherAssigned;
-                    haniwaCount["cavalry"] -= randomSelection.CavalryAssigned;
-                    break;
-                }
-            }
 
             yield return ConsumePassiveLoyalty();
             base.NotifyChanged();

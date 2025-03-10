@@ -189,14 +189,12 @@ AssignPlayDrawSe:
   Brief: |-
     Whenever {PlayerName} plays an |Assignment| card, draw 1 card. 
 
-GainBuffTickdownSe:
-  Name: Gain Buff Tickdown
+HaniwasNeverDieSe:
+  Name: Haniwas Never Die
   Description: |-
-    For this turn when {PlayerName} gains a buff, tickdown all |Assignment| buffs by {Level}. 
-    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assignment| buff{FirepowerScaling:plural one='' other='s'} triggered ({TotalFirepower}). 
+    Whenever {PlayerName} |Sacrifices|, |Assign| up to {Level} |Haniwa| without consuming |Haniwa| for each type |Sacrificed|, into random |Assignment| buffs that fulfil the costs. 
   Brief: |-
-    For this turn when {PlayerName} gains a buff, tickdown all |Assignment| buffs by {Level}. 
-    At the start of next turn, gain |Temporary Firepower| for every {FirepowerScaling} |Assignment| buff{FirepowerScaling:plural one='' other='s'} triggered. 
+    Whenever {PlayerName} |Sacrifices|, |Assign| |Haniwa| without consuming |Haniwa| for each type |Sacrificed|, into random |Assignment| buffs that fulfil the costs. 
 
 ZeroCostReductionSe:
   Name: Power of Zero

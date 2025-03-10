@@ -1,6 +1,9 @@
 ﻿using HarmonyLib;
 using LBoL.Base;
+using LBoL.Base.Extensions;
 using LBoL.Core;
+using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Units;
 using LBoL.EntityLib.Exhibits.Shining;
@@ -56,6 +59,47 @@ namespace LBoLMod.Utils
                     list.Add(c);
             };
             return list;
+        }
+
+        public static IEnumerable<BattleAction> GetRandomAssignBuffs(BattleController battle, int fencerCount = 0, int archerCount = 0, int cavalryCount = 0, bool manualStack = true)
+        {
+            Dictionary<string, int> haniwaCount = new Dictionary<string, int>()
+            {
+                { "fencer", fencerCount },
+                { "archer", archerCount },
+                { "cavalry", cavalryCount },
+            };
+            bool continueRandomizing = true;
+            while (continueRandomizing)
+            {
+                var allOptions = GetAssignCardTypes(battle.Player).Select(Library.CreateCard).Cast<ModAssignCard>().ToList();
+                while (true)
+                {
+                    var randomSelection = allOptions.SampleOrDefault(battle.GameRun.BattleRng);
+                    if (randomSelection == null)
+                    {
+                        continueRandomizing = false;
+                        break;
+                    }
+                    allOptions.Remove(randomSelection);
+                    if (randomSelection.FencerAssigned > haniwaCount["fencer"])
+                        continue;
+                    if (randomSelection.ArcherAssigned > haniwaCount["archer"])
+                        continue;
+                    if (randomSelection.CavalryAssigned > haniwaCount["cavalry"])
+                        continue;
+                    randomSelection.SetBattle(battle);
+                    randomSelection.ManualStack = manualStack;
+                    var assignBuffAction = randomSelection.BuffAction(randomSelection.AssignStatusType, level: randomSelection.StartingTaskLevel, count: randomSelection.StartingCardCounter);
+                    yield return assignBuffAction;
+                    if (assignBuffAction is ApplyStatusEffectAction sea && sea.Args.Effect is ModAssignStatusEffect mase)
+                        mase.JustApplied = false; //false to prevent next card play not ticking down count, since buff was created not with a card play, flag isnt toggled until 2 card plays, so manually set to bypass that 
+                    haniwaCount["fencer"] -= randomSelection.FencerAssigned;
+                    haniwaCount["archer"] -= randomSelection.ArcherAssigned;
+                    haniwaCount["cavalry"] -= randomSelection.CavalryAssigned;
+                    break;
+                }
+            }
         }
     }
 }

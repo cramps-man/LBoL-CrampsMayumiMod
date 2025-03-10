@@ -11,36 +11,34 @@ using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
-    public sealed class GainBuffTickdownDef : ModCardTemplate
+    public sealed class HaniwasNeverDieDef : ModCardTemplate
     {
         public override IdContainer GetId()
         {
-            return nameof(GainBuffTickdown);
+            return nameof(HaniwasNeverDie);
         }
 
         public override CardConfig MakeConfig()
         {
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Rare;
-            cardConfig.Type = CardType.Skill;
+            cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
+            cardConfig.Cost = new ManaGroup() { Red = 3, Any = 2 };
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 3;
-            cardConfig.UpgradedKeywords = Keyword.Retain;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.UpgradedValue1 = 2;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice), nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice), nameof(Assign) };
             return cardConfig;
         }
     }
 
-    [EntityLogic(typeof(GainBuffTickdownDef))]
-    public sealed class GainBuffTickdown : Card
+    [EntityLogic(typeof(HaniwasNeverDieDef))]
+    public sealed class HaniwasNeverDie : Card
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            yield return BuffAction<GainBuffTickdownSe>(Value1);
+            yield return BuffAction<HaniwasNeverDieSe>(Value1);
         }
     }
 }
