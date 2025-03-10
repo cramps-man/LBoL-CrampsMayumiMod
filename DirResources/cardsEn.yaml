@@ -744,7 +744,7 @@ HandsizeBlock:
   Name: Defensive Formation
   Description: |-
     Gain {Block} |Block|. Gain {Value1} additional |Block| for each card in the hand. ({AdditionalBlock})
-    For every {Value2} card{Value2:plural one='' other='s'} in the hand, {SelfName} gains {Mana} cost. 
+    For every {Value2} card{Value2:plural one='' other='s'} in the hand with a non <sprite=ManaSprite" name="0"> basecost, {SelfName} gains {Mana} cost. 
 
 MaxHaniwaUp:
   Name: Reserves Capacity Up

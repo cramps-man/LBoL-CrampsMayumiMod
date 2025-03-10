@@ -959,7 +959,7 @@ give assign separation some other effect, autoplay on upgrade?
   - gain some assignment bonus?
 frontline double action, also add a random frontline to hand? - DONE
   - can gain some loyalty protection
-handsize block unupgraded give retain? and make it 5 block?
+handsize block unupgraded give retain? and make it 5 block? - DONE
   - maybe gain some temp spirit?
   - make it so 0 cost cards dont count in the cost gain
   - lower block a bit 4 -> 3(4) and keep mana gain at 2 per non 0-cost
