@@ -948,6 +948,7 @@ clay to ashes still feels weak, perhaps make it perma firepower per sacrifice? -
   - could limit to once per turn so fair for uncommon
   - or every 5 haniwa = 1 firepower?
   - perhaps try just lowering unupgraded mana
+  - and perhaps give loyalty protection instead of instant temp fp
 gain buff tickdown go to uncommon and change effect perhaps? - DONE
   - exile and give assignment bonus?
   - could stay rare, assignment bonus is basically draw
@@ -967,3 +968,5 @@ chain of command lower unupgraded cost? - DONE
 frontline loyalty gain give loyalty protection? - NO NEED
 fix new cavalry rush when commanding assign commander, allows selecting the cavalry rush about to pop - DONE
   - just filter buffs with 0 card count in assign commander
+perhaps blitz command should not exile?
+exploiter on battle end calc debuff dmg function, check battle ending?

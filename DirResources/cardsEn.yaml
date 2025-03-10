@@ -477,8 +477,7 @@ LoyaltyStrike:
 ClayToAshes:
   Name: Clay To Ashes
   Description: |-
-    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Value1} |Temporary Firepower|. 
-    Gain {Value2} |Temporary Firepower|. 
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Value1} |Temporary Firepower| and twice that much |Loyalty Protection|. 
 
 ChargeAttack:
   Name: Assignment - Ballista Bolt

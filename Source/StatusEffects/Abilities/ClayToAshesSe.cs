@@ -36,6 +36,7 @@ namespace LBoLMod.StatusEffects.Abilities
             {
                 base.NotifyActivating();
                 yield return BuffAction<TempFirepower>(Level);
+                yield return BuffAction<LoyaltyProtectionSe>(Level * 2);
             }
         }
 
@@ -46,6 +47,7 @@ namespace LBoLMod.StatusEffects.Abilities
 
             base.NotifyActivating();
             yield return BuffAction<TempFirepower>(Level);
+            yield return BuffAction<LoyaltyProtectionSe>(Level * 2);
         }
     }
 }

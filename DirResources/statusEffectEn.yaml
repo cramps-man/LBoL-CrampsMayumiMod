@@ -169,9 +169,9 @@ AssignPlayGainBlockSe:
 ClayToAshesSe:
   Name: Clay To Ashes
   Description: |-
-    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower|. 
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower| and twice that much |Loyalty Protection|. 
   Brief: |-
-    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower|. 
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Temporary Firepower| and twice that much |Loyalty Protection|. 
 
 AssignChargeAttack:
   Name: Assignment - Ballista Bolt
