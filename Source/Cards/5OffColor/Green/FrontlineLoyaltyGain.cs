@@ -23,8 +23,8 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Green };
-            cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 3 };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
+            cardConfig.Cost = new ManaGroup() { Green = 1 };
             cardConfig.Value1 = 6;
             cardConfig.UpgradedValue1 = 10;
             cardConfig.Keywords = Keyword.Echo;
