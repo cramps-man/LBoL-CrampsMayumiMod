@@ -963,7 +963,7 @@ handsize block unupgraded give retain? and make it 5 block? - DONE
   - maybe gain some temp spirit?
   - make it so 0 cost cards dont count in the cost gain
   - lower block a bit 4 -> 3(4) and keep mana gain at 2 per non 0-cost
-chain of command lower unupgraded cost?
+chain of command lower unupgraded cost? - DONE
 frontline loyalty gain give loyalty protection?
 fix new cavalry rush when commanding assign commander, allows selecting the cavalry rush about to pop
   - just filter buffs with 0 card count in assign commander
