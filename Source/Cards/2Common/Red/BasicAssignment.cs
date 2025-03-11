@@ -7,6 +7,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
@@ -26,6 +27,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
+            cardConfig.Value1 = 1;
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
@@ -65,6 +67,7 @@ namespace LBoLMod.Cards
                 yield break;
 
             yield return new AddCardsToHandAction(selectInteraction.SelectedCards);
+            yield return BuffAction<AssignmentBonusSe>(Value1);
         }
     }
 }

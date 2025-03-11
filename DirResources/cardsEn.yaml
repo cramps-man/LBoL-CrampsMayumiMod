@@ -248,8 +248,10 @@ BasicAssignment:
   Name: Basic Assignment
   Description: |-
     Choose |e:1| Common |Assignment| card to add to the hand. 
+    Gain {Value1} |Assignment Bonus|. 
   UpgradedDescription: |-
     Choose |e:1| Common |Assignment| card to add to the hand. 
+    Gain {Value1} |Assignment Bonus|. 
     |At start of combat|: {SelfName} is automatically played. Only one {SelfName} may be automatically played per combat. 
 
 #UNCOMMONS
