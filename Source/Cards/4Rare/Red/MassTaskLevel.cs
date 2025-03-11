@@ -31,7 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Value1 = 3;
             cardConfig.Value2 = 30;
-            cardConfig.Cost = new ManaGroup() { Red = 3 };
+            cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
