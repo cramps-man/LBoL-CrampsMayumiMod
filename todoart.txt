@@ -16,3 +16,48 @@ add default icon for general abilities
 add art and proper descriptions for exhibits - done
   - exhibitA mayumis haniwa staff thingy for assign
   - exhibitB clay scalpel carving thingy for frontline
+
+STATUS EFFECT ART
+abilities
+  - archer worshipping
+  - assign cost task level
+  - assign play draw
+  - assign play gain block
+  - assign separation
+  - assign trigger summon
+  - assign trigger upgrade
+  - auto create reserves
+  - cavalry worshipping
+  - chain of command
+  - clay to ashes
+  - enhanced training
+  - fencer worshipping
+  - frontline double action
+  - frontline loyalty task level
+  - haniwas never die
+  - max haniwa up
+  - watchtower
+  - zero cost reduction
+assigns
+  - archer prep debuff
+  - archer prep frost arrow
+  - archer prep volley
+  - build watchtower
+  - cavalry rush
+  - cavalry scout
+  - cavalry supplies
+  - charge attack
+  - fencer build barricade
+  - fencer prep counter
+temporary
+  - assign double trigger
+  - assign reverse tickdown
+  - illness prevention
+  - loyalty protection
+misc
+  - commanders mark
+  - assignment bonus - haniwa holding up a sign saying "bonus"
+SPELLCARD ICON ART
+  - frontline - the 3 haniwa types
+  - assign - scroll with list of tasks and bunch of haniwa in background?
+CARD IMPRINT ART

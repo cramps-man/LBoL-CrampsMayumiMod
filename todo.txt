@@ -982,7 +982,7 @@ hybrid draw rework upgrade, dont give 1 extra draw - DONE
 assign tickdown return rework upgrade to give 1 assignment bonus instead of draw? - DONE
 haniwa monk perhaps give 1 assignment bonus on play too? - will think about it
 basic assignment gain 1 assignment bonus? - DONE
-give assign separation some other effect, autoplay on upgrade?
+give assign separation some other effect, autoplay on upgrade? - DONE
   - when assign triggers, tickdown all assigns by 1? give all assigns task level?
   - gain some assignment bonus?
   - when an assign buff triggers, if there's a duplicate buff active, gain assignment bonus?
