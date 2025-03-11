@@ -68,6 +68,10 @@ HybridDraw:
     Draw {Value1} card{Value1:plural one='' other='s'}. 
     If there is an |Assignment| buff active, draw |e:1| card.
     If there is a |Frontline| card in hand, draw |e:1| card. 
+  UpgradedDescription: |-
+    Draw {Value1} card{Value1:plural one='' other='s'}. 
+    If there is an |Assignment| buff active, draw |e:1| card and gain {Value1} |Assignment Bonus|.
+    If there is a |Frontline| card in hand, draw |e:1| card and gain {Value2} |Loyalty Protection|. 
 
 HaniwaBodyguard:
   Name: Haniwa Bodyguard

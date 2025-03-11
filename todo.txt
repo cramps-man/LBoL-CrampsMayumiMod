@@ -976,7 +976,7 @@ assign play draw rework to be less easy and potent, but more interesting (subjec
   - increases assignment bonus gain, doubles or by 1 per level
   - gain some assignment bonus
   - there will be some added assignment bonus to other cards in the pool to help with this
-hybrid draw rework upgrade, dont give 1 extra draw
+hybrid draw rework upgrade, dont give 1 extra draw - DONE
   - instead if theres a frontline, gain 3 loyalty protection
   - and if theres an assign buff, gain 1 assignment bonus
 assign tickdown return rework upgrade to give 1 assignment bonus instead of draw?
