@@ -1,15 +1,11 @@
 ﻿using LBoL.Core;
-using LBoL.Core.Battle;
-using System.Collections.Generic;
+using LBoLMod.StatusEffects;
 
 namespace LBoLMod.BattleActions
 {
     public class AssignTriggerEventArgs: GameEventArgs
     {
-        public IEnumerable<BattleAction> BattleActions { get; internal set; }
-        public IEnumerable<BattleAction> BeforeBattleActions { get; internal set; }
-        public IEnumerable<BattleAction> AfterBattleActions { get; internal set; }
-        public int TaskLevel { get; internal set; }
+        public ModAssignStatusEffect TriggeredEffect { get; internal set; }
         public bool OnTurnStart { get; internal set; }
     }
 }

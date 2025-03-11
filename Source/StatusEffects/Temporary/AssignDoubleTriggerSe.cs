@@ -31,21 +31,21 @@ namespace LBoLMod.StatusEffects.Abilities
             if (base.Battle.BattleShouldEnd)
                 yield break;
 
-            foreach (var battleAction in args.BeforeBattleActions)
+            foreach (var battleAction in args.TriggeredEffect.BeforeAssignmentDone(args.OnTurnStart))
             {
                 yield return battleAction;
                 if (base.Battle.BattleShouldEnd)
                     yield break;
             };
             
-            foreach (var battleAction in args.BattleActions)
+            foreach (var battleAction in args.TriggeredEffect.OnAssignmentDone(args.OnTurnStart))
             {
                 yield return battleAction;
                 if (base.Battle.BattleShouldEnd)
                     yield break;
             };
             
-            foreach (var battleAction in args.AfterBattleActions)
+            foreach (var battleAction in args.TriggeredEffect.AfterAssignmentDone(args.OnTurnStart))
             {
                 yield return battleAction;
                 if (base.Battle.BattleShouldEnd)

@@ -45,7 +45,7 @@ namespace LBoLMod.StatusEffects.Assign
             Level += CardValue1;
         }
 
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             List<Unit> toAttack = enemiesThatAttackedPlayer.Where(e => e.IsAlive).Count() > 0 ? enemiesThatAttackedPlayer.Where(e => e.IsAlive).ToList() : new List<Unit>() { base.Battle.RandomAliveEnemy };
             yield return new DamageAction(Owner, toAttack, TotalDamage);

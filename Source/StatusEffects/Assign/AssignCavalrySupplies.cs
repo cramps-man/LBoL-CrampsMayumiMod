@@ -28,7 +28,7 @@ namespace LBoLMod.StatusEffects.Assign
         public int TotalTimesPlusValue2 => TotalTimes + CardValue2;
         private SelectCardInteraction Interaction { get; set; }
         public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             List<Card> randomChoices = new List<Card>();
             for (int i = 0; i < TotalTimesPlusValue2; i++)
@@ -51,7 +51,7 @@ namespace LBoLMod.StatusEffects.Assign
             yield return new InteractionAction(Interaction);
         }
 
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
             yield return new AddCardsToDrawZoneAction(Interaction.SelectedCards, DrawZoneTarget.Random);
         }

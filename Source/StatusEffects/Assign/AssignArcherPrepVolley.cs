@@ -19,7 +19,7 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignArcherPrepVolley : ModAssignStatusEffect
     {
         public int TotalTimes => Math.Max(Level / CardValue1, 1);
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             for (var i = 0; i < TotalTimes; i++)
                 yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);

@@ -134,7 +134,7 @@ namespace LBoLMod.StatusEffects
             if (base.Battle.BattleShouldEnd)
                 yield break;
             this.NotifyActivating();
-            yield return new AssignTriggerAction(OnAssignmentDone(onTurnStart), BeforeAssignmentDone(onTurnStart), AfterAssignmentDone(onTurnStart), Level, onTurnStart);
+            yield return new AssignTriggerAction(this, onTurnStart);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (IsPermanent)
@@ -159,12 +159,12 @@ namespace LBoLMod.StatusEffects
                 yield return new RemoveStatusEffectAction(this);
             }
         }
-        protected abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
-        protected virtual IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
+        public abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
+        public virtual IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
         {
             return new List<BattleAction>();
         }
-        protected virtual IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        public virtual IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
             return new List<BattleAction>();
         }

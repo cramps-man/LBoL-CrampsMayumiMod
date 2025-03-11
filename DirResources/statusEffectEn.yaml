@@ -330,8 +330,10 @@ AssignSeparationSe:
   Name: Task Separation
   Description: |-
     |Assignment| buffs no longer stack, and will create a separate buff instead. 
+    When an |Assignment| buff triggers and there is another buff of the same type active, gain {AssignmentBonusGain} |Assignment Bonus|. 
   Brief: |-
     |Assignment| buffs no longer stack, and will create a separate buff instead. 
+    When an |Assignment| buff triggers and there is another buff of the same type active, gain {AssignmentBonusGain} |Assignment Bonus|. 
 
 ChainOfCommandSe:
   Name: Chain of Command

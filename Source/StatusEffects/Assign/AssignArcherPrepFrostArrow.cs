@@ -39,7 +39,7 @@ namespace LBoLMod.StatusEffects.Assign
             yield return new CastBlockShieldAction(player, player, AssignSourceCard.Block);
         }
 
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             for (var i = 0; i < TotalTimes; i++)
             {

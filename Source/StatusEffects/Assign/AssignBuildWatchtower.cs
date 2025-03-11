@@ -27,7 +27,7 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignBuildWatchtower : ModAssignStatusEffect
     {
         public int TotalWatchtower => Level / CardValue1;
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             yield return new ApplyStatusEffectAction<Watchtower>(Owner, TotalWatchtower);
         }

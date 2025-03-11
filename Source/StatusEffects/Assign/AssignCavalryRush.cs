@@ -35,14 +35,14 @@ namespace LBoLMod.StatusEffects.Assign
             base.OnAdded(unit);
         }
 
-        protected override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
         {
             EnemyUnit target = base.Battle.LowestHpEnemy;
             yield return new DamageAction(Owner, target, TotalDamage);
             Target = target;
         }
 
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             if (base.Battle.BattleShouldEnd || Target == null || Target.IsDead)
                 yield break;
@@ -62,7 +62,7 @@ namespace LBoLMod.StatusEffects.Assign
             }
         }
 
-        protected override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
             if (!RandomFrontlines.Any())
                 yield break;

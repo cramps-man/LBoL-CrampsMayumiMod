@@ -33,7 +33,7 @@ namespace LBoLMod.StatusEffects.Assign
             Level += CardValue1;
         }
 
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             yield return new DamageAction(Owner, base.Battle.HighestHpEnemy, TotalDamage);
         }

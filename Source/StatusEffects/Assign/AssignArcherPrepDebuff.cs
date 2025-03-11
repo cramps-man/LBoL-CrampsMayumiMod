@@ -21,7 +21,7 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignArcherPrepDebuff : ModAssignStatusEffect
     {
         public int TotalVuln => Math.Max(Level / CardValue1, 1);
-        protected override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
+        public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             var accurateDmg = DamageInfo.Attack(Level, true);
             yield return new DamageAction(Owner, base.Battle.AllAliveEnemies, accurateDmg);

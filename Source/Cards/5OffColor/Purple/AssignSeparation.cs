@@ -24,10 +24,11 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Black, ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Hybrid = 1, Any = 1, HybridColor = 7 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 0 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.Cost = new ManaGroup() { Hybrid = 1, Any = 2, HybridColor = 7 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
+            cardConfig.Value1 = 1;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
             return cardConfig;
         }
     }
