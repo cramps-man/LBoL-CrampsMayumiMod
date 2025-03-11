@@ -646,7 +646,7 @@ BlitzCommand:
   Description: |-
     Execute the |On Play| actions for all |Frontline| cards in |e:hand| while consuming |Loyalty|. 
   UpgradedDescription: |-
-    Execute the |On Play| actions for all |Frontline| cards in |e:hand/draw/discard| piles while consuming |Loyalty|. 
+    Execute the |On Play| actions for all |Frontline| cards in |e:hand, draw and discard| piles while consuming |Loyalty|. 
 
 MassTaskLevel:
   Name: Perfect Assignment

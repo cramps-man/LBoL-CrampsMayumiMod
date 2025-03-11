@@ -969,7 +969,7 @@ frontline loyalty gain give loyalty protection? - NO NEED
 fix new cavalry rush when commanding assign commander, allows selecting the cavalry rush about to pop - DONE
   - just filter buffs with 0 card count in assign commander
 perhaps blitz command should not exile? - DONE
-exploiter on battle end calc debuff dmg function, check battle ending?
+exploiter on battle end calc debuff dmg function, check battle ending? - FIXED
 add one more place for loyalty protection gain - PERHAPS ITS FINE
   - perhaps loyalty strike based on unblocked dmg?
   - or frontline commander onplay?

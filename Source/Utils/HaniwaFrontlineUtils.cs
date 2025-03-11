@@ -155,6 +155,8 @@ namespace LBoLMod.Utils
         {
             foreach (ModFrontlineCard card in frontlineCards)
             {
+                if (battle.BattleShouldEnd)
+                    yield break;
                 if (battle.HandZone.Contains(card))
                     card.NotifyActivating();
                 else
