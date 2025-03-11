@@ -321,7 +321,7 @@ AssignTickdownReturn:
     Gain {Mana}. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
   UpgradedDescription: |-
-    Decrease the card counter for all |Assignment| buffs by {Value1} and draw {Value2} card{Value2:plural one='' other='s'}. 
+    Decrease the card counter for all |Assignment| buffs by {Value1} and gain {Value2} |Assignment Bonus|. 
     Gain {Mana}. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
 

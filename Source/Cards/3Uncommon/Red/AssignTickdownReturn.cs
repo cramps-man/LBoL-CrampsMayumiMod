@@ -9,6 +9,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,9 +48,9 @@ namespace LBoLMod.Cards
             {
                 s.Tickdown(Value1);
             };
-            yield return new GainManaAction(Mana);
             if (IsUpgraded)
-                yield return new DrawManyCardAction(Value2);
+                yield return BuffAction<AssignmentBonusSe>(Value2);
+            yield return new GainManaAction(Mana);
         }
 
         protected override void OnEnterBattle(BattleController battle)
