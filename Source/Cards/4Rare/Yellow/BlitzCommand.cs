@@ -27,8 +27,6 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.AllEnemies;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 1 };
-            cardConfig.Keywords = Keyword.Exile;
-            cardConfig.UpgradedKeywords = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
             return cardConfig;

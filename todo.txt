@@ -968,5 +968,20 @@ chain of command lower unupgraded cost? - DONE
 frontline loyalty gain give loyalty protection? - NO NEED
 fix new cavalry rush when commanding assign commander, allows selecting the cavalry rush about to pop - DONE
   - just filter buffs with 0 card count in assign commander
-perhaps blitz command should not exile?
+perhaps blitz command should not exile? - DONE
 exploiter on battle end calc debuff dmg function, check battle ending?
+add one more place for loyalty protection gain - PERHAPS ITS FINE
+  - perhaps loyalty strike based on unblocked dmg?
+  - or frontline commander onplay?
+
+assign play draw rework to be less easy and potent
+  - now activates assignment bonus buff when playing an assign card
+  - increases assignment bonus gain, doubles or by 1 per level
+  - gain some assignment bonus
+  - there will be some added assignment bonus to other cards in the pool to help with this
+hybrid draw rework upgrade, dont give 1 extra draw
+  - instead if theres a frontline, gain 3 loyalty protection
+  - and if theres an assign buff, gain 1 assignment bonus
+assign tickdown return rework upgrade to give 1 assignment bonus instead of draw?
+haniwa monk perhaps give 1 assignment bonus on play too?
+basic assignment gain 1 assignment bonus?
