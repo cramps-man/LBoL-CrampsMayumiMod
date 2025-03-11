@@ -955,9 +955,6 @@ gain buff tickdown go to uncommon and change effect perhaps? - DONE
   - use perma deckcounter that increases when assign buff triggers
   - deal big dick dmg, when used, remove from library or reset the counter
   - or when sacrificing, assign those haniwa into assign buffs
-give assign separation some other effect, autoplay on upgrade?
-  - when assign triggers, tickdown all assigns by 1? give all assigns task level?
-  - gain some assignment bonus?
 frontline double action, also add a random frontline to hand? - DONE
   - can gain some loyalty protection
 handsize block unupgraded give retain? and make it 5 block? - DONE
@@ -974,7 +971,7 @@ add one more place for loyalty protection gain - PERHAPS ITS FINE
   - perhaps loyalty strike based on unblocked dmg?
   - or frontline commander onplay?
 
-assign play draw rework to be less easy and potent
+assign play draw rework to be less easy and potent, but more interesting (subjective) - DONE
   - now activates assignment bonus buff when playing an assign card
   - increases assignment bonus gain, doubles or by 1 per level
   - gain some assignment bonus
@@ -985,3 +982,7 @@ hybrid draw rework upgrade, dont give 1 extra draw
 assign tickdown return rework upgrade to give 1 assignment bonus instead of draw?
 haniwa monk perhaps give 1 assignment bonus on play too?
 basic assignment gain 1 assignment bonus?
+give assign separation some other effect, autoplay on upgrade?
+  - when assign triggers, tickdown all assigns by 1? give all assigns task level?
+  - gain some assignment bonus?
+  - when an assign buff triggers, if there's a duplicate buff active, gain assignment bonus?

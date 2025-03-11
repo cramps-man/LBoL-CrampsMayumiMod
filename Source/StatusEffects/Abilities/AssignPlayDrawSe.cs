@@ -1,13 +1,8 @@
-﻿using LBoL.ConfigData;
-using LBoL.Core;
-using LBoL.Core.Battle;
-using LBoL.Core.Battle.BattleActions;
+﻿using LBoL.Core;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Cards;
-using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Abilities
 {
@@ -17,13 +12,6 @@ namespace LBoLMod.StatusEffects.Abilities
         {
             return nameof(AssignPlayDrawSe);
         }
-
-        public override StatusEffectConfig MakeConfig()
-        {
-            var config = base.MakeConfig();
-            config.HasLevel = false;
-            return config;
-        }
     }
 
     [EntityLogic(typeof(AssignPlayDrawSeDef))]
@@ -31,18 +19,16 @@ namespace LBoLMod.StatusEffects.Abilities
     {
         protected override void OnAdded(Unit unit)
         {
-            base.ReactOwnerEvent(base.Battle.CardUsed, this.OnCardUsed);
+            base.HandleOwnerEvent(base.Battle.Player.StatusEffectAdding, this.OnStatusEffectAdding);
         }
 
-        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
+        private void OnStatusEffectAdding(StatusEffectApplyEventArgs args)
         {
-            if (base.Battle.BattleShouldEnd)
-                yield break;
-
-            if (args.Card is ModAssignCard)
+            if (args.Effect is AssignmentBonusSe)
             {
                 base.NotifyActivating();
-                yield return new DrawCardAction();
+                args.Level += Level;
+                args.Effect.Level += Level;
             }
         }
     }
