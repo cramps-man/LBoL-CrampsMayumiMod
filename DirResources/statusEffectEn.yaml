@@ -343,12 +343,14 @@ ChainOfCommandSe:
   Brief: |-
     Allow |Frontline Commander| and |Assignment Commander| to be summonable via normal means. 
 
-FrontlineLoyaltyTaskLevelSe:
-  Name: Inspire the Back
+LeadThroughExampleSe:
+  Name: Lead Through Example
   Description: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, all |Assignment| buffs gain |Task Level| equal to |Loyalty| consumed. 
+    Whenever a |Frontline| card is played, gain {Level} |Assignment Bonus|. 
+    Whenever an |Assignment| buff triggers, gain {LoyaltyProtectionGain} |Loyalty Protection|. 
   Brief: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, all |Assignment| buffs gain |Task Level| equal to |Loyalty| consumed. 
+    Whenever a |Frontline| card is played, gain {Value1} |Assignment Bonus|. 
+    Whenever an |Assignment| buff triggers, gain {LoyaltyProtectionGain} |Loyalty Protection|. 
 
 LoyaltyProtectionSe:
   Name: Loyalty Protection

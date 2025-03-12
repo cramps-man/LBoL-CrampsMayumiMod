@@ -568,11 +568,6 @@ AssignTriggerUpgrade:
     Upgrade all cards in the hand. 
     Whenever an |Assignment| buff is triggered, upgrade {Value1} random card{Value1:plural one='' other='s'} in the hand. 
 
-FrontlineLoyaltyTaskLevel:
-  Name: Inspire the Back
-  Description: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, all |Assignment| buffs gain |Task Level| equal to |Loyalty| consumed. 
-
 CavalrySupplies:
   Name: Assignment - Bring the Supplies
   Description: |-
@@ -618,6 +613,12 @@ LoyaltyCommand:
   Description: |-
     Gain {Value1} |Loyalty Protection|. 
     Choose up to {Value2} |Frontline| card{Value2:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
+
+MaxHaniwaUp:
+  Name: Reserves Capacity Up
+  Description: |-
+    Increase the max |Haniwa| level by {Value1} for all types. 
+    Gain {Value1} of all |Haniwa|. 
 
 #RARES
 FullFrontalAssault:
@@ -753,16 +754,16 @@ HandsizeBlock:
     Gain {Block} |Block|. Gain {Value1} additional |Block| for each card in the hand. ({AdditionalBlock})
     For every {Value2} card{Value2:plural one='' other='s'} in the hand with a non <sprite=ManaSprite" name="0"> basecost, {SelfName} gains {Mana} cost. 
 
-MaxHaniwaUp:
-  Name: Reserves Capacity Up
-  Description: |-
-    Increase the max |Haniwa| level by {Value1} for all types. 
-    Gain {Value1} of all |Haniwa|. 
-
 AssignDuplicateTrigger:
   Name: Assignment Double Trigger
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Assignment Double Trigger|. 
+
+LeadThroughExample:
+  Name: Lead Through Example
+  Description: |-
+    Whenever a |Frontline| card is played, gain {Value1} |Assignment Bonus|. 
+    Whenever an |Assignment| buff triggers, gain {Value2} |Loyalty Protection|. 
 
 #OFFCOLOURS
 FrozenHaniwa:

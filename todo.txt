@@ -988,9 +988,10 @@ give assign separation some other effect, autoplay on upgrade? - DONE
 
 assign exhibit and assign play draw swap assignment bonus effects - DONE
   - exhibit increases gain while assign play draw gets the buff gain effect
-inspire the back multiply task level gain by 2?
+inspire the back multiply task level gain by 2? - DONE
   - rework into a new rare, when assign buff triggers gain loyalty protection
   - when frontline is played gain assignment bonus
   - maybe move max haniwa up into uncommon?
 add 1 new red card in uncommon for some more repeatable assignment bonus gain?
 assign trigger upgrade when targetting frontline, upgrade it 2 times?
+improve loyalty protection text to be more clear
