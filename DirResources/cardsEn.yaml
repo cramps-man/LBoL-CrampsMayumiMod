@@ -620,6 +620,15 @@ MaxHaniwaUp:
     Increase the max |Haniwa| level by {Value1} for all types. 
     Gain {Value1} of all |Haniwa|. 
 
+ShortOrLongTerm:
+  Name: Short or Long Term
+  Description: |-
+    |Choose|: Select up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger, or gain {Value2} |Assignment Bonus|. 
+  ExtraDescription1: |-
+    Choose up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger. 
+  ExtraDescription2: |-
+    Gain {Value2} |Assignment Bonus|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault

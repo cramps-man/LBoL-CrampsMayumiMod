@@ -992,6 +992,7 @@ inspire the back multiply task level gain by 2? - DONE
   - rework into a new rare, when assign buff triggers gain loyalty protection
   - when frontline is played gain assignment bonus
   - maybe move max haniwa up into uncommon?
-add 1 new red card in uncommon for some more repeatable assignment bonus gain?
+add 1 new red card in uncommon for some more repeatable assignment bonus gain? - DONE
+  - choose between immediately triggering a buff, or gaining assignment bonus?
 assign trigger upgrade when targetting frontline, upgrade it 2 times?
 improve loyalty protection text to be more clear - DONE
