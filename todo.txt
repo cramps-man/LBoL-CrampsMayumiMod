@@ -932,7 +932,6 @@ full frontal assault nerf bonus dmg a bit? - UNSURE
 loyalty command increase loyalty protection gain a bit? - DONE
 assignment bonus dont waste if hand is full - DONE
 cavalry supplies give the mana cards replenish? - DONE
-inspire the back multiply task level gain by 2? - UNSURE
 frontline commander passive requires less loyalty (5) but only commands 3 frontlines - DONE
   - also only works in hand?
   - +1 frontline per 3 upgrades?
@@ -986,3 +985,12 @@ give assign separation some other effect, autoplay on upgrade? - DONE
   - when assign triggers, tickdown all assigns by 1? give all assigns task level?
   - gain some assignment bonus?
   - when an assign buff triggers, if there's a duplicate buff active, gain assignment bonus?
+
+assign exhibit and assign play draw swap assignment bonus effects - DONE
+  - exhibit increases gain while assign play draw gets the buff gain effect
+inspire the back multiply task level gain by 2?
+  - rework into a new rare, when assign buff triggers gain loyalty protection
+  - when frontline is played gain assignment bonus
+  - maybe move max haniwa up into uncommon?
+add 1 new red card in uncommon for some more repeatable assignment bonus gain?
+assign trigger upgrade when targetting frontline, upgrade it 2 times?

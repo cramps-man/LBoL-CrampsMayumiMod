@@ -55,7 +55,7 @@ namespace LBoLMod.Exhibits
                 BaseManaRequirement: null,
                 BaseManaColor: ManaColor.Red,
                 BaseManaAmount: 1,
-                HasCounter: true,
+                HasCounter: false,
                 InitialCounter: 0,
                 Keywords: Keyword.None,
                 RelativeEffects: new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentBonusSe) },
@@ -70,24 +70,17 @@ namespace LBoLMod.Exhibits
     {
         protected override void OnEnterBattle()
         {
-            base.Counter = 0;
             base.ReactBattleEvent(base.Battle.Player.TurnStarting, this.onPlayerTurnStarting);
-            base.ReactBattleEvent(base.Battle.Player.StatusEffectAdded, this.OnStatusEffectAdded);
+            base.HandleBattleEvent(base.Battle.Player.StatusEffectAdding, this.OnStatusEffectAdding);
         }
 
-        private IEnumerable<BattleAction> OnStatusEffectAdded(StatusEffectApplyEventArgs args)
+        private void OnStatusEffectAdding(StatusEffectApplyEventArgs args)
         {
-            if (base.Battle.BattleShouldEnd)
-                yield break;
-            if (args.Effect.Type != StatusEffectType.Positive || args.Effect is AssignmentBonusSe)
-                yield break;
-
-            Counter++;
-            if (Counter >= 5)
+            if (args.Effect is AssignmentBonusSe)
             {
                 base.NotifyActivating();
-                yield return new ApplyStatusEffectAction<AssignmentBonusSe>(base.Battle.Player, 1);
-                Counter = 0;
+                args.Level += Value2;
+                args.Effect.Level += Value2;
             }
         }
 
@@ -100,11 +93,6 @@ namespace LBoLMod.Exhibits
                 yield return new GainHaniwaAction(Value1, Value1, Value1);
                 yield return new ApplyStatusEffectAction<AssignmentBonusSe>(base.Battle.Player, Value3);
             }
-        }
-
-        protected override void OnLeaveBattle()
-        {
-            base.Counter = 0;
         }
     }
 }

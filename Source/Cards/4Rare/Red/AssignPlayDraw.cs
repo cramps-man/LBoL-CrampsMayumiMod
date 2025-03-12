@@ -37,6 +37,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AssignPlayDrawDef))]
     public sealed class AssignPlayDraw : Card
     {
+        public int BuffCount => 5;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return BuffAction<AssignPlayDrawSe>(Value1);

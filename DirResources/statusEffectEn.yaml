@@ -185,11 +185,12 @@ AssignChargeAttack:
 AssignPlayDrawSe:
   Name: Task Start Reward
   Description: |-
-    Whenever {PlayerName} plays an |Assignment| card, trigger and consume |e:1| |Assignment Bonus|. 
-    When gaining |Assignment Bonus|, gain {Level} extra amount. 
+    Trigger |Assignment Bonus| whenever {PlayerName} plays an |Assignment| card. 
+    After gaining {BuffCount} buffs (that aren't |Assignment Bonus|), gain {Level} level{Level:plural one='' other='s'} of |Assignment Bonus|. 
+    {RemainingCount} buff{RemainingCount:plural one='' other='s'} left. 
   Brief: |-
-    Whenever {PlayerName} plays an |Assignment| card, trigger and consume |e:1| |Assignment Bonus|. 
-    When gaining |Assignment Bonus|, gain {Level} extra amount. 
+    Trigger |Assignment Bonus| whenever {PlayerName} plays an |Assignment| card. 
+    After gaining {BuffCount} buffs (that aren't |Assignment Bonus|), gain {Level} level{Level:plural one='' other='s'} of |Assignment Bonus|. 
 
 HaniwasNeverDieSe:
   Name: Haniwas Never Die

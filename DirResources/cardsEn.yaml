@@ -634,8 +634,8 @@ FullFrontalAssault:
 AssignPlayDraw:
   Name: Task Start Reward
   Description: |-
-    Whenever {PlayerName} plays an |Assignment| card, trigger and consume |e:1| |Assignment Bonus|. 
-    When gaining |Assignment Bonus|, gain {Value1} extra amount. 
+    Trigger |Assignment Bonus| whenever {PlayerName} plays an |Assignment| card. 
+    After gaining {BuffCount} buffs (that aren't |Assignment Bonus|), gain {Value1} level{Value1:plural one='' other='s'} of |Assignment Bonus|. 
     Gain {Value2} |Assignment Bonus|. 
 
 HaniwasNeverDie:
