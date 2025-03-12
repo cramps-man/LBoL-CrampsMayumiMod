@@ -355,9 +355,9 @@ LeadThroughExampleSe:
 LoyaltyProtectionSe:
   Name: Loyalty Protection
   Description: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed up to {Level}. At end of turn, gain |Block| equal to amount reduced ({Count}). 
+    Whenever a |Frontline| card has |Loyalty| consumed, consume up to {Level} of this buff instead. At end of turn, gain |Block| equal to amount of this buff consumed this turn ({Count}). 
   Brief: |-
-    Whenever a |Frontline| card has |Loyalty| consumed, reduce the amount consumed. At end of turn, gain |Block| equal to amount reduced. 
+    Whenever a |Frontline| card has |Loyalty| consumed, consume that amount of |Loyalty Protection| instead. At end of turn, gain |Block| equal to |Loyalty Protection| consumed that turn. 
 
 EnhancedTrainingSe:
   Name: Enhanced Training

@@ -994,4 +994,4 @@ inspire the back multiply task level gain by 2? - DONE
   - maybe move max haniwa up into uncommon?
 add 1 new red card in uncommon for some more repeatable assignment bonus gain?
 assign trigger upgrade when targetting frontline, upgrade it 2 times?
-improve loyalty protection text to be more clear
+improve loyalty protection text to be more clear - DONE
