@@ -996,3 +996,20 @@ add 1 new red card in uncommon for some more repeatable assignment bonus gain? -
   - choose between immediately triggering a buff, or gaining assignment bonus?
 assign trigger upgrade when targetting frontline, upgrade it 2 times?
 improve loyalty protection text to be more clear - DONE
+
+num buff block, display barrier gain since we need to know the value affected by frail and spirit
+assignment bonus se null exception in card used - FIXED
+  - im guessing because there is both assign trigger event and card used event, but one event removes the status, thus the other event has some null battle?
+shortorlongterm gain colorless?
+create archer swap weak and temp fp?
+  - and upgrade buff lockon to 3?
+fencer kamikaze gain a bit of loyalty protection?
+look into assign values cos they can be kinda op
+  - archer prep volley scales too hard with fp when stacking
+  - cavalry scout could nerf scaling a bit more, draw to 15 scry to 5 - perhaps doesnt matter too much, overdraw wont help much anyway?
+  - fencer prep counter split dmg between all enemies, aka divide by num enemies
+  - archer prep debuff dmg divide by 2, add lockon scaling 15, make vuln scale 25-30? starting task level 12(20)
+  - cavalry rush frontline scale 25? well starting task level is 9(16) so this one probs okay
+  - cavalry supplies scaling to 30? upgrade start task level to 25?
+  - charge attack lower task level gain 10(12)? lower upgraded start task level to 20?
+  - build watchtower lower upgrade start task level to 30?

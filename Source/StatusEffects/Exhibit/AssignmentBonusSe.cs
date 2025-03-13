@@ -45,6 +45,8 @@ namespace LBoLMod.StatusEffects.Abilities
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
+            if (base.Battle == null)
+                yield break;
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (base.Battle.HandZone.Count == base.Battle.MaxHand)
