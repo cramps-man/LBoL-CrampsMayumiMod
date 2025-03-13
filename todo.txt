@@ -928,7 +928,6 @@ guard rush rework - DONE
   - same mana cost of 2w or so, upgrade can lower it?
 frontline upgrade nerf block to 4(6) so same as the loyalty protection gain - DONE
 choose short assign gain colorless? - DONE
-full frontal assault nerf bonus dmg a bit? - UNSURE
 loyalty command increase loyalty protection gain a bit? - DONE
 assignment bonus dont waste if hand is full - DONE
 cavalry supplies give the mana cards replenish? - DONE
@@ -1004,12 +1003,14 @@ shortorlongterm gain colorless? - DONE
 create archer swap weak and temp fp? - DONE
   - and upgrade buff lockon to 3?
 fencer kamikaze gain a bit of loyalty protection? - UNSURE
+full frontal assault nerf bonus dmg a bit? - DONE
 look into assign values cos they can be kinda op - or just leave it for another version lmao, get 0.6 out man, but the archer prep debuff one sounds fun though
   - archer prep volley scales too hard with fp when stacking
   - cavalry scout could nerf scaling a bit more, draw to 15 scry to 5 - perhaps doesnt matter too much, overdraw wont help much anyway?
   - fencer prep counter split dmg between all enemies, aka divide by num enemies, or just lower task level gain a bit
-  - archer prep debuff dmg divide by 2, add lockon scaling 15, make vuln scale 25-30? starting task level 12(20)
   - cavalry rush frontline scale 25? well starting task level is 9(16) so this one probs okay
   - cavalry supplies scaling to 30? upgrade start task level to 25?
+  just do these below 3 for now
+  - archer prep debuff dmg divide by 2, add lockon scaling 15, make vuln scale 25-30? starting task level 12(20)
   - charge attack lower task level gain 10(12)? lower upgraded start task level to 20?
   - build watchtower lower upgrade start task level to 30?
