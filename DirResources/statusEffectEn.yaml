@@ -241,8 +241,8 @@ AssignFencerPrepCounter:
 AssignArcherPrepDebuff:
   Name: Assignment - Debilitate Foe
   Description: |-
-    After {Count} card{Count:plural one=' is' other='s are'} played, deal {Level} |Accurate| damage to all enemies and apply {TotalVuln} |Vulnerable|. 
-    Deal damage equal to |Task Level| and apply |e:1| |Vulnerable| per {CardValue1} |Task Level| (minimum 1 vuln). 
+    After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDmg} |Accurate| damage to all enemies then apply {TotalVuln} |Vulnerable| and {TotalLockon} |Lock On|. 
+    Deal damage equal to |Task Level| / {DivideDmg} and apply |e:1| |Vulnerable| per {CardValue1} |Task Level| (minimum 1) and apply |e:1| |Lock On| per {CardValue2} |Task Level| (minimum 1). 
     {CardArcherAssigned} |Archer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, deal |Accurate| damage to all enemies and apply |Vulnerable|. 

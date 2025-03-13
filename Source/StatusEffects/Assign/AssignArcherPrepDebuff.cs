@@ -20,12 +20,19 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignArcherPrepDebuffDef))]
     public sealed class AssignArcherPrepDebuff : ModAssignStatusEffect
     {
+        public int DivideDmg => 2;
+        public int TotalDmg => Level / DivideDmg;
         public int TotalVuln => Math.Max(Level / CardValue1, 1);
+        public int TotalLockon => Math.Max(Level / CardValue2, 1);
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            var accurateDmg = DamageInfo.Attack(Level, true);
+            var accurateDmg = DamageInfo.Attack(TotalDmg, true);
             yield return new DamageAction(Owner, base.Battle.AllAliveEnemies, accurateDmg);
             foreach (var item in DebuffAction<Vulnerable>(Battle.AllAliveEnemies, duration: TotalVuln))
+            {
+                yield return item;
+            };
+            foreach (var item in DebuffAction<LockedOn>(Battle.AllAliveEnemies, level: TotalLockon))
             {
                 yield return item;
             };

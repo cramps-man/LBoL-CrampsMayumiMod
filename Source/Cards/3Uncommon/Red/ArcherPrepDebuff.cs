@@ -24,12 +24,12 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Damage = 1;
-            cardConfig.Value1 = 12;
-            cardConfig.UpgradedValue1 = 10;
+            cardConfig.Value1 = 25;
+            cardConfig.Value2 = 15;
             cardConfig.RelativeKeyword = Keyword.Accuracy;
             cardConfig.UpgradedRelativeKeyword = Keyword.Accuracy;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Vulnerable) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Vulnerable) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Vulnerable), nameof(LockedOn) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Vulnerable), nameof(LockedOn) };
             return cardConfig;
         }
     }
@@ -37,9 +37,10 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ArcherPrepDebuffDef))]
     public sealed class ArcherPrepDebuff : ModAssignCard
     {
+        public int DivideDmg => 2;
         public override int ArcherAssigned => 2;
         public override int StartingCardCounter => IsUpgraded ? 5 : 7;
-        public override int StartingTaskLevel => IsUpgraded ? 12 : 6;
+        public override int StartingTaskLevel => IsUpgraded ? 20 : 12;
         public override Type AssignStatusType => typeof(AssignArcherPrepDebuff);
     }
 }
