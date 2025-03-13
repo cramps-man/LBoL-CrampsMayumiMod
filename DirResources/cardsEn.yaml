@@ -305,7 +305,7 @@ BuildWatchtower:
   UpgradedDescription: |-
     |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
     After {StartingCardCounter} cards are played, gain |e:1| |Watchtower| per {Value1} |Task Level|. 
-    If {PlayerName} already has |Watchtower|, instead no |Haniwa| are required and add an |upgraded Garrison Archer| to the hand. 
+    If {PlayerName} already has |Watchtower|, instead no |Haniwa| are required and add an |e:upgraded| |Garrison Archer| to the hand. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 GarrisonArcher:

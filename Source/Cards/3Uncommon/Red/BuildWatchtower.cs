@@ -66,7 +66,7 @@ namespace LBoLMod.Cards
             }
         }
         public override int StartingCardCounter => IsUpgraded ? 8 : 12;
-        public override int StartingTaskLevel => IsUpgraded ? 40 : 15;
+        public override int StartingTaskLevel => IsUpgraded ? 30 : 15;
         public override Type AssignStatusType => typeof(AssignBuildWatchtower);
         public override bool CanUse {
             get
