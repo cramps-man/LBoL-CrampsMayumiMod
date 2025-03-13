@@ -1012,5 +1012,5 @@ look into assign values cos they can be kinda op - or just leave it for another 
   - cavalry supplies scaling to 30? upgrade start task level to 25?
   just do these below 3 for now
   - archer prep debuff dmg divide by 2, add lockon scaling 15, make vuln scale 25-30? starting task level 12(20) - DONE
-  - charge attack lower task level gain 10(12)? lower upgraded start task level to 20?
+  - charge attack lower task level gain 10(12)? lower upgraded start task level to 20? - DONE
   - build watchtower lower upgrade start task level to 30?
