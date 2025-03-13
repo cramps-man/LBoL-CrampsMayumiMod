@@ -1001,9 +1001,9 @@ num buff block, display barrier gain since we need to know the value affected by
 assignment bonus se null exception in card used - FIXED
   - im guessing because there is both assign trigger event and card used event, but one event removes the status, thus the other event has some null battle?
 shortorlongterm gain colorless? - DONE
-create archer swap weak and temp fp?
+create archer swap weak and temp fp? - DONE
   - and upgrade buff lockon to 3?
-fencer kamikaze gain a bit of loyalty protection?
+fencer kamikaze gain a bit of loyalty protection? - UNSURE
 look into assign values cos they can be kinda op - or just leave it for another version lmao, get 0.6 out man, but the archer prep debuff one sounds fun though
   - archer prep volley scales too hard with fp when stacking
   - cavalry scout could nerf scaling a bit more, draw to 15 scry to 5 - perhaps doesnt matter too much, overdraw wont help much anyway?

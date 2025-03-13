@@ -32,6 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedDamage = 20;
             cardConfig.Value1 = 3;
             cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value2 = 2;
+            cardConfig.UpgradedValue2 = 3;
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
             cardConfig.Keywords = Keyword.Accuracy;
@@ -54,11 +56,11 @@ namespace LBoLMod.Cards
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (archerCount >= 3)
-                yield return DebuffAction<Weak>(selector.GetEnemy(base.Battle), duration: 1);
-            if (archerCount >= 5)
-                yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), 2);
-            if (archerCount >= 7)
                 yield return DebuffAction<TempFirepowerNegative>(selector.GetEnemy(base.Battle), 3);
+            if (archerCount >= 5)
+                yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), Value2);
+            if (archerCount >= 7)
+                yield return DebuffAction<Weak>(selector.GetEnemy(base.Battle), duration: 1);
             if (archerCount >= 10)
                 yield return DebuffAction<Vulnerable>(selector.GetEnemy(base.Battle), duration: 1);
         }
