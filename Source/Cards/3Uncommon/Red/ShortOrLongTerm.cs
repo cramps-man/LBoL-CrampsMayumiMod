@@ -33,6 +33,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 2;
             cardConfig.UpgradedValue2 = 3;
+            cardConfig.Mana = new ManaGroup() { Colorless = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
             return cardConfig;
@@ -55,6 +56,7 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            yield return new GainManaAction(Mana);
             if (!(precondition is MiniSelectCardInteraction selectInteraction))
                 yield break;
             Card choiceCard = selectInteraction.SelectedCard;

@@ -510,7 +510,8 @@ ClayGathering:
   Name: Clay Gathering
   Description: |-
     Gain {Block} |Block|. 
-    Gain {Value1} |Barrier| for each buff {PlayerName} has. ({AdditionalShield})
+    Gain {Shield} |Barrier|. 
+    Gain {Value1} additional |Barrier| for each buff {PlayerName} has. ({AdditionalShield})
 
 DiscardUpgrade:
   Name: Dedicated Training
@@ -623,6 +624,7 @@ MaxHaniwaUp:
 ShortOrLongTerm:
   Name: Short or Long Term
   Description: |-
+    Gain {Mana}. 
     |Choose|: Select up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger, or gain {Value2} |Assignment Bonus|. 
   ExtraDescription1: |-
     Choose up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger. 
