@@ -43,7 +43,7 @@ WeakeningShot:
 DefenceSummon:
   Name: Guard Summoning
   Description: |-
-    Gain {Block} |Block|.
+    Gain {Block} |Block| and {Value2} |Loyalty Protection|. 
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-

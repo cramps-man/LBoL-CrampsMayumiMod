@@ -6,6 +6,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
@@ -26,12 +27,13 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { Any = 1, White = 1 };
-            cardConfig.Block = 10;
-            cardConfig.UpgradedBlock = 14;
+            cardConfig.Block = 8;
+            cardConfig.UpgradedBlock = 12;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa) };
+            cardConfig.Value2 = 5;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa), nameof(LoyaltyProtectionSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(Haniwa), nameof(LoyaltyProtectionSe) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
             return cardConfig;
@@ -55,6 +57,7 @@ namespace LBoLMod.Cards
                 yield return action;
             };
             yield return DefenseAction();
+            yield return BuffAction<LoyaltyProtectionSe>(Value2);
         }
     }
 }

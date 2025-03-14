@@ -1017,5 +1017,5 @@ look into assign values cos they can be kinda op - or just leave it for another 
     - if i divide by num enemies, task level gain should increase as single enemy gains lower than multiple (unless the single enemy does bit multihit of course)
     - also gave a minimum dmg so it wont be too low against many many targets like 5 kedama
 frontline double action wastes if enemy dead - FIXED
-guard summoning could gain loyalty protection, and maybe lower its block a bit
+guard summoning could gain loyalty protection, and maybe lower its block a bit - DONE
 the haniwa starter gens could gain loyalty protection and assignment bonus when targetting frontline/assignment buff
