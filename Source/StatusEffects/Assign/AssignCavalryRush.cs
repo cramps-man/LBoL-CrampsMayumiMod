@@ -40,11 +40,12 @@ namespace LBoLMod.StatusEffects.Assign
             EnemyUnit target = base.Battle.LowestHpEnemy;
             yield return new DamageAction(Owner, target, TotalDamage);
             Target = target;
+            yield return PerformAction.Wait(0.3f);
         }
 
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            if (base.Battle.BattleShouldEnd || Target == null || Target.IsDead)
+            if (base.Battle.BattleShouldEnd)
                 yield break;
             List<Card> randomFrontlines = base.Battle.HandZone.Where(c => c is ModFrontlineCard).SampleManyOrAll(TotalFrontlineCount, base.GameRun.BattleRng).ToList();
             if (!randomFrontlines.Any())
@@ -70,7 +71,8 @@ namespace LBoLMod.StatusEffects.Assign
             {
                 ModFrontlineCard frontline = keyValue.Key;
                 frontline.NotifyActivating();
-                foreach (var action in frontline.GetActions(new UnitSelector(Target), ManaGroup.Empty, keyValue.Value, new List<DamageAction>(), false))
+                UnitSelector selector = Target.IsDead ? new UnitSelector(base.Battle.LowestHpEnemy) : new UnitSelector(Target);
+                foreach (var action in frontline.GetActions(selector, ManaGroup.Empty, keyValue.Value, new List<DamageAction>(), false))
                 {
                     if (base.Battle.BattleShouldEnd)
                         yield break;

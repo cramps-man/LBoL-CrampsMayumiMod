@@ -1021,8 +1021,8 @@ guard summoning could gain loyalty protection, and maybe lower its block a bit -
 the haniwa starter gens could gain loyalty protection and assignment bonus when targetting frontline/assignment buff - DONE
 
 haniwa sentinel make it update the text for debuff amount gained - FIXED
-cavalry rush allow to activate on dead target if the frontline doesnt need one?
+cavalry rush allow to activate on dead target if the frontline doesnt need one? - DONE
   - or allow redirecting to random or next lowest hp target
   - also try add delay in the setting target bit
   - and might as well update the frontline count scaling, 15 is way too low, 25 is better
-reduce assign haniwa create wording a bit
+reduce assign haniwa create wording a bit - DONE

@@ -506,6 +506,8 @@ CavalryRush:
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
     Also execute the |On Play| action of X random |Frontlines| in hand to the same target, without consuming |Loyalty|. X is |Task Level| / {Value1} (minimum 1). 
     Start with {StartingTaskLevel} |Task Level|. 
+  DetailText: |-
+    If target dies, redirect the |Frontlines| to the next lowest life enemy. 
 
 ClayGathering:
   Name: Clay Gathering
