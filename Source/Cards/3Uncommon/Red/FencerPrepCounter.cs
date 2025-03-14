@@ -22,11 +22,11 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Damage = 1;
+            cardConfig.Damage = 8;
             cardConfig.Block = 2;
             cardConfig.UpgradedBlock = 3;
-            cardConfig.Value1 = 4;
-            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value1 = 6;
+            cardConfig.UpgradedValue1 = 8;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;
