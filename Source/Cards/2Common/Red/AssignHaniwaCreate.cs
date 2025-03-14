@@ -8,6 +8,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -33,8 +34,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentBonusSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentBonusSe) };
             return cardConfig;
         }
     }
@@ -42,6 +43,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AssignHaniwaCreateDef))]
     public sealed class AssignHaniwaCreate : Card
     {
+        public int AssignmentBonusGain => 1;
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(0, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
@@ -68,6 +70,7 @@ namespace LBoLMod.Cards
                     cavalryGain += optionCard.StatusEffect.CardCavalryAssigned + Value1;
                 yield return new GainHaniwaAction(fencerGain, archerGain, cavalryGain);
             }
+            yield return BuffAction<AssignmentBonusSe>(AssignmentBonusGain);
         }
     }
 }

@@ -195,17 +195,18 @@ HaniwaBlitz:
 AssignHaniwaCreate:
   Name: Haniwa Reserves (Assignment)
   Description: |-
-    Choose an |Assignment| buff and increase its card counter by {Value2}. Gain |Haniwa| of the same type equal to the number of assigned |Haniwa| + {Value1}. 
-    If none are chosen, gain |e:1| of each instead. 
+    Choose an |Assignment| buff and increase its card counter by {Value2}. 
+    |Buff selected|: Gain {AssignmentBonusGain} |Assignment Bonus| and gain |Haniwa| of the same type equal to the number of assigned |Haniwa| + {Value1}. 
+    |None selected|: Gain |e:1| of each |Haniwa|. 
 
 FrontlineHaniwaCreate:
   Name: Haniwa Reserves (Frontline)
   Description: |-
-    Choose a |Frontline| card and |Exile| it. Gain |Haniwa| of all types equal to the rarity. 
-    |Common|: {CommonGain} of each. 
-    |Uncommon|: {UncommonGain} of each. 
-    |Rare|: {RareGain} of each. 
-    If none are chosen, gain {Value2} of each instead. 
+    Choose a |Frontline| card and |Exile| it. Gain |Haniwa| and |Loyalty Protection| (|LP|) based on the rarity. 
+    |Common|: Gain {CommonGain} of each |Haniwa| + {CommonLoyaltyProtGain} |LP|. 
+    |Uncommon|: Gain {UncommonGain} of each |Haniwa| + {UncommonLoyaltyProtGain} |LP|. 
+    |Rare|: Gain {RareGain} of each |Haniwa| + {RareLoyaltyProtGain} |LP|. 
+    |None selected|: Gain {Value2} of each |Haniwa|. 
 
 AssignFastTrigger:
   Name: Quick Task Completion

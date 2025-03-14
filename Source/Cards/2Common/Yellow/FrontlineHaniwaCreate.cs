@@ -9,6 +9,7 @@ using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Frontline), nameof(LoyaltyProtectionSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Frontline), nameof(LoyaltyProtectionSe) };
             return cardConfig;
         }
     }
@@ -46,8 +47,11 @@ namespace LBoLMod.Cards
     public sealed class FrontlineHaniwaCreate : Card
     {
         public int CommonGain => 1 + Value1;
+        public int CommonLoyaltyProtGain => CommonGain * 2;
         public int UncommonGain => 2 + Value1;
+        public int UncommonLoyaltyProtGain => UncommonGain * 2;
         public int RareGain => 4 + Value1;
+        public int RareLoyaltyProtGain => RareGain * 2;
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(0, 1, base.Battle.HandZone.Where(c => c is ModFrontlineCard));
@@ -63,11 +67,20 @@ namespace LBoLMod.Cards
             foreach (Card card in ((SelectCardInteraction)precondition).SelectedCards)
             {
                 if (card.Config.Rarity == Rarity.Common)
+                {
                     yield return new GainHaniwaAction(CommonGain, CommonGain, CommonGain);
+                    yield return BuffAction<LoyaltyProtectionSe>(CommonLoyaltyProtGain);
+                }
                 else if (card.Config.Rarity == Rarity.Uncommon)
+                {
                     yield return new GainHaniwaAction(UncommonGain, UncommonGain, UncommonGain);
+                    yield return BuffAction<LoyaltyProtectionSe>(UncommonLoyaltyProtGain);
+                }
                 else if (card.Config.Rarity == Rarity.Rare)
+                {
                     yield return new GainHaniwaAction(RareGain, RareGain, RareGain);
+                    yield return BuffAction<LoyaltyProtectionSe>(RareLoyaltyProtGain);
+                }
                 yield return new ExileCardAction(card);
             }
         }
