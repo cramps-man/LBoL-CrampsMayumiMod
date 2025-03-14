@@ -1,4 +1,5 @@
-﻿using LBoL.ConfigData;
+﻿using LBoL.Base;
+using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
@@ -38,6 +39,8 @@ namespace LBoLMod.StatusEffects.Abilities
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (base.Battle.BattleShouldEnd)
+                yield break;
+            if (args.Selector.Type == TargetType.SingleEnemy && args.Selector.SelectedEnemy.IsDead)
                 yield break;
 
             if (args.Card is ModFrontlineCard frontlineCard)
