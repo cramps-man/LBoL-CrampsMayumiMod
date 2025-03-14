@@ -196,7 +196,7 @@ AssignHaniwaCreate:
   Name: Haniwa Reserves (Assignment)
   Description: |-
     Choose an |Assignment| buff and increase its card counter by {Value2}. 
-    |Buff selected|: Gain {AssignmentBonusGain} |Assignment Bonus| and gain |Haniwa| of the same type equal to the number of assigned |Haniwa| + {Value1}. 
+    |Buff selected|: Gain {AssignmentBonusGain} |Assignment Bonus| and gain |Haniwa| equal to the number of assigned |Haniwa| + {Value1}. 
     |None selected|: Gain |e:1| of each |Haniwa|. 
 
 FrontlineHaniwaCreate:

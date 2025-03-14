@@ -1024,4 +1024,5 @@ haniwa sentinel make it update the text for debuff amount gained - FIXED
 cavalry rush allow to activate on dead target if the frontline doesnt need one?
   - or allow redirecting to random or next lowest hp target
   - also try add delay in the setting target bit
+  - and might as well update the frontline count scaling, 15 is way too low, 25 is better
 reduce assign haniwa create wording a bit
