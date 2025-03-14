@@ -1019,3 +1019,9 @@ look into assign values cos they can be kinda op - or just leave it for another 
 frontline double action wastes if enemy dead - FIXED
 guard summoning could gain loyalty protection, and maybe lower its block a bit - DONE
 the haniwa starter gens could gain loyalty protection and assignment bonus when targetting frontline/assignment buff - DONE
+
+haniwa sentinel make it update the text for debuff amount gained - FIXED
+cavalry rush allow to activate on dead target if the frontline doesnt need one?
+  - or allow redirecting to random or next lowest hp target
+  - also try add delay in the setting target bit
+reduce assign haniwa create wording a bit

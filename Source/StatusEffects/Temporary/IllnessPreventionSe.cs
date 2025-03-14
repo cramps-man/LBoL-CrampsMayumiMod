@@ -32,6 +32,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.Effect.Type != LBoL.Base.StatusEffectType.Negative)
                 yield break;
 
+            args.AddModifier(this);
             if (args.Effect.HasLevel)
             {
                 base.NotifyActivating();
@@ -45,7 +46,10 @@ namespace LBoLMod.StatusEffects.Abilities
                     if (Level == args.Effect.Level)
                         args.CancelBy(this);
                     else
+                    {
+                        args.Level -= Level;
                         args.Effect.Level -= Level;
+                    }
                     yield return new RemoveStatusEffectAction(this);
                 }
             }
@@ -62,7 +66,10 @@ namespace LBoLMod.StatusEffects.Abilities
                     if (Level == args.Effect.Duration)
                         args.CancelBy(this);
                     else
+                    {
+                        args.Duration -= Level;
                         args.Effect.Duration -= Level;
+                    }
                     yield return new RemoveStatusEffectAction(this);
                 }
             }
