@@ -29,6 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign), nameof(AssignmentBonusSe), nameof(LoyaltyProtectionSe) };
@@ -41,6 +42,7 @@ namespace LBoLMod.Cards
     {
         public int AssignRequirement => 1;
         public int FrontlineRequirement => 1;
+        public int AssignmentBonusGain => 1;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new DrawManyCardAction(Value1);
@@ -48,15 +50,13 @@ namespace LBoLMod.Cards
             if (assignStatuses >= AssignRequirement)
             {
                 yield return new DrawCardAction();
-                if (IsUpgraded)
-                    yield return BuffAction<AssignmentBonusSe>(Value1);
+                yield return BuffAction<AssignmentBonusSe>(AssignmentBonusGain);
             }
             var frontlineCards = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).Count();
             if (frontlineCards >= FrontlineRequirement)
             {
-                yield return new DrawCardAction();
-                if (IsUpgraded)
-                    yield return BuffAction<LoyaltyProtectionSe>(Value2);
+                yield return new UpgradeCardsAction(base.Battle.HandZone.Where(c => c is ModFrontlineCard));
+                yield return BuffAction<LoyaltyProtectionSe>(Value2);
             }
         }
     }
