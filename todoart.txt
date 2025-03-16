@@ -36,23 +36,23 @@ abilities
   - frontline loyalty task level
   - haniwas never die
   - max haniwa up
-  - watchtower
+  - watchtower - fully built watchtower
   - zero cost reduction
 assigns
-  - archer prep debuff
-  - archer prep frost arrow
-  - archer prep volley
-  - build watchtower
-  - cavalry rush
-  - cavalry scout
-  - cavalry supplies
-  - charge attack
-  - fencer build barricade
-  - fencer prep counter
+  - archer prep debuff - single arrow with ailment looking thing pointing upright
+  - archer prep frost arrow - single arrow with frost pointing upright
+  - archer prep volley - few arrows pointing upright
+  - build watchtower - half built watchtower
+  - cavalry rush - 1 or 2 cavalry speeding to the right
+  - cavalry scout - cavalry with binoculars?
+  - cavalry supplies - a cart/wheelbarrow
+  - charge attack - big ballista arrow
+  - fencer build barricade - a barricade
+  - fencer prep counter - a fencer haniwa preping to guard
 temporary
   - assign double trigger
   - assign reverse tickdown
-  - illness prevention
+  - illness prevention - facemask?
   - loyalty protection
 misc
   - commanders mark

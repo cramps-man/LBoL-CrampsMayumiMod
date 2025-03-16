@@ -1026,3 +1026,10 @@ cavalry rush allow to activate on dead target if the frontline doesnt need one? 
   - also try add delay in the setting target bit
   - and might as well update the frontline count scaling, 15 is way too low, 25 is better
 reduce assign haniwa create wording a bit - DONE
+hybrid draw perhaps can feel a little do nothing at min, perhaps give it gain colorless?
+  - of course upgrade should keep hybrid cost in that case
+  - and maybe increase loyalty protection gain
+  - perhaps keep base upgrade draw 2, but remove frontline draw, increase the loyalty protection instead
+  - put the assign/frontline bonuses in unupgraded versions too
+ashes to clay perhaps give it retain? and lower number of frontlines to 1(2)
+assign exhibit dont give free assignment bonus? - UNSURE, probs keep for now
