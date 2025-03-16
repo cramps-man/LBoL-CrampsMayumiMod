@@ -1033,3 +1033,4 @@ hybrid draw perhaps can feel a little do nothing at min, perhaps give it gain co
   - put the assign/frontline bonuses in unupgraded versions too
 ashes to clay perhaps give it retain? and lower number of frontlines to 1(2)
 assign exhibit dont give free assignment bonus? - UNSURE, probs keep for now
+update blitz command text to say random target

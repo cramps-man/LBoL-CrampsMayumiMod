@@ -668,8 +668,10 @@ BlitzCommand:
   Name: Blitz Command
   Description: |-
     Execute the |On Play| actions for all |Frontline| cards in |e:hand| while consuming |Loyalty|. 
+    If the card targets an enemy, target a random enemy. 
   UpgradedDescription: |-
     Execute the |On Play| actions for all |Frontline| cards in |e:hand, draw and discard| piles while consuming |Loyalty|. 
+    If the card targets an enemy, target a random enemy. 
 
 MassTaskLevel:
   Name: Perfect Assignment
