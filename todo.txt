@@ -1032,6 +1032,7 @@ hybrid draw perhaps can feel a little do nothing at min, perhaps give it gain co
   - perhaps keep base upgrade draw 2, but remove frontline draw, increase the loyalty protection instead
   - put the assign/frontline bonuses in unupgraded versions too
   - frontline condition also upgrades all frontlines
-ashes to clay perhaps give it retain? and lower number of frontlines to 1(2)
+ashes to clay perhaps give it retain? and lower number of frontlines to 1(2) - DONE
+  - also reduce cost? maybe remove draw
 assign exhibit dont give free assignment bonus? - UNSURE, probs keep for now
 update blitz command text to say random target - DONE

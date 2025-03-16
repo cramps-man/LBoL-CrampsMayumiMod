@@ -28,10 +28,12 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { White = 1, Any = 1 };
-            cardConfig.Value1 = 2;
-            cardConfig.UpgradedValue1 = 3;
-            cardConfig.Value2 = 1;
+            cardConfig.Cost = new ManaGroup() { White = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
+            cardConfig.Value1 = 1;
+            cardConfig.UpgradedValue1 = 2;
+            cardConfig.Keywords = Keyword.Retain;
+            cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
@@ -46,7 +48,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.ExileZone.Where(c => c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(0, Value1, list);
+            return new SelectHandInteraction(1, Value1, list);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
@@ -64,7 +66,6 @@ namespace LBoLMod.Cards
             {
                 yield return new MoveCardToDrawZoneAction(card, DrawZoneTarget.Random);
             }
-            yield return new DrawManyCardAction(Value2);
         }
     }
 }
