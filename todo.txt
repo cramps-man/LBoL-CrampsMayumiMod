@@ -1036,3 +1036,6 @@ ashes to clay perhaps give it retain? and lower number of frontlines to 1(2) - D
   - also reduce cost? maybe remove draw
 assign exhibit dont give free assignment bonus? - UNSURE, probs keep for now
 update blitz command text to say random target - DONE
+cavalry scout, replace draw with assignment bonus - DONE
+  - and update scaling to 1 bonus per 15 task level, 1 scry per 5
+  - and draw a card at turn start, cos assignment bonus doesnt trigger then

@@ -230,7 +230,8 @@ CavalryScout:
   Name: Assignment - Scout Ahead
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
-    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and draw |e:1| card per {Value2} |Task Level| (minimum 1 card). 
+    After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and gain |e:1| |Assignment Bonus| per {Value2} |Task Level| (minimum 1). 
+    If triggered at turn start, draw a card. 
     Start with {StartingTaskLevel} |Task Level|. 
 
 FastSummon:

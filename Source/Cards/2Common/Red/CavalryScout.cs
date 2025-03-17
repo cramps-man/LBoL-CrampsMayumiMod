@@ -2,6 +2,7 @@
 using LBoL.ConfigData;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Assign;
 using LBoLMod.StatusEffects.Keywords;
 using System;
@@ -21,12 +22,12 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 4;
-            cardConfig.Value2 = 10;
+            cardConfig.Value1 = 5;
+            cardConfig.Value2 = 15;
             cardConfig.RelativeKeyword = Keyword.Scry;
             cardConfig.UpgradedRelativeKeyword = Keyword.Scry;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentBonusSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentBonusSe) };
             return cardConfig;
         }
     }
