@@ -41,7 +41,7 @@ abilities
 assigns
   - archer prep debuff - single arrow with ailment looking thing pointing upright
   - archer prep frost arrow - single arrow with frost pointing upright
-  - archer prep volley - few arrows pointing upright
+  - archer prep volley - few arrows pointing upright - DONE
   - build watchtower - half built watchtower
   - cavalry rush - 1 or 2 cavalry speeding to the right
   - cavalry scout - cavalry with binoculars?
@@ -53,11 +53,11 @@ temporary
   - assign double trigger
   - assign reverse tickdown
   - illness prevention - facemask?
-  - loyalty protection
+  - loyalty protection - golden light?
 misc
-  - commanders mark
+  - commanders mark - haniwa sword pointing
   - assignment bonus - haniwa holding up a sign saying "bonus"
 SPELLCARD ICON ART
   - frontline - the 3 haniwa types
   - assign - scroll with list of tasks and bunch of haniwa in background?
-CARD IMPRINT ART
+CARD IMPRINT ART - DONE

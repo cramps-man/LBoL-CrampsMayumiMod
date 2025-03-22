@@ -3,6 +3,8 @@
   - Readme.md
   - manifest.json
 - update CHANGELOG.md
+- readme refers to what the current version of LBOL this works with
+- comment out any image loading debug logs
 - build works
 - zip extracts fine
 - files such as readme were updated in the zip
