@@ -329,6 +329,7 @@
 
     <ItemGroup>
       <None Remove="Resources\StatusEffects\Assignments\AssignArcherPrepVolley.png" />
+      <None Remove="Resources\StatusEffects\Assignments\AssignFencerBuildBarricade.png" />
       <None Remove="Resources\StatusEffects\Temporary\AssignmentBonusSe.png" />
     </ItemGroup>
 

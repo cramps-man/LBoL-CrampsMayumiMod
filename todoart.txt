@@ -47,7 +47,7 @@ assigns
   - cavalry scout - cavalry with binoculars?
   - cavalry supplies - a cart/wheelbarrow
   - charge attack - big ballista arrow
-  - fencer build barricade - a barricade
+  - fencer build barricade - a barricade - DONE
   - fencer prep counter - a fencer haniwa preping to guard
 temporary
   - assign double trigger
