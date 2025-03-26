@@ -1,11 +1,11 @@
-﻿using LBoL.Base;
-using LBoL.ConfigData;
-using LBoL.Core;
+﻿using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.Cards;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Abilities
@@ -16,37 +16,33 @@ namespace LBoLMod.StatusEffects.Abilities
         {
             return nameof(AssignPlayDrawSe);
         }
-
-        public override StatusEffectConfig MakeConfig()
-        {
-            var config = base.MakeConfig();
-            config.HasCount = true;
-            return config;
-        }
     }
 
     [EntityLogic(typeof(AssignPlayDrawSeDef))]
     public sealed class AssignPlayDrawSe: StatusEffect
     {
-        public int BuffCount => 5;
-        public int RemainingCount => BuffCount - Count;
         protected override void OnAdded(Unit unit)
         {
-            base.ReactOwnerEvent(base.Battle.Player.StatusEffectAdded, this.OnStatusEffectAdded);
+            base.ReactOwnerEvent(base.Battle.CardUsed, this.OnCardUsed);
         }
-        private IEnumerable<BattleAction> OnStatusEffectAdded(StatusEffectApplyEventArgs args)
+
+        private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
+            if (base.Battle == null)
+                yield break;
             if (base.Battle.BattleShouldEnd)
                 yield break;
-            if (args.Effect.Type != StatusEffectType.Positive || args.Effect is AssignmentBonusSe)
+            if (base.Battle.HandZone.Count == base.Battle.MaxHand)
+                yield break;
+            if (!base.Battle.Player.TryGetStatusEffect<AssignmentBonusSe>(out AssignmentBonusSe bonus))
                 yield break;
 
-            Count++;
-            if (Count >= 5)
+            if (args.Card is ModAssignCard)
             {
                 base.NotifyActivating();
-                yield return BuffAction<AssignmentBonusSe>(Level);
-                Count = 0;
+                bonus.NotifyActivating();
+                yield return new DrawManyCardAction(Level);
+                yield return bonus.ConsumeBuff();
             }
         }
     }

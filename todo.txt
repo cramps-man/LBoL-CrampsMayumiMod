@@ -1040,10 +1040,11 @@ cavalry scout, replace draw with assignment bonus - DONE
   - and update scaling to 1 bonus per 15 task level, 1 scry per 5
   - and draw a card at turn start, cos assignment bonus doesnt trigger then
 
-task start reward gains too much assignment bonus on it's own, probs cos of assign exhibit
+task start reward gains too much assignment bonus on it's own, probs cos of assign exhibit - DONE
   - just remove the assignment bonus gain, let the player figure out how to maintain the resource
   - also upgrade dont reduce cost? give more assignment bonus?
   - or it was cos i had cavalry scout, but still, 1 source of assignment bonus gain shouldnt maintain it
+  - also perhaps let it stack?
 cavalry scout on turn start doesnt say it draws card
   - perhaps text should always just say draw a card, since it doesnt matter if its from turn start or assignment bonus
 clay gathering is op? make it cost 3 mana? or less block?
