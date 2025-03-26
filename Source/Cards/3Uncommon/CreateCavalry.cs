@@ -73,7 +73,7 @@ namespace LBoLMod.Cards
             {
                 CavalryRush assignCard = Library.CreateCard<CavalryRush>(IsUpgraded);
                 assignCard.SetBattle(base.Battle);
-                foreach (var battleAction in assignCard.GetActions(selector, consumingMana, null, new List<DamageAction>(), false))
+                foreach (var battleAction in assignCard.GetActions(selector, consumingMana, null, false, false, new List<DamageAction>()))
                 {
                     yield return battleAction;
                 }

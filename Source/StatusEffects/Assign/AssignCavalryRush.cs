@@ -72,7 +72,7 @@ namespace LBoLMod.StatusEffects.Assign
                 ModFrontlineCard frontline = keyValue.Key;
                 frontline.NotifyActivating();
                 UnitSelector selector = Target.IsDead ? new UnitSelector(base.Battle.LowestHpEnemy) : new UnitSelector(Target);
-                foreach (var action in frontline.GetActions(selector, ManaGroup.Empty, keyValue.Value, new List<DamageAction>(), false))
+                foreach (var action in frontline.GetActions(selector, ManaGroup.Empty, keyValue.Value, false, false, new List<DamageAction>()))
                 {
                     if (base.Battle.BattleShouldEnd)
                         yield break;

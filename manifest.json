@@ -3,5 +3,5 @@
   "version_number": "0.5.0",
   "website_url": "",
   "description": "Adds Mayumi Joutouguu as a playable character",
-  "dependencies": [ "BepInEx-BepInExPack-5.4.2100", "TeamNeo-Sideloader-0.9.7710"]
+  "dependencies": [ "BepInEx-BepInExPack-5.4.2100", "TeamNeo-Sideloader-0.9.7800"]
 }

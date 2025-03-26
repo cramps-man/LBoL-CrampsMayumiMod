@@ -167,7 +167,7 @@ namespace LBoLMod.Utils
                     precondition.Description = card.ExtraDescription1.RuntimeFormat(card.FormatWrapper);
                     yield return new InteractionAction(precondition, true);
                 }
-                foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, new List<DamageAction>(), false))
+                foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, false, false, new List<DamageAction>()))
                 {
                     if (battle.BattleShouldEnd)
                         yield break;

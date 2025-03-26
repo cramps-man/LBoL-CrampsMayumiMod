@@ -62,6 +62,8 @@ namespace LBoLMod.Cards
                UpgradedMana: null,
                Scry: null,
                UpgradedScry: null,
+               Kicker: null,
+               UpgradedKicker: null,
 
                ToolPlayableTimes: null,
 

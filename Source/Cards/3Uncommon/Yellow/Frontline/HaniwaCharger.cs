@@ -81,7 +81,7 @@ namespace LBoLMod.Cards
             {
                 yield return PerformAction.Wait(0.2f);
                 base.NotifyActivating();
-                foreach (var action in GetActions(new UnitSelector(base.Battle.LowestHpEnemy), ManaGroup.Empty, null, new List<DamageAction>(), false))
+                foreach (var action in GetActions(new UnitSelector(base.Battle.LowestHpEnemy), ManaGroup.Empty, null, false, false, new List<DamageAction>()))
                 {
                     yield return action;
                 }
