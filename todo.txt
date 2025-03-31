@@ -1048,6 +1048,6 @@ task start reward gains too much assignment bonus on it's own, probs cos of assi
 cavalry scout on turn start doesnt say it draws card - DONE
   - perhaps text should always just say draw a card, since it doesnt matter if its from turn start or assignment bonus
 clay gathering is op? make it cost 3 mana? or less block? - DONE
-short or long term add interaction text
+short or long term add interaction text - DONE
 
 make some assign art stand out more brightly

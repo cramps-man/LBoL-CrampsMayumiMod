@@ -43,6 +43,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ShortOrLongTermDef))]
     public sealed class ShortOrLongTerm : Card
     {
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<ShortOrLongTerm> list = Library.CreateCards<ShortOrLongTerm>(2, IsUpgraded).ToList();
@@ -65,6 +66,7 @@ namespace LBoLMod.Cards
                 if (choiceCard.ChoiceCardIndicator == 1)
                 {
                     var assignInteraction = new SelectCardInteraction(0, Value1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player));
+                    assignInteraction.Description = InteractionTitle;
                     yield return new InteractionAction(assignInteraction);
                     foreach (ModAssignOptionCard assignCard in assignInteraction.SelectedCards)
                     {

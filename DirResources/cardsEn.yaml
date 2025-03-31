@@ -630,6 +630,8 @@ ShortOrLongTerm:
     Choose up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger. 
   ExtraDescription2: |-
     Gain {Value2} |Assignment Bonus|. 
+  InteractionTitle: |-
+    Immediately trigger up to {Value1} buff{Value1:plural one='' other='s'}
 
 #RARES
 FullFrontalAssault:
