@@ -331,6 +331,7 @@
       <None Remove="Resources\StatusEffects\Assignments\AssignArcherPrepVolley.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignBuildWatchtower.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignCavalryScout.png" />
+      <None Remove="Resources\StatusEffects\Assignments\AssignChargeAttack.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignFencerBuildBarricade.png" />
       <None Remove="Resources\StatusEffects\Temporary\AssignmentBonusSe.png" />
       <None Remove="Resources\StatusEffects\Temporary\LoyaltyProtectionSe.png" />
