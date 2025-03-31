@@ -333,6 +333,7 @@
       <None Remove="Resources\StatusEffects\Assignments\AssignCavalryScout.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignFencerBuildBarricade.png" />
       <None Remove="Resources\StatusEffects\Temporary\AssignmentBonusSe.png" />
+      <None Remove="Resources\StatusEffects\Temporary\LoyaltyProtectionSe.png" />
     </ItemGroup>
 
     <ItemGroup>
