@@ -54,6 +54,7 @@ FencerKamikaze:
   Description: |-
     |Sacrifice| {Value1} |Fencer|. 
     Deal {Damage} damage to all enemies. 
+    Gain {Value2} |Loyalty Protection|. 
 
 ArcherPrepVolley:
   Name: Assignment - Arrow Barrage

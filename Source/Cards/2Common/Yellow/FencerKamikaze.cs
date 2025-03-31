@@ -7,6 +7,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
@@ -32,10 +33,11 @@ namespace LBoLMod.Cards
             cardConfig.Damage = 16;
             cardConfig.UpgradedDamage = 21;
             cardConfig.Value1 = 1;
+            cardConfig.Value2 = 3;
             cardConfig.Keywords = Keyword.Accuracy;
             cardConfig.UpgradedKeywords = Keyword.Accuracy;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice), nameof(LoyaltyProtectionSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice), nameof(LoyaltyProtectionSe) };
             return cardConfig;
         }
     }
@@ -49,6 +51,9 @@ namespace LBoLMod.Cards
         {
             yield return new LoseHaniwaAction(HaniwaActionType.Sacrifice, fencerToLose: Value1);
             yield return AttackAction(selector);
+            if (base.Battle.BattleShouldEnd) 
+                yield break;
+            yield return BuffAction<LoyaltyProtectionSe>(Value2);
         }
     }
 }
