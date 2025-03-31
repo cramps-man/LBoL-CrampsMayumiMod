@@ -30,8 +30,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
             cardConfig.RelativeCards = new List<string>() { nameof(ArcherPrepVolley), nameof(FencerBuildBarricade), nameof(CavalryScout) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(ArcherPrepVolley), nameof(FencerBuildBarricade), nameof(CavalryScout) };
             return cardConfig;

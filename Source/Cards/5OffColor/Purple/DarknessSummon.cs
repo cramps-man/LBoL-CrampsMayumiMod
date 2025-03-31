@@ -33,8 +33,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { Black = 1, Any = 2 };
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
             return cardConfig;

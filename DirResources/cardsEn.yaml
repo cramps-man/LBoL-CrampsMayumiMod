@@ -788,7 +788,7 @@ FrozenHaniwa:
     |At end of turn|: Transform back into the original card {OriginalCardName}. 
   DetailText: |-
     Does not carry over keywords from/to the original card. 
-    Is same type as the original card. 
+    Is same haniwa type as the original card. 
 
     Increases for each upgrade. 
     On Play damage: +1

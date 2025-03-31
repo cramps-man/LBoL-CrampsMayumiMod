@@ -31,7 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
             cardConfig.Value2 = 3;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign), nameof(AssignmentBonusSe), nameof(LoyaltyProtectionSe) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Assign), nameof(AssignmentBonusSe), nameof(LoyaltyProtectionSe) };
             return cardConfig;
         }
