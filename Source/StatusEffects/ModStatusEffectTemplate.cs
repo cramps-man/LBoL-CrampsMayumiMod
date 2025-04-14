@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,10 +19,8 @@ namespace LBoLMod.StatusEffects
             var sprite = ResourceLoader.LoadSprite(GetId() + ".png", BepinexPlugin.embeddedSource);
             if (sprite == null)
             {
-                Console.WriteLine(GetId() + " use dummy icon");
                 return ResourceLoader.LoadSprite("dummyicon.png", BepinexPlugin.embeddedSource);
             }
-            Console.WriteLine(GetId() + " success load icon");
             return sprite;
         }
 
