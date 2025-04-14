@@ -20,12 +20,12 @@ CavalrySupplies -> Assignment - Bring the Supplies
 ChargeAttack -> Assignment - Ballista Bolt
 ChooseShortAssign -> Quick Assignment
 FencerPrepCounter -> Assignment - Counter Attack
-NumBuffBlock
+NumBuffBlock -> Clay Gathering
 ZeroCostMove -> Task Transfer
 AssignDuplicateTrigger -> Assignment Double Trigger
 AssignPlayDraw -> Task Start Reward
 AssignReverseTickdown -> Guard Scramble
-GainBuffTickdown
+GainBuffTickdown -> Haniwas Never Die
 MassTaskLevel -> Perfect Assignment
 
 FRONTLINES
@@ -57,7 +57,7 @@ AutoCreateReserves -> Auto Haniwa Reserves
 CreateArcher -> Skilled Archer Haniwa
 CreateCavalry -> Skilled Cavalry Haniwa
 CreateFencer -> Skilled Fencer Haniwa
-FrontlineLoyaltyTaskLevel -> Inspire the Back
+FrontlineLoyaltyTaskLevel -> Inspire the Back, reworked into Lead Through Example
 AssignTriggerSummon -> Free Summoning
 HandsizeBlock -> Defensive Formation
 MaxHaniwaUp -> Reserves Capacity Up

@@ -3,10 +3,10 @@
  - there are no attack animations
  - most buff icons have no image or just have a default
  - spell cards have no icon
- - most card and status effect names are placeholder
+ - ~~most card and status effect names are placeholder~~ placeholdery names now updated
 
-The mod is fully playable with 73 cards not including basics/tokens
-Current version beta 0.5.0
+The mod is fully playable with 74 cards not including basics/tokens
+Current version 0.6.0 - works with game version 1.7.0 and 1.7.1
 
 ## Char overview
 Mayumi's playstyle involves managing and creating multiple things at once. Whether you choose to command Frontline units (represented as cards) or Assign tasks (represented as buffs), you will need to manage your resources carefully.  
@@ -28,7 +28,7 @@ A playstyle that is versatile and can have lots of passive effects going on, but
 
 ### Side theme - 0 cost cards
 Both sides have cards that are 0 cost, thus there are some cards which make use of those.  
-Effects such as gaining temp firepower for the number of 0 cost cards, moving 0 cost cards to the hand, playing 0 cost cards lowers costs of other cards etc. 
+Effects such as moving 0 cost cards to the hand, playing 0 cost cards lowers costs of other cards, block card that increases in cost based on non-0 cost cards in hand etc. 
 
 ### Side theme - Haniwa types
 The 3 haniwa types each have a general theme to them, with some exceptions.  

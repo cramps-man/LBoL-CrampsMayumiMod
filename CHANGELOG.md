@@ -1,3 +1,258 @@
+## 0.6.0
+
+### Overview of changes
+
+Updated to work with game versions 1.7.0 and 1.7.1.  
+An update that replaces placeholdery names with more proper ones, and adds assignment buff arts + a few other misc arts.  
+Also balance changes to make individual cards more interesting or feel better to play, as well as making Assignment Bonus buff and Loyalty Protection buff more prominent throughout the card pool. 
+
+### General changes
+
+#### Frontline
+
+- Spellcard reworked, no longer deals 40 dmg to a single enemy
+  - Now allows selecting up to 3 Frontline cards to add to the hand and sacrifice Haniwa based on selected cards
+  - Selected cards go to draw if they can't fit
+  - Still gains 5 of each Haniwa before selection
+- Exhibit now adds 1 **Create Haniwa** to the hand at start of combat
+
+#### Assign
+
+- The last card played before an Assignment buff triggers now increases the Task Level count
+- The keyword text at the bottom of "Assign" cards has been renamed to "Assignment", to differentiate from the "Assign X" keyword
+- Assignment Bonus doesn't get consumed if the hand is full
+- Exhibit effect reworked, no longer gains Assignment Bonus
+  - Now increases Assignment Bonus gain by 1 when gaining Assignment Bonus
+
+#### Quality of life
+
+- Cards that require Haniwa will now specify the exact Haniwa type needed inside the "Can't use this card" text box
+- Mayumi's icon in the collection is no longer wide, courtesy of rmrfmaxx
+
+### Card changes
+
+#### Frontline cards
+
+##### Frontlines
+
+- **Assignment Commander**: Now gives task level before the duplication instead of to a single buff afterward
+  - Task level gain lowered 15 -> 10
+  - The duplicated buff now also lowers its card count straight away so it matches the buff it copied from
+  - Passive now only works in hand and adjusted Loyalty cost from 10 -> 3
+- **Haniwa Sentinel**: Scaling for Illness Prevention gain adjusted from 9 -> 5 upgrades per +1 Illness Prevention
+  - Removed Weak scaling, instead the passive now gains +1 hit per 10 upgrades (each hit applies Weak)
+  - Illness Prevention now uses up as much of its stacks as it can when lowering incoming debuff duration/level instead of only 1 per debuff
+- **Frontline Commander**: Passive now only works in hand and adjusted Loyalty cost from 10 -> 5
+  - Passive only commands 3 random Frontlines instead of all, but now scales +1 Frontline per 3 upgrades
+  - On Play damage reduced from 25 -> 20
+- **Haniwa Upgrader**: Renamed to **Haniwa Trainer**
+  - On Play now doesn't allow targetting itself
+
+##### Common
+
+- **Basic Summoning**: Now only allows selecting 1 Frontline but creates 2 copies of them
+  - Went back to this style as I think it's more interesting but not busted either as it only allows Common rarity now
+- **Frontline Upgrade**: Renamed into **Basic Training**
+  - Now also grants 4(6) Loyalty Protection buff
+  - Block lowered from 6(8) -> 4(6)
+- **Frontline Haniwa Create**: Renamed into **Haniwa Reserves (Frontline)**
+  - Can now be drafted
+  - Now also grants Loyalty Protection buff depending on exiled Frontlines rarity
+  - 4/6/10(6/8/12) Common/Uncommon/Rare
+- **Defence Summon**: Renamed into **Guard Summoning**
+  - Now also gains 5 Loyalty Protection
+  - Block lowered from 10(14) -> 8(12)
+- **Fencer Kamikaze**: Now also gains 3 Loyalty Protection
+
+##### Uncommon
+
+- **Loyalty Protection** (Card): Renamed into **Loyalty Command**
+  - Now also allows selecting 1 Frontline card and executing its On Play action
+  - Loyalty Protection buff gain increased from 6(10) -> 8(13)
+- **Clay to Ashes**: Now also grants 2(4) Loyalty Protection buff per Haniwa sacrifice or exiled Frontline
+  - Lowered cost from 1WW(1W) -> 1W
+- **Discard Upgrade**: Renamed into **Dedicated Training**
+  - Now also draws 2 cards if a card was discarded
+- **Guard Rush**: No longer gives block or graze
+  - Updated sacrifice requirement from 2Fencer/2Cav -> 2 of each type
+  - Now adds 2 **Haniwa Bodyguards** and 1 **Haniwa Horse Archer** to the hand
+  - Cost adjusted from 2W -> 1WW(1W)
+- **Blitz Summon**: Renamed to **Summoning - Instant Command**
+  - Upgrade no longer grants extra Loyalty to the summoned Frontline, now it allows selecting 2 to summon
+  - Cost adjusted from WW(1W) -> WW
+- **Ashes To Clay**: Now has retain and loses draw effect
+  - Number of choices lowered from 2(3) -> 1(2)
+  - Cost adjusted from 1W -> W(1)
+
+##### Rare
+
+- **Mass Destruction**: Reworked into **Blitz Command**
+  - Instead of dealing aoe damage, now executes the On Play actions of all Frontline cards in the hand while consuming Loyalty
+  - Upgrade allows Frontlines in Draw/Discard
+  - Cost adjusted 1WW -> W
+- **Frontline Double Action**: Now also gains 20 Loyalty Protection buff
+  - Adjusted cost from 2WW(1W) -> 1WWW(WW)
+
+#### Assign cards
+
+##### Common
+
+- **Cavalry Scout**: Renamed into **Assignment - Scout Ahead**
+  - No longer gives draw, instead gives Assignment Bonus (Still gains 1 draw if triggered at start of turn)
+  - Nerfed scaling from 8 -> 15 task level per Assignment Bonus
+  - Nerfed scaling from 4 -> 5 task level per scry
+  - Starting card count increased from 3(1) -> 7(3)
+- **Basic Assignment**: Now only allows 1 autoplay per combat no matter the number of upgraded **Basic Assignments**
+  - Now also gains 1 Assignment Bonus
+- **Assign Haniwa Create**: Renamed into **Haniwa Reserves (Assignment)**
+  - Can now be drafted
+  - Now grants 1 Assignment Bonus if an Assignment buff was selected
+- **Assign Extra Time**: Renamed into **Delayed Task Completion**
+  - Now also grants 8(14) Task Level to the selected buff
+- **Archer Prep Volley**: Renamed into **Assignment - Arrow Barrage**
+  - Scaling adjusted from 5 -> 10 Task Level per 1 additional hit
+  - Starting Task Level increased from 10(15) -> 20(30)
+
+##### Uncommon
+
+- **Cavalry Rush**: Renamed into **Assignment - Rush Attack**
+  - No longer gives red mana, instead a random frontline card in the hand executes its On Play action to the same target
+  - 1 additional random frontline per 25 task level
+- **Cavalry Supplies**: Renamed into **Assignment - Bring the Supplies**
+  - Now has a small chance to add **Rainbow** as a selection
+  - Adjusted chances from 20/20/60 Flame/Radiance/Frontline -> 15/15/5/65 Flame/Radiance/Rainbow/Frontline
+  - Mana cards gain replenish when selected
+- **Assign Tickdown Return**: Renamed into **Assignment Hustle**
+  - Now gains colorless
+  - Upgrade no longer gives draw, gives Assignment Bonus buff instead
+- **Num Buff Block**: Renamed into **Clay Gathering**
+  - Additional block changed into barrier
+  - Additional barrier gained lowered from 3(4) -> 2(3)
+  - Base block lowered from 10(15) -> 8
+  - Cost adjusted from 1RR(2R) -> RR(1R)
+- **Choose Short Assign**: Renamed into **Quick Assignment**
+  - Now gains colorless
+- **Archer Prep Debuff**: Renamed into **Assignment - Debilitate Foe**
+  - Damage scaling is now half of Task Level rather than 1 to 1
+  - Now also applies 1 Lockon per 15 Task Level
+  - Vuln scaling adjusted from 12(10) -> 25 Task Level per 1 Vuln
+  - Starting Task Level adjusted from 6(12) -> 12(20)
+- **Charge Attack**: Renamed into **Assignment - Ballista Bolt**
+  - Task Level gain lowered from 12(15) -> 10(12)
+  - Starting Task Level adjusted from 15(25) -> 15(20)
+- **Build Watchtower**: Renamed into **Assignment - Build Watchtower**
+  - Starting Task Level adjusted from 15(40) -> 15(30)
+- **Fencer Prep Counter**: Renamed into **Assignment - Counter Attack**
+  - Damage is now Task Level divided between number of targets + base damage of 8
+  - Task Level gain increased from 4(5) -> 6(8)
+
+##### Rare
+
+- **Gain Buff Tickdown**: Reworked into **Haniwas Never Die** (Skill -> Ability)
+  - When sacrificing Haniwa, automatically Assign up to 1 Haniwa into Assignment buffs that fulfil the costs
+- **Assign Play Draw**: Renamed into **Task Start Reward**
+  - Now requires 1 Assignment Bonus to draw 1 card and consumes 1 Assignment Bonus
+  - Now gains 4(7) Assignment Bonus on play
+- **Mass Task Level**: Renamed into **Perfect Assignment**
+  - Adjusted cost from RRR(R) -> 1RR(R)
+
+#### Hybrid cards
+
+##### Common
+
+- **Weakening Shot**: Adjusted mana cost to 1RWH(RWH) -> RWH
+  - Adjusted damage to 10 -> 7(10)
+- **Hybrid Draw**: Renamed into **Combined Efforts**
+  - Now also gains 1 Assignment Bonus if there's an Assignment buff active
+  - Now also gains 3 Loyalty Protection if there's a Frontline in the hand and upgrades them once
+  - No longer draws 1 if there's a Frontline in hand
+
+##### Uncommon
+
+- **Create Fencer**: Renamed into **Skilled Fencer Haniwa**
+  - Adjusted block/barrier gain from 8(10) to 10
+- **Create Archer**: Renamed into **Skilled Archer Haniwa**
+  - Is now natively accurate
+  - Level 3 changed from 1 Weak -> apply 3 TempFP down
+  - Level 7 changed from 1 Vulnerable -> apply 1 Weak
+  - Level 10 changed from become accurate -> apply 1 Vulnerable
+  - Lockon application adjusted to 2 -> 2(3)
+- **Frontline Loyalty Task Level**: Reworked into a Rare **Lead Through Example**
+  - When a Frontline card is played, gain 1 Assignment Bonus
+  - When an Assignment buff triggers, gain 5 Loyalty Protection
+
+##### Rare
+
+- **Handsize Block**: Renamed into **Defensive Formation**
+  - No longer gains cost based on number of cards in hand
+  - Now gains cost based on number of cards with non-0 base cost in the hand
+  - Additional block gain adjusted from 4 -> 3(4)
+- **Max Haniwa Up**: Renamed into **Reserves Capacity Up**
+  - Moved to uncommon
+- **Full Frontal Assault**: Additional Damage lowered from 7(10) -> 6(8)
+
+#### Off colors
+
+- **Mud Extraction**: Now always consumes 5 Loyalty from selected Frontlines instead of exiling it without upgrade
+  - Upgrade now allows selecting 2 and adds that many **Splashes**
+- **Permanent Assignment**: Losing Haniwa slightly changed, no longer lose Haniwa from the Haniwa buff directly, the Assignment buff itself loses 1 of its assigned Haniwa instead
+  - When the Assignment buff has 1 assigned Haniwa left, lose 1 life instead
+  - Task Level is now halved instead of being set to the starting value (won't go below starting value)
+- **Fencer Worshipping**: Fencer requirement lowered from 10 -> 5
+- **Archer Worshipping**: Archer requirement lowered from 10 -> 5
+- **Cavalry Worshipping**: Cavalry requirement lowered from 10 -> 5
+- **Chain of Command**: Lower cost from 2WGH -> G
+- **Assign Separation**: Renamed into **Task Separation**
+  - Now has added effect of gaining 1 Assignment Bonus when an Assignment triggers and there's an active Assignment buff of the same type
+  - Cost increased from 1RBH(0) -> 2RBH(1)
+
+### New cards
+
+- **Short or Long Term**: Red Uncommon, Choose either to trigger 1(2) Assignment buffs or gain 2(3) Assignment Bonus
+
+### Fixes
+
+- Fix **Haniwa Exploiter** not getting bonus damage from debuffs when executing the On Play action via another card
+- Fix **Assignment - Counter Attack** not attacking random target when an enemy that attacked the player had died after they attacked
+- Fix **Haniwa Charger** with negative Loyalty from exile pile affecting its damage by lowering it (negative Loyalty is now treated as 0 damage increase)
+- Fix **Haniwa Sharpshooter** consuming Loyalty when it shouldn't
+  - Very specific case of attacking an enemy without graze, then attacking with an accurate attack on an enemy with graze
+
+### Renamed cards
+
+Cards that have been renamed but were not mentioned in changes above
+
+- BasicAttackR -> Expert Archery
+- BasicAttackW -> Sword Mastery
+- BasicBlockR -> Guard Duty
+- BasicBlockW -> Master Riding
+- Assign Fast Trigger -> Quick Task Completion
+- Fencer Build Barricade -> Assignment - Build Barricade
+- Assign Play Gain Block -> Defence Delegation
+- Zero Cost Move -> Task Transfer
+- Assign Duplicate Trigger -> Assignment Double Trigger
+- Assign Reverse Tickdown -> Guard Scramble
+- Fast Summon -> Early Summoning
+- Haniwa Blitz -> Front Command
+- Upgraded Summon -> Trained Summoning
+- Mass Summon -> Summoning - Call to Arms
+- Create Haniwa -> Haniwa Reserves
+- Defence Create Reserves -> Create Reserves
+- Assign Trigger Upgrade -> Free Training
+- Auto Create Reserves -> Auto Haniwa Reserves
+- Create Cavalry -> Skilled Cavalry Haniwa
+- Assign Trigger Summon -> Free Summoning
+- Zero Cost Reduction -> Power of Zero
+- Archer Prep Frost Arrow -> Assignment - Frost Arrow
+- Assign Cost Task Level -> Assignment Double Time
+- Frontline Loyalty Gain -> Inspirational Speech
+- Frontline Spellcard -> Haniwa <Hollow Inexhaustible Troops>
+- Assign Spellcard -> Assignment <Hardworking Clay Soldiers>
+
+### What's next
+
+Slow progress on remaining arts and the attack animations
+
 ## 0.5.0
 
 ### Overview of changes
