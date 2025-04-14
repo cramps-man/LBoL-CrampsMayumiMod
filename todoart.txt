@@ -39,21 +39,21 @@ abilities
   - watchtower - fully built watchtower
   - zero cost reduction
 assigns
-  - archer prep debuff - single arrow with ailment looking thing pointing upright
-  - archer prep frost arrow - single arrow with frost pointing upright
+  - archer prep debuff - single arrow with ailment looking thing pointing upright - DONE
+  - archer prep frost arrow - single arrow with frost pointing upright - DONE
   - archer prep volley - few arrows pointing upright - DONE
-  - build watchtower - half built watchtower
-  - cavalry rush - 1 or 2 cavalry speeding to the right
-  - cavalry scout - cavalry with binoculars?
-  - cavalry supplies - a cart/wheelbarrow
-  - charge attack - big ballista arrow
+  - build watchtower - half built watchtower - DONE
+  - cavalry rush - 1 or 2 cavalry speeding to the right - DONE
+  - cavalry scout - cavalry with binoculars? - DONE
+  - cavalry supplies - a cart/wheelbarrow - DONE
+  - charge attack - big ballista arrow - DONE
   - fencer build barricade - a barricade - DONE
-  - fencer prep counter - a fencer haniwa preping to guard
+  - fencer prep counter - a fencer haniwa preping to guard - DONE
 temporary
   - assign double trigger
   - assign reverse tickdown
   - illness prevention - facemask?
-  - loyalty protection - golden light?
+  - loyalty protection - golden light? - DONE
 misc
   - commanders mark - haniwa sword pointing
   - assignment bonus - haniwa holding up a sign saying "bonus" - a scroll instead - DONE
