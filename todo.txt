@@ -1088,7 +1088,7 @@ ashes to clay still feels weird, since it doesnt do shit without a frontline in 
   - could give 2(3) loyalty to all frontlines in hand
 chain of command add detail text that says how much they cost - DONE
 assignment commander if there's more than 1, it bugs out cos haniwa gain already cancelled - FIXED
-haniwa assassin still uses passive when hand full
+haniwa assassin still uses passive when hand full - DONE
 remove unused texts in card and status effect yamls
 add a home in playerunit yaml
 

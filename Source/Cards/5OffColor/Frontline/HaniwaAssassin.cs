@@ -67,6 +67,8 @@ namespace LBoLMod.Cards
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled(PassiveConsumedFromDrawDiscard))
                 yield break;
+            if (base.Battle.HandZone.Count == base.Battle.MaxHand)
+                yield break;
 
             yield return PerformAction.ViewCard(this);
             yield return new AddCardsToHandAction(Library.CreateCard<Knife>());
