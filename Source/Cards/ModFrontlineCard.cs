@@ -43,11 +43,11 @@ namespace LBoLMod.Cards
         public virtual bool IsCavalryType => false;
         public int StartingExtraLoyalty { get; set; } = 0;
         public bool IsDarknessMode { get; set; } = false;
+        public bool WasUnfrozen { get; set; } = false;
         protected override void OnEnterBattle(BattleController battle)
         {
-            if (!IsCopy)
+            if (!IsCopy && !(this is FrozenHaniwa) && !WasUnfrozen)
                 RemainingValue = Value1 + StartingExtraLoyalty;
-            //base.HandleBattleEvent(base.Battle.CardsAddedToHand, this.OnCardsAddedToHand);
             base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
             base.HandleBattleEvent(base.Battle.CardMovedToDrawZone, this.OnCardMovedToDrawZone);
             base.HandleBattleEvent(ModGameEvents.GainedHaniwa, this.OnGainedHaniwa);
@@ -82,14 +82,6 @@ namespace LBoLMod.Cards
                 return;
             RemainingValue = Value1;
         }
-
-        /*private void OnCardsAddedToHand(CardsEventArgs args)
-        {
-            if (args.Cards.Contains(this))
-            {
-                RemainingValue = Value1 + StartingExtraLoyalty;
-            }
-        }*/
 
         public BattleAction ConsumeLoyalty(int loyaltyOverride = -1)
         {

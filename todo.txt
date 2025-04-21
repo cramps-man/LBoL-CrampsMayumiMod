@@ -1080,7 +1080,7 @@ add interaction titles for cards that have a precondition or ask the player to c
   - mud extraction - done
   - darkness summon - done
   - permanent assign - done
-investigate freeze frontline not carrying over loyalty?
+investigate freeze frontline not carrying over loyalty? - DONE
   - apparently i just never carried it over
 haniwa reserves show how much haniwa the player currently has
 ashes to clay still feels weird, since it doesnt do shit without a frontline in exile

@@ -60,6 +60,8 @@ namespace LBoLMod.Cards
         private IEnumerable<BattleAction> OnTurnEnded(UnitEventArgs args)
         {
             OriginalCard.UpgradeCounter = base.UpgradeCounter;
+            OriginalCard.RemainingValue = base.RemainingValue;
+            OriginalCard.WasUnfrozen = true;
             yield return new TransformCardAction(this, OriginalCard);
         }
 

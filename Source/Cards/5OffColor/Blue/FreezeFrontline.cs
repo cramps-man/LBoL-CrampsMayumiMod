@@ -59,6 +59,7 @@ namespace LBoLMod.Cards
                 FrozenHaniwa frozen = Library.CreateCard<FrozenHaniwa>();
                 frozen.OriginalCard = card;
                 frozen.UpgradeCounter = card.UpgradeCounter;
+                frozen.RemainingValue = card.RemainingValue;
                 yield return new TransformCardAction(card, frozen);
             }
         }

@@ -825,9 +825,9 @@ LeadThroughExample:
 FrozenHaniwa:
   Name: Frozen Haniwa
   Description: |-
-    |While in hand|: When a card adjecent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: When a card adjacent to {SelfName} is played, gain {Value2} |Frost Armor| and apply |Cold| to a random enemy. |Cold| application requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Deal {Damage} damage and apply |Cold| to all enemies. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
-    |At end of turn|: Transform back into the original card {OriginalCardName}. 
+    |At end of turn|: Transform back into the original card |{OriginalCardName}|. 
   DetailText: |-
     Does not carry over keywords from/to the original card. 
     Is same haniwa type as the original card. 
@@ -839,6 +839,7 @@ FreezeFrontline:
   Name: Freeze Frontline
   Description: |-
     Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand. Transform them into |Frozen Haniwa|. 
+    |Loyalty| and upgrades carry over. 
   InteractionTitle: |-
     {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to transform into |Frozen Haniwa|
 
