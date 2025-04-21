@@ -1102,7 +1102,8 @@ new frontline card that summons the same type multiple times, but sacrifices for
   - if not enough haniwa then it stops creating
 summon commander replace the upgrade with something else? it's been like that since the very first version lmao
   - perhaps could just make it +10 instead
+  - could increase loyalty for all in hand/draw/discard?
 permanent assignment not showing the infinity symbol anymore, guessing a vanilla change broke it somehow
   - maybe better to look for a more permanent solution
-quick assignment change the starting task level bit? kinda too low to be worth anything so weird it's even there
+quick assignment change the starting task level bit? kinda too low to be worth anything so weird it's even there - DONE
   - either increase it, change or remove
