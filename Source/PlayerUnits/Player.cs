@@ -58,7 +58,7 @@ namespace LBoLMod.PlayerUnits
             DeckB: GetAssignDeck(),
             DifficultyA: 3,
             DifficultyB: 3,
-            HasHomeName: false,
+            HasHomeName: true,
             BasicRingOrder: null,
             LeftColor: LBoL.Base.ManaColor.White,
             RightColor: LBoL.Base.ManaColor.Red

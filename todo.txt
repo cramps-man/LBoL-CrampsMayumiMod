@@ -1090,7 +1090,7 @@ chain of command add detail text that says how much they cost - DONE
 assignment commander if there's more than 1, it bugs out cos haniwa gain already cancelled - FIXED
 haniwa assassin still uses passive when hand full - DONE
 remove unused texts in card and status effect yamls - DONE
-add a home in playerunit yaml
+add a home in playerunit yaml - DONE
 
 cavalry supplies slight rework
   - choose only 1, which goes to top of draw
