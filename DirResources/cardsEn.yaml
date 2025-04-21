@@ -941,6 +941,8 @@ ChainOfCommand:
   UpgradedDescription: |-
     Allow |Frontline Commander| and |Assignment Commander| to be selectable for summons and randomly spawned. 
     |At start of combat|: {SelfName} is automatically played. 
+  DetailText: |-
+    They both cost |e:3| of each |Haniwa| to summon. 
 
 DarknessSummon:
   Name: Dark Summoning

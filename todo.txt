@@ -1086,7 +1086,7 @@ haniwa reserves show how much haniwa the player currently has - DONE
 ashes to clay still feels weird, since it doesnt do shit without a frontline in exile - DONE
   - if none was selected, execute a random frontlines onplay action in hand?
   - could give 2(3) loyalty to all frontlines in hand
-chain of command add detail text that says how much they cost
+chain of command add detail text that says how much they cost - DONE
 assignment commander if there's more than 1, it bugs out cos haniwa gain already cancelled
 haniwa assassin still uses passive when hand full
 remove unused texts in card and status effect yamls
