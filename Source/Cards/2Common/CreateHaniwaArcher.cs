@@ -5,7 +5,9 @@ using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
+using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -34,6 +36,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CreateHaniwaArcherDef))]
     public sealed class CreateHaniwaArcher:OptionCard
     {
+        public int CurrentArcher => HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
             yield return new GainHaniwaAction(archerToGain: Value1);

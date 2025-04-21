@@ -22,15 +22,27 @@ CreateHaniwa:
 
 CreateHaniwaArcher:
   Name: Haniwa Reserves (Archer)
-  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|.
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|. 
+    Currently have {CurrentArcher} archers. 
+  NonbattleDescription: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|. 
 
 CreateHaniwaCavalry:
   Name: Haniwa Reserves (Cavalry)
-  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|.
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|. 
+    Currently have {CurrentCavalry} cavalry. 
+  NonbattleDescription: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|. 
 
 CreateHaniwaFencer:
   Name: Haniwa Reserves (Fencer)
-  Description: Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|.
+  Description: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|. 
+    Currently have {CurrentFencer} fencers. 
+  NonbattleDescription: |-
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|. 
 
 WeakeningShot:
   Name: Weakening Shot

@@ -41,6 +41,8 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             var selectList = new List<Card> { Library.CreateCard<CreateHaniwaFencer>(IsUpgraded), Library.CreateCard<CreateHaniwaArcher>(IsUpgraded), Library.CreateCard<CreateHaniwaCavalry>(IsUpgraded) };
+            foreach (var card in selectList)
+                card.SetBattle(Battle);
             return new MiniSelectCardInteraction(selectList);
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

@@ -5,7 +5,9 @@ using LBoL.EntityLib.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
+using LBoLMod.StatusEffects;
 using LBoLMod.StatusEffects.Keywords;
+using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.Cards
@@ -34,6 +36,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CreateHaniwaCavalryDef))]
     public sealed class CreateHaniwaCavalry:OptionCard
     {
+        public int CurrentCavalry => HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
         public override IEnumerable<BattleAction> TakeEffectActions()
         {
             yield return new GainHaniwaAction(cavalryToGain: Value1);

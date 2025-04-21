@@ -1082,7 +1082,7 @@ add interaction titles for cards that have a precondition or ask the player to c
   - permanent assign - done
 investigate freeze frontline not carrying over loyalty? - DONE
   - apparently i just never carried it over
-haniwa reserves show how much haniwa the player currently has
+haniwa reserves show how much haniwa the player currently has - DONE
 ashes to clay still feels weird, since it doesnt do shit without a frontline in exile
   - if none was selected, execute a random frontlines onplay action in hand?
   - could give 2(3) loyalty to all frontlines in hand
