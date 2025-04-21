@@ -67,6 +67,8 @@ namespace LBoLMod.Cards
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
+            if (args.IsCanceled)
+                yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.3f);
