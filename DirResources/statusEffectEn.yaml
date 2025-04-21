@@ -49,21 +49,23 @@ Sacrifice:
 Assign:
   Name: Assign X
   Description: |-
-    Put X |Haniwa| onto an |Assignment| buff. When the buff triggers its effect, gain back all assigned |Haniwa|. The buff triggers when its counter reaches |e:0|, which ticks down by |e:1| every card played. 
-    Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X, accumilating assigned |Haniwa|. 
-    Ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
+    Put X |Haniwa| into an |Assignment| buff which has a countdown and |Task Level|. The buff triggers its effect when its countdown reaches |e:0|, which ticks down by |e:1| every card played. When the buff triggers its effect, gain back all assigned |Haniwa|. 
+    Gaining the same type of |Assignment| buff will increase countdown by |e:3| and puts |e:1| |Haniwa| into the buff, accumilating assigned |Haniwa|. 
+    Ending the turn decreases the countdown by |e:3|. If countdown reaches |e:0| at turn end, the buff will trigger at start of next turn. 
   Brief: |-
-    Put X |Haniwa| onto an |Assignment| buff. When the buff triggers its effect, gain back all assigned |Haniwa|. The buff triggers when its counter reaches |e:0|, which ticks down by |e:1| every card played. 
-    Gaining the same type of buff will increase counter by |e:3| and |Assign| |e:1| level of |Haniwa| instead of X, accumilating assigned |Haniwa|. 
-    Ending the turn decreases the counter by |e:3|. If counter reaches |e:0| at turn end, it will trigger at start of next turn. 
+    Put X |Haniwa| into an |Assignment| buff which has a countdown and |Task Level|. The buff triggers its effect when its countdown reaches |e:0|, which ticks down by |e:1| every card played. When the buff triggers its effect, gain back all assigned |Haniwa|. 
+    Gaining the same type of |Assignment| buff will increase countdown by |e:3| and puts |e:1| |Haniwa| into the buff, accumilating assigned |Haniwa|. 
+    Ending the turn decreases the countdown by |e:3|. If countdown reaches |e:0| at turn end, the buff will trigger at start of next turn. 
 
 TaskLevel:
   Name: Task Level
   Description: |-
-    Represented on |Assignment| buffs via the level of the buff (red number). Determines the buff effect's power. 
+    Represented on |Assignment| buffs by the red number. Determines the trigger effect's power. 
+    For calculations that divide |Task Level|, it removes the decimal component. Eg. If X is |Task Level| / 10, 0-9 would mean X is 0, 10-19 means X is 1, 20-29 means X is 2 etc. 
     After a card is played, |Task Level| increases by half the number of assigned |Haniwa| rounded up. 
   Brief: |-
-    Represented on |Assignment| buffs via the level of the buff (red number). Determines the buff effect's power. 
+    Represented on |Assignment| buffs by the red number. Determines the trigger effect's power. 
+    For calculations that divide |Task Level|, it removes the decimal component. Eg. If X is |Task Level| / 10, 0-9 would mean X is 0, 10-19 means X is 1, 20-29 means X is 2 etc. 
     After a card is played, |Task Level| increases by half the number of assigned |Haniwa| rounded up. 
 
 AssignmentBonusSe:
@@ -97,11 +99,11 @@ Permanent:
   Name: Permanent Assignment
   Description: |-
     When an |Assignment| buff is |Permanent|, after being triggered it will not be removed. 
-    After triggering, reset the buff's counter to |e:5|, then half |Task Level| (won't go below starting |Task Level|), and reduce assigned |Haniwa| by |e:1|. 
+    After triggering, reset the buff's countdown to |e:5|, then half |Task Level| (won't go below starting |Task Level|), and reduce assigned |Haniwa| by |e:1|. 
     If assigned |Haniwa| would go to |e:0|, lose |e:1| life instead. 
   Brief: |- 
     When an |Assignment| buff is |Permanent|, after being triggered it will not be removed. 
-    After triggering, reset the buff's counter to |e:5|, then half |Task Level| (won't go below starting |Task Level|), and reduce assigned |Haniwa| by |e:1|. 
+    After triggering, reset the buff's countdown to |e:5|, then half |Task Level| (won't go below starting |Task Level|), and reduce assigned |Haniwa| by |e:1|. 
     If assigned |Haniwa| would go to |e:0|, lose |e:1| life instead. 
 
 AssignArcherPrepVolley:
@@ -289,11 +291,11 @@ AutoCreateReservesSe:
 AssignReverseTickdownSe:
   Name: Guard Scramble
   Description: |-
-    Until end of {PlayerName}'s turn, |Assignment| buffs increase their card counter instead of decreasing. 
-    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assignment| buffs. 
+    Until end of {PlayerName}'s turn, |Assignment| buffs increase their countdown instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total countdowns of all |Assignment| buffs. 
   Brief: |-
-    Until end of {PlayerName}'s turn, |Assignment| buffs increase their card counter instead of decreasing. 
-    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assignment| buffs. 
+    Until end of {PlayerName}'s turn, |Assignment| buffs increase their counter instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total countdowns of all |Assignment| buffs. 
 
 CommandersMarkSe:
   Name: Commander's Mark
@@ -398,11 +400,3 @@ LocSe:
     Frontline
   AssignKeyword: |-
     Assignment
-
-#UNUSED
-Pause:
-  Name: Pause
-  Description: |-
-    When an |Assign| status is |Paused|, its card played counter will not tick down. 
-  Brief: |- 
-    When an |Assign| status is |Paused|, its card played counter will not tick down. 

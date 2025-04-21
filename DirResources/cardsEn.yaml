@@ -192,7 +192,7 @@ HaniwaBlitz:
 AssignHaniwaCreate:
   Name: Haniwa Reserves (Assignment)
   Description: |-
-    Choose an |Assignment| buff and increase its card counter by {Value2}. 
+    Choose an |Assignment| buff and increase its countdown by {Value2}. 
     |Buff selected|: Gain {AssignmentBonusGain} |Assignment Bonus| and gain |Haniwa| equal to the number of assigned |Haniwa| + {Value1}. 
     |None selected|: Gain |e:1| of each |Haniwa|. 
 
@@ -209,10 +209,10 @@ AssignFastTrigger:
   Name: Quick Task Completion
   Description: |-
     Deal {Damage} damage.
-    Choose 1 |Assignment| buff and immediately trigger its effect. Convert remaining buff counter into |Task Level| before triggering. 
+    Choose 1 |Assignment| buff and immediately trigger its effect. Convert remaining countdown into |Task Level| before triggering. 
   UpgradedDescription: |-
     Deal {Damage} damage.
-    Choose 1 |Assignment| buff and immediately trigger its effect. Convert |e:double| the remaining buff counter into |Task Level| before triggering. 
+    Choose 1 |Assignment| buff and immediately trigger its effect. Convert |e:double| the remaining countdown into |Task Level| before triggering. 
 
 FrontlineUpgrade:
   Name: Basic Training
@@ -225,7 +225,7 @@ AssignExtraTime:
   Name: Delayed Task Completion
   Description: |-
     Gain {Block} |Block|. 
-    Choose an |Assignment| buff and increase its counter by {Value1} and its |Task Level| by {Value2}. 
+    Choose an |Assignment| buff and increase its countdown by {Value1} and its |Task Level| by {Value2}. 
 
 CavalryScout:
   Name: Assignment - Scout Ahead
@@ -318,11 +318,11 @@ GarrisonArcher:
 AssignTickdownReturn:
   Name: Assignment Hustle
   Description: |-
-    Decrease the card counter for all |Assignment| buffs by {Value1}. 
+    Decrease the countdown for all |Assignment| buffs by {Value1}. 
     Gain {Mana}. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
   UpgradedDescription: |-
-    Decrease the card counter for all |Assignment| buffs by {Value1} and gain {Value2} |Assignment Bonus|. 
+    Decrease the countdown for all |Assignment| buffs by {Value1} and gain {Value2} |Assignment Bonus|. 
     Gain {Mana}. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
 
@@ -532,7 +532,7 @@ ChooseShortAssign:
   Name: Quick Assignment
   Description: |-
     Choose 1 of 3 |Assignment| cards and gain its buff. No |Haniwa| required. 
-    The buff has a starting card counter of {Value1} and starts with {Value2} extra |Task Level|. 
+    The buff has a starting countdown of {Value1} and starts with {Value2} extra |Task Level|. 
     Gain {Mana}. 
 
 FencerPrepCounter:
@@ -759,8 +759,8 @@ AssignReverseTickdown:
   Name: Guard Scramble
   Description: |-
     Gain {Block} |Block|. 
-    Until end of {PlayerName}'s turn, |Assignment| buffs increase their card counter instead of decreasing. 
-    At the end of {PlayerName}'s turn, gain |Block| equal to the total card counters of all |Assignment| buffs. 
+    Until end of {PlayerName}'s turn, |Assignment| buffs increase their countdown instead of decreasing. 
+    At the end of {PlayerName}'s turn, gain |Block| equal to the total countdowns of all |Assignment| buffs. 
 
 HandsizeBlock:
   Name: Defensive Formation
@@ -937,75 +937,3 @@ ArcherWorshipping:
     |e:3| |Temporary Firepower down|
     |e:5| |Lock On|
     |e:5| |Poison|
-
-#UNUSED
-RandomStance:
-  Name: Random Stance
-  Description: |-
-    Deal {Damage} damage. 
-    Gain {Value1} level{Value1:plural one='' other='s'} of a random |Stance| and |Preserve| it. 
-
-PreserveStance:
-  Name: Preserve Stance
-  Description: |-
-    |Requires a Stance| to play. 
-    |Preserve| the oldest |Stance|.
-  UpgradedDescription: |-
-    |Requires a Stance| to play. 
-    |Preserve| all current |Stances|. 
-
-GrantDexterity:
-  Name: Grant Dexterity
-  Description: |-
-    Gain {Block} |Block|.
-    Gain {Value1} |Dexterity|.
-
-MoreStanceHits:
-  Name: More Stance Hits
-  Description: |-
-    Deal {Damage} to a random enemy. 
-    Deal additional hits for each |Stance|({StanceCount}) on {PlayerName}. 
-  NonbattleDescription: |-
-    Deal {Damage} to a random enemy. 
-    Deal additional hits for each |Stance| on {PlayerName}. 
-
-ScryFocus:
-  Name: Scry Focus
-  Description: |-
-    |Focus 1|: |Scry| {Scry}.
-    Draw {Value1} cards.
-
-HealFirepower:
-  Name: Heal Firepower
-  Description: |-
-    Gain {Value1} life.
-    Gain {Value2} |Firepower|.
-    |Calm 2|: Gain {FullHeal} life instead.
-    |Power 2|: Gain {FullFirepower} |Firepower| instead.
-
-StrengthInNumbers:
-  Name: Strength In Numbers
-  Description: |-
-    Gain |Temporary Firepower| for each {Mana} cost card in the hand. ({ZeroCostCount})
-  UpgradedDescription: |-
-    Gain |Temporary Firepower| for each {Mana} cost card in the hand/draw/discard piles. ({ZeroCostCount})
-
-SturdyFrontline:
-  Name: Sturdy Frontline
-  Description: |-
-    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and remove both |Exile| and |Replenish|. 
-
-FrontlineDiscardDraw:
-  Name: Frontline Discard Draw
-  Description: |-
-    Choose any number of cards in the hand. 
-    Discard them, then draw the number of |Frontline| cards discarded. 
-  UpgradedDescription: |-
-    Choose any number of cards in the hand. 
-    Upgrade then discard them, then draw the number of |Frontline| cards discarded. 
-
-AssignSummonFrontline:
-  Name: Assign Summon Frontline
-  Description: |-
-    Choose an |Assign| buff and remove it without triggering it. 
-    Choose |e:1| |Frontline| card and add {Value1} copies of it to the hand. 
