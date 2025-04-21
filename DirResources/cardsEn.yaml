@@ -796,6 +796,7 @@ SummonCommander:
     Choose a |Frontline Commander| or |Assignment Commander| to add to the hand. 
   UpgradedDescription: |-
     Choose a |Frontline Commander| or |Assignment Commander| to add to the hand. It starts with {Value1} upgrades. 
+    All |Frontline| cards in the hand, draw and discard piles gain {Value2} |Loyalty|. 
   InteractionTitle: |-
     {SelfName} - Choose |e:1| to add to hand
 

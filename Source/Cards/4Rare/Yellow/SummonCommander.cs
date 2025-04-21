@@ -9,6 +9,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -26,6 +27,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Value1 = 5;
+            cardConfig.Value2 = 5;
             cardConfig.Cost = new ManaGroup() { White = 2 };
             cardConfig.Keywords = Keyword.Exile;
             cardConfig.UpgradedKeywords = Keyword.Exile;
@@ -57,6 +59,11 @@ namespace LBoLMod.Cards
             if (IsUpgraded)
                 toAdd.UpgradeCounter = Value1;
             yield return new AddCardsToHandAction(toAdd);
+            if (IsUpgraded)
+                foreach (var frontline in Battle.HandZone.Where(c => c is ModFrontlineCard).Cast<ModFrontlineCard>())
+                {
+                    frontline.RemainingValue += Value2;
+                };
         }
     }
 }
