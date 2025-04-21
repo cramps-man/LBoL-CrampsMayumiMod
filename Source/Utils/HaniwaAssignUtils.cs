@@ -40,7 +40,7 @@ namespace LBoLMod.Utils
             }
             return OnColorAssignCardTypes;
         }
-        public static List<ModAssignOptionCard> CreateAssignOptionCards(PlayerUnit player, bool includePaused = true, bool includePermanent = true)
+        public static List<ModAssignOptionCard> CreateAssignOptionCards(PlayerUnit player, bool includePermanent = true)
         {
             List<ModAssignOptionCard> list = new List<ModAssignOptionCard>();
             foreach (ModAssignStatusEffect s in player.StatusEffects.Where(s => s is ModAssignStatusEffect))
@@ -50,8 +50,6 @@ namespace LBoLMod.Utils
                 c.CardText = s.Description;
                 c.StatusEffect = s;
                 bool toAdd = true;
-                if (!includePaused && s.IsPaused)
-                    toAdd = false;
                 if (!includePermanent && s.IsPermanent)
                     toAdd = false;
                 if (toAdd)

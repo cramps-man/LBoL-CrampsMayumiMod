@@ -17,8 +17,6 @@ namespace LBoLMod.GameEvents
         public static GameEvent<GainHaniwaEventArgs> GainedHaniwa { get; set; } = new GameEvent<GainHaniwaEventArgs>();
         public static GameEvent<GainHaniwaEventArgs> GainingHaniwaFromAssign { get; set; } = new GameEvent<GainHaniwaEventArgs>();
         public static GameEvent<GainHaniwaEventArgs> GainedHaniwaFromAssign { get; set; } = new GameEvent<GainHaniwaEventArgs>();
-        public static GameEvent<AssignPauseEventArgs> AssignStatusPausing { get; set; } = new GameEvent<AssignPauseEventArgs>();
-        public static GameEvent<AssignPauseEventArgs> AssignStatusPaused { get; set; } = new GameEvent<AssignPauseEventArgs>();
         public static GameEvent<ConsumeLoyaltyEventArgs> ConsumingLoyalty { get; set; } = new GameEvent<ConsumeLoyaltyEventArgs>();
         public static GameEvent<ConsumeLoyaltyEventArgs> ConsumedLoyalty { get; set; } = new GameEvent<ConsumeLoyaltyEventArgs>();
 
@@ -36,8 +34,6 @@ namespace LBoLMod.GameEvents
             GainedHaniwa = new GameEvent<GainHaniwaEventArgs>();
             GainingHaniwaFromAssign = new GameEvent<GainHaniwaEventArgs>();
             GainedHaniwaFromAssign = new GameEvent<GainHaniwaEventArgs>();
-            AssignStatusPausing = new GameEvent<AssignPauseEventArgs>();
-            AssignStatusPaused = new GameEvent<AssignPauseEventArgs>();
             ConsumingLoyalty = new GameEvent<ConsumeLoyaltyEventArgs>();
             ConsumedLoyalty = new GameEvent<ConsumeLoyaltyEventArgs>();
         }

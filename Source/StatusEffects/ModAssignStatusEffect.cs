@@ -29,7 +29,6 @@ namespace LBoLMod.StatusEffects
         protected int CardValue1 => AssignSourceCard.Value1;
         protected int CardValue2 => AssignSourceCard.Value2;
         protected ScryInfo CardScry => AssignSourceCard.Scry;
-        public bool IsPaused { get; set; } = false;
         public bool IsPermanent { get; set; } = false;
         protected override void OnAdded(Unit unit)
         {
@@ -71,8 +70,6 @@ namespace LBoLMod.StatusEffects
         }
         public void Tickdown(int amount)
         {
-            if (IsPaused)
-                return;
             if (base.Battle.Player.HasStatusEffect<AssignReverseTickdownSe>())
             {
                 Count += amount;
@@ -102,7 +99,6 @@ namespace LBoLMod.StatusEffects
         private void onPlayerTurnEnded(UnitEventArgs args)
         {
             Tickdown(3);
-            IsPaused = false;
         }
 
         private IEnumerable<BattleAction> onPlayerTurnStarted(UnitEventArgs args)

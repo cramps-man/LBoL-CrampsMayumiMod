@@ -1,6 +1,5 @@
 ﻿using LBoL.Presentation.UI.Widgets;
 using LBoLMod.StatusEffects;
-using UnityEngine;
 
 namespace LBoLMod.Patches
 {
@@ -29,17 +28,17 @@ namespace LBoLMod.Patches
             }
             else if (__instance._statusEffect is ModAssignStatusEffect modAssignStatusEffect)
             {
-                if (modAssignStatusEffect.IsPaused)
+                /*if (modAssignStatusEffect.IsPaused)
                 {
                     __instance.downText.text = "P";
                     __instance.downText.color = new Color(102, 255, 102);
-                    /*__instance.downText.fontSize = 28;
+                    __instance.downText.fontSize = 28;
                     __instance.downText.transform.localPosition = new Vector3(textTransform.x + 44, textTransform.y - 75, textTransform.z);
                     __instance.downText.autoSizeTextContainer = true;
                     __instance.downText.enableAutoSizing = false;
-                    __instance.downText.color = Color.green;*/
-                }
-                else if (modAssignStatusEffect.IsPermanent)
+                    __instance.downText.color = Color.green;
+                }*/
+                if (modAssignStatusEffect.IsPermanent)
                     __instance.upText.text = "∞" + __instance.upText.text;
                 //modAssignStatusEffect.NotifyChanged();
             }
