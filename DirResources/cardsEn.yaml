@@ -563,10 +563,11 @@ DiscardUpgrade:
 AshesToClay:
   Name: Ashes To Clay
   Description: |-
-    Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute {Value1:plural one='its' other='their'} |On Play| action{Value1:plural one='' other='s'} while refreshing |Loyalty|. 
+    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute {Value1:plural one='its' other='their'} |On Play| action{Value1:plural one='' other='s'} while refreshing |Loyalty|. 
     Move the selected cards from |Exile| to the draw pile. 
+    If none are selected, all |Frontline| cards in the hand gain {Value2} |Loyalty|. 
   InteractionTitle: |-
-    {SelfName} - Choose {Value1} to execute |On Play| action and move to draw
+    {SelfName} - Choose up to {Value1} to execute |On Play| action and move to draw
 
 ChooseShortAssign:
   Name: Quick Assignment

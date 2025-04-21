@@ -32,6 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 2;
+            cardConfig.UpgradedValue2 = 3;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeKeyword = Keyword.Exile;
@@ -49,7 +51,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.ExileZone.Where(c => c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(1, Value1, list)
+            return new SelectHandInteraction(0, Value1, list)
             {
                 Description = InteractionTitle
             };
@@ -58,6 +60,13 @@ namespace LBoLMod.Cards
         {
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
+            if (!selectInteraction.SelectedCards.Any())
+            {
+                foreach (var item in base.Battle.HandZone.Where(c => c is ModFrontlineCard).Cast<ModFrontlineCard>())
+                {
+                    item.RemainingValue += Value2;
+                };
+            }
 
             foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector))
             {
