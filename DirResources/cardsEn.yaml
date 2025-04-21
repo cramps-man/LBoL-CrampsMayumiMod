@@ -48,6 +48,8 @@ DefenceSummon:
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value1} to add to hand
 
 FencerKamikaze:
   Name: Fencer Kamikaze
@@ -137,6 +139,8 @@ BasicSummon:
     |Sacrifice Haniwa| depending on the chosen card. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+  InteractionTitle: |-
+    {SelfName} - Choose |e:1| to add {Value1:plural one='% copy' other='% copies'} to hand
 
 OptionHaniwaAttacker:
   Name: Summon Haniwa Attacker
@@ -188,6 +192,8 @@ HaniwaBlitz:
   Description: |-
     Deal {Damage} damage. 
     Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value1} to execute |On Play| action
 
 AssignHaniwaCreate:
   Name: Haniwa Reserves (Assignment)
@@ -195,6 +201,8 @@ AssignHaniwaCreate:
     Choose an |Assignment| buff and increase its countdown by {Value2}. 
     |Buff selected|: Gain {AssignmentBonusGain} |Assignment Bonus| and gain |Haniwa| equal to the number of assigned |Haniwa| + {Value1}. 
     |None selected|: Gain |e:1| of each |Haniwa|. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to |e:1| to increase countdown by {Value2}
 
 FrontlineHaniwaCreate:
   Name: Haniwa Reserves (Frontline)
@@ -204,15 +212,21 @@ FrontlineHaniwaCreate:
     |Uncommon|: Gain {UncommonGain} of each |Haniwa| + {UncommonLoyaltyProtGain} |LP|. 
     |Rare|: Gain {RareGain} of each |Haniwa| + {RareLoyaltyProtGain} |LP|. 
     |None selected|: Gain {Value2} of each |Haniwa|. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to |e:1| to |Exile|
 
 AssignFastTrigger:
   Name: Quick Task Completion
   Description: |-
     Deal {Damage} damage.
-    Choose 1 |Assignment| buff and immediately trigger its effect. Convert remaining countdown into |Task Level| before triggering. 
+    Choose an |Assignment| buff and immediately trigger its effect. Convert remaining countdown into |Task Level| before triggering. 
   UpgradedDescription: |-
     Deal {Damage} damage.
-    Choose 1 |Assignment| buff and immediately trigger its effect. Convert |e:double| the remaining countdown into |Task Level| before triggering. 
+    Choose an |Assignment| buff and immediately trigger its effect. Convert |e:double| the remaining countdown into |Task Level| before triggering. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to |e:1| to trigger, convert countdown into |Task Level|
+  UpgradedInteractionTitle: |-
+    {SelfName} - Choose up to |e:1| to trigger, convert |e:double| countdown into |Task Level|
 
 FrontlineUpgrade:
   Name: Basic Training
@@ -220,12 +234,16 @@ FrontlineUpgrade:
     Gain {Block} |Block|. 
     Gain {LoyaltyProtectionGain} |Loyalty Protection|. 
     Choose up to {Value1} card{Value1:plural one='' other='s'} to upgrade. If a |Frontline| card is chosen, upgrade it {Value2} additional time{Value2:plural one='' other='s'}. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value1} to upgrade
 
 AssignExtraTime:
   Name: Delayed Task Completion
   Description: |-
     Gain {Block} |Block|. 
     Choose an |Assignment| buff and increase its countdown by {Value1} and its |Task Level| by {Value2}. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to |e:1| to increase countdown by {Value1} and |Task Level| by {Value2}
 
 CavalryScout:
   Name: Assignment - Scout Ahead
@@ -242,6 +260,8 @@ FastSummon:
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+  InteractionTitle: |-
+    {SelfName} - Choose {Value1} to add to hand
 
 BasicAssignment:
   Name: Basic Assignment
@@ -252,6 +272,8 @@ BasicAssignment:
     Choose |e:1| Common |Assignment| card to add to the hand. 
     Gain {Value1} |Assignment Bonus|. 
     |At start of combat|: {SelfName} is automatically played. Only one {SelfName} may be automatically played per combat. 
+  InteractionTitle: |-
+    {SelfName} - Choose |e:1| to add to hand
 
 #UNCOMMONS
 CreateArcher:
@@ -412,6 +434,8 @@ UpgradedSummon:
     |Sacrifice Haniwa| depending on the chosen card{Value2:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+  InteractionTitle: |-
+    {SelfName} - Choose{Value2:plural one='' other=' up to'} {Value2} to add to hand
 
 OptionHaniwaSpy:
   Name: Summon Haniwa Spy
@@ -521,12 +545,16 @@ DiscardUpgrade:
     Choose any number of |Frontline| cards in the hand and discard them. 
     Upgrade all selected cards {Value1} time{Value1:plural one='' other='s'}. 
     Draw {Value2} card{Value2:plural one='' other='s'} if a card was discarded. 
+  InteractionTitle: |-
+    {SelfName} - Choose any number to upgrade and discard
 
 AshesToClay:
   Name: Ashes To Clay
   Description: |-
     Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute {Value1:plural one='its' other='their'} |On Play| action{Value1:plural one='' other='s'} while refreshing |Loyalty|. 
     Move the selected cards from |Exile| to the draw pile. 
+  InteractionTitle: |-
+    {SelfName} - Choose {Value1} to execute |On Play| action and move to draw
 
 ChooseShortAssign:
   Name: Quick Assignment
@@ -534,6 +562,8 @@ ChooseShortAssign:
     Choose 1 of 3 |Assignment| cards and gain its buff. No |Haniwa| required. 
     The buff has a starting countdown of {Value1} and starts with {Value2} extra |Task Level|. 
     Gain {Mana}. 
+  InteractionTitle: |-
+    {SelfName} - Choose |e:1| |Assignment| to gain, starting countdown of {Value1}
 
 FencerPrepCounter:
   Name: Assignment - Counter Attack
@@ -590,6 +620,8 @@ FrontlineCopy:
   Description: |-
     Choose {Value2} Common or Uncommon |Frontline| card{Value2:plural one='' other='s'} in the hand and add 1 copy to the draw pile. Copied cards gain |Exile|. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value2} to copy and add to draw
 
 BlitzSummon:
   Name: Summoning - Instant Command
@@ -599,6 +631,8 @@ BlitzSummon:
     Execute the new card's |On Play| action{Value1:plural one=' and consume its' other='s and consume their'} |Loyalty|. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+  InteractionTitle: |-
+    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to execute |On Play| action and add to hand
 
 ZeroCostMove:
   Name: Task Transfer
@@ -614,6 +648,8 @@ LoyaltyCommand:
   Description: |-
     Gain {Value1} |Loyalty Protection|. 
     Choose up to {Value2} |Frontline| card{Value2:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value2} to execute |On Play| action
 
 MaxHaniwaUp:
   Name: Reserves Capacity Up
@@ -678,6 +714,8 @@ MassTaskLevel:
     Increase the chosen buff's |Task Level| by {Value2}. 
     Additionally, add the total |Task Level| of the removed buffs onto the chosen buff. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
+  InteractionTitle: |-
+    {SelfName} - Choose |e:1| |Assignment| and remove the others
 
 MassSummon:
   Name: Summoning - Call to Arms
@@ -690,6 +728,8 @@ EnhancedTraining:
   Description: |-
     Whenever a |Frontline| card is upgraded, it gains {Value2} additional upgrade{Value2:plural one='' other='s'}. 
     Choose |e:1| |Frontline| card and upgrade it {Value1} time{Value1:plural one='' other='s'}. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to |e:1| to upgrade
 
 FrontlineCommander:
   Name: Frontline Commander
@@ -743,6 +783,8 @@ SummonCommander:
     Choose a |Frontline Commander| or |Assignment Commander| to add to the hand. 
   UpgradedDescription: |-
     Choose a |Frontline Commander| or |Assignment Commander| to add to the hand. It starts with {Value1} upgrades. 
+  InteractionTitle: |-
+    {SelfName} - Choose |e:1| to add to hand
 
 AssignTriggerSummon:
   Name: Free Summoning
@@ -796,7 +838,9 @@ FrozenHaniwa:
 FreezeFrontline:
   Name: Freeze Frontline
   Description: |-
-    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand. Transform them into |Frozen Haniwa|. 
+    Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand. Transform them into |Frozen Haniwa|. 
+  InteractionTitle: |-
+    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to transform into |Frozen Haniwa|
 
 ArcherPrepFrostArrow:
   Name: Assignment - Frost Arrow
@@ -819,6 +863,8 @@ PermanentAssign:
   Name: Permanent Assignment
   Description: |-
     Choose{Value1:plural one='' other=' up to'} {Value1} |Assignment| buff{Value1:plural one='' other='s'} and make {Value1:plural one='it' other='them'} |Permanent|. 
+  InteractionTitle: |-
+    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to make |Permanent|
 
 PoisonShot:
   Name: Poison Shot
@@ -852,8 +898,10 @@ OptionHaniwaHorseArcher:
 MudExtraction:
   Name: Mud Extraction
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and consume {Value2} |Loyalty|. 
+    Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} in the hand and consume {Value2} |Loyalty|. 
     Add that many |Splashes| to the hand. 
+  InteractionTitle: |-
+    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to consume {Value2} |Loyalty|
 
 AssignCostTaskLevel:
   Name: Assignment Double Time
@@ -883,11 +931,13 @@ ChainOfCommand:
 DarknessSummon:
   Name: Dark Summoning
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. |Sacrifice Haniwa| depending on the chosen card. 
+    Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. |Sacrifice Haniwa| depending on the chosen card. 
     The cards have infinite |Loyalty| and don't leave the hand when played, but consume <sprite="Point" name="Power"> equal to the amount of passive |Loyalty| consumed, or |e:10| when via |On Play|. If {PlayerName} runs out of <sprite="Point" name="Power">, the cards are removed from combat. 
     For |Frontlines| that use |Loyalty| for calculations, they count as having |e:10| |Loyalty|. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
+  InteractionTitle: |-
+    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to add to hand
 
 HaniwaAssassin:
   Name: Haniwa Assassin

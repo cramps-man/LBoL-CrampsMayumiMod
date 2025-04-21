@@ -42,10 +42,14 @@ namespace LBoLMod.Cards
     public sealed class FrontlineUpgrade : Card
     {
         public int LoyaltyProtectionGain => IsUpgraded ? 6 : 4;
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c.CanUpgradeAndPositive).ToList();
-            return new SelectHandInteraction(0, Value1, list);
+            return new SelectHandInteraction(0, Value1, list)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

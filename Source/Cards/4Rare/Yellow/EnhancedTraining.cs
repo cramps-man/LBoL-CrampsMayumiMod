@@ -41,10 +41,14 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(EnhancedTrainingDef))]
     public sealed class EnhancedTraining : Card
     {
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             var cards = base.Battle.HandZone.Where(c => c is ModFrontlineCard);
-            return new SelectHandInteraction(0, 1, cards);
+            return new SelectHandInteraction(0, 1, cards)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

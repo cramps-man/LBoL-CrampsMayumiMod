@@ -40,10 +40,14 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(SummonCommanderDef))]
     public sealed class SummonCommander : Card
     {
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             var toSelect = new List<Card>() { Library.CreateCard<FrontlineCommander>(), Library.CreateCard<AssignCommander>() };
-            return new MiniSelectCardInteraction(toSelect);
+            return new MiniSelectCardInteraction(toSelect)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

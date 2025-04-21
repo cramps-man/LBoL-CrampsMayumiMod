@@ -52,9 +52,13 @@ namespace LBoLMod.Cards
         public int UncommonLoyaltyProtGain => UncommonGain * 2;
         public int RareGain => 4 + Value1;
         public int RareLoyaltyProtGain => RareGain * 2;
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
-            return new SelectCardInteraction(0, 1, base.Battle.HandZone.Where(c => c is ModFrontlineCard));
+            return new SelectCardInteraction(0, 1, base.Battle.HandZone.Where(c => c is ModFrontlineCard))
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

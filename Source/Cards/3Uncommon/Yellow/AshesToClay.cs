@@ -45,10 +45,14 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AshesToClayDef))]
     public sealed class AshesToClay : Card
     {
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.ExileZone.Where(c => c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(1, Value1, list);
+            return new SelectHandInteraction(1, Value1, list)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

@@ -1054,8 +1054,32 @@ arrow barrage make harder to scale and increase starting task level - DONE
 improve assignment tooltip text - DONE
 task level tooltip text add something about the rounding works - DONE
 update texts where it mentions "counter" or "card count" for assignments, change into "countdown" - DONE
-add interaction titles for cards that have a precondition or ask the player to choose card
+add interaction titles for cards that have a precondition or ask the player to choose card - DONE
   - maybe only relevant on cards that change the number of selections like summon cards
+  - assign extra time - done
+  - assign fast trigger - done
+  - assign haniwa create - done
+  - basic assignment - done
+  - basic summon - done
+  - defence summon - done
+  - fast summon - done
+  - frontline haniwa create - done
+  - frontline upgrade - done
+  - haniwa blitz - done
+  - choose short assign - done
+  - ashes to clay - done
+  - blitz summon - done
+  - discard upgrade - done
+  - frontline copy - done
+  - loyalty command - done
+  - upgraded summon - done
+  - mass task level - done
+  - enhanced training - done
+  - summon commander - done
+  - freeze frontline - done
+  - mud extraction - done
+  - darkness summon - done
+  - permanent assign - done
 investigate freeze frontline not carrying over loyalty?
   - apparently i just never carried it over
 haniwa reserves show how much haniwa the player currently has

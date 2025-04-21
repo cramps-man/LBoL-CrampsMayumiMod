@@ -41,10 +41,14 @@ namespace LBoLMod.Cards
     public sealed class DiscardUpgrade : Card
     {
         public override bool DiscardCard => true;
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(0, list.Count, list);
+            return new SelectHandInteraction(0, list.Count, list)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

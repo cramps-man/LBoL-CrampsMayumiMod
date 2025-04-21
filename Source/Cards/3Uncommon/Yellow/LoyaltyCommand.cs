@@ -42,10 +42,14 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(LoyaltyCommandDef))]
     public sealed class LoyaltyCommand : Card
     {
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(0, Value2, list);
+            return new SelectHandInteraction(0, Value2, list)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

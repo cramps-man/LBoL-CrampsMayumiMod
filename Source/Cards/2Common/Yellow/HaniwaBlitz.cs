@@ -40,10 +40,14 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaBlitzDef))]
     public sealed class HaniwaBlitz : Card
     {
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
-            return new SelectHandInteraction(0, Value1, list);
+            return new SelectHandInteraction(0, Value1, list)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

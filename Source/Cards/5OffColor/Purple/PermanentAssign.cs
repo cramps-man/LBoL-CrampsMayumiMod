@@ -39,9 +39,13 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(PermanentAssignDef))]
     public sealed class PermanentAssign : Card
     {
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
-            return new SelectCardInteraction(1, Value1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player, includePermanent: false));
+            return new SelectCardInteraction(1, Value1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player, includePermanent: false))
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

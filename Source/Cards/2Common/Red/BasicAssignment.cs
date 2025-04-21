@@ -56,10 +56,14 @@ namespace LBoLMod.Cards
                 yield return new PlayCardAction(this);
             }
         }
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             var list = new List<Card>() { Library.CreateCard<ArcherPrepVolley>(), Library.CreateCard<FencerBuildBarricade>(), Library.CreateCard<CavalryScout>() };
-            return new SelectCardInteraction(1, 1, list);
+            return new SelectCardInteraction(1, 1, list)
+            {
+                Description = InteractionTitle
+            };
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
