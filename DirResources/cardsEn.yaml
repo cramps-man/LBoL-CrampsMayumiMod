@@ -24,7 +24,7 @@ CreateHaniwaArcher:
   Name: Haniwa Reserves (Archer)
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|. 
-    Currently have {CurrentArcher} archers. 
+    Currently have {CurrentArcher}. 
   NonbattleDescription: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Archer Haniwa|. 
 
@@ -32,7 +32,7 @@ CreateHaniwaCavalry:
   Name: Haniwa Reserves (Cavalry)
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|. 
-    Currently have {CurrentCavalry} cavalry. 
+    Currently have {CurrentCavalry}. 
   NonbattleDescription: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry Haniwa|. 
 
@@ -40,7 +40,7 @@ CreateHaniwaFencer:
   Name: Haniwa Reserves (Fencer)
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|. 
-    Currently have {CurrentFencer} fencers. 
+    Currently have {CurrentFencer}. 
   NonbattleDescription: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer Haniwa|. 
 
