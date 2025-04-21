@@ -616,7 +616,7 @@ CavalrySupplies:
   Name: Assignment - Bring the Supplies
   Description: |-
     |Assign {CavalryRequired} Cavalry|. 
-    After {StartingCardCounter} cards are played, choose X of X + {Value2} cards to add to the draw pile. X is |Task Level| / {Value1} (minimum of 1). 
+    After {StartingCardCounter} cards are played, choose up to |e:1| of X cards to add to the draw pile. Unselected cards are added to discard. X is {Value2} + (|Task Level| / {Value1}) (minimum 2). 
     Cards are randomized and can include |Flame|, |Radiance|, |Rainbow| or a random |Frontline|. They gain |Replenish|. 
     Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-

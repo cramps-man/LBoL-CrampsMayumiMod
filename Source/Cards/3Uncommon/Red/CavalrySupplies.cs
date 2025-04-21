@@ -23,9 +23,8 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 25;
-            cardConfig.Value2 = 2;
-            cardConfig.UpgradedValue2 = 4;
+            cardConfig.Value1 = 30;
+            cardConfig.Value2 = 1;
             cardConfig.RelativeKeyword = Keyword.Replenish;
             cardConfig.UpgradedRelativeKeyword = Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
@@ -40,8 +39,8 @@ namespace LBoLMod.Cards
     public sealed class CavalrySupplies : ModAssignCard
     {
         public override int CavalryAssigned => 3;
-        public override int StartingCardCounter => IsUpgraded ? 5 : 8;
-        public override int StartingTaskLevel => IsUpgraded ? 30 : 15;
+        public override int StartingCardCounter => IsUpgraded ? 7 : 10;
+        public override int StartingTaskLevel => IsUpgraded ? 30 : 20;
         public override Type AssignStatusType => typeof(AssignCavalrySupplies);
     }
 }

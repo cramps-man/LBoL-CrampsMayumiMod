@@ -10,6 +10,7 @@ using LBoLEntitySideloader.Attributes;
 using LBoLMod.Utils;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.StatusEffects.Assign
 {
@@ -24,27 +25,26 @@ namespace LBoLMod.StatusEffects.Assign
     [EntityLogic(typeof(AssignCavalrySuppliesDef))]
     public sealed class AssignCavalrySupplies : ModAssignStatusEffect
     {
-        public int TotalTimes => Math.Max(Level / CardValue1, 1);
-        public int TotalTimesPlusValue2 => TotalTimes + CardValue2;
+        public int TotalTimes => Math.Max(CardValue2 + (Level / CardValue1), 2);
+        private List<Card> RandomChoices = new List<Card>();
         private SelectCardInteraction Interaction { get; set; }
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            List<Card> randomChoices = new List<Card>();
-            for (int i = 0; i < TotalTimesPlusValue2; i++)
+            for (int i = 0; i < TotalTimes; i++)
             {
                 int rng = base.GameRun.BattleRng.NextInt(1, 100);
                 if (rng >= 1 && rng <= 15)
-                    randomChoices.Add(Library.CreateCard<RManaCard>());
+                    RandomChoices.Add(Library.CreateCard<RManaCard>());
                 else if (rng >= 16 && rng <= 30)
-                    randomChoices.Add(Library.CreateCard<WManaCard>());
+                    RandomChoices.Add(Library.CreateCard<WManaCard>());
                 else if (rng >= 31 && rng <= 35)
-                    randomChoices.Add(Library.CreateCard<PManaCard>());
+                    RandomChoices.Add(Library.CreateCard<PManaCard>());
                 else if (rng >= 36 && rng <= 100)
-                    randomChoices.Add(Library.CreateCard(HaniwaFrontlineUtils.GetAllSummonTypes(base.Battle).Sample(base.GameRun.BattleRng)));
+                    RandomChoices.Add(Library.CreateCard(HaniwaFrontlineUtils.GetAllSummonTypes(base.Battle).Sample(base.GameRun.BattleRng)));
             }
-            randomChoices.ForEach(c => c.IsReplenish = true);
-            Interaction = new SelectCardInteraction(TotalTimes, TotalTimes, randomChoices)
+            RandomChoices.ForEach(c => c.IsReplenish = true);
+            Interaction = new SelectCardInteraction(0, 1, RandomChoices)
             {
                 Description = InteractionTitle
             };
@@ -54,6 +54,7 @@ namespace LBoLMod.StatusEffects.Assign
         public override IEnumerable<BattleAction> AfterAssignmentDone(bool onTurnStart)
         {
             yield return new AddCardsToDrawZoneAction(Interaction.SelectedCards, DrawZoneTarget.Random);
+            yield return new AddCardsToDiscardAction(RandomChoices.Except(Interaction.SelectedCards));
         }
     }
 }

@@ -1092,11 +1092,12 @@ haniwa assassin still uses passive when hand full - DONE
 remove unused texts in card and status effect yamls - DONE
 add a home in playerunit yaml - DONE
 
-cavalry supplies slight rework
-  - choose only 1, which goes to top of draw
+cavalry supplies slight rework - DONE
+  - choose only 1, which goes to top of draw, or just random draw
   - rest of choices to go discard
   - start with only 2 choices?
   - increase counter?
+  - could also give loyalty to all frontlines in hand/draw/discard - unsure
 new frontline card that summons the same type multiple times, but sacrifices for all copies - UNSURE
   - if not enough haniwa then it stops creating
 summon commander replace the upgrade with something else? it's been like that since the very first version lmao
