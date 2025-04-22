@@ -109,7 +109,7 @@ namespace LBoLMod.Cards
             yield return PerformAction.Wait(0.2f);
         }
 
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new DescriptiveScryAction(TotalScry, InteractionTitle);

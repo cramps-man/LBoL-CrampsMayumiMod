@@ -367,7 +367,7 @@ HaniwaSpy:
     |While in draw/discard pile|: At end of turn in the same pile as {SelfName}, a random card |temporarily costs| {Mana} less. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: |Scry| {TotalScry} and draw |e:1| card. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   InteractionTitle: |-
-    {Name} - Scry, Draw 1
+    {Name} - Scry, Draw |e:1|
   DetailText: |-
     Is |Cavalry| type. 
 
@@ -778,7 +778,7 @@ AssignCommander:
     Increases for each upgrade. 
     OnPlay task level: +1 per upgrade
   ExtraDescription1: |-
-    {SelfName} - Duplicate an Assignment buff
+    {SelfName} - Duplicate an |Assignment| buff
 
 OptionAssignCommander:
   Name: Summon Assignment Commander

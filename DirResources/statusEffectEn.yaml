@@ -222,7 +222,7 @@ AssignCavalryScout:
     |Scry| |e:1| per {CardValue1} |Task Level| and gain |e:1| |Assignment Bonus| per {CardValue2} |Task Level| (minimum 1). 
     {CardCavalryAssigned} |Cavalry| assigned. Task Level is {Level}. 
   InteractionTitle: |-
-    {Name} - Scry, Draw 1, Gain {TotalAssignmentBonus} Assignment Bonus
+    {Name} - Scry, Draw |e:1|, Gain {TotalAssignmentBonus} |Assignment Bonus|
   Brief: |-
     After X cards are played, |Scry| and gain |Assignment Bonus|. 
 
