@@ -26,11 +26,12 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignCavalrySupplies : ModAssignStatusEffect
     {
         public int TotalTimes => Math.Max(CardValue2 + (Level / CardValue1), 2);
-        private List<Card> RandomChoices = new List<Card>();
+        private List<Card> RandomChoices;
         private SelectCardInteraction Interaction { get; set; }
         public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
+            RandomChoices = new List<Card>();
             for (int i = 0; i < TotalTimes; i++)
             {
                 int rng = base.GameRun.BattleRng.NextInt(1, 100);

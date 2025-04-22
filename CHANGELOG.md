@@ -1,3 +1,61 @@
+## 0.6.2
+
+Fix **Assignment - Bring the Supplies** bugging out with **Assignment Double Trigger** and **Permanent Assignment**, due to old card choices still being stored, then bugging out when trying to move them  
+
+## 0.6.1
+
+### Overview of changes
+
+A small QOL and bug fixing update, with a few minor balance tweaks.  
+
+### General changes
+
+#### Quality of life
+
+- Adjusted the Assignment tooltip text to be more clear (hopefully)
+- Added a small bit to the Task Level tooltip text to give examples on how the rounding calculations work
+- Update occurrences of various texts referring to the Assignment buff countdown. It is now referred to as the "Countdown" in all cases, instead of "card count" or "counter" or whatnot
+- Added text to all the "choose a card" titles to better help give info on stuff like how many cards can be chosen etc. 
+- **Haniwa Reserves** now show the current amount of Haniwa for each type when using the card, so you don't need to check the buffs for the amount
+- **Chain of Command** now has detail text in the tooltip specifying how much the commanders cost to summon
+
+### Card changes
+
+#### Frontline cards
+
+##### Uncommon
+
+- **Ashes To Clay**: Can now choose nothing for a new effect, all Frontlines in hand gain 2(3) Loyalty
+  - This card before 0.6.0 allowed choosing nothing for a draw 1, but then I removed it while giving this card retain, which then feels bad if there's nothing to choose in Exile
+  - This card always felt weird since it's not easy to just Exile a Frontline unless you manually do it for 0 benefit, which is pointless
+  - May look into something about Exiling Frontlines in future to have some sort of benefit
+
+##### Rare
+
+- **Summon Commander**: Upgrade has another effect of granting 5 Loyalty to all Frontlines in hand, draw and discard piles
+
+#### Assignment cards
+
+##### Uncommon
+
+- **Assignment - Bring the Supplies**: Has been given a slight rework to adding cards
+  - Now only allows choosing 1 to add to draw, but the unselected choices go to discard
+  - Number of choices is now 1 + (Task Level / 30) (minimum 2)
+  - Starting countdown adjusted from 8(5) -> 10(7)
+  - Starting Task Level adjusted from 15(30) -> 20(30)
+
+- **Quick Assignment**: Bonus Task Level increased from 2(5) -> 5(20)
+
+#### Off colors
+
+- **Freeze Frontline**: Now carries over current Loyalty onto the Frozen Haniwa
+  - I thought it did this in the past, but apparently I forgor to do this
+
+### Fixes
+
+- Fix **Assignment Commander** causing issues if there was more than one that tried using their passive on the same Assignment buff
+- Fix **Haniwa Assassin** trying to use discard passive when hand is full
+
 ## 0.6.0
 
 ### Overview of changes
