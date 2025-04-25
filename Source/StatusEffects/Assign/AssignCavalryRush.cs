@@ -37,6 +37,7 @@ namespace LBoLMod.StatusEffects.Assign
 
         public override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
         {
+            RandomFrontlines.Clear();
             EnemyUnit target = base.Battle.LowestHpEnemy;
             yield return new DamageAction(Owner, target, TotalDamage);
             Target = target;

@@ -1,3 +1,7 @@
+## 0.6.3
+
+Fix **Assignment - Rush Attack** bugging out with a similar thing as **Assignment - Bring the Supplies** below  
+
 ## 0.6.2
 
 Fix **Assignment - Bring the Supplies** bugging out with **Assignment Double Trigger** and **Permanent Assignment**, due to old card choices still being stored, then bugging out when trying to move them  
