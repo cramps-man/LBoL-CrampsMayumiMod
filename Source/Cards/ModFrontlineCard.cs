@@ -1,12 +1,10 @@
 ﻿using LBoL.Base;
-using LBoL.Base.Extensions;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
 using LBoLMod.BattleActions;
-using LBoLMod.GameEvents;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Localization;
 using System;
@@ -50,19 +48,14 @@ namespace LBoLMod.Cards
                 RemainingValue = Value1 + StartingExtraLoyalty;
             base.HandleBattleEvent(base.Battle.CardMoved, this.OnCardMoved);
             base.HandleBattleEvent(base.Battle.CardMovedToDrawZone, this.OnCardMovedToDrawZone);
-            base.HandleBattleEvent(ModGameEvents.GainedHaniwa, this.OnGainedHaniwa);
+            base.HandleBattleEvent(base.Battle.Player.StatusEffectAdded, this.OnStatusEffectAdded);
         }
 
-        private void OnGainedHaniwa(GainHaniwaEventArgs args)
+        private void OnStatusEffectAdded(StatusEffectApplyEventArgs args)
         {
             if (!base.Battle.HandZone.Contains(this))
                 return;
-            if (IsFencerType && args.FencerToGain > 0)
-                RemainingValue += Math.Ceiling(args.FencerToGain / 2d).RoundToInt();
-            if (IsArcherType && args.ArcherToGain > 0)
-                RemainingValue += Math.Ceiling(args.ArcherToGain / 2d).RoundToInt();
-            if (IsCavalryType && args.CavalryToGain > 0)
-                RemainingValue += Math.Ceiling(args.CavalryToGain / 2d).RoundToInt();
+            RemainingValue += 1;
         }
 
         private void OnCardMovedToDrawZone(CardMovingToDrawZoneEventArgs args)

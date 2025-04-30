@@ -1106,8 +1106,33 @@ summon commander replace the upgrade with something else? it's been like that si
 quick assignment change the starting task level bit? kinda too low to be worth anything so weird it's even there - DONE
   - either increase it, change or remove
 
+frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any buff
+  - update loyalty costs to be a bit higher, since the gains are higher, the gains are more consistent though so overall better
+  - let commanders gain loyalty via buffs and remove end of turn, just make them higher cost
+  - bodyguard might be too much barrier type block gain, should i restrict the loyalty gain for bodyguards? or make it half the number, which is probs too shitty for math
+update commanding frontlines into commanding any 0 cost card
+  - need to be careful on cards that exile, cos obviously playing those multiple times is op, maybe those discard instead
 permanent assignment not showing the infinity symbol anymore, guessing a vanilla change broke it somehow
   - maybe better to look for a more permanent solution
+  - or maybe just remove this card lel
 inspirational speech give something extra? temp fp/temp sp?
+  - and probs move to oncolor
 look into exile naturally auto executing onplay action for frontline
   - if not played directly
+build barricade card being affected by spirit
+  - the actual effect doesnt though, perhaps it should?
+full frontal assault rework, assign all haniwa
+  - then have effects based on each haniwa type, and effects for dmg, then all frontlines in hand onplay boom ggez
+  - probs dont allow being found via quick assignment, nor duplicated or permanent
+task transfer randomly chose glare, bruh
+  - didnt check the card was unplayable like haniwa spy
+defence delegation add 1-2 assignment cards with exile to hand?
+some other assignment cards that require selecting assignments, also do something else? like assigning or something
+  - or making retain tokens that do the quick assign and extra time stuff
+haniwa monk add a gain block component?
+  - half of dmg gain?
+haniwa support update passive condition to playing 0 cost card?
+counter attack buff text still says triggers
+ashes to clay rework to an ability? there's just not much room for an active unless i add extra exile mechanics with frontline
+  - frontlines in exile also gain loyalty via buffs, when loyalty reaches 0, they move to discard?
+haniwa bodyguard lower minimum loyalty restock to 3, but make scaling better?
