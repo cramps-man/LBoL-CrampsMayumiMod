@@ -26,7 +26,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 12;
-            cardConfig.Value1 = 5;
+            cardConfig.Value1 = 10;
             cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -40,7 +40,8 @@ namespace LBoLMod.Cards
     public sealed class HaniwaMonk : ModFrontlineCard
     {
         public override bool IsFencerType => true;
-        protected override int OnPlayConsumedRemainingValue => 4;
+        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 5;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedDamage;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;
         public int ChargedDamage => DeltaInt;

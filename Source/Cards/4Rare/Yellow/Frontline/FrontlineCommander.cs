@@ -31,8 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Damage = 20;
-            cardConfig.Value1 = 10;
-            cardConfig.Value2 = 3;
+            cardConfig.Value1 = 15;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
@@ -44,7 +43,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(FrontlineCommanderDef))]
     public sealed class FrontlineCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 5;
+        protected override int PassiveConsumedRemainingValue => 10;
         protected override int OnPlayConsumedRemainingValue => 0;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() * 2;
         public int PassiveCommandCount => 3 + base.UpgradeCounter.GetValueOrDefault() / PassiveScaling;
@@ -53,12 +52,6 @@ namespace LBoLMod.Cards
         {
             base.OnEnterBattle(battle);
             base.ReactBattleEvent(base.Battle.Player.TurnStarted, this.OnTurnStarted);
-            base.HandleBattleEvent(base.Battle.Player.TurnEnded, this.OnTurnEnded);
-        }
-
-        private void OnTurnEnded(UnitEventArgs args)
-        {
-            RemainingValue += Value2;
         }
 
         private IEnumerable<BattleAction> OnTurnStarted(UnitEventArgs args)

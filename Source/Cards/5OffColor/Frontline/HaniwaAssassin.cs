@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Black };
             cardConfig.Damage = 13;
-            cardConfig.Value1 = 10;
+            cardConfig.Value1 = 15;
             cardConfig.Value2 = 20;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
@@ -45,9 +45,9 @@ namespace LBoLMod.Cards
     public sealed class HaniwaAssassin : ModFrontlineCard
     {
         public override bool IsFencerType => true;
-        public int PassiveConsumedFromDrawDiscard => 2;
-        protected override int PassiveConsumedRemainingValue => 2;
-        protected override int OnPlayConsumedRemainingValue => 3;
+        public int PassiveConsumedFromDrawDiscard => 3;
+        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 5;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public int FollowupDamage => 6 + base.UpgradeCounter.GetValueOrDefault();
         public int InstakillScaling => 2;

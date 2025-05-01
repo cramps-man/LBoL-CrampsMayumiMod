@@ -1115,9 +1115,9 @@ frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any
     - charger p/5
     - exploiter 4/6
     - monk 3/5 passive should probs go up else too ez to maintain loyalty and keep charging?
-    - sentinel 5/10
+    - sentinel 5/5
     - spy 3/10
-    - trainer 3/10
+    - trainer 3/8
     - assignment commander 7/0
     - frontline commander 10/0
     - frozen haniwa 5/2 same cos i tihnk itll be fine
@@ -1126,6 +1126,7 @@ frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any
   - let commanders gain loyalty via buffs and remove end of turn, just make them higher cost
   - bodyguard might be too much barrier type block gain, should i restrict the loyalty gain for bodyguards? or make it half the number, which is probs too shitty for math
   - will loyalty strike be too good scaling now? maybe just wait and see
+  - charger should make additional dmg half of loyalty, and we increase vuln scaling to 20 and autocharge to 20
 update commanding frontlines into commanding any 0 cost card
   - need to be careful on cards that exile, cos obviously playing those multiple times is op, maybe those discard instead
 some other assignment cards that require selecting assignments, also do something else? like assigning or something

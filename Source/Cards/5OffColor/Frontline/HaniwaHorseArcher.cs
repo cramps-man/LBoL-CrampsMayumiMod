@@ -28,7 +28,7 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White, ManaColor.Green };
             cardConfig.Damage = 13;
-            cardConfig.Value1 = 10;
+            cardConfig.Value1 = 15;
             cardConfig.Value2 = 6;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish | Keyword.Accuracy;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish | Keyword.Accuracy;
@@ -43,9 +43,9 @@ namespace LBoLMod.Cards
     {
         public override bool IsArcherType => true;
         public override bool IsCavalryType => true;
-        public int PassiveConsumedFromDrawDiscard => 3;
-        protected override int PassiveConsumedRemainingValue => 2;
-        protected override int OnPlayConsumedRemainingValue => 6;
+        public int PassiveConsumedFromDrawDiscard => 4;
+        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 10;
         public DamageInfo GrazeDamage => DamageInfo.Reaction(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();

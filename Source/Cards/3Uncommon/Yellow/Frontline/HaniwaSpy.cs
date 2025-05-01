@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 5;
+            cardConfig.Value1 = 10;
             cardConfig.Scry = 3;
             cardConfig.Mana = new ManaGroup() { Any = 1 };
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
@@ -46,8 +46,8 @@ namespace LBoLMod.Cards
     public sealed class HaniwaSpy : ModFrontlineCard
     {
         public override bool IsCavalryType => true;
-        protected override int PassiveConsumedRemainingValue => 2;
-        protected override int OnPlayConsumedRemainingValue => 5;
+        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int OnPlayConsumedRemainingValue => 10;
         public ScryInfo TotalScry => Scry.IncreasedBy(Math.Min(base.UpgradeCounter.GetValueOrDefault() / 3, 10));
         protected override void OnEnterBattle(BattleController battle)
         {

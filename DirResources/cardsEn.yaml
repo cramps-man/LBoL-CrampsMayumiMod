@@ -417,7 +417,7 @@ HaniwaCharger:
   Name: Haniwa Charger
   Description: |-
     |While in hand|: At end of turn, gain {BaseLoyaltyGain} |Loyalty| for each |Haniwa Charger| in the hand ({TotalLoyaltyGain}). At start of turn, if |Loyalty| is above or equal {AutoChargeThreshold}, automatically execute the |On Play| action to enemy with the lowest life and discard. 
-    |When played|: Deal {Damage} damage. Deal additional damage equal to |Loyalty| ({RemainingValue}). Apply |e:1| |Vulnerable| if |Loyalty| consumed is above or equal {VulnScaling}. Consume all |Loyalty|, minimum of {OnPlayConsumedRemainingValue}. 
+    |When played|: Deal {Damage} damage. Deal additional damage equal to |e:half| |Loyalty| ({HalfLoyalty}). Apply |e:1| |Vulnerable| if |Loyalty| consumed is above or equal {VulnScaling}. Consume all |Loyalty|, minimum of {OnPlayConsumedRemainingValue}. 
   DetailText: |-
     Is |Cavalry| type. 
 
@@ -747,12 +747,10 @@ EnhancedTraining:
 FrontlineCommander:
   Name: Frontline Commander
   Description: |-
-    |While in hand|: At start of {PlayerName}'s turn, {PassiveCommandCount} random |Frontline| card{PassiveCommandCount:plural one='' other='s'} in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {Value2} |Loyalty|. 
+    |While in hand|: At start of {PlayerName}'s turn, {PassiveCommandCount} random |Frontline| card{PassiveCommandCount:plural one='' other='s'} in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
-    Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
-    
     Increases for each upgrade. 
     Damage: +2
     Random Frontline count: +1 per {PassiveScaling} upgrades
@@ -770,11 +768,9 @@ OptionFrontlineCommander:
 AssignCommander:
   Name: Assignment Commander
   Description: |-
-    |While in hand|: When an |Assignment| buff triggers, automatically redistribute assigned |Haniwa| into new |Assignment| buffs that fulfil the required costs. Requires {PassiveConsumedRemainingValue} |Loyalty|. At end of turn, gain {LoyaltyGain} |Loyalty|. 
+    |While in hand|: When an |Assignment| buff triggers, automatically redistribute assigned |Haniwa| into new |Assignment| buffs that fulfil the required costs. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Choose an |Assignment| buff and give it {Value2} extra |Task Level| then duplicate it. Does not consume |Loyalty|. 
   DetailText: |-
-    Counts as a special type and will not gain |Loyalty| from |Haniwa| gain. 
-    
     Increases for each upgrade. 
     OnPlay task level: +1 per upgrade
   ExtraDescription1: |-

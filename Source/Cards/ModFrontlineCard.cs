@@ -55,6 +55,8 @@ namespace LBoLMod.Cards
         {
             if (!base.Battle.HandZone.Contains(this))
                 return;
+            if (this is HaniwaBodyguard)
+                return;
             RemainingValue += 1;
         }
 

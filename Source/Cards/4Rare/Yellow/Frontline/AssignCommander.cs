@@ -31,7 +31,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 10;
+            cardConfig.Value1 = 15;
             cardConfig.Value2 = 10;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
@@ -44,20 +44,13 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(AssignCommanderDef))]
     public sealed class AssignCommander : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 3;
+        protected override int PassiveConsumedRemainingValue => 7;
         protected override int OnPlayConsumedRemainingValue => 0;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();
-        public int LoyaltyGain => 3;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.HandleBattleEvent(base.Battle.Player.TurnEnded, this.OnTurnEnded);
             base.ReactBattleEvent(ModGameEvents.GainingHaniwaFromAssign, this.OnGainingHaniwaFromAssign);
-        }
-
-        private void OnTurnEnded(UnitEventArgs args)
-        {
-            RemainingValue += LoyaltyGain;
         }
         private IEnumerable<BattleAction> OnGainingHaniwaFromAssign(GainHaniwaEventArgs args)
         {
