@@ -1127,7 +1127,7 @@ frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any
   - bodyguard might be too much barrier type block gain, should i restrict the loyalty gain for bodyguards? or make it half the number, which is probs too shitty for math
   - will loyalty strike be too good scaling now? maybe just wait and see
   - charger should make additional dmg half of loyalty, and we increase vuln scaling to 20 and autocharge to 20
-haniwa monk add a gain block component?
+haniwa monk add a gain block component? - DONE
   - half of dmg gain?
 haniwa support update passive condition to playing 0 cost card?
   - transform the yellow mana to rainbow every 5 upgrades, add a yellow every 10

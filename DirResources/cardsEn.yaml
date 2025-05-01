@@ -404,14 +404,14 @@ HaniwaExploiter:
 HaniwaMonk:
   Name: Haniwa Monk
   Description: |-
-    |While in hand|: When {PlayerName} receives a buff, increase damage by {Value2}. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
-    |When played|: Deal {Damage} damage and reset increased damage to 0. Increased damage ({ChargedDamage}). Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: When {PlayerName} receives a buff, increase damage and |Block| by {Value2}. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |When played|: Deal {Damage} damage and gain {Block} |Block|, then reset increased value to 0. Increased value ({ChargedValue}). Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Is |Fencer| type. 
 
     Increases for each upgrade. 
-    On Play damage: +1
-    Increased buff damage +1 per 5 upgrade. 
+    On Play damage/block: +1
+    Dmg/block increase via buff: +1 per 5 upgrade. 
 
 HaniwaCharger:
   Name: Haniwa Charger

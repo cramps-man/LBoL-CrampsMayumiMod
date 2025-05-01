@@ -25,7 +25,8 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Damage = 12;
+            cardConfig.Damage = 7;
+            cardConfig.Block = 7;
             cardConfig.Value1 = 10;
             cardConfig.Value2 = 2;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
@@ -41,10 +42,11 @@ namespace LBoLMod.Cards
     {
         public override bool IsFencerType => true;
         protected override int PassiveConsumedRemainingValue => 3;
-        protected override int OnPlayConsumedRemainingValue => 5;
-        public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedDamage;
+        protected override int OnPlayConsumedRemainingValue => 8;
+        public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedValue;
+        public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault() + ChargedValue;
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;
-        public int ChargedDamage => DeltaInt;
+        public int ChargedValue => DeltaInt;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
@@ -70,6 +72,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return AttackAction(selector);
+            yield return DefenseAction();
             DeltaInt = 0;
         }
     }
