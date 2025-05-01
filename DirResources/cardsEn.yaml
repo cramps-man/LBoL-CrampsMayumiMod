@@ -92,7 +92,7 @@ HaniwaBodyguard:
   DetailText: |-
     Is |Fencer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     |Block|: +1
     Turn start |Loyalty| minimum: +1 per {TurnStartLoyaltyScaling} upgrades
 
@@ -104,7 +104,7 @@ HaniwaSupport:
   DetailText: |-
     Is |Cavalry| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     OnPlay gain extra <sprite="ManaSprite" name="W"> per 10 upgrade. 
     Change the <sprite="ManaSprite" name="W"> to <sprite="ManaSprite" name="P"> every 5th, 15th, 25th etc upgrade
 
@@ -129,7 +129,7 @@ HaniwaAttacker:
   DetailText: |-
     Is |Fencer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     End of turn damage: +1
     On play damage: +1
 
@@ -141,7 +141,7 @@ HaniwaSharpshooter:
   DetailText: |-
     Is |Archer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     On play damage: +1
     |Lock On| +1 per 3 upgrade
 
@@ -372,7 +372,7 @@ HaniwaSpy:
   DetailText: |-
     Is |Cavalry| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     On Play |Scry|: +1 every 3 upgrades, up to |Scry 10|
 
 HaniwaUpgrader:
@@ -383,7 +383,7 @@ HaniwaUpgrader:
   DetailText: |-
     Is |Fencer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     Random upgraded cards: +1 per {NumCardsScaling} upgrades
     On Play times to upgrade: +1 per {OnPlayTimesToUpgradeScaling} upgrades
   ExtraDescription1: |-
@@ -397,7 +397,7 @@ HaniwaExploiter:
   DetailText: |-
     Is |Archer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     End of turn damage: +1
     On Play damage: +1
     Debuff damage: +1 per 5 upgrades
@@ -410,7 +410,7 @@ HaniwaMonk:
   DetailText: |-
     Is |Fencer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     On Play damage/block: +1
     Dmg/block increase via buff: +1 per 5 upgrade. 
 
@@ -422,7 +422,7 @@ HaniwaCharger:
   DetailText: |-
     Is |Cavalry| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     |Loyalty| gain per charger: +1 per {LoyaltyGainScaling} upgrades
     On Play damage: +1
     Autoplay threshold: +1
@@ -435,7 +435,7 @@ HaniwaSentinel:
   DetailText: |-
     Is |Archer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     Passive activation times: +1 per {PassiveScaling} upgrades
     Gain Illness Prevention: +1 per {IllnessBuffLevelScaling} upgrades
 
@@ -752,7 +752,7 @@ FrontlineCommander:
     If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     Damage: +2
     Random Frontline count: +1 per {PassiveScaling} upgrades
 
@@ -772,7 +772,7 @@ AssignCommander:
     |While in hand|: When an |Assignment| buff triggers, automatically redistribute assigned |Haniwa| into new |Assignment| buffs that fulfil the required costs. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Choose an |Assignment| buff and give it {Value2} extra |Task Level| then duplicate it. Does not consume |Loyalty|. 
   DetailText: |-
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     OnPlay task level: +1 per upgrade
   ExtraDescription1: |-
     {SelfName} - Duplicate an |Assignment| buff
@@ -843,7 +843,7 @@ FrozenHaniwa:
     Does not carry over keywords from/to the original card. 
     Is same haniwa type as the original card. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     On Play damage: +1
 
 FreezeFrontline:
@@ -892,7 +892,7 @@ HaniwaHorseArcher:
   DetailText: |-
     Is |Archer| and |Cavalry| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     Graze damage: +1
     On play damage: +1
     Graze gained: +1 per 10 upgrades
@@ -962,7 +962,7 @@ HaniwaAssassin:
   DetailText: |-
     Is |Fencer| type. 
 
-    Increases for each upgrade. 
+    Bonuses for each upgrade. 
     Followup damage: +1
     On play damage: +1
     On play instakill threshold: +2
