@@ -45,8 +45,8 @@ namespace LBoLMod.Cards
         protected override int OnPlayConsumedRemainingValue => 5;
         public int DamageTaken { get; set; } = 0;
         public override bool IsFencerType => true;
-        public int TurnStartLoyaltyScaling => 4;
-        public int LoyaltyThreshold => 4 + base.UpgradeCounter.GetValueOrDefault() / TurnStartLoyaltyScaling;
+        public int TurnStartLoyaltyScaling => 2;
+        public int LoyaltyThreshold => 3 + base.UpgradeCounter.GetValueOrDefault() / TurnStartLoyaltyScaling;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);

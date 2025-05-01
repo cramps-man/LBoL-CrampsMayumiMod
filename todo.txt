@@ -1106,7 +1106,7 @@ summon commander replace the upgrade with something else? it's been like that si
 quick assignment change the starting task level bit? kinda too low to be worth anything so weird it's even there - DONE
   - either increase it, change or remove
 
-frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any buff
+frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any buff - DONE
   - update loyalty costs to be a bit higher, since the gains are higher, the gains are more consistent though so overall better
     - attacker 3/5
     - bodyguard p/5 same? doesnt make sense to go higher since its 1-1, and bodyguard wont gain loyalty with buffs
@@ -1127,8 +1127,14 @@ frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any
   - bodyguard might be too much barrier type block gain, should i restrict the loyalty gain for bodyguards? or make it half the number, which is probs too shitty for math
   - will loyalty strike be too good scaling now? maybe just wait and see
   - charger should make additional dmg half of loyalty, and we increase vuln scaling to 20 and autocharge to 20
+haniwa monk add a gain block component?
+  - half of dmg gain?
+haniwa support update passive condition to playing 0 cost card?
+  - transform the yellow mana to rainbow every 5 upgrades, add a yellow every 10
+haniwa bodyguard lower minimum loyalty restock to 3, but make scaling better? - DONE
 update commanding frontlines into commanding any 0 cost card
   - need to be careful on cards that exile, cos obviously playing those multiple times is op, maybe those discard instead
+  - ability cards probs also get removed as normal
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
   - 1 token that has 4(5?) choices to manip assignment buffs
@@ -1155,14 +1161,9 @@ full frontal assault rework, assign all haniwa
 task transfer randomly chose glare, bruh
   - didnt check the card was unplayable like haniwa spy
 defence delegation add 1-2 assignment cards with exile to hand?
-haniwa monk add a gain block component?
-  - half of dmg gain?
-haniwa support update passive condition to playing 0 cost card?
-  - transform the yellow mana to rainbow every 5 upgrades, add a yellow every 10
 counter attack buff text still says triggers
 ashes to clay rework to an ability? there's just not much room for an active unless i add extra exile mechanics with frontline
   - frontlines in exile also gain loyalty via buffs, when loyalty reaches 0, they move to discard?
   - might be too good tbh lel
-haniwa bodyguard lower minimum loyalty restock to 3, but make scaling better?
 quick assignment allow choosing countdown starting 0 or 3
 clay to ashes instead of tempfp, give 1 draw
