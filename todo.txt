@@ -1114,11 +1114,11 @@ frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any
     - support 10/10
     - charger p/5
     - exploiter 4/6
-    - monk 2/5 passive should probs go up else too ez to maintain loyalty and keep charging?
+    - monk 3/5 passive should probs go up else too ez to maintain loyalty and keep charging?
     - sentinel 5/10
     - spy 3/10
     - trainer 3/10
-    - assignment commander 5/0
+    - assignment commander 7/0
     - frontline commander 10/0
     - frozen haniwa 5/2 same cos i tihnk itll be fine
     - assassin 3/5
@@ -1131,10 +1131,10 @@ update commanding frontlines into commanding any 0 cost card
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
   - 1 token that has 4(5?) choices to manip assignment buffs
-  - quick order
-  - delay order
-  - renew order
-  - cancel order
+  - quick order, lower by 2, give 3 tasklevel
+  - delay order, increase by 4, give 5 tasklevel
+  - renew order, reset countdown and tasklevel to starting values
+  - cancel order, remove without triggering, but give back haniwa
   - something that consume 1 assignment bonus and draw 1
 quick task comp and delayed task comp add a assignment order token if they select nothing
 assignment hustle dont give colorless, and gets assignment bonus preupgraded

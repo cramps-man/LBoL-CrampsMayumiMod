@@ -1,5 +1,6 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
+using LBoLEntitySideloader.Resource;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,14 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Sacrifice) };
             cardConfig.RelativeCards = new List<string>() { CardTypeToSpawn.Name };
             return cardConfig;
+        }
+        public override CardImages LoadCardImages()
+        {
+            var imgs = new CardImages(BepinexPlugin.embeddedSource);
+            imgs.AutoLoad(GetId().SId.Substring(6), extension: ".png", "");
+            if (imgs.main == null)
+                imgs.AutoLoad("carddefault", ".jpg", "");
+            return imgs;
         }
     }
 }
