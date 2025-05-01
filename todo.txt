@@ -1108,16 +1108,43 @@ quick assignment change the starting task level bit? kinda too low to be worth a
 
 frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any buff
   - update loyalty costs to be a bit higher, since the gains are higher, the gains are more consistent though so overall better
+    - attacker 3/5
+    - bodyguard p/5 same? doesnt make sense to go higher since its 1-1, and bodyguard wont gain loyalty with buffs
+    - sharpshooter 5/3
+    - support 10/10
+    - charger p/5
+    - exploiter 4/6
+    - monk 2/5 passive should probs go up else too ez to maintain loyalty and keep charging?
+    - sentinel 5/10
+    - spy 3/10
+    - trainer 3/10
+    - assignment commander 5/0
+    - frontline commander 10/0
+    - frozen haniwa 5/2 same cos i tihnk itll be fine
+    - assassin 3/5
+    - horse archer 3/4/10
   - let commanders gain loyalty via buffs and remove end of turn, just make them higher cost
   - bodyguard might be too much barrier type block gain, should i restrict the loyalty gain for bodyguards? or make it half the number, which is probs too shitty for math
+  - will loyalty strike be too good scaling now? maybe just wait and see
 update commanding frontlines into commanding any 0 cost card
   - need to be careful on cards that exile, cos obviously playing those multiple times is op, maybe those discard instead
+some other assignment cards that require selecting assignments, also do something else? like assigning or something
+  - or making retain tokens that do the quick assign and extra time stuff
+  - 1 token that has 4(5?) choices to manip assignment buffs
+  - quick order
+  - delay order
+  - renew order
+  - cancel order
+  - something that consume 1 assignment bonus and draw 1
+quick task comp and delayed task comp add a assignment order token if they select nothing
+assignment hustle dont give colorless, and gets assignment bonus preupgraded
+  - upgrade now updates mana to 1 and adds 1 assignment order to hand?
 permanent assignment not showing the infinity symbol anymore, guessing a vanilla change broke it somehow
   - maybe better to look for a more permanent solution
   - or maybe just remove this card lel
 inspirational speech give something extra? temp fp/temp sp?
   - and probs move to oncolor
-look into exile naturally auto executing onplay action for frontline
+look into exile naturally auto executing onplay action for frontline - perhaps not needed?
   - if not played directly
 build barricade card being affected by spirit
   - the actual effect doesnt though, perhaps it should?
@@ -1127,12 +1154,14 @@ full frontal assault rework, assign all haniwa
 task transfer randomly chose glare, bruh
   - didnt check the card was unplayable like haniwa spy
 defence delegation add 1-2 assignment cards with exile to hand?
-some other assignment cards that require selecting assignments, also do something else? like assigning or something
-  - or making retain tokens that do the quick assign and extra time stuff
 haniwa monk add a gain block component?
   - half of dmg gain?
 haniwa support update passive condition to playing 0 cost card?
+  - transform the yellow mana to rainbow every 5 upgrades, add a yellow every 10
 counter attack buff text still says triggers
 ashes to clay rework to an ability? there's just not much room for an active unless i add extra exile mechanics with frontline
   - frontlines in exile also gain loyalty via buffs, when loyalty reaches 0, they move to discard?
+  - might be too good tbh lel
 haniwa bodyguard lower minimum loyalty restock to 3, but make scaling better?
+quick assignment allow choosing countdown starting 0 or 3
+clay to ashes instead of tempfp, give 1 draw
