@@ -151,9 +151,9 @@ namespace LBoLMod.Utils
             return new UnitSelector(battle.RandomAliveEnemy);
         }
 
-        public static IEnumerable<BattleAction> ExecuteOnPlayActions(List<Card> frontlineCards, BattleController battle, UnitSelector selector = null, bool consumeRemainingValue = false)
+        public static IEnumerable<BattleAction> ExecuteOnPlayActions(List<Card> commandedCards, BattleController battle, UnitSelector selector = null, bool consumeRemainingValue = false)
         {
-            foreach (ModFrontlineCard card in frontlineCards)
+            foreach (Card card in commandedCards)
             {
                 if (battle.BattleShouldEnd)
                     yield break;
@@ -161,10 +161,20 @@ namespace LBoLMod.Utils
                     card.NotifyActivating();
                 else
                     yield return PerformAction.ViewCard(card);
+
+                if (card.CardType == CardType.Ability || card.CardType == CardType.Tool)
+                {
+                    yield return new PlayCardAction(card, selector != null ? selector : GetTargetForOnPlayAction(battle));
+                    continue;
+                }
+
                 var precondition = card.Precondition();
                 if (precondition != null)
                 {
-                    precondition.Description = card.ExtraDescription1.RuntimeFormat(card.FormatWrapper);
+                    if (card.ExtraDescription1 != null && card is ModFrontlineCard)
+                        precondition.Description = card.ExtraDescription1.RuntimeFormat(card.FormatWrapper);
+                    else
+                        precondition.Description = card.Name;
                     yield return new InteractionAction(precondition, true);
                 }
                 foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, false, false, new List<DamageAction>()))
@@ -173,9 +183,16 @@ namespace LBoLMod.Utils
                         yield break;
                     yield return action;
                 }
-                if (consumeRemainingValue)
-                    yield return card.ConsumeLoyalty();
+                if (consumeRemainingValue && card is ModFrontlineCard mfc)
+                    yield return mfc.ConsumeLoyalty();
+                if (card.IsExile && battle.HandZone.Contains(card))
+                    yield return new DiscardAction(card);
             }
+        }
+
+        public static List<Card> GetCommandableCards(BattleController battle, Card playedCard)
+        {
+            return battle.HandZone.Where((Card c) => c != playedCard && c.Cost == ManaGroup.Empty).ToList();
         }
     }
 }

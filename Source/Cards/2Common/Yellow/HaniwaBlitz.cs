@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedDamage = 15;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Command) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Command) };
             return cardConfig;
         }
     }
@@ -43,7 +43,7 @@ namespace LBoLMod.Cards
         public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
-            List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();
+            List<Card> list = HaniwaFrontlineUtils.GetCommandableCards(base.Battle, this);
             return new SelectHandInteraction(0, Value1, list)
             {
                 Description = InteractionTitle

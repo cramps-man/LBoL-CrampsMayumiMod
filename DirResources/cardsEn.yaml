@@ -205,9 +205,9 @@ HaniwaBlitz:
   Name: Front Command
   Description: |-
     Deal {Damage} damage. 
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
+    |Command| up to {Value1} card{Value1:plural one='' other='s'} in the hand. 
   InteractionTitle: |-
-    {SelfName} - Choose up to {Value1} to execute |On Play| action
+    {SelfName} - Choose up to {Value1} to |Command|
 
 AssignHaniwaCreate:
   Name: Haniwa Reserves (Assignment)

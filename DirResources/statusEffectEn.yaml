@@ -93,6 +93,15 @@ Loyalty:
   Brief: |-
     Represented by the number on the left of |Frontline| cards. Used for their passive and On Play effects. 
 
+Command:
+  Name: Command X
+  Description: |-
+    X <sprite=ManaSprite" name="0"> cost cards have their effects played without being discarded. 
+    If the card is a |Frontline|, consume its |Loyalty|. If the card is a Tool or Ability, it is played normally. If it has |Exile| and is in the hand, it is played and discarded. 
+  Brief: |-
+    X <sprite=ManaSprite" name="0"> cost cards have their effects played without being discarded. 
+    If the card is a |Frontline|, consume its |Loyalty|. If the card is a Tool or Ability, it is played normally. If it has |Exile| and is in the hand, it is played and discarded. 
+
 Permanent:
   Name: Permanent Assignment
   Description: |-
