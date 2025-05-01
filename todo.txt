@@ -1167,3 +1167,6 @@ ashes to clay rework to an ability? there's just not much room for an active unl
   - might be too good tbh lel
 quick assignment allow choosing countdown starting 0 or 3
 clay to ashes instead of tempfp, give 1 draw
+guard summoning accidentally requires haniwa, even though you can gain stuff without them
+remove retain from balissa bolt?
+bodyguard add clause saying it cant gain loyalty from buffs - DONE

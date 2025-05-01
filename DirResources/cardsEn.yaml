@@ -89,6 +89,7 @@ HaniwaBodyguard:
   Description: |-
     |While in hand|: Reduce up to {RemainingValue} direct or |Barrier| damage. Consume |Loyalty| based on damage reduced. At the start of {PlayerName}'s turn, if {SelfName} is in the hand and |Loyalty| is less than {LoyaltyThreshold}, |Loyalty| becomes {LoyaltyThreshold}. 
     |When played|: Gain {Block} |Block|. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
+    |e:Note|: {SelfName} will not gain |Loyalty| via buff gain, unlike other |Frontline| cards. 
   DetailText: |-
     Is |Fencer| type. 
 
