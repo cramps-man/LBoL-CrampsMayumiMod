@@ -1129,7 +1129,7 @@ frontline loyalty gain when gaining haniwa update, gain loyalty when gaining any
   - charger should make additional dmg half of loyalty, and we increase vuln scaling to 20 and autocharge to 20
 haniwa monk add a gain block component? - DONE
   - half of dmg gain?
-haniwa support update passive condition to playing 0 cost card?
+haniwa support update passive condition to playing 0 cost card? - DONE
   - transform the yellow mana to rainbow every 5 upgrades, add a yellow every 10
 haniwa bodyguard lower minimum loyalty restock to 3, but make scaling better? - DONE
 update commanding frontlines into commanding any 0 cost card

@@ -99,13 +99,14 @@ HaniwaBodyguard:
 HaniwaSupport:
   Name: Haniwa Support
   Description: |-
-    |While in hand|: Whenever an attack card is played, draw {Value2} card. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: Whenever a <sprite=ManaSprite" name="0"> cost card is played, draw {Value2} card. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Gain {TotalMana}. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Is |Cavalry| type. 
 
     Increases for each upgrade. 
-    OnPlay gain extra <sprite="ManaSprite" name={Mana}> per 8 upgrade. 
+    OnPlay gain extra <sprite="ManaSprite" name="W"> per 10 upgrade. 
+    Change the <sprite="ManaSprite" name="W"> to <sprite="ManaSprite" name="P"> every 5th, 15th, 25th etc upgrade
 
 FencerBuildBarricade:
   Name: Assignment - Build Barricade

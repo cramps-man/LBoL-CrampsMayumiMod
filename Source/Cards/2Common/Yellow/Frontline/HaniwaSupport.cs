@@ -40,19 +40,20 @@ namespace LBoLMod.Cards
     {
         protected override int PassiveConsumedRemainingValue => 10;
         protected override int OnPlayConsumedRemainingValue => 10;
-        public ManaGroup TotalMana => Mana + ManaGroup.Whites(base.UpgradeCounter.GetValueOrDefault() / 8);
+        public ManaGroup PMana => ManaGroup.Philosophies((base.UpgradeCounter.GetValueOrDefault() + 5) / 10);
+        public ManaGroup TotalMana => PMana + ManaGroup.Whites(1 + (base.UpgradeCounter.GetValueOrDefault() / 10) - PMana.Amount);
         public override bool IsCavalryType => true;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
-            base.ReactBattleEvent<CardUsingEventArgs>(base.Battle.CardUsed, new EventSequencedReactor<CardUsingEventArgs>(this.OnCardUsed));
+            base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
         }
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
         {
             if (base.Zone != CardZone.Hand)
                 yield break;
-            if (args.Card.CardType != CardType.Attack)
+            if (args.Card.Cost != ManaGroup.Empty)
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
