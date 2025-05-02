@@ -162,12 +162,6 @@ namespace LBoLMod.Utils
                 else
                     yield return PerformAction.ViewCard(card);
 
-                if (card.CardType == CardType.Ability || card.CardType == CardType.Tool)
-                {
-                    yield return new PlayCardAction(card, selector != null ? selector : GetTargetForOnPlayAction(battle));
-                    continue;
-                }
-
                 var precondition = card.Precondition();
                 if (precondition != null)
                 {
@@ -185,14 +179,14 @@ namespace LBoLMod.Utils
                 }
                 if (consumeRemainingValue && card is ModFrontlineCard mfc)
                     yield return mfc.ConsumeLoyalty();
-                if (card.IsExile && battle.HandZone.Contains(card))
-                    yield return new DiscardAction(card);
+                if (card.IsExile || card.CardType == CardType.Ability)
+                    card.IsCopy = true;
             }
         }
 
         public static List<Card> GetCommandableCards(BattleController battle, Card playedCard)
         {
-            return battle.HandZone.Where((Card c) => c != playedCard && c.Cost == ManaGroup.Empty).ToList();
+            return battle.HandZone.Where((Card c) => c != playedCard && c.Cost == ManaGroup.Empty && !c.HasKeyword(Keyword.Forbidden)).Where(c => c is ModFrontlineCard || c.CanBeDuplicated).ToList();
         }
     }
 }

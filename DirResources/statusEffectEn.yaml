@@ -79,11 +79,11 @@ Frontline:
   Name: Frontline
   Description: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    Upgradable any number of times. |Loyalty| is increased by |e:1| when upgraded. Also increased if it is in the hand when {PlayerName} gains a buff. 
+    Upgradable any number of times. |Loyalty| is increased by |e:1| when upgraded or if it is in the hand when {PlayerName} gains a buff. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. Passive will not trigger if |Loyalty| would go below |e:0|. 
   Brief: |-
     A type of card that gives various effects while in your hand, consuming |Loyalty| when triggered or played. 
-    Upgradable any number of times. |Loyalty| is increased by |e:1| when upgraded. Also increased if it is in the hand when {PlayerName} gains a buff. 
+    Upgradable any number of times. |Loyalty| is increased by |e:1| when upgraded or if it is in the hand when {PlayerName} gains a buff. 
     If |Loyalty| becomes less than |e:0| when played, the card is |Exiled|. Passive will not trigger if |Loyalty| would go below |e:0|. 
 
 Loyalty:
@@ -96,11 +96,13 @@ Loyalty:
 Command:
   Name: Command X
   Description: |-
-    X <sprite=ManaSprite" name="0"> cost cards have their effects played without being discarded. 
-    If the card is a |Frontline|, consume its |Loyalty|. If the card is a Tool or Ability, it is played normally. If it has |Exile| and is in the hand, it is played and discarded. 
+    The X <sprite=ManaSprite" name="0"> cost cards selected have their effects played without being discarded. 
+    If the card is a |Frontline|, consume its |Loyalty|. If it is an |Ability| or has |Exile|, it gains |Copy|. 
+    |Copied| cards can not be selected unless they are |Frontlines|. 
   Brief: |-
-    X <sprite=ManaSprite" name="0"> cost cards have their effects played without being discarded. 
-    If the card is a |Frontline|, consume its |Loyalty|. If the card is a Tool or Ability, it is played normally. If it has |Exile| and is in the hand, it is played and discarded. 
+    The X <sprite=ManaSprite" name="0"> cost cards selected have their effects played without being discarded. 
+    If the card is a |Frontline|, consume its |Loyalty|. If it is an |Ability| or has |Exile|, it gains |Copy|. 
+    |Copied| cards can not be selected unless they are |Frontlines|. 
 
 Permanent:
   Name: Permanent Assignment

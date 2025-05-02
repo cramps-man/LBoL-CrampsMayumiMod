@@ -31,8 +31,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedDamage = 15;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Command) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Command) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Command) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Command) };
             return cardConfig;
         }
     }

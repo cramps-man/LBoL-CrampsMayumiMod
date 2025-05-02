@@ -1,4 +1,5 @@
-﻿using LBoL.ConfigData;
+﻿using LBoL.Base;
+using LBoL.ConfigData;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -15,8 +16,8 @@ namespace LBoLMod.StatusEffects.Keywords
         public override StatusEffectConfig MakeConfig()
         {
             var statusConfig = base.MakeConfig();
-            statusConfig.Keywords = LBoL.Base.Keyword.Exile;
-            statusConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Loyalty) };
+            statusConfig.Keywords = Keyword.Exile | Keyword.Ability | Keyword.Copy;
+            statusConfig.RelativeEffects = new List<string>() { nameof(Frontline), };
             return statusConfig;
         }
     }
