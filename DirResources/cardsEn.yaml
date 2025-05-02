@@ -565,11 +565,11 @@ DiscardUpgrade:
 AshesToClay:
   Name: Ashes To Clay
   Description: |-
-    Choose up to {Value1} |Frontline| card{Value1:plural one='' other='s'} from |Exile| and execute {Value1:plural one='its' other='their'} |On Play| action{Value1:plural one='' other='s'} while refreshing |Loyalty|. 
+    |Command| up to {Value1} card{Value1:plural one='' other='s'} from |Exile|. If it is a |Frontline|, refresh its |Loyalty|. 
     Move the selected cards from |Exile| to the draw pile. 
     If none are selected, all |Frontline| cards in the hand gain {Value2} |Loyalty|. 
   InteractionTitle: |-
-    {SelfName} - Choose up to {Value1} to execute |On Play| action and move to draw
+    {SelfName} - Choose up to {Value1} to |Command| and move to draw
 
 ChooseShortAssign:
   Name: Quick Assignment
@@ -662,9 +662,9 @@ LoyaltyCommand:
   Name: Loyalty Command
   Description: |-
     Gain {Value1} |Loyalty Protection|. 
-    Choose up to {Value2} |Frontline| card{Value2:plural one='' other='s'} and execute their |On Play| actions. Still consumes the card's |Loyalty|. 
+    |Command| up to {Value2} card{Value2:plural one='' other='s'}. 
   InteractionTitle: |-
-    {SelfName} - Choose up to {Value2} to execute |On Play| action
+    {SelfName} - Choose up to {Value2} to |Command|
 
 MaxHaniwaUp:
   Name: Reserves Capacity Up
@@ -716,10 +716,10 @@ ZeroCostReduction:
 BlitzCommand:
   Name: Blitz Command
   Description: |-
-    Execute the |On Play| actions for all |Frontline| cards in |e:hand| while consuming |Loyalty|. 
+    |Command| all cards in the |e:hand|. 
     If the card targets an enemy, target a random enemy. 
   UpgradedDescription: |-
-    Execute the |On Play| actions for all |Frontline| cards in |e:hand, draw and discard| piles while consuming |Loyalty|. 
+    |Command| all cards in the |e:hand, draw and discard| piles. 
     If the card targets an enemy, target a random enemy. 
 
 MassTaskLevel:
@@ -749,13 +749,13 @@ EnhancedTraining:
 FrontlineCommander:
   Name: Frontline Commander
   Description: |-
-    |While in hand|: At start of {PlayerName}'s turn, {PassiveCommandCount} random |Frontline| card{PassiveCommandCount:plural one='' other='s'} in the hand execute their |On Play| actions without consuming their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: At start of {PlayerName}'s turn, |Command| {PassiveCommandCount} random card{PassiveCommandCount:plural one='' other='s'} in the hand. If it is a |Frontline|, does not consume their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
     Bonuses for each upgrade. 
     Damage: +2
-    Random Frontline count: +1 per {PassiveScaling} upgrades
+    Random card count: +1 per {PassiveScaling} upgrades
 
 OptionFrontlineCommander:
   Name: Summon Frontline Commander

@@ -27,8 +27,8 @@ namespace LBoLMod.Cards
             cardConfig.TargetType = TargetType.AllEnemies;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
             cardConfig.Cost = new ManaGroup() { White = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Command) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Command) };
             return cardConfig;
         }
     }
@@ -36,11 +36,11 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(BlitzCommandDef))]
     public sealed class BlitzCommand : Card
     {
-        public IEnumerable<Card> CardsInHand => base.Battle.HandZone.Where(c => c is ModFrontlineCard);
-        public IEnumerable<Card> CardsInPlay => base.Battle.HandZone.Concat(base.Battle.DrawZone).Concat(base.Battle.DiscardZone).Where(c => c is ModFrontlineCard);
+        public List<Card> CardsInHand => HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.ToList(), this);
+        public List<Card> CardsInPlay => HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.Concat(base.Battle.DrawZone).Concat(base.Battle.DiscardZone).ToList(), this);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            List<Card> cardsToCommand = IsUpgraded ? CardsInPlay.ToList() : CardsInHand.ToList();
+            List<Card> cardsToCommand = IsUpgraded ? CardsInPlay : CardsInHand;
             foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(cardsToCommand, base.Battle, consumeRemainingValue: true))
             {
                 yield return battleAction;

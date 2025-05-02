@@ -34,8 +34,8 @@ namespace LBoLMod.Cards
             cardConfig.Value1 = 15;
             cardConfig.Keywords = Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Retain;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(CommandersMarkSe) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Command), nameof(CommandersMarkSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Command), nameof(CommandersMarkSe) };
             return cardConfig;
         }
     }
@@ -62,13 +62,13 @@ namespace LBoLMod.Cards
                 yield break;
             if (CheckPassiveLoyaltyNotFulfiled())
                 yield break;
-            var frontlinesInHand = base.Battle.HandZone.Where(c => c != this && c is ModFrontlineCard).ToList();
-            if (!frontlinesInHand.Any())
+            var commandableCardsInHand = HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.ToList(), this);
+            if (!commandableCardsInHand.Any())
                 yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.3f);
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(frontlinesInHand.SampleManyOrAll(PassiveCommandCount, base.BattleRng).ToList(), base.Battle))
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(commandableCardsInHand.SampleManyOrAll(PassiveCommandCount, base.BattleRng).ToList(), base.Battle))
             {
                 yield return battleAction;
             }
