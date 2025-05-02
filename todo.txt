@@ -1135,6 +1135,8 @@ haniwa bodyguard lower minimum loyalty restock to 3, but make scaling better? - 
 update commanding frontlines into commanding any 0 cost card
   - need to be careful on cards that exile, cos obviously playing those multiple times is op, maybe those discard instead
   - ability and tool cards probs also get played as normal
+  - after some nice talks with seven, could look into reclusive sage/false moon caluse for a limitation
+  - and be sure to not allow unplayable stuffs
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
   - 1 token that has 4(5?) choices to manip assignment buffs
