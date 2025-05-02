@@ -43,7 +43,7 @@ namespace LBoLMod.Cards
         public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
-            List<Card> list = HaniwaFrontlineUtils.GetCommandableCards(base.Battle, this);
+            List<Card> list = HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.ToList(), this);
             return new SelectHandInteraction(0, Value1, list)
             {
                 Description = InteractionTitle
