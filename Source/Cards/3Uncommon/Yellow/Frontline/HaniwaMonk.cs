@@ -28,7 +28,7 @@ namespace LBoLMod.Cards
             cardConfig.Damage = 7;
             cardConfig.Block = 7;
             cardConfig.Value1 = 10;
-            cardConfig.Value2 = 2;
+            cardConfig.Value2 = 1;
             cardConfig.Keywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.UpgradedKeywords = Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };

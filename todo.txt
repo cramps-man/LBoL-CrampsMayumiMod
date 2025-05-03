@@ -1183,7 +1183,6 @@ clay to ashes instead of tempfp, give 1 draw - DONE
 guard summoning accidentally requires haniwa, even though you can gain stuff without them - FIXED
 remove retain from balissa bolt?
 bodyguard add clause saying it cant gain loyalty from buffs - DONE
-add author for frontline arts
 lower monk starting charge rate to 1
 guard scramble gain barrier but increase cost by 1?
   - or say block is not lost at end of next turn
@@ -1191,6 +1190,7 @@ assignment double trigger look into just returning the assignment trigger action
   - which will allow triggering assignment bonus twice, or anything that reacts on assignment trigger
 update summon cards to have all the common/uncommon frontlines in the related cards
 
+add author for frontline arts
 full frontal assault rework, assign all haniwa
   - then have effects based on each haniwa type, and effects for dmg, then all frontlines in hand onplay boom ggez
   - probs dont allow being found via quick assignment, nor duplicated or permanent
