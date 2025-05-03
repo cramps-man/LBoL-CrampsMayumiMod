@@ -36,21 +36,21 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ZeroCostMoveDef))]
     public sealed class ZeroCostMove : Card
     {
+        public List<Card> MoveableCards => base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty && !c.IsForbidden).ToList();
         public int ZeroCostCount 
         {
             get
             {
                 if (base.Battle == null)
                     return 0;
-                return base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).Count();
+                return MoveableCards.Count;
             }
         }
         public override Interaction Precondition()
         {
             if (IsUpgraded)
             {
-                List<Card> cards = base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).ToList();
-                return new SelectCardInteraction(0, 2, cards);
+                return new SelectCardInteraction(0, 2, MoveableCards);
             }
 
             return null;
@@ -68,7 +68,7 @@ namespace LBoLMod.Cards
             {
                 for (int i = 0; i < Value1; i++)
                 {
-                    Card card = base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty).SampleOrDefault(base.BattleRng);
+                    Card card = MoveableCards.SampleOrDefault(base.BattleRng);
                     if (card != null)
                         yield return new MoveCardAction(card, CardZone.Hand);
                 }

@@ -1172,7 +1172,7 @@ inspirational speech give something extra? temp fp/temp sp? - DONE
   - and probs move to oncolor, and lose echo
 build barricade card being affected by spirit - DONE
   - the actual effect doesnt though, perhaps it should? dont think it's possible?
-task transfer randomly chose glare, bruh
+task transfer randomly chose glare, bruh - FIXED
   - didnt check the card was unplayable like haniwa spy
 defence delegation add 1-2 assignment cards with exile to hand? - UNSURE
 counter attack buff text still says triggers
