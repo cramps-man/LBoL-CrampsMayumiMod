@@ -1167,6 +1167,8 @@ assignment hustle dont give colorless, and gets assignment bonus preupgraded
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
 look at any other places to put an order token
 reword all assignment cards to be better on space
+defence delegation add 1-2 assignment cards with exile to hand?
+  - could do something with the new token? also triggers when playing the token?
 
 inspirational speech give something extra? temp fp/temp sp? - DONE
   - and probs move to oncolor, and lose echo
@@ -1174,8 +1176,7 @@ build barricade card being affected by spirit - DONE
   - the actual effect doesnt though, perhaps it should? dont think it's possible?
 task transfer randomly chose glare, bruh - FIXED
   - didnt check the card was unplayable like haniwa spy
-defence delegation add 1-2 assignment cards with exile to hand? - UNSURE
-counter attack buff text still says triggers
+counter attack buff text still says triggers - FIXED
 quick assignment allow choosing countdown starting 0 or 3 - UNSURE, may be annoying with the extra choice
 clay to ashes instead of tempfp, give 1 draw
 guard summoning accidentally requires haniwa, even though you can gain stuff without them
