@@ -186,7 +186,7 @@ namespace LBoLMod.Utils
 
         public static List<Card> GetCommandableCards(List<Card> potentialCards, Card playedCard = null)
         {
-            return potentialCards.Where((Card c) => c != playedCard && c.Cost == ManaGroup.Empty && !c.HasKeyword(Keyword.Forbidden)).Where(c => c is ModFrontlineCard || c.CanBeDuplicated).ToList();
+            return potentialCards.Where((Card c) => c != playedCard && c.Cost == ManaGroup.Empty && !c.HasKeyword(Keyword.Forbidden) && c.CardType != CardType.Status).Where(c => c is ModFrontlineCard || c.CanBeDuplicated).ToList();
         }
     }
 }

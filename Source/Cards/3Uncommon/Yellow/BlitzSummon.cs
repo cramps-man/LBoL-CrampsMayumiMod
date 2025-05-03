@@ -32,8 +32,8 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 2 };
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Command), nameof(Sacrifice) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Command), nameof(Sacrifice) };
             cardConfig.RelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(HaniwaAttacker), nameof(HaniwaBodyguard), nameof(HaniwaUpgrader), nameof(HaniwaExploiter) };
             return cardConfig;

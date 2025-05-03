@@ -98,11 +98,11 @@ Command:
   Description: |-
     The X <sprite=ManaSprite" name="0"> cost cards selected have their effects played without being discarded. 
     If the card is a |Frontline|, consume its |Loyalty|. If it is an |Ability| or has |Exile|, it gains |Copy|. 
-    |Copied| cards can not be selected unless they are |Frontlines|. 
+    |Copied| cards can not be selected unless they are |Frontlines|. Status cards also can not be selected. 
   Brief: |-
     The X <sprite=ManaSprite" name="0"> cost cards selected have their effects played without being discarded. 
     If the card is a |Frontline|, consume its |Loyalty|. If it is an |Ability| or has |Exile|, it gains |Copy|. 
-    |Copied| cards can not be selected unless they are |Frontlines|. 
+    |Copied| cards can not be selected unless they are |Frontlines|. Status cards also can not be selected. 
 
 Permanent:
   Name: Permanent Assignment

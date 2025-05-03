@@ -1132,50 +1132,60 @@ haniwa monk add a gain block component? - DONE
 haniwa support update passive condition to playing 0 cost card? - DONE
   - transform the yellow mana to rainbow every 5 upgrades, add a yellow every 10
 haniwa bodyguard lower minimum loyalty restock to 3, but make scaling better? - DONE
-update commanding frontlines into commanding any 0 cost card
+update commanding frontlines into commanding any 0 cost card - DONE
   - need to be careful on cards that exile, cos obviously playing those multiple times is op, maybe those discard instead
   - ability and tool cards probs also get played as normal
   - after some nice talks with seven, could look into reclusive sage/false moon caluse for a limitation
   - and be sure to not allow unplayable stuffs
-  - add a command chain limit via a special buff stack
-ashes to clay is probably op with new change? though the copy limitation stops it from being infinite, only allows 3 total plays
+  - add a command chain limit via a special buff stack - maybe at a later version?
+ashes to clay is probably op with new change? - probably fine?
+  - though the copy limitation stops it from being infinite, only allows 3 total plays
+  - maybe it's okay honestly
 blitz command might need a change since the upgrade can target all piles
   - upgrade no longer allows all piles, does something else perhaps, lower cost?
+  - only increase cost and keep upgrade the same for now
+dont allow commanding statuses, probs the chances of doing something bad are not worth the trouble - DONE
+try using followup code for commanded cards and see what happens
+  - suspect it may break custom variables on frontlines by not copying them over, unless its still the same object under the hood
 
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
   - 1 token that has 4(5?) choices to manip assignment buffs
-  - quick order, lower by 2, give 3 tasklevel
+  - haste order, lower by 2, give 3 tasklevel
   - delay order, increase by 4, give 5 tasklevel
-  - renew order, reset countdown and tasklevel to starting values
-  - recall order, remove without triggering, but give back haniwa
-  - something that consume 1 assignment bonus and draw 1 - maybe
+  - renew order, reset countdown and tasklevel to starting values, give extra benefit like block?
+  - recall order, remove without triggering, but give back haniwa and draw 1?
+  - something that consume 1 assignment bonus and draw 1 - maybe instead it does instant trigger for 1 ass bonus?
 quick task comp and delayed task comp add a assignment order token if they select nothing
 assignment hustle dont give colorless, and gets assignment bonus preupgraded
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
-permanent assignment not showing the infinity symbol anymore, guessing a vanilla change broke it somehow
-  - maybe better to look for a more permanent solution
-  - or maybe just remove this card lel
+reword all assignment cards to be better on space
+
 inspirational speech give something extra? temp fp/temp sp?
   - and probs move to oncolor
-look into exile naturally auto executing onplay action for frontline - perhaps not needed?
-  - if not played directly
 build barricade card being affected by spirit
   - the actual effect doesnt though, perhaps it should?
-full frontal assault rework, assign all haniwa
-  - then have effects based on each haniwa type, and effects for dmg, then all frontlines in hand onplay boom ggez
-  - probs dont allow being found via quick assignment, nor duplicated or permanent
-  - maybe just lower dmg scaling and increase base for now?
 task transfer randomly chose glare, bruh
   - didnt check the card was unplayable like haniwa spy
-defence delegation add 1-2 assignment cards with exile to hand?
+defence delegation add 1-2 assignment cards with exile to hand? - UNSURE
 counter attack buff text still says triggers
-ashes to clay rework to an ability? there's just not much room for an active unless i add extra exile mechanics with frontline
-  - frontlines in exile also gain loyalty via buffs, when loyalty reaches 0, they move to discard?
-  - might be too good tbh lel
-quick assignment allow choosing countdown starting 0 or 3
+quick assignment allow choosing countdown starting 0 or 3 - UNSURE, may be annoying with the extra choice
 clay to ashes instead of tempfp, give 1 draw
 guard summoning accidentally requires haniwa, even though you can gain stuff without them
 remove retain from balissa bolt?
 bodyguard add clause saying it cant gain loyalty from buffs - DONE
 add author for frontline arts
+lower monk starting charge rate to 1
+guard scramble gain barrier but increase cost by 1?
+  - or say block is not lost at end of next turn
+assignment double trigger look into just returning the assignment trigger action again, instead of doing what im doing now lel
+
+full frontal assault rework, assign all haniwa
+  - then have effects based on each haniwa type, and effects for dmg, then all frontlines in hand onplay boom ggez
+  - probs dont allow being found via quick assignment, nor duplicated or permanent
+  - maybe just lower dmg scaling and increase base for now?
+look into exile naturally auto executing onplay action for frontline - perhaps not needed?
+  - if not played directly
+permanent assignment not showing the infinity symbol anymore, guessing a vanilla change broke it somehow
+  - maybe better to look for a more permanent solution
+  - or maybe just remove this card lel

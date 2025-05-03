@@ -643,11 +643,11 @@ BlitzSummon:
   Description: |-
     Choose{Value1:plural one='' other=' up to'} {Value1} |Frontline| card{Value1:plural one='' other='s'} to add to the hand. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
-    Execute the new card's |On Play| action{Value1:plural one=' and consume its' other='s and consume their'} |Loyalty|. 
+    |Command| the selected card{Value1:plural one='' other='s'}. 
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
   InteractionTitle: |-
-    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to execute |On Play| action and add to hand
+    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} to |Command| and add to hand
 
 ZeroCostMove:
   Name: Task Transfer
@@ -662,7 +662,7 @@ LoyaltyCommand:
   Name: Loyalty Command
   Description: |-
     Gain {Value1} |Loyalty Protection|. 
-    |Command| up to {Value2} card{Value2:plural one='' other='s'}. 
+    |Command| up to {Value2} card{Value2:plural one='' other='s'} in the hand. 
   InteractionTitle: |-
     {SelfName} - Choose up to {Value2} to |Command|
 
