@@ -330,6 +330,7 @@
     <ItemGroup>
       <None Remove="Resources\Cards\Frontlines\HaniwaAttacker.png" />
       <None Remove="Resources\Cards\Frontlines\HaniwaBodyguard.png" />
+      <None Remove="Resources\Cards\Frontlines\HaniwaExploiter.png" />
       <None Remove="Resources\Cards\Frontlines\HaniwaSharpshooter.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignArcherPrepDebuff.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignArcherPrepFrostArrow.png" />
