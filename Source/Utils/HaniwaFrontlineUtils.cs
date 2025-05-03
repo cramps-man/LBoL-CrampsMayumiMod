@@ -184,14 +184,22 @@ namespace LBoLMod.Utils
             }
         }
 
+        public static readonly List<Type> UncommandableCards = new List<Type>()
+        {
+            typeof(HaniwaBlitz),
+            typeof(AshesToClay),
+            typeof(LoyaltyCommand),
+            typeof(BlitzCommand)
+        };
         public static List<Card> GetCommandableCards(List<Card> potentialCards, Card playedCard = null)
         {
-            return potentialCards.Where((Card c) => c != playedCard 
-                && c.Cost == ManaGroup.Empty 
-                && !c.HasKeyword(Keyword.Forbidden) 
+            return potentialCards.Where((Card c) => c != playedCard
+                && c.Cost == ManaGroup.Empty
+                && !c.HasKeyword(Keyword.Forbidden)
                 && c.CardType != CardType.Status
                 && c.CanUse
                 && (c is ModFrontlineCard || c.CanBeDuplicated)
+                && !UncommandableCards.Contains(c.GetType())
             ).ToList();
         }
     }

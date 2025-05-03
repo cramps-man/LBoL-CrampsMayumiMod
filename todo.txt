@@ -1138,7 +1138,7 @@ update commanding frontlines into commanding any 0 cost card - DONE
   - after some nice talks with seven, could look into reclusive sage/false moon caluse for a limitation
   - and be sure to not allow unplayable stuffs
   - add a command chain limit via a special buff stack - maybe at a later version?
-ashes to clay is probably op with new change? - probably fine?
+ashes to clay is probably op with new change? - PROBS FINE
   - though the copy limitation stops it from being infinite, only allows 3 total plays
   - maybe it's okay honestly
 blitz command might need a change since the upgrade can target all piles
@@ -1146,8 +1146,11 @@ blitz command might need a change since the upgrade can target all piles
   - only increase cost and keep upgrade the same for now
 dont allow commanding statuses, probs the chances of doing something bad are not worth the trouble - DONE
 can also not allow cards that cant be played via the flag - DONE
-try using followup code for commanded cards and see what happens
+try using followup code for commanded cards and see what happens - NOT GONNA WORK
   - suspect it may break custom variables on frontlines by not copying them over, unless its still the same object under the hood
+  - will probs need some custom code if i manually generate a copy of the card to then do playCardAction on, and probs break stuff
+dont allow command cards to command other command cards - DONE
+  - can just hardcode a list of cards to now allow
 
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
