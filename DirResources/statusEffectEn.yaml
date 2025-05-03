@@ -139,7 +139,7 @@ AssignFencerBuildBarricade:
   Name: Assignment - Build Barricade
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, gain {TotalBarrier} |Barrier|. 
-    Gain {CardShield} |Barrier| per {CardValue1} |Task Level|. 
+    Gain {CardValue2} |Barrier| per {CardValue1} |Task Level|. 
     {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
   Brief: |-
     After X cards are played, gain |Barrier|. 

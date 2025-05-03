@@ -113,7 +113,7 @@ FencerBuildBarricade:
   Name: Assignment - Build Barricade
   Description: |-
     |Assign {FencerRequired} Fencer|.
-    After {StartingCardCounter} cards are played, gain {Shield} |Barrier| per {Value1} |Task Level|.
+    After {StartingCardCounter} cards are played, gain {Value2} |Barrier| per {Value1} |Task Level|.
     Start with {StartingTaskLevel} |Task Level|. 
 
 DefenceCreateReserves:

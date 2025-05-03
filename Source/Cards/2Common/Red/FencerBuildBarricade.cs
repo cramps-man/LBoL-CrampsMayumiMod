@@ -21,8 +21,9 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Type = CardType.Defense;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Shield = 1;
+            cardConfig.Shield = 0;
             cardConfig.Value1 = 2;
+            cardConfig.Value2 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             return cardConfig;

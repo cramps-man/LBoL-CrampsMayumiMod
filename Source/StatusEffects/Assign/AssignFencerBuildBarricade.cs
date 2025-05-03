@@ -1,4 +1,5 @@
-﻿using LBoL.Core.Battle;
+﻿using LBoL.Core;
+using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -20,7 +21,7 @@ namespace LBoLMod.StatusEffects.Assign
         public int TotalBarrier => Level / CardValue1;
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new CastBlockShieldAction(base.Battle.Player, 0, TotalBarrier);
+            yield return new CastBlockShieldAction(base.Battle.Player, new ShieldInfo(TotalBarrier));
         }
     }
 }
