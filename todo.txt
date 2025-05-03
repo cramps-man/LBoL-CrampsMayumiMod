@@ -1178,7 +1178,8 @@ task transfer randomly chose glare, bruh - FIXED
   - didnt check the card was unplayable like haniwa spy
 counter attack buff text still says triggers - FIXED
 quick assignment allow choosing countdown starting 0 or 3 - UNSURE, may be annoying with the extra choice
-clay to ashes instead of tempfp, give 1 draw
+clay to ashes instead of tempfp, give 1 draw - DONE
+  - probs need to increase to 3 cost?
 guard summoning accidentally requires haniwa, even though you can gain stuff without them
 remove retain from balissa bolt?
 bodyguard add clause saying it cant gain loyalty from buffs - DONE

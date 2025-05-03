@@ -1,5 +1,6 @@
 ﻿using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
@@ -35,8 +36,8 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.Card is ModFrontlineCard)
             {
                 base.NotifyActivating();
-                yield return BuffAction<TempFirepower>(Level);
-                yield return BuffAction<LoyaltyProtectionSe>(Level * 2);
+                yield return new DrawCardAction();
+                yield return BuffAction<LoyaltyProtectionSe>(Level);
             }
         }
 
@@ -46,8 +47,8 @@ namespace LBoLMod.StatusEffects.Abilities
                 yield break;
 
             base.NotifyActivating();
-            yield return BuffAction<TempFirepower>(Level);
-            yield return BuffAction<LoyaltyProtectionSe>(Level * 2);
+            yield return new DrawCardAction();
+            yield return BuffAction<LoyaltyProtectionSe>(Level);
         }
     }
 }
