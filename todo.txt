@@ -1141,7 +1141,7 @@ update commanding frontlines into commanding any 0 cost card - DONE
 ashes to clay is probably op with new change? - PROBS FINE
   - though the copy limitation stops it from being infinite, only allows 3 total plays
   - maybe it's okay honestly
-blitz command might need a change since the upgrade can target all piles
+blitz command might need a change since the upgrade can target all piles - DONE
   - upgrade no longer allows all piles, does something else perhaps, lower cost?
   - only increase cost and keep upgrade the same for now
 dont allow commanding statuses, probs the chances of doing something bad are not worth the trouble - DONE
