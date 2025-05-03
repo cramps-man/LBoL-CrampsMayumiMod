@@ -1155,14 +1155,17 @@ dont allow command cards to command other command cards - DONE
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
   - 1 token that has 4(5?) choices to manip assignment buffs
-  - haste order, lower by 2, give 3 tasklevel
-  - delay order, increase by 4, give 5 tasklevel
-  - renew order, reset countdown and tasklevel to starting values, give extra benefit like block?
-  - recall order, remove without triggering, but give back haniwa and draw 1?
+  - haste order, lower by 2, give 3 tasklevel, upgrade insta triggers and converts countdown to task level
+  - delay order, increase by 4, give 5 tasklevel, upgrade increase by 6? and give 10 task level
+  - renew order, reset countdown and tasklevel to starting values, give extra benefit like block? upgrade gives more block?
+  - recall order, remove without triggering, but give back haniwa and draw 1? upgrade also give something
   - something that consume 1 assignment bonus and draw 1 - maybe instead it does instant trigger for 1 ass bonus?
 quick task comp and delayed task comp add a assignment order token if they select nothing
+  - or replace both with a new card that adds the tokens to hand
+  - then can come up with another card as replacement
 assignment hustle dont give colorless, and gets assignment bonus preupgraded
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
+look at any other places to put an order token
 reword all assignment cards to be better on space
 
 inspirational speech give something extra? temp fp/temp sp?
@@ -1183,6 +1186,7 @@ lower monk starting charge rate to 1
 guard scramble gain barrier but increase cost by 1?
   - or say block is not lost at end of next turn
 assignment double trigger look into just returning the assignment trigger action again, instead of doing what im doing now lel
+  - which will allow triggering assignment bonus twice, or anything that reacts on assignment trigger
 
 full frontal assault rework, assign all haniwa
   - then have effects based on each haniwa type, and effects for dmg, then all frontlines in hand onplay boom ggez
