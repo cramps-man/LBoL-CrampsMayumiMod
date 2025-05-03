@@ -1145,6 +1145,7 @@ blitz command might need a change since the upgrade can target all piles
   - upgrade no longer allows all piles, does something else perhaps, lower cost?
   - only increase cost and keep upgrade the same for now
 dont allow commanding statuses, probs the chances of doing something bad are not worth the trouble - DONE
+can also not allow cards that cant be played via the flag - DONE
 try using followup code for commanded cards and see what happens
   - suspect it may break custom variables on frontlines by not copying them over, unless its still the same object under the hood
 
