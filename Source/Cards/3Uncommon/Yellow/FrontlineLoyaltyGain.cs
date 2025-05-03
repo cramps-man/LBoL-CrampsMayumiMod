@@ -3,6 +3,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
+using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -23,14 +24,14 @@ namespace LBoLMod.Cards
             var cardConfig = base.MakeConfig();
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
-            cardConfig.Colors = new List<ManaColor>() { ManaColor.Green };
-            cardConfig.Cost = new ManaGroup() { Green = 1 };
-            cardConfig.Value1 = 6;
-            cardConfig.UpgradedValue1 = 10;
-            cardConfig.Keywords = Keyword.Echo;
-            cardConfig.UpgradedKeywords = Keyword.Echo;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline) };
+            cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
+            cardConfig.Cost = new ManaGroup() { Any = 1, White = 1 };
+            cardConfig.Value1 = 4;
+            cardConfig.UpgradedValue1 = 8;
+            cardConfig.Value2 = 2;
+            cardConfig.UpgradedValue2 = 3;
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(TempFirepower), nameof(TempSpirit) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(TempFirepower), nameof(TempSpirit) };
             return cardConfig;
         }
     }
@@ -44,7 +45,8 @@ namespace LBoLMod.Cards
             {
                 frontline.RemainingValue += Value1;
             };
-            yield break;
+            yield return BuffAction<TempFirepower>(Value2);
+            yield return BuffAction<TempSpirit>(Value2);
         }
     }
 }

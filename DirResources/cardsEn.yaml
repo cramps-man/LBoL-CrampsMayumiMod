@@ -684,6 +684,12 @@ ShortOrLongTerm:
   InteractionTitle: |-
     Immediately trigger up to {Value1} buff{Value1:plural one='' other='s'}
 
+FrontlineLoyaltyGain:
+  Name: Inspirational Speech
+  Description: |-
+    All |Frontline| cards in the hand, draw and discard piles gain {Value1} |Loyalty|. 
+    Gain {Value2} |Temporary Firepower| and {Value2} |Temporary Spirit|. 
+
 #RARES
 FullFrontalAssault:
   Name: Full Frontal Assault
@@ -921,11 +927,6 @@ AssignCostTaskLevel:
   Description: |-
     Until the end of this combat, |Assignment| cards in the hand temporarily gain {Mana} cost. |Assignment| buffs gain {Value1} extra |Task Level| per card played.
     Regain any mana spent on |Assignment| cards at start of next turn. 
-
-FrontlineLoyaltyGain:
-  Name: Inspirational Speech
-  Description: |-
-    All |Frontline| cards in the hand, draw and discard piles gain {Value1} |Loyalty|. 
 
 AssignSeparation:
   Name: Task Separation

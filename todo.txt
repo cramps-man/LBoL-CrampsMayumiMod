@@ -1168,8 +1168,8 @@ assignment hustle dont give colorless, and gets assignment bonus preupgraded
 look at any other places to put an order token
 reword all assignment cards to be better on space
 
-inspirational speech give something extra? temp fp/temp sp?
-  - and probs move to oncolor
+inspirational speech give something extra? temp fp/temp sp? - DONE
+  - and probs move to oncolor, and lose echo
 build barricade card being affected by spirit
   - the actual effect doesnt though, perhaps it should?
 task transfer randomly chose glare, bruh
