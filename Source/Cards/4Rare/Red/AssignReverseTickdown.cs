@@ -3,6 +3,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
+using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
@@ -25,12 +26,11 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
-            cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
             cardConfig.Block = 10;
             cardConfig.UpgradedBlock = 15;
             cardConfig.Value1 = 1;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(TurnStartDontLoseBlock) };
             return cardConfig;
         }
     }
@@ -42,6 +42,8 @@ namespace LBoLMod.Cards
         {
             yield return DefenseAction();
             yield return BuffAction<AssignReverseTickdownSe>(Value1);
+            if (IsUpgraded)
+                yield return BuffAction<TurnStartDontLoseBlock>(1);
         }
     }
 }
