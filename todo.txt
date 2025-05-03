@@ -1186,9 +1186,12 @@ bodyguard add clause saying it cant gain loyalty from buffs - DONE
 lower monk starting charge rate to 1 - DONE
 guard scramble gain barrier but increase cost by 1? - DONE
   - or say block is not lost at end of next turn
-assignment double trigger look into just returning the assignment trigger action again, instead of doing what im doing now lel
+assignment double trigger look into just returning the assignment trigger action again, instead of doing what im doing now lel - LEAVE FOR NOW
   - which will allow triggering assignment bonus twice, or anything that reacts on assignment trigger
-update summon cards to have all the common/uncommon frontlines in the related cards
+  - of course it doesnt work, assign triggering causing an assign triggering will react to itself and loop
+  - only issue is that cavalry scout header still says 1 draw, but the seoncd trigger doesnt draw
+  - maybe just leave it for now
+update summon cards to have all the common/uncommon frontlines in the related cards - DONE
 
 add author for frontline arts
 full frontal assault rework, assign all haniwa
