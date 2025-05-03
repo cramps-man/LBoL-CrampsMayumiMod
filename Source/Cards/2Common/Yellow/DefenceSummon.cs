@@ -8,7 +8,6 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
-using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
 using System.Collections.Generic;
 
@@ -43,8 +42,6 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(DefenceSummonDef))]
     public sealed class DefenceSummon : Card
     {
-        public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
-        public override string CantUseMessage => LocSe.RequiresHaniwa();
         public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
