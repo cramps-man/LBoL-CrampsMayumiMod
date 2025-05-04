@@ -1156,10 +1156,10 @@ update commanders mark description to say commanded cards
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
   - 1 token that has 4(5?) choices to manip assignment buffs
-  - haste order, lower by 2, give 3 tasklevel, upgrade insta triggers and converts countdown to task level
-  - delay order, increase by 4, give 5 tasklevel, upgrade increase by 6? and give 10 task level
-  - renew order, reset countdown and tasklevel to starting values, give extra benefit like block? upgrade gives more block?
-  - recall order, remove without triggering, but give back haniwa and draw 1? upgrade also give something
+  - haste order, lower by 2, give 3 tasklevel
+  - delay order, increase by 4, give 5 tasklevel
+  - guard order, reset countdown and tasklevel to starting values, give extra benefit like block?
+  - recall order, remove without triggering, but give back haniwa and draw 1?
   - something that consume 1 assignment bonus and draw 1 - maybe instead it does instant trigger for 1 ass bonus?
   - something that applies 1 assignment mark? override targetting to the enemy with mark
 quick task comp and delayed task comp add a assignment order token if they select nothing
@@ -1173,6 +1173,7 @@ defence delegation add 1-2 assignment cards with exile to hand?
   - could do something with the new token? also triggers when playing the token?
 assignment counter attack status effect text reads like shit on the assign option card
   - remove some line breaks to compact it
+  - probs check the others too
 
 inspirational speech give something extra? temp fp/temp sp? - DONE
   - and probs move to oncolor, and lose echo

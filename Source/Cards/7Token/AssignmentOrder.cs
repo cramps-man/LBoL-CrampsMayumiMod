@@ -35,6 +35,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentMarkSe) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentMarkSe) };
+            cardConfig.RelativeCards = new List<string>() { nameof(AssignmentOrderHaste), nameof(AssignmentOrderDelay), nameof(AssignmentOrderGuard), nameof(AssignmentOrderRecall), nameof(AssignmentOrderMark) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(AssignmentOrderHaste), nameof(AssignmentOrderDelay), nameof(AssignmentOrderGuard), nameof(AssignmentOrderRecall), nameof(AssignmentOrderMark) };
             return cardConfig;
         }
     }
@@ -47,7 +49,12 @@ namespace LBoLMod.Cards
         {
             var selectList = new List<Card>();
             if (base.Battle.Player.StatusEffects.Where(se => se is ModAssignStatusEffect).Any())
+            {
                 selectList.Add(Library.CreateCard<AssignmentOrderHaste>());
+                selectList.Add(Library.CreateCard<AssignmentOrderDelay>());
+                selectList.Add(Library.CreateCard<AssignmentOrderGuard>());
+                selectList.Add(Library.CreateCard<AssignmentOrderRecall>());
+            }
             selectList.Add(Library.CreateCard<AssignmentOrderMark>());
             foreach (var card in selectList)
                 card.SetBattle(Battle);

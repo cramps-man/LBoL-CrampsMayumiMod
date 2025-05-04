@@ -151,9 +151,16 @@ namespace LBoLMod.StatusEffects
             }
             else if (shouldRemove)
             {
-                yield return new GainHaniwaAction(CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned, true);
-                yield return new RemoveStatusEffectAction(this);
+                foreach (var item in RemoveBuff())
+                {
+                    yield return item;
+                }
             }
+        }
+        public IEnumerable<BattleAction> RemoveBuff()
+        {
+            yield return new GainHaniwaAction(CardFencerAssigned, CardArcherAssigned, CardCavalryAssigned, true);
+            yield return new RemoveStatusEffectAction(this);
         }
         public abstract IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart);
         public virtual IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)

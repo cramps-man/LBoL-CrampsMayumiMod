@@ -1020,9 +1020,32 @@ AssignmentOrder:
 AssignmentOrderHaste:
   Name: Haste Order
   Description: |-
-    Choose up to {Value1} |Assignment| buff and lower its countdown by {Value2} and give it {TaskLevelGain} |Task Level|. 
+    Choose up to {Value1} |Assignment| buff and |e:lower| its countdown by {Value2} and give it {TaskLevelGain} |Task Level|. 
   InteractionTitle: |-
-    {SelfName} - Choose up to {Value1}, lower countdown by {Value2}, give {TaskLevelGain} |Task Level|
+    {SelfName} - Choose up to {Value1}, |e:lower| countdown by {Value2}, give {TaskLevelGain} |Task Level|
+
+AssignmentOrderDelay:
+  Name: Delay Order
+  Description: |-
+    Choose up to {Value1} |Assignment| buff and |e:increase| its countdown by {Value2} and give it {TaskLevelGain} |Task Level|. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value1}, |e:increase| countdown by {Value2}, give {TaskLevelGain} |Task Level|
+
+AssignmentOrderGuard:
+  Name: Guard Order
+  Description: |-
+    Choose up to {Value1} |Assignment| buff and |e:increase| its countdown by {Value2} and |e:half| its |Task Level|. 
+    Gain {Block} |Block|. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value1}, |e:increase| countdown by {Value2}, |e:half| its |Task Level|, gain {Block} |Block|
+
+AssignmentOrderRecall:
+  Name: Recall Order
+  Description: |-
+    Choose up to {Value1} |Assignment| buff and |e:remove| it without triggering and gain back assigned |Haniwa|. 
+    Draw {Value2} card{Value2:plural one='' other='s'}. 
+  InteractionTitle: |-
+    {SelfName} - Choose up to {Value1}, |e:remove| it, draw {Value2} card{Value2:plural one='' other='s'}
 
 AssignmentOrderMark:
   Name: Mark Order
