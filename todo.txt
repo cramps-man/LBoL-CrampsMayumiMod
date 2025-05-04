@@ -1151,6 +1151,7 @@ try using followup code for commanded cards and see what happens - NOT GONNA WOR
   - will probs need some custom code if i manually generate a copy of the card to then do playCardAction on, and probs break stuff
 dont allow command cards to command other command cards - DONE
   - can just hardcode a list of cards to now allow
+update commanders mark description to say commanded cards
 
 some other assignment cards that require selecting assignments, also do something else? like assigning or something
   - or making retain tokens that do the quick assign and extra time stuff
@@ -1160,6 +1161,7 @@ some other assignment cards that require selecting assignments, also do somethin
   - renew order, reset countdown and tasklevel to starting values, give extra benefit like block? upgrade gives more block?
   - recall order, remove without triggering, but give back haniwa and draw 1? upgrade also give something
   - something that consume 1 assignment bonus and draw 1 - maybe instead it does instant trigger for 1 ass bonus?
+  - something that applies 1 assignment mark? override targetting to the enemy with mark
 quick task comp and delayed task comp add a assignment order token if they select nothing
   - or replace both with a new card that adds the tokens to hand
   - then can come up with another card as replacement
@@ -1169,6 +1171,8 @@ look at any other places to put an order token
 reword all assignment cards to be better on space
 defence delegation add 1-2 assignment cards with exile to hand?
   - could do something with the new token? also triggers when playing the token?
+assignment counter attack status effect text reads like shit on the assign option card
+  - remove some line breaks to compact it
 
 inspirational speech give something extra? temp fp/temp sp? - DONE
   - and probs move to oncolor, and lose echo

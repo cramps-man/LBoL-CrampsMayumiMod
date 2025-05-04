@@ -43,7 +43,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(ShortOrLongTermDef))]
     public sealed class ShortOrLongTerm : Card
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<ShortOrLongTerm> list = Library.CreateCards<ShortOrLongTerm>(2, IsUpgraded).ToList();

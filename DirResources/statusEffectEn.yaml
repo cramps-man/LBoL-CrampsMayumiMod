@@ -396,6 +396,17 @@ ArcherWorshippingSe:
   Brief: |-
     For every number of |Archer| gained, apply debuffs to random enemies. 
 
+AssignmentMarkSe:
+  Name: Assignment Mark
+  Description: |-
+    Targeting of |Assignment| buff triggers will instead target this enemy. 
+    If there is more than 1 mark active, randomly choose between them. 
+    Removed after {Duration} turn{Duration:plural one='' other='s'}. 
+  Brief: |-
+    Targeting of |Assignment| buff triggers will instead target this enemy. 
+    If there is more than 1 mark active, randomly choose between them. 
+    Removed at end of turn. 
+
 LocSe:
   NeedFencerText: |-
     Need more Fencer. 
