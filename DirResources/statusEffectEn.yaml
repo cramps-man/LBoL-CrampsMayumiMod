@@ -180,9 +180,9 @@ AssignPlayGainBlockSe:
 ClayToAshesSe:
   Name: Clay To Ashes
   Description: |-
-    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, draw a card and gain {Level} |Loyalty Protection|. 
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain {Level} |Barrier| and {Level} |Loyalty Protection|. 
   Brief: |-
-    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, draw a card and gain |Loyalty Protection|. 
+    Whenever {PlayerName} |Sacrifices| or a |Frontline| card is |Exiled|, gain |Barrier| and |Loyalty Protection|. 
 
 AssignChargeAttack:
   Name: Assignment - Ballista Bolt

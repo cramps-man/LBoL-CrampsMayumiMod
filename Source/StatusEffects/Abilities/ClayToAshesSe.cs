@@ -36,7 +36,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.Card is ModFrontlineCard)
             {
                 base.NotifyActivating();
-                yield return new DrawCardAction();
+                yield return new CastBlockShieldAction(Owner, new ShieldInfo(Level));
                 yield return BuffAction<LoyaltyProtectionSe>(Level);
             }
         }
@@ -47,7 +47,7 @@ namespace LBoLMod.StatusEffects.Abilities
                 yield break;
 
             base.NotifyActivating();
-            yield return new DrawCardAction();
+            yield return new CastBlockShieldAction(Owner, new ShieldInfo(Level));
             yield return BuffAction<LoyaltyProtectionSe>(Level);
         }
     }

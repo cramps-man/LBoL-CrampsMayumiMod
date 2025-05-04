@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Cards;
-using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
@@ -25,13 +24,13 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Ability;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.White };
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Cost = new ManaGroup() { White = 1, Any = 1 };
             cardConfig.RelativeKeyword = Keyword.Exile;
             cardConfig.UpgradedRelativeKeyword = Keyword.Exile;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(TempFirepower), nameof(LoyaltyProtectionSe) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(TempFirepower), nameof(LoyaltyProtectionSe) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(LoyaltyProtectionSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Sacrifice), nameof(LoyaltyProtectionSe) };
             return cardConfig;
         }
     }
