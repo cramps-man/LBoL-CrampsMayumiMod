@@ -39,7 +39,8 @@ namespace LBoLMod.StatusEffects.Assign
         public override IEnumerable<BattleAction> BeforeAssignmentDone(bool onTurnStart)
         {
             RandomCommandedCards.Clear();
-            EnemyUnit target = base.Battle.LowestHpEnemy;
+            var markedEnemy = MarkedEnemies.MinByOrDefault(e => e.Hp);
+            EnemyUnit target = markedEnemy != null ? markedEnemy : base.Battle.LowestHpEnemy;
             yield return new DamageAction(Owner, target, TotalDamage);
             Target = target;
             yield return PerformAction.Wait(0.3f);

@@ -1,4 +1,5 @@
-﻿using LBoL.Core;
+﻿using LBoL.Base.Extensions;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
@@ -43,7 +44,8 @@ namespace LBoLMod.StatusEffects.Assign
         {
             for (var i = 0; i < TotalTimes; i++)
             {
-                var target = base.Battle.RandomAliveEnemy;
+                var markedEnemy = MarkedEnemies.SampleOrDefault(base.Battle.GameRun.BattleRng);
+                var target = markedEnemy != null ? markedEnemy : base.Battle.RandomAliveEnemy;
                 yield return new DamageAction(Owner, target, AssignSourceCard.Damage);
                 yield return DebuffAction<Cold>(target);
             }

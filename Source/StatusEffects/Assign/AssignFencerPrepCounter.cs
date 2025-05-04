@@ -1,4 +1,5 @@
-﻿using LBoL.Core;
+﻿using LBoL.Base.Extensions;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Intentions;
@@ -23,7 +24,8 @@ namespace LBoLMod.StatusEffects.Assign
     public sealed class AssignFencerPrepCounter : ModAssignStatusEffect
     {
         private List<Unit> enemiesThatAttackedPlayer = new List<Unit>();
-        public int EnemiesThatAttackedPlayerCount => enemiesThatAttackedPlayer.Where(e => e.IsAlive).Count();
+        public IEnumerable<Unit> EnemiesThatAttackedPlayerAlive => MarkedEnemies.Any() ? enemiesThatAttackedPlayer.Where(e => e.IsAlive && MarkedEnemies.Contains(e)) : enemiesThatAttackedPlayer.Where(e => e.IsAlive);
+        public int EnemiesThatAttackedPlayerCount => EnemiesThatAttackedPlayerAlive.Count();
         public DamageInfo TotalDamage => CardDamage.IncreaseBy(Level / Math.Max(EnemiesThatAttackedPlayerCount, 1));
         public int TotalBlock => CardBlock * base.Battle.AllAliveEnemies.Sum(e => e.Intentions.Where(i => i is AttackIntention).Cast<AttackIntention>().Sum(ai => ai.Times == null ? 1 : ai.Times.GetValueOrDefault()));
 
@@ -48,7 +50,7 @@ namespace LBoLMod.StatusEffects.Assign
 
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            List<Unit> toAttack = EnemiesThatAttackedPlayerCount > 0 ? enemiesThatAttackedPlayer.Where(e => e.IsAlive).ToList() : new List<Unit>() { base.Battle.RandomAliveEnemy };
+            List<Unit> toAttack = EnemiesThatAttackedPlayerCount > 0 ? EnemiesThatAttackedPlayerAlive.ToList() : new List<Unit>() { MarkedEnemies.Any() ? MarkedEnemies.SampleOrDefault(base.Battle.GameRun.BattleRng) : base.Battle.RandomAliveEnemy };
             yield return new DamageAction(Owner, toAttack, TotalDamage);
         }
     }

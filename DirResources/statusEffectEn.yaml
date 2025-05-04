@@ -239,11 +239,9 @@ AssignFencerPrepCounter:
   Name: Assignment - Counter Attack
   Description: |-
     After {Count} card{Count:plural one=' is' other='s are'} played, deal {TotalDamage} damage to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
-    Whenever {PlayerName} is attacked, increase |Task Level| by {CardValue1} for each hit. 
-    At end of {PlayerName}'s turn, gain {CardBlock} |Block| multiplied by total enemy hits ({TotalBlock}). 
-    Deal damage equal to {CardDamage} + (|Task Level| / number of targets). 
-    {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. 
-    Number of enemies that have attacked, {EnemiesThatAttackedPlayerCount}
+    Whenever {PlayerName} is attacked, increase |Task Level| by {CardValue1} for each hit. At end of {PlayerName}'s turn, gain {CardBlock} |Block| multiplied by total enemy hits ({TotalBlock}). Deal damage equal to {CardDamage} + (|Task Level| / number of targets). 
+    {CardFencerAssigned} |Fencer| assigned. Task Level is {Level}. Number of enemies that have attacked, {EnemiesThatAttackedPlayerCount}
+    |e:Note|: If an enemy has |Assignment Mark|, the values for damage and number of enemies is only calculated for enemies with |Assignment Mark|. 
   Brief: |-
     After X cards are played, deal damage to all enemies that attacked. 
 
@@ -399,12 +397,10 @@ ArcherWorshippingSe:
 AssignmentMarkSe:
   Name: Assignment Mark
   Description: |-
-    Targeting of |Assignment| buff triggers will instead target this enemy. 
-    If there is more than 1 mark active, randomly choose between them. 
+    Targeting of |Assignment| buff triggers will be restricted to enemies with {SelfName}. Does not affect |Assignment - Debilitate Foe|. 
     Removed after {Duration} turn{Duration:plural one='' other='s'}. 
   Brief: |-
-    Targeting of |Assignment| buff triggers will instead target this enemy. 
-    If there is more than 1 mark active, randomly choose between them. 
+    Targeting of |Assignment| buff triggers will be restricted to enemies with {SelfName}. Does not affect |Assignment - Debilitate Foe|. 
     Removed at end of turn. 
 
 LocSe:

@@ -1153,7 +1153,7 @@ dont allow command cards to command other command cards - DONE
   - can just hardcode a list of cards to now allow
 update commanders mark description to say commanded cards
 
-some other assignment cards that require selecting assignments, also do something else? like assigning or something
+some other assignment cards that require selecting assignments, also do something else? like assigning or something - DONE
   - or making retain tokens that do the quick assign and extra time stuff
   - 1 token that has 4(5?) choices to manip assignment buffs
   - haste order, lower by 2, give 3 tasklevel
@@ -1171,7 +1171,7 @@ look at any other places to put an order token
 reword all assignment cards to be better on space
 defence delegation add 1-2 assignment cards with exile to hand?
   - could do something with the new token? also triggers when playing the token?
-assignment counter attack status effect text reads like shit on the assign option card
+assignment counter attack status effect text reads like shit on the assign option card - impossible gg
   - remove some line breaks to compact it
   - probs check the others too
 

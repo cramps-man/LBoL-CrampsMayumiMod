@@ -8,9 +8,11 @@ using LBoL.Core.Units;
 using LBoLMod.BattleActions;
 using LBoLMod.Cards;
 using LBoLMod.StatusEffects.Abilities;
+using LBoLMod.StatusEffects.Debuffs;
 using LBoLMod.UltimateSkills;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.StatusEffects
 {
@@ -30,6 +32,7 @@ namespace LBoLMod.StatusEffects
         protected int CardValue2 => AssignSourceCard.Value2;
         protected ScryInfo CardScry => AssignSourceCard.Scry;
         public bool IsPermanent { get; set; } = false;
+        protected IEnumerable<EnemyUnit> MarkedEnemies => base.Battle.AllAliveEnemies.Where(e => e.HasStatusEffect<AssignmentMarkSe>());
         protected override void OnAdded(Unit unit)
         {
             if (SourceCard is ModAssignCard c)

@@ -1,4 +1,5 @@
-﻿using LBoL.Core.Battle;
+﻿using LBoL.Base.Extensions;
+using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -22,7 +23,10 @@ namespace LBoLMod.StatusEffects.Assign
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
             for (var i = 0; i < TotalTimes; i++)
-                yield return new DamageAction(Owner, base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
+            {
+                var markedEnemy = MarkedEnemies.SampleOrDefault(base.Battle.GameRun.BattleRng);
+                yield return new DamageAction(Owner, markedEnemy != null ? markedEnemy : base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
+            }
         }
     }
 }

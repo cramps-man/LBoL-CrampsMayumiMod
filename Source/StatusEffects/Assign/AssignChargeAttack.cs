@@ -1,4 +1,5 @@
-﻿using LBoL.Core;
+﻿using LBoL.Base.Extensions;
+using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
@@ -35,7 +36,8 @@ namespace LBoLMod.StatusEffects.Assign
 
         public override IEnumerable<BattleAction> OnAssignmentDone(bool onTurnStart)
         {
-            yield return new DamageAction(Owner, base.Battle.HighestHpEnemy, TotalDamage);
+            var markedEnemy = MarkedEnemies.MaxByOrDefault(e => e.Hp);
+            yield return new DamageAction(Owner, markedEnemy != null ? markedEnemy : base.Battle.HighestHpEnemy, TotalDamage);
         }
     }
 }
