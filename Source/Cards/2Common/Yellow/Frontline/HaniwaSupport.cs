@@ -43,10 +43,17 @@ namespace LBoLMod.Cards
         public ManaGroup PMana => ManaGroup.Philosophies((base.UpgradeCounter.GetValueOrDefault() + 5) / 10);
         public ManaGroup TotalMana => PMana + ManaGroup.Whites(1 + (base.UpgradeCounter.GetValueOrDefault() / 10) - PMana.Amount);
         public override bool IsCavalryType => true;
+        private static bool SupportDrawnThisCard = false;
         protected override void OnEnterBattle(BattleController battle)
         {
             base.OnEnterBattle(battle);
             base.ReactBattleEvent(base.Battle.CardUsed, this.OnCardUsed);
+            base.HandleBattleEvent(base.Battle.CardUsing, this.OnCardUsing);
+        }
+
+        private void OnCardUsing(CardUsingEventArgs args)
+        {
+            SupportDrawnThisCard = false;
         }
 
         private IEnumerable<BattleAction> OnCardUsed(CardUsingEventArgs args)
@@ -59,11 +66,14 @@ namespace LBoLMod.Cards
                 yield break;
             if (base.Battle.HandZone.Count == base.Battle.MaxHand)
                 yield break;
+            if (SupportDrawnThisCard)
+                yield break;
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.2f);
             yield return new DrawManyCardAction(Value2);
             yield return ConsumePassiveLoyalty();
+            SupportDrawnThisCard = true;
             base.NotifyChanged();
         }
 

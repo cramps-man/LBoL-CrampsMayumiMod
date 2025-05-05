@@ -1203,7 +1203,7 @@ come up with something else for clay to ashes, the draw interferres with adding 
 
 skilled cavalry nerf to 2 mana, give it 2 draw on first tier - not sure
   - it was due for something lmao
-haniwa support make passive only activate once per card play
+haniwa support make passive only activate once per card play - DONE
 task transfer add the interaction title - DONE
 quick assignment too powerfuru with new buffs lmao - DONE
   - either increase the cost to like RR, or lower task level again, probs increase cost imo

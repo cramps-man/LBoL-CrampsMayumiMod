@@ -71,7 +71,7 @@ HaniwaBodyguard:
 HaniwaSupport:
   Name: Haniwa Support
   Description: |-
-    |While in hand|: Whenever a <sprite=ManaSprite" name="0"> cost card is played, draw {Value2} card. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: Whenever a <sprite=ManaSprite" name="0"> cost card is played, draw {Value2} card. Only 1 {SelfName} may activate its passive per card play. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     |When played|: Gain {TotalMana}. Consume {OnPlayConsumedRemainingValue} |Loyalty|. 
   DetailText: |-
     Is |Cavalry| type. 
