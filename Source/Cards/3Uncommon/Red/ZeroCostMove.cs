@@ -46,11 +46,15 @@ namespace LBoLMod.Cards
                 return MoveableCards.Count;
             }
         }
+        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             if (IsUpgraded)
             {
-                return new SelectCardInteraction(0, 2, MoveableCards);
+                return new SelectCardInteraction(0, Value1, MoveableCards)
+                {
+                    Description = InteractionTitle
+                };
             }
 
             return null;

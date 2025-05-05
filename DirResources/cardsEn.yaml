@@ -620,6 +620,8 @@ ZeroCostMove:
   UpgradedDescription: |-
     Choose up to {Value1} {Mana} cost card{Value1:plural one='' other='s'} from the draw/discard piles and move them to the hand. 
     Currently {ZeroCostCount} total in draw/discard piles. 
+  InteractionTitle: |-
+    {SelfName} - Choose{Value1:plural one='' other=' up to'} {Value1} cards to move to hand
 
 LoyaltyCommand:
   Name: Loyalty Command

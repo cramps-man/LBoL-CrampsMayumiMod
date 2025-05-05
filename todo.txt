@@ -1201,10 +1201,10 @@ update summon cards to have all the common/uncommon frontlines in the related ca
 come up with something else for clay to ashes, the draw interferres with adding cards to hand - DONE
   - gain barrier + loyalty protection
 
-skilled cavalry nerf to 2 mana, give it 2 draw on first tier
+skilled cavalry nerf to 2 mana, give it 2 draw on first tier - not sure
   - it was due for something lmao
 haniwa support make passive only activate once per card play
-task transfer add the interaction title
+task transfer add the interaction title - DONE
 quick assignment too powerfuru with new buffs lmao
   - either increase the cost to like RR, or lower task level again, probs increase cost imo
   - also probably dont gain any haniwa, shouldve probs done this ages ago since it doesnt require any to spend
@@ -1214,8 +1214,9 @@ maybe look into lowering haniwa gains across the board? - TOO MUCH FOR 0.7, MAYB
   - if i make start of combat gen 5 of each, then perhaps this could work
   - if the gens were like mostly 1-3 or so
 look into interaction title for assign option card, give the config for frost arrow blue color without affecting others
+move counter attack note from buff into card detail text
 
-remove retain from balissa bolt?
+remove retain from balissa bolt? - NOT SURE
 add author for frontline arts
 full frontal assault rework, assign all haniwa
   - then have effects based on each haniwa type, and effects for dmg, then all frontlines in hand onplay boom ggez
