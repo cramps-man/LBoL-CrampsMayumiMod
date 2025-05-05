@@ -550,6 +550,8 @@ FencerPrepCounter:
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to {Damage} + (|Task Level| / number of targets), to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
     Whenever {PlayerName} is attacked, increase |Task Level| by {Value1} for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
     Start with {StartingTaskLevel} |Task Level|. 
+  DetailText: |-
+    If an enemy has |Assignment Mark|, the number of enemies used for calculation only includes enemies with |Assignment Mark|, even if other non-marked enemies have attacked. 
 
 HealSacrifice:
   Name: Heal Sacrifice

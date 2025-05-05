@@ -3,6 +3,7 @@ using LBoL.ConfigData;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Assign;
+using LBoLMod.StatusEffects.Debuffs;
 using LBoLMod.StatusEffects.Keywords;
 using System;
 using System.Collections.Generic;
@@ -27,8 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedBlock = 3;
             cardConfig.Value1 = 6;
             cardConfig.UpgradedValue1 = 8;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentMarkSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(AssignmentMarkSe) };
             return cardConfig;
         }
     }
