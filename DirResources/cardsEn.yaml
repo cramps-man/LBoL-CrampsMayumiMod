@@ -696,12 +696,11 @@ BlitzCommand:
 MassTaskLevel:
   Name: Perfect Assignment
   Description: |-
-    Choose |e:1| |Assignment| buff and remove all other |Assignment| buffs. 
-    Increase the chosen buff's |Task Level| by {Value2}. 
+    Choose |e:1| |Assignment| buff and remove all other |Assignment| buffs. Increase the chosen buff's |Task Level| by {Value2}. 
     Additionally, add the total |Task Level| of the removed buffs onto the chosen buff. 
-    Draw {Value1} card{Value1:plural one='' other='s'}. 
+    Draw {Value1} card{Value1:plural one='' other='s'} for each buff removed. 
   InteractionTitle: |-
-    {SelfName} - Choose |e:1| |Assignment| and remove the others
+    {SelfName} - Choose |e:1| |Assignment| and remove the others, draw {Value1} for each removed
 
 MassSummon:
   Name: Summoning - Call to Arms

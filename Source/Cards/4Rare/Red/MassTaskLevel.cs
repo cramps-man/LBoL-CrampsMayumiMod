@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Rare;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Value1 = 3;
+            cardConfig.Value1 = 1;
             cardConfig.Value2 = 30;
             cardConfig.Cost = new ManaGroup() { Red = 2, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Red = 1 };
@@ -52,17 +52,19 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            int removedBuffs = 0;
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
                 card.StatusEffect.Level += Value2;
                 List<StatusEffect> removedAssignBuffs = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect && s != card.StatusEffect).ToList();
+                removedBuffs += removedAssignBuffs.Count;
                 foreach (StatusEffect statusEffect in removedAssignBuffs)
                 {
                     card.StatusEffect.Level += statusEffect.Level;
                     yield return new RemoveStatusEffectAction(statusEffect);
                 }
             }
-            yield return new DrawManyCardAction(Value1);
+            yield return new DrawManyCardAction(removedBuffs);
         }
     }
 }
