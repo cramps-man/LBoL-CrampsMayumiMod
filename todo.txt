@@ -1215,7 +1215,7 @@ maybe look into lowering haniwa gains across the board? - TOO MUCH FOR 0.7, MAYB
   - if the gens were like mostly 1-3 or so
 look into interaction title for assign option card, give the config for frost arrow blue color without affecting others - DONE
 move counter attack note from buff into card detail text - DONE
-clay gathering increase block to 10? on upgrade?
+clay gathering increase block to 10? on upgrade? - DONE
 
 remove retain from balissa bolt? - NOT SURE
 add author for frontline arts
