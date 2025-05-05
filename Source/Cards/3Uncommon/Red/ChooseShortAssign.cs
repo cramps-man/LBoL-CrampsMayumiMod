@@ -28,9 +28,8 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
-            cardConfig.Cost = new ManaGroup() { Red = 1 };
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 0;
+            cardConfig.Cost = new ManaGroup() { Red = 2 };
+            cardConfig.Value1 = 0;
             cardConfig.Value2 = 5;
             cardConfig.UpgradedValue2 = 20;
             cardConfig.Mana = new ManaGroup() { Colorless = 1 };
@@ -60,6 +59,7 @@ namespace LBoLMod.Cards
             selectedCard.SetBattle(base.Battle);
             if (selectedCard is ModAssignCard assignCard)
             {
+                assignCard.ShouldAssignHaniwa = false;
                 yield return new ApplyStatusEffectAction(assignCard.AssignStatusType, base.Battle.Player, level: assignCard.StartingTaskLevel + Value2, count: Value1)
                 {
                     Args =

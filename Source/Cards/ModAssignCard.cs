@@ -59,6 +59,7 @@ namespace LBoLMod.Cards
         public override string CantUseMessage => HaniwaUtils.CantUseMessages(base.Battle.Player, HaniwaActionType.Assign, FencerRequired, ArcherRequired, CavalryRequired);
         public bool ShouldStack => ManualStack && !base.Battle.Player.HasStatusEffect<AssignSeparationSe>();
         public bool ManualStack { get; set; } = true;
+        public bool ShouldAssignHaniwa { get; set; } = true;
         public override ManaGroup AdditionalCost
         {
             get

@@ -537,7 +537,7 @@ AshesToClay:
 ChooseShortAssign:
   Name: Quick Assignment
   Description: |-
-    Choose 1 of 3 |Assignment| cards and gain its buff. No |Haniwa| required. 
+    Choose 1 of 3 |Assignment| cards and gain its buff. No |Haniwa| required nor |Assigned|. 
     The buff has a starting countdown of {Value1} and starts with {Value2} extra |Task Level|. 
     Gain {Mana}. 
   InteractionTitle: |-

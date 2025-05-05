@@ -36,10 +36,15 @@ namespace LBoLMod.StatusEffects
         protected override void OnAdded(Unit unit)
         {
             if (SourceCard is ModAssignCard c)
+            {
                 AssignSourceCard = c;
-            CardFencerAssigned += AssignSourceCard.FencerAssigned;
-            CardArcherAssigned += AssignSourceCard.ArcherAssigned;
-            CardCavalryAssigned += AssignSourceCard.CavalryAssigned;
+                if (AssignSourceCard.ShouldAssignHaniwa)
+                {
+                    CardFencerAssigned += AssignSourceCard.FencerAssigned;
+                    CardArcherAssigned += AssignSourceCard.ArcherAssigned;
+                    CardCavalryAssigned += AssignSourceCard.CavalryAssigned;
+                }
+            }
             this.ReactOwnerEvent(base.Battle.CardUsed, this.OnCardUsed);
             base.ReactOwnerEvent(base.Battle.Player.TurnStarted, this.onPlayerTurnStarted);
             base.HandleOwnerEvent(base.Battle.Player.TurnEnded, this.onPlayerTurnEnded);
@@ -57,9 +62,12 @@ namespace LBoLMod.StatusEffects
                 if (other.SourceCard is ModAssignCard c)
                     AssignSourceCard = c;
             }
-            CardFencerAssigned += AssignSourceCard.FencerAssigned > 0 ? 1 : 0;
-            CardArcherAssigned += AssignSourceCard.ArcherAssigned > 0 ? 1 : 0;
-            CardCavalryAssigned += AssignSourceCard.CavalryAssigned > 0 ? 1 : 0;
+            if (other.SourceCard is ModAssignCard mac2 && mac2.ShouldAssignHaniwa)
+            {
+                CardFencerAssigned += AssignSourceCard.FencerAssigned > 0 ? 1 : 0;
+                CardArcherAssigned += AssignSourceCard.ArcherAssigned > 0 ? 1 : 0;
+                CardCavalryAssigned += AssignSourceCard.CavalryAssigned > 0 ? 1 : 0;
+            }
             return true;
         }
 
