@@ -1151,7 +1151,7 @@ try using followup code for commanded cards and see what happens - NOT GONNA WOR
   - will probs need some custom code if i manually generate a copy of the card to then do playCardAction on, and probs break stuff
 dont allow command cards to command other command cards - DONE
   - can just hardcode a list of cards to now allow
-update commanders mark description to say commanded cards
+update commanders mark description to say commanded cards - DONE
 
 some other assignment cards that require selecting assignments, also do something else? like assigning or something - DONE
   - or making retain tokens that do the quick assign and extra time stuff
@@ -1165,15 +1165,17 @@ some other assignment cards that require selecting assignments, also do somethin
 quick task comp and delayed task comp add a assignment order token if they select nothing
   - or replace both with a new card that adds the tokens to hand
   - then can come up with another card as replacement
+look at any other places to put an order token
 assignment hustle dont give colorless, and gets assignment bonus preupgraded
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
-look at any other places to put an order token
+  - honestly could get draw 1 preupgraded, upgrade decreases mana to 1
 reword all assignment cards to be better on space
 defence delegation add 1-2 assignment cards with exile to hand?
   - could do something with the new token? also triggers when playing the token?
 assignment counter attack status effect text reads like shit on the assign option card - impossible gg
   - remove some line breaks to compact it
   - probs check the others too
+update assign trigger action to work with multiple rng hits, and redirect
 
 inspirational speech give something extra? temp fp/temp sp? - DONE
   - and probs move to oncolor, and lose echo
@@ -1198,6 +1200,20 @@ assignment double trigger look into just returning the assignment trigger action
 update summon cards to have all the common/uncommon frontlines in the related cards - DONE
 come up with something else for clay to ashes, the draw interferres with adding cards to hand - DONE
   - gain barrier + loyalty protection
+
+skilled cavalry nerf to 2 mana, give it 2 draw on first tier
+  - it was due for something lmao
+haniwa support make passive only activate once per card play
+task transfer add the interaction title
+quick assignment too powerfuru with new buffs lmao
+  - either increase the cost to like RR, or lower task level again, probs increase cost imo
+  - also probably dont gain any haniwa, shouldve probs done this ages ago since it doesnt require any to spend
+perfect assignment also too powerfuru but its been this way since the dawn of time
+  - can either lower draw a bit and task level gain, or change the draw to be how many buffs were removed
+maybe look into lowering haniwa gains across the board? - TOO MUCH FOR 0.7, MAYBE ANOTHER TIME
+  - if i make start of combat gen 5 of each, then perhaps this could work
+  - if the gens were like mostly 1-3 or so
+look into interaction title for assign option card, give the config for frost arrow blue color without affecting others
 
 remove retain from balissa bolt?
 add author for frontline arts
