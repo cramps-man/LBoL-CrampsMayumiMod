@@ -6,8 +6,10 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Units;
 using LBoL.EntityLib.Exhibits.Shining;
+using LBoLEntitySideloader.Utils;
 using LBoLMod.Cards;
 using LBoLMod.StatusEffects;
+using LBoLMod.StatusEffects.Assign;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +51,12 @@ namespace LBoLMod.Utils
                 c.CardName = s.Name;
                 c.CardText = s.Description;
                 c.StatusEffect = s;
+                if (c.StatusEffect is AssignArcherPrepFrostArrow)
+                {
+                    var blueConfig = c.Config.Copy();
+                    blueConfig.Colors = new List<ManaColor>() { ManaColor.Blue };
+                    c.Config = blueConfig;
+                }
                 bool toAdd = true;
                 if (!includePermanent && s.IsPermanent)
                     toAdd = false;

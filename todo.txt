@@ -1213,7 +1213,7 @@ perfect assignment also too powerfuru but its been this way since the dawn of ti
 maybe look into lowering haniwa gains across the board? - TOO MUCH FOR 0.7, MAYBE ANOTHER TIME
   - if i make start of combat gen 5 of each, then perhaps this could work
   - if the gens were like mostly 1-3 or so
-look into interaction title for assign option card, give the config for frost arrow blue color without affecting others
+look into interaction title for assign option card, give the config for frost arrow blue color without affecting others - DONE
 move counter attack note from buff into card detail text
 clay gathering increase block to 10? on upgrade?
 
