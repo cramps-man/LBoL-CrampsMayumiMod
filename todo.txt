@@ -1166,6 +1166,9 @@ quick task comp and delayed task comp add a assignment order token if they selec
   - or replace both with a new card that adds the tokens to hand
   - then can come up with another card as replacement
 look at any other places to put an order token
+  - defence delegation
+  - short or long term
+  - assignment commander?
 assignment hustle dont give colorless, and gets assignment bonus preupgraded
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
   - honestly could get draw 1 preupgraded, upgrade decreases mana to 1
