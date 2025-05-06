@@ -1165,19 +1165,21 @@ some other assignment cards that require selecting assignments, also do somethin
 quick task comp and delayed task comp add a assignment order token if they select nothing
   - or replace both with a new card that adds the tokens to hand
   - then can come up with another card as replacement
+  - quick comp gains assignment bonus, delay comp adds 1 order to hand
 look at any other places to put an order token
+  - assignment hustle
   - defence delegation
   - short or long term
-  - assignment commander?
+  - assignment commander? - maybe not
 assignment hustle dont give colorless, and gets assignment bonus preupgraded
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
   - honestly could get draw 1 preupgraded, upgrade decreases mana to 1
-reword all assignment cards to be better on space
 defence delegation add 1-2 assignment cards with exile to hand?
   - could do something with the new token? also triggers when playing the token?
 assignment counter attack status effect text reads like shit on the assign option card - impossible gg
   - remove some line breaks to compact it
   - probs check the others too
+reword all assignment cards to be better on space
 update assign trigger action to work with multiple rng hits, and redirect
 
 inspirational speech give something extra? temp fp/temp sp? - DONE

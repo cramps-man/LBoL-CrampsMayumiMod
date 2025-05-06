@@ -332,6 +332,7 @@
       <None Remove="Resources\Cards\Frontlines\HaniwaBodyguard.png" />
       <None Remove="Resources\Cards\Frontlines\HaniwaCharger.png" />
       <None Remove="Resources\Cards\Frontlines\HaniwaExploiter.png" />
+      <None Remove="Resources\Cards\Frontlines\HaniwaMonk.png" />
       <None Remove="Resources\Cards\Frontlines\HaniwaSharpshooter.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignArcherPrepDebuff.png" />
       <None Remove="Resources\StatusEffects\Assignments\AssignArcherPrepFrostArrow.png" />
