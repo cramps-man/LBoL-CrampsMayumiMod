@@ -1038,7 +1038,7 @@ AssignmentOrderDelay:
 AssignmentOrderGuard:
   Name: Guard Order
   Description: |-
-    Choose up to {Value1} |Assignment| buff and |e:increase| its countdown by {Value2} and |e:half| its |Task Level|. 
+    Choose up to {Value1} |Assignment| buff and |e:increase| its countdown by {Value2} then |e:half| its |Task Level|. 
     Gain {Block} |Block|. 
   InteractionTitle: |-
     {SelfName} - Choose up to {Value1}, |e:increase| countdown by {Value2}, |e:half| its |Task Level|, gain {Block} |Block|

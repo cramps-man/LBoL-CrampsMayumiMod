@@ -49,7 +49,7 @@ namespace LBoLMod.Cards
             yield return new InteractionAction(assignInteraction);
             foreach (ModAssignOptionCard assignCard in assignInteraction.SelectedCards)
             {
-                assignCard.StatusEffect.Count -= Value2;
+                assignCard.StatusEffect.Tickdown(Value2);
                 assignCard.StatusEffect.Level += TaskLevelGain;
                 assignCard.StatusEffect.NotifyActivating();
             }
