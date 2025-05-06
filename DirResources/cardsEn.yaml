@@ -203,10 +203,10 @@ FrontlineHaniwaCreate:
 AssignFastTrigger:
   Name: Quick Task Completion
   Description: |-
-    Deal {Damage} damage.
+    Deal {Damage} damage and gain {Value2} |Assignment Bonus|. 
     Choose an |Assignment| buff and immediately trigger its effect. Convert remaining countdown into |Task Level| before triggering. 
   UpgradedDescription: |-
-    Deal {Damage} damage.
+    Deal {Damage} damage and gain {Value2} |Assignment Bonus|. 
     Choose an |Assignment| buff and immediately trigger its effect. Convert |e:double| the remaining countdown into |Task Level| before triggering. 
   InteractionTitle: |-
     {SelfName} - Choose up to |e:1| to trigger, convert countdown into |Task Level|
@@ -225,7 +225,7 @@ FrontlineUpgrade:
 AssignExtraTime:
   Name: Delayed Task Completion
   Description: |-
-    Gain {Block} |Block|. 
+    Gain {Block} |Block| and add a |Assignment Order| to the hand. 
     Choose an |Assignment| buff and increase its countdown by {Value1} and its |Task Level| by {Value2}. 
   InteractionTitle: |-
     {SelfName} - Choose up to |e:1| to increase countdown by {Value1} and |Task Level| by {Value2}

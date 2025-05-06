@@ -1162,7 +1162,7 @@ some other assignment cards that require selecting assignments, also do somethin
   - recall order, remove without triggering, but give back haniwa and draw 1?
   - something that consume 1 assignment bonus and draw 1 - maybe instead it does instant trigger for 1 ass bonus?
   - something that applies 1 assignment mark? override targetting to the enemy with mark
-quick task comp and delayed task comp add a assignment order token if they select nothing
+quick task comp and delayed task comp add a assignment order token if they select nothing - DONE
   - or replace both with a new card that adds the tokens to hand
   - then can come up with another card as replacement
   - quick comp gains assignment bonus, delay comp adds 1 order to hand
@@ -1181,6 +1181,12 @@ assignment counter attack status effect text reads like shit on the assign optio
   - probs check the others too
 reword all assignment cards to be better on space
 update assign trigger action to work with multiple rng hits, and redirect
+can add an upgrade for assignment order, which gives more options that consume assignment bonus for stuff
+  - supply bonus, 1 draw for 1 assign bonus
+  - strength bonus, 2tempfp for 1 assign bonus
+  - preemptive guard bonus, 10 block next turn for 1 assbonus
+  - stacking order, free stack on an assignment buff?
+  - some debuff on an enemy to round things out
 
 inspirational speech give something extra? temp fp/temp sp? - DONE
   - and probs move to oncolor, and lose echo

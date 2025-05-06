@@ -6,6 +6,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -29,9 +30,10 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedDamage = 17;
             cardConfig.Value1 = 1;
             cardConfig.UpgradedValue1 = 2;
+            cardConfig.Value2 = 1;
             cardConfig.Cost = new ManaGroup() { Red = 1, Any = 1 };
-            cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
             return cardConfig;
         }
     }
@@ -52,6 +54,7 @@ namespace LBoLMod.Cards
             yield return AttackAction(selector);
             if (base.Battle.BattleShouldEnd)
                 yield break;
+            yield return BuffAction<AssignmentBonusSe>(Value2);
 
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {

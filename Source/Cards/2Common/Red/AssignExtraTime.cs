@@ -2,6 +2,7 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
+using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
@@ -33,6 +34,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedValue2 = 14;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.RelativeCards = new List<string>() { nameof(AssignmentOrder) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(AssignmentOrder) };
             return cardConfig;
         }
     }
@@ -51,6 +54,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return DefenseAction();
+            yield return new AddCardsToHandAction(Library.CreateCard<AssignmentOrder>());
             foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
             {
                 card.StatusEffect.Count += Value1;
