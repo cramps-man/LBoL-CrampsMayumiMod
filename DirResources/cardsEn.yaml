@@ -496,7 +496,8 @@ ChargeAttack:
 AssignPlayGainBlock:
   Name: Defence Delegation
   Description: |-
-    When playing an |Assignment| card, gain {Value1} |Block|. 
+    When playing an |Assignment| card or |Assignment Order|, gain {Value1} |Block|. 
+    Add {Value2} |Assignment Order| to the hand. 
 
 CavalryRush:
   Name: Assignment - Rush Attack

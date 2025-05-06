@@ -173,9 +173,9 @@ AssignCavalryRush:
 AssignPlayGainBlockSe:
   Name: Defence Delegation
   Description: |-
-    When playing an |Assignment| card, gain {Level} |Block|. 
+    When playing an |Assignment| card or |Assignment Order|, gain {Level} |Block|. 
   Brief: |-
-    When playing an |Assignment| card, gain |Block|. 
+    When playing an |Assignment| card or |Assignment Order|, gain |Block|. 
 
 ClayToAshesSe:
   Name: Clay To Ashes

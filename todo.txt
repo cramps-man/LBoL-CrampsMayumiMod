@@ -1174,17 +1174,18 @@ look at any other places to put an order token
 assignment hustle dont give colorless, and gets assignment bonus preupgraded - DONE
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
   - honestly could get draw 1 preupgraded, upgrade decreases mana to 1
-defence delegation add 1-2 assignment cards with exile to hand?
+defence delegation add 1-2 assignment cards with exile to hand? - DONE
   - could do something with the new token? also triggers when playing the token?
+  - add 2 of the tokens to hand
 assignment counter attack status effect text reads like shit on the assign option card - impossible gg
   - remove some line breaks to compact it
   - probs check the others too
 reword all assignment cards to be better on space
 update assign trigger action to work with multiple rng hits, and redirect
-can add an upgrade for assignment order, which gives more options that consume assignment bonus for stuff
+can add an upgrade for assignment order, which gives more options that consume assignment bonus for stuff - see after playtesting
   - supply bonus, 1 draw for 1 assign bonus
   - strength bonus, 2tempfp for 1 assign bonus
-  - preemptive guard bonus, 10 block next turn for 1 assbonus
+  - protection bonus, 10 block next turn for 1 assbonus
   - stacking order, free stack on an assignment buff?
   - some debuff on an enemy to round things out
 
