@@ -30,11 +30,13 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };
             cardConfig.Cost = new ManaGroup() { Red = 1 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
             cardConfig.Value1 = 2;
             cardConfig.Value2 = 1;
-            cardConfig.Mana = new ManaGroup() { Colorless = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
+            cardConfig.RelativeCards = new List<string>() { nameof(AssignmentOrder) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(AssignmentOrder) };
             return cardConfig;
         }
     }
@@ -50,7 +52,7 @@ namespace LBoLMod.Cards
             };
             if (IsUpgraded)
                 yield return BuffAction<AssignmentBonusSe>(Value2);
-            yield return new GainManaAction(Mana);
+            yield return new AddCardsToHandAction(Library.CreateCard<AssignmentOrder>());
         }
 
         protected override void OnEnterBattle(BattleController battle)

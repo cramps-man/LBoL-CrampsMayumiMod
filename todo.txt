@@ -1171,7 +1171,7 @@ look at any other places to put an order token
   - defence delegation
   - short or long term
   - assignment commander? - maybe not
-assignment hustle dont give colorless, and gets assignment bonus preupgraded
+assignment hustle dont give colorless, and gets assignment bonus preupgraded - DONE
   - upgrade now updates mana to 1 and adds 1 assignment order to hand?
   - honestly could get draw 1 preupgraded, upgrade decreases mana to 1
 defence delegation add 1-2 assignment cards with exile to hand?

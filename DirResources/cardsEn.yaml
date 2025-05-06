@@ -318,11 +318,11 @@ AssignTickdownReturn:
   Name: Assignment Hustle
   Description: |-
     Decrease the countdown for all |Assignment| buffs by {Value1}. 
-    Gain {Mana}. 
+    Add a |Assignment Order| to the hand. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
   UpgradedDescription: |-
     Decrease the countdown for all |Assignment| buffs by {Value1} and gain {Value2} |Assignment Bonus|. 
-    Gain {Mana}. 
+    Add a |Assignment Order| to the hand. 
     Whenever an |Assignment| buff triggers, return {SelfName} from the discard pile to the hand. 
 
 HaniwaSpy:
