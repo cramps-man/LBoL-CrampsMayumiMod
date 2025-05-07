@@ -68,7 +68,7 @@ namespace LBoLMod.Cards
                 };
             }
 
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector))
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector, sourceName: Name))
             {
                 yield return battleAction;
             }

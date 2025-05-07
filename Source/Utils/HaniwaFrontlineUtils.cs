@@ -3,6 +3,7 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
+using LBoL.Core.Helpers;
 using LBoL.EntityLib.Exhibits.Shining;
 using LBoLMod.BattleActions;
 using LBoLMod.Cards;
@@ -151,7 +152,7 @@ namespace LBoLMod.Utils
             return new UnitSelector(battle.RandomAliveEnemy);
         }
 
-        public static IEnumerable<BattleAction> ExecuteOnPlayActions(List<Card> commandedCards, BattleController battle, UnitSelector selector = null, bool consumeRemainingValue = false)
+        public static IEnumerable<BattleAction> ExecuteOnPlayActions(List<Card> commandedCards, BattleController battle, UnitSelector selector = null, bool consumeRemainingValue = false, string sourceName = "")
         {
             foreach (Card card in commandedCards)
             {
@@ -165,10 +166,11 @@ namespace LBoLMod.Utils
                 var precondition = card.Precondition();
                 if (precondition != null)
                 {
+                    var commandingCardName = sourceName == "" ? "" : UiUtils.WrapByColor(sourceName, GlobalConfig.EntityColor) + " -> ";
                     if (card.ExtraDescription1 != null && card is ModFrontlineCard)
-                        precondition.Description = card.ExtraDescription1.RuntimeFormat(card.FormatWrapper);
+                        precondition.Description = commandingCardName + card.ExtraDescription1.RuntimeFormat(card.FormatWrapper);
                     else
-                        precondition.Description = card.Name;
+                        precondition.Description = commandingCardName + UiUtils.WrapByColor(card.Name, GlobalConfig.EntityColor);
                     yield return new InteractionAction(precondition, true);
                 }
                 foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, false, false, new List<DamageAction>()))

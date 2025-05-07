@@ -1250,3 +1250,8 @@ guard order decrease task level by a third or quarter? half is probs too much
 cavalry rush breaks when commanding a card that has double preconditions lmao - FIXED
   - gonna be tough to fix, need to find a way to infinitely loop through the assign trigger action for preconditions
   - it was an ez fix, just use new Reactor() and pass in all the actions, like vanilla code does in PlayCardAction
+shortOrLongTerm give 1 assignment order on long term
+  - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
+command give the source name in the interaction header - DONE
+  - also gave the cards in header color
+refactor command into its own action

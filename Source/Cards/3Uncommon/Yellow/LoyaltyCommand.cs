@@ -57,7 +57,7 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
 
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector, true))
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector, true, Name))
             {
                 yield return battleAction;
             }

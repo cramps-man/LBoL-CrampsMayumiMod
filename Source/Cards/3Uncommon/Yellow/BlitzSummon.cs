@@ -61,7 +61,7 @@ namespace LBoLMod.Cards
                 yield return action;
                 if (action is AddCardsToHandAction addCardsAction)
                 {
-                    foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(addCardsAction.Args.Cards.ToList(), base.Battle, selector, true))
+                    foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(addCardsAction.Args.Cards.ToList(), base.Battle, selector, true, Name))
                     {
                         yield return battleAction;
                     }

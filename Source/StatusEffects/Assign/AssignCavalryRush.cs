@@ -43,7 +43,7 @@ namespace LBoLMod.StatusEffects.Assign
             List<Card> randomCommandedCards = HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.ToList()).SampleManyOrAll(TotalCommandableCount, base.GameRun.BattleRng).ToList();
             if (!randomCommandedCards.Any())
                 yield break;
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(randomCommandedCards, Battle, new UnitSelector(target)))
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(randomCommandedCards, Battle, new UnitSelector(target), sourceName: Name))
             {
                 yield return battleAction;
             };

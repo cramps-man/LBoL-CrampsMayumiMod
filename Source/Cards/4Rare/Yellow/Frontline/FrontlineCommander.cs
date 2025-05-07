@@ -68,7 +68,7 @@ namespace LBoLMod.Cards
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.3f);
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(commandableCardsInHand.SampleManyOrAll(PassiveCommandCount, base.BattleRng).ToList(), base.Battle))
+            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(commandableCardsInHand.SampleManyOrAll(PassiveCommandCount, base.BattleRng).ToList(), base.Battle, sourceName: Name))
             {
                 yield return battleAction;
             }
