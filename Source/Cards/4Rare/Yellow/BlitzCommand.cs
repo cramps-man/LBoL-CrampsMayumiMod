@@ -5,6 +5,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -41,10 +42,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             List<Card> cardsToCommand = IsUpgraded ? CardsInPlay : CardsInHand;
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(cardsToCommand, base.Battle, consumeRemainingValue: true, sourceName: Name))
-            {
-                yield return battleAction;
-            }
+            yield return new CommandAction(cardsToCommand, null, true, Name);
         }
     }
 }

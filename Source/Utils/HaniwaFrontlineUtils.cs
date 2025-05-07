@@ -156,34 +156,41 @@ namespace LBoLMod.Utils
         {
             foreach (Card card in commandedCards)
             {
+                foreach (var item in ExecuteOnPlayAction(card, battle, selector, consumeRemainingValue, sourceName))
+                {
+                    yield return item;
+                };
+            }
+        }
+        public static IEnumerable<BattleAction> ExecuteOnPlayAction(Card cardToCommand, BattleController battle, UnitSelector selector = null, bool consumeRemainingValue = false, string sourceName = "")
+        {
+            if (battle.BattleShouldEnd)
+                yield break;
+            if (battle.HandZone.Contains(cardToCommand))
+                cardToCommand.NotifyActivating();
+            else
+                yield return PerformAction.ViewCard(cardToCommand);
+
+            var precondition = cardToCommand.Precondition();
+            if (precondition != null)
+            {
+                var commandingCardName = sourceName == "" ? "" : UiUtils.WrapByColor(sourceName, GlobalConfig.EntityColor) + " -> ";
+                if (cardToCommand.ExtraDescription1 != null && cardToCommand is ModFrontlineCard)
+                    precondition.Description = commandingCardName + cardToCommand.ExtraDescription1.RuntimeFormat(cardToCommand.FormatWrapper);
+                else
+                    precondition.Description = commandingCardName + UiUtils.WrapByColor(cardToCommand.Name, GlobalConfig.EntityColor);
+                yield return new InteractionAction(precondition, true);
+            }
+            foreach (var action in cardToCommand.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, false, false, new List<DamageAction>()))
+            {
                 if (battle.BattleShouldEnd)
                     yield break;
-                if (battle.HandZone.Contains(card))
-                    card.NotifyActivating();
-                else
-                    yield return PerformAction.ViewCard(card);
-
-                var precondition = card.Precondition();
-                if (precondition != null)
-                {
-                    var commandingCardName = sourceName == "" ? "" : UiUtils.WrapByColor(sourceName, GlobalConfig.EntityColor) + " -> ";
-                    if (card.ExtraDescription1 != null && card is ModFrontlineCard)
-                        precondition.Description = commandingCardName + card.ExtraDescription1.RuntimeFormat(card.FormatWrapper);
-                    else
-                        precondition.Description = commandingCardName + UiUtils.WrapByColor(card.Name, GlobalConfig.EntityColor);
-                    yield return new InteractionAction(precondition, true);
-                }
-                foreach (var action in card.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, false, false, new List<DamageAction>()))
-                {
-                    if (battle.BattleShouldEnd)
-                        yield break;
-                    yield return action;
-                }
-                if (consumeRemainingValue && card is ModFrontlineCard mfc)
-                    yield return mfc.ConsumeLoyalty();
-                if (card.IsExile || card.CardType == CardType.Ability)
-                    card.IsCopy = true;
+                yield return action;
             }
+            if (consumeRemainingValue && cardToCommand is ModFrontlineCard mfc)
+                yield return mfc.ConsumeLoyalty();
+            if (cardToCommand.IsExile || cardToCommand.CardType == CardType.Ability)
+                cardToCommand.IsCopy = true;
         }
 
         public static readonly List<Type> UncommandableCards = new List<Type>()

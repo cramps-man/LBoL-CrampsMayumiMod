@@ -1254,4 +1254,6 @@ shortOrLongTerm give 1 assignment order on long term
   - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
 command give the source name in the interaction header - DONE
   - also gave the cards in header color
-refactor command into its own action
+refactor command into its own action - DONE
+show debug values for consume loyalty
+  - might as well do for all the actions, just need to implement GetBaseDebugString() in the event args

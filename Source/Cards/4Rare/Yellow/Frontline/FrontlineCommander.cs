@@ -7,6 +7,7 @@ using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
@@ -68,10 +69,7 @@ namespace LBoLMod.Cards
 
             base.NotifyActivating();
             yield return PerformAction.Wait(0.3f);
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(commandableCardsInHand.SampleManyOrAll(PassiveCommandCount, base.BattleRng).ToList(), base.Battle, sourceName: Name))
-            {
-                yield return battleAction;
-            }
+            yield return new CommandAction(commandableCardsInHand.SampleManyOrAll(PassiveCommandCount, base.BattleRng).ToList(), null, false, Name);
             yield return ConsumePassiveLoyalty();
             base.NotifyChanged();
         }

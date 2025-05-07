@@ -6,6 +6,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.Utils;
 using System.Collections.Generic;
@@ -57,10 +58,7 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
 
-            foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(selectInteraction.SelectedCards.ToList(), base.Battle, selector, true, Name))
-            {
-                yield return battleAction;
-            }
+            yield return new CommandAction(selectInteraction.SelectedCards.ToList(), selector, true, Name);
         }
     }
 }

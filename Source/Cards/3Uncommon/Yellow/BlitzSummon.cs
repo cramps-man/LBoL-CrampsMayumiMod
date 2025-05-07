@@ -7,6 +7,7 @@ using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Keywords;
 using LBoLMod.StatusEffects.Localization;
 using LBoLMod.Utils;
@@ -61,10 +62,7 @@ namespace LBoLMod.Cards
                 yield return action;
                 if (action is AddCardsToHandAction addCardsAction)
                 {
-                    foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(addCardsAction.Args.Cards.ToList(), base.Battle, selector, true, Name))
-                    {
-                        yield return battleAction;
-                    }
+                    yield return new CommandAction(addCardsAction.Args.Cards.ToList(), selector, true, Name);
                 }
             };
         }
