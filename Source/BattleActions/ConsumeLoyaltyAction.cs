@@ -2,42 +2,37 @@
 using LBoL.Core.Battle.BattleActions;
 using LBoLMod.Cards;
 using LBoLMod.GameEvents;
-using System.Collections.Generic;
 
 namespace LBoLMod.BattleActions
 {
-    public sealed class ConsumeLoyaltyAction: SimpleAction
+    public sealed class ConsumeLoyaltyAction: SimpleEventBattleAction<ConsumeLoyaltyEventArgs>
     {
-        private readonly ConsumeLoyaltyEventArgs args;
-
         internal ConsumeLoyaltyAction(ModFrontlineCard frontlineToConsume, int loyaltyConsumption = -1)
         {
-            this.args = new ConsumeLoyaltyEventArgs
+            base.Args = new ConsumeLoyaltyEventArgs
             {
                 FrontlineToConsume = frontlineToConsume,
                 LoyaltyConsumption = loyaltyConsumption,
                 TotalConsumption = 0
             };
         }
-
-        public override IEnumerable<Phase> GetPhases()
+        public override void PreEventPhase()
         {
-            yield return base.CreateEventPhase<ConsumeLoyaltyEventArgs>("FrontlineLoyaltyConsuming", this.args, ModGameEvents.ConsumingLoyalty);
-            yield return base.CreatePhase("Main", delegate
-            {
-                if (args.LoyaltyConsumption > 0)
-                {
-                    args.TotalConsumption += args.LoyaltyConsumption;
-                    args.FrontlineToConsume.RemainingValue -= args.LoyaltyConsumption;
-                }
-                if (args.FrontlineToConsume.RemainingValue < 0)
-                    base.React(new ExileCardAction(args.FrontlineToConsume));
-            });
-            yield return base.CreateEventPhase<ConsumeLoyaltyEventArgs>("FrontlineLoyaltyConsumed", this.args, ModGameEvents.ConsumedLoyalty);
+            Trigger(ModGameEvents.ConsumingLoyalty);
         }
-        public override string ExportDebugDetails()
+        public override void MainPhase()
         {
-            return args.ExportDebugDetails();
+            if (Args.LoyaltyConsumption > 0)
+            {
+                Args.TotalConsumption += Args.LoyaltyConsumption;
+                Args.FrontlineToConsume.RemainingValue -= Args.LoyaltyConsumption;
+            }
+            if (Args.FrontlineToConsume.RemainingValue < 0)
+                base.React(new ExileCardAction(Args.FrontlineToConsume));
+        }
+        public override void PostEventPhase()
+        {
+            Trigger(ModGameEvents.ConsumedLoyalty);
         }
     }
 }

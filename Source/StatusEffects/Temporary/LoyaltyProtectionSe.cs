@@ -64,6 +64,7 @@ namespace LBoLMod.StatusEffects.Abilities
                 Level = 0;
             }
 
+            args.AddModifier(this);
             Count += amountReduced;
         }
     }

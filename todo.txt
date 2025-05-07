@@ -1252,8 +1252,10 @@ cavalry rush breaks when commanding a card that has double preconditions lmao - 
   - it was an ez fix, just use new Reactor() and pass in all the actions, like vanilla code does in PlayCardAction
 shortOrLongTerm give 1 assignment order on long term
   - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
+  - can just let it add 1 to hand unupgraded for now
 command give the source name in the interaction header - DONE
   - also gave the cards in header color
 refactor command into its own action - DONE
 show debug values for consume loyalty - DONE
   - might as well do for all the actions, just need to implement GetBaseDebugString() in the event args
+look into consume loyalty debug not showing modified by - DONE
