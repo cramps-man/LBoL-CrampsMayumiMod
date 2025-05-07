@@ -7,8 +7,8 @@ using LBoL.Core.StatusEffects;
 using LBoL.Core.Units;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLMod.BattleActions;
 using LBoLMod.Cards;
-using LBoLMod.Utils;
 using System.Collections.Generic;
 
 namespace LBoLMod.StatusEffects.Abilities
@@ -46,10 +46,7 @@ namespace LBoLMod.StatusEffects.Abilities
             if (args.Card is ModFrontlineCard frontlineCard)
             {
                 base.NotifyActivating();
-                foreach (var battleAction in HaniwaFrontlineUtils.ExecuteOnPlayActions(new List<Card> { frontlineCard }, base.Battle, args.Selector, consumeRemainingValue: true))
-                {
-                    yield return battleAction;
-                }
+                yield return new CommandAction(new List<Card> { frontlineCard }, args.Selector, true);
             }
         }
     }

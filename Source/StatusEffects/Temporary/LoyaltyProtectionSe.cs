@@ -46,7 +46,7 @@ namespace LBoLMod.StatusEffects.Abilities
 
         private void OnConsumingLoyalty(ConsumeLoyaltyEventArgs args)
         {
-            if (args.LoyaltyConsumption <= 0)
+            if (args.LoyaltyConsumption <= 0 || Level <= 0)
                 return;
 
             base.NotifyActivating();
