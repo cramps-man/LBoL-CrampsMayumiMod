@@ -9,5 +9,9 @@ namespace LBoLMod.BattleActions
         public int ArcherToLose { get; internal set; }
         public int CavalryToLose { get; internal set; }
         public HaniwaActionType HaniwaActionType { get; internal set; }
+        public override string GetBaseDebugString()
+        {
+            return $"FencerLose = [{FencerToLose}], ArcherLose = [{ArcherToLose}], CavalryLose = [{CavalryToLose}], HaniwaActionType = [{HaniwaActionType}]";
+        }
     }
 }

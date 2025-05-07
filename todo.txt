@@ -1255,5 +1255,5 @@ shortOrLongTerm give 1 assignment order on long term
 command give the source name in the interaction header - DONE
   - also gave the cards in header color
 refactor command into its own action - DONE
-show debug values for consume loyalty
+show debug values for consume loyalty - DONE
   - might as well do for all the actions, just need to implement GetBaseDebugString() in the event args

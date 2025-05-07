@@ -38,5 +38,9 @@ namespace LBoLMod.BattleActions
             if (args.CreateTriggeredEvent)
                 yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggered", this.args, ModGameEvents.AssignEffectTriggered);
         }
+        public override string ExportDebugDetails()
+        {
+            return args.ExportDebugDetails();
+        }
     }
 }

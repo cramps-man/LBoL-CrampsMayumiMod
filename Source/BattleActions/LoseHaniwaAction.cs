@@ -44,6 +44,10 @@ namespace LBoLMod.BattleActions
             if (this.args.HaniwaActionType == HaniwaActionType.Assign)
                 yield return base.CreateEventPhase<LoseHaniwaEventArgs>("AssignedHaniwa", this.args, ModGameEvents.AssignedHaniwa);
         }
+        public override string ExportDebugDetails()
+        {
+            return args.ExportDebugDetails();
+        }
 
         private void LoseLevel<T>(int levelToLose) where T: ModHaniwaStatusEffect
         {

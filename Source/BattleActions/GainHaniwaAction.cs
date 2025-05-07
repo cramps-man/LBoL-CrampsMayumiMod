@@ -41,5 +41,9 @@ namespace LBoLMod.BattleActions
             if (this.args.IsFromAssign)
                 yield return base.CreateEventPhase<GainHaniwaEventArgs>("GainedHaniwaFromAssign", this.args, ModGameEvents.GainedHaniwaFromAssign);
         }
+        public override string ExportDebugDetails()
+        {
+            return args.ExportDebugDetails();
+        }
     }
 }

@@ -35,5 +35,9 @@ namespace LBoLMod.BattleActions
             });
             yield return base.CreateEventPhase<ConsumeLoyaltyEventArgs>("FrontlineLoyaltyConsumed", this.args, ModGameEvents.ConsumedLoyalty);
         }
+        public override string ExportDebugDetails()
+        {
+            return args.ExportDebugDetails();
+        }
     }
 }

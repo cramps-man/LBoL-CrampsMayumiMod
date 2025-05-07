@@ -34,5 +34,9 @@ namespace LBoLMod.BattleActions
             });
             yield return base.CreateEventPhase<CommandEventArgs>("Commanded", this.args, ModGameEvents.Commanded);
         }
+        public override string ExportDebugDetails()
+        {
+            return args.ExportDebugDetails();
+        }
     }
 }
