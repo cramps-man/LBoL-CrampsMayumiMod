@@ -7,5 +7,6 @@ namespace LBoLMod.BattleActions
     {
         public ModAssignStatusEffect TriggeredEffect { get; internal set; }
         public bool OnTurnStart { get; internal set; }
+        public bool CreateTriggeredEvent { get; internal set; }
     }
 }

@@ -30,27 +30,7 @@ namespace LBoLMod.StatusEffects.Abilities
         {
             if (base.Battle.BattleShouldEnd)
                 yield break;
-
-            foreach (var battleAction in args.TriggeredEffect.BeforeAssignmentDone(args.OnTurnStart))
-            {
-                yield return battleAction;
-                if (base.Battle.BattleShouldEnd)
-                    yield break;
-            };
-            
-            foreach (var battleAction in args.TriggeredEffect.OnAssignmentDone(args.OnTurnStart))
-            {
-                yield return battleAction;
-                if (base.Battle.BattleShouldEnd)
-                    yield break;
-            };
-            
-            foreach (var battleAction in args.TriggeredEffect.AfterAssignmentDone(args.OnTurnStart))
-            {
-                yield return battleAction;
-                if (base.Battle.BattleShouldEnd)
-                    yield break;
-            };
+            yield return new AssignTriggerAction(args.TriggeredEffect, args.OnTurnStart, false);
 
             if (Level > 1)
                 Level--;

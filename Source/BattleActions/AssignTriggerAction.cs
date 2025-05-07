@@ -9,43 +9,34 @@ namespace LBoLMod.BattleActions
     {
         private readonly AssignTriggerEventArgs args;
 
-        internal AssignTriggerAction(ModAssignStatusEffect triggeredEffect, bool onTurnStart)
+        internal AssignTriggerAction(ModAssignStatusEffect triggeredEffect, bool onTurnStart, bool createTriggeredEvent = true)
         {
             this.args = new AssignTriggerEventArgs
             {
                 TriggeredEffect = triggeredEffect,
-                OnTurnStart = onTurnStart
+                OnTurnStart = onTurnStart,
+                CreateTriggeredEvent = createTriggeredEvent
             };
         }
 
         public override IEnumerable<Phase> GetPhases()
         {
-            yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggering", this.args, ModGameEvents.AssignEffectTriggering);
+            if (args.CreateTriggeredEvent)
+                yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggering", this.args, ModGameEvents.AssignEffectTriggering);
             yield return base.CreatePhase("Before", delegate
             {
-                foreach (var action in args.TriggeredEffect.BeforeAssignmentDone(args.OnTurnStart))
-                {
-                    if (!base.Battle.BattleShouldEnd)
-                        base.React(action);
-                }
+                base.React(new Reactor(args.TriggeredEffect.BeforeAssignmentDone(args.OnTurnStart)), args.TriggeredEffect, ActionCause.StatusEffect);
             });
             yield return base.CreatePhase("Main", delegate
             {
-                foreach (var action in args.TriggeredEffect.OnAssignmentDone(args.OnTurnStart))
-                {
-                    if (!base.Battle.BattleShouldEnd)
-                        base.React(action);
-                }
+                base.React(new Reactor(args.TriggeredEffect.OnAssignmentDone(args.OnTurnStart)), args.TriggeredEffect, ActionCause.StatusEffect);
             });
             yield return base.CreatePhase("After", delegate
             {
-                foreach (var action in args.TriggeredEffect.AfterAssignmentDone(args.OnTurnStart))
-                {
-                    if (!base.Battle.BattleShouldEnd)
-                        base.React(action);
-                }
+                base.React(new Reactor(args.TriggeredEffect.AfterAssignmentDone(args.OnTurnStart)), args.TriggeredEffect, ActionCause.StatusEffect);
             });
-            yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggered", this.args, ModGameEvents.AssignEffectTriggered);
+            if (args.CreateTriggeredEvent)
+                yield return base.CreateEventPhase<AssignTriggerEventArgs>("AssignEffectTriggered", this.args, ModGameEvents.AssignEffectTriggered);
         }
     }
 }

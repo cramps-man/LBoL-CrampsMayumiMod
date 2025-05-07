@@ -804,6 +804,8 @@ AssignDuplicateTrigger:
   Name: Assignment Double Trigger
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Assignment Double Trigger|. 
+  DetailText: |-
+    The |Assignment| trigger from this buff won't trigger an event for |Assignment| triggers. 
 
 LeadThroughExample:
   Name: Lead Through Example

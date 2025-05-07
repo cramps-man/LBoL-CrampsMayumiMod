@@ -1182,7 +1182,7 @@ assignment counter attack status effect text reads like shit on the assign optio
   - remove some line breaks to compact it
   - probs check the others too
 reword all assignment cards to be better on space - maybe, i might be too lazy, and it wont match the buff
-update assign trigger action to work with multiple rng hits, and redirect - bit lazy atm
+update assign trigger action to work with multiple rng hits, and redirect - DONE/FIXED
 can add an upgrade for assignment order, which gives more options that consume assignment bonus for stuff - see after playtesting
   - supply bonus, 1 draw for 1 assign bonus
   - strength bonus, 2tempfp for 1 assign bonus
@@ -1207,7 +1207,7 @@ bodyguard add clause saying it cant gain loyalty from buffs - DONE
 lower monk starting charge rate to 1 - DONE
 guard scramble gain barrier but increase cost by 1? - DONE
   - or say block is not lost at end of next turn
-assignment double trigger look into just returning the assignment trigger action again, instead of doing what im doing now lel - LEAVE FOR NOW
+assignment double trigger look into just returning the assignment trigger action again, instead of doing what im doing now lel - WE DID IT
   - which will allow triggering assignment bonus twice, or anything that reacts on assignment trigger
   - of course it doesnt work, assign triggering causing an assign triggering will react to itself and loop
   - only issue is that cavalry scout header still says 1 draw, but the seoncd trigger doesnt draw
@@ -1243,3 +1243,10 @@ look into exile naturally auto executing onplay action for frontline - perhaps n
 permanent assignment not showing the infinity symbol anymore, guessing a vanilla change broke it somehow
   - maybe better to look for a more permanent solution
   - or maybe just remove this card lel
+
+delay order only increase countdown by 3?
+guard order decrease task level by a third or quarter? half is probs too much
+  - and probs lower delay to 2?
+cavalry rush breaks when commanding a card that has double preconditions lmao - FIXED
+  - gonna be tough to fix, need to find a way to infinitely loop through the assign trigger action for preconditions
+  - it was an ez fix, just use new Reactor() and pass in all the actions, like vanilla code does in PlayCardAction
