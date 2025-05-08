@@ -29,7 +29,7 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Skill;
             cardConfig.Block = 6;
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 4;
+            cardConfig.Value2 = 2;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
@@ -50,7 +50,7 @@ namespace LBoLMod.Cards
             foreach (ModAssignOptionCard assignCard in assignInteraction.SelectedCards)
             {
                 assignCard.StatusEffect.Count += Value2;
-                assignCard.StatusEffect.Level /= 2;
+                assignCard.StatusEffect.Level -= assignCard.StatusEffect.Level / 4;
                 assignCard.StatusEffect.NotifyActivating();
                 yield return DefenseAction();
             }

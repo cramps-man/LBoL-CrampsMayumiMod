@@ -79,6 +79,7 @@ namespace LBoLMod.Cards
                 else
                 {
                     yield return BuffAction<AssignmentBonusSe>(Value2);
+                    yield return new AddCardsToHandAction(Library.CreateCard<AssignmentOrder>());
                 }
             }
         }

@@ -644,11 +644,11 @@ ShortOrLongTerm:
   Name: Short or Long Term
   Description: |-
     Gain {Mana}. 
-    |Choose|: Select up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger, or gain {Value2} |Assignment Bonus|. 
+    |Choose|: Select up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger, or gain {Value2} |Assignment Bonus| and add a |Assignment Order| to the hand. 
   ExtraDescription1: |-
     Choose up to {Value1} |Assignment| buff{Value1:plural one='' other='s'} to immediately trigger. 
   ExtraDescription2: |-
-    Gain {Value2} |Assignment Bonus|. 
+    Gain {Value2} |Assignment Bonus| and add a |Assignment Order| to the hand. 
   InteractionTitle: |-
     Immediately trigger up to {Value1} buff{Value1:plural one='' other='s'}
 
@@ -1040,10 +1040,10 @@ AssignmentOrderDelay:
 AssignmentOrderGuard:
   Name: Guard Order
   Description: |-
-    Choose up to {Value1} |Assignment| buff and |e:increase| its countdown by {Value2} then |e:half| its |Task Level|. 
+    Choose up to {Value1} |Assignment| buff and |e:increase| its countdown by {Value2} then |e:decrease| its |Task Level| by a quarter. 
     Gain {Block} |Block|. 
   InteractionTitle: |-
-    {SelfName} - Choose up to {Value1}, |e:increase| countdown by {Value2}, |e:half| its |Task Level|, gain {Block} |Block|
+    {SelfName} - Choose up to {Value1}, |e:increase| countdown by {Value2}, |e:decrease| its |Task Level| by a quarter, gain {Block} |Block|
 
 AssignmentOrderRecall:
   Name: Recall Order

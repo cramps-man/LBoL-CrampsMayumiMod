@@ -1166,7 +1166,7 @@ quick task comp and delayed task comp add a assignment order token if they selec
   - or replace both with a new card that adds the tokens to hand
   - then can come up with another card as replacement
   - quick comp gains assignment bonus, delay comp adds 1 order to hand
-look at any other places to put an order token
+look at any other places to put an order token - good enough for now
   - assignment hustle
   - defence delegation
   - short or long term
@@ -1228,6 +1228,7 @@ perfect assignment also too powerfuru but its been this way since the dawn of ti
 maybe look into lowering haniwa gains across the board? - TOO MUCH FOR 0.7, MAYBE ANOTHER TIME
   - if i make start of combat gen 5 of each, then perhaps this could work
   - if the gens were like mostly 1-3 or so
+  - could also increase costs instead of lowering gains
 look into interaction title for assign option card, give the config for frost arrow blue color without affecting others - DONE
 move counter attack note from buff into card detail text - DONE
 clay gathering increase block to 10? on upgrade? - DONE
@@ -1244,18 +1245,20 @@ permanent assignment not showing the infinity symbol anymore, guessing a vanilla
   - maybe better to look for a more permanent solution
   - or maybe just remove this card lel
 
-delay order only increase countdown by 3?
-guard order decrease task level by a third or quarter? half is probs too much
-  - and probs lower delay to 2?
 cavalry rush breaks when commanding a card that has double preconditions lmao - FIXED
   - gonna be tough to fix, need to find a way to infinitely loop through the assign trigger action for preconditions
   - it was an ez fix, just use new Reactor() and pass in all the actions, like vanilla code does in PlayCardAction
-shortOrLongTerm give 1 assignment order on long term
-  - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
-  - can just let it add 1 to hand unupgraded for now
 command give the source name in the interaction header - DONE
   - also gave the cards in header color
 refactor command into its own action - DONE
 show debug values for consume loyalty - DONE
   - might as well do for all the actions, just need to implement GetBaseDebugString() in the event args
 look into consume loyalty debug not showing modified by - DONE
+delay order only increase countdown by 3? - DONE
+guard order decrease task level by a third or quarter? half is probs too much - DONE
+  - and probs lower delay to 2?
+  - also fixed it reducing TO a quarter not by lmao
+shortOrLongTerm give 1 assignment order on long term - DONE
+  - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
+  - can just let it add 1 to hand unupgraded for now
+frontline double action, either reword or update to command on any 0cost?

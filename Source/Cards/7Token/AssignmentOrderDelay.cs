@@ -28,7 +28,7 @@ namespace LBoLMod.Cards
             cardConfig.IsUpgradable = false;
             cardConfig.Type = CardType.Skill;
             cardConfig.Value1 = 1;
-            cardConfig.Value2 = 4;
+            cardConfig.Value2 = 3;
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign) };
             return cardConfig;
