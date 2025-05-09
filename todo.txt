@@ -1262,3 +1262,9 @@ shortOrLongTerm give 1 assignment order on long term - DONE
   - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
   - can just let it add 1 to hand unupgraded for now
 frontline double action, either reword or update to command on any 0cost?
+commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg
+check cards that give loyalty and see if too low
+
+new green cards?
+  - cavalry assign that gives graze and maybe does other stuff
+  - 
