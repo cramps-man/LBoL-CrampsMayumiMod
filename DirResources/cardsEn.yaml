@@ -291,9 +291,9 @@ CreateCavalry:
 CreateFencer:
   Name: Skilled Fencer Haniwa
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer| and {Block} |Block|. 
     Gain effects based on |Fencer| level. 
-    |3|: Gain {Block} |Block|. 
+    |3|: Gain {Value2} |Reflection|. 
     |5|: Upgrade {NumUpgrade} random card{NumUpgrade:plural one='' other='s'} in the hand. 
     |7|: Gain {Shield} |Barrier|. 
     |10|: Gain {Value2} |Static Charge| until {PlayerName}'s next turn. 

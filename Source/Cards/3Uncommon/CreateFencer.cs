@@ -29,14 +29,13 @@ namespace LBoLMod.Cards
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
-            cardConfig.Value2 = 4;
-            cardConfig.UpgradedValue2 = 6;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value2 = 5;
             cardConfig.Block = 10;
             cardConfig.Shield = 10;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(TempElectric) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(TempElectric) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Reflect), nameof(TempElectric) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Reflect), nameof(TempElectric) };
             return cardConfig;
         }
     }
@@ -44,7 +43,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CreateFencerDef))]
     public sealed class CreateFencer : Card
     {
-        public int NumUpgrade => IsUpgraded ? 2 : 1;
+        public int NumUpgrade => 2;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(fencerToGain: Value1);
@@ -52,9 +51,11 @@ namespace LBoLMod.Cards
 
             if (fencerCount >= 7)
                 yield return DefenseAction(Block.Block, Shield.Shield);
-            else if (fencerCount >= 3)
+            else
                 yield return DefenseAction(Block.Block, 0);
 
+            if (fencerCount >= 3)
+                yield return BuffAction<Reflect>(Value2);
             if (fencerCount >= 5)
                 yield return UpgradeRandomHandAction(NumUpgrade);
             if (fencerCount >= 10)
