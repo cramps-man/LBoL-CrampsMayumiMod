@@ -44,9 +44,8 @@ FencerKamikaze:
 ArcherPrepVolley:
   Name: Assignment - Arrow Barrage
   Description: |-
-    |Assign {ArcherRequired} Archer|.
+    |Assign {ArcherRequired} Archer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} cards are played, deal {Damage} damage X times to random enemies. X is |Task Level| / {Value1}. 
-    Start with {StartingTaskLevel} |Task Level|. 
 
 HybridDraw:
   Name: Combined Efforts
@@ -83,9 +82,8 @@ HaniwaSupport:
 FencerBuildBarricade:
   Name: Assignment - Build Barricade
   Description: |-
-    |Assign {FencerRequired} Fencer|.
+    |Assign {FencerRequired} Fencer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} cards are played, gain {Value2} |Barrier| per {Value1} |Task Level|.
-    Start with {StartingTaskLevel} |Task Level|. 
 
 DefenceCreateReserves:
   Name: Create Reserves
@@ -233,10 +231,9 @@ AssignExtraTime:
 CavalryScout:
   Name: Assignment - Scout Ahead
   Description: |-
-    |Assign {CavalryRequired} Cavalry|.
+    |Assign {CavalryRequired} Cavalry|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, |Scry| |e:1| per {Value1} |Task Level| and gain |e:1| |Assignment Bonus| per {Value2} |Task Level| (minimum 1). 
     If triggered at turn start, draw a card. 
-    Start with {StartingTaskLevel} |Task Level|. 
 
 FastSummon:
   Name: Early Summoning
@@ -304,15 +301,13 @@ CreateFencer:
 BuildWatchtower:
   Name: Assignment - Build Watchtower
   Description: |-
-    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
+    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} cards are played, gain |e:1| |Watchtower| per {Value1} |Task Level|. 
     If {PlayerName} already has |Watchtower|, instead no |Haniwa| are required and add a |Garrison Archer| to the hand. 
-    Start with {StartingTaskLevel} |Task Level|. 
   UpgradedDescription: |-
-    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. 
+    |Assign {FencerRequired} Fencer| and |Sacrifice| {SacrificeArcherRequired} |Archer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} cards are played, gain |e:1| |Watchtower| per {Value1} |Task Level|. 
     If {PlayerName} already has |Watchtower|, instead no |Haniwa| are required and add an |e:upgraded| |Garrison Archer| to the hand. 
-    Start with {StartingTaskLevel} |Task Level|. 
 
 AssignTickdownReturn:
   Name: Assignment Hustle
@@ -488,10 +483,9 @@ ClayToAshes:
 ChargeAttack:
   Name: Assignment - Ballista Bolt
   Description: |-
-    |Assign {ArcherRequired} Archer|.
+    |Assign {ArcherRequired} Archer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the highest life. 
     Whenever an |Assignment| buff is triggered, increase |Task Level| by {Value1}. 
-    Start with {StartingTaskLevel} |Task Level|. 
 
 AssignPlayGainBlock:
   Name: Defence Delegation
@@ -502,10 +496,9 @@ AssignPlayGainBlock:
 CavalryRush:
   Name: Assignment - Rush Attack
   Description: |-
-    |Assign {CavalryRequired} Cavalry|.
+    |Assign {CavalryRequired} Cavalry|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
     Also |Command| X random <sprite=ManaSprite" name="0"> cost cards in hand to the same target. If it is a |Frontline|, it does not consume |Loyalty|. X is |Task Level| / {Value1} (minimum 1). 
-    Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     If target dies, redirect the |Commanded| cards to the next lowest life enemy up to one time. 
 
@@ -547,10 +540,9 @@ ChooseShortAssign:
 FencerPrepCounter:
   Name: Assignment - Counter Attack
   Description: |-
-    |Assign {FencerRequired} Fencer|.
+    |Assign {FencerRequired} Fencer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal damage equal to {Damage} + (|Task Level| / number of targets), to all enemies that have attacked {PlayerName}. If no one has attacked, attack a random enemy. 
     Whenever {PlayerName} is attacked, increase |Task Level| by {Value1} for each hit. At end of {PlayerName}'s turn, gain {Block} |Block| multiplied by total enemy hits. 
-    Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     If an enemy has |Assignment Mark|, the number of enemies used for calculation only includes enemies with |Assignment Mark|, even if other non-marked enemies have attacked. 
 
@@ -570,9 +562,8 @@ GuardRush:
 ArcherPrepDebuff:
   Name: Assignment - Debilitate Foe
   Description: |-
-    |Assign {ArcherRequired} Archer|.
+    |Assign {ArcherRequired} Archer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal |Accurate| damage equal to |Task Level| / {DivideDmg} to all enemies. Then apply |e:1| |Vulnerable| per {Value1} |Task Level| (minimum 1) and apply |e:1| |Lock On| per {Value2} |Task Level| (minimum 1). 
-    Start with {StartingTaskLevel} |Task Level|. 
 
 AssignTriggerUpgrade:
   Name: Free Training
@@ -583,10 +574,9 @@ AssignTriggerUpgrade:
 CavalrySupplies:
   Name: Assignment - Bring the Supplies
   Description: |-
-    |Assign {CavalryRequired} Cavalry|. 
+    |Assign {CavalryRequired} Cavalry|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} cards are played, choose up to |e:1| of X cards to add to the draw pile. Unselected cards are added to discard. X is {Value2} + (|Task Level| / {Value1}) (minimum 2). 
     Cards are randomized and can include |Flame|, |Radiance|, |Rainbow| or a random |Frontline|. They gain |Replenish|. 
-    Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     |Flame| and |Radiance| have 15% chance, |Rainbow| have 5% chance, |Frontlines| have 65% chance. 
 
@@ -838,10 +828,9 @@ FreezeFrontline:
 ArcherPrepFrostArrow:
   Name: Assignment - Frost Arrow
   Description: |-
-    |Assign {ArcherRequired} Archer|.
+    |Assign {ArcherRequired} Archer|. Start with {StartingTaskLevel} |Task Level|. 
     After {StartingCardCounter} card{StartingCardCounter:plural one=' is' other='s are'} played, deal {Damage} damage and apply |Cold| to random enemies X times. X is |Task Level| / {Value1}. 
     If the target has |Cold|, gain {Block} |Block|. 
-    Start with {StartingTaskLevel} |Task Level|. 
 
 KeikiTeammate:
   Name: Keiki, The Creator

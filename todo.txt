@@ -1181,7 +1181,8 @@ defence delegation add 1-2 assignment cards with exile to hand? - DONE
 assignment counter attack status effect text reads like shit on the assign option card - impossible gg
   - remove some line breaks to compact it
   - probs check the others too
-reword all assignment cards to be better on space - maybe, i might be too lazy, and it wont match the buff
+reword all assignment cards to be better on space - DONE
+  - only move the "start with blah task level" to the top
 update assign trigger action to work with multiple rng hits, and redirect - DONE/FIXED
 can add an upgrade for assignment order, which gives more options that consume assignment bonus for stuff - see after playtesting
   - supply bonus, 1 draw for 1 assign bonus
