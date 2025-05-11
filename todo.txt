@@ -1261,10 +1261,25 @@ guard order decrease task level by a third or quarter? half is probs too much - 
 shortOrLongTerm give 1 assignment order on long term - DONE
   - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
   - can just let it add 1 to hand unupgraded for now
+
 frontline double action, either reword or update to command on any 0cost?
+  - can make it so any commanded card also plays twice, commanded twice
+  - or just commanded frontlines
 commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg
 check cards that give loyalty and see if too low
+also check new loyalty costs for any changes needed
+  - sentinel passive probs go to 10?
+  - charger autoplay to 25-30?
+  - probs need to increase overall loyalty even higher tbh, 15 for common/uncommon, 20 for others
+find new condition for monk? maybe when gaining block? not sure if needed
+  - probs remove the upgrades increasing charge rate, +1 dmg/block is enough for upgrades tbh
+look into "fixing" exploiter dmg calc, so it can show modified by in the debug
+  - current method was a little hack anyway, to fix the bug of it not increasing dmg when executing onplay
+upgrader swap passive and onplay upgrade scaling, so passive increases number of times it upgrades
+  - or not, since selecting all cards is annoying lel
+look into lowering haniwa gain from starters gens and skilled blah gens?
+update wording for command to not specify 0cost, and existing command card to say 0cost - DONE
 
 new green cards?
   - cavalry assign that gives graze and maybe does other stuff
-  - 
+  - card that commands any cost card, costs 11G(1G) and overdraft 2(1)

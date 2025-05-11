@@ -176,7 +176,7 @@ HaniwaBlitz:
   Name: Front Command
   Description: |-
     Deal {Damage} damage. 
-    |Command| up to {Value1} card{Value1:plural one='' other='s'} in the hand. 
+    |Command| up to {Value1} <sprite=ManaSprite" name="0"> cost card{Value1:plural one='' other='s'} in the hand. 
   InteractionTitle: |-
     {SelfName} - Choose up to {Value1} to |Command|
 
@@ -504,7 +504,7 @@ CavalryRush:
   Description: |-
     |Assign {CavalryRequired} Cavalry|.
     After {StartingCardCounter} cards are played, deal damage equal to |Task Level| to the enemy with the lowest life. 
-    Also |Command| X random cards in hand to the same target. If it is a |Frontline|, it does not consume |Loyalty|. X is |Task Level| / {Value1} (minimum 1). 
+    Also |Command| X random <sprite=ManaSprite" name="0"> cost cards in hand to the same target. If it is a |Frontline|, it does not consume |Loyalty|. X is |Task Level| / {Value1} (minimum 1). 
     Start with {StartingTaskLevel} |Task Level|. 
   DetailText: |-
     If target dies, redirect the |Commanded| cards to the next lowest life enemy up to one time. 
@@ -529,7 +529,7 @@ DiscardUpgrade:
 AshesToClay:
   Name: Ashes To Clay
   Description: |-
-    |Command| up to {Value1} card{Value1:plural one='' other='s'} from |Exile|. If it is a |Frontline|, refresh its |Loyalty|. 
+    |Command| up to {Value1} <sprite=ManaSprite" name="0"> cost card{Value1:plural one='' other='s'} from |Exile|. If it is a |Frontline|, refresh its |Loyalty|. 
     Move the selected cards from |Exile| to the draw pile. 
     If none are selected, all |Frontline| cards in the hand gain {Value2} |Loyalty|. 
   InteractionTitle: |-
@@ -630,7 +630,7 @@ LoyaltyCommand:
   Name: Loyalty Command
   Description: |-
     Gain {Value1} |Loyalty Protection|. 
-    |Command| up to {Value2} card{Value2:plural one='' other='s'} in the hand. 
+    |Command| up to {Value2} <sprite=ManaSprite" name="0"> cost card{Value2:plural one='' other='s'} in the hand. 
   InteractionTitle: |-
     {SelfName} - Choose up to {Value2} to |Command|
 
@@ -690,10 +690,10 @@ ZeroCostReduction:
 BlitzCommand:
   Name: Blitz Command
   Description: |-
-    |Command| all cards in the |e:hand|. 
+    |Command| all <sprite=ManaSprite" name="0"> cost cards in the |e:hand|. 
     If the card targets an enemy, target a random enemy. 
   UpgradedDescription: |-
-    |Command| all cards in the |e:hand, draw and discard| piles. 
+    |Command| all <sprite=ManaSprite" name="0"> cost cards in the |e:hand, draw and discard| piles. 
     If the card targets an enemy, target a random enemy. 
 
 MassTaskLevel:
@@ -722,7 +722,7 @@ EnhancedTraining:
 FrontlineCommander:
   Name: Frontline Commander
   Description: |-
-    |While in hand|: At start of {PlayerName}'s turn, |Command| {PassiveCommandCount} random card{PassiveCommandCount:plural one='' other='s'} in the hand. If it is a |Frontline|, does not consume their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
+    |While in hand|: At start of {PlayerName}'s turn, |Command| {PassiveCommandCount} random <sprite=ManaSprite" name="0"> cost card{PassiveCommandCount:plural one='' other='s'} in the hand. If it is a |Frontline|, does not consume their |Loyalty|. Requires {PassiveConsumedRemainingValue} |Loyalty|. 
     If the card targets an enemy, target a random enemy. 
     |When played|: Deal {Damage} damage and apply |Commander's Mark|. Does not consume |Loyalty|. 
   DetailText: |-
