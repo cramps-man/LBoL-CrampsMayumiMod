@@ -44,6 +44,7 @@ namespace LBoLMod.Cards
     public sealed class CreateFencer : Card
     {
         public int NumUpgrade => 2;
+        public int ReflectionGain => IsUpgraded ? 8 : 5;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(fencerToGain: Value1);
@@ -55,7 +56,7 @@ namespace LBoLMod.Cards
                 yield return DefenseAction(Block.Block, 0);
 
             if (fencerCount >= 3)
-                yield return BuffAction<Reflect>(Value2);
+                yield return BuffAction<Reflect>(ReflectionGain);
             if (fencerCount >= 5)
                 yield return UpgradeRandomHandAction(NumUpgrade);
             if (fencerCount >= 10)

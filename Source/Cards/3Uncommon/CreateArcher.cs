@@ -28,10 +28,9 @@ namespace LBoLMod.Cards
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
-            cardConfig.Damage = 15;
-            cardConfig.UpgradedDamage = 20;
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
+            cardConfig.Damage = 10;
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
             cardConfig.Value2 = 2;
             cardConfig.UpgradedValue2 = 3;
             cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
@@ -47,17 +46,19 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(CreateArcherDef))]
     public sealed class CreateArcher : Card
     {
+        public DamageInfo IncreasedDamage => Damage.IncreaseBy(5);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(archerToGain: Value1);
-            yield return base.AttackAction(selector);
             
             int archerCount = HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);
+            if (archerCount >= 5)
+                yield return base.AttackAction(selector, IncreasedDamage);
+            else
+                yield return base.AttackAction(selector);
             if (base.Battle.BattleShouldEnd)
                 yield break;
             if (archerCount >= 3)
-                yield return DebuffAction<TempFirepowerNegative>(selector.GetEnemy(base.Battle), 3);
-            if (archerCount >= 5)
                 yield return DebuffAction<LockedOn>(selector.GetEnemy(base.Battle), Value2);
             if (archerCount >= 7)
                 yield return DebuffAction<Weak>(selector.GetEnemy(base.Battle), duration: 1);

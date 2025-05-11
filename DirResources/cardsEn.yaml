@@ -261,11 +261,10 @@ BasicAssignment:
 CreateArcher:
   Name: Skilled Archer Haniwa
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer|. 
-    Deal {Damage} damage. 
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Archer| and deal {Damage} damage. 
     Gain effects based on |Archer| level. 
-    |3|: Apply |e:3| |Temporary Firepower Down|. 
-    |5|: Apply {Value2} |Lock On|. 
+    |3|: Apply {Value2} |Lock On|. 
+    |5|: Deal {IncreasedDamage} damage instead. 
     |7|: Apply |e:1| |Weak|. 
     |10|: Apply |e:1| |Vulnerable|. 
 
@@ -293,7 +292,7 @@ CreateFencer:
   Description: |-
     Gain {Value1} level{Value1:plural one='' other='s'} of |Fencer| and {Block} |Block|. 
     Gain effects based on |Fencer| level. 
-    |3|: Gain {Value2} |Reflection|. 
+    |3|: Gain {ReflectionGain} |Reflection|. 
     |5|: Upgrade {NumUpgrade} random card{NumUpgrade:plural one='' other='s'} in the hand. 
     |7|: Gain {Shield} |Barrier|. 
     |10|: Gain {Value2} |Static Charge| until {PlayerName}'s next turn. 
