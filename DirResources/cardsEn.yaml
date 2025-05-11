@@ -271,19 +271,12 @@ CreateArcher:
 CreateCavalry:
   Name: Skilled Cavalry Haniwa
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry| and draw |e:1| card. 
     Gain effects based on |Cavalry| level. 
-    |3|: Draw 1 card. 
-    |5|: |Scry| {Scry}. 
-    |7|: Draw 1 card. 
-    |10|: |Assign| 1 instance of |Assignment - Rush Attack|. 
-  UpgradedDescription: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry|.
-    Gain effects based on |Cavalry| level. 
-    |3|: Draw 1 card. 
-    |5|: |Scry| {Scry}. 
-    |7|: Draw 1 card. 
-    |10|: |Assign| 1 instance of |Assignment - Rush Attack+|. 
+    |3|: |Scry| {Scry}. 
+    |5|: Draw |e:1| additional card. 
+    |7|: Gain {Mana}. 
+    |10|: |Assign| |e:1| instance of |Assignment - Rush Attack|. 
   InteractionTitle: |-
     {SelfName} - Scry, Draw {TotalDraw}
 

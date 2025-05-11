@@ -27,18 +27,19 @@ namespace LBoLMod.Cards
             cardConfig.Rarity = Rarity.Uncommon;
             cardConfig.Type = CardType.Skill;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red, ManaColor.White };
-            cardConfig.Cost = new ManaGroup() { Hybrid = 1, HybridColor = 2 };
-            cardConfig.UpgradedCost = new ManaGroup() { Any = 1 };
-            cardConfig.Value1 = 3;
-            cardConfig.UpgradedValue1 = 5;
-            cardConfig.Scry = 3;
-            cardConfig.UpgradedScry = 5;
+            cardConfig.Cost = new ManaGroup() { Any = 1, Hybrid = 1, HybridColor = 2 };
+            cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
+            cardConfig.Value1 = 2;
+            cardConfig.UpgradedValue1 = 3;
+            cardConfig.Scry = 2;
+            cardConfig.UpgradedScry = 3;
+            cardConfig.Mana = new ManaGroup() { Philosophy = 1 };
             cardConfig.Keywords = Keyword.Scry;
             cardConfig.UpgradedKeywords = Keyword.Scry;
             cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
             cardConfig.RelativeCards = new List<string>() { nameof(CavalryRush) };
-            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CavalryRush) + "+" };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CavalryRush)};
             return cardConfig;
         }
     }
@@ -51,10 +52,8 @@ namespace LBoLMod.Cards
             get
             {
                 int cavalryCount = HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
-                int drawCount = 0;
-                if (cavalryCount >= 3)
-                    drawCount++;
-                if (cavalryCount >= 7)
+                int drawCount = 1;
+                if (cavalryCount >= 5)
                     drawCount++;
                 return drawCount;
             }
@@ -64,14 +63,15 @@ namespace LBoLMod.Cards
         {
             yield return new GainHaniwaAction(cavalryToGain: Value1);
             int cavalryCount = HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
-            if (cavalryCount >= 5)
+            if (cavalryCount >= 3)
                 yield return new DescriptiveScryAction(Scry, InteractionTitle);
 
             yield return new DrawManyCardAction(TotalDraw);
-
+            if (cavalryCount >= 7)
+                yield return new GainManaAction(Mana);
             if (cavalryCount >= 10)
             {
-                CavalryRush assignCard = Library.CreateCard<CavalryRush>(IsUpgraded);
+                CavalryRush assignCard = Library.CreateCard<CavalryRush>();
                 assignCard.SetBattle(base.Battle);
                 foreach (var battleAction in assignCard.GetActions(selector, consumingMana, null, false, false, new List<DamageAction>()))
                 {
