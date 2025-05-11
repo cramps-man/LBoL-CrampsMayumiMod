@@ -182,7 +182,7 @@ AssignHaniwaCreate:
   Name: Haniwa Reserves (Assignment)
   Description: |-
     Choose an |Assignment| buff and increase its countdown by {Value2}. 
-    |Buff selected|: Gain {AssignmentBonusGain} |Assignment Bonus| and gain |Haniwa| equal to the number of assigned |Haniwa| + {Value1}. 
+    |Buff selected|: Gain {AssignmentBonusGain} |Assignment Bonus| and gain {Value1} |Haniwa| of the assigned |Haniwa| type on the buff. 
     |None selected|: Gain |e:1| of each |Haniwa|. 
   InteractionTitle: |-
     {SelfName} - Choose up to |e:1| to increase countdown by {Value2}

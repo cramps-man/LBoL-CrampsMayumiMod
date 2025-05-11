@@ -67,11 +67,11 @@ namespace LBoLMod.Cards
                 int archerGain = 0;
                 int cavalryGain = 0;
                 if (optionCard.StatusEffect.CardFencerAssigned > 0)
-                    fencerGain += optionCard.StatusEffect.CardFencerAssigned + Value1;
+                    fencerGain += Value1;
                 if (optionCard.StatusEffect.CardArcherAssigned > 0)
-                    archerGain += optionCard.StatusEffect.CardArcherAssigned + Value1;
+                    archerGain += Value1;
                 if (optionCard.StatusEffect.CardCavalryAssigned > 0)
-                    cavalryGain += optionCard.StatusEffect.CardCavalryAssigned + Value1;
+                    cavalryGain += Value1;
                 yield return new GainHaniwaAction(fencerGain, archerGain, cavalryGain);
             }
             yield return BuffAction<AssignmentBonusSe>(AssignmentBonusGain);

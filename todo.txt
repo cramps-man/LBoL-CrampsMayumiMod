@@ -1274,7 +1274,7 @@ find new condition for monk? maybe when gaining block? not sure if needed
   - probs remove the upgrades increasing charge rate, +1 dmg/block is enough for upgrades tbh
 look into "fixing" exploiter dmg calc, so it can show modified by in the debug - FIXED, when command action was made
   - current method was a little hack anyway, to fix the bug of it not increasing dmg when executing onplay
-upgrader swap passive and onplay upgrade scaling, so passive increases number of times it upgrades
+upgrader swap passive and onplay upgrade scaling, so passive increases number of times it upgrades - UNSURE
   - or not, since selecting all cards is annoying lel
 look into lowering haniwa gain from starters gens and skilled blah gens?
   - all skilled haniwa cards only give 2(3) haniwa now
