@@ -1270,7 +1270,7 @@ also check new loyalty costs for any changes needed
   - sentinel passive probs go to 10?
   - charger autoplay to 25-30?
   - probs need to increase overall loyalty even higher tbh, 15 for common/uncommon, 20 for others
-find new condition for monk? maybe when gaining block? not sure if needed
+find new condition for monk? maybe when gaining block? not sure if needed - DONE
   - probs remove the upgrades increasing charge rate, +1 dmg/block is enough for upgrades tbh
 look into "fixing" exploiter dmg calc, so it can show modified by in the debug - FIXED, when command action was made
   - current method was a little hack anyway, to fix the bug of it not increasing dmg when executing onplay

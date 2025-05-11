@@ -45,7 +45,6 @@ namespace LBoLMod.Cards
         protected override int OnPlayConsumedRemainingValue => 8;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault() + ChargedValue;
         public override int AdditionalBlock => base.UpgradeCounter.GetValueOrDefault() + ChargedValue;
-        public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 5;
         public int ChargedValue => DeltaInt;
         protected override void OnEnterBattle(BattleController battle)
         {
