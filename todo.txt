@@ -1285,7 +1285,9 @@ look into lowering haniwa gain from starters gens and skilled blah gens?
   - skilled archer, upgrade dont increase dmg
   - skilled cavalry, draw 1 naturally, lvl 3 now scry 3, and lvl 5 now draw 1, and lvl 7 now gain P? also lvl 10 dont upgrade the cavalry rush
 update wording for command to not specify 0cost, and existing command card to say 0cost - DONE
-look into improving haniwa sharpshooter to not require dmg giving and dealing
+look into improving haniwa sharpshooter to not require dmg giving and dealing - RIP
+  - hard to do since you cant seemingly react for dmgDealing, only handle
+  - just added few extra checks in the dmgDealing bit
 
 new green cards?
   - cavalry assign that gives graze and maybe does other stuff

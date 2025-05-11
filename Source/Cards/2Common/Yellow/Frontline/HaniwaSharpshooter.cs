@@ -9,6 +9,7 @@ using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LBoLMod.Cards
 {
@@ -65,6 +66,10 @@ namespace LBoLMod.Cards
             if (args.DamageInfo.DamageType != DamageType.Attack)
                 return;
             if (args.DamageInfo.IsAccuracy)
+                return;
+            if (!args.Targets.Where(t => t is EnemyUnit).Any())
+                return;
+            if (!args.Targets.Where(t => t.HasStatusEffect<Graze>()).Any())
                 return;
 
             var dmgInfo = args.DamageInfo;
