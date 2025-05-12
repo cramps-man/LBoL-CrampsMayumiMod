@@ -240,10 +240,16 @@ FastSummon:
   Description: |-
     Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
     |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
+  UpgradedDescription: |-
+    Choose {Value1} |Frontline| card{Value1:plural one='' other='s'} and add them to the hand. 
+    |Sacrifice Haniwa| depending on the chosen card{Value1:plural one='' other='s'}. 
+    {DebutEffect}
   DetailText: |-
     If there are none of a type of |Haniwa|, the cards that require it won't show up. 
   InteractionTitle: |-
     {SelfName} - Choose {Value1} to add to hand
+  Debut: |-
+    {SelfName} costs {Mana} more this combat. 
 
 BasicAssignment:
   Name: Basic Assignment
