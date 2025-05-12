@@ -1289,13 +1289,16 @@ look into improving haniwa sharpshooter to not require dmg giving and dealing - 
   - hard to do since you cant seemingly react for dmgDealing, only handle
   - just added few extra checks in the dmgDealing bit
 inside any assignments that loop to another target, check battle ended
+defence delegation only give 1 assignment order on upgrade
+skilled cavalry draw 2 naturally, lvl 5 becomes 1 graze?
+chain of command give something more so drafting multiples isnt wasted?
 
 early summoning dont exile, on upgrade give debut effect that makes cost 1 - DONE
 blitz command increase cost by 1 each time it's played?
   - or just give it exile lmao
   - or making it 3 cost is enough?
 
-card baseclass refactor
+card baseclass refactor - DONE
   - check null for preconditions now that a bunch of stuff can be commanded
     - the utils method can return empty list
     - some other specific cases probs need actual null checks?

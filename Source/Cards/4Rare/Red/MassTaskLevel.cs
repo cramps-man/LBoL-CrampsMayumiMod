@@ -50,8 +50,12 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            if (!(precondition is SelectCardInteraction interaction))
+                yield break;
+            if (interaction.SelectedCards == null)
+                yield break;
             int removedBuffs = 0;
-            foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
+            foreach (ModAssignOptionCard card in interaction.SelectedCards)
             {
                 card.StatusEffect.Level += Value2;
                 List<StatusEffect> removedAssignBuffs = base.Battle.Player.StatusEffects.Where(s => s is ModAssignStatusEffect && s != card.StatusEffect).ToList();

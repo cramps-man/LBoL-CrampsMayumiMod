@@ -62,7 +62,11 @@ namespace LBoLMod.Cards
         {
             if (IsUpgraded && precondition != null)
             {
-                foreach (var card in ((SelectCardInteraction)precondition).SelectedCards)
+                if (!(precondition is SelectCardInteraction interaction))
+                    yield break;
+                if (interaction.SelectedCards == null)
+                    yield break;
+                foreach (var card in interaction.SelectedCards)
                 {
                     yield return new MoveCardAction(card, CardZone.Hand);
                 }

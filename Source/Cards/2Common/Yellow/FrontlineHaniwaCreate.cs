@@ -61,13 +61,15 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (((SelectCardInteraction)precondition).SelectedCards.Empty())
+            if (!(precondition is SelectCardInteraction interaction))
+                yield break;
+            if (interaction.SelectedCards == null || interaction.SelectedCards.Empty())
             {
                 yield return new GainHaniwaAction(Value2, Value2, Value2);
                 yield break;
             }
 
-            foreach (Card card in ((SelectCardInteraction)precondition).SelectedCards)
+            foreach (Card card in interaction.SelectedCards)
             {
                 if (card.Config.Rarity == Rarity.Common)
                 {

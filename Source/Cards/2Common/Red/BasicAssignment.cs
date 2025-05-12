@@ -66,11 +66,13 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            yield return BuffAction<AssignmentBonusSe>(Value1);
             if (!(precondition is SelectCardInteraction selectInteraction))
+                yield break;
+            if (selectInteraction.SelectedCards == null)
                 yield break;
 
             yield return new AddCardsToHandAction(selectInteraction.SelectedCards);
-            yield return BuffAction<AssignmentBonusSe>(Value1);
         }
     }
 }

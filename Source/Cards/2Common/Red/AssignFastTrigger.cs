@@ -54,7 +54,11 @@ namespace LBoLMod.Cards
                 yield break;
             yield return BuffAction<AssignmentBonusSe>(Value2);
 
-            foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
+            if (!(precondition is SelectCardInteraction interaction))
+                yield break;
+            if (interaction.SelectedCards == null)
+                yield break;
+            foreach (ModAssignOptionCard card in interaction.SelectedCards)
             {
                 card.StatusEffect.Level += card.StatusEffect.Count * Value1;
                 foreach (var item in card.StatusEffect.ImmidiatelyTrigger())

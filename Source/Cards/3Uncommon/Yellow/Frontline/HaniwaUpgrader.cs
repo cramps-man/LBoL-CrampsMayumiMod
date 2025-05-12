@@ -76,7 +76,7 @@ namespace LBoLMod.Cards
         {
             IEnumerable<Card> cards = base.Battle.HandZone.Where(c => c.CanUpgradeAndPositive && c != this);
             var interaction = new SelectCardInteraction(0, Value2, cards);
-            interaction.Description = ExtraDescription1.RuntimeFormat(FormatWrapper);
+            interaction.Description = InteractionTitle;
             return interaction;
         }
 

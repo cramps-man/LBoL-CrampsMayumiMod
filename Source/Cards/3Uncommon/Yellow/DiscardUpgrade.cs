@@ -54,6 +54,8 @@ namespace LBoLMod.Cards
             yield return DefenseAction();
             if (!(precondition is SelectHandInteraction discardInteraction))
                 yield break;
+            if (discardInteraction.SelectedCards == null)
+                yield break;
             if (discardInteraction.SelectedCards.Count == 0)
                 yield break;
             for (int i = 0; i < Value1; i++)

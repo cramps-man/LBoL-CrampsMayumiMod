@@ -52,13 +52,15 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
-            if (((SelectCardInteraction)precondition).SelectedCards.Empty())
+            if (!(precondition is SelectCardInteraction interaction))
+                yield break;
+            if (interaction.SelectedCards == null || interaction.SelectedCards.Empty())
             {
                 yield return new GainHaniwaAction(1, 1, 1);
                 yield break;
             }
 
-            foreach (ModAssignOptionCard optionCard in ((SelectCardInteraction)precondition).SelectedCards)
+            foreach (ModAssignOptionCard optionCard in interaction.SelectedCards)
             {
                 optionCard.StatusEffect.Count += Value2;
                 int fencerGain = 0;

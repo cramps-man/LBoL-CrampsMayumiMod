@@ -57,6 +57,8 @@ namespace LBoLMod.Cards
         {
             if (!(precondition is SelectHandInteraction frontlineInteraction))
                 yield break;
+            if (frontlineInteraction.SelectedCards == null)
+                yield break;
 
             foreach(ModFrontlineCard card in frontlineInteraction.SelectedCards)
             {

@@ -54,20 +54,23 @@ namespace LBoLMod.Cards
             if (!(precondition is SelectHandInteraction copyInteraction))
                 yield break;
 
-            List<Card> copiedCards = new List<Card>();
-            foreach (ModFrontlineCard card in copyInteraction.SelectedCards)
+            if (copyInteraction.SelectedCards != null)
             {
-                var cardClone = (ModFrontlineCard)card.CloneBattleCard();
-                cardClone.IsExile = true;
-                cardClone.RemainingValue = card.RemainingValue;
-                cardClone.IsDarknessMode = card.IsDarknessMode;
-                if (card is FrozenHaniwa frozenCard)
+                List<Card> copiedCards = new List<Card>();
+                foreach (ModFrontlineCard card in copyInteraction.SelectedCards)
                 {
-                    ((FrozenHaniwa)cardClone).OriginalCard = (ModFrontlineCard)frozenCard.OriginalCard.CloneBattleCard();
+                    var cardClone = (ModFrontlineCard)card.CloneBattleCard();
+                    cardClone.IsExile = true;
+                    cardClone.RemainingValue = card.RemainingValue;
+                    cardClone.IsDarknessMode = card.IsDarknessMode;
+                    if (card is FrozenHaniwa frozenCard)
+                    {
+                        ((FrozenHaniwa)cardClone).OriginalCard = (ModFrontlineCard)frozenCard.OriginalCard.CloneBattleCard();
+                    }
+                    copiedCards.Add(cardClone);
                 }
-                copiedCards.Add(cardClone);
+                yield return new AddCardsToDrawZoneAction(copiedCards, DrawZoneTarget.Random);
             }
-            yield return new AddCardsToDrawZoneAction(copiedCards, DrawZoneTarget.Random);
             yield return new DrawManyCardAction(Value1);
         }
     }

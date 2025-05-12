@@ -343,7 +343,7 @@ HaniwaUpgrader:
     Bonuses for each upgrade. 
     Random upgraded cards: +1 per {NumCardsScaling} upgrades
     On Play times to upgrade: +1 per {OnPlayTimesToUpgradeScaling} upgrades
-  ExtraDescription1: |-
+  InteractionTitle: |-
     {SelfName} - Choose {Value2} card{Value2:plural one='' other='s'}, upgrade {OnPlayTimesToUpgrade} time{OnPlayTimesToUpgrade:plural one='' other='s'}
 
 HaniwaExploiter:
@@ -589,7 +589,7 @@ FrontlineCopy:
     Choose {Value2} Common or Uncommon |Frontline| card{Value2:plural one='' other='s'} in the hand and add 1 copy to the draw pile. Copied cards gain |Exile|. 
     Draw {Value1} card{Value1:plural one='' other='s'}. 
   InteractionTitle: |-
-    {SelfName} - Choose up to {Value2} to copy and add to draw
+    {SelfName} - Choose up to {Value2} to copy and add to draw, draw {Value1}
 
 BlitzSummon:
   Name: Summoning - Instant Command
@@ -735,7 +735,7 @@ AssignCommander:
   DetailText: |-
     Bonuses for each upgrade. 
     OnPlay task level: +1 per upgrade
-  ExtraDescription1: |-
+  InteractionTitle: |-
     {SelfName} - Duplicate an |Assignment| buff
 
 OptionAssignCommander:

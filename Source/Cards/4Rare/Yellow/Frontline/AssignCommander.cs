@@ -79,7 +79,7 @@ namespace LBoLMod.Cards
         public override Interaction Precondition()
         {
             var interaction = new SelectCardInteraction(1, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player).Where(c => c.StatusEffect.Count != 0));
-            interaction.Description = ExtraDescription1.RuntimeFormat(FormatWrapper);
+            interaction.Description = InteractionTitle;
             return interaction;
         }
 

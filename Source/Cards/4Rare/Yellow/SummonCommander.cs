@@ -54,6 +54,8 @@ namespace LBoLMod.Cards
         {
             if (!(precondition is MiniSelectCardInteraction selectInteraction))
                 yield break;
+            if (selectInteraction.SelectedCard == null)
+                yield break;
             Card toAdd = selectInteraction.SelectedCard;
             if (IsUpgraded)
                 toAdd.UpgradeCounter = Value1;

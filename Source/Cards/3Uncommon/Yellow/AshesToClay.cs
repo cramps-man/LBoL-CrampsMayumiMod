@@ -60,12 +60,14 @@ namespace LBoLMod.Cards
         {
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
-            if (!selectInteraction.SelectedCards.Any())
+
+            if (selectInteraction == null || !selectInteraction.SelectedCards.Any())
             {
                 foreach (var item in base.Battle.HandZone.Where(c => c is ModFrontlineCard).Cast<ModFrontlineCard>())
                 {
                     item.RemainingValue += Value2;
                 };
+                yield break;
             }
 
             yield return new CommandAction(selectInteraction.SelectedCards.ToList(), selector, false, Name);

@@ -118,6 +118,8 @@ namespace LBoLMod.Utils
 
         public static IEnumerable<BattleAction> CardsSummon(IReadOnlyList<Card> modFrontlineCards, int startingUpgrades = 0, int startingLoyalty = 0)
         {
+            if (modFrontlineCards == null)
+                yield break;
             int totalFencerCost = 0;
             int totalArcherCost = 0;
             int totalCavalryCost = 0;
@@ -175,8 +177,8 @@ namespace LBoLMod.Utils
             if (precondition != null)
             {
                 var commandingCardName = sourceName == "" ? "" : UiUtils.WrapByColor(sourceName, GlobalConfig.EntityColor) + " -> ";
-                if (cardToCommand.ExtraDescription1 != null && cardToCommand is ModFrontlineCard)
-                    precondition.Description = commandingCardName + cardToCommand.ExtraDescription1.RuntimeFormat(cardToCommand.FormatWrapper);
+                if (cardToCommand is ModMayumiCard mmc)
+                    precondition.Description = commandingCardName + mmc.InteractionTitle;
                 else
                     precondition.Description = commandingCardName + UiUtils.WrapByColor(cardToCommand.Name, GlobalConfig.EntityColor);
                 yield return new InteractionAction(precondition, true);

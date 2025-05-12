@@ -53,9 +53,13 @@ namespace LBoLMod.Cards
         }
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
+            if (!(precondition is SelectCardInteraction interaction))
+                yield break;
+            if (interaction.SelectedCards == null)
+                yield break;
             if (base.TriggeredAnyhow)
                 base.IncreaseBaseCost(Mana);
-            foreach (var action in HaniwaFrontlineUtils.CardsSummon(((SelectCardInteraction)precondition).SelectedCards))
+            foreach (var action in HaniwaFrontlineUtils.CardsSummon(interaction.SelectedCards))
             {
                 yield return action;
             };

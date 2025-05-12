@@ -52,6 +52,8 @@ namespace LBoLMod.Cards
         {
             if (!(precondition is SelectHandInteraction freezeInteraction))
                 yield break;
+            if (freezeInteraction.SelectedCards == null)
+                yield break;
 
             foreach(ModFrontlineCard card in freezeInteraction.SelectedCards)
             {

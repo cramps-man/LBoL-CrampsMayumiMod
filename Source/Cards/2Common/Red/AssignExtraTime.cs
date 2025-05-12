@@ -53,7 +53,11 @@ namespace LBoLMod.Cards
         {
             yield return DefenseAction();
             yield return new AddCardsToHandAction(Library.CreateCard<AssignmentOrder>());
-            foreach (ModAssignOptionCard card in ((SelectCardInteraction)precondition).SelectedCards)
+            if (!(precondition is SelectCardInteraction interaction))
+                yield break;
+            if (interaction.SelectedCards == null)
+                yield break;
+            foreach (ModAssignOptionCard card in interaction.SelectedCards)
             {
                 card.StatusEffect.Count += Value1;
                 card.StatusEffect.Level += Value2;

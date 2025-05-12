@@ -56,6 +56,8 @@ namespace LBoLMod.Cards
             yield return BuffAction<LoyaltyProtectionSe>(LoyaltyProtectionGain);
             if (!(precondition is SelectHandInteraction selectInteraction))
                 yield break;
+            if (selectInteraction.SelectedCards == null)
+                yield break;
             if (selectInteraction.SelectedCards.Count == 0)
                 yield break;
 

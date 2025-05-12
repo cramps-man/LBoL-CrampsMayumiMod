@@ -53,6 +53,8 @@ namespace LBoLMod.Cards
             yield return BuffAction<EnhancedTrainingSe>(level: Value2);
             if (!(precondition is SelectHandInteraction upgradeInteraction))
                 yield break;
+            if (upgradeInteraction.SelectedCards == null)
+                yield break;
             if (upgradeInteraction.SelectedCards.Count == 0)
                 yield break;
             for (int i = 0; i < Value1; i++)
