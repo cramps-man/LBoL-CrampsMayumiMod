@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -36,7 +35,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FencerWorshippingDef))]
-    public sealed class FencerWorshipping : Card
+    public sealed class FencerWorshipping : ModMayumiCard
     {
         public int FencerGain => IsUpgraded ? 5 : 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

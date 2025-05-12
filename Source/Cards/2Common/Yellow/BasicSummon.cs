@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -37,11 +36,10 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(BasicSummonDef))]
-    public sealed class BasicSummon : Card
+    public sealed class BasicSummon : ModMayumiCard
     {
         public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
         public override string CantUseMessage => LocSe.RequiresHaniwa();
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetOptionCards(HaniwaFrontlineUtils.CommonOptionTypes, base.Battle, Value1, true);

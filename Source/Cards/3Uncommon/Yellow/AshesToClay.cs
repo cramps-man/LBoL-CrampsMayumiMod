@@ -46,9 +46,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(AshesToClayDef))]
-    public sealed class AshesToClay : Card
+    public sealed class AshesToClay : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = HaniwaFrontlineUtils.GetCommandableCards(base.Battle.ExileZone.ToList(), this);

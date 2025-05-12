@@ -4,7 +4,6 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
@@ -39,9 +38,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(EnhancedTrainingDef))]
-    public sealed class EnhancedTraining : Card
+    public sealed class EnhancedTraining : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             var cards = base.Battle.HandZone.Where(c => c is ModFrontlineCard);

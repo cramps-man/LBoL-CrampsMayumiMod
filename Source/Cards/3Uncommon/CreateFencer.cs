@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.EntityLib.StatusEffects.Basic;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -41,7 +40,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(CreateFencerDef))]
-    public sealed class CreateFencer : Card
+    public sealed class CreateFencer : ModMayumiCard
     {
         public int NumUpgrade => 2;
         public int ReflectionGain => IsUpgraded ? 8 : 5;

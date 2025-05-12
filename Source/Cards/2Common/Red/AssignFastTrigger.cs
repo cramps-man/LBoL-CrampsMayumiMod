@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
@@ -39,9 +38,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(AssignFastTriggerDef))]
-    public sealed class AssignFastTrigger : Card
+    public sealed class AssignFastTrigger : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty(IsUpgraded ? "UpgradedInteractionTitle" : "InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(0, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player))

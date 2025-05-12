@@ -39,7 +39,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(BasicAssignmentDef))]
-    public sealed class BasicAssignment : Card
+    public sealed class BasicAssignment : ModMayumiCard
     {
         private static bool DoneFirstAutoplay = false;
         protected override void OnEnterBattle(BattleController battle)
@@ -56,7 +56,6 @@ namespace LBoLMod.Cards
                 yield return new PlayCardAction(this);
             }
         }
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             var list = new List<Card>() { Library.CreateCard<ArcherPrepVolley>(), Library.CreateCard<FencerBuildBarricade>(), Library.CreateCard<CavalryScout>() };

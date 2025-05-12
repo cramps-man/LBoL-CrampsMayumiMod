@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(MassSummonDef))]
-    public sealed class MassSummon : Card
+    public sealed class MassSummon : ModMayumiCard
     {
         public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
         public override string CantUseMessage => LocSe.RequiresHaniwa();

@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -39,7 +38,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(GarrisonArcherDef))]
-    public sealed class GarrisonArcher:Card
+    public sealed class GarrisonArcher : ModMayumiCard
     {
         public int ArcherLvl0 => 1;
         public int ArcherLvl1 => IsUpgraded ? 3 : 2;

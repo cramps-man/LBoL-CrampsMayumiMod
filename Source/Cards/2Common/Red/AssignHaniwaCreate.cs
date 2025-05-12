@@ -4,7 +4,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -41,10 +40,9 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(AssignHaniwaCreateDef))]
-    public sealed class AssignHaniwaCreate : Card
+    public sealed class AssignHaniwaCreate : ModMayumiCard
     {
         public int AssignmentBonusGain => 1;
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(0, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player))

@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
@@ -33,7 +32,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(ChainOfCommandDef))]
-    public sealed class ChainOfCommand : Card
+    public sealed class ChainOfCommand : ModMayumiCard
     {
         protected override void OnEnterBattle(BattleController battle)
         {

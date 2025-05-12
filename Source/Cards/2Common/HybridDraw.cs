@@ -38,7 +38,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(HybridDrawDef))]
-    public sealed class HybridDraw : Card
+    public sealed class HybridDraw : ModMayumiCard
     {
         public int AssignRequirement => 1;
         public int FrontlineRequirement => 1;

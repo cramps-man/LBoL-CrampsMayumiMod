@@ -34,7 +34,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(ZeroCostMoveDef))]
-    public sealed class ZeroCostMove : Card
+    public sealed class ZeroCostMove : ModMayumiCard
     {
         public List<Card> MoveableCards => base.Battle.DrawZone.Concat(base.Battle.DiscardZone).Where(c => c.Cost.IsEmpty && !c.IsForbidden).ToList();
         public int ZeroCostCount 
@@ -46,7 +46,6 @@ namespace LBoLMod.Cards
                 return MoveableCards.Count;
             }
         }
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             if (IsUpgraded)

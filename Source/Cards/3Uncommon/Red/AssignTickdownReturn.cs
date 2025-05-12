@@ -42,7 +42,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(AssignTickdownReturnDef))]
-    public sealed class AssignTickdownReturn : Card
+    public sealed class AssignTickdownReturn : ModMayumiCard
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

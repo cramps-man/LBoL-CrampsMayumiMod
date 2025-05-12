@@ -36,7 +36,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(CreateHaniwaDef))]
-    public sealed class CreateHaniwa:Card
+    public sealed class CreateHaniwa : ModMayumiCard
     {
         public override Interaction Precondition()
         {

@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -37,7 +36,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(CavalryWorshippingDef))]
-    public sealed class CavalryWorshipping : Card
+    public sealed class CavalryWorshipping : ModMayumiCard
     {
         public int CavalryGain => IsUpgraded ? 5 : 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

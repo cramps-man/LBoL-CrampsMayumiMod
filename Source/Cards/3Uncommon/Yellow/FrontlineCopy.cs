@@ -39,9 +39,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FrontlineCopyDef))]
-    public sealed class FrontlineCopy : Card
+    public sealed class FrontlineCopy : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard && (c.Config.Rarity == Rarity.Common || c.Config.Rarity == Rarity.Uncommon)).ToList();

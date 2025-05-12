@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -35,7 +34,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(HandsizeBlockDef))]
-    public sealed class HandsizeBlock : Card
+    public sealed class HandsizeBlock : ModMayumiCard
     {
         public override int AdditionalBlock
         {

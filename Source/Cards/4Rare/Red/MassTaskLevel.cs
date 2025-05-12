@@ -4,7 +4,6 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -40,9 +39,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(MassTaskLevelDef))]
-    public sealed class MassTaskLevel : Card
+    public sealed class MassTaskLevel : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(0, 1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player))

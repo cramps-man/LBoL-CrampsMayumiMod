@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -43,7 +42,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FullFrontalAssaultDef))]
-    public sealed class FullFrontalAssault : Card
+    public sealed class FullFrontalAssault : ModMayumiCard
     {
         public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
         public override string CantUseMessage => LocSe.RequiresHaniwa();

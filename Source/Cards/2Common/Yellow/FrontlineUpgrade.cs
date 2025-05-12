@@ -39,10 +39,9 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FrontlineUpgradeDef))]
-    public sealed class FrontlineUpgrade : Card
+    public sealed class FrontlineUpgrade : ModMayumiCard
     {
         public int LoyaltyProtectionGain => IsUpgraded ? 6 : 4;
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c.CanUpgradeAndPositive).ToList();

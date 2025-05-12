@@ -1,6 +1,5 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -33,7 +32,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(BasicAttackRDef))]
-    public sealed class BasicAttackR : Card
+    public sealed class BasicAttackR : ModMayumiCard
     {
     }
 }

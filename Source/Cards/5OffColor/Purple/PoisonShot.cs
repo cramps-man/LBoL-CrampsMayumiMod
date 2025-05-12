@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.EntityLib.StatusEffects.Others;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -36,7 +35,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(PoisonShotDef))]
-    public sealed class PoisonShot : Card
+    public sealed class PoisonShot : ModMayumiCard
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

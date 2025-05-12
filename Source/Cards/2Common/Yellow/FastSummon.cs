@@ -3,13 +3,12 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
-using LBoLMod.Utils;
 using LBoLMod.StatusEffects.Keywords;
-using System.Collections.Generic;
 using LBoLMod.StatusEffects.Localization;
+using LBoLMod.Utils;
+using System.Collections.Generic;
 
 namespace LBoLMod.Cards
 {
@@ -40,19 +39,10 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FastSummonDef))]
-    public sealed class FastSummon : Card
+    public sealed class FastSummon : ModMayumiCard
     {
-        public string DecorateKeyword(Keyword keyword, string lockey, bool activated)
-        {
-            string kw = LBoL.Core.Keywords.GetDisplayWord(keyword)?.Name ?? lockey;
-            string prop = LocalizeProperty(lockey, true);
-            
-            return StringDecorator.Decorate(Battle != null && activated ? $"|d:{kw}: {prop}|" : $"|{kw}|: {prop}").RuntimeFormat(FormatWrapper);
-        }
-        public string DebutEffect => DecorateKeyword(Keyword.Debut, "Debut", !DebutActive);
         public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
         public override string CantUseMessage => LocSe.RequiresHaniwa();
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle, checkSacrificeRequirement: true);

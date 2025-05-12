@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Abilities;
@@ -36,7 +35,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(AssignTriggerSummonDef))]
-    public sealed class AssignTriggerSummon : Card
+    public sealed class AssignTriggerSummon : ModMayumiCard
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

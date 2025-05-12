@@ -38,9 +38,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FreezeFrontlineDef))]
-    public sealed class FreezeFrontline : Card
+    public sealed class FreezeFrontline : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();

@@ -40,9 +40,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(SummonCommanderDef))]
-    public sealed class SummonCommander : Card
+    public sealed class SummonCommander : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             var toSelect = new List<Card>() { Library.CreateCard<FrontlineCommander>(), Library.CreateCard<AssignCommander>() };

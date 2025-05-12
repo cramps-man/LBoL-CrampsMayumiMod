@@ -44,7 +44,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FrontlineHaniwaCreateDef))]
-    public sealed class FrontlineHaniwaCreate : Card
+    public sealed class FrontlineHaniwaCreate : ModMayumiCard
     {
         public int CommonGain => 1 + Value1;
         public int CommonLoyaltyProtGain => CommonGain * 2;
@@ -52,7 +52,6 @@ namespace LBoLMod.Cards
         public int UncommonLoyaltyProtGain => UncommonGain * 2;
         public int RareGain => 4 + Value1;
         public int RareLoyaltyProtGain => RareGain * 2;
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(0, 1, base.Battle.HandZone.Where(c => c is ModFrontlineCard))

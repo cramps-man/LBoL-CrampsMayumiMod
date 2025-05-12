@@ -40,7 +40,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(GuardRushDef))]
-    public sealed class GuardRush : Card
+    public sealed class GuardRush : ModMayumiCard
     {
         public override bool CanUse
         {

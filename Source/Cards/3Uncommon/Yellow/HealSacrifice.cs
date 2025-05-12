@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -38,7 +37,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(HealSacrificeDef))]
-    public sealed class HealSacrifice : Card
+    public sealed class HealSacrifice : ModMayumiCard
     {
         public int SacrificeAmount => 1;
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled(base.Battle.Player, HaniwaActionType.Sacrifice, SacrificeAmount, SacrificeAmount, SacrificeAmount);

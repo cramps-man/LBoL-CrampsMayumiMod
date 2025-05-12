@@ -55,7 +55,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(KeikiTeammateDef))]
-    public sealed class KeikiTeammate : Card
+    public sealed class KeikiTeammate : ModMayumiCard
     {
         public int FrontlineExileDamage
         {

@@ -1,7 +1,6 @@
 ﻿using LBoL.Base;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Abilities;
@@ -13,7 +12,7 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public abstract class ModAssignCard : Card
+    public abstract class ModAssignCard : ModMayumiCard
     {
         public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(LocSe.AssignKeyword(), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + LocSe.AssignKeyword(), GlobalConfig.DefaultKeywordColor);
         public virtual int FencerAssigned => 0;

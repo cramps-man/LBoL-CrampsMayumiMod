@@ -4,7 +4,6 @@ using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -42,11 +41,10 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(DarknessSummonDef))]
-    public sealed class DarknessSummon : Card
+    public sealed class DarknessSummon : ModMayumiCard
     {
         public override bool CanUse => HaniwaUtils.HasAnyHaniwa(base.Battle.Player);
         public override string CantUseMessage => LocSe.RequiresHaniwa();
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<ModFrontlineOptionCard> cards = HaniwaFrontlineUtils.GetAllOptionCards(base.Battle, checkSacrificeRequirement: true);

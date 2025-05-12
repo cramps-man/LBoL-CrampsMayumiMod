@@ -41,9 +41,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(LoyaltyCommandDef))]
-    public sealed class LoyaltyCommand : Card
+    public sealed class LoyaltyCommand : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.ToList(), this);

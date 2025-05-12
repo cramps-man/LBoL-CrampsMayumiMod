@@ -39,9 +39,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(HaniwaBlitzDef))]
-    public sealed class HaniwaBlitz : Card
+    public sealed class HaniwaBlitz : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.ToList(), this);

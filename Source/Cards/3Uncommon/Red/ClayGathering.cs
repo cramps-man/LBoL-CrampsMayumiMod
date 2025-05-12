@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using System.Collections.Generic;
@@ -35,7 +34,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(ClayGatheringDef))]
-    public sealed class ClayGathering : Card
+    public sealed class ClayGathering : ModMayumiCard
     {
         public override int AdditionalShield
         {

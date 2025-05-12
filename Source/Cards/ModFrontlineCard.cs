@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public abstract class ModFrontlineCard : Card
+    public abstract class ModFrontlineCard : ModMayumiCard
     {
         public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(LocSe.FrontlineKeyword(), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + LocSe.FrontlineKeyword(), GlobalConfig.DefaultKeywordColor);
 

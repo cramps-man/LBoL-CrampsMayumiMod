@@ -43,7 +43,6 @@ namespace LBoLMod.Cards
     public sealed class ChooseShortAssign : ModAssignCard
     {
         public override bool CanUse => true;
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             List<Card> cards = HaniwaAssignUtils.GetAssignCardTypes(base.Battle.Player).SampleMany(3, base.BattleRng).Select(Library.CreateCard).ToList();

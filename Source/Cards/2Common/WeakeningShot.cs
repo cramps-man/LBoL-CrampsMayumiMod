@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -40,7 +39,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(WeakeningShotDef))]
-    public sealed class WeakeningShot : Card
+    public sealed class WeakeningShot : ModMayumiCard
     {
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {

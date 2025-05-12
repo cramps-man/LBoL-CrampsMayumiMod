@@ -1,6 +1,5 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects;
@@ -27,7 +26,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(ModAssignOptionCardDef))]
-    public sealed class ModAssignOptionCard: Card
+    public sealed class ModAssignOptionCard : ModMayumiCard
     {
         public override string Name => CardName == "" ? base.Name : CardName;
         public override string Description => CardText == "" ? base.Description : CardText;

@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public abstract class ModFrontlineOptionCard: Card
+    public abstract class ModFrontlineOptionCard: ModMayumiCard
     {
         public int AvailableFencer => HaniwaUtils.GetHaniwaLevel<FencerHaniwa>(base.Battle.Player);
         public int AvailableArcher => HaniwaUtils.GetHaniwaLevel<ArcherHaniwa>(base.Battle.Player);

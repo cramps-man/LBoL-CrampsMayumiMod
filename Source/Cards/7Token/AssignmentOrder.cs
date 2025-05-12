@@ -42,9 +42,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(AssignmentOrderDef))]
-    public sealed class AssignmentOrder : Card
+    public sealed class AssignmentOrder : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             var selectList = new List<Card>();

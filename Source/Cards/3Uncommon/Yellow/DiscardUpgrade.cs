@@ -38,10 +38,9 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(DiscardUpgradeDef))]
-    public sealed class DiscardUpgrade : Card
+    public sealed class DiscardUpgrade : ModMayumiCard
     {
         public override bool DiscardCard => true;
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c is ModFrontlineCard).ToList();

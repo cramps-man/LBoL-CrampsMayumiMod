@@ -1295,6 +1295,13 @@ blitz command increase cost by 1 each time it's played?
   - or just give it exile lmao
   - or making it 3 cost is enough?
 
+card baseclass refactor
+  - check null for preconditions now that a bunch of stuff can be commanded
+    - the utils method can return empty list
+    - some other specific cases probs need actual null checks?
+  - update frontline utils execute onplay to use interaction title variable
+  - update upgrader and assignment commander yamls to use interaction title instead of extra description
+
 new green cards?
   - cavalry assign that gives graze and maybe does other stuff
   - card that commands any cost card, costs 11G(1G) and overdraft 2(1)

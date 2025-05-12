@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.Interactions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -37,9 +36,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(PermanentAssignDef))]
-    public sealed class PermanentAssign : Card
+    public sealed class PermanentAssign : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             return new SelectCardInteraction(1, Value1, HaniwaAssignUtils.CreateAssignOptionCards(base.Battle.Player, includePermanent: false))

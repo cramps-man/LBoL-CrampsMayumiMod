@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoL.EntityLib.StatusEffects.Others;
 using LBoLEntitySideloader;
@@ -38,7 +37,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(ArcherWorshippingDef))]
-    public sealed class ArcherWorshipping : Card
+    public sealed class ArcherWorshipping : ModMayumiCard
     {
         public int ArcherGain => IsUpgraded ? 5 : 3;
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

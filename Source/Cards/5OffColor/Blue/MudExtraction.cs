@@ -43,9 +43,8 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(MudExtractionDef))]
-    public sealed class MudExtraction : Card
+    public sealed class MudExtraction : ModMayumiCard
     {
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle", true).RuntimeFormat(this.FormatWrapper);
         public override Interaction Precondition()
         {
             List<Card> list = base.Battle.HandZone.Where((Card c) => c != this && c is ModFrontlineCard).ToList();

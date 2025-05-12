@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
@@ -44,7 +43,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(CreateArcherDef))]
-    public sealed class CreateArcher : Card
+    public sealed class CreateArcher : ModMayumiCard
     {
         public DamageInfo IncreasedDamage => Damage.IncreaseBy(5);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)

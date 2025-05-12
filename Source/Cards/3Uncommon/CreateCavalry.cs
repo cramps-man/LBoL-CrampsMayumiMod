@@ -3,7 +3,6 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -45,7 +44,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(CreateCavalryDef))]
-    public sealed class CreateCavalry : Card
+    public sealed class CreateCavalry : ModMayumiCard
     {
         public int TotalDraw
         {
@@ -58,7 +57,6 @@ namespace LBoLMod.Cards
                 return drawCount;
             }
         }
-        public string InteractionTitle => this.LocalizeProperty("InteractionTitle").RuntimeFormat(this.FormatWrapper);
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             yield return new GainHaniwaAction(cavalryToGain: Value1);

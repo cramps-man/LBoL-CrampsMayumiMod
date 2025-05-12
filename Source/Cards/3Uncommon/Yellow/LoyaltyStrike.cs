@@ -1,6 +1,5 @@
 ﻿using LBoL.Base;
 using LBoL.ConfigData;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.StatusEffects.Keywords;
@@ -35,7 +34,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(LoyaltyStrikeDef))]
-    public sealed class LoyaltyStrike : Card
+    public sealed class LoyaltyStrike : ModMayumiCard
     {
         public int HaniwaBonus
         {

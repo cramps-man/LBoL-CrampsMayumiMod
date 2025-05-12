@@ -35,7 +35,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(BlitzCommandDef))]
-    public sealed class BlitzCommand : Card
+    public sealed class BlitzCommand : ModMayumiCard
     {
         public List<Card> CardsInHand => HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.ToList(), this);
         public List<Card> CardsInPlay => HaniwaFrontlineUtils.GetCommandableCards(base.Battle.HandZone.Concat(base.Battle.DrawZone).Concat(base.Battle.DiscardZone).ToList(), this);

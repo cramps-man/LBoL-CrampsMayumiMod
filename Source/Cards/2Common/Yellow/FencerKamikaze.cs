@@ -2,7 +2,6 @@
 using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
-using LBoL.Core.Cards;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -43,7 +42,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FencerKamikazeDef))]
-    public sealed class FencerKamikaze : Card
+    public sealed class FencerKamikaze : ModMayumiCard
     {
         public override bool CanUse => HaniwaUtils.IsLevelFulfilled<FencerHaniwa>(base.Battle.Player, Value1, HaniwaActionType.Sacrifice);
         public override string CantUseMessage => LocSe.NeedMoreFencer();
