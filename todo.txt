@@ -1288,15 +1288,15 @@ update wording for command to not specify 0cost, and existing command card to sa
 look into improving haniwa sharpshooter to not require dmg giving and dealing - RIP
   - hard to do since you cant seemingly react for dmgDealing, only handle
   - just added few extra checks in the dmgDealing bit
-inside any assignments that loop to another target, check battle ended
-defence delegation only give 1 assignment order on upgrade
-skilled cavalry draw 2 naturally, lvl 5 becomes 1 graze?
-chain of command give something more so drafting multiples isnt wasted?
 
 early summoning dont exile, on upgrade give debut effect that makes cost 1 - DONE
 blitz command increase cost by 1 each time it's played?
   - or just give it exile lmao
   - or making it 3 cost is enough?
+inside any assignments that loop to another target, check battle ended
+defence delegation only give 1 assignment order on upgrade
+skilled cavalry draw 2 naturally, lvl 5 becomes 1 graze?
+chain of command give something more so drafting multiples isnt wasted?
 
 card baseclass refactor - DONE
   - check null for preconditions now that a bunch of stuff can be commanded
@@ -1304,7 +1304,10 @@ card baseclass refactor - DONE
     - some other specific cases probs need actual null checks?
   - update frontline utils execute onplay to use interaction title variable
   - update upgrader and assignment commander yamls to use interaction title instead of extra description
+perhaps shouldve manually set the null variables to a default, atleast for the select hand interaction
 
 new green cards?
   - cavalry assign that gives graze and maybe does other stuff
+    - cant play attack cards while buff active?
   - card that commands any cost card, costs 11G(1G) and overdraft 2(1)
+    - thought this overdraft thing could become base command mechanics, but maybe too complicated/op, so leave as offcolor
