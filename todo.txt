@@ -1297,6 +1297,7 @@ inside any assignments that loop to another target, check battle ended
 defence delegation only give 1 assignment order on upgrade
 skilled cavalry draw 2 naturally, lvl 5 becomes 1 graze?
 chain of command give something more so drafting multiples isnt wasted?
+add interaction title for create reserves, can just be selfname
 
 card baseclass refactor - DONE
   - check null for preconditions now that a bunch of stuff can be commanded
@@ -1305,9 +1306,11 @@ card baseclass refactor - DONE
   - update frontline utils execute onplay to use interaction title variable
   - update upgrader and assignment commander yamls to use interaction title instead of extra description
 perhaps shouldve manually set the null variables to a default, atleast for the select hand interaction
+  - it broke with min card selected counts, so trying with not allowing to cancel in the first place
 
 new green cards?
   - cavalry assign that gives graze and maybe does other stuff
     - cant play attack cards while buff active?
   - card that commands any cost card, costs 11G(1G) and overdraft 2(1)
     - thought this overdraft thing could become base command mechanics, but maybe too complicated/op, so leave as offcolor
+    - cost can be 1G(0), and just overdraft the cost of the card

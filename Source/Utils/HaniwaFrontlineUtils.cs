@@ -2,6 +2,7 @@
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.Battle.Interactions;
 using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
 using LBoL.EntityLib.Exhibits.Shining;
@@ -181,7 +182,12 @@ namespace LBoLMod.Utils
                     precondition.Description = commandingCardName + mmc.InteractionTitle;
                 else
                     precondition.Description = commandingCardName + UiUtils.WrapByColor(cardToCommand.Name, GlobalConfig.EntityColor);
-                yield return new InteractionAction(precondition);
+                bool allowCancel = true;
+                if (precondition is SelectCardInteraction sci && sci.Min == 0)
+                    allowCancel = false;
+                if (precondition is SelectHandInteraction shi && shi.Min == 0)
+                    allowCancel = false;
+                yield return new InteractionAction(precondition, allowCancel);
             }
             foreach (var action in cardToCommand.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, false, false, new List<DamageAction>()))
             {
