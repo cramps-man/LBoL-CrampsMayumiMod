@@ -1234,7 +1234,7 @@ clay gathering increase block to 10? on upgrade? - DONE
 
 remove retain from balissa bolt? - NOT SURE
 add author for frontline arts
-full frontal assault rework, assign all haniwa
+full frontal assault rework, assign all haniwa - maybe leave?
   - then have effects based on each haniwa type, and effects for dmg, then all frontlines in hand onplay boom ggez
   - probs dont allow being found via quick assignment, nor duplicated or permanent
   - maybe just lower dmg scaling and increase base for now?
@@ -1261,7 +1261,7 @@ shortOrLongTerm give 1 assignment order on long term - DONE
   - on upgrade the assignment order is upgraded? will have to implement the bonus stuff i wanted but we shall see
   - can just let it add 1 to hand unupgraded for now
 
-frontline double action, either reword or update to command on any 0cost?
+frontline double action, either reword or update to command on any 0cost? - unsure
   - can make it so any commanded card also plays twice, commanded twice
   - or just commanded frontlines
 commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg
@@ -1290,7 +1290,7 @@ look into improving haniwa sharpshooter to not require dmg giving and dealing - 
   - just added few extra checks in the dmgDealing bit
 
 early summoning dont exile, on upgrade give debut effect that makes cost 1 - DONE
-blitz command increase cost by 1 each time it's played?
+blitz command increase cost by 1 each time it's played? - DONE
   - or just give it exile lmao
   - or making it 3 cost is enough?
 inside any assignments that loop to another target, check battle ended
