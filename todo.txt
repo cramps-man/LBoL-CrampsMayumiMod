@@ -1295,9 +1295,9 @@ blitz command increase cost by 1 each time it's played? - DONE
   - or making it 3 cost is enough?
 inside any assignments that loop to another target, check battle ended - DONE
 defence delegation only give 1 assignment order on upgrade - DONE
-skilled cavalry draw 2 naturally, lvl 5 becomes 1 graze?
+skilled cavalry draw 2 naturally, lvl 5 becomes 1 graze? - DONE
 chain of command give something more so drafting multiples isnt wasted?
-add interaction title for create reserves, can just be selfname
+add interaction title for create reserves, can just be selfname - DONE
 
 card baseclass refactor - DONE
   - check null for preconditions now that a bunch of stuff can be commanded

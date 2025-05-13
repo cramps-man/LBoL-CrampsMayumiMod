@@ -3,6 +3,7 @@ using LBoL.ConfigData;
 using LBoL.Core;
 using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
+using LBoL.Core.StatusEffects;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 using LBoLMod.BattleActions;
@@ -30,13 +31,14 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
             cardConfig.Value1 = 2;
             cardConfig.UpgradedValue1 = 3;
+            cardConfig.Value2 = 1;
             cardConfig.Scry = 2;
             cardConfig.UpgradedScry = 3;
             cardConfig.Mana = new ManaGroup() { Philosophy = 1 };
             cardConfig.Keywords = Keyword.Scry;
             cardConfig.UpgradedKeywords = Keyword.Scry;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Graze) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Assign), nameof(Graze) };
             cardConfig.RelativeCards = new List<string>() { nameof(CavalryRush) };
             cardConfig.UpgradedRelativeCards = new List<string>() { nameof(CavalryRush)};
             return cardConfig;
@@ -51,9 +53,7 @@ namespace LBoLMod.Cards
             get
             {
                 int cavalryCount = HaniwaUtils.GetHaniwaLevel<CavalryHaniwa>(base.Battle.Player);
-                int drawCount = 1;
-                if (cavalryCount >= 5)
-                    drawCount++;
+                int drawCount = 2;
                 return drawCount;
             }
         }
@@ -65,6 +65,8 @@ namespace LBoLMod.Cards
                 yield return new DescriptiveScryAction(Scry, InteractionTitle);
 
             yield return new DrawManyCardAction(TotalDraw);
+            if (cavalryCount >= 5)
+                yield return BuffAction<Graze>(Value2);
             if (cavalryCount >= 7)
                 yield return new GainManaAction(Mana);
             if (cavalryCount >= 10)

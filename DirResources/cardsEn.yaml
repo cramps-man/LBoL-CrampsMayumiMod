@@ -277,10 +277,10 @@ CreateArcher:
 CreateCavalry:
   Name: Skilled Cavalry Haniwa
   Description: |-
-    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry| and draw |e:1| card. 
+    Gain {Value1} level{Value1:plural one='' other='s'} of |Cavalry| and draw |e:2| cards. 
     Gain effects based on |Cavalry| level. 
     |3|: |Scry| {Scry}. 
-    |5|: Draw |e:1| additional card. 
+    |5|: Gain {Value2} |Graze|. 
     |7|: Gain {Mana}. 
     |10|: |Assign| |e:1| instance of |Assignment - Rush Attack|. 
   InteractionTitle: |-
@@ -969,6 +969,8 @@ CreateHaniwa:
   Name: Haniwa Reserves
   Description: |-
     Gain {Value1} levels of the chosen |Haniwa| type (|Fencer|, |Archer|, |Cavalry|).
+  InteractionTitle: |-
+    {SelfName}
 
 CreateHaniwaArcher:
   Name: Haniwa Reserves (Archer)
