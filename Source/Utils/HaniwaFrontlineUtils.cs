@@ -188,6 +188,8 @@ namespace LBoLMod.Utils
                 if (precondition is SelectHandInteraction shi && shi.Min == 0)
                     allowCancel = false;
                 yield return new InteractionAction(precondition, allowCancel);
+                if (precondition.IsCanceled)
+                    yield break;
             }
             foreach (var action in cardToCommand.GetActions(selector != null ? selector : GetTargetForOnPlayAction(battle), ManaGroup.Empty, precondition, false, false, new List<DamageAction>()))
             {
