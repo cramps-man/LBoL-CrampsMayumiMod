@@ -24,6 +24,8 @@ namespace LBoLMod.StatusEffects.Assign
         {
             for (var i = 0; i < TotalTimes; i++)
             {
+                if (base.Battle.BattleShouldEnd)
+                    yield break;
                 var markedEnemy = MarkedEnemies.SampleOrDefault(base.Battle.GameRun.BattleRng);
                 yield return new DamageAction(Owner, markedEnemy != null ? markedEnemy : base.Battle.RandomAliveEnemy, AssignSourceCard.Damage);
             }

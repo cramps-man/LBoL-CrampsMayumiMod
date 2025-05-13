@@ -28,6 +28,8 @@ namespace LBoLMod.StatusEffects.Assign
         {
             var accurateDmg = DamageInfo.Attack(TotalDmg, true);
             yield return new DamageAction(Owner, base.Battle.AllAliveEnemies, accurateDmg);
+            if (base.Battle.BattleShouldEnd)
+                yield break;
             foreach (var item in DebuffAction<Vulnerable>(Battle.AllAliveEnemies, duration: TotalVuln))
             {
                 yield return item;
