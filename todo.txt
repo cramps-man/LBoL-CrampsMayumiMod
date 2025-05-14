@@ -1310,9 +1310,10 @@ new green cards?
 
 commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg
 check cards that give loyalty and see if too low - they are honestly ok for now
-also check new loyalty costs for any changes needed
+also check new loyalty costs for any changes needed - DONE but keep testing
   - sentinel passive probs go to 10?
   - charger autoplay to 25-30?
+    - update the end of turn loyalty gain to have more base, and increase less exponentially via other chargers
   - probs need to increase overall loyalty even higher tbh, 15 for common/uncommon, 20 for others
     - only if the onplay cost goes above 10 perhaps, passives can go above the starter
   - support passive to 12-15?
