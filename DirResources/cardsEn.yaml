@@ -964,6 +964,14 @@ ArcherWorshipping:
     |e:5| |Lock On|
     |e:5| |Poison|
 
+VigorousCommand:
+  Name: Vigorous Command
+  Description: |-
+    |Command| {Value1} card in the hand with any cost. 
+    |Overdraft| the selected cards' cost. 
+  InteractionTitle: |-
+    {SelfName} - Choose {Value1} to |Command| and |Overdraft| its cost
+
 #TOKENS
 CreateHaniwa:
   Name: Haniwa Reserves

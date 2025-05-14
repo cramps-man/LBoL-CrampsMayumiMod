@@ -1304,11 +1304,12 @@ perhaps shouldve manually set the null variables to a default, atleast for the s
 new green cards?
   - cavalry assign that gives graze and maybe does other stuff
     - cant play attack cards while buff active?
-  - card that commands any cost card, costs 11G(1G) and overdraft 2(1)
+  - card that commands any cost card, costs 11G(1G) and overdraft 2(1) - DONE
     - thought this overdraft thing could become base command mechanics, but maybe too complicated/op, so leave as offcolor
     - cost can be 1G(0), and just overdraft the cost of the card
 
-commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg
+commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg - UNSURE
+  - even just working on commanders themselves is great for focus damage, especially if you commander the commander to apply it without it leaving hand
 check cards that give loyalty and see if too low - they are honestly ok for now
 also check new loyalty costs for any changes needed - DONE but keep testing
   - sentinel passive probs go to 10?
@@ -1320,4 +1321,8 @@ also check new loyalty costs for any changes needed - DONE but keep testing
   - attacker passive to 4? onplay 6?
   - sharpshooter passive to 7?
   - exploiter passive to 5 and onplay to 7?
-chain of command give something more so drafting multiples isnt wasted?
+chain of command give something more so drafting multiples isnt wasted? - UNSURE
+  - maybe it's already very powerufl anyway
+also add misfortune to uncommandable cards
+fix early summoning being commanded and activating debut effect of increasing cost
+  - literally only an issue with this card since this debut is a negative unlike most vanilla debuts

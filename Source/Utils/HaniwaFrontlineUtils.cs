@@ -208,12 +208,13 @@ namespace LBoLMod.Utils
             typeof(HaniwaBlitz),
             typeof(AshesToClay),
             typeof(LoyaltyCommand),
-            typeof(BlitzCommand)
+            typeof(BlitzCommand),
+            typeof(VigorousCommand)
         };
-        public static List<Card> GetCommandableCards(List<Card> potentialCards, Card playedCard = null)
+        public static List<Card> GetCommandableCards(List<Card> potentialCards, Card playedCard = null, bool zeroCostLimit = true)
         {
             return potentialCards.Where((Card c) => c != playedCard
-                && c.Cost == ManaGroup.Empty
+                && zeroCostLimit ? c.Cost == ManaGroup.Empty : true
                 && !c.HasKeyword(Keyword.Forbidden)
                 && c.CardType != CardType.Status
                 && c.CanUse
