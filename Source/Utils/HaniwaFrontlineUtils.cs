@@ -217,6 +217,7 @@ namespace LBoLMod.Utils
                 && zeroCostLimit ? c.Cost == ManaGroup.Empty : true
                 && !c.HasKeyword(Keyword.Forbidden)
                 && c.CardType != CardType.Status
+                && c.CardType != CardType.Misfortune
                 && c.CanUse
                 && (c is ModFrontlineCard || c.CanBeDuplicated)
                 && !UncommandableCards.Contains(c.GetType())

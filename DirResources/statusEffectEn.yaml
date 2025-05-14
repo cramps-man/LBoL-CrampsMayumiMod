@@ -98,11 +98,11 @@ Command:
   Description: |-
     The selected cards have their effects played without being discarded. 
     If the card is a |Frontline|, consume its |Loyalty|. If it is an |Ability| or has |Exile|, it gains |Copy|. 
-    |Copied| cards can not be selected unless they are |Frontlines|. Status cards and other |Command| cards also can not be selected. 
+    |Copied| cards can not be selected unless they are |Frontlines|. Status/Misfortune cards and other |Command| cards also can not be selected. 
   Brief: |-
     The selected cards have their effects played without being discarded. 
     If the card is a |Frontline|, consume its |Loyalty|. If it is an |Ability| or has |Exile|, it gains |Copy|. 
-    |Copied| cards can not be selected unless they are |Frontlines|. Status cards and other |Command| cards also can not be selected. 
+    |Copied| cards can not be selected unless they are |Frontlines|. Status/Misfortune cards and other |Command| cards also can not be selected. 
 
 Permanent:
   Name: Permanent Assignment
