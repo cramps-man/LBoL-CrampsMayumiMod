@@ -41,7 +41,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSharpshooterDef))]
     public sealed class HaniwaSharpshooter : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 5;
+        protected override int PassiveConsumedRemainingValue => 7;
         protected override int OnPlayConsumedRemainingValue => 3;
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault() / 3;

@@ -38,7 +38,7 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaSupportDef))]
     public sealed class HaniwaSupport : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 10;
+        protected override int PassiveConsumedRemainingValue => 12;
         protected override int OnPlayConsumedRemainingValue => 10;
         public ManaGroup PMana => ManaGroup.Philosophies((base.UpgradeCounter.GetValueOrDefault() + 5) / 10);
         public ManaGroup TotalMana => PMana + ManaGroup.Whites(1 + (base.UpgradeCounter.GetValueOrDefault() / 10) - PMana.Amount);

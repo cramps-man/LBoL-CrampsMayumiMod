@@ -1264,12 +1264,6 @@ shortOrLongTerm give 1 assignment order on long term - DONE
 frontline double action, either reword or update to command on any 0cost? - unsure
   - can make it so any commanded card also plays twice, commanded twice
   - or just commanded frontlines
-commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg
-check cards that give loyalty and see if too low
-also check new loyalty costs for any changes needed
-  - sentinel passive probs go to 10?
-  - charger autoplay to 25-30?
-  - probs need to increase overall loyalty even higher tbh, 15 for common/uncommon, 20 for others
 find new condition for monk? maybe when gaining block? not sure if needed - DONE
   - probs remove the upgrades increasing charge rate, +1 dmg/block is enough for upgrades tbh
 look into "fixing" exploiter dmg calc, so it can show modified by in the debug - FIXED, when command action was made
@@ -1296,7 +1290,6 @@ blitz command increase cost by 1 each time it's played? - DONE
 inside any assignments that loop to another target, check battle ended - DONE
 defence delegation only give 1 assignment order on upgrade - DONE
 skilled cavalry draw 2 naturally, lvl 5 becomes 1 graze? - DONE
-chain of command give something more so drafting multiples isnt wasted?
 add interaction title for create reserves, can just be selfname - DONE
 
 card baseclass refactor - DONE
@@ -1314,3 +1307,16 @@ new green cards?
   - card that commands any cost card, costs 11G(1G) and overdraft 2(1)
     - thought this overdraft thing could become base command mechanics, but maybe too complicated/op, so leave as offcolor
     - cost can be 1G(0), and just overdraft the cost of the card
+
+commanders mark do something extra? like card commanded to a unit with mark, deal extra dmg
+check cards that give loyalty and see if too low - they are honestly ok for now
+also check new loyalty costs for any changes needed
+  - sentinel passive probs go to 10?
+  - charger autoplay to 25-30?
+  - probs need to increase overall loyalty even higher tbh, 15 for common/uncommon, 20 for others
+    - only if the onplay cost goes above 10 perhaps, passives can go above the starter
+  - support passive to 12-15?
+  - attacker passive to 4? onplay 6?
+  - sharpshooter passive to 7?
+  - exploiter passive to 5 and onplay to 7?
+chain of command give something more so drafting multiples isnt wasted?

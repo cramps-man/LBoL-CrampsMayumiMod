@@ -39,8 +39,8 @@ namespace LBoLMod.Cards
     [EntityLogic(typeof(HaniwaAttackerDef))]
     public sealed class HaniwaAttacker : ModFrontlineCard
     {
-        protected override int PassiveConsumedRemainingValue => 3;
-        protected override int OnPlayConsumedRemainingValue => 5;
+        protected override int PassiveConsumedRemainingValue => 4;
+        protected override int OnPlayConsumedRemainingValue => 6;
         public DamageInfo EndOfTurnDmg => DamageInfo.Reaction(Value2);
         public override int AdditionalDamage => base.UpgradeCounter.GetValueOrDefault();
         public override int AdditionalValue2 => base.UpgradeCounter.GetValueOrDefault();

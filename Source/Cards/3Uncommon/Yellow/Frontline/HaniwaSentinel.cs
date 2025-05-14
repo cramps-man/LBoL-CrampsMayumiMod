@@ -45,7 +45,7 @@ namespace LBoLMod.Cards
     public sealed class HaniwaSentinel : ModFrontlineCard
     {
         public override bool IsArcherType => true;
-        protected override int PassiveConsumedRemainingValue => 5;
+        protected override int PassiveConsumedRemainingValue => 10;
         protected override int OnPlayConsumedRemainingValue => 5;
         public int PassiveScaling => 10;
         public int PassiveNumTimes => 1 + base.UpgradeCounter.GetValueOrDefault() / 10;
