@@ -1323,6 +1323,7 @@ also check new loyalty costs for any changes needed - DONE but keep testing
   - exploiter passive to 5 and onplay to 7?
 chain of command give something more so drafting multiples isnt wasted? - UNSURE
   - maybe it's already very powerufl anyway
-also add misfortune to uncommandable cards
-fix early summoning being commanded and activating debut effect of increasing cost
+also add misfortune to uncommandable cards - DONE
+fix early summoning being commanded and activating debut effect of increasing cost - FIXED
   - literally only an issue with this card since this debut is a negative unlike most vanilla debuts
+  - perhaps just set base cost instead of increasing is fine

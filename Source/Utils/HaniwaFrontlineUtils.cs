@@ -214,7 +214,7 @@ namespace LBoLMod.Utils
         public static List<Card> GetCommandableCards(List<Card> potentialCards, Card playedCard = null, bool zeroCostLimit = true)
         {
             return potentialCards.Where((Card c) => c != playedCard
-                && zeroCostLimit ? c.Cost == ManaGroup.Empty : true
+                && (zeroCostLimit ? c.Cost == ManaGroup.Empty : true)
                 && !c.HasKeyword(Keyword.Forbidden)
                 && c.CardType != CardType.Status
                 && c.CardType != CardType.Misfortune

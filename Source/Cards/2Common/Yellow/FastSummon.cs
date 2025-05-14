@@ -58,7 +58,7 @@ namespace LBoLMod.Cards
             if (interaction.SelectedCards == null)
                 yield break;
             if (base.TriggeredAnyhow)
-                base.IncreaseBaseCost(Mana);
+                base.SetBaseCost(Mana);
             foreach (var action in HaniwaFrontlineUtils.CardsSummon(interaction.SelectedCards))
             {
                 yield return action;

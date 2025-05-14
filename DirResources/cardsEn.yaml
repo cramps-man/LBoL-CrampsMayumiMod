@@ -249,7 +249,7 @@ FastSummon:
   InteractionTitle: |-
     {SelfName} - Choose {Value1} to add to hand
   Debut: |-
-    {SelfName} costs {Mana} more this combat. 
+    {SelfName}'s cost is set to {Mana} until end of combat. 
 
 BasicAssignment:
   Name: Basic Assignment
