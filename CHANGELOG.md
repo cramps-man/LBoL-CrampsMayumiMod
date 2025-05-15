@@ -1,3 +1,176 @@
+## 0.7.0
+
+### Overview of changes
+
+A balance update that tries to bring some more synergies between Assignment and Frontlines.  
+Also added a few card arts.  
+Only works on game version 1.7.2 now.  
+
+### General changes
+
+#### Frontline
+
+- Loyalty gain of Frontline cards is now affect by gaining any buff instead of only gaining Haniwa. Upgrades still increase Loyalty
+  - This should make Loyalty gain more consistent
+- Due to faster Loyalty gain from the change above, Loyalty costs/values have also been increased across the board
+  - Common/Uncommon rarities start at 10, the rest start with 15
+- A new keyword was added for cards that execute the OnPlay action of a Frontline, the **Command** keyword
+  - Command allows selecting a card and playing its effect without discarding it
+  - To prevent abuse on powerful effects, cards with Exile or Abilities will gain Copy when they are Commanded
+  - Copied cards can not be selected for Command unless they are Frontline cards
+    - Status/Misfortune and other cards that Command, also can not be selected
+  - All existing cards that execute Frontline OnPlay actions will use this keyword, and specify they can target only 0 cost cards
+
+#### Assignment
+
+- Now has a new token card added to the a few cards in the pool, the **Assignment Order** token card
+  - Has retain/exile and is 0 cost
+  - Using the card allows targeting Assignment buffs and manipulating them in various ways, or to apply the "Assignment Mark" debuff on an enemy
+  - **Haste Order**: Lower countdown by 2 and increase Task Level by 3
+  - **Delay Order**: Increase countdown by 3 and increase Task Level by 5
+  - **Guard Order**: Gain 6 block, increase countdown by 2 and decrease Task Level by a quarter
+  - **Recall Order**: Draw 1 card, remove Assignment without triggering but gain back assigned Haniwa
+  - **Mark Order**: Apply 1 Assignment Mark to an enemy
+    - Assignment Mark restricts targetting of Assignment buffs to only enemies with Assignment Mark, but their conditionals still work
+    - eg. 3 enemies with 5/10/15 HP, if the enemies with 10 and 15 HP have Assignment Mark, **Assignment - Rush Attack** will target the enemy that has the lowest HP only among enemies with Assignment Mark, thus it targets the enemy with 10 HP
+    - **Assignment - Debilitate Foe** is not affected as it does AOE dmg
+- The inner workings of Assignment triggers have been adjusted slightly, which has the effect of allowing Assignments such as **Arrow Barrage** and **Frost Arrow** to redirect their hits whenever an enemy is defeated
+  - Previously each individual hit was set to a single target before any damage occurred, and thus were not able to redirect
+
+#### Quality of life
+
+- Summon cards now have all 10 Common/Uncommon Frontline cards in the related card column
+- **Task Transfer** now has a title description for its upgraded version, was missed in 0.6.1
+- Custom battle actions such as Loyalty Consumption, Haniwa gain/loss etc. now have better debug info (access by pressing F3)
+
+### Card changes
+
+#### Frontline cards
+
+##### Frontlines
+
+- **Haniwa Attacker**: Passive/Active(P/A) Loyalty cost 4/6
+- **Haniwa Bodyguard**: Bodyguard is not affected by Loyalty gain via buffs, the values were just too good for what is essentially barrier
+  - Starting Loyalty is still 5, and OnPlay still costs 5
+  - Minimum Loyalty at turn start lowered from 4 -> 3
+  - Minimum Loyalty scaling buffed from 4 -> 2 upgrades per +1 minimum
+- **Haniwa Sharpshooter**: P/A Loyalty cost 7/3
+- **Haniwa Support**: P/A Loyalty cost 12/10
+  - Passive condition adjusted, no longer activated when playing attack card
+    - Now activates when playing a 0 cost card
+  - Only 1 **Haniwa Support** may activate its passive per card play
+  - OnPlay mana gain adjusted from W per 8 upgrades to W per 10
+  - OnPlay mana updates W to P every 5/15/25 etc. upgrades
+- **Haniwa Charger**: Loyalty cost same as before, all or 5 minimum
+  - Bonus damage from Loyalty is now half of Loyalty instead of 1 to 1
+  - End of turn Loyalty gain adjusted to be less exponential
+    - Base gain of 4, then +1 for each **Haniwa Charger** in the hand
+    - Scaling adjusted to only affect base gain and is +1 per 3 upgrades instead of per 5
+  - Autocharge and vulnerable threshold increase from 15 -> 30
+- **Haniwa Exploiter**: P/A Loyalty cost 5/7
+- **Haniwa Monk**: P/A Loyalty cost 3/8
+  - OnPlay now has a block gain component
+    - OnPlay deals 7 damage and gains 7 block at base
+    - Block increases +1 per upgrade
+  - Charge rate no longer scales with upgrades
+    - Increases damage/block by +1 per passive activation
+- **Haniwa Sentinel**: P/A Loyalty cost 10/5
+- **Haniwa Spy**: P/A Loyalty cost 3/10
+- **Haniwa Trainer**: P/A Loyalty cost 3/8
+- **Frontline Commander**: P/A Loyalty cost 10/0
+  - No longer gains Loyalty at end of turn, but can gain them via buffs
+  - Updated to use Command keyword, and targets 0 cost cards
+- **Assignment Commander**: P/A Loyalty cost 7/0
+  - No longer gains Loyalty at end of turn, but can gain them via buffs
+- **Frozen Haniwa**: P/A Loyalty cost 5/2, same as before
+- **Haniwa Horse Archer**: P/A Loyalty cost 3/10
+  - Passive from draw/discard costs 4
+- **Haniwa Assassin**: P/A Loyalty cost 3/5
+
+##### Common
+
+- **Early Summoning**: No longer has exile
+  - Upgrade now has debut effect, setting the cost of **Early Summoning** from 0 to 1
+
+##### Uncommon
+
+- **Clay to Ashes**: Now grants barrier instead of tempFP
+  - 2(3) barrier and Loyalty Protection gain
+
+##### Rare
+
+- **Blitz Command**: Cost increased from W -> 2W
+  - Updated to use Command keyword, and targets 0 cost cards
+
+#### Assignment cards
+
+##### Common
+
+- **Quick Task Completion**: Now also grants 1 Assignment Bonus
+- **Delayed Task Completion**: Now also adds 1 **Assignment Order** to the hand
+- **Haniwa Reserves (Assignment)**: Haniwa gain no longer adds the assigned Haniwa from the Assignment buff chosen, only 2(4)
+
+##### Uncommon
+
+- **Quick Assignment**: Due to power level increase in 0.6.1, adjustments have been made
+  - Now costs RR from R
+  - No longer has the weird effect of assigning Haniwa, thus you no longer gain back more Haniwa than you spent via **Quick Assignment**
+  - Preupgraded countdown now also starts at 0
+- **Clay Gathering**: Adjusted block gain from 8 -> 8(10)
+- **Assignment Hustle**: No longer gains colorless
+  - Now also adds 1 **Assignment Order** to the hand
+  - Cost adjusted from R -> R(1)
+- **Defence Delegation**: Now also gains block via playing an **Assignment Order** token
+  - Now adds 1 **Assignment Order** to the hand when played
+- **Short or Long Term**: Now also adds 1 **Assignment Order** on the long term choice
+
+##### Rare
+
+- **Guard Scramble**: Upgrade no longer reduces mana cost
+  - Now grants 1 turn of block retain
+- **Perfect Assignment**: No longer grants 3 draw
+  - Now grants draw equal to how many buffs were removed via **Perfect Assignment**
+
+#### Hybrid cards
+
+##### Uncommon
+
+- **Skilled Fencer Haniwa**: Haniwa gain lowered from 3(5) -> 2(3)
+  - Now always grants 10 block
+  - Lvl 3 replaced with gain 5(8) Reflection
+  - Lvl 5 upgrades now always 2 from 1(2)
+  - Lvl 10 static charge now always 5 from 4(6)
+- **Skilled Archer Haniwa**: Haniwa gain lowered from 3(5) -> 2(3)
+  - Damage lowered from 15(20) -> 10
+  - Lvl 3 tempFP replaced with the Lvl 5 Lockon
+  - Lvl 5 now increases damage to 15
+- **Skilled Cavalry Haniwa**: Haniwa gain lowered from 3(5) -> 2(3)
+  - Cost adjusted from RWH(1) -> 1RWH(2)
+  - Now always grants 2 draw
+  - Lvl 3 draw replaced with scry from Lvl 5
+  - Scry adjusted from 3(5) -> 2(3)
+  - Lvl 5 replaced with gain 1 graze
+  - Lvl 7 draw replaced with gaining P
+  - Lvl 10 only assigns a non-upgraded **Rush Attack** on upgrade
+
+#### Off colors
+
+- **Inspirational Speech**: Has been moved to Yellow oncolor from Green
+  - Now costs 1W
+  - Loyalty gain adjusted from 6(10) to 4(8)
+  - Loses Echo
+  - Now also grants 2 TempFP and 2 TempSP
+
+### New cards
+
+- **Vigorous Command**: Green Uncommon, Allows selecting 1 card to command that has any cost. Overdraft the selected cards' cost
+
+### Fixes
+
+- Fix **Assignment - Build Barricade** card description having barrier number be affected by spirit
+- Fix **Task Transfer** pulling cards with the Unplayable keyword
+- Fix **Guard Summoning** not allowing card use even without any Haniwa, since can be used for block and Loyalty Protection gain
+
 ## 0.6.3
 
 Fix **Assignment - Rush Attack** bugging out with a similar thing as **Assignment - Bring the Supplies** below  

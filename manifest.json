@@ -1,7 +1,7 @@
 {
   "name": "CrampsMayumiMod",
-  "version_number": "0.6.3",
-  "website_url": "",
+  "version_number": "0.7.0",
+  "website_url": "https://github.com/cramps-man/LBoL-CrampsMayumiMod",
   "description": "Adds Mayumi Joutouguu as a playable character",
   "dependencies": [ "BepInEx-BepInExPack-5.4.2100", "TeamNeo-Sideloader-0.9.7841"]
 }
