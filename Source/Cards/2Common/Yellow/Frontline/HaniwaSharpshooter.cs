@@ -34,6 +34,7 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedKeywords = Keyword.Accuracy | Keyword.Retain | Keyword.Replenish;
             cardConfig.RelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Frontline), nameof(Graze), nameof(LockedOn) };
+            cardConfig.Illustrator = "camellia";
             return cardConfig;
         }
     }
