@@ -1328,6 +1328,6 @@ fix early summoning being commanded and activating debut effect of increasing co
   - literally only an issue with this card since this debut is a negative unlike most vanilla debuts
   - perhaps just set base cost instead of increasing is fine
 
-update readme for changes to command keyword + assignment name
+update readme for changes to command keyword + assignment name - DONE
 add camellia as artist for the frontline arts - DONE
 add the github link
