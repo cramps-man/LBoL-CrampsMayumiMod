@@ -17,7 +17,6 @@ namespace LBoLMod.Cards
         {
             var cardConfig = base.MakeConfig();
             cardConfig.IsPooled = false;
-            cardConfig.FindInBattle = false;
             cardConfig.Type = CardType.Attack;
             cardConfig.TargetType = TargetType.SingleEnemy;
             cardConfig.Colors = new List<ManaColor>() { ManaColor.Red };

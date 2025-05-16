@@ -1330,4 +1330,6 @@ fix early summoning being commanded and activating debut effect of increasing co
 
 update readme for changes to command keyword + assignment name - DONE
 add camellia as artist for the frontline arts - DONE
-add the github link
+add the github link - DONE
+
+FindInBattle flag does not need to be false for basics? - FIXED
