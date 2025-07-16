@@ -102,7 +102,7 @@ namespace LBoLMod.Cards
         protected override IEnumerable<BattleAction> Actions(UnitSelector selector, ManaGroup consumingMana, Interaction precondition)
         {
             EnemyUnit selectedEnemy = selector.SelectedEnemy;
-            if (selectedEnemy.Hp <= base.Value2)
+            if (selectedEnemy.Hp <= base.Value2 && selectedEnemy.IsAlive)
                 yield return new ForceKillAction(base.Battle.Player, selectedEnemy);
             else
                 yield return AttackAction(selector);

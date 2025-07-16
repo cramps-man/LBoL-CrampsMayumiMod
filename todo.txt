@@ -1333,3 +1333,5 @@ add camellia as artist for the frontline arts - DONE
 add the github link - DONE
 
 FindInBattle flag does not need to be false for basics? - FIXED
+HaniwaAssassin still executes the instadeath action on a dead target - FIXED
+  - presumably after being commanded, no other way to deal dmg to kill a target then still activate the assassins onplay to that target
