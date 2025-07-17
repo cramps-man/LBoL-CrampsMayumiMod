@@ -1,3 +1,25 @@
+## 0.7.1
+
+### General changes
+
+Added Japanese translation courtesy to 汁  
+Added Korean translation courtesy to raspberry Caffeine Monster  
+
+### Quality of life
+
+Added highlighting effect to Assignment buffs which are at 1 or 0 countdown
+
+### Card changes
+
+- **Full Frontal Assault**: Reduce additional damage from 6(8) -> 3(5)
+  - Increase base damage from 10 -> 10(15)
+- **Task Start Reward**: Increase Assignment Bonus gain from 4(7) -> 4(10)
+
+### Fixes
+
+- Fix Basics having an incorrect flag which prevented them being copied
+- Fix **Haniwa Assassin** from double killing an enemy, specific scenario where it was Commanded but enemy died
+
 ## 0.7.0
 
 ### Overview of changes
