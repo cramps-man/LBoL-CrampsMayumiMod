@@ -1338,4 +1338,4 @@ HaniwaAssassin still executes the instadeath action on a dead target - FIXED
 missed DefenceDelegation showing related card for assignment order - FIXED
 update readme for translator credits - DONE
 nerf full frontal assaults additional dmg - DONE
-buff task start reward's assignment bonus gain to 10 when upgraded
+buff task start reward's assignment bonus gain to 10 when upgraded - DONE
