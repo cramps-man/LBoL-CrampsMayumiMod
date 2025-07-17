@@ -36,6 +36,8 @@ namespace LBoLMod.Cards
             cardConfig.Mana = new ManaGroup() { Colorless = 1 };
             cardConfig.RelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
             cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Assign), nameof(AssignmentBonusSe) };
+            cardConfig.RelativeCards = new List<string>() { nameof(AssignmentOrder) };
+            cardConfig.UpgradedRelativeCards = new List<string>() { nameof(AssignmentOrder) };
             return cardConfig;
         }
     }

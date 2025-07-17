@@ -1,0 +1,16 @@
+AssignUltimateSkill:
+  Title: 指令
+  Content: 働き者の埴輪兵団
+  Description: |-
+    敵全体に{Damage}ダメージを与える。|精密|。
+    全ての|指令|バフを直ちに発動させる。
+
+FrontlineUltimateSkill:
+  Title: 埴輪
+  Content: がらんどうの無尽兵団
+  Description: |-
+    全種類の|埴輪兵士|{Value1}を得る。
+    その後、最大{Value2}枚の|最前線|カードを選び、手札に加え、選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。
+    手札に入りきらない場合、残りは山札に加えられる。
+  InteractionTitle: |-
+    最大{Value2}枚まで選択し、効果を得る。

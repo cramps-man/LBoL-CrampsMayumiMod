@@ -1,0 +1,413 @@
+Haniwa:
+  Name: 하니와
+  Description: |-
+    하니와 부대의 레벨을 나타내는 버프입니다 (각 유형 최대 10레벨).
+    하니와의 세 유형은 |검사|, |궁수|, |기마병|입니다.
+    다양한 카드 효과에 사용됩니다.
+  Brief: |-
+    하니와 부대의 레벨을 나타내는 버프입니다 (각 유형 최대 10레벨).
+    하니와의 세 유형은 |검사|, |궁수|, |기마병|입니다.
+    다양한 카드 효과에 사용됩니다.
+
+ArcherHaniwa:
+  Name: 궁수 하니와
+  Description: |-
+    궁수 하니와 레벨 {Level}.
+  Brief: |-
+    궁수 하니와 레벨.
+
+CavalryHaniwa:
+  Name: 기마병 하니와
+  Description: |-
+    기마병 하니와 레벨 {Level}.
+  Brief: |-
+    기마병 하니와 레벨.
+
+FencerHaniwa:
+  Name: 검사 하니와
+  Description: |-
+    검사 하니와 레벨 {Level}.
+  Brief: |-
+    검사 하니와 레벨.
+
+Require:
+  Name: 요구 X
+  Description: |-
+    특정 하니와의 X레벨이 필요합니다.
+  Brief: |-
+    특정 하니와의 X레벨이 필요합니다.
+
+Sacrifice:
+  Name: 희생 X
+  Description: |-
+    카드를 사용하려면 해당 하니와의 X레벨이 필요합니다.
+    사용 시, 해당 하니와의 레벨 X을 잃습니다.
+  Brief: |-
+    카드를 사용하려면 해당 하니와의 X레벨이 필요합니다.
+    사용 시, 해당 하니와의 레벨 X을 잃습니다.
+
+Assign:
+  Name: 배속 X
+  Description: |-
+    X명의 |하니와|를 카운트다운과 |작업 레벨|이 있는 |임무| 버프에 배속시킵니다.
+    카운트다운이 |e:0|이 되면 효과가 발동되며, 카드를 사용할 때마다 |e:1|씩 감소합니다.
+    발동 시, 모든 배속된 |하니와|를 돌려받습니다.
+    같은 종류의 |임무| 버프를 다시 얻으면 카운트다운이 |e:3| 증가하고, |e:1|명의 |하니와|가 추가 배속됩니다.
+    턴 종료 시 카운트다운이 |e:3| 감소하며, 그때 |e:0|이 되면 다음 턴 시작 시 발동됩니다.
+  Brief: |-
+    X명의 |하니와|를 카운트다운과 |작업 레벨|이 있는 |임무| 버프에 배속시킵니다.
+    발동 시 모든 |하니와|를 되돌려받습니다.
+
+TaskLevel:
+  Name: 작업 레벨
+  Description: |-
+    |임무| 버프에서 붉은 숫자로 표시되며, 발동 효과의 위력을 결정합니다.
+    |작업 레벨|을 나눌 때 소수점은 버립니다. 예: |작업 레벨|이 0-9면 결과는 0, 10-19면 1, 20-29면 2 등.
+    카드 사용 후 배속된 |하니와| 수의 절반(올림)만큼 |작업 레벨|이 증가합니다.
+  Brief: |-
+    |임무| 버프에서 붉은 숫자로 표시되며, 발동 효과의 위력을 결정합니다.
+    카드 사용 후 배속된 |하니와| 수의 절반만큼 |작업 레벨|이 증가합니다.
+
+AssignmentBonusSe:
+  Name: 임무 보너스
+  Description: |-
+    턴 중 |임무| 버프가 발동되면 카드 |e:1|장을 뽑고 |임무 보너스|를 |e:1| 잃습니다.
+  Brief: |-
+    턴 중 |임무| 버프가 발동되면 카드 |e:1|장을 뽑고 |임무 보너스|를 잃습니다.
+
+Frontline:
+  Name: 전방 카드
+  Description: |-
+    손에 있을 때 다양한 효과를 가지며, 발동 또는 사용 시 |충성도|를 소모하는 카드 유형입니다.
+    제한 없이 강화할 수 있으며, 강화되거나 버프 획득 시 손에 있으면 |충성도|가 |e:1| 증가합니다.
+    사용 시 |충성도|가 |e:0|보다 낮아지면 |소멸|됩니다. |충성도|가 |e:0| 미만이 되면 패시브는 발동하지 않습니다.
+  Brief: |-
+    손에 있을 때 다양한 효과를 가지며, 발동 또는 사용 시 |충성도|를 소모하는 카드 유형입니다.
+    강화 시 |충성도|가 증가하며, 조건을 만족하지 않으면 |소멸|됩니다.
+
+Loyalty:
+  Name: 충성도
+  Description: |-
+    |전방 카드|의 좌측 숫자로 표시됩니다. 패시브 및 사용 효과에 활용됩니다.
+  Brief: |-
+    |전방 카드|의 좌측 숫자로 표시됩니다. 패시브 및 사용 효과에 활용됩니다.
+
+Command:
+  Name: 명령
+  Description: |-
+    선택된 카드들은 버려지지 않고 효과만 발동됩니다.
+    |전방 카드|라면 |충성도|를 소모하며, |능력| 또는 |소멸| 키워드가 있으면 |복사본|을 얻습니다.
+    |복사본| 카드는 |전방 카드|가 아니면 선택할 수 없습니다.
+    상태, 액운, 다른 |명령| 카드도 선택할 수 없습니다.
+  Brief: |-
+    선택된 카드들은 버려지지 않고 효과만 발동됩니다.
+    |전방 카드|는 |충성도|를 소모하며, 일부 카드는 |복사본|을 얻습니다.
+
+Permanent:
+  Name: 영구 임무
+  Description: |-
+    |임무| 버프가 |영구| 상태면 발동 후 제거되지 않습니다.
+    발동 시 카운트다운을 |e:5|로 초기화하고, |작업 레벨|을 절반으로 줄이며(최소 초기값 유지), 배속된 |하니와|를 |e:1| 줄입니다.
+    배속된 |하니와|가 |e:0|이 되면, 대신 생명력을 |e:1| 잃습니다.
+  Brief: |-
+    |임무| 버프가 |영구| 상태면 제거되지 않으며, 발동 후 카운트다운이 초기화되고 일부 수치가 감소합니다.
+    |하니와|가 없을 경우 생명력을 잃습니다.
+
+AssignArcherPrepVolley:
+  Name: 임무 - 화살 세례
+  Description: |-
+    카드 {Count}장을 사용한 후, 무작위 적에게 {TotalTimes}번 {CardDamage} 피해를 줍니다.
+    |작업 레벨| {CardValue1}마다 1타 추가됩니다.
+    {CardArcherAssigned}명의 |궁수|가 배속됨. 작업 레벨은 {Level}입니다.
+  Brief: |-
+    카드 X장을 사용한 후, 무작위 적에게 피해를 줍니다.
+
+AssignCavalrySupplies:
+  Name: 임무 - 보급 전달
+  Description: |-
+    카드 {Count}장을 사용한 후, {TotalTimes}장의 카드 중 최대 |e:1|장을 골라 뽑을 카드 더미에 넣습니다. 선택하지 않은 카드는 버린 더미로 갑니다.
+    무작위 |화염|, |광휘|, |무지갯빛|, 또는 무작위 |전방 카드|가 포함됩니다. 모두 |보충| 키워드를 가집니다.
+    선택 카드 수 = {CardValue2} + (|작업 레벨| ÷ {CardValue1}) (최소 2장).
+    {CardCavalryAssigned}명의 |기마병|이 배속됨. 작업 레벨은 {Level}입니다.
+  InteractionTitle: |-
+    {Name} - 최대 |e:1|장 선택하여 뽑을 더미에 넣고, 나머지는 버린 더미로
+  Brief: |-
+    카드 X장 사용 후, |화염|이나 |광휘| 카드를 뽑을 더미에 추가합니다.
+
+AssignFencerBuildBarricade:
+  Name: 임무 - 바리케이드 건설
+  Description: |-
+    카드 {Count}장을 사용한 후, |보호막| {TotalBarrier}를 얻습니다.
+    |작업 레벨| {CardValue1}마다 |보호막| {CardValue2}를 추가로 얻습니다.
+    {CardFencerAssigned}명의 |검사|가 배속됨. 작업 레벨은 {Level}입니다.
+  Brief: |-
+    카드 X장 사용 후, |보호막|을 얻습니다.
+
+AssignBuildWatchtower:
+  Name: 임무 - 감시탑 건설
+  Description: |-
+    카드 {Count}장을 사용한 후, |감시탑| {TotalWatchtower}를 얻습니다.
+    |작업 레벨| {CardValue1}마다 |감시탑| |e:1|을 얻습니다.
+    {CardFencerAssigned}명의 |검사|가 배속됨. 작업 레벨은 {Level}입니다.
+  Brief: |-
+    카드 X장 사용 후, |감시탑|을 얻습니다.
+
+Watchtower:
+  Name: 감시탑
+  Description: |-
+    공격 카드를 사용할 때마다 무작위 적에게 {Level} 피해를 줍니다.
+  Brief: |-
+    공격 카드 사용 시, 무작위 적에게 |감시탑 레벨| 피해를 줍니다.
+
+AssignCavalryRush:
+  Name: 임무 - 돌격
+  Description: |-
+    카드 {Count}장을 사용한 후, 생명력이 가장 낮은 적에게 {TotalDamage} 피해를 줍니다.
+    손에 있는 마나 비용 <sprite=ManaSprite" name="0"> 카드 중 무작위로 {TotalCommandableCount}장을 같은 적에게 |명령|합니다. |전방 카드|일 경우 |충성도|를 소모하지 않습니다.
+    피해는 |작업 레벨|만큼 적용되며, |작업 레벨| {CardValue1}마다 무작위 |전방 카드|를 1장 명령합니다 (최소 1장).
+    {CardCavalryAssigned}명의 |기마병|이 배속됨. 작업 레벨은 {Level}입니다.
+  Brief: |-
+    카드 X장 사용 후, 생명력이 가장 낮은 적에게 피해를 줍니다.
+
+AssignPlayGainBlockSe:
+  Name: 방어 위임
+  Description: |-
+    |임무| 카드 또는 |임무 명령| 사용 시, |방어| {Level}을 얻습니다.
+  Brief: |-
+    |임무| 카드 또는 |임무 명령| 사용 시, |방어|를 얻습니다.
+
+ClayToAshesSe:
+  Name: 진흙에서 재로
+  Description: |-
+    {PlayerName}이 |희생|하거나 |전방 카드|가 |소멸|될 때마다 |보호막| {Level}과 |충성도 보호| {Level}을 얻습니다.
+  Brief: |-
+    |희생|하거나 |전방 카드|가 |소멸|될 때마다 |보호막|과 |충성도 보호|를 얻습니다.
+
+AssignChargeAttack:
+  Name: 임무 - 투석기 사격
+  Description: |-
+    카드 {Count}장을 사용한 후, 생명력이 가장 높은 적에게 {TotalDamage} 피해를 줍니다.
+    |임무| 버프가 발동될 때마다 |작업 레벨|이 {CardValue1}만큼 증가합니다.
+    {CardArcherAssigned}명의 |궁수|가 배속됨. 작업 레벨은 {Level}입니다.
+  Brief: |-
+    카드 X장 사용 후, 생명력이 가장 높은 적에게 피해를 줍니다.
+
+AssignPlayDrawSe:
+  Name: 임무 개시 보상
+  Description: |-
+    {PlayerName}이 |임무| 카드를 사용하고 |임무 보너스|를 갖고 있을 경우, |e:1| |임무 보너스|를 소모하고 카드 {Level}장을 뽑습니다.
+  Brief: |-
+    |임무| 카드 사용 시 |임무 보너스|를 소모하고 카드를 뽑습니다.
+
+HaniwasNeverDieSe:
+  Name: 하니와는 죽지 않는다
+  Description: |-
+    {PlayerName}이 |희생|할 때마다, 해당 타입별로 |하니와|를 소모하지 않고 최대 {Level}명까지 무작위 |임무| 버프에 |배속|합니다.
+  Brief: |-
+    |희생| 시 해당 타입의 |하니와|를 소모하지 않고 무작위 |임무| 버프에 |배속|합니다.
+
+ZeroCostReductionSe:
+  Name: 제로의 힘
+  Description: |-
+    마나 비용 <sprite=ManaSprite" name="0"> 카드 사용 시, 손에 있는 무작위 카드 하나의 비용을 일시적으로 <sprite=ManaSprite" name="1"> 감소시킵니다.
+    턴마다 최대 {Level}번 발동됩니다. 남은 횟수: {Count}번.
+  Brief: |-
+    비용 0 카드 사용 시, 무작위 카드의 비용을 1 감소시킵니다 (턴당 최대 {Level}번).
+
+AssignTriggerSummonSe:
+  Name: 자유 소환
+  Description: |-
+    |임무| 버프가 발동될 때마다 |전방 카드|를 {Level}장 손에 추가합니다.
+  Brief: |-
+    |임무| 버프 발동 시 |전방 카드|를 손에 추가합니다.
+
+AssignCavalryScout:
+  Name: 임무 - 정찰 개시
+  Description: |-
+    카드 {Count}장 사용 후, |예지| {TotalScry}를 하고 |임무 보너스|를 {TotalAssignmentBonus} 얻습니다.
+    턴 시작 시 발동되면 카드 1장을 추가로 뽑습니다.
+    |작업 레벨| {CardValue1}마다 |예지| |e:1|, {CardValue2}마다 |임무 보너스| |e:1|을 얻습니다 (최소 1).
+    {CardCavalryAssigned}명의 |기마병|이 배속됨. 작업 레벨은 {Level}입니다.
+  InteractionTitle: |-
+    {Name} - |예지|, 카드 |e:1|장 뽑기, |임무 보너스| {TotalAssignmentBonus} 획득
+  Brief: |-
+    카드 X장 사용 후 |예지| 및 |임무 보너스| 획득
+
+AssignFencerPrepCounter:
+  Name: 임무 - 반격 준비
+  Description: |-
+    카드 {Count}장 사용 후, {PlayerName}을 공격한 적 전체에게 {TotalDamage} 피해를 줍니다. 공격한 적이 없다면 무작위 적을 공격합니다.
+    {PlayerName}이 공격받을 때마다 히트 수만큼 |작업 레벨|이 {CardValue1}씩 증가합니다.
+    {PlayerName}의 턴 종료 시, 전체 적의 히트 수에 비례하여 |방어| {CardBlock} × 적중 횟수({TotalBlock})를 얻습니다.
+    피해량은 {CardDamage} + (|작업 레벨| ÷ 적 수)입니다.
+    {CardFencerAssigned}명의 |검사|가 배속됨. 작업 레벨은 {Level}, 공격한 적 수: {EnemiesThatAttackedPlayerCount}
+  Brief: |-
+    카드 X장 사용 후, 공격한 적 전체에게 피해
+
+AssignArcherPrepDebuff:
+  Name: 임무 - 적 약화
+  Description: |-
+    카드 {Count}장 사용 후, 모든 적에게 {TotalDmg} |명중| 피해를 주고, {TotalVuln} |취약|, {TotalLockon} |록온|을 부여합니다.
+    피해량은 |작업 레벨| ÷ {DivideDmg}, |취약|은 |작업 레벨| {CardValue1}마다 |e:1|, |록온|은 {CardValue2}마다 |e:1| 부여됩니다 (각 최소 1).
+    {CardArcherAssigned}명의 |궁수|가 배속됨. 작업 레벨은 {Level}.
+  Brief: |-
+    카드 X장 사용 후, 전체 적에게 |명중| 피해 및 |취약| 부여
+
+AssignTriggerUpgradeSe:
+  Name: 자유 훈련
+  Description: |-
+    |임무| 버프 발동 시, 손의 무작위 카드를 {Level}장 강화합니다.
+  Brief: |-
+    |임무| 버프 발동 시 손의 무작위 카드 강화
+
+AssignArcherPrepFrostArrow:
+  Name: 임무 - 서리 화살
+  Description: |-
+    카드 {Count}장 사용 후, 무작위 적에게 {TotalTimes}번 {CardDamage} 피해와 |빙결|을 줍니다.
+    대상에게 이미 |빙결|이 있으면 |방어| {CardBlock}를 얻습니다.
+    |작업 레벨| {CardValue1}마다 추가 피해 및 |빙결| 1회 적용됩니다.
+    {CardArcherAssigned}명의 |궁수|가 배속됨. 작업 레벨은 {Level}.
+  Brief: |-
+    카드 X장 사용 후, 무작위 적에게 피해 및 |빙결| 부여. 대상이 |빙결| 상태면 |방어| 획득
+
+FrontlineDoubleActionSe:
+  Name: 전방 이중 행동
+  Description: |-
+    |전방 카드| 사용 시, |사용 시 효과|를 한 번 더 발동하고 |충성도|도 추가로 소모합니다.
+  Brief: |-
+    |전방 카드| 사용 시, |사용 시 효과|와 |충성도| 이중 발동
+
+AssignCostTaskLevelSe:
+  Name: 임무 두 배 속도
+  Description: |-
+    이번 전투가 끝날 때까지 손에 있는 |임무| 카드의 비용이 임시로 {IncreasedCost} 증가합니다.
+    카드 사용 시마다 |임무| 버프의 |작업 레벨|이 {Level} 증가합니다.
+    다음 턴 시작 시 |임무| 카드에 소비된 마나는 모두 되돌려받습니다.
+  Brief: |-
+    전투 중 손의 |임무| 카드 비용 증가 및 |작업 레벨| 증가. 다음 턴 시작 시 마나 복구
+
+AutoCreateReservesSe:
+  Name: 자동 하니와 비축
+  Description: |-
+    {PlayerName}의 턴 시작 시 손에 있는 |하니와 비축|이 {Level:plural one='없다면' other='{Level}보다 적다면'}, |하니와 비축|을 {Level:plural one='1장' other='{Level}장'} 손에 추가합니다.
+  Brief: |-
+    턴 시작 시 손에 |하니와 비축|이 부족하면 보충함
+
+AssignReverseTickdownSe:
+  Name: 수비 긴급 호출
+  Description: |-
+    {PlayerName}의 턴 종료까지, |임무| 버프의 카운트다운이 감소하지 않고 오히려 증가합니다.
+    턴 종료 시 모든 |임무| 버프의 총 카운트 수만큼 |방어|를 얻습니다.
+  Brief: |-
+    |임무| 카운트 증가 및 총합만큼 |방어| 획득
+
+CommandersMarkSe:
+  Name: 지휘관의 표식
+  Description: |-
+    |명령|된 카드들의 무작위 대상 지정이 이 적에게 집중됩니다.
+    한 번에 하나의 표식만 활성화됩니다.
+  Brief: |-
+    |명령| 카드가 이 적만을 대상으로 삼음. 단 하나만 존재 가능
+
+MaxHaniwaUpSe:
+  Name: 하니와 최대치 증가
+  Description: |-
+    모든 하니와 유형의 최대 레벨을 {Level} 증가시킵니다.
+  Brief: |-
+    모든 하니와 유형의 최대 레벨 증가
+
+IllnessPreventionSe:
+  Name: 질병 예방
+  Description: |-
+    들어오는 디버프의 레벨 또는 지속 시간을 최대 {Level}까지 감소시킵니다.
+  Brief: |-
+    이 버프의 레벨마다 디버프의 강도/지속 시간 감소
+
+AssignDoubleTriggerSe:
+  Name: 임무 이중 발동
+  Description: |-
+    다음 {Level}개의 |임무| 버프는 2회 발동됩니다.
+  Brief: |-
+    다음 |임무| 버프가 2회 발동됨
+
+AssignSeparationSe:
+  Name: 임무 분리
+  Description: |-
+    |임무| 버프가 더 이상 누적되지 않고, 각각 분리된 버프로 생성됩니다.
+    같은 유형의 다른 버프가 활성화된 상태에서 |임무| 버프가 발동되면 {AssignmentBonusGain}의 |임무 보너스|를 얻습니다.
+  Brief: |-
+    |임무| 버프가 누적되지 않고 분리됨. 중복 발동 시 |임무 보너스| 획득
+
+ChainOfCommandSe:
+  Name: 지휘 체계
+  Description: |-
+    |전방 지휘관| 및 |임무 지휘관|을 일반적인 방식으로 소환 가능하게 합니다.
+  Brief: |-
+    |전방 지휘관| 및 |임무 지휘관| 일반 소환 가능
+
+LeadThroughExampleSe:
+  Name: 모범을 통한 지휘
+  Description: |-
+    |전방 카드| 사용 시, |임무 보너스|를 {Level} 얻습니다.
+    |임무| 버프 발동 시 |충성도 보호|를 {LoyaltyProtectionGain} 얻습니다.
+  Brief: |-
+    |전방 카드| 사용 시 |임무 보너스|, |임무| 발동 시 |충성도 보호| 획득
+
+LoyaltyProtectionSe:
+  Name: 충성도 보호
+  Description: |-
+    |전방 카드|의 |충성도|가 소모될 경우, 이 버프의 최대 {Level}만큼 대신 소모됩니다.
+    턴 종료 시, 이번 턴에 소모된 양만큼 |방어|를 얻습니다 ({Count}).
+  Brief: |-
+    |충성도| 대신 소모되며, 그만큼 |방어| 획득
+
+EnhancedTrainingSe:
+  Name: 고급 훈련
+  Description: |-
+    |전방 카드| 강화 시 추가로 {Level}회 강화됩니다.
+  Brief: |-
+    |전방 카드| 강화 시 추가 강화 획득
+
+CavalryWorshippingSe:
+  Name: 기마병 신앙
+  Description: |-
+    |기마병|을 {Threshold}명 획득할 때마다 ({Count}), |그레이즈|를 {Level} 얻습니다.
+  Brief: |-
+    |기마병|을 일정 수 획득할 때마다 |그레이즈| 획득
+
+FencerWorshippingSe:
+  Name: 검사 신앙
+  Description: |-
+    |검사|를 {Threshold}명 획득할 때마다 ({Count}), 무작위 적에게 {Level} 피해를 줍니다.
+  Brief: |-
+    |검사|를 일정 수 획득할 때마다 피해 부여
+
+ArcherWorshippingSe:
+  Name: 궁수 신앙
+  Description: |-
+    |궁수|를 {Threshold}명 획득할 때마다 ({Count}), 무작위 적에게 디버프를 {Level}회 적용합니다.
+  Brief: |-
+    |궁수|를 일정 수 획득할 때마다 디버프 부여
+
+AssignmentMarkSe:
+  Name: 임무 표식
+  Description: |-
+    |임무| 버프의 발동 대상이 {SelfName}이 붙은 적으로 제한됩니다.
+    단, |임무 - 적 약화|에는 영향을 주지 않습니다.
+    {Duration}턴 후 제거됩니다.
+  Brief: |-
+    |임무| 버프의 발동 대상이 {SelfName} 적으로 제한됨. 특정 턴 후 제거됨
+
+LocSe:
+  NeedFencerText: |-
+    검사가 더 필요합니다.
+  NeedArcherText: |-
+    궁수가 더 필요합니다.
+  NeedCavalryText: |-
+    기마병이 더 필요합니다.
+  RequiresHaniwaText: |-
+    하니와가 필요합니다.
+  FrontlineKeyword: |-
+    전방
+  AssignKeyword: |-
+    임무

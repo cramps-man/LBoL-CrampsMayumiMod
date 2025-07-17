@@ -1,0 +1,1076 @@
+BasicAttackR:
+  Name: 埴輪流弓術
+  Description: "{Damage}ダメージを与える。"
+
+BasicAttackW:
+  Name: 埴輪流剣術
+  Description: "{Damage}ダメージを与える。"
+
+BasicBlockR:
+  Name: 埴輪流馬術
+  Description: "{Block}|ブロック|を得る。"
+
+BasicBlockW:
+  Name: 埴輪流護身術
+  Description: "{Block}|ブロック|を得る。"
+
+#COMMONS
+WeakeningShot:
+  Name: 衰弱射撃
+  Description: |-
+    {Damage}ダメージを与える。
+    |弓兵埴輪|レベルに応じて追加効果を適用する。 
+    |1|:|脱力|{Value1}を与える。
+    |3|:|臨時火力ダウン|{Value2}を与える。
+
+DefenceSummon:
+  Name: 護衛召喚
+  Description: |-
+    {Block}|ブロック|と|忠誠度保護|{Value2}を得る。
+    最大{Value1}枚の|最前線|カードを選び、手札に加える。 
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。
+  DetailText: |-
+   |犠牲|にできる数の|埴輪兵士|を得ていない場合、それを必要とするカードは表示されない。 
+  InteractionTitle: |-
+    {SelfName}
+
+FencerKamikaze:
+  Name: 捨て身の突撃
+  Description: |-
+    |剣士埴輪|{Value1}を|犠牲|にする。 
+    敵全体に{Damage}ダメージを与える。
+    |忠誠度保護|{Value2}を得る。
+
+ArcherPrepVolley:
+  Name: 指令 - 矢の雨
+  Description: |-
+    |弓兵埴輪|{ArcherRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。 
+    {StartingCardCounter}枚のカードをプレイした後、ランダムな敵に{Damage}ダメージをX回与える。Xの数は|指令レベル| / {Value1}。 
+
+HybridDraw:
+  Name: 一致団結
+  Description: |-
+    カードを{Value1}枚引く。 
+    |指令バフを得ている場合|: カードを|e:1|枚引く。|指令ボーナス|{AssignmentBonusGain}を得る。
+    |最前線カードが手札にある場合|: 手札の|最前線|カード全てをこの戦闘中|アップグレード|し、|忠誠度保護|{Value2}を得る。
+
+HaniwaBodyguard:
+  Name: 衛兵埴輪
+  Description: |-
+    |手札効果|: ライフを失うダメージもしくは|バリア|へのダメージを最大{RemainingValue}軽減し、軽減したダメージ分の|忠誠度|を消費する。
+    {PlayerName}のターン開始時、{SelfName}の|忠誠度|が{LoyaltyThreshold}未満の場合、|忠誠度|を{LoyaltyThreshold}に回復する。
+    |プレイした時|: {Block}|ブロック|を得る。消費|忠誠度|{OnPlayConsumedRemainingValue}。 
+  DetailText: |-
+    {SelfName}は他の|最前線|カードとは異なり、バフ獲得によって|忠誠度|を獲得しない。
+    |剣士埴輪|タイプ。
+    アップグレード1回ごとに以下の効果を適用する。
+    |プレイした時|効果で得る|ブロック|を+1。
+    アップグレード{TurnStartLoyaltyScaling}回ごとに以下の効果を適用する。
+    |手札効果|の|忠誠度|回復効果を+1。
+
+HaniwaSupport:
+  Name: 補給兵埴輪
+  Description: |-
+    |手札効果|: <sprite=ManaSprite" name="0">コストのカードをプレイする度、カードを{Value2}枚引く。この効果は他の{SelfName}の|手札効果|と重複しない。必要|忠誠度|{PassiveConsumedRemainingValue}。 
+    |プレイした時|: {TotalMana}を得る。消費|忠誠度|{OnPlayConsumedRemainingValue}。 
+  DetailText: |-
+    |騎馬兵埴輪|タイプ。
+
+    アップグレード10回ごとに以下の効果を適用する。
+    |プレイした時|効果で得られるマナを<sprite="ManaSprite" name="W">増やす。
+    アップグレード5回目、15回目、25回目に以下の効果を適用する。(以後も10回ごとに適用。)
+    |プレイした時|効果で得られるマナの<sprite="ManaSprite" name="W">を<sprite="ManaSprite" name="P">に変更する。
+
+FencerBuildBarricade:
+  Name: 指令 - 防柵構築
+  Description: |-
+    |剣士埴輪|{FencerRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、|指令レベル|{Value1}ごとに{Value2}|バリア|を得る。
+
+DefenceCreateReserves:
+  Name: 埴輪招集
+  Description: |-
+    {Block}|ブロック|を得る。
+    |埴輪の増援|を{Value1}枚手札に加える。
+
+HaniwaAttacker:
+  Name: 歩兵埴輪
+  Description: |-
+    |手札効果|:{PlayerName}のターン終了時、最もライフの少ない敵に{EndOfTurnDmg}ダメージを与える。必要|忠誠度|{PassiveConsumedRemainingValue}。 
+    |プレイした時|:{Damage}ダメージを与える。消費|忠誠度|{OnPlayConsumedRemainingValue}。 
+  DetailText: |-
+    |剣士埴輪|タイプ。 
+    アップグレード1回ごとに以下の効果を適用。
+    |手札効果|および|プレイした時|効果で与えるダメージを+1。
+
+HaniwaSharpshooter:
+  Name: 狙撃兵埴輪
+  Description: |-
+    |手札効果|: {PlayerName}の攻撃を敵が|グレイズ|で防ぐ場合、その攻撃に|精密|を与える。必要|忠誠度|{PassiveConsumedRemainingValue}。 
+    |プレイした時|: {Damage}ダメージを与える。|ロックオン|{Value2}を与える。消費|忠誠度|{OnPlayConsumedRemainingValue}。 
+  DetailText: |-
+    複数回攻撃に精密を与える場合、攻撃判定の1回ごとに|手札効果|を適用する。
+    |弓兵埴輪|タイプ。 
+    アップグレード1回ごとに以下の効果を適用。
+    |プレイした時|効果で与えるダメージを+1。
+    アップグレード3回ごとに以下の効果を適用。
+    |プレイした時|効果で与える|ロックオン|を+1。 
+
+BasicSummon:
+  Name: 埴輪召喚
+  Description: |-
+    コモン|最前線|カードを|e:1|枚選んで手札に加える。この効果で手札に加わる|最前線|カードは2枚になる。
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。
+  DetailText: |-
+    |犠牲|にできる数の|埴輪兵士|を得ていない場合、それを必要とするカードは表示されない。
+  InteractionTitle: |-
+    {SelfName}
+
+OptionHaniwaAttacker:
+  Name: 歩兵埴輪召喚
+  Description: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |歩兵埴輪|を1枚手札に加える。
+    現在の|剣士埴輪|レベル{AvailableFencer}。
+  NonbattleDescription: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |歩兵埴輪|を1枚手札に加える。
+OptionHaniwaBodyguard:
+  Name: 衛兵埴輪召喚
+  Description: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |衛兵埴輪|を1枚手札に加える。 
+    現在の|剣士埴輪|レベル{AvailableFencer}。
+  NonbattleDescription: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |衛兵埴輪|を1枚手札に加える。 
+
+
+OptionHaniwaSharpshooter:
+  Name: 狙撃兵埴輪召喚
+  Description: |-
+    |弓兵埴輪|{SelectRequireArcher}を|犠牲|にする。
+    |狙撃兵埴輪|を1枚手札に加える。 
+    現在の|弓兵埴輪|レベル{AvailableArcher}。
+  NonbattleDescription: |-
+    |弓兵埴輪|{SelectRequireArcher}を|犠牲|にする。
+    |狙撃兵埴輪|を1枚手札に加える。
+
+OptionHaniwaSupport:
+  Name: 補給兵埴輪召喚
+  Description: |-
+    |騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |補給兵埴輪|を1枚手札に加える。 
+    現在の|騎馬兵埴輪|レベル{AvailableCavalry}。 
+  NonbattleDescription: |-
+    |騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |補給兵埴輪|を1枚手札に加える。 
+
+ModAssignOptionCard:
+  Name: ダミーステータス選択
+  Description: |-
+    ステータス効果選択用のダミーカード。
+
+HaniwaBlitz:
+  Name: 前線指揮
+  Description: |-
+    {Damage}ダメージを与える。
+    |コマンド|:手札の最大{Value1}枚の<sprite=ManaSprite" name="0">コストのカード
+  InteractionTitle: |-
+    {SelfName}
+
+AssignHaniwaCreate:
+  Name: 指令への増援
+  Description: |-
+    |指令|バフを最大1つ選択し、カウントダウンを{Value2}増加させる。 
+    |指令バフを選択した場合|: |指令ボーナス|{AssignmentBonusGain}を得て、選択した|指令|バフに布陣中と同じタイプの|埴輪兵士|{Value1}を得る。 
+    |指令バフを選択しなかった場合|: 全ての|埴輪兵士||e:1|ずつを得る。 
+  InteractionTitle: |-
+    {SelfName}
+
+FrontlineHaniwaCreate:
+  Name: 前線への増援
+  Description: |-
+    手札から最大1枚の|最前線|カードを選び、|廃棄|する。|廃棄|した|最前線|カードのレアリティに応じて以下の効果を適用する。
+    |コモン|: 全ての|埴輪兵士|{CommonGain}ずつを得て、|忠誠度保護|{CommonLoyaltyProtGain}を得る。 
+    |アンコモン|: 全ての|埴輪兵士|{UncommonGain}ずつを得て、|忠誠度保護|{UncommonLoyaltyProtGain}を得る。
+    |レア|: 全ての|埴輪兵士|{RareGain}ずつを得て、|忠誠度保護|{RareLoyaltyProtGain}を得る。 
+    |選ばなかった場合|: 全ての|埴輪兵士|{Value2}ずつを得る。 
+  InteractionTitle: |-
+    {SelfName}
+
+AssignFastTrigger:
+  Name: 電撃作戦
+  Description: |-
+    {Damage}ダメージを与え、|指令ボーナス|{Value2}を得る。
+    最大1つの|指令|バフを選択し、その効果を直ちに発動する。発動前に残りのカウントダウンを|指令レベル|に加算する。
+  UpgradedDescription: |-
+    {Damage}ダメージを与え、|指令ボーナス|{Value2}を得る。
+    最大1つの|指令|バフを選択し、その効果を直ちに発動する。発動前に残りのカウントダウンを|e:倍|にした数値を|指令レベル|に加算する。 
+  InteractionTitle: |-
+    {SelfName}
+  UpgradedInteractionTitle: |-
+    {SelfName}
+
+FrontlineUpgrade:
+  Name: 基礎訓練
+  Description: |-
+    {Block}|ブロック|を得る。
+    |忠誠度保護|{LoyaltyProtectionGain}を得る。 
+    手札のカードを最大{Value1}枚まで選び、この戦闘中|アップグレード|する。|最前線|カードを選択した場合、追加で{Value2}回|アップグレード|する。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignExtraTime:
+  Name: 遅滞戦術
+  Description: |-
+    {Block}|ブロック|を得る。|戦術命令|を|e:1|枚手札に加える。
+    最大|e:1|つの|指令|バフを選ぶ。そのカウントダウンを{Value1}増やし、その|指令レベル|を{Value2}増やす。
+  InteractionTitle: |-
+    {SelfName}
+
+CavalryScout:
+  Name: 指令 - 前線偵察
+  Description: |-
+    |騎馬兵埴輪|{CavalryRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、|占術|。(最低|e:1|)行う|占術|は|指令レベル| / {Value1}。|指令レベル|{Value2}ごとに|e:1||指令ボーナス|を得る。
+    ターン開始時に{SelfName}の指令バフが発動した場合、カードを１枚引く。 
+
+FastSummon:
+  Name: 迅速召喚
+  Description: |-
+    |最前線|カードを{Value1}枚選んで手札に加える。
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。 
+  UpgradedDescription: |-
+    |最前線|カードを{Value1}枚選んで手札に加える。
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。 
+    {DebutEffect}
+  DetailText: |-
+    |犠牲|にできる数の|埴輪兵士|を得ていない場合、それを必要とするカードは表示されない。 
+  InteractionTitle: |-
+    {SelfName}
+  Debut: |-
+    戦闘終了までこのカードのコストは{Mana}。
+
+BasicAssignment:
+  Name: 簡単な指令
+  Description: |-
+    コモン|指令|カードの中から|e:1|枚を選び手札に加える。 
+    |指令ボーナス|{Value1}を得る。 
+  UpgradedDescription: |-
+    コモン|指令|カードの中から|e:1|枚を選び手札に加える。 
+    |指令ボーナス|{Value1}を得る。 
+    |戦闘開始時|: {SelfName}を自動的にプレイする。自動的にプレイされる{SelfName}は戦闘ごとに1回のみ。
+  InteractionTitle: |-
+    {SelfName}
+
+#UNCOMMONS
+CreateArcher:
+  Name: 熟練弓兵埴輪
+  Description: |-
+    |弓兵埴輪|{Value1}を得る。
+    {Damage}ダメージを与える。
+    |弓兵埴輪|レベルに応じて追加効果を適用する。 
+    |3|: |ロックオン|{Value2}を与える。
+    |5|: 代わりに{IncreasedDamage}ダメージを与える。
+    |7|: |脱力||e:1|を与える。
+    |10|: |弱体||e:1|を与える。
+
+CreateCavalry:
+  Name: 熟練騎馬兵埴輪
+  Description: |-
+    |騎馬兵埴輪|{Value1}を得る。カードを|e:2|枚引く。
+    |騎馬兵埴輪|レベルに応じて追加効果を適用する。
+    |3|: |占術|{Scry}。
+    |5|: |グレイズ|{Value2}を得る。
+    |7|: {Mana}を得る。
+    |10|: |指令 - 連携攻撃|の効果を適用する。
+  InteractionTitle: |-
+    {SelfName}
+
+CreateFencer:
+  Name: 熟練剣士埴輪
+  Description: |-
+    |剣士埴輪|{Value1}を得る。{Block}|ブロック|を得る。
+    |剣士埴輪|レベルに応じて追加効果を適用する。 
+    |3|: |反射|{ReflectionGain}を得る。
+    |5|: 手札のランダムな{NumUpgrade}枚のカードをこの戦闘中|アップグレード|する。
+    |7|: {Shield}|バリア|を得る。
+    |10|: このターン、|帯電|{Value2}を得る。
+
+BuildWatchtower:
+  Name: 指令 - 櫓構築
+  Description: |-
+    |剣士埴輪|{FencerRequired}を|布陣|する。|弓兵埴輪|{SacrificeArcherRequired}を|犠牲|にする。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、|指令レベル|{Value1}ごとに|物見やぐら||e:1|を得る。
+    {PlayerName}が既に|物見やぐら|得ている場合、|埴輪兵士|を消費せずに、代わりに|弓砲台|を1枚手札に加える。
+  UpgradedDescription: |-
+    |剣士埴輪|{FencerRequired}を|布陣|する。|弓兵埴輪|{SacrificeArcherRequired}を|犠牲|にする。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、|指令レベル|{Value1}ごとに|物見やぐら||e:1|を得る。 
+    {PlayerName}が既に|物見やぐら|得ている場合、|埴輪兵士|を消費せずに、代わりに|弓砲台+|を1枚手札に加える。 
+
+AssignTickdownReturn:
+  Name: 指令催促
+  Description: |-
+    全ての|指令|バフのカウントダウンを{Value1}減らす。
+    |戦術命令|を|e:1|枚手札に加える。
+    |指令|バフが発動する度、捨て札から{SelfName}を手札に戻す。
+  UpgradedDescription: |-
+    全ての|指令|バフのカウントダウンを{Value1}減らし、|指令ボーナス|{Value2}を得る。
+    |戦術命令|を|e:1|枚手札に加える。
+    |指令|バフが発動する度、捨て札から{SelfName}を手札に戻す。 
+
+HaniwaSpy:
+  Name: 偵察兵埴輪
+  Description: |-
+    |手札効果|: 山札から捨てられたカードの|臨時コスト|を{Mana}減らす。必要|忠誠度|{PassiveConsumedRemainingValue}。 
+    |山札か捨て札にある場合|: ターン終了時、{SelfName}と同じ場所にあるランダムなカード1枚の|臨時コスト|を{Mana}減らす。必要|忠誠度|{PassiveConsumedRemainingValue}。
+    |プレイした時|: |占術|{TotalScry}。カードを|e:1|枚引く。消費|忠誠度|{OnPlayConsumedRemainingValue}。
+  InteractionTitle: |-
+    {Name}
+  DetailText: |-
+    |騎馬兵埴輪|タイプ。
+    アップグレード3回ごとに以下の効果を適用する。
+    |プレイした時|の|占術|を+1。(最大10)
+
+HaniwaUpgrader:
+  Name: 援兵埴輪
+  Description: |-
+    |手札効果|: ターン終了時、手札のランダムなカード{NumCardsToUpgrade}枚をこの戦闘中|アップグレード|する。このカード以外のカードが優先的に選ばれる。必要|忠誠度|{PassiveConsumedRemainingValue}。
+    |プレイした時|: {Block}|ブロック|を得る。最大{Value2}枚のカードを選び、この戦闘中{OnPlayTimesToUpgrade}回|アップグレード|する。消費|忠誠度|{OnPlayConsumedRemainingValue}。
+  DetailText: |-
+    |剣士埴輪|タイプ。
+    アップグレード{NumCardsScaling}回ごとに以下の効果を適用する。
+    |手札効果|のアップグレード枚数+1。
+    アップグレード{OnPlayTimesToUpgradeScaling}回ごとに以下の効果を適用する。
+    |プレイした時|効果のアップグレード回数+1。
+  InteractionTitle: |-
+    {SelfName}
+
+HaniwaExploiter:
+  Name: 追兵埴輪
+  Description: |-
+    |手札効果|: ターン終了時、デバフを持つ全ての敵に{PassiveDmg}ダメージを与える。必要|忠誠度|{PassiveConsumedRemainingValue}。
+    |プレイした時|: {OnPlayDmg}ダメージを与える。対象のデバフ1つごとにダメージを{DebuffDmg}増やす。消費|忠誠度|{OnPlayConsumedRemainingValue}。
+  DetailText: |-
+    |弓兵埴輪|タイプ。
+    アップグレードごとに以下の効果を適用する。
+    |手札効果|と|プレイした時|の敵に与えるダメージをそれぞれ+1。
+    アップグレード5回ごとに以下の効果を適用する。
+    |プレイした時|の対象のデバフ1つごとの追加ダメージを+1。
+
+HaniwaMonk:
+  Name: 僧兵埴輪
+  Description: |-
+    |手札効果|: {PlayerName}がバフを得るたび、|プレイした時|のダメージと|ブロック|を{Value2}ずつ増やす。必要|忠誠度|{PassiveConsumedRemainingValue}。
+    |プレイした時|: {Damage}ダメージを与え、{Block}|ブロック|を得る。増加分を0にする。増加分({ChargedValue})。消費|忠誠度|{OnPlayConsumedRemainingValue}。 
+  DetailText: |-
+    |剣士埴輪|タイプ。
+    アップグレードごとに以下の効果を適用する。
+    |プレイした時|のダメージ及びブロックを+1。
+
+HaniwaCharger:
+  Name: 突撃兵埴輪
+  Description: |-
+    |手札効果|: {PlayerName}のターン終了時、|忠誠度|{BaseLoyaltyGain}を得る。さらに手札の|突撃兵埴輪||e:1|枚につき、|忠誠度||e:1|を得る。ターン開始時、|忠誠度|が{AutoChargeThreshold}以上の場合、|プレイした時|の効果を適用し、このカードを捨てる。
+    |プレイした時|: {Damage}ダメージを与える。|忠誠度|の|e:半分|({HalfLoyalty})に等しいダメージを追加。消費した|忠誠度|が{VulnScaling}以上の場合、|弱体||e:1|を与える。最低消費|忠誠度|{OnPlayConsumedRemainingValue}。|忠誠度|{OnPlayConsumedRemainingValue}以上の場合、全て消費する。
+  DetailText: |-
+    |騎馬兵埴輪|タイプ。
+    アップグレードごとに以下の効果を適用する。
+    |プレイした時|のダメージを+1
+    |手札効果|の自動的にプレイする効果に必要な|忠誠度|を+1。
+    アップグレード{LoyaltyGainScaling}回ごとに以下の効果を適用する。
+    |手札効果|の自動的に|忠誠度|を得る数値を+1。
+
+HaniwaSentinel:
+  Name: 哨兵埴輪
+  Description: |-
+    |手札効果|: {PlayerName}のターン終了時、攻撃を予定している敵全員に{Value2}ダメージと、|脱力|{WeakDuration}を{PassiveNumTimes}回与える。必要{PassiveConsumedRemainingValue}|忠誠度|。
+    |プレイした時|: |転ばぬ先の杖刀|{IllnessBuffLevel}を得て、{Block}|ブロック|を得る。消費|忠誠度|{OnPlayConsumedRemainingValue}。
+  DetailText: |-
+    |弓兵埴輪|タイプ。
+    アップグレード{IllnessBuffLevelScaling}回ごとに以下の効果を適用する。
+    |プレイした時|に得る|転ばぬ先の杖刀|を+1。
+    アップグレード{PassiveScaling}回ごとに以下の効果を適用する。
+    |手札効果|を敵に与える回数を+1。
+
+    
+UpgradedSummon:
+  Name: 熟練の召喚術
+  Description: |-
+    {Value2}枚の{Value1}回|アップグレード|済みの|最前線|カードを選び、手札に加える。 
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。
+  UpgradedDescription: |-
+    1枚もしくは{Value2}枚の{Value1}回|アップグレード|済みの|最前線|カードを選び、手札に加える。 
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。 
+  DetailText: |-
+    |犠牲|にできる数の|埴輪兵士|を得ていない場合、それを必要とするカードは表示されない。
+  InteractionTitle: |-
+    {SelfName}
+
+OptionHaniwaSpy:
+  Name: 偵察兵埴輪召喚
+  Description: |-
+    |騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |偵察兵埴輪|を|e:1|枚手札に加える。
+    現在の|騎馬兵埴輪|レベル{AvailableCavalry}。 
+  NonbattleDescription: |-
+    |騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |偵察兵埴輪|を|e:1|枚手札に加える。
+
+OptionHaniwaUpgrader:
+  Name: 援兵埴輪召喚
+  Description: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |援兵埴輪|を|e:1|枚手札に加える。
+    現在の|剣士埴輪|レベル{AvailableFencer}。
+  NonbattleDescription: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |援兵埴輪|を|e:1|枚手札に加える。
+
+OptionHaniwaExploiter:
+  Name: 追兵埴輪召喚
+  Description: |-
+    |弓兵埴輪|{SelectRequireArcher}を|犠牲|にする。
+    |追兵埴輪|を|e:1|枚手札に加える。
+    現在の|弓兵埴輪|レベル{AvailableArcher}。
+  NonbattleDescription: |-
+    |弓兵埴輪|{SelectRequireArcher}を|犠牲|にする。
+    |追兵埴輪|を|e:1|枚手札に加える。
+
+OptionHaniwaMonk:
+  Name: 僧兵埴輪召喚
+  Description: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |僧兵埴輪|を|e:1|枚手札に加える。
+    現在の|剣士埴輪|レベル{AvailableFencer}。
+  NonbattleDescription: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |僧兵埴輪|を|e:1|枚手札に加える。
+
+OptionHaniwaCharger:
+  Name: 突撃兵埴輪召喚
+  Description: |-
+    |騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |突撃兵埴輪|を|e:1|枚手札に加える。
+    現在の|騎馬兵埴輪|レベル{AvailableCavalry}。
+  NonbattleDescription: |-
+    |騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |突撃兵埴輪|を|e:1|枚手札に加える。
+
+OptionHaniwaSentinel:
+  Name: 哨兵埴輪召喚
+  Description: |-
+    |弓兵埴輪|{SelectRequireArcher}を|犠牲|にする。
+    |哨兵埴輪|を|e:1|枚手札に加える。
+    現在の|弓兵埴輪|レベル{AvailableArcher}。
+  NonbattleDescription: |-
+    |弓兵埴輪|{SelectRequireArcher}を|犠牲|にする。
+    |哨兵埴輪|を|e:1|枚手札に加える。
+
+LoyaltyStrike:
+  Name: 忠誠の攻撃
+  Description: |-
+    {Damage}ダメージを与える。
+    手札の|最前線|カードの|忠誠度|の合計分、{SelfName}のダメージを増やす。(合計{AdditionalDamage})
+
+ClayToAshes:
+  Name: 粘土から灰へ
+  Description: |-
+    |埴輪兵士|を|犠牲|にするか、|最前線|カードが|廃棄|される度、{Value1}|バリア|と|忠誠度保護|{Value1}を得る。
+
+ChargeAttack:
+  Name: 指令 - 弩砲射撃
+  Description: |-
+    |弓兵埴輪|{ArcherRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、最もライフの多い敵に|指令レベル|に等しいダメージを与える。 
+    |指令|バフが発動する度、|指令レベル|を{Value1}増加する。 
+
+AssignPlayGainBlock:
+  Name: 偶像防衛隊
+  Description: |-
+    |指令|カードもしくは|戦術命令|をプレイする度、{Value1}|ブロック|を得る。
+    |戦術命令|を{Value2}枚手札に加える。
+
+CavalryRush:
+  Name: 指令 - 連携攻撃
+  Description: |-
+    |騎馬兵埴輪|{CavalryRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、最もライフの少ない敵に|指令レベル|に等しいダメージを与える。
+    |コマンド|:<sprite=ManaSprite" name="0">コストのカードを同じ対象に使用する。|最前線|カードを選んだ場合、|忠誠度|を消費しない。使用する枚数は|指令レベル|{Value1}ごとに|e:1|枚。(最小1)
+  DetailText: |-
+    ターゲットが死亡した場合、追加の|コマンド|の効果は次にライフの低い敵に適用する。 
+
+ClayGathering:
+  Name: セラミックスの杖刀人
+  Description: |-
+    {Block}|ブロック|を得る。
+    {Shield}|バリア|を得る。 
+    {PlayerName}が持つバフ1種類につき得られるバリアが{Value1}増える。
+
+DiscardUpgrade:
+  Name: 畜生式トレーニング
+  Description: |-
+    {Block}|ブロック|を得る。
+    手札から|最前線|カードを任意の枚数捨てる。 
+    捨てられたカード全てをこの戦闘中{Value1}回|アップグレード|する。 
+    この効果でカードが捨てられた場合、{Value2}枚のカードを引く。
+  InteractionTitle: |-
+    {SelfName}
+
+AshesToClay:
+  Name: 灰から粘土へ
+  Description: |-
+    |コマンド|:|廃棄場|のコスト<sprite=ManaSprite" name="0">のカード{Value1}枚。|最前線|カードの場合、|忠誠度|をリセットしてから適用する。
+    その後、選択したカードを|廃棄場|から山札に加える。
+    選択しなかった場合、手札の全ての|最前線|カードは|忠誠度|{Value2}を得る。
+  InteractionTitle: |-
+    {SelfName}
+
+ChooseShortAssign:
+  Name: 迅速な指令
+  Description: |-
+    3枚のランダムな|指令|カードの中から1枚を選び、|埴輪兵士|を|布陣|せずに効果を適用する。
+    バフのカウントダウンは{Value1}から始まり、追加の|指令レベル|{Value2}を得る。
+    {Mana}を得る。 
+  InteractionTitle: |-
+    {SelfName}
+
+FencerPrepCounter:
+  Name: 指令 - カウンターアタック
+  Description: |-
+    |剣士埴輪|{FencerRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、{PlayerName}を攻撃した全ての敵に{Damage}+(|指令レベル| /対象の数)ダメージを与える。誰も攻撃していない場合、ランダムな敵1体を対象に攻撃する。
+    {PlayerName}が攻撃される度に、攻撃1回につき|指令レベル|を{Value1}増加。{PlayerName}のターン終了時、敵への攻撃回数分の{Block}|ブロック|を得る。 
+  DetailText: |-
+    敵に|司令官の印|を与えている場合、他の|司令官の印|を与えられていない敵が攻撃したとしても、計算に使用される敵の数は|司令官の印|を与えられている敵のみが含まれる。
+
+HealSacrifice:
+  Name: 彫命刀
+  Description: |-
+    全種類の|埴輪兵士|{SacrificeAmount}を|犠牲|にする。
+    ライフを{Value1}回復し、|火力|{Value2}を得る。
+
+GuardRush:
+  Name: 強行軍
+  Description: |-
+    全種類の|埴輪兵士|{Value2}を|犠牲|にする。
+    |衛兵埴輪||e:2|枚と|弓騎兵埴輪||e:1|枚を山札の一番上に加える。
+    カードを{Value1}枚引く。
+
+ArcherPrepDebuff:
+  Name: 指令 - 援護射撃
+  Description: |-
+    |弓兵埴輪|{ArcherRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、敵全体に|指令レベル| / {DivideDmg}の|精密|ダメージを与え、|指令レベル|{Value1}ごとに|弱体||e:1|(最小 1)と、|指令レベル|{Value2}ごとに|ロックオン||e:1|(最小 1)を与える。   
+
+AssignTriggerUpgrade:
+  Name: 自由な育成
+  Description: |-
+    手札のカード全てをこの戦闘中|アップグレード|する。 
+    |指令|バフが発動する度、手札のランダムなカード{Value1}枚をこの戦闘中|アップグレード|する。
+
+CavalrySupplies:
+  Name: 指令 - 救援要請
+  Description: |-
+    |騎馬兵埴輪|{CavalryRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、X枚のカードから最大|e:1|枚を選んで山札に加える。選択されなかったカードは捨て札に加える。Xは{Value2}+(|指令レベル| / {Value1}) (最小 2)。 
+    候補のカードは|火焔|、|光明|、|幻虹|、アンコモンまでのランダムな|最前線|カードから選ばれる。それらは|補充|を持つ。  
+  DetailText: |-
+    |火焔|と|光明|は15%、|幻虹|は5%、|最前線|カードはマナ基盤の色に基づいて65%の確率で選ばれる。 
+
+AutoCreateReserves:
+  Name: 埴輪量産工場
+  Description: |-
+    |埴輪の増援|を1枚手札に加える。 
+    {PlayerName}のターン開始時、手札の|埴輪の増援|が1枚より少ない場合不足分の|埴輪の増援|を手札に加える。
+
+FrontlineCopy:
+  Name: 埴輪の複製
+  Description: |-
+    手札から最大{Value2}枚のコモンまたはアンコモンの|最前線|カードを選び、コピーを山札に1枚加える。それは|廃棄|を持つ。 
+    カードを{Value1}枚引く。
+  InteractionTitle: |-
+    {SelfName}
+
+BlitzSummon:
+  Name: 即席召喚
+  Description: |-
+    |最前線|カードを{Value1}枚選んで手札に加える。 
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。
+    |コマンド|:このカードの効果で手札に加えた|最前線|カード。
+  UpgradedDescription: |-
+    |最前線|カードを|e:1|枚もしくは{Value1}枚選んで手札に加える。 
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。
+    |コマンド|:このカードの効果で手札に加えた|最前線|カード。
+  DetailText: |-
+    |犠牲|にできる数の|埴輪兵士|を得ていない場合、それを必要とするカードは表示されない。 
+  InteractionTitle: |-
+    {SelfName}
+
+ZeroCostMove:
+  Name: 伝令
+  Description: |-
+    山札と捨て札から{Mana}コストのカードをランダムに{Value1}枚手札に加える。 
+    現在、山札と捨て札には合計{ZeroCostCount}枚。 
+  UpgradedDescription: |-
+    山札と捨て札から{Mana}コストのカードを{Value1}枚選んで手札に加える。  
+    現在、山札と捨て札には合計{ZeroCostCount}枚。
+  NonbattleDescription: |-
+    山札と捨て札から{Mana}コストのカードをランダムに{Value1}枚手札に加える。
+  UpgradedNonbattleDescription: |-
+    山札と捨て札から{Mana}コストのカードを{Value1}枚選んで手札に加える。  
+
+LoyaltyCommand:
+  Name: 忠誠の命令
+  Description: |-
+    |忠誠度保護|{Value1}を得る。
+    |コマンド|:手札のコスト<sprite=ManaSprite" name="0">のカード最大{Value2}枚。
+  InteractionTitle: |-
+    {SelfName}
+
+MaxHaniwaUp:
+  Name: 統率強化
+  Description: |-
+    全種類の|埴輪兵士|の最大レベルを{Value1}増やす。 
+    全種類の|埴輪兵士|{Value1}を得る。 
+
+ShortOrLongTerm:
+  Name: 戦略戦術
+  Description: |-
+    {Mana}を得る。 
+    |チョイス|: 最大{Value1}個の|指令|バフを直ちに発動させる。もしくは、|指令ボーナス|{Value2}を得て、|戦術命令|を|e:1|枚手札に加える。
+  ExtraDescription1: |-
+    最大{Value1}個の|指令|バフを直ちに発動させる。
+  ExtraDescription2: |-
+    |指令ボーナス|{Value2}を得て、|戦術命令|を|e:1|枚手札に加える。
+  InteractionTitle: |-
+    最大{Value1}個の|指令|バフを直ちに発動させる。
+
+FrontlineLoyaltyGain:
+  Name: 兵長の号令
+  Description: |-
+    手札、山札、捨て札の全ての|最前線|カードは|忠誠度|{Value1}を得る。
+    |臨時火力アップ|{Value2}と|臨時霊力アップ|{Value2}を得る。
+
+#RARES
+FullFrontalAssault:
+  Name: 全軍突撃
+  Description: |-
+    全種類の|埴輪兵士|を全て|犠牲|にする。 
+    {Damage}ダメージを与える。
+    |埴輪兵士|レベル|e:1|につき与えるダメージを{Value1}増やす。
+  NonbattleDescription: |-
+    全種類の|埴輪兵士|を全て|犠牲|にする。 
+    {Damage}ダメージを与える。
+    |埴輪兵士|レベル|e:1|につき与えるダメージを{Value1}増やす。
+
+AssignPlayDraw:
+  Name: 先払いの褒章
+  Description: |-
+    |指令|カードをプレイした時に|指令ボーナス|を得ていた場合、|指令ボーナス||e:1|を消費してカードを{Value1}枚引く。
+    |指令ボーナス|{Value2}を得る。
+
+HaniwasNeverDie:
+  Name: 不死身の埴輪
+  Description: |-
+    |埴輪兵士|を|犠牲|にする度、代わりに|埴輪兵士|{Value1}を消費せずにコストを満たすランダムな|指令|バフに|布陣|する。
+
+ZeroCostReduction:
+  Name: 零の力
+  Description: |-
+    <sprite=ManaSprite" name="0">コストのカードをプレイする度、手札のランダムなカード|e:1|枚の|臨時コスト|を<sprite=ManaSprite" name="1">減らす。
+    この効果は|e:1|ターンに最大{Value1}回適用する。
+
+BlitzCommand:
+  Name: 奇襲作戦
+  Description: |-
+    |コマンド|:|e:手札|にある全ての<sprite=ManaSprite" name="0">コストのカード。
+    敵を対象とする効果は、ランダムな敵を対象にする。
+  UpgradedDescription: |-
+    |コマンド|:|e:手札、山札、捨て札|にある全ての<sprite=ManaSprite" name="0">コストのカード。
+    敵を対象とする効果は、ランダムな敵を対象にする。
+
+MassTaskLevel:
+  Name: 一点突破
+  Description: |-
+    |指令|バフを|e:1|つ選択し、|指令レベル|を{Value2}増やす。選ばなかった他全ての|指令|バフを解除する。
+    その後、選択した|指令|バフの|指令レベル|に、解除した|指令|バフの|指令レベル|合計を加算する。
+    解除されたバフ|e:1|つ毎にカードを{Value1}枚引く。
+  InteractionTitle: |-
+    {SelfName}
+
+MassSummon:
+  Name: 徴兵召喚
+  Description: |-
+    全種類の|埴輪兵士|全てを|犠牲|にする。ランダムに選ばれた|最前線|カードを山札に加える。
+    生成されるカードの種類と数は、マナ基盤と|犠牲|にした|埴輪兵士|の種類と数に基づいて決まる。
+
+EnhancedTraining:
+  Name: 士気高揚
+  Description: |-
+    この戦闘中、|最前線|カードが|アップグレード|される場合、追加で{Value2}回|アップグレード|する。
+    手札の|最前線|カードを|e:1|枚選び、{Value1}回|アップグレード|する。
+  InteractionTitle: |-
+    {SelfName}
+
+FrontlineCommander:
+  Name: 指揮官埴輪
+  Description: |-
+    |手札効果|: {PlayerName}のターン開始時、|コマンド|:手札のランダムな{PassiveCommandCount}枚の<sprite=ManaSprite" name="0">コストのカード。対象が|最前線|カードの場合、|忠誠度|を消費しない。必要|忠誠度|{PassiveConsumedRemainingValue}。
+    敵を対象とする効果は、ランダムな敵を対象にする。
+    |プレイした時|: {Damage}ダメージを与え、|指揮官の印|を与える。消費|忠誠度||e:0|。
+  DetailText: |-
+    特殊タイプとして扱う。|最前線|カードを手札に加える効果の候補に入らない。
+    アップグレードごとに以下の効果を適用する。
+    |プレイした時|効果の与えるダメージを+2。
+    アップグレード{PassiveScaling}回ごとに以下の効果を適用する。
+    |手札効果|の選ばれるカードの枚数を+1。
+
+OptionFrontlineCommander:
+  Name: 指揮官埴輪召喚
+  Description: |-
+    全種類の|埴輪兵士|{SelectRequireFencer}を|犠牲|にする。
+    |指揮官埴輪|を|e:1|枚手札に加える。
+    現在の|剣士埴輪|レベル{AvailableFencer}。現在の|弓兵埴輪|レベル{AvailableArcher}。現在の|騎馬兵埴輪|レベル{AvailableCavalry}。
+  NonbattleDescription: |-
+    全種類の|埴輪兵士|{SelectRequireFencer}を|犠牲|にする。
+    |指揮官埴輪|を|e:1|枚手札に加える。
+
+AssignCommander:
+  Name: 司令官埴輪
+  Description: |-
+    |手札効果|: |指令|バフが発動した後、|布陣|していた|埴輪兵士|を別の|指令|バフに|布陣|する。 必要|忠誠度|{PassiveConsumedRemainingValue}。
+    |プレイした時|: |指令|バフを選択し、|指令レベル|{Value2}を加えて複製する。消費|忠誠度||e:0|。 
+  DetailText: |-
+    特殊タイプとして扱う。|最前線|カードを手札に加える効果の候補に入らない。
+    アップグレードごとに以下の効果を適用する。
+    |プレイした時|効果の加える|指令レベル|+1。
+  InteractionTitle: |-
+    {SelfName}
+
+OptionAssignCommander:
+  Name: 司令官埴輪召喚
+  Description: |-
+    全種類の|埴輪兵士|{SelectRequireFencer}を|犠牲|にする。
+    |司令官埴輪|を|e:1|枚手札に加える。
+    現在の|剣士埴輪|レベル{AvailableFencer}。現在の|弓兵埴輪|レベル{AvailableArcher}。現在の|騎馬兵埴輪|レベル{AvailableCavalry}。
+  NonbattleDescription: |-
+    全種類の|埴輪兵士|{SelectRequireFencer}を|犠牲|にする。
+    |司令官埴輪|を|e:1|枚手札に加える。
+
+SummonCommander:
+  Name: 上級埴輪召喚
+  Description: |-
+    |指揮官埴輪|と|司令官埴輪|から1枚を選び、手札に加える。
+  UpgradedDescription: |-
+    |指揮官埴輪|と|司令官埴輪|から1枚を選び、{Value1}回|アップグレード|された状態で手札に加える。
+    手札、山札、捨て札の|最前線|カードは|忠誠度|{Value2}を得る。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignTriggerSummon:
+  Name: 解放召喚
+  Description: |-
+    |指令|バフが発動する度、アンコモンまでのランダムな|最前線|カードを{Value1}枚手札に加える。
+
+FrontlineDoubleAction:
+  Name: 埴輪兵団の最前線
+  Description: |-
+    |最前線|カードをプレイした後、|プレイした時|の効果を|忠誠度|を消費する効果を含めてもう一度適用する。
+    |忠誠度保護|{Value1}を得る。
+
+AssignReverseTickdown:
+  Name: ガードスクランブル
+  Description: |-
+    {Block}|ブロック|を得る。
+    このターン中、|指令|バフのカウントダウンは減少する代わりに増加する。
+    ターン終了時に、すべての|指令|バフの合計カウントダウンに等しい|ブロック|を得る。
+  UpgradedDescription: |-
+    {Block}|ブロック|を得る。
+    このターン中、|指令|バフのカウントダウンは減少する代わりに増加する。
+    ターン終了時に、すべての|指令|バフの合計カウントダウンに等しい|ブロック|を得る。
+    |ブロック保留|。
+
+HandsizeBlock:
+  Name: 防御陣形
+  Description: |-
+    {Block}|ブロック|を得る。手札のカード1枚につき得られる|ブロック|が{Value1}増える。
+    手札のマナ総量が<sprite=ManaSprite" name="0">以外のカード{Value2}枚のごとに{SelfName}のコストを{Mana}増やす。
+
+AssignDuplicateTrigger:
+  Name: 多重指令
+  Description: |-
+    |多重指令|{Value1}を得る。 
+  DetailText: |-
+    この効果は、|指令|バフの発動を条件とする効果を適用しない。
+
+LeadThroughExample:
+  Name: 率先垂範
+  Description: |-
+    |最前線|カードがプレイされる度、|指令ボーナス|{Value1}を得る。
+    |指令|バフが発動する度、|忠誠度保護|{Value2}を得る。
+
+#OFFCOLOURS
+FrozenHaniwa:
+  Name: 冬将軍埴輪
+  Description: |-
+    |手札効果|: {SelfName}に隣接するカードをプレイした場合、|フロストアーマー|{Value2}を得て、ランダムな敵に|冷気|を与える。|冷気|を与える効果は|忠誠度|が{PassiveConsumedRemainingValue}必要。
+    |プレイした時|: 敵全体に{Damage}ダメージを与え、|冷気|を与える。消費|忠誠度|{OnPlayConsumedRemainingValue}。
+    |保留効果|: 元のカードに戻る。|{OriginalCardName}|
+  DetailText: |-
+    元のカードからキーワードを引き継がない。
+    |埴輪兵士|のタイプは元のカードと同じ。
+    アップグレードごとに以下の効果を適用する。
+    |プレイした時|効果の与えるダメージを+1。
+
+FreezeFrontline:
+  Name: 雪中戦
+  Description: |-
+    手札の|最前線|カードを{Value1}枚選び、|冬将軍埴輪|に変化させる。
+    |忠誠度|と|アップグレード|回数は引き継がれる。
+  UpgradedDescription: |-
+    手札の|最前線|カードを|e:1|枚もしくは{Value1}枚選び、|冬将軍埴輪|に変化させる。
+    |忠誠度|と|アップグレード|回数は引き継がれる。
+  InteractionTitle: |-
+    {SelfName}
+  UpgradedInteractionTitle: |-
+    {SelfName}
+
+ArcherPrepFrostArrow:
+  Name: 指令 - 氷の矢
+  Description: |-
+    |弓兵埴輪|{ArcherRequired}を|布陣|する。|指令レベル|{StartingTaskLevel}開始。
+    {StartingCardCounter}枚のカードをプレイした後、ランダムな敵に{Damage}ダメージと|冷気|をX回与える。Xは|指令レベル| / {Value1}。
+    目標に|冷気|が付与されている場合、{Block}|ブロック|を得る。
+
+KeikiTeammate:
+  Name: 造形神、埴安神袿姫
+  Description: |-
+    {FriendP} ランダムな|e:2|枚の|最前線|カードを手札に加える。
+  ExtraDescription1: |-
+    {FriendA} 全ての|指令|バフを直ちに発動させる。|指令|バフが発動する度、{Value1}|バリア|を得る。
+  ExtraDescription3: |-
+    {FriendU} 廃棄場の全ての|最前線|カードを|忠誠度|を初期値に戻してから捨て札に加える。この方法で移動させたカード|e:1|枚につき敵全体に{Value2}ダメージを与える。({FrontlineExileDamage})
+
+PermanentAssign:
+  Name: 永久任務
+  Description: |-
+    |指令|バフを{Value1}つ選び、|常駐指令|を与える。
+  InteractionTitle: |-
+    {SelfName}
+
+PoisonShot:
+  Name: 毒矢
+  Description: |-
+    {Damage}ダメージを与え、|毒|{Value1}を与える。
+    対象が受けているデバフ|e:1|つごとに与える|毒|を{Value1}増やす。
+
+HaniwaHorseArcher:
+  Name: 弓騎兵埴輪
+  Description: |-
+    |手札、山札、捨て札にある場合|: {PlayerName}が攻撃を|グレイズ|する度、{PlayerName}を攻撃した敵に{Value2}ダメージを与える。手札にある場合の必要|忠誠度|{PassiveConsumedRemainingValue}。山札、捨て札にある場合の必要|忠誠度|{PassiveConsumedFromDrawDiscard}。
+    |プレイした時|: {Damage}ダメージを与え、|グレイズ|{GrazeGained}を得る。消費|忠誠度|{OnPlayConsumedRemainingValue}。
+  DetailText: |-
+    |弓兵埴輪|と|騎馬兵埴輪|タイプを合わせ持つ。
+    アップグレードごとに以下の効果を適用する。
+    |手札、山札、捨て札にある場合|および|プレイした時|効果の与えるダメージを+1。
+    アップグレード|e:10|回ごとに以下の効果を適用する。
+    |プレイした時|効果で得る|グレイズ|を+1。
+
+OptionHaniwaHorseArcher:
+  Name: 弓騎兵埴輪召喚
+  Description: |-
+    |弓兵埴輪|{SelectRequireArcher}と|騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |弓騎兵埴輪|を|e:1|枚手札に加える。
+    現在の|弓兵埴輪|レベル{AvailableArcher}。
+    現在の|騎馬兵埴輪|レベル{AvailableCavalry}。
+  NonbattleDescription: |-
+    |弓兵埴輪|{SelectRequireArcher}と|騎馬兵埴輪|{SelectRequireCavalry}を|犠牲|にする。
+    |弓騎兵埴輪|を|e:1|枚手札に加える。
+
+MudExtraction:
+  Name: 泥の抽出
+  Description: |-
+    手札の|最前線|カードを最大{Value1}枚選び、選んだカードの|忠誠度|を{Value2}消費する。
+    選んだ枚数分の|水泡|を手札に加える。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignCostTaskLevel:
+  Name: 踊る埴輪兵士
+  Description: |-
+    この戦闘中手札の|指令|カードの|臨時コスト|を{Mana}にする。カードをプレイする度に|指令|バフは|指令レベル|{Value1}を追加で得る。
+    {PlayerName}のターン開始時、前のターンに|指令|カードをプレイするために使用したマナを得る。 
+
+AssignSeparation:
+  Name: 指令分割
+  Description: |-
+    |指令|バフはスタックされなくなり、代わりに同一の|指令|バフが作成されるようになる。
+    |指令|バフが発動した時に同じ種類の|指令|バフが存在する場合、その|指令|バフは|指令ボーナス|{Value1}を得る。
+
+ChainOfCommand:
+  Name: 埴輪兵団の秘密兵器
+  Description: |-
+    |埴輪兵士|を生成して手札に加えるカードの候補に|指揮官埴輪|と|司令官埴輪|を加える。
+  UpgradedDescription: |-
+    |埴輪兵士|を生成して手札に加えるカードの候補に|指揮官埴輪|と|司令官埴輪|を加える。
+    |戦闘開始時|: {SelfName}を自動的にプレイする。
+  DetailText: |-
+    |指揮官埴輪|と|司令官埴輪|を手札に加える場合、全種類の|埴輪兵士|を|e:3|犠牲にする必要がある。
+
+DarknessSummon:
+  Name: 闇の召喚術
+  Description: |-
+    |最前線|カードを{Value1}枚選んで手札に加える。 
+    選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。 
+    このカードの効果で手札に加えた|最前線|カードは無限の|忠誠度|を持ち、|忠誠度|の代わりに<sprite="Point" name="Power">を消費する。手札からプレイした場合に手札から離れないが、|忠誠度|の代わりに<sprite="Point" name="Power">|e:10|を消費する。{PlayerName}の<sprite="Point" name="Power">が無くなった場合、カードは戦闘から取り除かれる。
+    |忠誠度|を参照するカード効果の対象になった場合、|忠誠度||e:10|として扱われる。
+  DetailText: |-
+    |犠牲|にできる数の|埴輪兵士|を得ていない場合、それを必要とするカードは表示されない。 
+  UpgradedDescription: |-
+    |最前線|カードを|e:1|枚もしくは{Value1}枚選んで手札に加える。 選択したカードに応じた数の|埴輪兵士|を|犠牲|にする。 
+    このカードの効果で手札に加えた|最前線|カードは無限の|忠誠度|を持ち、|忠誠度|の代わりに<sprite="Point" name="Power">を消費する。手札からプレイした場合に手札から離れないが、|忠誠度|の代わりに<sprite="Point" name="Power">|e:10|を消費する。{PlayerName}の<sprite="Point" name="Power">が無くなった場合、カードは戦闘から取り除かれる。
+    |忠誠度|を参照するカード効果の対象になった場合、|忠誠度||e:10|として扱われる。
+  InteractionTitle: |-
+    {SelfName}
+  UpgradedInteractionTitle: |-
+    {SelfName}
+
+HaniwaAssassin:
+  Name: 暗殺者埴輪
+  Description: |-
+    |手札効果|: {PlayerName}が敵にダメージを与える場合、{FollowupDamage}ダメージを追加する。必要|忠誠度|{PassiveConsumedRemainingValue}。
+    |山札か捨て札にある場合|: {PlayerName}がターンを終了する時、|投げナイフ|を1枚手札に加える。必要|忠誠度|{PassiveConsumedFromDrawDiscard}。 
+    |プレイした時|: 対象のライフが{Value2}以下の場合、即死させる。{Damage}ダメージを与える。消費|忠誠度|{OnPlayConsumedRemainingValue}。
+  DetailText: |-
+    |剣士埴輪|タイプ。
+    アップグレードごとに以下の効果を適用する。
+    |手札効果|および|プレイした時|効果の与えるダメージを+1。
+    |プレイした時|効果の即死対象ライフの下限を+2。
+
+OptionHaniwaAssassin:
+  Name: 暗殺者埴輪召喚
+  Description: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |暗殺者埴輪|を|e:1|枚手札に加える。
+    現在の|剣士埴輪|レベル{AvailableFencer}。
+  NonbattleDescription: |-
+    |剣士埴輪|{SelectRequireFencer}を|犠牲|にする。
+    |暗殺者埴輪|を|e:1|枚手札に加える。
+
+CavalryWorshipping:
+  Name: 騎馬兵の勲章
+  Description: |-
+    |騎馬兵埴輪|を{Value2}得る度、|グレイズ|{Value1}を得る。
+    |騎馬兵埴輪|を{CavalryGain}得る。
+
+FencerWorshipping:
+  Name: 剣士の勲章
+  Description: |-
+    |剣士埴輪|を{Value2}得る度、ランダムな敵に{Value1}ダメージを与える。
+    |剣士埴輪|{FencerGain}を得る。
+
+ArcherWorshipping:
+  Name: 弓兵の勲章
+  Description: |-
+    |弓兵埴輪|を{Value2}得る度、ランダムな敵にデバフを与える。
+    |弓兵埴輪|{ArcherGain}を得る。
+  DetailText: |-
+    デバフは以下の中からランダムに選択される
+    |脱力||e:2| 
+    |弱体||e:2| 
+    |臨時火力ダウン||e:3| 
+    |ロックオン||e:5| 
+    |毒||e:5| 
+
+VigorousCommand:
+  Name: 強硬策
+  Description: |-
+    |コマンド|:手札の任意のカード{Value1}枚。
+    |オーバードラフト|選んだカードのコスト分。
+  InteractionTitle: |-
+    {SelfName}
+
+#TOKENS
+CreateHaniwa:
+  Name: 埴輪の増援
+  Description: |-
+    選択した|埴輪兵士|{Value1}を得る。
+  InteractionTitle: |-
+    {SelfName}
+
+CreateHaniwaArcher:
+  Name: 弓兵の増援
+  Description: |-
+    |弓兵埴輪|{Value1}を得る。 
+    現在のレベル{CurrentArcher}。 
+  NonbattleDescription: |-
+    |弓兵埴輪|{Value1}を得る。 
+
+CreateHaniwaCavalry:
+  Name: 騎馬兵の増援
+  Description: |-
+    |騎馬兵埴輪|{Value1}を得る。 
+    現在のレベル{CurrentCavalry}。 
+  NonbattleDescription: |-
+    |騎馬兵埴輪|{Value1}を得る。 
+
+CreateHaniwaFencer:
+  Name: 剣士の増援
+  Description: |-
+    |剣士埴輪|{Value1}を得る。 
+    現在のレベル{CurrentFencer}。 
+  NonbattleDescription: |-
+    |剣士埴輪|{Value1}を得る。 
+
+GarrisonArcher:
+  Name: 弓砲台
+  Description: |-
+    |弓兵埴輪|レベルに応じた効果を適用する。
+    |0|: |物見やぐら|{ArcherLvl0}を得る。
+    |1|: |弓兵埴輪||e:1|を|犠牲|にする。|物見やぐら|{ArcherLvl1}を得る。
+    |2以上|: |弓兵埴輪||e:2|を|犠牲|にする。|物見やぐら|{ArcherLvl2}を得る。
+
+AssignmentOrder:
+  Name: 戦術命令
+  Description: |-
+    |e:5|枚の|戦術|から|e:1|枚を選び、その効果を得る。
+    |指令|バフを得ていない場合、|目標捕捉|のみ選べる。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignmentOrderHaste:
+  Name: 機動戦
+  Description: |-
+    |指令|バフを最大{Value1}つ選び、カウントダウンを{Value2}|e:減らす|。その後、|指令レベル|を{TaskLevelGain}増やす。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignmentOrderDelay:
+  Name: 持久戦
+  Description: |-
+    |指令|バフを最大{Value1}つ選び、カウントダウンを{Value2}|e:増加|させる。その後、|指令レベル|を{TaskLevelGain}増やす。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignmentOrderGuard:
+  Name: 防衛戦
+  Description: |-
+    |指令|バフを最大{Value1}つ選び、カウントダウンを{Value2}|e:増加|させる。その後、|指令レベル|を|e:4分の1減らす|。
+    {Block}|ブロック|を得る。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignmentOrderRecall:
+  Name: 撤退戦
+  Description: |-
+    |指令|バフを最大{Value1}つ選び、効果を発動させずに|e:解除|し、布陣中の|埴輪兵士|を取り戻す。
+    カードを{Value2}枚引く。
+  InteractionTitle: |-
+    {SelfName}
+
+AssignmentOrderMark:
+  Name: 目標捕捉
+  Description: |-
+    |司令官の印|{Value1}を与える。

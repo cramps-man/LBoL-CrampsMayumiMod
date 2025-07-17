@@ -1,0 +1,16 @@
+AssignUltimateSkill:
+  Title: 임명
+  Content: 일하는 진흙병사들
+  Description: |-
+    모든 적에게 {Damage}의 피해를 줍니다. |명중|
+    현재 존재하는 모든 |임무| 버프를 발동시킵니다.
+
+FrontlineUltimateSkill:
+  Title: 하니와
+  Content: 텅 빈 무진장 병단
+  Description: |-
+    모든 |하니와|의 레벨을 {Value1}만큼 획득합니다.
+    그런 다음 {Value2}장의 |전방| 카드를 선택하여 손에 추가합니다. 선택한 카드에 따라 |하니와|를 희생합니다.
+    손에 들어갈 공간이 부족할 경우, 남은 카드는 뽑을 카드 더미에 추가됩니다.
+  InteractionTitle: |-
+    손에 추가할 카드를 최대 {Value2}장 선택

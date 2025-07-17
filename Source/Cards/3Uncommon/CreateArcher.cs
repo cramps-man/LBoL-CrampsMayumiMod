@@ -36,8 +36,8 @@ namespace LBoLMod.Cards
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2 };
             cardConfig.Keywords = Keyword.Accuracy;
             cardConfig.UpgradedKeywords = Keyword.Accuracy;
-            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn), nameof(TempFirepowerNegative) };
-            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(Weak), nameof(Vulnerable), nameof(LockedOn), nameof(TempFirepowerNegative) };
+            cardConfig.RelativeEffects = new List<string>() { nameof(Haniwa), nameof(LockedOn), nameof(Weak), nameof(Vulnerable) };
+            cardConfig.UpgradedRelativeEffects = new List<string>() { nameof(Haniwa), nameof(LockedOn), nameof(Weak), nameof(Vulnerable) };
             return cardConfig;
         }
     }
