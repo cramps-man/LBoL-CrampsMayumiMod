@@ -1,4 +1,4 @@
-## This mod is still a work in progress but gameplay-wise is complete
+﻿## This mod is still a work in progress but gameplay-wise is complete
  - most cards have a single default card image
  - there are no attack animations
  - most buff icons have no image or just have a default
@@ -43,4 +43,6 @@ https://www.pixiv.net/en/artworks/121757746 - dairi bunch of player images
 https://www.pixiv.net/en/artworks/121673550 - default card image  
 https://github.com/Neoshrimp/LBoL-ModdingTools - NeoShrimp for creating the SideLoader and other various modding tools  
 camellia for their work on card arts  
+raspberry Caffeine Monster for Korean translation
+汁 for Japanese translation
 Thanks to various members of the modding community for helping with issues and answering questions
