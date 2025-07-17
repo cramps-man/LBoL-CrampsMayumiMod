@@ -57,6 +57,7 @@ namespace LBoLMod.StatusEffects
                 return false;
             base.Stack(other);
             Count += 3;
+            UpdateHighlight();
             if (!SourceCard.IsUpgraded && other.SourceCard.IsUpgraded)
             {
                 if (other.SourceCard is ModAssignCard c)
@@ -69,6 +70,11 @@ namespace LBoLMod.StatusEffects
                 CardCavalryAssigned += AssignSourceCard.CavalryAssigned > 0 ? 1 : 0;
             }
             return true;
+        }
+
+        private void UpdateHighlight()
+        {
+            Highlight = Count <= 1;
         }
 
         public void MakePermanent()
@@ -84,17 +90,25 @@ namespace LBoLMod.StatusEffects
             if (base.Battle.Player.HasStatusEffect<AssignReverseTickdownSe>())
             {
                 Count += amount;
+                UpdateHighlight();
                 return;
             }
             if (Count - amount >= 0)
+            {
                 Count -= amount;
+                UpdateHighlight();
+            }
             else
+            {
                 Count = 0;
+                UpdateHighlight();
+            }
         }
 
         public IEnumerable<BattleAction> ImmidiatelyTrigger()
         {
             Count = 0;
+            UpdateHighlight();
             return AssignTriggering(false);
         }
 
@@ -155,6 +169,7 @@ namespace LBoLMod.StatusEffects
                     yield return new DamageAction(base.Battle.Player, base.Battle.Player, DamageInfo.HpLose(hpLoss));
                 }
                 Count = 5;
+                UpdateHighlight();
                 Level = Math.Max(AssignSourceCard.StartingTaskLevel, Level / 2);
                 CardFencerAssigned = Math.Max(fencerRequired, CardFencerAssigned - fencerRequired);
                 CardArcherAssigned = Math.Max(archerRequired, CardArcherAssigned - archerRequired);
