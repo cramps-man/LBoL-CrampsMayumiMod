@@ -30,8 +30,9 @@ namespace LBoLMod.Cards
             cardConfig.Cost = new ManaGroup() { White = 1, Red = 1, Any = 1 };
             cardConfig.UpgradedCost = new ManaGroup() { Any = 2, Hybrid = 1, HybridColor = 2 };
             cardConfig.Damage = 10;
-            cardConfig.Value1 = 6;
-            cardConfig.UpgradedValue1 = 8;
+            cardConfig.UpgradedDamage = 15;
+            cardConfig.Value1 = 3;
+            cardConfig.UpgradedValue1 = 5;
             cardConfig.Value2 = 3;
             cardConfig.Keywords = Keyword.Exile | Keyword.Retain;
             cardConfig.UpgradedKeywords = Keyword.Exile | Keyword.Retain;
