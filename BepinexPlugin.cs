@@ -3,6 +3,7 @@ using HarmonyLib;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
+using LBoLMod.Enemies;
 using System.Reflection;
 using UnityEngine;
 
@@ -31,6 +32,7 @@ namespace LBoLMod
         internal static BatchLocalization exhibitBatchLoc = new BatchLocalization(directorySource, typeof(ExhibitTemplate), "exhibit");
         internal static BatchLocalization StatusEffectsBatchLoc = new BatchLocalization(directorySource, typeof(StatusEffectTemplate), "statusEffect");
         internal static BatchLocalization ultimateSkillBatchLoc = new BatchLocalization(directorySource, typeof(UltimateSkillTemplate), "ultimateSkill");
+        internal static BatchLocalization enemyBatchLoc = new BatchLocalization(directorySource, typeof(EnemyUnitTemplate), "enemyUnit");
 
         private void Awake()
         {
@@ -46,6 +48,8 @@ namespace LBoLMod
 
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(AddWatermark.API.GUID))
                 WatermarkWrapper.ActivateWatermark();
+
+            EnemyUnitTemplate.AddBossNodeIcon(nameof(MayumiBossUnit), () => ResourceLoader.LoadSprite("dummyicon.png", BepinexPlugin.embeddedSource));
         }
 
         private void OnDestroy()
