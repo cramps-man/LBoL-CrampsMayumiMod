@@ -8,6 +8,7 @@ using LBoL.Core.Cards;
 using LBoL.EntityLib.StatusEffects.Cirno;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
+using LBoLEntitySideloader.CustomKeywords;
 using LBoLMod.StatusEffects.Keywords;
 using System.Collections.Generic;
 
@@ -40,7 +41,7 @@ namespace LBoLMod.Cards
     }
 
     [EntityLogic(typeof(FrozenHaniwaDef))]
-    public sealed class FrozenHaniwa : ModFrontlineCard
+    public sealed class FrozenHaniwa : ModFrontlineCard, IExtendedCardClone
     {
         public override bool IsFencerType => OriginalCard == null ? false : OriginalCard.IsFencerType;
         public override bool IsArcherType => OriginalCard == null ? false : OriginalCard.IsArcherType;
@@ -94,6 +95,16 @@ namespace LBoLMod.Cards
             {
                 yield return item;
             };
+        }
+
+        public new void ExtendedCardClone(Card clonedCard, CloningMethod cloningMethod)
+        {
+            if (clonedCard is FrozenHaniwa fh)
+            {
+                fh.RemainingValue = RemainingValue;
+                if (OriginalCard != null)
+                    fh.OriginalCard = (ModFrontlineCard)OriginalCard.Clone();
+            }
         }
     }
 }

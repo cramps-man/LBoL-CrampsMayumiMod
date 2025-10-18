@@ -4,6 +4,7 @@ using LBoL.Core.Battle;
 using LBoL.Core.Battle.BattleActions;
 using LBoL.Core.Cards;
 using LBoL.Core.Helpers;
+using LBoLEntitySideloader.CustomKeywords;
 using LBoLMod.BattleActions;
 using LBoLMod.StatusEffects.Abilities;
 using LBoLMod.StatusEffects.Localization;
@@ -13,7 +14,7 @@ using System.Linq;
 
 namespace LBoLMod.Cards
 {
-    public abstract class ModFrontlineCard : ModMayumiCard
+    public abstract class ModFrontlineCard : ModMayumiCard, IExtendedCardClone
     {
         public override string Description => Keywords == Keyword.None ? base.Description + "\n" + UiUtils.WrapByColor(LocSe.FrontlineKeyword(), GlobalConfig.DefaultKeywordColor) : base.Description + UiUtils.WrapByColor(" " + LocSe.FrontlineKeyword(), GlobalConfig.DefaultKeywordColor);
 
@@ -177,6 +178,15 @@ namespace LBoLMod.Cards
             base.Initialize();
             RemainingValue = Value1;
             base.UpgradeCounter = 0;
+        }
+
+        public void ExtendedCardClone(Card clonedCard, CloningMethod cloningMethod)
+        {
+            if (clonedCard is ModFrontlineCard mfc)
+            {
+                mfc.RemainingValue = RemainingValue;
+                mfc.IsDarknessMode = IsDarknessMode;
+            }
         }
     }
 }

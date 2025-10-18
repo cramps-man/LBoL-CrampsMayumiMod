@@ -61,12 +61,6 @@ namespace LBoLMod.Cards
                 {
                     var cardClone = (ModFrontlineCard)card.CloneBattleCard();
                     cardClone.IsExile = true;
-                    cardClone.RemainingValue = card.RemainingValue;
-                    cardClone.IsDarknessMode = card.IsDarknessMode;
-                    if (card is FrozenHaniwa frozenCard)
-                    {
-                        ((FrozenHaniwa)cardClone).OriginalCard = (ModFrontlineCard)frozenCard.OriginalCard.CloneBattleCard();
-                    }
                     copiedCards.Add(cardClone);
                 }
                 yield return new AddCardsToDrawZoneAction(copiedCards, DrawZoneTarget.Random);
