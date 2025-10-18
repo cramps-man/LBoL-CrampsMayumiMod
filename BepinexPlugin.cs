@@ -3,7 +3,6 @@ using HarmonyLib;
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Entities;
 using LBoLEntitySideloader.Resource;
-using LBoLMod.Enemies;
 using System.Reflection;
 using UnityEngine;
 
@@ -12,11 +11,10 @@ namespace LBoLMod
 {
     [BepInPlugin(LBoLMod.PInfo.GUID, LBoLMod.PInfo.Name, LBoLMod.PInfo.version)]
     [BepInDependency(LBoLEntitySideloader.PluginInfo.GUID, BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency(AddWatermark.API.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInProcess("LBoL.exe")]
     public class BepinexPlugin : BaseUnityPlugin
     {
-
+        
         private static readonly Harmony harmony = LBoLMod.PInfo.harmony;
 
         internal static BepInEx.Logging.ManualLogSource log;
@@ -46,10 +44,7 @@ namespace LBoLMod
 
             harmony.PatchAll();
 
-            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(AddWatermark.API.GUID))
-                WatermarkWrapper.ActivateWatermark();
-
-            EnemyUnitTemplate.AddBossNodeIcon(nameof(MayumiBossUnit), () => ResourceLoader.LoadSprite("dummyicon.png", BepinexPlugin.embeddedSource));
+            //EnemyUnitTemplate.AddBossNodeIcon(nameof(MayumiBossUnit), () => ResourceLoader.LoadSprite("dummyicon.png", BepinexPlugin.embeddedSource));
         }
 
         private void OnDestroy()

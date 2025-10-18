@@ -2,7 +2,7 @@
 using LBoLEntitySideloader;
 using LBoLEntitySideloader.Attributes;
 
-namespace LBoLMod.Enemies
+/*namespace LBoLMod.Enemies
 {
     public sealed class MayumiBossUnitDef : MayumiBossUnitTemplate
     {
@@ -18,3 +18,4 @@ namespace LBoLMod.Enemies
 
     }
 }
+*/

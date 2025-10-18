@@ -1,12 +1,11 @@
-## This mod is still a work in progress but gameplay-wise is complete
+## This mod has incomplete presentation but gameplay-wise is complete
  - most cards have a single default card image
  - there are no attack animations
  - most buff icons have no image or just have a default
  - spell cards have no icon
- - ~~most card and status effect names are placeholder~~ placeholdery names now updated
 
 The mod is fully playable with 75 cards not including basics/tokens  
-Current version 0.7.1 - works with game version 1.7.2, currently only in beta branch  
+Current version 0.7.2 - works with game version 1.8.0
 
 ## Char overview
 Mayumi's playstyle involves managing and creating multiple things at once. Whether you choose to command Frontline units (represented as cards) or Assign tasks (represented as buffs), you will need to manage your resources carefully.  

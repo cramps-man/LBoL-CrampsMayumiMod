@@ -5,7 +5,7 @@ using LBoLEntitySideloader.Entities;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LBoLMod.Enemies
+/*namespace LBoLMod.Enemies
 {
     public sealed class MayumiBossGroup : EnemyGroupTemplate
     {
@@ -36,3 +36,4 @@ namespace LBoLMod.Enemies
         }
     }
 }
+*/

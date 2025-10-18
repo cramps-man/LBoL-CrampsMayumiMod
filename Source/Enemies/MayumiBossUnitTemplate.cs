@@ -5,7 +5,7 @@ using LBoLEntitySideloader.Resource;
 using LBoLMod.PlayerUnits;
 using System.Collections.Generic;
 
-namespace LBoLMod.Enemies
+/*namespace LBoLMod.Enemies
 {
     public abstract class MayumiBossUnitTemplate : EnemyUnitTemplate
     {
@@ -65,3 +65,4 @@ namespace LBoLMod.Enemies
         }
     }
 }
+*/

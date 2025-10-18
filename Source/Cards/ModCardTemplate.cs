@@ -93,6 +93,7 @@ namespace LBoLMod.Cards
                Owner: new MayumiPlayerDef().UniqueId,
                ImageId: "",
                UpgradeImageId: "",
+               Pack: null,
 
                Unfinished: false,
                Illustrator: null,
