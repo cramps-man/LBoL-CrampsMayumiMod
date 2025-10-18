@@ -1,3 +1,8 @@
+## 0.7.2
+
+Updated to work with game version 1.8.0  
+Frontline cards now use the new card copy feature in sideloader, so allow Loyalty, Frozen Haniwa originals and dark summons will copy over, even with vanilla copy methods  
+
 ## 0.7.1
 
 ### General changes
